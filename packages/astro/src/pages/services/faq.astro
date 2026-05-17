@@ -1,0 +1,22 @@
+---
+import FAQGroups from "../../components/sections/services/FAQGroups.astro";
+import FAQHero from "../../components/sections/services/FAQHero.astro";
+import ServicesCtaBand from "../../components/sections/services/ServicesCtaBand.astro";
+import Footer from "../../components/sections/Footer.astro";
+import Header from "../../components/sections/Header.astro";
+import Layout from "../../layouts/Layout.astro";
+import { faqCta } from "../../data/services";
+---
+
+<Layout
+  title="FAQ | Tagora Packaging & Trims"
+  description="Answers about custom packaging sourcing, design support, MOQ, production, quality control, logistics, and after-sales support."
+>
+  <Header activeNav="Services" />
+  <main>
+    <FAQHero />
+    <FAQGroups />
+    <ServicesCtaBand {...faqCta} />
+  </main>
+  <Footer />
+</Layout>

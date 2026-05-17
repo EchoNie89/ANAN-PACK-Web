@@ -1,0 +1,28 @@
+---
+import Button from "../../ui/Button.astro";
+import Container from "../../ui/Container.astro";
+import type { SolutionPageData } from "../../../data/solutions";
+
+interface Props {
+  page: SolutionPageData;
+}
+
+const { page } = Astro.props;
+---
+
+<section class="bg-white py-14 md:py-20">
+  <Container class="!max-w-[1200px]">
+    <div class="rounded bg-brand-soft px-6 py-8 md:flex md:items-center md:justify-between md:gap-8 md:px-9">
+      <div>
+        <h2 class="font-display text-xl font-black text-text-main md:text-[26px]">{page.cta.title}</h2>
+        <p class="mt-4 max-w-3xl text-sm leading-7 text-text-muted md:text-base">{page.cta.description}</p>
+      </div>
+      <div class="mt-6 shrink-0 md:mt-0">
+        <Button href="/home#contact" variant="dark" class="h-12 px-8 py-0 text-sm">
+          {page.cta.button} <span aria-hidden="true" class="ml-2">-&gt;</span>
+        </Button>
+        <p class="mt-4 text-center text-xs text-text-muted">{page.cta.note}</p>
+      </div>
+    </div>
+  </Container>
+</section>

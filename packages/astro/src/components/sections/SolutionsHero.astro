@@ -1,0 +1,47 @@
+---
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+---
+
+<section class="relative h-[474px] overflow-hidden bg-[#d5c3aa]">
+  <div class="absolute inset-0">
+    <img
+      src="/images/home/solution-cosmetics-hero.png"
+      alt="Cosmetics and beauty packaging materials arranged on paper textures"
+      class="size-full object-cover object-center"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-black/5"></div>
+  </div>
+
+  <Container class="relative h-full !max-w-[1200px] pt-12 text-white">
+    <nav class="text-sm capitalize text-white/50" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-4">
+        <li><a href="/home" class="hover:text-white">Home</a></li>
+        <li aria-hidden="true">&gt;</li>
+        <li><a href="/solutions/" class="hover:text-white">Solutions</a></li>
+        <li aria-hidden="true">&gt;</li>
+        <li class="text-white">For Cosmetics & Beauty</li>
+      </ol>
+    </nav>
+
+    <div class="mt-28 max-w-[997px]">
+      <h1 class="font-display text-4xl font-black leading-tight md:text-[40px] md:leading-[51px]">
+        Premium Branding & Labeling Solutions for Cosmetics & Beauty
+      </h1>
+      <p class="mt-6 max-w-[1145px] text-lg font-medium capitalize leading-7 md:text-xl">
+        Elevate your beauty brand with high-precision labels and luxury packaging. From oil-resistant product stickers to bespoke secondary packaging, we ensure your brand looks flawless on every shelf.
+      </p>
+      <div class="mt-14">
+        <Button
+          href="/home#contact"
+          variant="secondary"
+          class="h-10 w-[195px] border-0 bg-brand-soft px-4 py-0 text-base normal-case text-text-main shadow-[0_4px_2px_rgba(0,0,0,0.25)] hover:bg-brand-soft"
+        >
+          Get A Solution Quote
+        </Button>
+      </div>
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,60 @@
+---
+import Footer from "../../components/sections/Footer.astro";
+import Header from "../../components/sections/Header.astro";
+import PageCTA from "../../components/sections/PageCTA.astro";
+import BlogCategoryHighlights from "../../components/sections/blog/BlogCategoryHighlights.astro";
+import BlogListingSection from "../../components/sections/blog/BlogListingSection.astro";
+import BlogPageHero from "../../components/sections/blog/BlogPageHero.astro";
+import { blogCategories, featuredMaterialArticles, industryInsightArticles } from "../../data/blog";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Blog | Tagora Packaging & Trims"
+  description="Expert guides on packaging materials, production decisions, and fashion industry insights."
+>
+  <Header activeNav="Blog" />
+  <main>
+    <BlogPageHero
+      title="Blog"
+      description="Expert guides on materials, printing, and production."
+      backgroundImage="/images/blog/material-guides-hero.jpg"
+      breadcrumbs={[
+        { label: "Home", href: "/home" },
+        { label: "Blog" },
+      ]}
+    />
+    <BlogCategoryHighlights categories={blogCategories} />
+    <BlogListingSection
+      id="material-guides"
+      title="Master Your Materials"
+      description="Learn how paper stocks, recyclable formats, and production details shape premium packaging results."
+      articles={featuredMaterialArticles}
+    />
+    <BlogListingSection
+      id="industry-insights"
+      title="Industry Trends & Knowledge"
+      articles={industryInsightArticles}
+    />
+
+    <section class="pb-6">
+      <div class="mx-auto flex max-w-[1200px] items-center justify-end px-4 text-sm text-text-muted sm:px-6 lg:px-8">
+        <nav aria-label="Blog pagination" class="flex items-center gap-3">
+          <span class="font-semibold text-text-main">1</span>
+          <span>2</span>
+          <span>Next Page</span>
+        </nav>
+      </div>
+    </section>
+
+    <PageCTA
+      title="Need A Custom Template Or Dieline?"
+      description="Stop searching for generic files. Send us your product size, and our engineers will help create a production-ready structure."
+      href="/contact-us"
+      buttonLabel="Contact Our Team"
+      note="We'll reply within 6 hours."
+      class="pt-2"
+    />
+  </main>
+  <Footer />
+</Layout>

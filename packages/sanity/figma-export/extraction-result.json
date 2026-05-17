@@ -1,0 +1,442 @@
+{
+  "source": {
+    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=21443-2306",
+    "fileKey": "SzOlgqIXHy4MBI2QXLE08L",
+    "nodeId": "21443:2306",
+    "fileName": "独立站设计-吊牌网站 (Copy)",
+    "lastModified": "2026-05-17T15:54:33Z"
+  },
+  "structure": {
+    "nodeId": "21443:2306",
+    "nodeName": "Group 1272636733",
+    "nodeType": "GROUP",
+    "children": [
+      {
+        "nodeId": "21443:2307",
+        "nodeName": "Group 687",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "21443:2308",
+            "nodeName": "Group 671",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "21443:2309",
+                "nodeName": "Applications",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 213,
+                  "height": 39
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21443:2310",
+                "nodeName": "Line 10",
+                "nodeType": "LINE",
+                "children": [],
+                "layout": {
+                  "width": 36.592891693115234,
+                  "height": 0
+                }
+              }
+            ],
+            "layout": {
+              "width": 213,
+              "height": 39
+            }
+          }
+        ],
+        "layout": {
+          "width": 213,
+          "height": 39
+        }
+      },
+      {
+        "nodeId": "21443:2311",
+        "nodeName": "Group 1272636731",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "21443:2312",
+            "nodeName": "Group 1272636727",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "21443:2313",
+                "nodeName": "Rectangle 86",
+                "nodeType": "VECTOR",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "21443:2314",
+                "nodeName": "Instantly convey elegance with a silky, frictionless surface. Satin dust bags offer a luxurious unboxing feel, ideal for delicate lingerie, cosmetics, and premium hair extensions.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 130
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21443:2315",
+                "nodeName": "Apparel & Clothing",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 181,
+                  "height": 30
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 270,
+              "height": 469.056640625
+            }
+          },
+          {
+            "nodeId": "21443:2316",
+            "nodeName": "Group 1272636730",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "21443:2317",
+                "nodeName": "Rectangle 87",
+                "nodeType": "VECTOR",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "21443:2318",
+                "nodeName": "Beauty & Cosmetics",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 195,
+                  "height": 30
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21443:2319",
+                "nodeName": "Perfect for boutique home goods. Use our sustainable custom cotton dust bags to package luxury bed linens, towels, and ceramics, adding an earthy, organic aesthetic to your home brand.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 156
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 270,
+              "height": 495.056640625
+            }
+          },
+          {
+            "nodeId": "21443:2320",
+            "nodeName": "Group 1272636729",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "21443:2321",
+                "nodeName": "Rectangle 86",
+                "nodeType": "VECTOR",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "21443:2322",
+                "nodeName": "Bags & Luggage",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 156,
+                  "height": 30
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21443:2323",
+                "nodeName": "Curate a memorable unboxing for delicate items. From perfumes to fine rings, our luxurious jewelry packaging pouches and small custom fabric pouches add an opulent, premium finishing touch to your beauty lines.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 156
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 270,
+              "height": 495.056640625
+            }
+          },
+          {
+            "nodeId": "21443:2324",
+            "nodeName": "Group 1272636728",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "21443:2325",
+                "nodeName": "Rectangle 86",
+                "nodeType": "VECTOR",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "21443:2326",
+                "nodeName": "Home & Linen",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 133,
+                  "height": 30
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21443:2327",
+                "nodeName": "The ultimate safeguard for fine leather goods. Our custom dust bags for handbags prevent scratches and dust accumulation, ensuring your premium bags, belts, and wallets reach your customers in flawless condition.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 182
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 270,
+              "height": 521.056640625
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 521.056640625
+        }
+      }
+    ],
+    "layout": {
+      "width": 1200,
+      "height": 600
+    }
+  },
+  "texts": [
+    {
+      "nodeId": "21443:2309",
+      "nodeName": "Applications",
+      "text": "Applications",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 32,
+        "fontWeight": 800,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21443:2314",
+      "nodeName": "Instantly convey elegance with a silky, frictionless surface. Satin dust bags offer a luxurious unboxing feel, ideal for delicate lingerie, cosmetics, and premium hair extensions.",
+      "text": "Instantly convey elegance with a silky, frictionless surface. Satin dust bags offer a luxurious unboxing feel, ideal for delicate lingerie, cosmetics, and premium hair extensions.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21443:2315",
+      "nodeName": "Apparel & Clothing",
+      "text": "Apparel & Clothing",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 20,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21443:2318",
+      "nodeName": "Beauty & Cosmetics",
+      "text": "Beauty & Cosmetics",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 20,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21443:2319",
+      "nodeName": "Perfect for boutique home goods. Use our sustainable custom cotton dust bags to package luxury bed linens, towels, and ceramics, adding an earthy, organic aesthetic to your home brand.",
+      "text": "Perfect for boutique home goods. Use our sustainable custom cotton dust bags to package luxury bed linens, towels, and ceramics, adding an earthy, organic aesthetic to your home brand.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21443:2322",
+      "nodeName": "Bags & Luggage",
+      "text": "Bags & Luggage",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 20,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21443:2323",
+      "nodeName": "Curate a memorable unboxing for delicate items. From perfumes to fine rings, our luxurious jewelry packaging pouches and small custom fabric pouches add an opulent, premium finishing touch to your beauty lines.",
+      "text": "Curate a memorable unboxing for delicate items. From perfumes to fine rings, our luxurious jewelry packaging pouches and small custom fabric pouches add an opulent, premium finishing touch to your beauty lines.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21443:2326",
+      "nodeName": "Home & Linen",
+      "text": "Home & Linen",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 20,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21443:2327",
+      "nodeName": "The ultimate safeguard for fine leather goods. Our custom dust bags for handbags prevent scratches and dust accumulation, ensuring your premium bags, belts, and wallets reach your customers in flawless condition.",
+      "text": "The ultimate safeguard for fine leather goods. Our custom dust bags for handbags prevent scratches and dust accumulation, ensuring your premium bags, belts, and wallets reach your customers in flawless condition.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    }
+  ],
+  "images": [
+    {
+      "nodeId": "21443:2306",
+      "nodeName": "Group 1272636733 (整体截图)",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aeb23a30-bace-43a5-847a-5659ae6cb17e",
+      "localPath": "figma-export/images/full-selection-21443-2306.png"
+    },
+    {
+      "nodeId": "21443:2313",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d386c97b-85fa-46c6-8c89-2b74371a8a5a",
+      "localPath": "figma-export/images/Rectangle-86-21443-2313.png"
+    },
+    {
+      "nodeId": "21443:2317",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/bc820dee-0ced-4a61-a590-8ae70bce4818",
+      "localPath": "figma-export/images/Rectangle-87-21443-2317.png"
+    },
+    {
+      "nodeId": "21443:2321",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2866f1d8-8296-4d95-a60b-9e9140c01b51",
+      "localPath": "figma-export/images/Rectangle-86-21443-2321.png"
+    },
+    {
+      "nodeId": "21443:2325",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/59cbd722-dfe2-442f-9dbb-618ff1e6f3ae",
+      "localPath": "figma-export/images/Rectangle-86-21443-2325.png"
+    }
+  ]
+}

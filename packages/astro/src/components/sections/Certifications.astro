@@ -1,0 +1,31 @@
+---
+import Container from "../ui/Container.astro";
+import Card from "../ui/Card.astro";
+import { certifications } from "../../data/home";
+---
+
+<section class="bg-surface-muted pb-16 md:pb-24">
+  <Container>
+    <Card class="bg-white px-6 py-8">
+      <h2 class="text-center text-xl font-extrabold text-ink">
+        Certified Materials & Standards
+      </h2>
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          certifications.map((cert) => (
+            <article class="rounded-panel bg-surface-warm p-6 text-center">
+              <img
+                src={cert.image}
+                alt={cert.alt}
+                class="mx-auto h-20 w-full object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+              <h3 class="mt-4 text-xs font-bold text-ink">{cert.title}</h3>
+            </article>
+          ))
+        }
+      </div>
+    </Card>
+  </Container>
+</section>

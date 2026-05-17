@@ -1,0 +1,67 @@
+---
+import Container from '../../ui/Container.astro';
+import SanityImage from '../../ui/SanityImage.astro';
+import type { ProductCard, ProductShowcaseGroup } from '../../../data/products';
+
+interface Props {
+  navLabel: string;
+  categories: ProductCard[];
+  materials: ProductCard[];
+  showcaseGroups?: ProductShowcaseGroup[];
+}
+
+const { navLabel, categories, materials, showcaseGroups } = Astro.props;
+
+const fallbackGroups = [
+  {
+    title: 'Product ShowCase',
+    cards: [...categories, ...materials].slice(0, 4),
+  },
+  {
+    title: `Popular ${navLabel} Styles`,
+    cards: [...materials, ...categories].slice(0, 4),
+  },
+];
+
+const groups = showcaseGroups?.length ? showcaseGroups : fallbackGroups;
+---
+
+<section class="bg-white pb-14 md:pb-20">
+  <Container class="!max-w-[1200px]">
+    <h2 class="text-center text-2xl font-extrabold tracking-[0.03em] text-text-main md:text-[32px]">
+      Product Showcase
+    </h2>
+    <div class="mt-7 grid gap-10 md:gap-12">
+      {
+        groups.map((group) => (
+          <section>
+            <h3 class="text-lg font-extrabold text-ink md:text-xl">
+              {group.title}
+            </h3>
+            {group.description && (
+              <p class="mt-1 text-[18px] text-ink/60">
+                {group.description}
+              </p>
+            )}
+            <div class="mt-5 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 md:gap-x-7 lg:grid-cols-4">
+              {group.cards.map((card) => (
+                <article class="group">
+                  <div class="aspect-square overflow-hidden bg-surface-muted">
+                    <SanityImage
+                      image={card.image}
+                      class="size-full object-cover transition duration-500 group-hover:scale-105"
+                      sizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
+                    />
+                  </div>
+                  <h4 class="mt-4 text-center text-sm font-semibold capitalize text-text-main md:text-base">
+                    {card.title}
+                  </h4>
+                </article>
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </Container>
+</section>

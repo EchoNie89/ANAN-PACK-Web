@@ -1,0 +1,127 @@
+---
+import PageCTA from "../PageCTA.astro";
+import { defaultProductWhyChoose, type ProductPageData, type ProductShowcaseGroup } from "../../../data/products";
+import { getProductApplications, getProductCustomization, getProductShowcase, sanityImageUrl } from "../../../lib/sanity";
+import LabelsApplications from "./LabelsApplications.astro";
+import LabelsCustomization from "./LabelsCustomization.astro";
+import LabelsShowcase from "./LabelsShowcase.astro";
+import ProductCaseStudy from "./ProductCaseStudy.astro";
+import ProductFaq from "./ProductFaq.astro";
+import ProductFeatureBand from "./ProductFeatureBand.astro";
+import ProductHero from "./ProductHero.astro";
+import ProductIntro from "./ProductIntro.astro";
+import ProductProcess from "./ProductProcess.astro";
+import ProductWhyChoose from "./ProductWhyChoose.astro";
+
+interface Props {
+  page: ProductPageData;
+}
+
+const { page } = Astro.props;
+
+const sanityShowcase = await getProductShowcase(page.slug).catch(() => null);
+const sanityShowcaseGroups = sanityShowcase?.showcaseGroups
+  ?.map((group, groupIndex) => ({
+    title: group.title,
+    description: group.description,
+    cards: group.cards
+      .filter((card) => card.image)
+      .map((card, cardIndex) => ({
+        title: card.title,
+        description: card.description,
+        image: {
+          src: sanityImageUrl(card.image).width(600).auto("format").url(),
+          alt: card.alt ?? card.title,
+          sanityKey: `sanity.products.${page.slug}.showcase.${groupIndex}.${cardIndex}`,
+        },
+      })),
+  }))
+  .filter((group) => group.cards.length) satisfies ProductShowcaseGroup[] | undefined;
+
+const showcaseGroups = sanityShowcaseGroups?.length ? sanityShowcaseGroups : page.showcaseGroups;
+
+const sanityApplicationsData = await getProductApplications(page.slug).catch(() => null);
+const sanityApplications = sanityApplicationsData?.applications
+  ?.filter((card) => card.image)
+  .map((card, cardIndex) => ({
+    title: card.title,
+    description: card.description,
+    image: {
+      src: sanityImageUrl(card.image).width(600).auto("format").url(),
+      alt: card.alt ?? card.title,
+      sanityKey: `sanity.products.${page.slug}.applications.${cardIndex}`,
+    },
+  }));
+
+const applicationTitle = sanityApplicationsData?.applicationTitle ?? page.applicationTitle;
+const applicationDescription = sanityApplicationsData?.applicationDescription ?? page.applicationDescription;
+const applications = sanityApplications?.length ? sanityApplications : page.applications;
+
+const sanityCustomizationData = await getProductCustomization(page.slug).catch(() => null);
+const sanityCustomizationGroups = sanityCustomizationData?.customizationGroups
+  ?.filter((group) => group.blocks?.length)
+  .map((group, groupIndex) => ({
+    title: group.title,
+    intro: group.intro,
+    images: (group.images || [])
+      .filter((img) => img.image?.asset?._ref)
+      .map((img, imgIndex) => ({
+        src: sanityImageUrl(img.image).width(600).auto("format").url(),
+        alt: img.alt ?? group.title,
+        sanityKey: `sanity.products.${page.slug}.customization.${groupIndex}.${imgIndex}`,
+      })),
+    blocks: group.blocks,
+  }));
+const customizationGroups = sanityCustomizationGroups?.length ? sanityCustomizationGroups : page.customizationGroups;
+const introHeading = page.introTitle ?? `What Are Custom ${page.navLabel}?`;
+const whyChooseItems = page.whyChoose ?? defaultProductWhyChoose;
+const cta = page.cta ?? {
+  title: "Ready to Upgrade Your Brand's Packaging?",
+  description: "Send us your design, get a quote within 6 hours.",
+  href: "/contact-us",
+  buttonLabel: "Request A Quote  ->",
+  note: "We'll reply within 6 hours.",
+};
+---
+
+<main>
+  <ProductHero
+    title={page.title}
+    subtitle={page.subtitle}
+    navLabel={page.navLabel}
+    heroTone={page.heroTone}
+    heroAlign={page.heroAlign}
+    heroOverlay={page.heroOverlay}
+    heroButtonPlacement={page.heroButtonPlacement}
+    heroTitleLines={page.heroTitleLines}
+    heroImage={page.heroImage}
+  />
+  <ProductFeatureBand features={page.featureBand} />
+  <ProductIntro heading={introHeading} overview={page.overview} />
+  <LabelsShowcase slug={page.slug} showcaseGroups={showcaseGroups} />
+  <LabelsApplications
+    title={applicationTitle}
+    description={applicationDescription}
+    applications={applications}
+    layout={page.applicationLayout}
+  />
+  <LabelsCustomization
+    groups={customizationGroups}
+  />
+  <ProductProcess process={page.process} subtitle={page.processSubtitle} />
+  <ProductWhyChoose
+    title={page.whyChooseTitle ?? `Why Choose Us For Custom ${page.navLabel}?`}
+    items={whyChooseItems}
+  />
+  <ProductCaseStudy caseStudy={page.caseStudy} />
+  <ProductFaq faqs={page.faqs} />
+  <PageCTA
+    title={cta.title}
+    description={cta.description}
+    href={cta.href}
+    buttonLabel={cta.buttonLabel}
+    note={cta.note}
+    tone="tan"
+    class="bg-surface"
+  />
+</main>

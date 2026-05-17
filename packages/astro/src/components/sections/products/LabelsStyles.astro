@@ -1,0 +1,29 @@
+---
+import Container from "../../ui/Container.astro";
+import ProductImageTile from "../../ui/ProductImageTile.astro";
+import { labelStyleBlocks, labelStyleItems } from "../../../data/labelsProduct";
+---
+
+<section class="bg-white pb-16 md:pb-20">
+  <Container class="!max-w-[1120px]">
+    <h2 class="text-2xl font-extrabold tracking-[0.03em] text-text-main md:text-[32px]">
+      Product Styles
+    </h2>
+    <div class="mt-8 grid grid-cols-2 gap-x-4 gap-y-7 md:grid-cols-3 md:gap-x-7">
+      {labelStyleItems.map((item) => <ProductImageTile {...item} />)}
+    </div>
+
+    <div class="mt-10 grid gap-7 text-sm leading-7 text-text-muted md:text-[15px]">
+      {
+        labelStyleBlocks.map((block) => (
+          <section>
+            <h3 class="text-base font-extrabold text-ink">{block.title}</h3>
+            <div class="mt-2 grid gap-2">
+              {block.items.map((item) => <p>{item}</p>)}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </Container>
+</section>

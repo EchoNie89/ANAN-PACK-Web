@@ -1,0 +1,26 @@
+---
+import MegaMenuCard from "../ui/MegaMenuCard.astro";
+import { productMenuItems } from "../../data/home";
+
+interface Props {
+  forceOpen?: boolean;
+}
+
+const { forceOpen = false } = Astro.props;
+
+const visibilityClass =
+  "pointer-events-none invisible opacity-0 data-[open=true]:pointer-events-auto data-[open=true]:visible data-[open=true]:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:pointer-events-auto group-focus-within/nav:visible group-focus-within/nav:opacity-100";
+---
+
+<div
+  id="products-menu"
+  data-menu-panel="products"
+  data-open={forceOpen ? "true" : "false"}
+  class={`fixed left-1/2 top-[88px] z-50 w-[912px] -translate-x-1/2 transition duration-200 xl:left-[calc(50%+143px)] ${visibilityClass}`}
+>
+  <div class="h-[555px] overflow-hidden rounded-sm bg-[#f9f9f9] px-6 pb-[39px] pt-[38px] shadow-[-4px_4px_20px_rgba(0,0,0,0.1)]">
+    <div class="grid h-full grid-cols-4 gap-x-4 gap-y-4">
+      {productMenuItems.map((item) => <MegaMenuCard {...item} />)}
+    </div>
+  </div>
+</div>

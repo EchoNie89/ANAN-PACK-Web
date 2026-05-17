@@ -1,0 +1,56 @@
+---
+import Container from "../../ui/Container.astro";
+import Breadcrumbs from "../../ui/Breadcrumbs.astro";
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  backgroundImage: string;
+  breadcrumbs: BreadcrumbItem[];
+  align?: "center" | "left";
+  eyebrow?: string;
+}
+
+const {
+  title,
+  description,
+  backgroundImage,
+  breadcrumbs,
+  align = "center",
+  eyebrow,
+} = Astro.props;
+
+const isCentered = align === "center";
+---
+
+<section class="relative isolate overflow-hidden">
+  <img
+    src={backgroundImage}
+    alt=""
+    aria-hidden="true"
+    class="absolute inset-0 size-full object-cover"
+    loading="eager"
+    decoding="async"
+  />
+  <div class={`absolute inset-0 ${isCentered ? "bg-[linear-gradient(180deg,rgba(26,20,12,0.16),rgba(26,20,12,0.4))]" : "bg-[linear-gradient(90deg,rgba(26,20,12,0.58),rgba(26,20,12,0.18))]"}`}></div>
+
+  <Container class="relative !max-w-[1200px] pb-12 pt-28 md:pb-16 md:pt-36">
+    <div class={isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
+      <Breadcrumbs items={breadcrumbs} light center={isCentered} />
+      {eyebrow && <p class="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-white/80">{eyebrow}</p>}
+      <h1 class={`mt-5 font-display text-white ${isCentered ? "text-4xl font-extrabold md:text-5xl" : "text-4xl font-black md:text-[48px] md:leading-[1.08]"}`}>
+        {title}
+      </h1>
+      {description && (
+        <p class={`mt-4 text-base leading-7 text-white/85 md:text-lg ${isCentered ? "mx-auto max-w-2xl" : "max-w-2xl"}`}>
+          {description}
+        </p>
+      )}
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,914 @@
+{
+  "source": {
+    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=19741-7423",
+    "fileKey": "SzOlgqIXHy4MBI2QXLE08L",
+    "nodeId": "19741:7423",
+    "fileName": "独立站设计-吊牌网站 (Copy)",
+    "lastModified": "2026-05-17T02:44:15Z"
+  },
+  "structure": {
+    "nodeId": "19741:7423",
+    "nodeName": "Frame 1272636737",
+    "nodeType": "FRAME",
+    "children": [
+      {
+        "nodeId": "19741:7424",
+        "nodeName": "Product Showcase",
+        "nodeType": "TEXT",
+        "children": [],
+        "layout": {
+          "width": 311,
+          "height": 39
+        },
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#333333",
+            "opacity": 1
+          }
+        ]
+      },
+      {
+        "nodeId": "19741:7425",
+        "nodeName": "Group 1272636720",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "21440:2567",
+            "nodeName": "Frame 1272636881",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "21440:2568",
+                "nodeName": "Embroidered Patches",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 37
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21440:2569",
+                "nodeName": "Breathable, durable, and eco-friendly. Our custom cotton dust bags are the perfect sustainable choice for everyday apparel, handbags, and eco-conscious brands.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 26
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 73
+            }
+          },
+          {
+            "nodeId": "19741:7427",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19741:7428",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7429",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19741:7430",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7431",
+                    "nodeName": "Rectangle 87",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19741:7432",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7433",
+                    "nodeName": "Rectangle 87",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19741:7434",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7435",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 269
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 382
+        }
+      },
+      {
+        "nodeId": "19741:7437",
+        "nodeName": "Group 1272636721",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "21440:2575",
+            "nodeName": "Frame 1272636882",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "21440:2576",
+                "nodeName": "Chenille Patches",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 37
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21440:2577",
+                "nodeName": "The ultimate cost-effective shield. These breathable custom dust bags wholesale are designed for high-volume footwear, large handbags, and brand promotions.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 26
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 73
+            }
+          },
+          {
+            "nodeId": "19741:7439",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19741:7440",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7441",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19741:7442",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7443",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19741:7444",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7445",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19741:7446",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7447",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 269
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 382
+        }
+      },
+      {
+        "nodeId": "19741:7448",
+        "nodeName": "Group 1272636722",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "21440:2582",
+            "nodeName": "Frame 1272636882",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "21440:2583",
+                "nodeName": "Leather Patches",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 37
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21440:2584",
+                "nodeName": "Rich, plush, and incredibly soft. Our custom velvet pouches provide premium scratch-free protection for high-end jewelry, watches, and luxury accessories.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 26
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 73
+            }
+          },
+          {
+            "nodeId": "19741:7450",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19741:7451",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7452",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19741:7453",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7454",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19741:7455",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7456",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19741:7457",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7458",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 269
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 382
+        }
+      },
+      {
+        "nodeId": "19741:7459",
+        "nodeName": "Frame 1272636723",
+        "nodeType": "FRAME",
+        "children": [
+          {
+            "nodeId": "21440:2589",
+            "nodeName": "Frame 1272636882",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "21440:2590",
+                "nodeName": "PVC & Rubber Patches",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 37
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21440:2591",
+                "nodeName": "Instantly convey elegance with a silky, frictionless surface. Satin dust bags offer a luxurious unboxing feel, ideal for delicate lingerie, cosmetics, and premium hair extensions.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 52
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 86
+            }
+          },
+          {
+            "nodeId": "21440:2593",
+            "nodeName": "Group 1272636961",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19741:7461",
+                "nodeName": "Group 1272636719",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19741:7462",
+                    "nodeName": "Group 1272636722",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "19741:7463",
+                        "nodeName": "Rectangle 86",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 268.6567077636719,
+                          "height": 267.66168212890625
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "width": 268.6567077636719,
+                      "height": 267.66168212890625
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 268.6567077636719,
+                  "height": 267.66168212890625
+                }
+              },
+              {
+                "nodeId": "19896:370",
+                "nodeName": "Group 1272636719",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19896:371",
+                    "nodeName": "Group 1272636722",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "19896:372",
+                        "nodeName": "Rectangle 86",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 268.6567077636719,
+                          "height": 267.66168212890625
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "width": 268.6567077636719,
+                      "height": 267.66168212890625
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 268.6567077636719,
+                  "height": 267.66168212890625
+                }
+              },
+              {
+                "nodeId": "19896:374",
+                "nodeName": "Group 1272636719",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19896:375",
+                    "nodeName": "Group 1272636722",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "19896:376",
+                        "nodeName": "Rectangle 86",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 268.6567077636719,
+                          "height": 267.66168212890625
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "width": 268.6567077636719,
+                      "height": 267.66168212890625
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 268.6567077636719,
+                  "height": 267.66168212890625
+                }
+              },
+              {
+                "nodeId": "19896:378",
+                "nodeName": "Group 1272636719",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19896:379",
+                    "nodeName": "Group 1272636722",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "19896:380",
+                        "nodeName": "Rectangle 86",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 268.6567077636719,
+                          "height": 267.66168212890625
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "width": 268.6567077636719,
+                      "height": 267.66168212890625
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 268.6567077636719,
+                  "height": 267.66168212890625
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 267.66168212890625
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 414
+        }
+      }
+    ],
+    "layout": {
+      "mode": "VERTICAL",
+      "itemSpacing": 60,
+      "width": 1201,
+      "height": 1839,
+      "counterAxisAlignItems": "CENTER"
+    }
+  },
+  "texts": [
+    {
+      "nodeId": "19741:7424",
+      "nodeName": "Product Showcase",
+      "text": "Product Showcase",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 32,
+        "fontWeight": 800,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21440:2568",
+      "nodeName": "Embroidered Patches",
+      "text": "Embroidered Patches",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2569",
+      "nodeName": "Breathable, durable, and eco-friendly. Our custom cotton dust bags are the perfect sustainable choice for everyday apparel, handbags, and eco-conscious brands.",
+      "text": "Breathable, durable, and eco-friendly. Our custom cotton dust bags are the perfect sustainable choice for everyday apparel, handbags, and eco-conscious brands.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2576",
+      "nodeName": "Chenille Patches",
+      "text": "Chenille Patches",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2577",
+      "nodeName": "The ultimate cost-effective shield. These breathable custom dust bags wholesale are designed for high-volume footwear, large handbags, and brand promotions.",
+      "text": "The ultimate cost-effective shield. These breathable custom dust bags wholesale are designed for high-volume footwear, large handbags, and brand promotions.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2583",
+      "nodeName": "Leather Patches",
+      "text": "Leather Patches",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2584",
+      "nodeName": "Rich, plush, and incredibly soft. Our custom velvet pouches provide premium scratch-free protection for high-end jewelry, watches, and luxury accessories.",
+      "text": "Rich, plush, and incredibly soft. Our custom velvet pouches provide premium scratch-free protection for high-end jewelry, watches, and luxury accessories.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2590",
+      "nodeName": "PVC & Rubber Patches",
+      "text": "PVC & Rubber Patches",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2591",
+      "nodeName": "Instantly convey elegance with a silky, frictionless surface. Satin dust bags offer a luxurious unboxing feel, ideal for delicate lingerie, cosmetics, and premium hair extensions.",
+      "text": "Instantly convey elegance with a silky, frictionless surface. Satin dust bags offer a luxurious unboxing feel, ideal for delicate lingerie, cosmetics, and premium hair extensions.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    }
+  ],
+  "images": [
+    {
+      "nodeId": "19741:7423",
+      "nodeName": "Frame 1272636737 (整体截图)",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d4d6531c-ec09-4999-b18b-1fb78fcde3a5",
+      "localPath": "figma-export-20260517144810/images/full-selection-19741-7423.png"
+    },
+    {
+      "nodeId": "19741:7423",
+      "nodeName": "Frame 1272636737",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d4d6531c-ec09-4999-b18b-1fb78fcde3a5",
+      "localPath": "figma-export-20260517144810/images/Frame-1272636737-19741-7423.png"
+    },
+    {
+      "nodeId": "19741:7429",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/5ea80b63-5ae2-4443-9c81-c47b6e95254a",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19741-7429.png"
+    },
+    {
+      "nodeId": "19741:7431",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/6329987f-b643-4f2c-8a96-853fc41af6c5",
+      "localPath": "figma-export-20260517144810/images/Rectangle-87-19741-7431.png"
+    },
+    {
+      "nodeId": "19741:7433",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/82dd7d93-7c98-4ef7-ba83-cebb975c7c11",
+      "localPath": "figma-export-20260517144810/images/Rectangle-87-19741-7433.png"
+    },
+    {
+      "nodeId": "19741:7435",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a7cf0837-68a3-4df0-9c20-cbe306746bba",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19741-7435.png"
+    },
+    {
+      "nodeId": "19741:7441",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e95f3f35-31fc-4b9e-a372-85ac6c47def8",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19741-7441.png"
+    },
+    {
+      "nodeId": "19741:7443",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0d80d21b-1163-40e9-8c7f-e8c454205569",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19741-7443.png"
+    },
+    {
+      "nodeId": "19741:7445",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/405b90f7-b540-4632-aea0-ade8a4c931b3",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19741-7445.png"
+    },
+    {
+      "nodeId": "19741:7447",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0c1176e3-df5f-42fa-ae20-376770e60ceb",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19741-7447.png"
+    },
+    {
+      "nodeId": "19741:7452",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0a9f374a-98e8-4399-b62f-55ccd70bfecd",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19741-7452.png"
+    },
+    {
+      "nodeId": "19741:7454",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/69ca29ad-a743-4102-9251-9f9e7df45af5",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19741-7454.png"
+    },
+    {
+      "nodeId": "19741:7456",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/8a51240e-4ef2-48fe-8170-b541a157033d",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19741-7456.png"
+    },
+    {
+      "nodeId": "19741:7458",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/db1ca5c4-6487-4805-9994-2f1f1d314c9f",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19741-7458.png"
+    },
+    {
+      "nodeId": "19741:7459",
+      "nodeName": "Frame 1272636723",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/8c768080-8532-4572-87ae-dbf323f74b04",
+      "localPath": "figma-export-20260517144810/images/Frame-1272636723-19741-7459.png"
+    },
+    {
+      "nodeId": "19741:7463",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/04cef885-6808-4c0f-a385-3fcd630263fc",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19741-7463.png"
+    },
+    {
+      "nodeId": "19896:372",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/08fc31e4-84aa-4a24-92c8-cf31e656203e",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19896-372.png"
+    },
+    {
+      "nodeId": "19896:376",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9a9541c7-99f8-4f7b-85d7-a4894b3d02a8",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19896-376.png"
+    },
+    {
+      "nodeId": "19896:380",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d14b13d6-41f8-41ac-8be3-33c03a9c9b69",
+      "localPath": "figma-export-20260517144810/images/Rectangle-86-19896-380.png"
+    }
+  ]
+}

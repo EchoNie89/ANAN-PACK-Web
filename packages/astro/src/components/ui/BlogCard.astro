@@ -1,0 +1,54 @@
+---
+import { getBlogCategory } from "../../data/blog";
+import type { BlogArticle } from "../../data/blog";
+
+interface Props {
+  article: BlogArticle;
+}
+
+const { article } = Astro.props;
+
+const publishedDate = new Date(`${article.publishedAt}T00:00:00`);
+const badgeDay = publishedDate.getDate().toString().padStart(2, "0");
+const badgeMonth = publishedDate.toLocaleString("en-US", { month: "short" });
+const badgeYear = publishedDate.getFullYear();
+const categoryLabel = getBlogCategory(article.category)?.label ?? article.category;
+---
+
+<article class="overflow-hidden rounded-soft border border-border/60 bg-surface shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+  <a href={`/blog/${article.slug}`} class="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
+    <div class="relative aspect-[374/228] overflow-hidden bg-surface-muted">
+      <img
+        src={article.image}
+        alt={article.imageAlt}
+        class="size-full object-cover transition duration-500 group-hover:scale-[1.03]"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="absolute left-4 top-4 rounded-soft bg-white/30 px-4 py-2 text-center text-white backdrop-blur-sm">
+        <p class="text-[26px] font-semibold leading-none">{badgeDay}</p>
+        <p class="mt-1 text-xs font-medium uppercase tracking-[0.12em]">{badgeMonth}</p>
+        <p class="text-xs font-medium">{badgeYear}</p>
+      </div>
+    </div>
+
+    <div class="flex min-h-[250px] flex-col px-5 py-6">
+      <p class="text-xs font-semibold uppercase tracking-[0.12em] text-brand">
+        {categoryLabel}
+      </p>
+      <h3 class="mt-3 text-xl font-semibold leading-8 text-text-main transition group-hover:text-brand">
+        {article.title}
+      </h3>
+      <p class="mt-4 flex-1 text-sm leading-7 text-text-muted">
+        {article.excerpt}
+      </p>
+      <div class="mt-5 flex items-center justify-between text-sm font-semibold text-ink">
+        <span>{article.readTime}</span>
+        <span class="inline-flex items-center gap-2">
+          Read More
+          <span aria-hidden="true">→</span>
+        </span>
+      </div>
+    </div>
+  </a>
+</article>

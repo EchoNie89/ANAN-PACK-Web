@@ -1,0 +1,174 @@
+---
+import Container from '../ui/Container.astro';
+import SymbolIcon from '../ui/SymbolIcon.astro';
+import {
+  contactDetails,
+  footerHighlights,
+  footerQuickLinks,
+} from '../../data/company';
+
+const footerContacts = [
+  {
+    icon: 'location',
+    label: 'Location',
+    value: 'Guangzhou, China',
+  },
+  {
+    icon: 'phone',
+    label: 'WhatsApp',
+    value: contactDetails.whatsapp,
+  },
+  {
+    icon: 'mail',
+    label: 'Email',
+    value: contactDetails.email,
+  },
+] as const;
+---
+
+<footer class="bg-page-muted" id="footer">
+  <Container class="!max-w-[1200px] py-16 md:py-20 lg:py-[86px]">
+    <div
+      class="grid gap-12 md:grid-cols-2 lg:grid-cols-[minmax(0,1.35fr)_0.58fr_0.74fr_1px_0.62fr] lg:gap-10 xl:grid-cols-[420px_130px_170px_1px_140px] xl:gap-[84px]"
+    >
+      <div class="md:col-span-2 lg:col-span-1">
+        <a
+          href="/home"
+          class="inline-flex focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+        >
+          <img
+            src="/images/home/logoipsum-header.svg"
+            alt="Logoipsum"
+            class="h-12 w-auto"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <p class="mt-8 max-w-[420px] text-sm leading-[26px] text-text-main">
+          <span class="block">
+            One-stop packaging and trim sourcing partner for apparel, home
+            textile, and lifestyle brands.
+          </span>
+          <span class="mt-2 block">
+            We help brands manage multi-category sourcing, factory
+            coordination, quality control, and project follow-up through a
+            verified supplier network.
+          </span>
+        </p>
+        <div
+          class="mt-9 grid max-w-[420px] grid-cols-2 gap-y-6 sm:grid-cols-4 sm:divide-x sm:divide-border"
+        >
+          {
+            footerHighlights.map((item, index) => (
+              <div
+                class={`flex flex-col items-center text-center ${
+                  index === 0 ? 'sm:pr-5' : 'sm:px-5'
+                }`}
+              >
+                <SymbolIcon name={item.icon} class="size-[42px] text-[#c7a982]" />
+                <span class="mt-3 text-[10px] leading-4 text-black">
+                  {item.title}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-base font-bold text-black">Quick Links</h2>
+        <div class="mt-6 h-0.5 w-10 bg-brand"></div>
+        <nav
+          class="mt-9 grid gap-2.5 text-sm leading-[26px] text-text-main"
+          aria-label="Footer navigation"
+        >
+          {
+            footerQuickLinks.map((item) => (
+              <a
+                href={item.href}
+                class="transition hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+              >
+                {item.label} &gt;&gt;
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+
+      <div>
+        <h2 class="text-base font-bold text-black">Contact Us</h2>
+        <div class="mt-6 h-0.5 w-10 bg-brand"></div>
+        <ul class="mt-9 grid gap-5 text-sm text-text-main">
+          {
+            footerContacts.map((item) => (
+              <li>
+                <div class="flex items-center gap-3">
+                  <SymbolIcon
+                    name={item.icon}
+                    class="size-[18px] shrink-0 text-text-main"
+                  />
+                  <span class="font-medium leading-5">{item.label}</span>
+                </div>
+                <p class="mt-1.5 pl-[30px] leading-[22px]">{item.value}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div
+        class="hidden bg-border lg:block"
+        aria-hidden="true"
+      ></div>
+
+      <div class="max-w-[160px]">
+        <img
+          src="/images/home/qr-code.png"
+          alt="WhatsApp QR code"
+          class="size-[140px] bg-white object-contain"
+          loading="lazy"
+          decoding="async"
+        />
+        <p class="mt-6 text-sm leading-5 text-text-main">
+          Scan to contact us on <strong class="font-bold">WhatsApp</strong>
+        </p>
+        <p class="mt-3 text-sm leading-5 text-text-main">
+          For samples, product details, and quotation support.
+        </p>
+      </div>
+    </div>
+  </Container>
+  <div class="bg-brand-soft py-5">
+    <Container
+      class="!max-w-[1200px] flex flex-col gap-3 text-xs text-text-muted md:flex-row md:items-center md:justify-between"
+    >
+      <p>
+        2026 ANAN PACK. Product Purchasing Agent (Shenzhen) Co., Ltd. All Rights
+        Reserved.
+      </p>
+      <div class="flex items-center gap-4">
+        <a href="#" class="hover:text-brand">Privacy</a>
+        <span class="h-3 w-px bg-text-muted/40" aria-hidden="true"></span>
+        <a href="#" class="hover:text-brand">Term Of Use</a>
+        <span class="h-3 w-px bg-text-muted/40" aria-hidden="true"></span>
+        <a href="#" class="hover:text-brand">Sitemap</a>
+        <a
+          href="#"
+          class="ml-1 flex size-5 items-center justify-center rounded-full border border-text-muted/50 text-text-muted transition hover:border-brand hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+          aria-label="Back to top"
+        >
+          <svg
+            viewBox="0 0 20 20"
+            class="size-3"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            aria-hidden="true"
+          >
+            <path d="m5.5 11.5 4.5-4 4.5 4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </Container>
+  </div>
+</footer>

@@ -1,0 +1,63 @@
+---
+import Button from "../../ui/Button.astro";
+import Container from "../../ui/Container.astro";
+import type { SolutionPageData } from "../../../data/solutions";
+
+interface Props {
+  page: SolutionPageData;
+}
+
+const { page } = Astro.props;
+---
+
+<section class="bg-white py-14 md:py-20">
+  <Container class="!max-w-[1200px]">
+    <div class="grid items-start gap-10 lg:grid-cols-[0.88fr_1fr] lg:gap-14">
+      <img
+        src={page.caseStudy.image}
+        alt={page.caseStudy.alt}
+        class="aspect-[0.98] w-full rounded-sm object-cover lg:aspect-[0.98]"
+        loading="lazy"
+        decoding="async"
+      />
+      <div>
+        <p class="font-display text-2xl font-black tracking-[0.03em] text-text-main">{page.caseStudy.title}</p>
+        <h2 class="mt-5 text-xl font-extrabold leading-8 text-text-main md:text-2xl md:leading-9">
+          {page.caseStudy.headline}
+        </h2>
+        <p class="mt-6 text-sm leading-7 text-text-muted md:text-[15px]">{page.caseStudy.intro}</p>
+        <figure class="mt-7 border-l-4 border-brand-soft pl-5">
+          <blockquote class="text-sm italic leading-7 text-text-muted md:text-[15px]">
+            "{page.caseStudy.quote}"
+          </blockquote>
+          <figcaption class="mt-4 text-sm font-bold italic text-text-main">
+            {page.caseStudy.attribution}
+          </figcaption>
+        </figure>
+        <Button
+          href="/home#case-study"
+          variant="secondary"
+          class="mt-8 h-11 border-0 bg-brand-soft px-8 py-0 text-sm normal-case tracking-normal text-text-main hover:bg-border"
+        >
+          View More
+        </Button>
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-8 md:mt-12">
+      {
+        page.caseStudy.sections.map((section) => (
+          <article>
+            <h3 class="text-base font-bold text-text-main md:text-lg">{section.title}</h3>
+            {section.body && <p class="mt-3 text-sm leading-7 text-text-muted md:text-[15px]">{section.body}</p>}
+            {section.bullets && (
+              <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-text-muted md:text-[15px]">
+                {section.bullets.map((bullet) => <li>{bullet}</li>)}
+              </ul>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </Container>
+</section>

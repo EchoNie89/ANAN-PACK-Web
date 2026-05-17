@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  image: string;
+  alt: string;
+  href: string;
+  active?: boolean;
+}
+
+const { title, image, alt, href, active = false } = Astro.props;
+
+const normalizePath = (value: string) => {
+  const [path = "/"] = value.split("#");
+  return path === "/" ? "/" : path.replace(/\/+$/, "");
+};
+
+const isActive = active || normalizePath(Astro.url.pathname) === normalizePath(href);
+---
+
+<a
+  href={href}
+  class="group/card block overflow-hidden bg-white focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+>
+  <div class="relative h-[156px] overflow-hidden bg-surface-muted">
+    <img
+      src={image}
+      alt={alt}
+      class="size-full object-cover transition duration-500 group-hover/card:scale-105"
+      loading="lazy"
+      decoding="async"
+    />
+    {isActive && <div class="absolute inset-0 bg-[#b77120]/60"></div>}
+  </div>
+  <div
+    class={`flex h-14 items-center justify-center px-3 text-center text-xl font-semibold capitalize transition ${
+      isActive
+        ? "bg-[#b77120]/60 text-white"
+        : "bg-white text-text-main group-hover/card:text-brand"
+    }`}
+  >
+    {title}
+  </div>
+</a>

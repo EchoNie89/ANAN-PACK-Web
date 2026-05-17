@@ -1,0 +1,11 @@
+node_modules
+dist
+build
+.output
+.vercel
+.astro
+.next
+coverage
+.cache
+.DS_Store
+*.log

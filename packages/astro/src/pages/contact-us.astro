@@ -1,0 +1,29 @@
+---
+import Footer from "../components/sections/Footer.astro";
+import Header from "../components/sections/Header.astro";
+import PageCTA from "../components/sections/PageCTA.astro";
+import ContactHero from "../components/sections/contact/ContactHero.astro";
+import ContactProjectForm from "../components/sections/contact/ContactProjectForm.astro";
+import ContactTrustStrip from "../components/sections/contact/ContactTrustStrip.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Contact Us | Tagora Packaging & Trims"
+  description="Tell Tagora about your packaging, trims, and sourcing requirements to receive sampling guidance, pricing, and project support."
+>
+  <Header activeNav="Contact Us" />
+  <main>
+    <ContactHero />
+    <ContactProjectForm />
+    <ContactTrustStrip />
+    <PageCTA
+      title="Transform Your Brand With Stunning Packaging Solutions"
+      buttonLabel="Contact An Agent Now"
+      href="/contact-us#project-form"
+      note="We'll reply within 6 hours."
+      class="bg-page-muted"
+    />
+  </main>
+  <Footer />
+</Layout>

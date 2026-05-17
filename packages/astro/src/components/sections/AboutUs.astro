@@ -1,0 +1,36 @@
+---
+import Badge from "../ui/Badge.astro";
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+---
+
+<section id="about" class="bg-white py-16 md:py-24">
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div class="max-w-xl">
+        <Badge>About Us</Badge>
+        <div class="mt-4 h-0.5 w-12 bg-brand"></div>
+        <h2 class="mt-7 text-3xl font-extrabold leading-tight text-ink md:text-4xl">
+          ABC Company, Founded in 2023. Built On A Decade Of Expertise
+        </h2>
+        <p class="mt-6 text-sm leading-7 text-text-muted md:text-base">
+          We started Senye with a simple mission: to bridge the gap between creative designs and factory production. While big factories chase big orders, we focus on emerging brands. We bring you premium garment trims and soft packaging with the flexibility you need and the quality you deserve.
+        </p>
+        <div class="mt-9">
+          <Button href="/about-us" variant="secondary" class="bg-brand-soft/55">
+            Learn More About Us -&gt;
+          </Button>
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-panel bg-surface-muted shadow-card">
+        <img
+          src="/images/home/about-factory.png"
+          alt="Packaging production factory floor"
+          class="aspect-[1.45/1] size-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </Container>
+</section>

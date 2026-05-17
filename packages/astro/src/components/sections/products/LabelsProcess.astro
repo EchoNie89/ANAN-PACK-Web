@@ -1,0 +1,71 @@
+---
+import Container from "../../ui/Container.astro";
+import { labelProcessSteps } from "../../../data/labelsProduct";
+import LabelProcessIcon from "./LabelProcessIcon.astro";
+
+const timelinePositions = [
+  "lg:col-start-1 lg:row-start-1",
+  "lg:col-start-2 lg:row-start-3 lg:pt-5",
+  "lg:col-start-3 lg:row-start-1",
+  "lg:col-start-4 lg:row-start-3 lg:pt-5",
+  "lg:col-start-5 lg:row-start-1",
+  "lg:col-start-6 lg:row-start-3 lg:pt-5",
+];
+---
+
+<section class="bg-page-muted py-16 md:py-20">
+  <Container class="!max-w-[1200px]">
+    <div class="text-center">
+      <h2 class="text-2xl font-extrabold tracking-[0.03em] text-text-main md:text-[32px]">
+        Customization Process
+      </h2>
+      <p class="mx-auto mt-2 max-w-2xl text-sm leading-6 text-text-muted md:text-[15px] md:leading-[26px]">
+        Offered through every stage of your project
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:hidden">
+      {
+        labelProcessSteps.map((step, index) => (
+          <article class="relative rounded-panel bg-white px-5 pb-6 pt-7 text-center shadow-card">
+            <div class="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full bg-text-main text-sm font-medium leading-none text-white">
+              {index + 1}
+            </div>
+            <LabelProcessIcon name={step.icon} class="mx-auto" />
+            <h3 class="mt-5 text-base font-semibold leading-tight text-black">{step.title}</h3>
+            <p class="mx-auto mt-3 max-w-[255px] text-[14px] leading-[22px] text-text-muted">
+              {step.description}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-[42px] hidden lg:grid lg:grid-cols-6 lg:grid-rows-[auto_40px_auto] lg:items-start lg:gap-x-0 lg:gap-y-5">
+      {
+        labelProcessSteps.map((step, index) => (
+          <article class={`${timelinePositions[index]} mx-auto w-full max-w-[255px] text-center`}>
+            <LabelProcessIcon name={step.icon} class="mx-auto" />
+            <h3 class="mt-4 text-base font-semibold leading-tight text-black">{step.title}</h3>
+            <p class="mx-auto mt-4 max-w-[247px] text-[14px] leading-[22px] text-text-muted">
+              {step.description}
+            </p>
+          </article>
+        ))
+      }
+
+      <div class="relative col-span-6 row-start-2 grid grid-cols-6 items-center">
+        <div class="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2 bg-text-main"></div>
+        {
+          labelProcessSteps.map((_step, index) => (
+            <div class="relative z-10 flex justify-center">
+              <div class="flex size-10 items-center justify-center rounded-full bg-text-main text-[20px] leading-[22px] font-normal text-white">
+                {index + 1}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>

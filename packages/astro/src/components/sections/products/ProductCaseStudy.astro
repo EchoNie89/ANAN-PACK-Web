@@ -1,0 +1,123 @@
+---
+import Button from "../../ui/Button.astro";
+import Container from "../../ui/Container.astro";
+import SanityImage from "../../ui/SanityImage.astro";
+import type { ProductPageData } from "../../../data/products";
+
+interface Props {
+  caseStudy: ProductPageData["caseStudy"];
+}
+
+const { caseStudy } = Astro.props;
+const resultPoints = caseStudy.resultPoints?.length ? caseStudy.resultPoints : caseStudy.bullets;
+const challengeParagraphs = caseStudy.challenge
+  ?.split(/\n+/)
+  .map((paragraph) => paragraph.trim())
+  .filter(Boolean);
+---
+
+<section class="bg-white py-14 md:py-20">
+  <Container class="!max-w-[1120px]">
+    <div class="grid gap-7 md:gap-9 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      <div class="overflow-hidden bg-surface-muted">
+        <SanityImage
+          image={caseStudy.image}
+          class="aspect-[1.02] size-full object-cover"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+        />
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-extrabold tracking-[0.03em] text-text-main md:text-[36px]">
+          Case Study
+        </h2>
+        <h3 class="mt-4 max-w-2xl text-lg font-extrabold leading-snug text-ink md:text-2xl">
+          {caseStudy.title}
+        </h3>
+        <p class="mt-5 text-left text-sm leading-7 text-text-muted md:text-justify">
+          {caseStudy.description}
+        </p>
+
+        {
+          caseStudy.quote && (
+            <div class="mt-8">
+              <div class="text-6xl font-extrabold leading-none text-ink">"</div>
+              <blockquote class="-mt-2 text-sm italic leading-6 text-text-muted">
+                {caseStudy.quote}
+              </blockquote>
+              {caseStudy.quoteAuthor && (
+                <p class="mt-7 text-xs font-extrabold italic text-ink">
+                  {caseStudy.quoteAuthor}
+                </p>
+              )}
+            </div>
+          )
+        }
+
+        <Button href="/contact-us" variant="soft" class="mt-8 w-full px-9 py-3 text-sm normal-case tracking-normal sm:w-auto">
+          View More
+        </Button>
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-6 text-sm leading-6 text-text-muted">
+      {
+        caseStudy.challenge && (
+          <section>
+            <h3 class="text-base font-extrabold text-ink">The Challenge:</h3>
+            <div class="mt-3 grid gap-3">
+              {challengeParagraphs?.map((paragraph) => <p class="text-justify">{paragraph}</p>)}
+            </div>
+          </section>
+        )
+      }
+
+      {
+        (caseStudy.solutionIntro || caseStudy.solutionPoints?.length) && (
+          <section>
+            <h3 class="text-base font-extrabold text-ink">Our Solution:</h3>
+            {caseStudy.solutionIntro && <p class="mt-3 text-justify">{caseStudy.solutionIntro}</p>}
+            {caseStudy.solutionPoints?.length ? (
+              <ul class="mt-2 grid gap-1">
+                {caseStudy.solutionPoints.map((point) => (
+                  <li class="flex gap-2">
+                    <span class="mt-2 size-1 shrink-0 rounded-full bg-text-muted"></span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </section>
+        )
+      }
+
+      <section>
+        <h3 class="text-base font-extrabold text-ink">The Results:</h3>
+        <ul class="mt-3 grid gap-1">
+          {
+            resultPoints.map((point) => (
+              <li class="flex gap-2">
+                <span class="mt-2 size-1 shrink-0 rounded-full bg-text-muted"></span>
+                <span>{point}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+
+    {
+      caseStudy.gallery?.length ? (
+        <div class="mt-12 grid gap-6 md:mt-20 md:grid-cols-2">
+          {caseStudy.gallery.map((image) => (
+            <SanityImage
+              image={image}
+              class="aspect-[1.05] size-full object-cover"
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          ))}
+        </div>
+      ) : null
+    }
+  </Container>
+</section>

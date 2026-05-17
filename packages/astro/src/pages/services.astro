@@ -1,0 +1,28 @@
+---
+import DeliverySection from "../components/sections/services/DeliverySection.astro";
+import ServiceProcess from "../components/sections/services/ServiceProcess.astro";
+import ServicesCtaBand from "../components/sections/services/ServicesCtaBand.astro";
+import ServicesHero from "../components/sections/services/ServicesHero.astro";
+import SourcingComparison from "../components/sections/services/SourcingComparison.astro";
+import WarehousingSection from "../components/sections/services/WarehousingSection.astro";
+import Footer from "../components/sections/Footer.astro";
+import Header from "../components/sections/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import { serviceCta } from "../data/services";
+---
+
+<Layout
+  title="Packaging Supply Chain Services | Tagora"
+  description="End-to-end sourcing, development, quality control, warehousing, kitting, and door-to-door delivery for custom packaging and garment trims."
+>
+  <Header activeNav="Services" openMenu="services" />
+  <main>
+    <ServicesHero />
+    <SourcingComparison />
+    <ServiceProcess />
+    <WarehousingSection />
+    <DeliverySection />
+    <ServicesCtaBand {...serviceCta} />
+  </main>
+  <Footer />
+</Layout>

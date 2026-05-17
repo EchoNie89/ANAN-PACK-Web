@@ -1,0 +1,35 @@
+---
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+---
+
+<section class="relative overflow-hidden bg-[#ded2bd]">
+  <div class="absolute inset-0">
+    <img
+      src="/images/home/hero-packaging.png"
+      alt="Custom packaging, tags, ribbons, and cotton bags arranged on a table"
+      class="size-full object-cover object-center"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-white/10"></div>
+  </div>
+
+  <Container class="relative flex min-h-[560px] items-center py-20 md:min-h-[650px]">
+    <div class="max-w-2xl text-white">
+      <p class="text-xs font-bold uppercase tracking-[0.18em]">Custom Manufacturer</p>
+      <h1 class="mt-7 max-w-xl text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
+        Factory-Direct Packaging & Trims for Fashion Brands
+      </h1>
+      <p class="mt-7 max-w-xl text-base font-medium leading-8 text-white/86 md:text-lg">
+        Hang Tags / Woven Labels / Packaging Bags / Patches. Factory-direct sourcing with Low MOQ and 72h Sampling.
+      </p>
+      <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+        <Button href="#contact">Request a Quote</Button>
+        <Button href="#solutions" variant="secondary" class="bg-white/20 text-white hover:bg-white/30">
+          Explore Solutions
+        </Button>
+      </div>
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,58 @@
+---
+import SectionTitle from "../../ui/SectionTitle.astro";
+import Container from "../../ui/Container.astro";
+---
+
+<section id="our-story" class="bg-white py-16 md:py-24">
+  <Container class="!max-w-[1200px]">
+    <div class="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
+      <div class="space-y-8">
+        <SectionTitle
+          eyebrow="WE ARE ANAN PACK"
+          title="ANAN PACK is a packaging and trim supply chain partner for apparel, home textile, lifestyle, and e-commerce brands."
+          description="We focus on helping growing brands manage sourcing with more clarity and less friction. From hang tags and labels to packaging boxes, ribbons, and retail-ready kits, we bridge design intent with reliable manufacturing execution."
+          align="left"
+        />
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div class="overflow-hidden rounded-soft shadow-card">
+            <img
+              src="/images/about/about-story-flatlay.png"
+              alt="Custom hang tags, labels, and trim materials laid out on a work surface"
+              class="aspect-[1.15/1] size-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="overflow-hidden rounded-soft shadow-card sm:translate-y-10">
+            <img
+              src="/images/about/about-story-packing.png"
+              alt="A packaging shipment being checked and handed over"
+              class="aspect-[1.15/1] size-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-card bg-surface-muted p-7 md:p-9">
+        <SectionTitle
+          eyebrow="WHY WE STARTED"
+          title="We created this team to solve the real challenges of sourcing in China."
+          align="left"
+        />
+        <div class="mt-6 space-y-4 text-sm leading-7 text-text-muted md:text-[15px]">
+          <p>
+            Many overseas brands need more than a single supplier. They need a sourcing partner who can coordinate multiple categories, review artwork, check production progress, and keep communication consistent.
+          </p>
+          <p>
+            Instead of sending clients from one factory to another, we built a practical system around supplier verification, project management, quality follow-up, and delivery planning.
+          </p>
+          <p>
+            The result is a workflow that helps brands move faster, reduce avoidable mistakes, and scale packaging programs with more confidence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

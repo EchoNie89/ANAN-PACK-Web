@@ -1,0 +1,44 @@
+---
+import { serviceMenuItems } from "../../data/home";
+
+interface Props {
+  forceOpen?: boolean;
+}
+
+const { forceOpen = false } = Astro.props;
+const normalizePath = (value: string) => {
+  const path = value.split("#")[0] || "/";
+  if (path === "/") return "/";
+  return path.replace(/\/+$/, "");
+};
+const currentPath = normalizePath(Astro.url.pathname);
+
+const visibilityClass =
+  "pointer-events-none invisible opacity-0 data-[open=true]:pointer-events-auto data-[open=true]:visible data-[open=true]:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:pointer-events-auto group-focus-within/nav:visible group-focus-within/nav:opacity-100";
+---
+
+<div
+  id="services-menu"
+  data-menu-panel="services"
+  data-open={forceOpen ? "true" : "false"}
+  class={`fixed left-1/2 top-[88px] z-50 w-[226px] -translate-x-1/2 overflow-hidden bg-[#fffffa] shadow-[-4px_4px_20px_rgba(0,0,0,0.1)] transition duration-200 xl:left-[calc(50%+230px)] ${visibilityClass}`}
+>
+  <nav aria-label="Services menu">
+    {
+      serviceMenuItems.map((item) => {
+        const isActive = normalizePath(item.href) === currentPath;
+
+        return (
+          <a
+            href={item.href}
+            data-menu-link
+            data-active={isActive ? "true" : "false"}
+            class="flex h-[51px] items-center justify-center bg-white px-4 text-center text-base font-bold capitalize text-black transition hover:brightness-95 data-[active=true]:bg-[#d4aa77] data-[active=true]:text-white focus:outline-none focus:ring-2 focus:ring-brand focus:ring-inset"
+          >
+            {item.title}
+          </a>
+        );
+      })
+    }
+  </nav>
+</div>

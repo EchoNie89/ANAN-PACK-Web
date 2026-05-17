@@ -1,0 +1,23 @@
+---
+interface Props {
+  value: string;
+  label: string;
+}
+
+const { value, label } = Astro.props;
+---
+
+<div class="flex items-center justify-center gap-4 px-4 py-3">
+  <div
+    class="flex size-10 shrink-0 items-center justify-center rounded-full border border-border text-ink"
+    aria-hidden="true"
+  >
+    <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M12 3v18M4 12h16M6.5 6.5l11 11M17.5 6.5l-11 11" />
+    </svg>
+  </div>
+  <div>
+    <p class="text-base font-extrabold leading-none text-ink">{value}</p>
+    <p class="mt-1 text-xs font-medium text-text-muted">{label}</p>
+  </div>
+</div>

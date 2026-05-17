@@ -1,0 +1,31 @@
+---
+import type { SolutionPageData } from "../../../data/solutions";
+import SolutionBrandingKit from "./SolutionBrandingKit.astro";
+import SolutionCTA from "./SolutionCTA.astro";
+import SolutionCaseStudy from "./SolutionCaseStudy.astro";
+import SolutionChallenges from "./SolutionChallenges.astro";
+import SolutionEco from "./SolutionEco.astro";
+import SolutionGallery from "./SolutionGallery.astro";
+import SolutionHero from "./SolutionHero.astro";
+import SolutionStrip from "./SolutionStrip.astro";
+import SolutionWhyBetter from "./SolutionWhyBetter.astro";
+
+interface Props {
+  page: SolutionPageData;
+}
+
+const { page } = Astro.props;
+---
+
+<main>
+  <SolutionHero page={page} />
+  <SolutionChallenges page={page} />
+  <SolutionStrip text={page.strips[0]} />
+  <SolutionBrandingKit page={page} />
+  <SolutionStrip text={page.strips[1]} />
+  <SolutionWhyBetter page={page} />
+  <SolutionEco page={page} />
+  <SolutionCaseStudy page={page} />
+  <SolutionGallery page={page} />
+  <SolutionCTA page={page} />
+</main>

@@ -1,0 +1,107 @@
+---
+import Button from "../../ui/Button.astro";
+import Container from "../../ui/Container.astro";
+import SanityImage from "../../ui/SanityImage.astro";
+import type { ProductImage } from "../../../data/products";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  navLabel: string;
+  heroTone?: "dark" | "warm";
+  heroAlign?: "center" | "left";
+  heroOverlay?: "default" | "labels" | "none";
+  heroButtonPlacement?: "default" | "high";
+  heroTitleLines?: string[];
+  heroImage: ProductImage;
+}
+
+const {
+  title,
+  subtitle,
+  navLabel,
+  heroTone = "dark",
+  heroAlign = "center",
+  heroOverlay = "default",
+  heroButtonPlacement = "default",
+  heroTitleLines,
+  heroImage,
+} = Astro.props;
+
+const isWarm = heroTone === "warm";
+const isLeft = heroAlign === "left";
+
+const navClass = isWarm
+  ? "text-[#4a3931]/70"
+  : "text-white/60";
+const navCurrentClass = isWarm ? "text-[#4a3931]" : "text-white";
+const navLinkClass = isWarm ? "hover:text-[#4a3931]" : "hover:text-white";
+const titleClass = isWarm ? "text-[#583e1f]" : "text-white";
+const subtitleClass = isWarm ? "text-[#4a3931]" : "text-[#fffff9]";
+const overlayClass =
+  heroOverlay === "none" || isWarm
+    ? "bg-transparent"
+    : heroOverlay === "labels"
+      ? "bg-[rgba(190,172,142,0.5)]"
+      : "bg-[linear-gradient(180deg,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0.12)_44%,rgba(0,0,0,0.18)_100%)]";
+const contentClass = isLeft
+  ? "mt-12 max-w-[712px] text-left md:absolute md:left-8 md:top-[108px] md:mt-0"
+  : `mx-auto mt-14 text-center md:absolute md:left-1/2 md:mt-0 md:w-full md:-translate-x-1/2 ${
+      heroButtonPlacement === "high" ? "max-w-[726px] md:top-[119px]" : "max-w-[1055px] md:top-[178px]"
+    }`;
+const buttonClass = isLeft
+  ? "mt-8 flex flex-col gap-4 sm:flex-row sm:gap-10 md:absolute md:left-8 md:top-[374px] md:mt-0"
+  : `mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-10 md:absolute md:left-1/2 ${
+      heroButtonPlacement === "high" ? "md:top-[319px]" : "md:top-[374px]"
+    } md:mt-0 md:-translate-x-1/2`;
+---
+
+<section class="relative isolate overflow-hidden bg-ink text-white md:h-[474px]">
+  <SanityImage
+    image={heroImage}
+    class="absolute inset-0 -z-20 size-full object-cover"
+    loading="eager"
+    sizes="100vw"
+  />
+  <div class={`absolute inset-0 -z-10 ${overlayClass}`}></div>
+
+  <Container class="relative min-h-[520px] !max-w-[1200px] py-8 md:h-[474px] md:min-h-0 md:py-0">
+    <nav class={`flex flex-wrap items-center text-xs capitalize md:absolute md:left-8 md:top-[41px] md:text-sm ${navClass}`} aria-label="Breadcrumb">
+      <a href="/home" class={navLinkClass}>Home</a>
+      <span class="px-2 md:px-3">&gt;</span>
+      <a href="/home#products" class={navLinkClass}>Products</a>
+      <span class="px-2 md:px-3">&gt;</span>
+      <span class={navCurrentClass}>{navLabel}</span>
+    </nav>
+
+    <div class={contentClass}>
+      <h1 class={`font-display text-[32px] font-black leading-[1.15] tracking-tight md:text-[40px] md:leading-[51px] ${titleClass}`}>
+        {
+          heroTitleLines?.length
+            ? heroTitleLines.map((line, index) => (
+                <span class="block">
+                  {line}{index < heroTitleLines.length - 1 ? " " : ""}
+                </span>
+              ))
+            : title
+        }
+      </h1>
+      {
+        subtitle && (
+          <p class={`mt-3 max-w-[1055px] text-base font-medium leading-6 md:text-[22px] md:leading-6 ${isLeft ? "" : "mx-auto"} ${subtitleClass}`}>
+            {subtitle}
+          </p>
+        )
+      }
+    </div>
+
+    <div class={buttonClass}>
+      <Button href="/contact-us" variant="soft" class="h-10 w-full max-w-[220px] !px-4 !py-0 text-sm font-semibold !normal-case !tracking-normal shadow-[0_4px_2px_rgba(0,0,0,0.25)] sm:w-[195px] md:text-base">
+        Request A Quote
+      </Button>
+      <Button href="/contact-us" variant="soft" class="h-10 w-full max-w-[220px] !px-4 !py-0 text-sm font-semibold !normal-case !tracking-normal shadow-[0_4px_2px_rgba(0,0,0,0.25)] sm:w-[195px] md:text-base">
+        WhatsApp Us
+      </Button>
+    </div>
+  </Container>
+</section>

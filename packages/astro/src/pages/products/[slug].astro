@@ -1,0 +1,27 @@
+---
+import Footer from "../../components/sections/Footer.astro";
+import Header from "../../components/sections/Header.astro";
+import ProductPage from "../../components/sections/products/ProductPage.astro";
+import { getProductBySlug, productPages } from "../../data/products";
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return productPages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const product = page ?? getProductBySlug(Astro.params.slug ?? "");
+---
+
+{
+  product && (
+    <Layout title={product.title} description={product.metaDescription}>
+      <Header activeNav="Products" />
+      <ProductPage page={product} />
+      <Footer />
+    </Layout>
+  )
+}

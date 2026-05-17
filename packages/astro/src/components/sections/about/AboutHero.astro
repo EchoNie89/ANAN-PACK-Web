@@ -1,0 +1,52 @@
+---
+import Container from "../../ui/Container.astro";
+
+const menuItems = [
+  { label: "Our Story", href: "#our-story", active: true },
+  { label: "Why Choose Us", href: "#why-choose-us" },
+  { label: "Contact Us", href: "#about-contact-cta" },
+] as const;
+---
+
+<section class="relative overflow-hidden bg-page-muted">
+  <img
+    src="/images/about/about-hero.png"
+    alt="Premium packaging collection arranged in a modern showroom"
+    class="absolute inset-0 size-full object-cover object-center"
+    loading="eager"
+    decoding="async"
+  />
+  <div class="absolute inset-0 bg-white/5"></div>
+  <Container class="!max-w-[1200px] px-4 py-20 sm:px-6 md:py-24 lg:min-h-[474px] lg:px-8 lg:py-28">
+    <div>
+      <div class="max-w-[530px] rounded-soft bg-white/54 p-6 backdrop-blur-[2px] lg:mt-12 lg:bg-transparent lg:p-0 lg:backdrop-blur-0">
+        <h1 class="font-display text-4xl font-black leading-tight tracking-[-0.03em] text-[#111827] md:text-5xl">
+          Your Packaging Supply Chain Partner In China
+        </h1>
+        <p class="mt-5 max-w-[530px] text-base leading-8 text-[#4b5563]">
+          We help apparel, home, and lifestyle brands manage packaging sourcing, production coordination, quality control, and delivery through one reliable system.
+        </p>
+      </div>
+
+      <nav
+        class="mt-10 overflow-hidden rounded-none bg-surface-panel shadow-menu lg:absolute lg:left-[calc(50%+378px)] lg:top-0 lg:mt-0 lg:w-[226px] lg:-translate-x-1/2"
+        aria-label="About page menu"
+      >
+        {
+          menuItems.map((item) => (
+            <a
+              href={item.href}
+              class={`flex min-h-[51px] items-center justify-center px-5 text-center text-base font-bold transition ${
+                item.active
+                  ? "bg-nav-active text-white"
+                  : "bg-surface-panel text-black hover:bg-brand-soft/55"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+  </Container>
+</section>

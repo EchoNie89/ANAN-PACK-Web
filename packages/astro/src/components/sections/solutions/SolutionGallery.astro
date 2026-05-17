@@ -1,0 +1,33 @@
+---
+import Container from "../../ui/Container.astro";
+import type { SolutionPageData } from "../../../data/solutions";
+
+interface Props {
+  page: SolutionPageData;
+}
+
+const { page } = Astro.props;
+---
+
+<section class="bg-white py-10 md:py-14">
+  <Container class="!max-w-[1200px]">
+    <div class="grid gap-5 md:grid-cols-2 md:gap-6">
+      {
+        page.gallery.map((item) => (
+          <figure class="group relative overflow-hidden rounded-sm bg-surface-muted">
+            <img
+              src={item.image}
+              alt={item.alt}
+              class="aspect-[1.5] w-full object-cover transition duration-500 group-hover:scale-[1.025]"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="absolute bottom-3 right-3 flex size-5 items-center justify-center rounded-full bg-white/75 text-xs font-bold text-text-muted">
+              +
+            </span>
+          </figure>
+        ))
+      }
+    </div>
+  </Container>
+</section>

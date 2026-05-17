@@ -1,0 +1,42 @@
+---
+import Container from "../../ui/Container.astro";
+import { delivery } from "../../../data/services";
+---
+
+<section class="relative isolate overflow-hidden bg-[#f6f6f6] py-16 md:py-20">
+  <img
+    src="/images/services/delivery-bg.png"
+    alt=""
+    class="pointer-events-none absolute bottom-28 left-1/2 z-0 w-full max-w-5xl -translate-x-1/2 opacity-30"
+    loading="lazy"
+    decoding="async"
+  />
+  <Container class="relative z-10 lg:!max-w-[1200px]">
+    <div class="mx-auto max-w-5xl text-center">
+      <h2 class="text-3xl font-extrabold text-ink md:text-4xl">{delivery.title}</h2>
+      <p class="mt-8 text-xl font-bold capitalize leading-8 text-text-muted md:text-2xl">
+        {delivery.subtitle}
+      </p>
+    </div>
+
+    <div class="mx-auto mt-10 max-w-6xl space-y-6 text-sm leading-7 text-text-muted">
+      {delivery.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+
+    <div class="mt-10 grid grid-cols-2 items-center gap-6 sm:grid-cols-3 lg:grid-cols-6">
+      {
+        delivery.partners.map((partner) => (
+          <div class="flex h-16 items-center justify-center">
+            <img
+              src={partner.image}
+              alt={`${partner.name} logistics partner logo`}
+              class="max-h-12 max-w-[130px] object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</section>

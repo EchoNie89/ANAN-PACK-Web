@@ -1,0 +1,30 @@
+---
+import type { ProductImage } from "../../data/products";
+
+interface Props {
+  image: ProductImage;
+  class?: string;
+  loading?: "eager" | "lazy";
+  sizes?: string;
+}
+
+const {
+  image,
+  class: className = "",
+  loading = "lazy",
+  sizes,
+} = Astro.props;
+
+// Sanity handoff: keep `image.sanityKey` stable so this component can later
+// switch from local `src` values to Sanity image URL generation in one place.
+---
+
+<img
+  src={image.src}
+  alt={image.alt}
+  class={className}
+  loading={loading}
+  decoding="async"
+  sizes={sizes}
+  data-sanity-key={image.sanityKey}
+/>

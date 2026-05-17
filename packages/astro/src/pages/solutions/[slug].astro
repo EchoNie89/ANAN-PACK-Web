@@ -1,0 +1,27 @@
+---
+import Footer from "../../components/sections/Footer.astro";
+import Header from "../../components/sections/Header.astro";
+import SolutionPage from "../../components/sections/solutions/SolutionPage.astro";
+import { getSolutionBySlug, solutionPages } from "../../data/solutions";
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return solutionPages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const solution = page ?? getSolutionBySlug(Astro.params.slug ?? "");
+---
+
+{
+  solution && (
+    <Layout title={solution.title} description={solution.metaDescription}>
+      <Header activeNav="Solutions" />
+      <SolutionPage page={solution} />
+      <Footer />
+    </Layout>
+  )
+}

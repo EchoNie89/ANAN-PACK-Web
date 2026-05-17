@@ -1,0 +1,60 @@
+---
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+import SymbolIcon from "../ui/SymbolIcon.astro";
+
+interface Props {
+  id?: string;
+  title: string;
+  href: string;
+  buttonLabel: string;
+  description?: string;
+  note?: string;
+  tone?: "tan" | "soft";
+  class?: string;
+}
+
+const {
+  id,
+  title,
+  href,
+  buttonLabel,
+  description,
+  note,
+  tone = "tan",
+  class: className = "",
+} = Astro.props;
+
+const toneClass =
+  tone === "soft"
+    ? "border border-border bg-surface"
+    : "bg-brand-soft/80";
+---
+
+<section id={id} class={`py-10 md:py-14 ${className}`}>
+  <Container class="!max-w-[1200px]">
+    <div class={`rounded-soft px-6 py-7 md:px-10 md:py-8 ${toneClass}`}>
+      <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+        <div class="max-w-3xl">
+          <h2 class="text-2xl font-extrabold tracking-tight text-ink md:text-[28px]">
+            {title}
+          </h2>
+          {description && <p class="mt-3 text-sm leading-6 text-text-muted md:text-base">{description}</p>}
+        </div>
+        <div class="flex flex-col items-start gap-3 lg:items-end">
+          <Button href={href} variant="dark" class="px-7 py-3 text-sm normal-case tracking-normal">
+            {buttonLabel}
+          </Button>
+          {
+            note && (
+              <p class="inline-flex items-center gap-2 text-xs text-text-muted">
+                <SymbolIcon name="clock" class="size-4" />
+                {note}
+              </p>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

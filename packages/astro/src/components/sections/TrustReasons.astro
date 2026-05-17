@@ -1,0 +1,33 @@
+---
+import Container from "../ui/Container.astro";
+import IconFeature from "../ui/IconFeature.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+import { trustReasons } from "../../data/home";
+---
+
+<section id="trust" class="bg-surface-muted py-16 md:py-20">
+  <Container>
+    <SectionTitle title="Why Trust Us?" />
+    <div class="mt-10 overflow-hidden rounded-card border border-border bg-white p-4 shadow-card md:p-5">
+      <div class="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+        <div class="overflow-hidden rounded-panel bg-surface-muted">
+          <img
+            src="/images/home/trust-qc.png"
+            alt="Quality control inspection for custom hang tags"
+            class="aspect-[1.08/1] size-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="px-1 py-2 md:px-4">
+          <h2 class="max-w-md text-2xl font-extrabold leading-tight text-ink md:text-3xl">
+            We Manage The Risk. You Build The Brand.
+          </h2>
+          <div class="mt-8 grid gap-7">
+            {trustReasons.map((item) => <IconFeature {...item} variant="detailed" />)}
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

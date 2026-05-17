@@ -1,0 +1,93 @@
+---
+interface Props {
+  icon: "factory" | "clock" | "percent" | "cubes" | "shield" | "palette" | "package";
+  title: string;
+  description: string;
+  variant?: "simple" | "detailed";
+}
+
+const { icon, title, description, variant = "simple" } = Astro.props;
+const iconWrap =
+  variant === "detailed"
+    ? "flex size-14 shrink-0 items-center justify-center rounded-full bg-surface-muted text-ink"
+    : "mx-auto mb-5 flex size-14 items-center justify-center text-ink";
+---
+
+<article
+  class={variant === "detailed" ? "flex gap-5" : "text-center"}
+>
+  <div class={iconWrap} aria-hidden="true">
+    {
+      icon === "factory" && (
+        <svg viewBox="0 0 48 48" class="size-10" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 36h36M10 36V18l10 5v-5l10 5v-5l8 4v14" />
+          <path d="M14 36v-7h6v7M26 36v-7h6v7M12 14h10" />
+        </svg>
+      )
+    }
+    {
+      icon === "clock" && (
+        <svg viewBox="0 0 48 48" class="size-10" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="24" cy="24" r="16" />
+          <path d="M24 13v12l8 5M12 11l4-4M36 11l-4-4" />
+        </svg>
+      )
+    }
+    {
+      icon === "percent" && (
+        <svg viewBox="0 0 48 48" class="size-10" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 36 34 12" />
+          <circle cx="16" cy="16" r="5" />
+          <circle cx="32" cy="32" r="5" />
+          <path d="M8 8h32v32H8z" />
+        </svg>
+      )
+    }
+    {
+      icon === "cubes" && (
+        <svg viewBox="0 0 48 48" class="size-10" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M8 18 18 12l10 6-10 6-10-6zM28 18l10-6 6 4v12l-10 6-6-4V18z" />
+          <path d="M8 18v12l10 6 10-6V18M18 24v12M34 24v10" />
+        </svg>
+      )
+    }
+    {
+      icon === "shield" && (
+        <svg viewBox="0 0 48 48" class="size-8" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M24 6 38 12v10c0 9-5.8 16.2-14 20-8.2-3.8-14-11-14-20V12l14-6z" />
+          <path d="m17 24 5 5 10-12" />
+        </svg>
+      )
+    }
+    {
+      icon === "palette" && (
+        <svg viewBox="0 0 48 48" class="size-8" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M24 7c-9.4 0-17 6.8-17 15.2 0 6.5 4.9 12 11.6 14.2 2.1.7 2.9-.4 2.9-1.9v-2.1c0-1.6 1.3-2.9 2.9-2.9H28c7.2 0 13-5 13-11.1C41 12.1 33.4 7 24 7z" />
+          <circle cx="16" cy="19" r="2" />
+          <circle cx="23" cy="15" r="2" />
+          <circle cx="31" cy="19" r="2" />
+        </svg>
+      )
+    }
+    {
+      icon === "package" && (
+        <svg viewBox="0 0 48 48" class="size-8" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m8 16 16-8 16 8-16 8-16-8zM8 16v16l16 8 16-8V16" />
+          <path d="M24 24v16M16 12l16 8" />
+        </svg>
+      )
+    }
+  </div>
+  <div>
+    <h3
+      class={variant === "detailed" ? "text-base font-extrabold text-ink" : "text-sm font-extrabold uppercase tracking-[0.03em] text-ink"}
+    >
+      {title}
+    </h3>
+    <p
+      class={variant === "detailed" ? "mt-2 text-sm leading-6 text-text-muted" : "mx-auto mt-3 max-w-64 text-xs leading-6 text-text-muted"}
+    >
+      {description}
+    </p>
+  </div>
+</article>

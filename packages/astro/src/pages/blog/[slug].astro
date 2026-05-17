@@ -1,0 +1,46 @@
+---
+import Footer from "../../components/sections/Footer.astro";
+import Header from "../../components/sections/Header.astro";
+import BlogPostPage from "../../components/sections/blog/BlogPostPage.astro";
+import { blogArticles, getBlogArticleBySlug } from "../../data/blog";
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return blogArticles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const currentArticle = article ?? getBlogArticleBySlug(Astro.params.slug ?? "");
+
+const currentIndex = currentArticle
+  ? blogArticles.findIndex((entry) => entry.slug === currentArticle.slug)
+  : -1;
+
+const previousArticle = currentIndex > 0 ? blogArticles[currentIndex - 1] : undefined;
+const nextArticle =
+  currentIndex >= 0 && currentIndex < blogArticles.length - 1
+    ? blogArticles[currentIndex + 1]
+    : undefined;
+
+const recentArticles = currentArticle
+  ? blogArticles.filter((entry) => entry.slug !== currentArticle.slug).slice(0, 5)
+  : blogArticles.slice(0, 5);
+---
+
+{
+  currentArticle && (
+    <Layout title={`${currentArticle.title} | Tagora Blog`} description={currentArticle.metaDescription}>
+      <Header activeNav="Blog" />
+      <BlogPostPage
+        article={currentArticle}
+        previousArticle={previousArticle}
+        nextArticle={nextArticle}
+        recentArticles={recentArticles}
+      />
+      <Footer />
+    </Layout>
+  )
+}

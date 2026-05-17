@@ -1,0 +1,100 @@
+---
+import { getBlogCategory } from "../../../data/blog";
+import type { BlogArticle } from "../../../data/blog";
+
+interface Props {
+  article: BlogArticle;
+  previousArticle?: BlogArticle;
+  nextArticle?: BlogArticle;
+}
+
+const { article, previousArticle, nextArticle } = Astro.props;
+const categoryLabel = getBlogCategory(article.category)?.label ?? article.category;
+---
+
+<article>
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-text-muted">
+    <span class="font-semibold uppercase tracking-[0.12em] text-brand">
+      {categoryLabel}
+    </span>
+    <span>{new Date(`${article.publishedAt}T00:00:00`).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}</span>
+    <span>{article.readTime}</span>
+  </div>
+
+  <div class="mt-8 space-y-5 text-base leading-8 text-text-muted">
+    {article.lead.map((paragraph) => <p>{paragraph}</p>)}
+  </div>
+
+  <div class="mt-10 space-y-10">
+    {
+      article.sections.map((section) => (
+        <section class="space-y-5">
+          {section.title && <h2 class="text-2xl font-bold text-ink">{section.title}</h2>}
+          {section.image && (
+            <figure class="overflow-hidden rounded-soft bg-surface-muted">
+              <img
+                src={section.image.src}
+                alt={section.image.alt}
+                class="w-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+              {section.image.caption && <figcaption class="px-4 py-3 text-sm leading-6 text-text-muted">{section.image.caption}</figcaption>}
+            </figure>
+          )}
+          {section.paragraphs?.map((paragraph) => (
+            <p class="text-base leading-8 text-text-muted">{paragraph}</p>
+          ))}
+          {
+            section.bullets && (
+              <ul class="space-y-3 pl-6 text-base leading-8 text-text-muted marker:text-brand">
+                {section.bullets.map((bullet) => <li>{bullet}</li>)}
+              </ul>
+            )
+          }
+        </section>
+      ))
+    }
+  </div>
+
+  <div class="mt-12 flex items-center gap-3">
+    <span class="text-sm font-semibold uppercase tracking-[0.12em] text-text-main">Share</span>
+    <a href="#" aria-label="Share on Facebook" class="flex size-9 items-center justify-center rounded bg-black/10 text-text-main transition hover:bg-brand hover:text-white">f</a>
+    <a href="#" aria-label="Share on Instagram" class="flex size-9 items-center justify-center rounded bg-black/10 text-text-main transition hover:bg-brand hover:text-white">◎</a>
+    <a href="#" aria-label="Share on X" class="flex size-9 items-center justify-center rounded bg-black/10 text-text-main transition hover:bg-brand hover:text-white">𝕏</a>
+    <a href="#" aria-label="Share on LinkedIn" class="flex size-9 items-center justify-center rounded bg-black/10 text-text-main transition hover:bg-brand hover:text-white">in</a>
+  </div>
+
+  <div class="mt-12 flex flex-col gap-4 border-t border-border pt-6 text-sm font-extrabold uppercase tracking-[0.08em] text-ink sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      {
+        previousArticle ? (
+          <a href={`/blog/${previousArticle.slug}`} class="inline-flex items-center gap-3 transition hover:text-brand">
+            <span aria-hidden="true">←</span>
+            <span>Previous Post</span>
+          </a>
+        ) : (
+          <span class="inline-flex items-center gap-3 text-text-muted">
+            <span aria-hidden="true">←</span>
+            <span>Previous Post</span>
+          </span>
+        )
+      }
+    </div>
+    <div>
+      {
+        nextArticle ? (
+          <a href={`/blog/${nextArticle.slug}`} class="inline-flex items-center gap-3 transition hover:text-brand">
+            <span>Next Post</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        ) : (
+          <span class="inline-flex items-center gap-3 text-text-muted">
+            <span>Next Post</span>
+            <span aria-hidden="true">→</span>
+          </span>
+        )
+      }
+    </div>
+  </div>
+</article>

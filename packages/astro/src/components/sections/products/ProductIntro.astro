@@ -1,0 +1,32 @@
+---
+import Container from '../../ui/Container.astro';
+
+interface Props {
+  heading: string;
+  overview: string;
+}
+
+const { heading, overview } = Astro.props;
+const overviewParagraphs = overview
+  .split(/\n+/)
+  .map((item) => item.trim())
+  .filter(Boolean);
+---
+
+<section class="bg-white py-14 md:py-16">
+  <Container class="!max-w-[1200px]">
+    <div class="mx-auto max-w-5xl text-center">
+      <h2
+        class="text-2xl font-extrabold tracking-[0.03em] text-text-main md:text-[32px]"
+      >
+        {heading}
+      </h2>
+      <div class="mx-auto mt-6 h-px w-24 bg-border"></div>
+    </div>
+    <div
+      class="mx-auto mt-8 grid max-w-[1160px] gap-3 text-left text-sm leading-7 text-text-muted md:mt-9 md:text-justify md:text-[15px]"
+    >
+      {overviewParagraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </Container>
+</section>

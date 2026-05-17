@@ -1,0 +1,51 @@
+---
+import type { BlogCategory } from "../../../data/blog";
+import Container from "../../ui/Container.astro";
+
+interface Props {
+  categories: BlogCategory[];
+}
+
+const { categories } = Astro.props;
+---
+
+<div class="relative -mt-10 z-10 pb-6 md:-mt-14 md:pb-10">
+  <Container class="!max-w-[1200px]">
+    <div class="grid gap-4 md:grid-cols-3">
+      {
+        categories.map((category) => (
+          <div class="rounded-soft border border-white/40 bg-white/50 px-5 py-5 text-center shadow-soft backdrop-blur md:px-6 md:py-6">
+            <div class="mx-auto flex size-14 items-center justify-center rounded-full bg-white/80 text-brand shadow-card">
+              {
+                category.icon === "swatch" ? (
+                  <svg viewBox="0 0 24 24" class="size-7" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path d="M4 16.5a3.5 3.5 0 1 0 3.7-3.5h4.5a4.8 4.8 0 1 0 0-9.5A5.7 5.7 0 0 0 6.8 9" />
+                    <path d="m8 7 8 10" />
+                  </svg>
+                ) : category.icon === "process" ? (
+                  <svg viewBox="0 0 24 24" class="size-7" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <rect x="3" y="4" width="7" height="6" rx="1.5" />
+                    <rect x="14" y="4" width="7" height="6" rx="1.5" />
+                    <rect x="8.5" y="14" width="7" height="6" rx="1.5" />
+                    <path d="M10 7h4m-2 3v4" />
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 24 24" class="size-7" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path d="M4 18h16" />
+                    <path d="M6 15.5 10 11l3 2.5 5-6" />
+                    <circle cx="6" cy="15.5" r="1" fill="currentColor" stroke="none" />
+                    <circle cx="10" cy="11" r="1" fill="currentColor" stroke="none" />
+                    <circle cx="13" cy="13.5" r="1" fill="currentColor" stroke="none" />
+                    <circle cx="18" cy="7.5" r="1" fill="currentColor" stroke="none" />
+                  </svg>
+                )
+              }
+            </div>
+            <h2 class="mt-4 text-lg font-semibold text-text-main">{category.label}</h2>
+            <p class="mt-2 text-sm leading-6 text-text-muted">{category.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</div>

@@ -1,0 +1,16 @@
+---
+import Footer from "../components/sections/Footer.astro";
+import Header from "../components/sections/Header.astro";
+import SolutionPage from "../components/sections/solutions/SolutionPage.astro";
+import { defaultSolution } from "../data/solutions";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title={defaultSolution.title}
+  description={defaultSolution.metaDescription}
+>
+  <Header activeNav="Solutions" />
+  <SolutionPage page={defaultSolution} />
+  <Footer />
+</Layout>

@@ -1,0 +1,39 @@
+---
+import Footer from "../components/sections/Footer.astro";
+import Header from "../components/sections/Header.astro";
+import PageCTA from "../components/sections/PageCTA.astro";
+import AboutHero from "../components/sections/about/AboutHero.astro";
+import AboutNetwork from "../components/sections/about/AboutNetwork.astro";
+import AboutReasons from "../components/sections/about/AboutReasons.astro";
+import AboutStory from "../components/sections/about/AboutStory.astro";
+import AboutSustainability from "../components/sections/about/AboutSustainability.astro";
+import AboutTeam from "../components/sections/about/AboutTeam.astro";
+import AboutValues from "../components/sections/about/AboutValues.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="About Us | Tagora Packaging & Trims"
+  description="Learn how Tagora coordinates sourcing, factory management, quality control, and delivery for growing packaging programs."
+>
+  <Header activeNav="About Us" />
+  <main>
+    <AboutHero />
+    <AboutStory />
+    <AboutReasons />
+    <AboutTeam />
+    <AboutSustainability />
+    <AboutValues />
+    <AboutNetwork />
+    <PageCTA
+      id="about-contact-cta"
+      title="Have A Packaging Project In Mind?"
+      description="Tell us about your product category, quantity, and packaging requirements. Our team will help you plan the next step."
+      buttonLabel="Contact Your Team"
+      href="/contact-us"
+      note="We'll reply within 6 hours."
+      class="bg-page-muted"
+    />
+  </main>
+  <Footer />
+</Layout>

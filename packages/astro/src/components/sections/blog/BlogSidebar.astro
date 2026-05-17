@@ -1,0 +1,41 @@
+---
+import type { BlogArticle } from "../../../data/blog";
+
+interface Props {
+  articles: BlogArticle[];
+}
+
+const { articles } = Astro.props;
+---
+
+<aside class="lg:sticky lg:top-28">
+  <div class="rounded-soft border border-border/70 bg-surface-muted/65 p-5">
+    <h2 class="text-lg font-semibold text-ink">Recent Posts</h2>
+    <div class="mt-5 grid gap-4">
+      {
+        articles.map((article) => (
+          <a
+            href={`/blog/${article.slug}`}
+            class="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 rounded-soft bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+          >
+            <img
+              src={article.image}
+              alt={article.imageAlt}
+              class="h-20 w-full rounded object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="min-w-0">
+              <p class="text-xs font-semibold uppercase tracking-[0.12em] text-brand">
+                {new Date(`${article.publishedAt}T00:00:00`).toLocaleDateString("en-CA")}
+              </p>
+              <p class="mt-2 text-sm font-medium leading-6 text-text-main transition group-hover:text-brand">
+                {article.title}
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</aside>

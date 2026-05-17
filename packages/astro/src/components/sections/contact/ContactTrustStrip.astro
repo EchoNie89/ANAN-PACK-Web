@@ -1,0 +1,25 @@
+---
+import Container from "../../ui/Container.astro";
+import SymbolIcon from "../../ui/SymbolIcon.astro";
+import { contactTrustItems } from "../../../data/company";
+---
+
+<section class="bg-page-muted pb-8 md:pb-10">
+  <Container class="!max-w-[1200px]">
+    <div class="rounded-soft border border-border bg-white px-5 py-6 shadow-float md:px-8 md:py-7">
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {
+          contactTrustItems.map((item, index) => (
+            <article class={`flex flex-col items-center text-center ${index !== 0 ? "xl:border-l xl:border-border" : ""} xl:px-6`}>
+              <div class="flex size-16 items-center justify-center rounded-full bg-brand-soft/25 text-brand">
+                <SymbolIcon name={item.icon} class="size-7" />
+              </div>
+              <h3 class="mt-4 text-lg font-bold text-[#0a0a0a]">{item.title}</h3>
+              <p class="mt-1 text-sm font-medium text-[#6a7282]">{item.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>

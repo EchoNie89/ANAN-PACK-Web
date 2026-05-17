@@ -1,0 +1,1688 @@
+{
+  "source": {
+    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=21429-1823&t=wllXfbMu5Hfh6Jfh-4",
+    "fileKey": "SzOlgqIXHy4MBI2QXLE08L",
+    "nodeId": "21429:1823",
+    "fileName": "独立站设计-吊牌网站 (Copy)",
+    "lastModified": "2026-05-17T07:30:54Z"
+  },
+  "structure": {
+    "nodeId": "21429:1823",
+    "nodeName": "Frame 1272636887",
+    "nodeType": "FRAME",
+    "children": [
+      {
+        "nodeId": "19723:1814",
+        "nodeName": "Product Showcase",
+        "nodeType": "TEXT",
+        "children": [],
+        "layout": {
+          "width": 1201,
+          "height": 39
+        },
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#333333",
+            "opacity": 1
+          }
+        ]
+      },
+      {
+        "nodeId": "21429:1819",
+        "nodeName": "Group 1272636942",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19723:1816",
+            "nodeName": "Woven Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 162,
+              "height": 37
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19723:1819",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19725:2217",
+            "nodeName": "Damask Woven Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 196,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2219",
+            "nodeName": "Satin Woven Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 170,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19723:1821",
+            "nodeName": "Rectangle 87",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19725:2221",
+            "nodeName": "Taffeta Woven Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 188,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19723:1823",
+            "nodeName": "Rectangle 87",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19725:2223",
+            "nodeName": "High Density Woven Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 237,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19723:1825",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 361
+        }
+      },
+      {
+        "nodeId": "21429:1820",
+        "nodeName": "Group 1272636943",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19725:2227",
+            "nodeName": "Satin Printed Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 174,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2233",
+            "nodeName": "Cotton Printed Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 189,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2237",
+            "nodeName": "Color Printed Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 177,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19723:1828",
+            "nodeName": "Printed Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 167,
+              "height": 37
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19723:1831",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19723:1833",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19723:1835",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19723:1837",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19725:2235",
+            "nodeName": "Nylon Care Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 158,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 367
+        }
+      },
+      {
+        "nodeId": "21429:1821",
+        "nodeName": "Group 1272636944",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19725:2247",
+            "nodeName": "Metallic Transfer Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 208,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19723:1842",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19723:1844",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19723:1846",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19723:1848",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19725:2245",
+            "nodeName": "Care Heat Transfer Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 227,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2241",
+            "nodeName": "Neck Heat Transfer Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 230,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2249",
+            "nodeName": "Silicone Transfer Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 209,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 311
+        }
+      },
+      {
+        "nodeId": "21429:1822",
+        "nodeName": "Group 1272636945",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19725:2267",
+            "nodeName": "PU Leather Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 158,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2269",
+            "nodeName": "Debossed Leather Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 221,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2265",
+            "nodeName": "Genuine Leather Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 206,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2271",
+            "nodeName": "Foil Stamped Leather Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 247,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "21428:1800",
+            "nodeName": "Leather Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 172,
+              "height": 37
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "21428:1803",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "21428:1805",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "21428:1807",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "21428:1809",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 362
+        }
+      },
+      {
+        "nodeId": "21429:1818",
+        "nodeName": "Group 1272636941",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19725:2672",
+            "nodeName": "Velcro Backed PVC Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 228,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2670",
+            "nodeName": "Sew-on PVC Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 174,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2668",
+            "nodeName": "Soft Rubber Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 166,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2666",
+            "nodeName": "3D PVC Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 129,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2655",
+            "nodeName": "PVC / Rubber Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 237,
+              "height": 37
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2658",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19725:2660",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19725:2662",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "19725:2664",
+            "nodeName": "Rectangle 86",
+            "nodeType": "VECTOR",
+            "children": [],
+            "layout": {
+              "width": 270,
+              "height": 269
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 368
+        }
+      },
+      {
+        "nodeId": "21428:1813",
+        "nodeName": "Group 1272636940",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19725:2675",
+            "nodeName": "Embroidered Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 231,
+              "height": 37
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "21428:1812",
+            "nodeName": "Group 1272636939",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19725:2678",
+                "nodeName": "Rectangle 86",
+                "nodeType": "VECTOR",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19725:2688",
+                "nodeName": "3D Puff Embroidery",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 171,
+                  "height": 22
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#666666",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 270,
+              "height": 311
+            }
+          },
+          {
+            "nodeId": "19725:2679",
+            "nodeName": "Group 1272636717",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19725:2680",
+                "nodeName": "Rectangle 86",
+                "nodeType": "VECTOR",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19725:2690",
+                "nodeName": "Patch Style Embroidery Label",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 256,
+                  "height": 22
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#666666",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 270,
+              "height": 311
+            }
+          },
+          {
+            "nodeId": "19725:2681",
+            "nodeName": "Group 1272636718",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19725:2682",
+                "nodeName": "Rectangle 86",
+                "nodeType": "VECTOR",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19725:2692",
+                "nodeName": "文档缺失",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 72,
+                  "height": 22
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#666666",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 270,
+              "height": 311
+            }
+          },
+          {
+            "nodeId": "21428:1811",
+            "nodeName": "Group 1272636938",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19725:2683",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19725:2684",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19725:2686",
+                "nodeName": "Flat Embroidery Labels",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 200,
+                  "height": 22
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#666666",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 270,
+              "height": 311
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 368
+        }
+      },
+      {
+        "nodeId": "19725:2697",
+        "nodeName": "Group 1272636722",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19725:2698",
+            "nodeName": "Size & Care Labels",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 214,
+              "height": 37
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19725:2699",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19725:2700",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19725:2701",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19725:2702",
+                    "nodeName": "Printed Care Labels",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 171,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#666666",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19725:2703",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19725:2704",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19725:2705",
+                    "nodeName": "clothing care labels",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 182,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#666666",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19725:2706",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19725:2707",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19725:2708",
+                    "nodeName": "Size Labels",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 99,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#666666",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19725:2709",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19725:2710",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "21428:1814",
+                    "nodeName": "Woven Size labels",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 163,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#666666",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 311
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 368
+        }
+      }
+    ],
+    "layout": {
+      "mode": "VERTICAL",
+      "itemSpacing": 40,
+      "width": 1201,
+      "height": 2824
+    }
+  },
+  "texts": [
+    {
+      "nodeId": "19723:1814",
+      "nodeName": "Product Showcase",
+      "text": "Product Showcase",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 32,
+        "fontWeight": 800,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19723:1816",
+      "nodeName": "Woven Labels",
+      "text": "Woven Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19725:2217",
+      "nodeName": "Damask Woven Labels",
+      "text": "Damask Woven Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2219",
+      "nodeName": "Satin Woven Labels",
+      "text": "Satin Woven Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2221",
+      "nodeName": "Taffeta Woven Labels",
+      "text": "Taffeta Woven Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2223",
+      "nodeName": "High Density Woven Labels",
+      "text": "High Density Woven Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2227",
+      "nodeName": "Satin Printed Labels",
+      "text": "Satin Printed Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2233",
+      "nodeName": "Cotton Printed Labels",
+      "text": "Cotton Printed Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2237",
+      "nodeName": "Color Printed Labels",
+      "text": "Color Printed Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19723:1828",
+      "nodeName": "Printed Labels",
+      "text": "Printed Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19725:2235",
+      "nodeName": "Nylon Care Labels",
+      "text": "Nylon Care Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2247",
+      "nodeName": "Metallic Transfer Labels",
+      "text": "Metallic Transfer Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2245",
+      "nodeName": "Care Heat Transfer Labels",
+      "text": "Care Heat Transfer Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2241",
+      "nodeName": "Neck Heat Transfer Labels",
+      "text": "Neck Heat Transfer Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2249",
+      "nodeName": "Silicone Transfer Labels",
+      "text": "Silicone Transfer Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2267",
+      "nodeName": "PU Leather Labels",
+      "text": "PU Leather Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2269",
+      "nodeName": "Debossed Leather Labels",
+      "text": "Debossed Leather Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2265",
+      "nodeName": "Genuine Leather Labels",
+      "text": "Genuine Leather Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2271",
+      "nodeName": "Foil Stamped Leather Labels",
+      "text": "Foil Stamped Leather Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21428:1800",
+      "nodeName": "Leather Labels",
+      "text": "Leather Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19725:2672",
+      "nodeName": "Velcro Backed PVC Labels",
+      "text": "Velcro Backed PVC Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2670",
+      "nodeName": "Sew-on PVC Labels",
+      "text": "Sew-on PVC Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2668",
+      "nodeName": "Soft Rubber Labels",
+      "text": "Soft Rubber Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2666",
+      "nodeName": "3D PVC Labels",
+      "text": "3D PVC Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2655",
+      "nodeName": "PVC / Rubber Labels",
+      "text": "PVC / Rubber Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19725:2675",
+      "nodeName": "Embroidered Labels",
+      "text": "Embroidered Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19725:2688",
+      "nodeName": "3D Puff Embroidery",
+      "text": "3D Puff Embroidery",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2690",
+      "nodeName": "Patch Style Embroidery Label",
+      "text": "Patch Style Embroidery Label",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2692",
+      "nodeName": "文档缺失",
+      "text": "文档缺失",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2686",
+      "nodeName": "Flat Embroidery Labels",
+      "text": "Flat Embroidery Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2698",
+      "nodeName": "Size & Care Labels",
+      "text": "Size & Care Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19725:2702",
+      "nodeName": "Printed Care Labels",
+      "text": "Printed Care Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2705",
+      "nodeName": "clothing care labels",
+      "text": "clothing care labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19725:2708",
+      "nodeName": "Size Labels",
+      "text": "Size Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21428:1814",
+      "nodeName": "Woven Size labels",
+      "text": "Woven Size labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    }
+  ],
+  "images": [
+    {
+      "nodeId": "21429:1823",
+      "nodeName": "Frame 1272636887 (整体截图)",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/770767df-da77-4128-85f1-e09ef9fb7a95",
+      "localPath": "figma-export-showcase/images/full-selection-21429-1823.png"
+    },
+    {
+      "nodeId": "21429:1823",
+      "nodeName": "Frame 1272636887",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/770767df-da77-4128-85f1-e09ef9fb7a95",
+      "localPath": "figma-export-showcase/images/Frame-1272636887-21429-1823.png"
+    },
+    {
+      "nodeId": "19723:1819",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0b003915-41a9-460d-a0b9-6635021b41b9",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19723-1819.png"
+    },
+    {
+      "nodeId": "19723:1821",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/56f66e5e-6392-4535-903b-bedc004aadc0",
+      "localPath": "figma-export-showcase/images/Rectangle-87-19723-1821.png"
+    },
+    {
+      "nodeId": "19723:1823",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/93058a29-ead9-46c5-8be6-2933407ae842",
+      "localPath": "figma-export-showcase/images/Rectangle-87-19723-1823.png"
+    },
+    {
+      "nodeId": "19723:1825",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0ab9bb2f-e76a-4719-b681-3787146985df",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19723-1825.png"
+    },
+    {
+      "nodeId": "19723:1831",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2c15bed6-379d-452b-b490-e9ebf1ef253e",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19723-1831.png"
+    },
+    {
+      "nodeId": "19723:1833",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fc74cdea-79e0-494a-ae01-ebb432e541ff",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19723-1833.png"
+    },
+    {
+      "nodeId": "19723:1835",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/08af570b-929f-4a1a-a4d5-ddbeef8e3a52",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19723-1835.png"
+    },
+    {
+      "nodeId": "19723:1837",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/713537a7-6dce-42c4-8364-75a1465d4948",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19723-1837.png"
+    },
+    {
+      "nodeId": "19723:1842",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0d0b44a8-9583-4662-b9d1-75ad84a29a38",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19723-1842.png"
+    },
+    {
+      "nodeId": "19723:1844",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/3893ec9b-4623-4460-bd7d-6042079693ce",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19723-1844.png"
+    },
+    {
+      "nodeId": "19723:1846",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a80a2429-055e-437d-8272-5ecea37ad191",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19723-1846.png"
+    },
+    {
+      "nodeId": "19723:1848",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0f105276-4588-44dc-848d-401f9d6b8071",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19723-1848.png"
+    },
+    {
+      "nodeId": "21428:1803",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/856ef1cb-79b6-4d09-85e3-800d9495862b",
+      "localPath": "figma-export-showcase/images/Rectangle-86-21428-1803.png"
+    },
+    {
+      "nodeId": "21428:1805",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9bc07cd6-6dc2-41f4-814c-0bddb33b734e",
+      "localPath": "figma-export-showcase/images/Rectangle-86-21428-1805.png"
+    },
+    {
+      "nodeId": "21428:1807",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fc8fb71e-1d4c-4bb8-ad74-431ae220325e",
+      "localPath": "figma-export-showcase/images/Rectangle-86-21428-1807.png"
+    },
+    {
+      "nodeId": "21428:1809",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/7706c0e3-d326-4839-95f7-c65d18a02e75",
+      "localPath": "figma-export-showcase/images/Rectangle-86-21428-1809.png"
+    },
+    {
+      "nodeId": "19725:2658",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/1c1f7491-d70a-477a-9cdd-a284d0e6bac1",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19725-2658.png"
+    },
+    {
+      "nodeId": "19725:2660",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/7a880463-6cc6-431a-b37b-aa16bb044728",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19725-2660.png"
+    },
+    {
+      "nodeId": "19725:2662",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/84643761-c60f-4edd-866e-7064fa5e4dd1",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19725-2662.png"
+    },
+    {
+      "nodeId": "19725:2664",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/7a921f1f-672b-411e-a11d-84d6ab624b86",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19725-2664.png"
+    },
+    {
+      "nodeId": "19725:2678",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/8f7a93fb-f4f5-4125-a738-a206355561f7",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19725-2678.png"
+    },
+    {
+      "nodeId": "19725:2680",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/dba9e2d7-0115-4465-a120-a45eb4dea1d0",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19725-2680.png"
+    },
+    {
+      "nodeId": "19725:2682",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ff56d6e7-fdb4-4034-9272-b8ab339611e6",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19725-2682.png"
+    },
+    {
+      "nodeId": "19725:2684",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c86130a6-d230-43cc-819b-1b3192e16d20",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19725-2684.png"
+    },
+    {
+      "nodeId": "19725:2701",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/bd6cddc1-3bc6-4f24-968a-bce86b711edf",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19725-2701.png"
+    },
+    {
+      "nodeId": "19725:2704",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/de0dac60-3185-44dd-9988-ac5a2e51f388",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19725-2704.png"
+    },
+    {
+      "nodeId": "19725:2707",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/cebcf7b1-6f9f-44ab-912b-fb0b83f3bc4e",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19725-2707.png"
+    },
+    {
+      "nodeId": "19725:2710",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/bee8f07c-76e5-4c52-88a4-21d5de71da55",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19725-2710.png"
+    }
+  ]
+}

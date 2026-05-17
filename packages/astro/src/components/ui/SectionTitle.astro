@@ -1,0 +1,35 @@
+---
+import Badge from "./Badge.astro";
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  align?: "left" | "center";
+  class?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  align = "center",
+  class: className = "",
+} = Astro.props;
+
+const alignClass = align === "center" ? "mx-auto text-center" : "text-left";
+---
+
+<div class={`max-w-3xl ${alignClass} ${className}`}>
+  {eyebrow && <Badge class="mb-3">{eyebrow}</Badge>}
+  <h2 class="text-2xl font-extrabold tracking-tight text-ink md:text-3xl">
+    {title}
+  </h2>
+  {
+    description && (
+      <p class="mt-4 text-sm leading-7 text-text-muted md:text-base">
+        {description}
+      </p>
+    )
+  }
+</div>

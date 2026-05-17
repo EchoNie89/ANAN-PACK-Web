@@ -1,0 +1,52 @@
+---
+import { getBlogCategory } from "../../../data/blog";
+import type { BlogArticle } from "../../../data/blog";
+import Container from "../../ui/Container.astro";
+import PageCTA from "../PageCTA.astro";
+import BlogPageHero from "./BlogPageHero.astro";
+import BlogPostBody from "./BlogPostBody.astro";
+import BlogSidebar from "./BlogSidebar.astro";
+
+interface Props {
+  article: BlogArticle;
+  previousArticle?: BlogArticle;
+  nextArticle?: BlogArticle;
+  recentArticles: BlogArticle[];
+}
+
+const { article, previousArticle, nextArticle, recentArticles } = Astro.props;
+const categoryLabel = getBlogCategory(article.category)?.label ?? article.category;
+---
+
+<main>
+  <BlogPageHero
+    title={article.title}
+    description={article.heroSummary ?? article.excerpt}
+    backgroundImage={article.heroImage ?? article.image}
+    align={article.heroStyle ?? "center"}
+    eyebrow={categoryLabel}
+    breadcrumbs={[
+      { label: "Home", href: "/home" },
+      { label: "Blog", href: "/blog" },
+      { label: article.title },
+    ]}
+  />
+
+  <section class="py-12 md:py-16">
+    <Container class="!max-w-[1200px]">
+      <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
+        <BlogPostBody article={article} previousArticle={previousArticle} nextArticle={nextArticle} />
+        <BlogSidebar articles={recentArticles} />
+      </div>
+    </Container>
+  </section>
+
+  <PageCTA
+    title="Transform Your Brand With Stunning Packaging Solutions"
+    description="Need help turning packaging ideas into production-ready trims, tags, and brand materials? Talk to our sourcing team."
+    href="/contact-us"
+    buttonLabel="Contact an Agent Now"
+    note="We'll reply within 6 hours."
+    class="pt-0"
+  />
+</main>

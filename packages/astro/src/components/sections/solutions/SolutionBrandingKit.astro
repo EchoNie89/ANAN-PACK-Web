@@ -1,0 +1,37 @@
+---
+import Container from "../../ui/Container.astro";
+import type { SolutionPageData } from "../../../data/solutions";
+
+interface Props {
+  page: SolutionPageData;
+}
+
+const { page } = Astro.props;
+---
+
+<section class="bg-white py-14 md:py-20">
+  <Container class="!max-w-[1200px]">
+    <h2 class="text-center font-display text-xl font-black tracking-[0.02em] text-ink md:text-[28px]">
+      {page.kit.title}
+    </h2>
+    <div class="mt-10 grid gap-8 md:grid-cols-3 md:gap-10">
+      {
+        page.kit.items.map((item) => (
+          <article>
+            <img
+              src={item.image}
+              alt={item.alt}
+              class="aspect-[1.43] w-full rounded-sm object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="mt-5 text-center">
+              <h3 class="font-display text-lg font-medium text-ink md:text-xl">{item.title}</h3>
+              <p class="mx-auto mt-4 max-w-sm text-sm leading-7 text-text-muted">{item.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </Container>
+</section>

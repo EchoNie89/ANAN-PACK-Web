@@ -1,0 +1,29 @@
+---
+import type { BlogArticle } from "../../../data/blog";
+import Container from "../../ui/Container.astro";
+import BlogCard from "../../ui/BlogCard.astro";
+
+interface Props {
+  id?: string;
+  title: string;
+  description?: string;
+  articles: BlogArticle[];
+}
+
+const { id, title, description, articles } = Astro.props;
+---
+
+<section id={id} class="py-12 md:py-16">
+  <Container class="!max-w-[1200px]">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-extrabold tracking-tight text-ink md:text-[38px]">
+        {title}
+      </h2>
+      {description && <p class="mt-4 text-base leading-7 text-text-muted md:text-lg">{description}</p>}
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {articles.map((article) => <BlogCard article={article} />)}
+    </div>
+  </Container>
+</section>

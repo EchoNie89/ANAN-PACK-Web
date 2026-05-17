@@ -1,0 +1,41 @@
+---
+import Badge from "../ui/Badge.astro";
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+---
+
+<section id="case-study" class="bg-surface-muted py-16 md:py-24">
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div class="overflow-hidden rounded-panel bg-white shadow-card">
+        <img
+          src="/images/home/case-study.png"
+          alt="Kalisa integrated packaging case study set"
+          class="aspect-[1.18/1] size-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div>
+        <Badge>Case Study</Badge>
+        <div class="mt-4 h-0.5 w-12 bg-brand"></div>
+        <h2 class="mt-7 text-3xl font-extrabold leading-tight text-ink md:text-4xl">
+          Exploring how we create customized packaging solutions for brands.
+        </h2>
+        <p class="mt-6 text-sm leading-7 text-text-muted md:text-base">
+          For the luxury apparel brand Kalisa, we delivered a fully integrated accessory solution from embossed hangtags and high-density woven labels to branded tissue paper and stickers. This unified black-and-white system elevated the brand's premium identity and reduced vendor management time by 30%.
+        </p>
+        <blockquote class="mt-7 rounded-panel bg-white p-5 text-sm leading-7 text-text-muted shadow-card">
+          <span class="text-4xl font-extrabold leading-none text-brand-soft">"</span>
+          Their one-stop service transformed our fragmented supply chain into a seamless process. The consistent quality and cohesive visual language boosted our customer's perception of luxury.
+          <footer class="mt-4 font-bold text-ink">Kalisa Brand Director, USA</footer>
+        </blockquote>
+        <div class="mt-8">
+          <Button href="#contact" variant="secondary" class="bg-brand-soft/55">
+            View More Case Studies -&gt;
+          </Button>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

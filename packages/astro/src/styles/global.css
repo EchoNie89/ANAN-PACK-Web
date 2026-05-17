@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #a8753d;
+  --color-brand-dark: #81572b;
+  --color-brand-deep: #966325;
+  --color-brand-soft: #e6dbcb;
+  --color-nav-active: #d4aa77;
+  --color-ink: #1f1d1b;
+  --color-text-main: #333333;
+  --color-text-muted: #666666;
+  --color-surface: #ffffff;
+  --color-surface-panel: #fffffa;
+  --color-surface-muted: #f7f5f1;
+  --color-surface-warm: #fefcfb;
+  --color-page-muted: #f9f9f9;
+  --color-border: #e6dbcb;
+
+  --font-sans: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: Montserrat, Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  --radius-card: 20px;
+  --radius-soft: 10px;
+  --radius-panel: 12px;
+  --radius-button: 999px;
+
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-soft: 0 24px 70px rgba(45, 36, 24, 0.08);
+  --shadow-float: 0 0 12.5px rgba(0, 0, 0, 0.05);
+  --shadow-menu: -4px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--color-surface);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+
+  img,
+  svg {
+    display: block;
+  }
+}

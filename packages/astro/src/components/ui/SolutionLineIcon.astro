@@ -1,0 +1,71 @@
+---
+import type { SolutionIconName } from "../../data/solutions";
+
+interface Props {
+  icon: SolutionIconName;
+  class?: string;
+}
+
+const { icon, class: className = "" } = Astro.props;
+const classes = `size-9 text-ink ${className}`;
+---
+
+<svg viewBox="0 0 48 48" class={classes} fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  {icon === "stack" && (
+    <>
+      <path d="M12 15h24" />
+      <path d="M12 24h24" />
+      <path d="M12 33h24" />
+      <path d="M10 10h28v28H10z" />
+    </>
+  )}
+  {icon === "sample" && (
+    <>
+      <path d="M15 33c9 0 18-6 18-18" />
+      <path d="M22 12h11v11" />
+      <circle cx="16" cy="32" r="4" />
+      <path d="M29 28h7v8h-7z" />
+    </>
+  )}
+  {icon === "refresh" && (
+    <>
+      <path d="M34 18a12 12 0 1 0 2 10" />
+      <path d="M34 10v8h-8" />
+      <path d="M14 38v-8h8" />
+    </>
+  )}
+  {icon === "chat" && (
+    <>
+      <path d="M10 14h28v18H20l-8 6v-6h-2z" />
+      <path d="M17 21h14" />
+      <path d="M17 27h9" />
+    </>
+  )}
+  {icon === "shield" && (
+    <>
+      <path d="M24 6 38 12v10c0 9-5.8 16.2-14 20-8.2-3.8-14-11-14-20V12z" />
+      <path d="m17 24 5 5 10-12" />
+    </>
+  )}
+  {icon === "spark" && (
+    <>
+      <path d="M24 6 28 20l14 4-14 4-4 14-4-14-14-4 14-4z" />
+      <path d="M35 7v8" />
+      <path d="M31 11h8" />
+    </>
+  )}
+  {icon === "box" && (
+    <>
+      <path d="m8 16 16-8 16 8-16 8z" />
+      <path d="M8 16v16l16 8 16-8V16" />
+      <path d="M24 24v16" />
+      <path d="m16 12 16 8" />
+    </>
+  )}
+  {icon === "leaf" && (
+    <>
+      <path d="M39 9C22 9 11 17 11 31c0 5 4 8 9 8 12 0 19-13 19-30Z" />
+      <path d="M14 35c6-9 14-15 25-19" />
+    </>
+  )}
+</svg>

@@ -1,0 +1,18 @@
+---
+import Container from "../../ui/Container.astro";
+import { labelIntroText } from "../../../data/labelsProduct";
+---
+
+<section class="bg-white py-14 md:py-16">
+  <Container class="!max-w-[1200px]">
+    <div class="mx-auto max-w-5xl text-center">
+      <h2 class="text-2xl font-extrabold tracking-[0.03em] text-text-main md:text-[32px]">
+        What Are Custom Clothing Labels?
+      </h2>
+      <div class="mx-auto mt-6 h-px w-24 bg-border"></div>
+    </div>
+    <p class="mx-auto mt-8 max-w-[1160px] text-left text-sm leading-7 text-text-muted md:mt-9 md:text-[15px] md:text-justify">
+      {labelIntroText}
+    </p>
+  </Container>
+</section>
