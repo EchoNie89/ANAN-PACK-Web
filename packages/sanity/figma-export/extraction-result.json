@@ -1,23 +1,23 @@
 {
   "source": {
-    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=19684-403&t=wllXfbMu5Hfh6Jfh-4",
+    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=19415-1872&t=wllXfbMu5Hfh6Jfh-4",
     "fileKey": "SzOlgqIXHy4MBI2QXLE08L",
-    "nodeId": "19684:403",
+    "nodeId": "19415:1872",
     "fileName": "独立站设计-吊牌网站 (Copy)",
     "lastModified": "2026-05-18T14:36:39Z"
   },
   "structure": {
-    "nodeId": "19684:403",
-    "nodeName": "Group 1272636735",
-    "nodeType": "GROUP",
+    "nodeId": "19415:1872",
+    "nodeName": "Frame 1272636737",
+    "nodeType": "FRAME",
     "children": [
       {
-        "nodeId": "19684:404",
-        "nodeName": "Customization Options",
+        "nodeId": "19413:1736",
+        "nodeName": "Product Showcase",
         "nodeType": "TEXT",
         "children": [],
         "layout": {
-          "width": 386,
+          "width": 311,
           "height": 39
         },
         "fills": [
@@ -29,277 +29,782 @@
         ]
       },
       {
-        "nodeId": "19684:418",
-        "nodeName": "Group 1272636735",
+        "nodeId": "19415:1855",
+        "nodeName": "Group 1272636720",
         "nodeType": "GROUP",
         "children": [
           {
-            "nodeId": "19684:419",
-            "nodeName": "Frame 1272636658",
-            "nodeType": "FRAME",
-            "children": [
-              {
-                "nodeId": "19684:420",
-                "nodeName": "image 14",
-                "nodeType": "RECTANGLE",
-                "children": [],
-                "layout": {
-                  "width": 386,
-                  "height": 258
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#000000",
-                    "opacity": 0.6000000238418579
-                  }
-                ]
-              },
-              {
-                "nodeId": "19684:421",
-                "nodeName": "image 15",
-                "nodeType": "RECTANGLE",
-                "children": [],
-                "layout": {
-                  "width": 386,
-                  "height": 258
-                }
-              }
-            ],
+            "nodeId": "19413:1818",
+            "nodeName": "Paper Tags",
+            "nodeType": "TEXT",
+            "children": [],
             "layout": {
-              "width": 385.400146484375,
-              "height": 255.3275909423828
+              "width": 130,
+              "height": 37
             },
             "fills": [
               {
                 "type": "SOLID",
-                "color": "#878686",
+                "color": "#333333",
                 "opacity": 1
               }
             ]
           },
           {
-            "nodeId": "19684:424",
-            "nodeName": "Frame 1272636673",
-            "nodeType": "FRAME",
-            "children": [
-              {
-                "nodeId": "19684:425",
-                "nodeName": "image 14",
-                "nodeType": "RECTANGLE",
-                "children": [],
-                "layout": {
-                  "width": 386,
-                  "height": 258
-                }
-              }
-            ],
-            "layout": {
-              "width": 386.20306396484375,
-              "height": 255.3275909423828
-            },
-            "fills": [
-              {
-                "type": "SOLID",
-                "color": "#929292",
-                "opacity": 1
-              }
-            ]
-          },
-          {
-            "nodeId": "19684:428",
-            "nodeName": "Frame 1272636674",
-            "nodeType": "FRAME",
-            "children": [
-              {
-                "nodeId": "19684:429",
-                "nodeName": "image 14",
-                "nodeType": "RECTANGLE",
-                "children": [],
-                "layout": {
-                  "width": 386,
-                  "height": 258
-                }
-              }
-            ],
-            "layout": {
-              "width": 385.400146484375,
-              "height": 255.3275909423828
-            },
-            "fills": [
-              {
-                "type": "SOLID",
-                "color": "#878686",
-                "opacity": 1
-              }
-            ]
-          }
-        ],
-        "layout": {
-          "width": 1200,
-          "height": 255.3275909423828
-        }
-      },
-      {
-        "nodeId": "21440:1786",
-        "nodeName": "Group 1272636958",
-        "nodeType": "GROUP",
-        "children": [
-          {
-            "nodeId": "19684:405",
-            "nodeName": "Group 351",
+            "nodeId": "19415:1854",
+            "nodeName": "Group 1272636719",
             "nodeType": "GROUP",
             "children": [
               {
-                "nodeId": "19684:406",
-                "nodeName": "Frame 1272636658",
-                "nodeType": "FRAME",
+                "nodeId": "19415:1842",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
                 "children": [
                   {
-                    "nodeId": "19684:407",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
+                    "nodeId": "19415:1843",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
                     "children": [],
                     "layout": {
-                      "width": 386,
-                      "height": 258
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1844",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
                     },
                     "fills": [
                       {
                         "type": "SOLID",
-                        "color": "#000000",
-                        "opacity": 0
+                        "color": "#333333",
+                        "opacity": 1
                       }
                     ]
                   }
                 ],
                 "layout": {
-                  "width": 385.400146484375,
-                  "height": 255.3275909423828
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#878686",
-                    "opacity": 1
-                  }
-                ]
+                  "width": 270,
+                  "height": 311
+                }
               },
               {
-                "nodeId": "19684:410",
-                "nodeName": "Frame 1272636673",
-                "nodeType": "FRAME",
+                "nodeId": "19415:1846",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
                 "children": [
                   {
-                    "nodeId": "19684:411",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
+                    "nodeId": "19461:234",
+                    "nodeName": "Rectangle 87",
+                    "nodeType": "VECTOR",
                     "children": [],
                     "layout": {
-                      "width": 386,
-                      "height": 258
+                      "width": 270,
+                      "height": 269
                     }
+                  },
+                  {
+                    "nodeId": "19415:1848",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
                   }
                 ],
                 "layout": {
-                  "width": 386.20306396484375,
-                  "height": 255.3275909423828
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#929292",
-                    "opacity": 1
-                  }
-                ]
+                  "width": 270,
+                  "height": 311
+                }
               },
               {
-                "nodeId": "19684:414",
-                "nodeName": "Frame 1272636674",
-                "nodeType": "FRAME",
+                "nodeId": "19415:1850",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
                 "children": [
                   {
-                    "nodeId": "19684:415",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
+                    "nodeId": "19461:236",
+                    "nodeName": "Rectangle 87",
+                    "nodeType": "VECTOR",
                     "children": [],
                     "layout": {
-                      "width": 386,
-                      "height": 258
+                      "width": 270,
+                      "height": 269
                     }
+                  },
+                  {
+                    "nodeId": "19415:1852",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
                   }
                 ],
                 "layout": {
-                  "width": 385.400146484375,
-                  "height": 255.3275909423828
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1841",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19413:1739",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19413:1994",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 311
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 368.056396484375
+        }
+      },
+      {
+        "nodeId": "19415:1871",
+        "nodeName": "Group 1272636721",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19413:1804",
+            "nodeName": "Plastic Tags",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 140,
+              "height": 37
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19415:1857",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19415:1858",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1859",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1860",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1861",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1862",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1863",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1864",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1865",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1866",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1867",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1868",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1869",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 311
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 368
+        }
+      },
+      {
+        "nodeId": "19415:1889",
+        "nodeName": "Group 1272636722",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19415:1890",
+            "nodeName": "Fabric Tags",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 135,
+              "height": 37
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19415:1891",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19415:1892",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1893",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1894",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1895",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1896",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1897",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1898",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1899",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1900",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1901",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1902",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1903",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 311
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 368
+        }
+      },
+      {
+        "nodeId": "19415:1905",
+        "nodeName": "Frame 1272636723",
+        "nodeType": "FRAME",
+        "children": [
+          {
+            "nodeId": "19415:1906",
+            "nodeName": "Rubber Tags",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 147,
+              "height": 37
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19415:1907",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19461:250",
+                "nodeName": "Group 1272636722",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19461:251",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19461:252",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311.000244140625
+                }
+              }
+            ],
+            "layout": {
+              "width": 270,
+              "height": 311.000244140625
+            }
+          },
+          {
+            "nodeId": "19861:396",
+            "nodeName": "Group 1272636716",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19861:397",
+                "nodeName": "Rectangle 86",
+                "nodeType": "VECTOR",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19861:398",
+                "nodeName": "Word tile H3",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 113,
+                  "height": 22
                 },
                 "fills": [
                   {
                     "type": "SOLID",
-                    "color": "#878686",
+                    "color": "#333333",
                     "opacity": 1
                   }
                 ]
               }
             ],
             "layout": {
-              "width": 1200,
-              "height": 255.3275909423828
+              "width": 270,
+              "height": 311
             }
           },
           {
-            "nodeId": "19684:432",
-            "nodeName": "materials",
-            "nodeType": "TEXT",
-            "children": [],
-            "layout": {
-              "width": 108,
-              "height": 37.0563850402832
-            },
-            "fills": [
+            "nodeId": "19861:400",
+            "nodeName": "Group 1272636716",
+            "nodeType": "GROUP",
+            "children": [
               {
-                "type": "SOLID",
-                "color": "#333333",
-                "opacity": 1
+                "nodeId": "19861:401",
+                "nodeName": "Rectangle 86",
+                "nodeType": "VECTOR",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19861:402",
+                "nodeName": "Word tile H3",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 113,
+                  "height": 22
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
               }
-            ]
+            ],
+            "layout": {
+              "width": 270,
+              "height": 311
+            }
+          },
+          {
+            "nodeId": "19861:404",
+            "nodeName": "Group 1272636716",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19861:405",
+                "nodeName": "Rectangle 86",
+                "nodeType": "VECTOR",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19861:406",
+                "nodeName": "Word tile H3",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 113,
+                  "height": 22
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 270,
+              "height": 311
+            }
           }
         ],
         "layout": {
           "width": 1200,
-          "height": 332.32757568359375
+          "height": 368
         }
       },
       {
-        "nodeId": "19684:433",
-        "nodeName": "Printing",
-        "nodeType": "TEXT",
-        "children": [],
-        "layout": {
-          "width": 91,
-          "height": 37
-        },
-        "fills": [
-          {
-            "type": "SOLID",
-            "color": "#333333",
-            "opacity": 1
-          }
-        ]
-      },
-      {
-        "nodeId": "19684:434",
-        "nodeName": "Group 1272636734",
+        "nodeId": "19415:1921",
+        "nodeName": "Group 1272636724",
         "nodeType": "GROUP",
         "children": [
           {
-            "nodeId": "19684:435",
-            "nodeName": "At SENYE, we believe your custom packaging tape  should perfectly reflect your brand's commitment to quality and sustainability. Our sourcing experts curate a specialized range of high-performance substrates to ensure your packages are not only secure but also visually striking. 1. Eco-Friendly Kraft Paper (The Sustainable Choice) The absolute gold standard for environmentally conscious brands. Water-Activated Kraft Tape: Features a natural starch adhesive that bonds permanently with cartons. This water activated kraft tape  provides ultimate tamper-evident security. Self-Adhesive Kraft: A convenient, peel-and-stick eco friendly packaging tape  perfect for lighter shipments and a rustic, organic brand aesthetic. 2. Durable Synthetics (Waterproof & Tear-Resistant) Engineered for longevity, high moisture resistance, and heavy-duty transit. BOPP/Poly Tape: Highly flexible and cost-effective. A custom clear poly tape  or white-base poly tape is ideal for vivid logo printing and long-distance global shipping. Biodegradable PLA: Offers the strength of traditional plastic but is completely compostable, serving as the ultimate biodegradable shipping tape  for zero-waste initiatives. 3. Reinforced Fiberglass (The Heavy-Duty Tier) Elevate your package security. We embed strong fiberglass yarns (in a diamond or linear pattern) between layers of kraft paper. This creates an ultra-strong apparel shipping tape  designed specifically for heavy bulk orders, winter coats, or footwear boxes. Perfect for inner packaging rather than outer shipping boxes. This boutique packaging tape  is used to seal tissue paper or garment bags, adding an artisanal, luxurious touch to the unboxing experience.",
+            "nodeId": "19415:1922",
+            "nodeName": "Leather Tags",
             "nodeType": "TEXT",
             "children": [],
             "layout": {
-              "width": 1200,
-              "height": 532
+              "width": 152,
+              "height": 37
             },
             "fills": [
               {
@@ -308,26 +813,189 @@
                 "opacity": 1
               }
             ]
+          },
+          {
+            "nodeId": "19415:1923",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19415:1924",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1925",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1926",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1927",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1928",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1929",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1930",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1931",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1932",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1933",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1934",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1935",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 311
+            }
           }
         ],
         "layout": {
           "width": 1200,
-          "height": 532
+          "height": 368
         }
       },
       {
-        "nodeId": "19684:436",
-        "nodeName": "Group 1272636736",
+        "nodeId": "19415:1937",
+        "nodeName": "Group 1272636725",
         "nodeType": "GROUP",
         "children": [
           {
-            "nodeId": "19684:437",
-            "nodeName": "A simple roll of tape is your most cost-effective mobile billboard. Our Professional Sourcing Team guides you through advanced printing technologies, while our Strict QC Team ensures that your custom tape with logo  features high-fidelity, fade-resistant colors that survive the harshest shipping conditions. 1. Vibrant Flexographic & Offset Printing Features: Delivers vibrant, saturated colors directly onto the tape surface. We match Pantone colors precisely to ensure your branded packaging tape  is 100% consistent with your tags and labels. Best For: High-saturation logos, complex multi-color patterns, and high-volume custom printed tape manufacturer  orders. 2. Premium Finishes (Matte vs. Glossy) Features: Customize the tactile feel and light reflection of your poly tapes. A glossy finish makes colors pop, while a matte finish provides a muted, sophisticated, and scuff-resistant look. Best For: Luxury packaging tape  applications where the unboxing texture needs to align perfectly with a high-end brand identity. 3. Tamper-Evident & Security Craftsmanship Features: Utilizing specific custom gummed tape  adhesives that fuse with corrugated boxes. If removed, it leaves clear evidence of tampering. Best For: Premium clothing brands, jewelry, and cosmetics requiring maximum theft prevention and direct consumer trust. 4. Low-MOQ Specialized Customization Features: Flexible printing plates allow us to offer a custom tape low MOQ. We accommodate small-batch seasonal designs without compromising on industrial-grade print quality. Best For: Independent designers and startups looking for the best custom shipping tape for small business.",
+            "nodeId": "19415:1938",
+            "nodeName": "Metal Tags",
             "nodeType": "TEXT",
             "children": [],
             "layout": {
-              "width": 1200,
-              "height": 532
+              "width": 128,
+              "height": 37
             },
             "fills": [
               {
@@ -336,24 +1004,343 @@
                 "opacity": 1
               }
             ]
+          },
+          {
+            "nodeId": "19415:1939",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19415:1940",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1941",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1942",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1943",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1944",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1945",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1946",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1947",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1948",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1949",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1950",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1951",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 311
+            }
           }
         ],
         "layout": {
           "width": 1200,
-          "height": 532
+          "height": 368
+        }
+      },
+      {
+        "nodeId": "19415:1956",
+        "nodeName": "Frame 1272636726",
+        "nodeType": "FRAME",
+        "children": [
+          {
+            "nodeId": "19415:1957",
+            "nodeName": "Special Material Tags",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 248,
+              "height": 37
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19415:1958",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19415:1959",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1960",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1961",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              },
+              {
+                "nodeId": "19415:1968",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19415:1969",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19415:1970",
+                    "nodeName": "Word tile H3",
+                    "nodeType": "TEXT",
+                    "children": [],
+                    "layout": {
+                      "width": 113,
+                      "height": 22
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 311
+                }
+              }
+            ],
+            "layout": {
+              "width": 580,
+              "height": 311
+            }
+          },
+          {
+            "nodeId": "19859:384",
+            "nodeName": "Group 1272636717",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19859:385",
+                "nodeName": "Rectangle 86",
+                "nodeType": "VECTOR",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19859:386",
+                "nodeName": "Word tile H3",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 113,
+                  "height": 22
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 270,
+              "height": 311
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 368
         }
       }
     ],
     "layout": {
-      "width": 1200,
-      "height": 1990
+      "mode": "VERTICAL",
+      "itemSpacing": 60,
+      "width": 1201,
+      "height": 3035.056640625,
+      "counterAxisAlignItems": "CENTER"
     }
   },
   "texts": [
     {
-      "nodeId": "19684:404",
-      "nodeName": "Customization Options",
-      "text": "Customization Options",
+      "nodeId": "19413:1736",
+      "nodeName": "Product Showcase",
+      "text": "Product Showcase",
       "style": {
         "fontFamily": "Inter",
         "fontSize": 32,
@@ -363,9 +1350,9 @@
       }
     },
     {
-      "nodeId": "19684:432",
-      "nodeName": "materials",
-      "text": "materials",
+      "nodeId": "19413:1818",
+      "nodeName": "Paper Tags",
+      "text": "Paper Tags",
       "style": {
         "fontFamily": "Inter",
         "fontSize": 24,
@@ -375,9 +1362,57 @@
       }
     },
     {
-      "nodeId": "19684:433",
-      "nodeName": "Printing",
-      "text": "Printing ",
+      "nodeId": "19415:1844",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1848",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1852",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19413:1994",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19413:1804",
+      "nodeName": "Plastic Tags",
+      "text": "Plastic Tags",
       "style": {
         "fontFamily": "Inter",
         "fontSize": 24,
@@ -387,114 +1422,528 @@
       }
     },
     {
-      "nodeId": "19684:435",
-      "nodeName": "At SENYE, we believe your custom packaging tape  should perfectly reflect your brand's commitment to quality and sustainability. Our sourcing experts curate a specialized range of high-performance substrates to ensure your packages are not only secure but also visually striking. 1. Eco-Friendly Kraft Paper (The Sustainable Choice) The absolute gold standard for environmentally conscious brands. Water-Activated Kraft Tape: Features a natural starch adhesive that bonds permanently with cartons. This water activated kraft tape  provides ultimate tamper-evident security. Self-Adhesive Kraft: A convenient, peel-and-stick eco friendly packaging tape  perfect for lighter shipments and a rustic, organic brand aesthetic. 2. Durable Synthetics (Waterproof & Tear-Resistant) Engineered for longevity, high moisture resistance, and heavy-duty transit. BOPP/Poly Tape: Highly flexible and cost-effective. A custom clear poly tape  or white-base poly tape is ideal for vivid logo printing and long-distance global shipping. Biodegradable PLA: Offers the strength of traditional plastic but is completely compostable, serving as the ultimate biodegradable shipping tape  for zero-waste initiatives. 3. Reinforced Fiberglass (The Heavy-Duty Tier) Elevate your package security. We embed strong fiberglass yarns (in a diamond or linear pattern) between layers of kraft paper. This creates an ultra-strong apparel shipping tape  designed specifically for heavy bulk orders, winter coats, or footwear boxes. Perfect for inner packaging rather than outer shipping boxes. This boutique packaging tape  is used to seal tissue paper or garment bags, adding an artisanal, luxurious touch to the unboxing experience.",
-      "text": "At SENYE, we believe your custom packaging tape  should perfectly reflect your brand's commitment to quality and sustainability. Our sourcing experts curate a specialized range of high-performance substrates to ensure your packages are not only secure but also visually striking.\n1. Eco-Friendly Kraft Paper (The Sustainable Choice)\nThe absolute gold standard for environmentally conscious brands.\nWater-Activated Kraft Tape: Features a natural starch adhesive that bonds permanently with cartons. This water activated kraft tape  provides ultimate tamper-evident security.\nSelf-Adhesive Kraft: A convenient, peel-and-stick eco friendly packaging tape  perfect for lighter shipments and a rustic, organic brand aesthetic.\n2. Durable Synthetics (Waterproof & Tear-Resistant)\nEngineered for longevity, high moisture resistance, and heavy-duty transit.\nBOPP/Poly Tape: Highly flexible and cost-effective. A custom clear poly tape  or white-base poly tape is ideal for vivid logo printing and long-distance global shipping.\nBiodegradable PLA: Offers the strength of traditional plastic but is completely compostable, serving as the ultimate biodegradable shipping tape  for zero-waste initiatives.\n3. Reinforced Fiberglass (The Heavy-Duty Tier) Elevate your package security. \nWe embed strong fiberglass yarns (in a diamond or linear pattern) between layers of kraft paper. This creates an ultra-strong apparel shipping tape  designed specifically for heavy bulk orders, winter coats, or footwear boxes.\nPerfect for inner packaging rather than outer shipping boxes. This boutique packaging tape  is used to seal tissue paper or garment bags, adding an artisanal, luxurious touch to the unboxing experience.",
+      "nodeId": "19415:1860",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
       "style": {
         "fontFamily": "Inter",
-        "fontSize": 15,
-        "fontWeight": 400,
+        "fontSize": 18,
+        "fontWeight": 600,
         "color": "#333333",
-        "textAlignHorizontal": "JUSTIFIED"
+        "textAlignHorizontal": "CENTER"
       }
     },
     {
-      "nodeId": "19684:437",
-      "nodeName": "A simple roll of tape is your most cost-effective mobile billboard. Our Professional Sourcing Team guides you through advanced printing technologies, while our Strict QC Team ensures that your custom tape with logo  features high-fidelity, fade-resistant colors that survive the harshest shipping conditions. 1. Vibrant Flexographic & Offset Printing Features: Delivers vibrant, saturated colors directly onto the tape surface. We match Pantone colors precisely to ensure your branded packaging tape  is 100% consistent with your tags and labels. Best For: High-saturation logos, complex multi-color patterns, and high-volume custom printed tape manufacturer  orders. 2. Premium Finishes (Matte vs. Glossy) Features: Customize the tactile feel and light reflection of your poly tapes. A glossy finish makes colors pop, while a matte finish provides a muted, sophisticated, and scuff-resistant look. Best For: Luxury packaging tape  applications where the unboxing texture needs to align perfectly with a high-end brand identity. 3. Tamper-Evident & Security Craftsmanship Features: Utilizing specific custom gummed tape  adhesives that fuse with corrugated boxes. If removed, it leaves clear evidence of tampering. Best For: Premium clothing brands, jewelry, and cosmetics requiring maximum theft prevention and direct consumer trust. 4. Low-MOQ Specialized Customization Features: Flexible printing plates allow us to offer a custom tape low MOQ. We accommodate small-batch seasonal designs without compromising on industrial-grade print quality. Best For: Independent designers and startups looking for the best custom shipping tape for small business.",
-      "text": "A simple roll of tape is your most cost-effective mobile billboard. Our Professional Sourcing Team guides you through advanced printing technologies, while our Strict QC Team ensures that your custom tape with logo  features high-fidelity, fade-resistant colors that survive the harshest shipping conditions.\n1. Vibrant Flexographic & Offset Printing\nFeatures: Delivers vibrant, saturated colors directly onto the tape surface. We match Pantone colors precisely to ensure your branded packaging tape  is 100% consistent with your tags and labels.\nBest For: High-saturation logos, complex multi-color patterns, and high-volume custom printed tape manufacturer  orders.\n2. Premium Finishes (Matte vs. Glossy)\nFeatures: Customize the tactile feel and light reflection of your poly tapes. A glossy finish makes colors pop, while a matte finish provides a muted, sophisticated, and scuff-resistant look.\nBest For: Luxury packaging tape  applications where the unboxing texture needs to align perfectly with a high-end brand identity.\n3. Tamper-Evident & Security Craftsmanship\nFeatures: Utilizing specific custom gummed tape  adhesives that fuse with corrugated boxes. If removed, it leaves clear evidence of tampering.\nBest For: Premium clothing brands, jewelry, and cosmetics requiring maximum theft prevention and direct consumer trust.\n4. Low-MOQ Specialized Customization\nFeatures: Flexible printing plates allow us to offer a custom tape low MOQ. We accommodate small-batch seasonal designs without compromising on industrial-grade print quality.\nBest For: Independent designers and startups looking for the best custom shipping tape for small business.",
+      "nodeId": "19415:1863",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
       "style": {
         "fontFamily": "Inter",
-        "fontSize": 15,
-        "fontWeight": 400,
+        "fontSize": 18,
+        "fontWeight": 600,
         "color": "#333333",
-        "textAlignHorizontal": "JUSTIFIED"
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1866",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1869",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1890",
+      "nodeName": "Fabric Tags",
+      "text": "Fabric Tags",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19415:1894",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1897",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1900",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1903",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1906",
+      "nodeName": "Rubber Tags",
+      "text": "Rubber Tags",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19461:252",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19861:398",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19861:402",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19861:406",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1922",
+      "nodeName": "Leather Tags",
+      "text": "Leather Tags",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19415:1926",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1929",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1932",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1935",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1938",
+      "nodeName": "Metal Tags",
+      "text": "Metal Tags",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19415:1942",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1945",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1948",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1951",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1957",
+      "nodeName": "Special Material Tags",
+      "text": "Special Material Tags",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19415:1961",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19415:1970",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19859:386",
+      "nodeName": "Word tile H3",
+      "text": "Word tile H3",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
       }
     }
   ],
   "images": [
     {
-      "nodeId": "19684:403",
-      "nodeName": "Group 1272636735 (整体截图)",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9770ca2b-aaf7-46ed-8e60-3ce8e5543769",
-      "localPath": "figma-export/images/full-selection-19684-403.png"
+      "nodeId": "19415:1872",
+      "nodeName": "Frame 1272636737 (整体截图)",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b23a6e48-24c3-45ff-8739-0134e4cec2be",
+      "localPath": "figma-export/images/full-selection-19415-1872.png"
     },
     {
-      "nodeId": "19684:419",
-      "nodeName": "Frame 1272636658",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d305bc34-8645-4834-9279-22a51936c779",
-      "localPath": "figma-export/images/Frame-1272636658-19684-419.png"
+      "nodeId": "19415:1872",
+      "nodeName": "Frame 1272636737",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b23a6e48-24c3-45ff-8739-0134e4cec2be",
+      "localPath": "figma-export/images/Frame-1272636737-19415-1872.png"
     },
     {
-      "nodeId": "19684:420",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/99094325-cc3a-4fc0-a640-a8ae646977ca",
-      "localPath": "figma-export/images/image-14-19684-420.png"
+      "nodeId": "19415:1843",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/5169bbaf-5073-4944-b81c-76798159d3fa",
+      "localPath": "figma-export/images/Rectangle-86-19415-1843.png"
     },
     {
-      "nodeId": "19684:421",
-      "nodeName": "image 15",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/292992b4-92a8-4018-8e4d-c5d1e83c30a9",
-      "localPath": "figma-export/images/image-15-19684-421.png"
+      "nodeId": "19461:234",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ce408ddd-92e6-430e-95cd-663feb7cdbae",
+      "localPath": "figma-export/images/Rectangle-87-19461-234.png"
     },
     {
-      "nodeId": "19684:424",
-      "nodeName": "Frame 1272636673",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9028745e-8612-43f0-a416-f525d96c18a0",
-      "localPath": "figma-export/images/Frame-1272636673-19684-424.png"
+      "nodeId": "19461:236",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/6b877ba8-ffe9-4800-8249-70fed5b336d9",
+      "localPath": "figma-export/images/Rectangle-87-19461-236.png"
     },
     {
-      "nodeId": "19684:425",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a23d9724-8b7d-4494-8a11-a04571c3c4f3",
-      "localPath": "figma-export/images/image-14-19684-425.png"
+      "nodeId": "19413:1739",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e5f93f42-d700-496e-b3de-1127edf22674",
+      "localPath": "figma-export/images/Rectangle-86-19413-1739.png"
     },
     {
-      "nodeId": "19684:428",
-      "nodeName": "Frame 1272636674",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2164385a-5d6f-40a2-81a7-4605af3c41ee",
-      "localPath": "figma-export/images/Frame-1272636674-19684-428.png"
+      "nodeId": "19415:1859",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d9b0abb5-be8d-463f-a89a-67a8b4569dc9",
+      "localPath": "figma-export/images/Rectangle-86-19415-1859.png"
     },
     {
-      "nodeId": "19684:429",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/6bae25ed-0452-48fd-8d76-22adf21b63fe",
-      "localPath": "figma-export/images/image-14-19684-429.png"
+      "nodeId": "19415:1862",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a67d1e37-9089-42cd-b620-f471789b5ee1",
+      "localPath": "figma-export/images/Rectangle-86-19415-1862.png"
     },
     {
-      "nodeId": "19684:406",
-      "nodeName": "Frame 1272636658",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/25cf5c4d-225f-495e-a79b-c2aadd0630bb",
-      "localPath": "figma-export/images/Frame-1272636658-19684-406.png"
+      "nodeId": "19415:1865",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c8c4b247-5995-4d1f-9fec-f63a337578c5",
+      "localPath": "figma-export/images/Rectangle-86-19415-1865.png"
     },
     {
-      "nodeId": "19684:407",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2456b1b5-3dd5-4380-9db8-5497c49b1dd2",
-      "localPath": "figma-export/images/image-14-19684-407.png"
+      "nodeId": "19415:1868",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/1f74a3e8-4943-4284-9299-910d9443338e",
+      "localPath": "figma-export/images/Rectangle-86-19415-1868.png"
     },
     {
-      "nodeId": "19684:410",
-      "nodeName": "Frame 1272636673",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/bf1b206f-7066-49bc-ad95-b89ea93b0bf2",
-      "localPath": "figma-export/images/Frame-1272636673-19684-410.png"
+      "nodeId": "19415:1893",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f730811a-8165-48e7-9e3d-0356487a8f50",
+      "localPath": "figma-export/images/Rectangle-86-19415-1893.png"
     },
     {
-      "nodeId": "19684:411",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c8e9e4f9-bb00-461f-9a70-7d632f7ebd36",
-      "localPath": "figma-export/images/image-14-19684-411.png"
+      "nodeId": "19415:1896",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9d8fccce-37c5-4d1b-8a0e-4d4fff43708e",
+      "localPath": "figma-export/images/Rectangle-86-19415-1896.png"
     },
     {
-      "nodeId": "19684:414",
-      "nodeName": "Frame 1272636674",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c7d2bf4d-436a-44bd-b0ab-3a5b85ac391c",
-      "localPath": "figma-export/images/Frame-1272636674-19684-414.png"
+      "nodeId": "19415:1899",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f717191a-db77-40ce-802f-dac5849c9bf5",
+      "localPath": "figma-export/images/Rectangle-86-19415-1899.png"
     },
     {
-      "nodeId": "19684:415",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/7ab6f3bb-9e30-437a-99b8-4c6ca31f9e91",
-      "localPath": "figma-export/images/image-14-19684-415.png"
+      "nodeId": "19415:1902",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/920f013e-cfb7-41b2-8314-440e0bfdb77e",
+      "localPath": "figma-export/images/Rectangle-86-19415-1902.png"
+    },
+    {
+      "nodeId": "19415:1905",
+      "nodeName": "Frame 1272636723",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/dde992a3-0b93-4a22-9e84-f7535171b524",
+      "localPath": "figma-export/images/Frame-1272636723-19415-1905.png"
+    },
+    {
+      "nodeId": "19461:251",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/71e34fa8-9d1b-44b8-8d97-ff576120bd66",
+      "localPath": "figma-export/images/Rectangle-86-19461-251.png"
+    },
+    {
+      "nodeId": "19861:397",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0d1dd505-f51c-4bdd-90d7-2c8e7ba630e5",
+      "localPath": "figma-export/images/Rectangle-86-19861-397.png"
+    },
+    {
+      "nodeId": "19861:401",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/1716338a-9a02-4f05-b331-3383014f2032",
+      "localPath": "figma-export/images/Rectangle-86-19861-401.png"
+    },
+    {
+      "nodeId": "19861:405",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d6f52c0e-f5ef-4f7e-9679-f29769f58525",
+      "localPath": "figma-export/images/Rectangle-86-19861-405.png"
+    },
+    {
+      "nodeId": "19415:1925",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c154b83c-3a01-4c25-881f-634fa71f5a12",
+      "localPath": "figma-export/images/Rectangle-86-19415-1925.png"
+    },
+    {
+      "nodeId": "19415:1928",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b6f39ee9-1464-44ba-9837-b616e5def3a7",
+      "localPath": "figma-export/images/Rectangle-86-19415-1928.png"
+    },
+    {
+      "nodeId": "19415:1931",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/734808b8-0298-41e9-8e26-08a0a10080b6",
+      "localPath": "figma-export/images/Rectangle-86-19415-1931.png"
+    },
+    {
+      "nodeId": "19415:1934",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2b744ae2-6205-4912-98a5-23870eac677e",
+      "localPath": "figma-export/images/Rectangle-86-19415-1934.png"
+    },
+    {
+      "nodeId": "19415:1941",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/79794918-fbca-46e1-9aa6-6037619362fd",
+      "localPath": "figma-export/images/Rectangle-86-19415-1941.png"
+    },
+    {
+      "nodeId": "19415:1944",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/72d67286-cb43-4c23-a44c-a388c67ea0bc",
+      "localPath": "figma-export/images/Rectangle-86-19415-1944.png"
+    },
+    {
+      "nodeId": "19415:1947",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/3a131ef6-38f9-404d-9920-202474ba76b5",
+      "localPath": "figma-export/images/Rectangle-86-19415-1947.png"
+    },
+    {
+      "nodeId": "19415:1950",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/66e8b9cf-bb06-4068-8a35-41a34ca4780a",
+      "localPath": "figma-export/images/Rectangle-86-19415-1950.png"
+    },
+    {
+      "nodeId": "19415:1956",
+      "nodeName": "Frame 1272636726",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/5e38597e-9872-4bad-9137-49bea53db09c",
+      "localPath": "figma-export/images/Frame-1272636726-19415-1956.png"
+    },
+    {
+      "nodeId": "19415:1960",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e3c6ef95-497f-4996-9212-d6e6b6202b15",
+      "localPath": "figma-export/images/Rectangle-86-19415-1960.png"
+    },
+    {
+      "nodeId": "19415:1969",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2a29fa34-2fba-4ec4-87cf-a3ae64e639a9",
+      "localPath": "figma-export/images/Rectangle-86-19415-1969.png"
+    },
+    {
+      "nodeId": "19859:385",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/3b102544-f5ba-4c8a-ae0a-cafe720e2845",
+      "localPath": "figma-export/images/Rectangle-86-19859-385.png"
     }
   ]
 }

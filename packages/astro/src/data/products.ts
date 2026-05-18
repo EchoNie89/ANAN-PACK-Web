@@ -292,6 +292,54 @@ const commonBlogs = [
   },
 ] satisfies ProductCard[];
 
+const hangTagFaqs: ProductFaq[] = [
+  {
+    question: 'Q1: Do you work with small brands or startups?',
+    answer:
+      'Totally! We love growing with brands. For most custom hang tags, our low MOQ is very flexible. We make it easy to test your new collection without the stress of overstocking.',
+  },
+  {
+    question: 'Q2: Can you ship my tags with other items?',
+    answer:
+      "Yes - this is our specialty! We can bundle your tags, woven labels, and bags into one combined shipment. It's simpler to track, and it saves you a lot on shipping costs.",
+  },
+  {
+    question: "Q3: I'm not an expert on materials. Can you help me choose?",
+    answer:
+      "No worries! Our sourcing team will suggest the best fit for your brand. Whether you want eco-friendly kraft paper or luxury textures, we'll find the perfect match for your budget and style.",
+  },
+  {
+    question: 'Q4: How long does it take to get a sample?',
+    answer:
+      "Physical samples usually take 5-7 days. If you're in a rush, we can send high-def photos or videos for approval to keep your project moving even faster.",
+  },
+  {
+    question: 'Q5: How do you make sure the colors are spot-on?',
+    answer:
+      "Color is a big deal to us. Our QC team uses Pantone matching and on-site checks. Since we act as your local representative, we don't let anything ship unless the colors are perfect.",
+  },
+  {
+    question: 'Q6: What is the typical turnaround for bulk orders?',
+    answer:
+      'Once you approve the sample, bulk production usually takes 7-12 days. We stick to our deadlines so your seasonal launch stays exactly on track.',
+  },
+  {
+    question: 'Q7: I only have a logo. Can you help with the layout?',
+    answer:
+      "Definitely. Send over your logo, and we'll help with the basic layout. We also do a technical audit to make sure your text and design print crisp and clean.",
+  },
+  {
+    question: 'Q8: Do you offer tags made of materials other than paper?',
+    answer:
+      'Yes! Beyond paper, we offer plastic hang tags (great for swimwear), leather, and even metal labels. If you can dream it, our supply chain can probably make it happen.',
+  },
+  {
+    question: 'Q9: Is shipping included in the price?',
+    answer:
+      'Our base quotes are usually EXW, but we can provide DDP or FedEx/DHL rates too. Because we ship in volume, our logistics partners give us great rates that we pass directly to you.',
+  },
+];
+
 const buildFaqs = (product: string, materialQuestion: string): ProductFaq[] => [
   {
     question: `Q1: What is the MOQ for custom ${product}?`,
@@ -402,6 +450,8 @@ export const productPages: ProductPageData[] = [
     slug: 'hanging-tag',
     navLabel: 'Hanging Tag',
     title: 'Custom Hang Tags for Clothing Brands',
+    introTitle: 'What are Hanging Tag？',
+
     metaDescription:
       'Custom clothing hang tags with low MOQ, fast sampling, strict QC, and one-stop packaging production.',
     subtitle:
@@ -411,8 +461,7 @@ export const productPages: ProductPageData[] = [
       'Custom hang tag hero banner from Figma',
       'products.hangingTag.hero',
     ),
-    overview:
-      'Turn a simple garment label into a tactile brand moment. We produce hang tags in paper, kraft, cotton, recycled, and specialty finishes, then coordinate stringing, packing, and delivery with your other trims.',
+    overview: `A hang tag (or apparel hang tag) is far more than a simple price tag; it is the silent ambassador that communicates your brand’s quality and story at a single glance. As a critical component of your clothing labels and branding suite, a premium custom hang tag significantly elevates your product's perceived value. At SENYE, we specialize in one-stop packaging solutions tailored for boutique designers and growing fashion labels. We go beyond simple manufacturing by integrating expert material sourcing, rigorous QC, and combined shipments, ensuring your garment tags are not only flawlessly produced but also delivered with maximum efficiency to streamline your supply chain.`,
     highlights: [...productShell.highlights],
     stats: [...productShell.stats],
     categories: [
@@ -545,42 +594,42 @@ export const productPages: ProductPageData[] = [
     whyChooseTitle: 'Why Choose Us For Custom Hang Tags?',
     whyChoose: [
       {
-        title: 'Low MOQ For Startup Brands',
+        title: 'Professional Sourcing Team',
         description:
-          'Start with a small test order, confirm the finish and handfeel, then scale into bulk production when your collection is ready.',
+          "With over 10 years of deep-rooted expertise, we act as your dedicated local sourcing partner to navigate the complexities of Chinese textile manufacturing. We go beyond simple procurement; we expertly curate fabrics-from breathable custom cotton dust bags to luxurious velvet-ensuring your packaging perfectly embodies your brand's DNA. We are the bridge that transforms your creative vision into a high-quality, market-ready reality.",
         image: image(
-          '/images/services/product-development.png',
-          'Team reviewing packaging and trim samples',
-          'products.hangingTag.whyChoose.lowMoq',
+          '/images/products/labels/image 15.png',
+          'Professional sourcing team reviewing dust bag samples',
+          'products.bag.whyChoose.sourcingTeam',
         ),
       },
       {
-        title: 'One-stop Customization',
+        title: 'Strict QC Steps',
         description:
-          'Match labels, hang tags, stickers, bags, tape, ribbons, and packaging trims in one managed workflow.',
+          'Leverage a decade of supply chain mastery. As a reliable dust bag manufacturer, our team eliminates the guesswork by strictly controlling every detail-from fabric thread count and stitching durability to precise logo printing. Whether you are ordering low MOQ custom pouches or large-scale wholesale batches, we ensure flawless execution and technical compatibility before anything leaves the factory.',
         image: image(
-          '/images/services/quality.png',
-          'Packaging customization desk with samples',
-          'products.hangingTag.whyChoose.customization',
+          '/images/products/labels/image 15-1.png',
+          'Strict QC steps for custom dust bag production',
+          'products.bag.whyChoose.qualityControl',
         ),
       },
       {
-        title: 'Strict Quality Control',
+        title: 'Combined Shipment',
         description:
-          'We check artwork, material, color tolerance, finishing, packing, and final shipment details before dispatch.',
+          "Backed by 10+ years of logistics experience, our specialists act as your eyes and ears in the Chinese market. We specialize in consolidating your entire packaging suite. By combining your custom dust bags with logo, woven labels, hang tags, and shipping tape into one seamless delivery, we drastically reduce your logistics overhead and ensure a consistent brand presentation from the factory to your customer's door.",
         image: image(
-          '/images/services/warehouse-assembly.png',
-          'Quality control and packing workflow',
-          'products.hangingTag.whyChoose.quality',
+          '/images/products/labels/image 15-2.png',
+          'Combined shipment desk for packaging materials',
+          'products.bag.whyChoose.combinedShipment',
         ),
       },
     ],
     caseStudy: {
-      title: 'Fashion launch with matched tags, labels, and bags',
-      description:
-        'A startup apparel brand needed a small first run with consistent color across hang tags, woven labels, and cotton bags. We aligned Pantone references, sampled key materials, and shipped the full kit together.',
+      title:
+        'How We Engineered Luxury Custom Hang Tags for Nikkie & Achieved a 10% Cost Reduction',
+      description: `For high-end fashion brands like Nikkie, a renowned label based in the Netherlands, every detail counts. In the competitive apparel market, the hang tag is not just a price ticket; it is the first tangible interaction a customer has with the brand’s identity. It represents the quality, the story, and the value of the garment.`,
       image: image(
-        '/images/solutions/fashion-case.png',
+        '/images/products/hanging-tag/fashion-case.png',
         'Fashion packaging case study set',
         'products.hangingTag.caseStudy',
       ),
@@ -589,12 +638,46 @@ export const productPages: ProductPageData[] = [
         'Color checked across paper and fabric',
         'Consolidated shipping for launch inventory',
       ],
+      quote: `Working with SENYE is like having our own team on the ground. They managed everything from material sourcing to final QC with perfect consistency. For any brand needing multi-category, low-MOQ solutions without compromising quality, SENYE is the premier choice.`,
+      quoteAuthor: 'Sarah J.,Sourcing Manager,Netherlands',
+      challenge: `A fast-growing contemporary apparel brand in Europe struggled with fragmented sourcing. They had to coordinate with multiple vendors for custom hang tags, woven labels, and packaging bags, leading to inconsistent color matching and frequent delays. Their primary pain point was finding a reliable partner willing to handle multi-category, low-MOQ orders without compromising on premium quality.`,
+      solutionIntro: `SENYE stepped in as their dedicated supply chain partner in China. We implemented our "Customer Representative" model to streamline their entire branding suite:`,
+      solutionPoints: [
+        'Professional Sourcing: Sourced high-end eco-friendly kraft paper and luxury textures that perfectly matched their sustainable brand DNA.',
+        'Strict QC Management: Our on-site team conducted rigorous audits to ensure 100% color consistency between the apparel hang tags and other branding elements.',
+        'Combined Shipment: We consolidated all packaging components into a single shipment, drastically reducing logistics overhead and ensuring everything arrived ready for their seasonal launch.',
+      ],
+      resultPoints: [
+        '30% Reduction in total packaging and logistics costs.',
+        '50% Less Time spent on vendor communication through our one-stop service.',
+        '100% On-Time Delivery for three consecutive seasonal collections.',
+        'Zero Quality Rejections due to our proactive technical audits.',
+      ],
+      gallery: [
+        image(
+          '/images/products/hanging-tag/Group 1272636749.png',
+          'Reusable cotton pouch with mesh window front view',
+          'products.bag.caseStudy.gallery.0',
+        ),
+        image(
+          '/images/products/hanging-tag/image 16.png',
+          'Reusable cotton pouch folded detail',
+          'products.bag.caseStudy.gallery.1',
+        ),
+        image(
+          '/images/products/hanging-tag/Frame 40.png',
+          'Cotton mesh pouch close-up detail',
+          'products.bag.caseStudy.gallery.2',
+        ),
+        image(
+          '/images/products/hanging-tag/Frame 40-1.png',
+          'Reusable pouch zipper and label detail',
+          'products.bag.caseStudy.gallery.3',
+        ),
+      ],
     },
     blogs: commonBlogs,
-    faqs: buildFaqs(
-      'hang tags',
-      'Q4: Do you offer tags made of materials other than paper?',
-    ),
+    faqs: hangTagFaqs,
   },
   {
     slug: 'bag',
