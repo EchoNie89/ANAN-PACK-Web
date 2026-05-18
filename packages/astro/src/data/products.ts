@@ -340,6 +340,60 @@ const hangTagFaqs: ProductFaq[] = [
   },
 ];
 
+const stickerFaqs: ProductFaq[] = [
+  {
+    question:
+      'Q1: What is your minimum order quantity (MOQ) for custom stickers?',
+    answer:
+      'We support brands of all sizes. We offer flexible low MOQs for your specific customized sticker labels, while also having the factory capacity to produce high-volume custom sticker rolls at competitive wholesale prices.',
+  },
+  {
+    question:
+      'Q2: Are your stickers waterproof and suitable for shipping mailers?',
+    answer:
+      'Yes, our custom vinyl stickers are completely waterproof, weather-resistant, and tear-proof. They are the ultimate choice for durable sticker packaging and heavy-duty corrugated boxes.',
+  },
+  {
+    question: 'Q3: Do you offer stickers specifically designed for clothing?',
+    answer:
+      'Absolutely. As a specialized sticker manufacturer, we offer residue-free clothing stickers for size and barcode labeling, as well as highly durable heat transfer stickers for clothes for tagless neck labels.',
+  },
+  {
+    question: 'Q4: Can I order clear or transparent packaging labels?',
+    answer:
+      'Yes! Our high-definition clear sticker printing provides a seamless, "no-label" look. This is highly recommended for sealing tissue paper, cosmetics, or applying to glass jars.',
+  },
+  {
+    question:
+      'Q5: What is the difference between die-cut singles and roll labels?',
+    answer:
+      'Die-cut stickers are cut individually to your exact custom shape, making them perfect for promotional giveaways. Custom sticker rolls are delivered on a continuous spool, which is essential for fast, automated machine application.',
+  },
+  {
+    question:
+      'Q6: Do you provide eco-friendly or biodegradable sticker options?',
+    answer:
+      "Yes. We offer sustainable, uncoated paper and Kraft paper options that are fully biodegradable, ensuring your sticker packaging aligns perfectly with your brand's eco-conscious values.",
+  },
+  {
+    question:
+      'Q7: Can I add premium finishes like gold foil or holographic effects?',
+    answer:
+      'Yes, we offer premium hot foil stamping (gold, silver, etc.) and holographic finishes to make your custom sticker printing truly stand out and deliver a luxury unboxing experience.',
+  },
+  {
+    question:
+      'Q8: Can you ship my stickers together with my other packaging items?',
+    answer:
+      'Yes, combined shipping is our biggest advantage! We can seamlessly bundle your clothing label stickers, hang tags, and custom bags into one consolidated shipment, saving you significant logistics costs.',
+  },
+  {
+    question: 'Q9: How long does the production process typically take?',
+    answer:
+      'Once you approve the digital proof, standard bulk production typically takes 7-12 days. We pride ourselves on fast turnaround times for your custom waterproof sticker orders.',
+  },
+];
+
 const buildFaqs = (product: string, materialQuestion: string): ProductFaq[] => [
   {
     question: `Q1: What is the MOQ for custom ${product}?`,
@@ -2235,6 +2289,8 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
     slug: 'sticker',
     navLabel: 'Sticker',
     title: 'Premium Custom Sticker Printing & Labels',
+    introTitle: 'What are Custom Stickers & Labels?',
+
     metaDescription:
       'Custom stickers, seals, label sheets, and packaging decals for retail and ecommerce brands.',
     subtitle:
@@ -2244,8 +2300,10 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
       'Custom sticker hero banner from Figma',
       'products.sticker.hero',
     ),
-    overview:
-      'Stickers are a fast way to brand boxes, tissue, bags, jars, mailers, and campaign inserts. We support shape, finish, adhesive, roll or sheet packing, and color consistency.',
+    overview: `
+    Custom sticker labels are the most cost-effective and versatile tools in your packaging arsenal. Far beyond a simple adhesive, they are the vital "finishing touch" that elevates an ordinary box into a premium unboxing experience. Whether you need decorative seals for tissue paper, highly durable custom vinyl stickers for shipping mailers, or practical clothing stickers for size and barcode identification, high-quality stickers reinforce your brand identity at every single touchpoint.
+    At SENYE, we redefine how growing brands source their packaging accessories. As a direct sticker manufacturer, we offer professional custom sticker printing tailored to your exact specifications. From glossy promotional decals to elegant matte sticker packaging solutions, our strict QC ensures vibrant colors and reliable adhesion. Plus, with our flexible low MOQ, we can seamlessly bundle your stickers with your hang tags and dust bags into one combined shipment—saving you time, hassle, and logistics costs.
+    `,
     highlights: [...productShell.highlights],
     stats: [...productShell.stats],
     categories: [
@@ -2375,45 +2433,44 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
       },
     ],
     process: [...productShell.process],
-    whyChooseTitle: 'Why Choose Us For Custom Stickers?',
+    whyChooseTitle: 'Why choose us as your Trusted Dust Bag Supplier ?',
     whyChoose: [
       {
-        title: 'Low MOQ For Startup Brands',
+        title: 'Professional Sourcing Team',
         description:
-          'Start with a small test order, confirm the finish and handfeel, then scale into bulk production when your collection is ready.',
+          "With over 10 years of deep-rooted expertise, we act as your dedicated local sourcing partner to navigate the complexities of Chinese textile manufacturing. We go beyond simple procurement; we expertly curate fabrics—from breathable custom cotton dust bags to luxurious velvet—ensuring your packaging perfectly embodies your brand's DNA. We are the bridge that transforms your creative vision into a high-quality, market-ready reality.",
         image: image(
-          '/images/services/product-development.png',
+          '/images/products/patches/image 15.png',
           'Team reviewing packaging and trim samples',
-          'products.sticker.whyChoose.lowMoq',
+          'products.patches.whyChoose.lowMoq',
         ),
       },
       {
-        title: 'One-stop Customization',
+        title: 'Strict QC Steps',
         description:
-          'Match labels, hang tags, stickers, bags, tape, ribbons, and packaging trims in one managed workflow.',
+          'Leverage a decade of supply chain mastery. As a reliable dust bag manufacturer, our team eliminates the guesswork by strictly controlling every detail—from fabric thread count and stitching durability to precise logo printing. Whether you are ordering low MOQ custom pouches or large-scale wholesale batches, we ensure flawless execution and technical compatibility before anything leaves the factory.',
         image: image(
-          '/images/services/quality.png',
+          '/images/products/patches/Frame 41.png',
           'Packaging customization desk with samples',
-          'products.sticker.whyChoose.customization',
+          'products.patches.whyChoose.customization',
         ),
       },
       {
-        title: 'Strict Quality Control',
+        title: 'Combined Shipment',
         description:
-          'We check artwork, material, color tolerance, finishing, packing, and final shipment details before dispatch.',
+          "Backed by 10+ years of logistics experience, our specialists act as your eyes and ears in the Chinese market. We specialize in consolidating your entire packaging suite. By combining your custom dust bags with logo, woven labels, hang tags, and shipping tape into one seamless delivery, we drastically reduce your logistics overhead and ensure a consistent brand presentation from the factory to your customer's door.",
         image: image(
-          '/images/services/warehouse-assembly.png',
+          '/images/products/patches/Frame 41-1.png',
           'Quality control and packing workflow',
-          'products.sticker.whyChoose.quality',
+          'products.patches.whyChoose.quality',
         ),
       },
     ],
     caseStudy: {
-      title: 'Sticker system for a beauty launch',
-      description:
-        'A beauty brand needed box seals, jar labels, and campaign stickers. We matched finishes, checked adhesive, and arranged compact sheet packing.',
+      title: 'How We Engineered Premium Foil Labels for Suji & Co',
+      description: `For premium artisanal brands like Suji & Co, the packaging must communicate "natural," "pure," and "hand-made" at a single glance. They needed a sophisticated sticker packaging solution that could bridge the gap between rustic watercolor charm and modern luxury, all while surviving the demanding environments of kitchens and refrigerators.`,
       image: image(
-        '/images/solutions/cosmetics-case.png',
+        '/images/products/sticker/cosmetics-case.png',
         'Beauty packaging sticker case',
         'products.sticker.caseStudy',
       ),
@@ -2422,12 +2479,45 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
         'Finish and adhesive sampled',
         'Packed as sheets for easy fulfillment',
       ],
+      quote: `SENYE completely transformed our product presentation. Their precision with gold foil and moisture-resistant materials proved exactly why they are a top-tier sticker manufacturer. The labels adhere perfectly and look like pieces of art on our jars.`,
+      quoteAuthor: 'Creative Director, Suji & Co',
+      challenge: `Artisanal jars and tubes present unique packaging hurdles. The brand required customized sticker labels that could adhere perfectly to small-diameter curved glass without the edges lifting (winging) over time. Furthermore, because the products are often refrigerated and handled frequently, the labels had to be oil and moisture-resistant while accurately reproducing delicate watercolor illustrations.`,
+      solutionIntro: `As experts in custom sticker printing, our engineering team developed a hybrid labeling solution tailored for premium retail:`,
+      solutionPoints: [
+        `Advanced Material & Adhesive: We utilized a specialized permanent acrylic adhesive designed specifically for glass and plastic. Paired with a matte finish, it acts as a reliable custom waterproof sticker that won't smudge or peel in damp environments.`,
+        `High-Definition Digital CMYK: To capture the artistic nuance of the fruit illustrations, we used high-resolution digital presses. This allowed us to replicate the soft watercolor textures with photographic clarity.`,
+        `Luxury Foil Accents: To elevate the custom sticker labels to a luxury tier, we applied precision Gold Hot Stamping. The metallic gold creates a high-contrast "pop," instantly signaling a premium price point to the consumer.`,
+      ],
+      resultPoints: [
+        'Shelf-Ready Sophistication: The color consistency and gold foil quality remained perfectly identical across all SKUs and container sizes.',
+        `Tactile Quality: The specialized matte finish gives the packaging a refined "boutique" feel, easily distinguishing it from mass-market glossy labels.`,
+        `Proven Durability: The labels maintain their structural integrity and strong adhesion from the retail shelf to the customer's table, ensuring lasting brand impact.`,
+      ],
+      gallery: [
+        image(
+          '/images/products/sticker/Group 1272636800.png',
+          'Reusable cotton pouch with mesh window front view',
+          'products.bag.caseStudy.gallery.0',
+        ),
+        image(
+          '/images/products/sticker/image 16.png',
+          'Reusable cotton pouch folded detail',
+          'products.bag.caseStudy.gallery.1',
+        ),
+        image(
+          '/images/products/sticker/Frame 40.png',
+          'Reusable cotton pouch folded detail',
+          'products.bag.caseStudy.gallery.1',
+        ),
+        image(
+          '/images/products/sticker/Frame 40-1.png',
+          'Reusable cotton pouch folded detail',
+          'products.bag.caseStudy.gallery.1',
+        ),
+      ],
     },
     blogs: commonBlogs,
-    faqs: buildFaqs(
-      'stickers',
-      'Q4: Which sticker material is best for bottles or jars?',
-    ),
+    faqs: stickerFaqs,
   },
   {
     slug: 'patches',

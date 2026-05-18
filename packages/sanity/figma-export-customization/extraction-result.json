@@ -1,0 +1,718 @@
+{
+  "source": {
+    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=19716-1439&t=wllXfbMu5Hfh6Jfh-4",
+    "fileKey": "SzOlgqIXHy4MBI2QXLE08L",
+    "nodeId": "19716:1439",
+    "fileName": "独立站设计-吊牌网站 (Copy)",
+    "lastModified": "2026-05-18T15:51:22Z"
+  },
+  "structure": {
+    "nodeId": "19716:1439",
+    "nodeName": "Group 1272636735",
+    "nodeType": "GROUP",
+    "children": [
+      {
+        "nodeId": "19716:1440",
+        "nodeName": "Customization Options",
+        "nodeType": "TEXT",
+        "children": [],
+        "layout": {
+          "width": 386,
+          "height": 39
+        },
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#333333",
+            "opacity": 1
+          }
+        ]
+      },
+      {
+        "nodeId": "19716:1441",
+        "nodeName": "Group 351",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19716:1442",
+            "nodeName": "Frame 1272636658",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19716:1443",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 258
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#000000",
+                    "opacity": 0
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 385.400146484375,
+              "height": 255.3275909423828
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#878686",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19716:1444",
+            "nodeName": "Frame 1272636675",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19716:1445",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 258
+                }
+              }
+            ],
+            "layout": {
+              "width": 385.400146484375,
+              "height": 255.3275909423828
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#929292",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19716:1446",
+            "nodeName": "Frame 1272636673",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19716:1447",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 258
+                }
+              }
+            ],
+            "layout": {
+              "width": 386.20306396484375,
+              "height": 255.3275909423828
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#929292",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19716:1448",
+            "nodeName": "Frame 1272636676",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19716:1449",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 258
+                }
+              }
+            ],
+            "layout": {
+              "width": 386.20306396484375,
+              "height": 255.3275909423828
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#878686",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19716:1450",
+            "nodeName": "Frame 1272636674",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19716:1451",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 258
+                }
+              }
+            ],
+            "layout": {
+              "width": 385.400146484375,
+              "height": 255.3275909423828
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#878686",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19716:1452",
+            "nodeName": "Frame 1272636677",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19716:1453",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 258
+                }
+              }
+            ],
+            "layout": {
+              "width": 385.400146484375,
+              "height": 255.3275909423828
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#929292",
+                "opacity": 1
+              }
+            ]
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 532.1536865234375
+        }
+      },
+      {
+        "nodeId": "19716:1454",
+        "nodeName": "Group 1272636735",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19716:1455",
+            "nodeName": "Frame 1272636658",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19716:1456",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 258
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#000000",
+                    "opacity": 0.6000000238418579
+                  }
+                ]
+              },
+              {
+                "nodeId": "19716:1457",
+                "nodeName": "image 15",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 300
+                }
+              }
+            ],
+            "layout": {
+              "width": 385,
+              "height": 300
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#878686",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19716:1458",
+            "nodeName": "Frame 1272636675",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19716:1459",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 300
+                }
+              }
+            ],
+            "layout": {
+              "width": 385,
+              "height": 300
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#929292",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19716:1460",
+            "nodeName": "Frame 1272636673",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19716:1461",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 300
+                }
+              }
+            ],
+            "layout": {
+              "width": 386,
+              "height": 296
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#929292",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19716:1462",
+            "nodeName": "Frame 1272636676",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19716:1463",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 300
+                }
+              }
+            ],
+            "layout": {
+              "width": 386,
+              "height": 300
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#878686",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19716:1464",
+            "nodeName": "Frame 1272636674",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19716:1465",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 300
+                }
+              }
+            ],
+            "layout": {
+              "width": 385,
+              "height": 300
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#878686",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19716:1466",
+            "nodeName": "Frame 1272636677",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19716:1467",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 300
+                }
+              }
+            ],
+            "layout": {
+              "width": 385,
+              "height": 300
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#929292",
+                "opacity": 1
+              }
+            ]
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 623
+        }
+      },
+      {
+        "nodeId": "19716:1468",
+        "nodeName": "materials",
+        "nodeType": "TEXT",
+        "children": [],
+        "layout": {
+          "width": 108,
+          "height": 37.0563850402832
+        },
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#333333",
+            "opacity": 1
+          }
+        ]
+      },
+      {
+        "nodeId": "19716:1469",
+        "nodeName": "Printing",
+        "nodeType": "TEXT",
+        "children": [],
+        "layout": {
+          "width": 91,
+          "height": 37
+        },
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#333333",
+            "opacity": 1
+          }
+        ]
+      },
+      {
+        "nodeId": "19716:1471",
+        "nodeName": "1. Eco-Friendly Paper & Kraft Sourced from sustainable forests, our paper-based labels offer a natural, classic aesthetic. They are the perfect biodegradable choice for sealing tissue paper, retail boxes, and creating earthy sticker packaging. 2. Durable Waterproof Vinyl Engineered with premium plastic polymers, our custom vinyl stickers are tear-resistant and 100% waterproof. They are built to survive harsh transit conditions, making them ideal for shipping mailers and outdoor use. 3. Ultra-Clear PET Film Designed for a seamless, \"no-label\" look. Combined with our high-definition clear sticker printing, these transparent labels allow your product or packaging texture to shine through beautifully. 4. Apparel Heat Transfer Film Formulated specifically for the textile industry. Our heat transfer stickers for clothes provide a skin-friendly, tagless experience that is highly wash-resistant, acting as the perfect clothing label stickers.",
+        "nodeType": "TEXT",
+        "children": [],
+        "layout": {
+          "width": 1200,
+          "height": 238
+        },
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#333333",
+            "opacity": 1
+          }
+        ]
+      },
+      {
+        "nodeId": "19716:1472",
+        "nodeName": "Group 1272636736",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19716:1473",
+            "nodeName": "1. High-Definition Full Color Printing As a professional sticker manufacturer, we utilize advanced digital and offset presses. This ensures your custom sticker printing delivers sharp text, vibrant colors, and flawless logo reproduction across any material. 2. Precision Die-Cutting & Kiss-Cutting We cut your stickers to any exact shape you desire. Choose from individual die-cut decals for promotional giveaways, or efficient custom sticker rolls for fast, high-volume automated application. 3. Premium Foil & Holographic Enhancements Elevate your brand with specialty finishes. We offer hot foil stamping in gold, silver, or rose gold, alongside holographic layers that catch the light, turning ordinary customized sticker labels into premium boutique experiences. 4. Protective Lamination We apply a protective top layer to enhance durability. Choose a glossy finish to make colors pop, or a smooth matte finish for a sophisticated, non-reflective elegance on your custom waterproof sticker orders.",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 1199,
+              "height": 238
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          }
+        ],
+        "layout": {
+          "width": 1199,
+          "height": 238
+        }
+      }
+    ],
+    "layout": {
+      "width": 1200,
+      "height": 2025
+    }
+  },
+  "texts": [
+    {
+      "nodeId": "19716:1440",
+      "nodeName": "Customization Options",
+      "text": "Customization Options",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 32,
+        "fontWeight": 800,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19716:1468",
+      "nodeName": "materials",
+      "text": "materials",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19716:1469",
+      "nodeName": "Printing",
+      "text": "Printing ",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19716:1471",
+      "nodeName": "1. Eco-Friendly Paper & Kraft Sourced from sustainable forests, our paper-based labels offer a natural, classic aesthetic. They are the perfect biodegradable choice for sealing tissue paper, retail boxes, and creating earthy sticker packaging. 2. Durable Waterproof Vinyl Engineered with premium plastic polymers, our custom vinyl stickers are tear-resistant and 100% waterproof. They are built to survive harsh transit conditions, making them ideal for shipping mailers and outdoor use. 3. Ultra-Clear PET Film Designed for a seamless, \"no-label\" look. Combined with our high-definition clear sticker printing, these transparent labels allow your product or packaging texture to shine through beautifully. 4. Apparel Heat Transfer Film Formulated specifically for the textile industry. Our heat transfer stickers for clothes provide a skin-friendly, tagless experience that is highly wash-resistant, acting as the perfect clothing label stickers.",
+      "text": "1. Eco-Friendly Paper & Kraft Sourced from sustainable forests, our paper-based labels offer a natural, classic aesthetic. They are the perfect biodegradable choice for sealing tissue paper, retail boxes, and creating earthy sticker packaging.\n2. Durable Waterproof Vinyl Engineered with premium plastic polymers, our custom vinyl stickers are tear-resistant and 100% waterproof. They are built to survive harsh transit conditions, making them ideal for shipping mailers and outdoor use.\n3. Ultra-Clear PET Film Designed for a seamless, \"no-label\" look. Combined with our high-definition clear sticker printing, these transparent labels allow your product or packaging texture to shine through beautifully.\n4. Apparel Heat Transfer Film Formulated specifically for the textile industry. Our heat transfer stickers for clothes provide a skin-friendly, tagless experience that is highly wash-resistant, acting as the perfect clothing label stickers.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "JUSTIFIED"
+      }
+    },
+    {
+      "nodeId": "19716:1473",
+      "nodeName": "1. High-Definition Full Color Printing As a professional sticker manufacturer, we utilize advanced digital and offset presses. This ensures your custom sticker printing delivers sharp text, vibrant colors, and flawless logo reproduction across any material. 2. Precision Die-Cutting & Kiss-Cutting We cut your stickers to any exact shape you desire. Choose from individual die-cut decals for promotional giveaways, or efficient custom sticker rolls for fast, high-volume automated application. 3. Premium Foil & Holographic Enhancements Elevate your brand with specialty finishes. We offer hot foil stamping in gold, silver, or rose gold, alongside holographic layers that catch the light, turning ordinary customized sticker labels into premium boutique experiences. 4. Protective Lamination We apply a protective top layer to enhance durability. Choose a glossy finish to make colors pop, or a smooth matte finish for a sophisticated, non-reflective elegance on your custom waterproof sticker orders.",
+      "text": "1. High-Definition Full Color Printing As a professional sticker manufacturer, we utilize advanced digital and offset presses. This ensures your custom sticker printing delivers sharp text, vibrant colors, and flawless logo reproduction across any material.\n2. Precision Die-Cutting & Kiss-Cutting We cut your stickers to any exact shape you desire. Choose from individual die-cut decals for promotional giveaways, or efficient custom sticker rolls for fast, high-volume automated application.\n3. Premium Foil & Holographic Enhancements Elevate your brand with specialty finishes. We offer hot foil stamping in gold, silver, or rose gold, alongside holographic layers that catch the light, turning ordinary customized sticker labels into premium boutique experiences.\n4. Protective Lamination We apply a protective top layer to enhance durability. Choose a glossy finish to make colors pop, or a smooth matte finish for a sophisticated, non-reflective elegance on your custom waterproof sticker orders.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "JUSTIFIED"
+      }
+    }
+  ],
+  "images": [
+    {
+      "nodeId": "19716:1439",
+      "nodeName": "Group 1272636735 (整体截图)",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/779ddef2-14d8-434c-ba55-d244a78388a4",
+      "localPath": "figma-export-customization/images/full-selection-19716-1439.png"
+    },
+    {
+      "nodeId": "19716:1442",
+      "nodeName": "Frame 1272636658",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/31d961aa-bc9f-4e99-9922-cd47d069e5e7",
+      "localPath": "figma-export-customization/images/Frame-1272636658-19716-1442.png"
+    },
+    {
+      "nodeId": "19716:1443",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/6b5f93a4-53a9-4c45-9999-8187f5caecb8",
+      "localPath": "figma-export-customization/images/image-14-19716-1443.png"
+    },
+    {
+      "nodeId": "19716:1444",
+      "nodeName": "Frame 1272636675",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/af95a774-6dbf-495d-8075-8fae82b94da4",
+      "localPath": "figma-export-customization/images/Frame-1272636675-19716-1444.png"
+    },
+    {
+      "nodeId": "19716:1445",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/dad4f842-d08a-4c64-b5b9-bb0abd703a90",
+      "localPath": "figma-export-customization/images/image-14-19716-1445.png"
+    },
+    {
+      "nodeId": "19716:1446",
+      "nodeName": "Frame 1272636673",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/7842163a-16e3-4027-8e53-c8870d66cc05",
+      "localPath": "figma-export-customization/images/Frame-1272636673-19716-1446.png"
+    },
+    {
+      "nodeId": "19716:1447",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d8ac1a95-2f8b-4ef0-87d9-94f267cd6af8",
+      "localPath": "figma-export-customization/images/image-14-19716-1447.png"
+    },
+    {
+      "nodeId": "19716:1448",
+      "nodeName": "Frame 1272636676",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/06ea79ae-01c2-4182-89fd-6f498d0bc2eb",
+      "localPath": "figma-export-customization/images/Frame-1272636676-19716-1448.png"
+    },
+    {
+      "nodeId": "19716:1449",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/bb017555-d8e9-4ebf-837d-7a115b559514",
+      "localPath": "figma-export-customization/images/image-14-19716-1449.png"
+    },
+    {
+      "nodeId": "19716:1450",
+      "nodeName": "Frame 1272636674",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ea7ac2be-c47a-4d87-a09d-4a7c049685cd",
+      "localPath": "figma-export-customization/images/Frame-1272636674-19716-1450.png"
+    },
+    {
+      "nodeId": "19716:1451",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/1da51217-e42e-4f06-954c-b8e8835f6ae2",
+      "localPath": "figma-export-customization/images/image-14-19716-1451.png"
+    },
+    {
+      "nodeId": "19716:1452",
+      "nodeName": "Frame 1272636677",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f3d64b97-8929-4e40-b15f-d61a725ef855",
+      "localPath": "figma-export-customization/images/Frame-1272636677-19716-1452.png"
+    },
+    {
+      "nodeId": "19716:1453",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/57bf0a34-3648-4818-b528-b83fe222fe9a",
+      "localPath": "figma-export-customization/images/image-14-19716-1453.png"
+    },
+    {
+      "nodeId": "19716:1455",
+      "nodeName": "Frame 1272636658",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b3dfeb4c-99a3-44b7-b960-ea9b0c75f751",
+      "localPath": "figma-export-customization/images/Frame-1272636658-19716-1455.png"
+    },
+    {
+      "nodeId": "19716:1456",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ee632b88-3958-4266-b9d4-4e77715aebda",
+      "localPath": "figma-export-customization/images/image-14-19716-1456.png"
+    },
+    {
+      "nodeId": "19716:1457",
+      "nodeName": "image 15",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/7d31e577-9396-4a32-98ea-13b212d75675",
+      "localPath": "figma-export-customization/images/image-15-19716-1457.png"
+    },
+    {
+      "nodeId": "19716:1458",
+      "nodeName": "Frame 1272636675",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/6a9431e2-621b-4ce3-aea7-92c734a73cd0",
+      "localPath": "figma-export-customization/images/Frame-1272636675-19716-1458.png"
+    },
+    {
+      "nodeId": "19716:1459",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/25f44c1c-362f-4876-ba80-40ef41aeca60",
+      "localPath": "figma-export-customization/images/image-14-19716-1459.png"
+    },
+    {
+      "nodeId": "19716:1460",
+      "nodeName": "Frame 1272636673",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/57390872-c144-4508-81ca-3e9385538b13",
+      "localPath": "figma-export-customization/images/Frame-1272636673-19716-1460.png"
+    },
+    {
+      "nodeId": "19716:1461",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/99cde2dc-53b5-4fd7-aac8-593fe3125502",
+      "localPath": "figma-export-customization/images/image-14-19716-1461.png"
+    },
+    {
+      "nodeId": "19716:1462",
+      "nodeName": "Frame 1272636676",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ecdd2f9a-0bf9-4252-91cb-9272d0c4ade5",
+      "localPath": "figma-export-customization/images/Frame-1272636676-19716-1462.png"
+    },
+    {
+      "nodeId": "19716:1463",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ebf40c2a-cf67-4b97-ad78-434797d5c008",
+      "localPath": "figma-export-customization/images/image-14-19716-1463.png"
+    },
+    {
+      "nodeId": "19716:1464",
+      "nodeName": "Frame 1272636674",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a26b8581-c5c1-42e9-864f-60d2113f9147",
+      "localPath": "figma-export-customization/images/Frame-1272636674-19716-1464.png"
+    },
+    {
+      "nodeId": "19716:1465",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/566d6246-3e87-4e8f-b318-490ab3c9f81d",
+      "localPath": "figma-export-customization/images/image-14-19716-1465.png"
+    },
+    {
+      "nodeId": "19716:1466",
+      "nodeName": "Frame 1272636677",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/647dc269-9861-4085-b69d-85225af09ad8",
+      "localPath": "figma-export-customization/images/Frame-1272636677-19716-1466.png"
+    },
+    {
+      "nodeId": "19716:1467",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/7b0568e5-3726-462a-8d25-c23b5b6118cc",
+      "localPath": "figma-export-customization/images/image-14-19716-1467.png"
+    }
+  ]
+}

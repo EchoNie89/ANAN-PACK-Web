@@ -1,28 +1,28 @@
 {
   "source": {
-    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=19415-2008&t=wllXfbMu5Hfh6Jfh-4",
+    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=21440-2085&t=wllXfbMu5Hfh6Jfh-4",
     "fileKey": "SzOlgqIXHy4MBI2QXLE08L",
-    "nodeId": "19415:2008",
+    "nodeId": "21440:2085",
     "fileName": "独立站设计-吊牌网站 (Copy)",
     "lastModified": "2026-05-18T15:17:13Z"
   },
   "structure": {
-    "nodeId": "19415:2008",
+    "nodeId": "21440:2085",
     "nodeName": "Group 1272636733",
     "nodeType": "GROUP",
     "children": [
       {
-        "nodeId": "19413:2046",
+        "nodeId": "21440:2086",
         "nodeName": "Group 687",
         "nodeType": "GROUP",
         "children": [
           {
-            "nodeId": "19413:2047",
+            "nodeId": "21440:2087",
             "nodeName": "Group 671",
             "nodeType": "GROUP",
             "children": [
               {
-                "nodeId": "19413:2048",
+                "nodeId": "21440:2088",
                 "nodeName": "Applications",
                 "nodeType": "TEXT",
                 "children": [],
@@ -39,7 +39,7 @@
                 ]
               },
               {
-                "nodeId": "19413:2049",
+                "nodeId": "21440:2089",
                 "nodeName": "Line 10",
                 "nodeType": "LINE",
                 "children": [],
@@ -61,17 +61,17 @@
         }
       },
       {
-        "nodeId": "19415:1994",
+        "nodeId": "21440:2090",
         "nodeName": "Group 1272636731",
         "nodeType": "GROUP",
         "children": [
           {
-            "nodeId": "19415:1990",
+            "nodeId": "21440:2091",
             "nodeName": "Group 1272636727",
             "nodeType": "GROUP",
             "children": [
               {
-                "nodeId": "19415:1988",
+                "nodeId": "21440:2092",
                 "nodeName": "Rectangle 86",
                 "nodeType": "VECTOR",
                 "children": [],
@@ -81,7 +81,24 @@
                 }
               },
               {
-                "nodeId": "19413:2078",
+                "nodeId": "21440:2093",
+                "nodeName": "Streamline your garment branding. From skin-friendly clothing stickers to precise size stickers for clothing, our solutions help you organize inventory efficiently. We also offer durable heat transfer options, providing the ultimate tagless clothing label stickers for fashion brands.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 208
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21440:2094",
                 "nodeName": "Apparel & Clothing",
                 "nodeType": "TEXT",
                 "children": [],
@@ -100,16 +117,16 @@
             ],
             "layout": {
               "width": 270,
-              "height": 319
+              "height": 547.056640625
             }
           },
           {
-            "nodeId": "19415:1993",
+            "nodeId": "21440:2095",
             "nodeName": "Group 1272636730",
             "nodeType": "GROUP",
             "children": [
               {
-                "nodeId": "19415:2012",
+                "nodeId": "21440:2096",
                 "nodeName": "Rectangle 87",
                 "nodeType": "VECTOR",
                 "children": [],
@@ -119,7 +136,7 @@
                 }
               },
               {
-                "nodeId": "19413:2079",
+                "nodeId": "21440:2097",
                 "nodeName": "Beauty & Cosmetics",
                 "nodeType": "TEXT",
                 "children": [],
@@ -134,20 +151,37 @@
                     "opacity": 1
                   }
                 ]
+              },
+              {
+                "nodeId": "21440:2098",
+                "nodeName": "Turn your customers into brand ambassadors. Premium die-cut decals are perfect for promotional giveaways and events. With our vibrant custom sticker printing, your customized logos will look flawless and durable on laptops, water bottles, and accessories.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 208
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
               }
             ],
             "layout": {
               "width": 270,
-              "height": 319
+              "height": 547.056640625
             }
           },
           {
-            "nodeId": "19415:1992",
+            "nodeId": "21440:2099",
             "nodeName": "Group 1272636729",
             "nodeType": "GROUP",
             "children": [
               {
-                "nodeId": "19415:1978",
+                "nodeId": "21440:2100",
                 "nodeName": "Rectangle 86",
                 "nodeType": "VECTOR",
                 "children": [],
@@ -157,7 +191,7 @@
                 }
               },
               {
-                "nodeId": "19413:2080",
+                "nodeId": "21440:2101",
                 "nodeName": "Bags & Luggage",
                 "nodeType": "TEXT",
                 "children": [],
@@ -172,20 +206,37 @@
                     "opacity": 1
                   }
                 ]
+              },
+              {
+                "nodeId": "21440:2102",
+                "nodeName": "Secure your shipments in style. Our heavy-duty custom vinyl sticker options are designed to withstand harsh transit conditions. Available in fast-peeling custom sticker rolls, these custom waterproof sticker solutions are perfect for branding corrugated boxes and mailers.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 208
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
               }
             ],
             "layout": {
               "width": 270,
-              "height": 319
+              "height": 547.056640625
             }
           },
           {
-            "nodeId": "19415:1991",
+            "nodeId": "21440:2103",
             "nodeName": "Group 1272636728",
             "nodeType": "GROUP",
             "children": [
               {
-                "nodeId": "19415:1975",
+                "nodeId": "21440:2104",
                 "nodeName": "Rectangle 86",
                 "nodeType": "VECTOR",
                 "children": [],
@@ -195,7 +246,7 @@
                 }
               },
               {
-                "nodeId": "19413:2081",
+                "nodeId": "21440:2105",
                 "nodeName": "Home & Linen",
                 "nodeType": "TEXT",
                 "children": [],
@@ -210,28 +261,45 @@
                     "opacity": 1
                   }
                 ]
+              },
+              {
+                "nodeId": "21440:2106",
+                "nodeName": "Elevate the unboxing experience. Apply elegant custom sticker labels to seal tissue paper, shopping bags, or retail boxes. With specialty finishes and high-definition clear sticker printing, your sticker packaging will leave a lasting luxury impression on your customers.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 270,
+                  "height": 208
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
               }
             ],
             "layout": {
               "width": 270,
-              "height": 319
+              "height": 547.056640625
             }
           }
         ],
         "layout": {
-          "width": 1200,
-          "height": 319
+          "width": 1199.59375,
+          "height": 547.056640625
         }
       }
     ],
     "layout": {
-      "width": 1200,
-      "height": 397.943359375
+      "width": 1199.59375,
+      "height": 647
     }
   },
   "texts": [
     {
-      "nodeId": "19413:2048",
+      "nodeId": "21440:2088",
       "nodeName": "Applications",
       "text": "Applications",
       "style": {
@@ -243,7 +311,19 @@
       }
     },
     {
-      "nodeId": "19413:2078",
+      "nodeId": "21440:2093",
+      "nodeName": "Streamline your garment branding. From skin-friendly clothing stickers to precise size stickers for clothing, our solutions help you organize inventory efficiently. We also offer durable heat transfer options, providing the ultimate tagless clothing label stickers for fashion brands.",
+      "text": "Streamline your garment branding. From skin-friendly clothing stickers to precise size stickers for clothing, our solutions help you organize inventory efficiently. We also offer durable heat transfer options, providing the ultimate tagless clothing label stickers for fashion brands.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21440:2094",
       "nodeName": "Apparel & Clothing",
       "text": "Apparel & Clothing",
       "style": {
@@ -255,7 +335,7 @@
       }
     },
     {
-      "nodeId": "19413:2079",
+      "nodeId": "21440:2097",
       "nodeName": "Beauty & Cosmetics",
       "text": "Beauty & Cosmetics",
       "style": {
@@ -267,7 +347,19 @@
       }
     },
     {
-      "nodeId": "19413:2080",
+      "nodeId": "21440:2098",
+      "nodeName": "Turn your customers into brand ambassadors. Premium die-cut decals are perfect for promotional giveaways and events. With our vibrant custom sticker printing, your customized logos will look flawless and durable on laptops, water bottles, and accessories.",
+      "text": "Turn your customers into brand ambassadors. Premium die-cut decals are perfect for promotional giveaways and events. With our vibrant custom sticker printing, your customized logos will look flawless and durable on laptops, water bottles, and accessories.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21440:2101",
       "nodeName": "Bags & Luggage",
       "text": "Bags & Luggage",
       "style": {
@@ -279,7 +371,19 @@
       }
     },
     {
-      "nodeId": "19413:2081",
+      "nodeId": "21440:2102",
+      "nodeName": "Secure your shipments in style. Our heavy-duty custom vinyl sticker options are designed to withstand harsh transit conditions. Available in fast-peeling custom sticker rolls, these custom waterproof sticker solutions are perfect for branding corrugated boxes and mailers.",
+      "text": "Secure your shipments in style. Our heavy-duty custom vinyl sticker options are designed to withstand harsh transit conditions. Available in fast-peeling custom sticker rolls, these custom waterproof sticker solutions are perfect for branding corrugated boxes and mailers.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21440:2105",
       "nodeName": "Home & Linen",
       "text": "Home & Linen",
       "style": {
@@ -289,38 +393,50 @@
         "color": "#333333",
         "textAlignHorizontal": "CENTER"
       }
+    },
+    {
+      "nodeId": "21440:2106",
+      "nodeName": "Elevate the unboxing experience. Apply elegant custom sticker labels to seal tissue paper, shopping bags, or retail boxes. With specialty finishes and high-definition clear sticker printing, your sticker packaging will leave a lasting luxury impression on your customers.",
+      "text": "Elevate the unboxing experience. Apply elegant custom sticker labels to seal tissue paper, shopping bags, or retail boxes. With specialty finishes and high-definition clear sticker printing, your sticker packaging will leave a lasting luxury impression on your customers.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
     }
   ],
   "images": [
     {
-      "nodeId": "19415:2008",
+      "nodeId": "21440:2085",
       "nodeName": "Group 1272636733 (整体截图)",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/1f9b07d1-ca0f-4a64-ac53-147cb68108a7",
-      "localPath": "figma-export-apps/images/full-selection-19415-2008.png"
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4c9f2d91-7eb6-4153-8d92-5da72df13ee0",
+      "localPath": "figma-export-apps/images/full-selection-21440-2085.png"
     },
     {
-      "nodeId": "19415:1988",
+      "nodeId": "21440:2092",
       "nodeName": "Rectangle 86",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/3326fadf-191e-4ef6-940d-f6d9334aaf80",
-      "localPath": "figma-export-apps/images/Rectangle-86-19415-1988.png"
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/8115cf5a-d836-4c46-901d-508d952ff9ff",
+      "localPath": "figma-export-apps/images/Rectangle-86-21440-2092.png"
     },
     {
-      "nodeId": "19415:2012",
+      "nodeId": "21440:2096",
       "nodeName": "Rectangle 87",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fef72545-4174-4fba-94da-a6f8a0930a24",
-      "localPath": "figma-export-apps/images/Rectangle-87-19415-2012.png"
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/bb8e9298-9b6b-4fac-a01a-3feb8b908ccc",
+      "localPath": "figma-export-apps/images/Rectangle-87-21440-2096.png"
     },
     {
-      "nodeId": "19415:1978",
+      "nodeId": "21440:2100",
       "nodeName": "Rectangle 86",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/202bd11a-2c90-40eb-93ef-68475df30770",
-      "localPath": "figma-export-apps/images/Rectangle-86-19415-1978.png"
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/00e18059-2012-44bf-b494-5285c54befc0",
+      "localPath": "figma-export-apps/images/Rectangle-86-21440-2100.png"
     },
     {
-      "nodeId": "19415:1975",
+      "nodeId": "21440:2104",
       "nodeName": "Rectangle 86",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/3b070ba4-c408-4c74-b999-338488aa9dd4",
-      "localPath": "figma-export-apps/images/Rectangle-86-19415-1975.png"
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/57420cbf-8607-4b1f-8689-db85c6f07021",
+      "localPath": "figma-export-apps/images/Rectangle-86-21440-2104.png"
     }
   ]
 }

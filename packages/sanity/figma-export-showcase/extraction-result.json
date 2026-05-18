@@ -1,23 +1,23 @@
 {
   "source": {
-    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=19415-2053&t=wllXfbMu5Hfh6Jfh-4",
+    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=19716-1374&t=wllXfbMu5Hfh6Jfh-4",
     "fileKey": "SzOlgqIXHy4MBI2QXLE08L",
-    "nodeId": "19415:2053",
+    "nodeId": "19716:1374",
     "fileName": "独立站设计-吊牌网站 (Copy)",
     "lastModified": "2026-05-18T15:17:13Z"
   },
   "structure": {
-    "nodeId": "19415:2053",
-    "nodeName": "Group 1272636735",
-    "nodeType": "GROUP",
+    "nodeId": "19716:1374",
+    "nodeName": "Frame 1272636737",
+    "nodeType": "FRAME",
     "children": [
       {
-        "nodeId": "19413:1820",
-        "nodeName": "Customization Options",
+        "nodeId": "19716:1375",
+        "nodeName": "Product Showcase",
         "nodeType": "TEXT",
         "children": [],
         "layout": {
-          "width": 386,
+          "width": 311,
           "height": 39
         },
         "fills": [
@@ -29,500 +29,809 @@
         ]
       },
       {
-        "nodeId": "21421:1801",
-        "nodeName": "Group 1272636932",
+        "nodeId": "19716:1376",
+        "nodeName": "Group 1272636720",
         "nodeType": "GROUP",
         "children": [
           {
-            "nodeId": "19413:1822",
-            "nodeName": "Group 351",
-            "nodeType": "GROUP",
+            "nodeId": "21440:2052",
+            "nodeName": "Frame 1272636901",
+            "nodeType": "FRAME",
             "children": [
               {
-                "nodeId": "19413:1823",
-                "nodeName": "Frame 1272636658",
+                "nodeId": "21440:2048",
+                "nodeName": "Frame 1272636881",
                 "nodeType": "FRAME",
                 "children": [
                   {
-                    "nodeId": "19415:2050",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
+                    "nodeId": "21440:2049",
+                    "nodeName": "Waterproof Vinyl Stickers",
+                    "nodeType": "TEXT",
                     "children": [],
                     "layout": {
-                      "width": 386,
-                      "height": 258
+                      "width": 1200,
+                      "height": 37
                     },
                     "fills": [
                       {
                         "type": "SOLID",
-                        "color": "#000000",
-                        "opacity": 0
-                      }
-                    ]
-                  }
-                ],
-                "layout": {
-                  "width": 385.400146484375,
-                  "height": 255.3275909423828
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#878686",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "19413:1830",
-                "nodeName": "Frame 1272636675",
-                "nodeType": "FRAME",
-                "children": [
-                  {
-                    "nodeId": "19415:2041",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
-                    "children": [],
-                    "layout": {
-                      "width": 386,
-                      "height": 258
-                    }
-                  }
-                ],
-                "layout": {
-                  "width": 385.400146484375,
-                  "height": 255.3275909423828
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#929292",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "19413:1833",
-                "nodeName": "Frame 1272636673",
-                "nodeType": "FRAME",
-                "children": [
-                  {
-                    "nodeId": "19415:2033",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
-                    "children": [],
-                    "layout": {
-                      "width": 386,
-                      "height": 258
-                    }
-                  }
-                ],
-                "layout": {
-                  "width": 386.20306396484375,
-                  "height": 255.3275909423828
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#929292",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "19413:1836",
-                "nodeName": "Frame 1272636676",
-                "nodeType": "FRAME",
-                "children": [
-                  {
-                    "nodeId": "19415:2039",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
-                    "children": [],
-                    "layout": {
-                      "width": 386,
-                      "height": 258
-                    }
-                  }
-                ],
-                "layout": {
-                  "width": 386.20306396484375,
-                  "height": 255.3275909423828
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#878686",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "19413:1839",
-                "nodeName": "Frame 1272636674",
-                "nodeType": "FRAME",
-                "children": [
-                  {
-                    "nodeId": "19415:2035",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
-                    "children": [],
-                    "layout": {
-                      "width": 386,
-                      "height": 258
-                    }
-                  }
-                ],
-                "layout": {
-                  "width": 385.400146484375,
-                  "height": 255.3275909423828
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#878686",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "19413:1842",
-                "nodeName": "Frame 1272636677",
-                "nodeType": "FRAME",
-                "children": [
-                  {
-                    "nodeId": "19415:2037",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
-                    "children": [],
-                    "layout": {
-                      "width": 386,
-                      "height": 258
-                    }
-                  }
-                ],
-                "layout": {
-                  "width": 385.400146484375,
-                  "height": 255.3275909423828
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#929292",
-                    "opacity": 1
-                  }
-                ]
-              }
-            ],
-            "layout": {
-              "width": 1200,
-              "height": 532.1536865234375
-            }
-          },
-          {
-            "nodeId": "19413:1872",
-            "nodeName": "materials",
-            "nodeType": "TEXT",
-            "children": [],
-            "layout": {
-              "width": 108,
-              "height": 37.0563850402832
-            },
-            "fills": [
-              {
-                "type": "SOLID",
-                "color": "#333333",
-                "opacity": 1
-              }
-            ]
-          },
-          {
-            "nodeId": "19415:2015",
-            "nodeName": "At SENYE, we believe the right material is the foundation of brand storytelling. Our sourcing experts curate a diverse range of high-quality substrates to ensure your custom hang tags perfectly align with your brand positioning, budget, and sustainability goals. 1. Versatile Paper & Cardstock (The Classic Choice) The most popular and cost-effective option for apparel hang tags. Coated Art Paper: Features a smooth, semi-gloss surface for vibrant, high-fidelity color printing. The go-to choice for modern fashion and retail. White Cardboard (Premium Cardstock): Offers excellent stiffness and a clean, high-end feel. Ideal for luxury hang tags requiring structural integrity. Kraft Paper: Durable with a unique natural texture. The perfect choice for eco-friendly hang tags, vintage collections, or rugged outdoor brands. 2. Durable Synthetics (Waterproof & Tear-Resistant) Engineered for longevity and specialized environments like swimwear or outdoor gear. PVC/PP: Flexible, recyclable, and 100% waterproof. These plastic hang tags are built to withstand heavy handling and long-term storage. PET: Offers high transparency and a premium gloss finish, frequently used in high-end cosmetics and electronics packaging. 3. Luxury Metal Accents (The Prestige Tier) Elevate your brand to the elite tier with our custom metal labels. Available in Stainless Steel, Aluminum Alloy, and Copper, these tags are corrosion-resistant and provide a prestigious, weighty feel that resonates with luxury consumers. 4. Tactile Fabric & Woven Tags (The Organic Touch) Soft to the touch and integrated seamlessly with apparel. We offer Cotton, Linen, and Polyester options. These add a craft-oriented, artisanal feel to boutique clothing and home textiles, often paired with our woven labels.",
-            "nodeType": "TEXT",
-            "children": [],
-            "layout": {
-              "width": 1200,
-              "height": 716
-            },
-            "fills": [
-              {
-                "type": "SOLID",
-                "color": "#333333",
-                "opacity": 1
-              }
-            ]
-          }
-        ],
-        "layout": {
-          "width": 1200,
-          "height": 1365
-        }
-      },
-      {
-        "nodeId": "21421:1795",
-        "nodeName": "Group 1272636931",
-        "nodeType": "GROUP",
-        "children": [
-          {
-            "nodeId": "19415:2092",
-            "nodeName": "Group 1272636735",
-            "nodeType": "GROUP",
-            "children": [
-              {
-                "nodeId": "19415:2093",
-                "nodeName": "Frame 1272636658",
-                "nodeType": "FRAME",
-                "children": [
-                  {
-                    "nodeId": "19415:2094",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
-                    "children": [],
-                    "layout": {
-                      "width": 386,
-                      "height": 258
-                    },
-                    "fills": [
-                      {
-                        "type": "SOLID",
-                        "color": "#000000",
-                        "opacity": 0.6000000238418579
+                        "color": "#333333",
+                        "opacity": 1
                       }
                     ]
                   },
                   {
-                    "nodeId": "19556:659",
-                    "nodeName": "image 15",
-                    "nodeType": "RECTANGLE",
+                    "nodeId": "21440:2050",
+                    "nodeName": "Material & Craft: Crafted from heavy-duty plastic polymers and finished with a UV-resistant gloss or matte lamination. Why Choose It: These custom vinyl stickers are 100% waterproof and tear-proof. They provide the ultimate durability for outdoor use, heavy shipping boxes, and long-lasting custom waterproof sticker applications.",
+                    "nodeType": "TEXT",
                     "children": [],
                     "layout": {
-                      "width": 386,
-                      "height": 258
+                      "width": 1200,
+                      "height": 52
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#333333",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "mode": "VERTICAL",
+                  "itemSpacing": 10,
+                  "width": 1200,
+                  "height": 99
+                }
+              },
+              {
+                "nodeId": "19716:1378",
+                "nodeName": "Group 1272636719",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19716:1379",
+                    "nodeName": "Group 1272636716",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "19716:1380",
+                        "nodeName": "Rectangle 86",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 270,
+                          "height": 269
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19716:1381",
+                    "nodeName": "Group 1272636717",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "19716:1382",
+                        "nodeName": "Rectangle 87",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 270,
+                          "height": 269
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19716:1383",
+                    "nodeName": "Group 1272636718",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "19716:1384",
+                        "nodeName": "Rectangle 87",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 270,
+                          "height": 269
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  },
+                  {
+                    "nodeId": "19716:1385",
+                    "nodeName": "Group 1272636715",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "19716:1386",
+                        "nodeName": "Rectangle 86",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 270,
+                          "height": 269
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
                     }
                   }
                 ],
                 "layout": {
-                  "width": 385.400146484375,
-                  "height": 255.3275909423828
+                  "width": 1200,
+                  "height": 269
+                }
+              }
+            ],
+            "layout": {
+              "mode": "VERTICAL",
+              "itemSpacing": 40,
+              "width": 1200,
+              "height": 408
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 408
+        }
+      },
+      {
+        "nodeId": "19716:1388",
+        "nodeName": "Group 1272636721",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "21440:2061",
+            "nodeName": "Frame 1272636882",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "21440:2062",
+                "nodeName": "Clear & Transparent Labels",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 37
                 },
                 "fills": [
                   {
                     "type": "SOLID",
-                    "color": "#878686",
+                    "color": "#333333",
                     "opacity": 1
                   }
                 ]
               },
               {
-                "nodeId": "19415:2100",
-                "nodeName": "Frame 1272636675",
-                "nodeType": "FRAME",
-                "children": [
-                  {
-                    "nodeId": "19415:2101",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
-                    "children": [],
-                    "layout": {
-                      "width": 386,
-                      "height": 258
-                    }
-                  }
-                ],
+                "nodeId": "21440:2063",
+                "nodeName": "Material & Craft: Made from ultra-clear PET/PE film utilizing high-definition clear sticker printing technology. Why Choose It: Designed to create a seamless, \"no-label\" look. These custom sticker labels allow your product or tissue packaging texture to shine through, offering a highly sophisticated sticker packaging solution.",
+                "nodeType": "TEXT",
+                "children": [],
                 "layout": {
-                  "width": 385.400146484375,
-                  "height": 255.3275909423828
+                  "width": 1200,
+                  "height": 52
                 },
                 "fills": [
                   {
                     "type": "SOLID",
-                    "color": "#929292",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "19415:2103",
-                "nodeName": "Frame 1272636673",
-                "nodeType": "FRAME",
-                "children": [
-                  {
-                    "nodeId": "19415:2104",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
-                    "children": [],
-                    "layout": {
-                      "width": 386,
-                      "height": 258
-                    }
-                  }
-                ],
-                "layout": {
-                  "width": 386.20306396484375,
-                  "height": 255.3275909423828
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#929292",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "19415:2106",
-                "nodeName": "Frame 1272636676",
-                "nodeType": "FRAME",
-                "children": [
-                  {
-                    "nodeId": "19415:2107",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
-                    "children": [],
-                    "layout": {
-                      "width": 386,
-                      "height": 258
-                    }
-                  }
-                ],
-                "layout": {
-                  "width": 386.20306396484375,
-                  "height": 255.3275909423828
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#878686",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "19415:2109",
-                "nodeName": "Frame 1272636674",
-                "nodeType": "FRAME",
-                "children": [
-                  {
-                    "nodeId": "19415:2110",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
-                    "children": [],
-                    "layout": {
-                      "width": 386,
-                      "height": 258
-                    }
-                  }
-                ],
-                "layout": {
-                  "width": 385.400146484375,
-                  "height": 255.3275909423828
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#878686",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "19415:2112",
-                "nodeName": "Frame 1272636677",
-                "nodeType": "FRAME",
-                "children": [
-                  {
-                    "nodeId": "19415:2113",
-                    "nodeName": "image 14",
-                    "nodeType": "RECTANGLE",
-                    "children": [],
-                    "layout": {
-                      "width": 386,
-                      "height": 258
-                    }
-                  }
-                ],
-                "layout": {
-                  "width": 385.400146484375,
-                  "height": 255.3275909423828
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#929292",
+                    "color": "#333333",
                     "opacity": 1
                   }
                 ]
               }
             ],
             "layout": {
+              "mode": "VERTICAL",
+              "itemSpacing": 10,
               "width": 1200,
-              "height": 532.1536865234375
+              "height": 99
             }
           },
           {
-            "nodeId": "19415:2115",
-            "nodeName": "Printing",
-            "nodeType": "TEXT",
-            "children": [],
-            "layout": {
-              "width": 91,
-              "height": 37
-            },
-            "fills": [
+            "nodeId": "19716:1390",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
               {
-                "type": "SOLID",
-                "color": "#333333",
-                "opacity": 1
+                "nodeId": "19716:1391",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19716:1392",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19716:1393",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19716:1394",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19716:1395",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19716:1396",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19716:1397",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19716:1398",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
               }
-            ]
-          },
-          {
-            "nodeId": "19415:2117",
-            "nodeName": "At SENYE, we believe that the right finish transforms a simple tag into a premium brand experience. Our Professional Sourcing Team guides you through a diverse range of advanced printing techniques, while our Strict QC Team ensures every detail—from color saturation to foil precision—meets your exact standards. 1. Luxury Finishes & Textures Hot Foil Stamping (Gold/Silver/Custom Colors): Uses heat and pressure to transfer metallic foil, creating a prestigious, high-luster effect. Perfect for luxury hang tags and high-end brand statements. Embossing & Debossing: Creates a 3D raised or recessed effect on the cardstock, adding a unique physical dimension. Ideal for brands emphasizing heritage and sophisticated custom clothing tags. Spot UV & Glossy Highlights: Applied to specific areas to create a striking contrast between matte and gloss, making your logo or text pop with a premium tactile feel. 2. Precision Printing & Color Accuracy High-Opacity Screen Printing: Delivers vibrant, saturated colors. It’s the industry standard for solid spot colors and metallic inks on dark or specialty black cardstocks. High-Efficiency Offset Printing: Optimized for wholesale hang tags and bulk production. This method offers superior color accuracy (Pantone matching) and is highly cost-effective for large-volume orders. Premium Lamination (Matte/Gloss/Soft-Touch): Adds a protective layer that enhances durability and water resistance. Our Soft-Touch finish provides a silky, \"skin-like\" texture for a high-end feel. 3. Specialized Customization Custom Die-Cutting & Silhouettes: Precision cutting into any unique shape or rounded corners to match your brand's silhouette. Perfect for creative branding and distinctive garment packaging. Security & Brand Protection: Integration of QR codes, laser engraving, and UV fluorescent inks. Essential for premium brands focused on authenticity and direct consumer engagement.",
-            "nodeType": "TEXT",
-            "children": [],
+            ],
             "layout": {
               "width": 1200,
-              "height": 712
-            },
-            "fills": [
-              {
-                "type": "SOLID",
-                "color": "#333333",
-                "opacity": 1
-              }
-            ]
+              "height": 269
+            }
           }
         ],
         "layout": {
           "width": 1200,
-          "height": 1361.15380859375
+          "height": 408
+        }
+      },
+      {
+        "nodeId": "19716:1399",
+        "nodeName": "Group 1272636722",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "21440:2066",
+            "nodeName": "Frame 1272636883",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "21440:2067",
+                "nodeName": "Premium Foil & Holographic Finishes",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 37
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21440:2068",
+                "nodeName": "Material & Craft: Premium coated papers or synthetics enhanced with hot foil stamping, embossing, or holographic layers. Why Choose It: The ultimate choice for luxury brands. These special finishes make your logo catch the light, turning ordinary customized sticker labels into an unforgettable, high-end unboxing experience.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 52
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "mode": "VERTICAL",
+              "itemSpacing": 10,
+              "width": 1200,
+              "height": 99
+            }
+          },
+          {
+            "nodeId": "19716:1401",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19716:1402",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19716:1403",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19716:1404",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19716:1405",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19716:1406",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19716:1407",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19716:1408",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19716:1409",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 270
+            }
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 409
+        }
+      },
+      {
+        "nodeId": "19872:383",
+        "nodeName": "Group 1272636720",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19872:385",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19872:386",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19872:387",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19872:388",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19872:389",
+                    "nodeName": "Rectangle 87",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19872:390",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19872:391",
+                    "nodeName": "Rectangle 87",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19872:392",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19872:393",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "21440:2074",
+            "nodeName": "Frame 1272636883",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "21440:2075",
+                "nodeName": "Heat Transfer Clothing Stickers",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 37
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21440:2076",
+                "nodeName": "Material & Craft: Eco-friendly, skin-safe inks printed on specialized heat-transfer films, applied via heat press. Why Choose It: Specifically engineered for the apparel industry. Our heat transfer stickers for clothes provide a seamless, tagless experience that is highly wash-resistant, making them the perfect clothing label stickers.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 52
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "mode": "VERTICAL",
+              "itemSpacing": 10,
+              "width": 1200,
+              "height": 99
+            }
+          }
+        ],
+        "layout": {
+          "width": 1201,
+          "height": 408
+        }
+      },
+      {
+        "nodeId": "19871:370",
+        "nodeName": "Group 1272636720",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19871:372",
+            "nodeName": "Group 1272636719",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19871:373",
+                "nodeName": "Group 1272636716",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19871:374",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19871:375",
+                "nodeName": "Group 1272636717",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19871:376",
+                    "nodeName": "Rectangle 87",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19871:377",
+                "nodeName": "Group 1272636718",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19871:378",
+                    "nodeName": "Rectangle 87",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              },
+              {
+                "nodeId": "19871:379",
+                "nodeName": "Group 1272636715",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "19871:380",
+                    "nodeName": "Rectangle 86",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 270,
+                      "height": 269
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 270,
+                  "height": 269
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 269
+            }
+          },
+          {
+            "nodeId": "21440:2081",
+            "nodeName": "Frame 1272636883",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "21440:2082",
+                "nodeName": "Waterproof Vinyl Stickers",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 37
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "21440:2083",
+                "nodeName": "Material & Craft: Crafted from heavy-duty plastic polymers and finished with a UV-resistant gloss or matte lamination. Why Choose It: These custom vinyl stickers are 100% waterproof and tear-proof. They provide the ultimate durability for outdoor use, heavy shipping boxes, and long-lasting custom waterproof sticker applications.",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 1200,
+                  "height": 52
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "mode": "VERTICAL",
+              "itemSpacing": 10,
+              "width": 1200,
+              "height": 99
+            }
+          }
+        ],
+        "layout": {
+          "width": 1201,
+          "height": 408
         }
       }
     ],
     "layout": {
-      "width": 1200,
-      "height": 2885.15380859375
+      "mode": "VERTICAL",
+      "itemSpacing": 60,
+      "width": 1202,
+      "height": 2380,
+      "counterAxisAlignItems": "CENTER"
     }
   },
   "texts": [
     {
-      "nodeId": "19413:1820",
-      "nodeName": "Customization Options",
-      "text": "Customization Options",
+      "nodeId": "19716:1375",
+      "nodeName": "Product Showcase",
+      "text": "Product Showcase",
       "style": {
         "fontFamily": "Inter",
         "fontSize": 32,
         "fontWeight": 800,
         "color": "#333333",
-        "textAlignHorizontal": "LEFT"
+        "textAlignHorizontal": "CENTER"
       }
     },
     {
-      "nodeId": "19413:1872",
-      "nodeName": "materials",
-      "text": "materials",
+      "nodeId": "21440:2049",
+      "nodeName": "Waterproof Vinyl Stickers",
+      "text": "Waterproof Vinyl Stickers",
       "style": {
         "fontFamily": "Inter",
         "fontSize": 24,
@@ -532,21 +841,21 @@
       }
     },
     {
-      "nodeId": "19415:2015",
-      "nodeName": "At SENYE, we believe the right material is the foundation of brand storytelling. Our sourcing experts curate a diverse range of high-quality substrates to ensure your custom hang tags perfectly align with your brand positioning, budget, and sustainability goals. 1. Versatile Paper & Cardstock (The Classic Choice) The most popular and cost-effective option for apparel hang tags. Coated Art Paper: Features a smooth, semi-gloss surface for vibrant, high-fidelity color printing. The go-to choice for modern fashion and retail. White Cardboard (Premium Cardstock): Offers excellent stiffness and a clean, high-end feel. Ideal for luxury hang tags requiring structural integrity. Kraft Paper: Durable with a unique natural texture. The perfect choice for eco-friendly hang tags, vintage collections, or rugged outdoor brands. 2. Durable Synthetics (Waterproof & Tear-Resistant) Engineered for longevity and specialized environments like swimwear or outdoor gear. PVC/PP: Flexible, recyclable, and 100% waterproof. These plastic hang tags are built to withstand heavy handling and long-term storage. PET: Offers high transparency and a premium gloss finish, frequently used in high-end cosmetics and electronics packaging. 3. Luxury Metal Accents (The Prestige Tier) Elevate your brand to the elite tier with our custom metal labels. Available in Stainless Steel, Aluminum Alloy, and Copper, these tags are corrosion-resistant and provide a prestigious, weighty feel that resonates with luxury consumers. 4. Tactile Fabric & Woven Tags (The Organic Touch) Soft to the touch and integrated seamlessly with apparel. We offer Cotton, Linen, and Polyester options. These add a craft-oriented, artisanal feel to boutique clothing and home textiles, often paired with our woven labels.",
-      "text": "At SENYE, we believe the right material is the foundation of brand storytelling. Our sourcing experts curate a diverse range of high-quality substrates to ensure your custom hang tags perfectly align with your brand positioning, budget, and sustainability goals.\n\n1. Versatile Paper & Cardstock (The Classic Choice)\nThe most popular and cost-effective option for apparel hang tags.\nCoated Art Paper: Features a smooth, semi-gloss surface for vibrant, high-fidelity color printing. The go-to choice for modern fashion and retail.\nWhite Cardboard (Premium Cardstock): Offers excellent stiffness and a clean, high-end feel. Ideal for luxury hang tags requiring structural integrity.\nKraft Paper: Durable with a unique natural texture. The perfect choice for eco-friendly hang tags, vintage collections, or rugged outdoor brands.\n\n2. Durable Synthetics (Waterproof & Tear-Resistant)\nEngineered for longevity and specialized environments like swimwear or outdoor gear.\nPVC/PP: Flexible, recyclable, and 100% waterproof. These plastic hang tags are built to withstand heavy handling and long-term storage.\nPET: Offers high transparency and a premium gloss finish, frequently used in high-end cosmetics and electronics packaging.\n\n3. Luxury Metal Accents (The Prestige Tier)\nElevate your brand to the elite tier with our custom metal labels. Available in Stainless Steel, Aluminum Alloy, and Copper, these tags are corrosion-resistant and provide a prestigious, weighty feel that resonates with luxury consumers.\n\n4. Tactile Fabric & Woven Tags (The Organic Touch)\nSoft to the touch and integrated seamlessly with apparel. We offer Cotton, Linen, and Polyester options. These add a craft-oriented, artisanal feel to boutique clothing and home textiles, often paired with our woven labels.",
+      "nodeId": "21440:2050",
+      "nodeName": "Material & Craft: Crafted from heavy-duty plastic polymers and finished with a UV-resistant gloss or matte lamination. Why Choose It: These custom vinyl stickers are 100% waterproof and tear-proof. They provide the ultimate durability for outdoor use, heavy shipping boxes, and long-lasting custom waterproof sticker applications.",
+      "text": "Material & Craft: Crafted from heavy-duty plastic polymers and finished with a UV-resistant gloss or matte lamination. Why Choose It: These custom vinyl stickers are 100% waterproof and tear-proof. They provide the ultimate durability for outdoor use, heavy shipping boxes, and long-lasting custom waterproof sticker applications.",
       "style": {
         "fontFamily": "Inter",
         "fontSize": 15,
         "fontWeight": 400,
         "color": "#333333",
-        "textAlignHorizontal": "JUSTIFIED"
+        "textAlignHorizontal": "LEFT"
       }
     },
     {
-      "nodeId": "19415:2115",
-      "nodeName": "Printing",
-      "text": "Printing ",
+      "nodeId": "21440:2062",
+      "nodeName": "Clear & Transparent Labels",
+      "text": "Clear & Transparent Labels",
       "style": {
         "fontFamily": "Inter",
         "fontSize": 24,
@@ -556,174 +865,228 @@
       }
     },
     {
-      "nodeId": "19415:2117",
-      "nodeName": "At SENYE, we believe that the right finish transforms a simple tag into a premium brand experience. Our Professional Sourcing Team guides you through a diverse range of advanced printing techniques, while our Strict QC Team ensures every detail—from color saturation to foil precision—meets your exact standards. 1. Luxury Finishes & Textures Hot Foil Stamping (Gold/Silver/Custom Colors): Uses heat and pressure to transfer metallic foil, creating a prestigious, high-luster effect. Perfect for luxury hang tags and high-end brand statements. Embossing & Debossing: Creates a 3D raised or recessed effect on the cardstock, adding a unique physical dimension. Ideal for brands emphasizing heritage and sophisticated custom clothing tags. Spot UV & Glossy Highlights: Applied to specific areas to create a striking contrast between matte and gloss, making your logo or text pop with a premium tactile feel. 2. Precision Printing & Color Accuracy High-Opacity Screen Printing: Delivers vibrant, saturated colors. It’s the industry standard for solid spot colors and metallic inks on dark or specialty black cardstocks. High-Efficiency Offset Printing: Optimized for wholesale hang tags and bulk production. This method offers superior color accuracy (Pantone matching) and is highly cost-effective for large-volume orders. Premium Lamination (Matte/Gloss/Soft-Touch): Adds a protective layer that enhances durability and water resistance. Our Soft-Touch finish provides a silky, \"skin-like\" texture for a high-end feel. 3. Specialized Customization Custom Die-Cutting & Silhouettes: Precision cutting into any unique shape or rounded corners to match your brand's silhouette. Perfect for creative branding and distinctive garment packaging. Security & Brand Protection: Integration of QR codes, laser engraving, and UV fluorescent inks. Essential for premium brands focused on authenticity and direct consumer engagement.",
-      "text": "At SENYE, we believe that the right finish transforms a simple tag into a premium brand experience. Our Professional Sourcing Team guides you through a diverse range of advanced printing techniques, while our Strict QC Team ensures every detail—from color saturation to foil precision—meets your exact standards.\n\n1. Luxury Finishes & Textures\nHot Foil Stamping (Gold/Silver/Custom Colors): Uses heat and pressure to transfer metallic foil, creating a prestigious, high-luster effect. Perfect for luxury hang tags and high-end brand statements.\nEmbossing & Debossing: Creates a 3D raised or recessed effect on the cardstock, adding a unique physical dimension. Ideal for brands emphasizing heritage and sophisticated custom clothing tags.\nSpot UV & Glossy Highlights: Applied to specific areas to create a striking contrast between matte and gloss, making your logo or text pop with a premium tactile feel.\n\n2. Precision Printing & Color Accuracy\nHigh-Opacity Screen Printing: Delivers vibrant, saturated colors. It’s the industry standard for solid spot colors and metallic inks on dark or specialty black cardstocks.\nHigh-Efficiency Offset Printing: Optimized for wholesale hang tags and bulk production. This method offers superior color accuracy (Pantone matching) and is highly cost-effective for large-volume orders.\nPremium Lamination (Matte/Gloss/Soft-Touch): Adds a protective layer that enhances durability and water resistance. Our Soft-Touch finish provides a silky, \"skin-like\" texture for a high-end feel.\n\n3. Specialized Customization\nCustom Die-Cutting & Silhouettes: Precision cutting into any unique shape or rounded corners to match your brand's silhouette. Perfect for creative branding and distinctive garment packaging.\nSecurity & Brand Protection: Integration of QR codes, laser engraving, and UV fluorescent inks. Essential for premium brands focused on authenticity and direct consumer engagement.",
+      "nodeId": "21440:2063",
+      "nodeName": "Material & Craft: Made from ultra-clear PET/PE film utilizing high-definition clear sticker printing technology. Why Choose It: Designed to create a seamless, \"no-label\" look. These custom sticker labels allow your product or tissue packaging texture to shine through, offering a highly sophisticated sticker packaging solution.",
+      "text": "Material & Craft: Made from ultra-clear PET/PE film utilizing high-definition clear sticker printing technology. Why Choose It: Designed to create a seamless, \"no-label\" look. These custom sticker labels allow your product or tissue packaging texture to shine through, offering a highly sophisticated sticker packaging solution.",
       "style": {
         "fontFamily": "Inter",
         "fontSize": 15,
         "fontWeight": 400,
         "color": "#333333",
-        "textAlignHorizontal": "JUSTIFIED"
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2067",
+      "nodeName": "Premium Foil & Holographic Finishes",
+      "text": "Premium Foil & Holographic Finishes",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2068",
+      "nodeName": "Material & Craft: Premium coated papers or synthetics enhanced with hot foil stamping, embossing, or holographic layers. Why Choose It: The ultimate choice for luxury brands. These special finishes make your logo catch the light, turning ordinary customized sticker labels into an unforgettable, high-end unboxing experience.",
+      "text": "Material & Craft: Premium coated papers or synthetics enhanced with hot foil stamping, embossing, or holographic layers. Why Choose It: The ultimate choice for luxury brands. These special finishes make your logo catch the light, turning ordinary customized sticker labels into an unforgettable, high-end unboxing experience.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2075",
+      "nodeName": "Heat Transfer Clothing Stickers",
+      "text": "Heat Transfer Clothing Stickers",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2076",
+      "nodeName": "Material & Craft: Eco-friendly, skin-safe inks printed on specialized heat-transfer films, applied via heat press. Why Choose It: Specifically engineered for the apparel industry. Our heat transfer stickers for clothes provide a seamless, tagless experience that is highly wash-resistant, making them the perfect clothing label stickers.",
+      "text": "Material & Craft: Eco-friendly, skin-safe inks printed on specialized heat-transfer films, applied via heat press. Why Choose It: Specifically engineered for the apparel industry. Our heat transfer stickers for clothes provide a seamless, tagless experience that is highly wash-resistant, making them the perfect clothing label stickers.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2082",
+      "nodeName": "Waterproof Vinyl Stickers",
+      "text": "Waterproof Vinyl Stickers",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21440:2083",
+      "nodeName": "Material & Craft: Crafted from heavy-duty plastic polymers and finished with a UV-resistant gloss or matte lamination. Why Choose It: These custom vinyl stickers are 100% waterproof and tear-proof. They provide the ultimate durability for outdoor use, heavy shipping boxes, and long-lasting custom waterproof sticker applications.",
+      "text": "Material & Craft: Crafted from heavy-duty plastic polymers and finished with a UV-resistant gloss or matte lamination. Why Choose It: These custom vinyl stickers are 100% waterproof and tear-proof. They provide the ultimate durability for outdoor use, heavy shipping boxes, and long-lasting custom waterproof sticker applications.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
       }
     }
   ],
   "images": [
     {
-      "nodeId": "19415:2053",
-      "nodeName": "Group 1272636735 (整体截图)",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e9509a56-d45f-48c3-87a5-ad3be6575cd0",
-      "localPath": "figma-export-showcase/images/full-selection-19415-2053.png"
+      "nodeId": "19716:1374",
+      "nodeName": "Frame 1272636737 (整体截图)",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fa4fcc2a-92bb-4ef5-9ee0-a7985d4054f4",
+      "localPath": "figma-export-showcase/images/full-selection-19716-1374.png"
     },
     {
-      "nodeId": "19413:1823",
-      "nodeName": "Frame 1272636658",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ad762eaa-c7ad-4289-a2ab-5620a8363f78",
-      "localPath": "figma-export-showcase/images/Frame-1272636658-19413-1823.png"
+      "nodeId": "19716:1374",
+      "nodeName": "Frame 1272636737",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fa4fcc2a-92bb-4ef5-9ee0-a7985d4054f4",
+      "localPath": "figma-export-showcase/images/Frame-1272636737-19716-1374.png"
     },
     {
-      "nodeId": "19415:2050",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/824316f1-1e2a-441b-8f1f-4f1462ec3ab4",
-      "localPath": "figma-export-showcase/images/image-14-19415-2050.png"
+      "nodeId": "21440:2052",
+      "nodeName": "Frame 1272636901",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e54b24aa-4d12-44d4-b4ec-f3cd383fb363",
+      "localPath": "figma-export-showcase/images/Frame-1272636901-21440-2052.png"
     },
     {
-      "nodeId": "19413:1830",
-      "nodeName": "Frame 1272636675",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/747cb232-80f8-495b-8817-e16c29c7de74",
-      "localPath": "figma-export-showcase/images/Frame-1272636675-19413-1830.png"
+      "nodeId": "19716:1380",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/64e4cefb-bf6d-4972-b458-617864d57f73",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19716-1380.png"
     },
     {
-      "nodeId": "19415:2041",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/1f04703b-7682-4677-9a45-1b3481759a3a",
-      "localPath": "figma-export-showcase/images/image-14-19415-2041.png"
+      "nodeId": "19716:1382",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/dcdec275-181c-43b4-94d4-f03bdb94c986",
+      "localPath": "figma-export-showcase/images/Rectangle-87-19716-1382.png"
     },
     {
-      "nodeId": "19413:1833",
-      "nodeName": "Frame 1272636673",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/bbfccebd-7327-488c-a240-165f87900e28",
-      "localPath": "figma-export-showcase/images/Frame-1272636673-19413-1833.png"
+      "nodeId": "19716:1384",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/05291288-9eab-4627-bcfc-19247dc04c0b",
+      "localPath": "figma-export-showcase/images/Rectangle-87-19716-1384.png"
     },
     {
-      "nodeId": "19415:2033",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ba4faef2-cebe-41f3-9c49-ba159d0dcf14",
-      "localPath": "figma-export-showcase/images/image-14-19415-2033.png"
+      "nodeId": "19716:1386",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/72ffc294-1aa7-4000-9db2-873f2e3f8a57",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19716-1386.png"
     },
     {
-      "nodeId": "19413:1836",
-      "nodeName": "Frame 1272636676",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fd602944-497d-40a8-9ef3-2c5a502e247a",
-      "localPath": "figma-export-showcase/images/Frame-1272636676-19413-1836.png"
+      "nodeId": "19716:1392",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/97b2da8e-f23c-4439-8356-6c504ab39188",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19716-1392.png"
     },
     {
-      "nodeId": "19415:2039",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4eab75e1-06c7-4be9-ae6f-a4606b674a2f",
-      "localPath": "figma-export-showcase/images/image-14-19415-2039.png"
+      "nodeId": "19716:1394",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/73a48e61-93e8-441c-affe-77ba58fa8b39",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19716-1394.png"
     },
     {
-      "nodeId": "19413:1839",
-      "nodeName": "Frame 1272636674",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b5523ddf-4359-4bdf-9432-0e5c2d9e5cc0",
-      "localPath": "figma-export-showcase/images/Frame-1272636674-19413-1839.png"
+      "nodeId": "19716:1396",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f066721f-63b8-497f-ae6b-ac6523b9bd10",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19716-1396.png"
     },
     {
-      "nodeId": "19415:2035",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/20501e48-b4f2-45a7-8a95-56b48cb844e0",
-      "localPath": "figma-export-showcase/images/image-14-19415-2035.png"
+      "nodeId": "19716:1398",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9c5aa996-e3b6-4580-8c30-bfa5875a23ef",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19716-1398.png"
     },
     {
-      "nodeId": "19413:1842",
-      "nodeName": "Frame 1272636677",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ac3b3497-8a85-408c-8d98-035cc246a9e5",
-      "localPath": "figma-export-showcase/images/Frame-1272636677-19413-1842.png"
+      "nodeId": "19716:1403",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9e5dbed7-8538-4813-853a-6f3158bf5b81",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19716-1403.png"
     },
     {
-      "nodeId": "19415:2037",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a80d4a13-1ce2-4afc-8633-4a85fcf650d6",
-      "localPath": "figma-export-showcase/images/image-14-19415-2037.png"
+      "nodeId": "19716:1405",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4e1cb9c6-7026-4806-a9c8-ca6df8ac427f",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19716-1405.png"
     },
     {
-      "nodeId": "19415:2093",
-      "nodeName": "Frame 1272636658",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/49eb9baa-8fd9-441e-83e5-5c02d0a257c5",
-      "localPath": "figma-export-showcase/images/Frame-1272636658-19415-2093.png"
+      "nodeId": "19716:1407",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/273326b6-2ed2-4c2c-bc44-69b39604b93c",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19716-1407.png"
     },
     {
-      "nodeId": "19415:2094",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/574ff18d-ef8a-4d70-8bed-7931301d58b3",
-      "localPath": "figma-export-showcase/images/image-14-19415-2094.png"
+      "nodeId": "19716:1409",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ddfbf533-067e-4975-a068-a1d4d8943a1f",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19716-1409.png"
     },
     {
-      "nodeId": "19556:659",
-      "nodeName": "image 15",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a95a5085-f1ce-461c-90ba-3141dc30736c",
-      "localPath": "figma-export-showcase/images/image-15-19556-659.png"
+      "nodeId": "19872:387",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fac226a6-7390-4307-a02b-0fdbd30bce62",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19872-387.png"
     },
     {
-      "nodeId": "19415:2100",
-      "nodeName": "Frame 1272636675",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ede3cfd9-367b-46b6-83dc-c9099c9591c8",
-      "localPath": "figma-export-showcase/images/Frame-1272636675-19415-2100.png"
+      "nodeId": "19872:389",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/032d0b18-d00e-4028-8b22-accf11f7ae92",
+      "localPath": "figma-export-showcase/images/Rectangle-87-19872-389.png"
     },
     {
-      "nodeId": "19415:2101",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/3269b085-e812-4251-b9e7-43003161905f",
-      "localPath": "figma-export-showcase/images/image-14-19415-2101.png"
+      "nodeId": "19872:391",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d0cf2cf7-73af-4a9a-b6a3-15c2c88928ec",
+      "localPath": "figma-export-showcase/images/Rectangle-87-19872-391.png"
     },
     {
-      "nodeId": "19415:2103",
-      "nodeName": "Frame 1272636673",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e5f94f38-c084-4ba2-809e-aa4fd98fd578",
-      "localPath": "figma-export-showcase/images/Frame-1272636673-19415-2103.png"
+      "nodeId": "19872:393",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d0feabdd-e613-4f0a-9b17-904d610e1990",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19872-393.png"
     },
     {
-      "nodeId": "19415:2104",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9a8987e2-52a9-46d8-81ed-e6bd6ae6ddc2",
-      "localPath": "figma-export-showcase/images/image-14-19415-2104.png"
+      "nodeId": "19871:374",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9d26d15c-106a-4657-8850-9887475a85c7",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19871-374.png"
     },
     {
-      "nodeId": "19415:2106",
-      "nodeName": "Frame 1272636676",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/720f5b64-ca8c-4e9b-b226-67bff19aa9ec",
-      "localPath": "figma-export-showcase/images/Frame-1272636676-19415-2106.png"
+      "nodeId": "19871:376",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/6dfd22d3-cc9e-4316-81f7-0ecde15d0b13",
+      "localPath": "figma-export-showcase/images/Rectangle-87-19871-376.png"
     },
     {
-      "nodeId": "19415:2107",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/6fcb3467-c5db-4986-a03f-6fc9f2040a0c",
-      "localPath": "figma-export-showcase/images/image-14-19415-2107.png"
+      "nodeId": "19871:378",
+      "nodeName": "Rectangle 87",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f1d89709-66a7-4b6a-bf10-dc882234ada1",
+      "localPath": "figma-export-showcase/images/Rectangle-87-19871-378.png"
     },
     {
-      "nodeId": "19415:2109",
-      "nodeName": "Frame 1272636674",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/88625ee9-a2f3-4f78-a9a1-219f3655c487",
-      "localPath": "figma-export-showcase/images/Frame-1272636674-19415-2109.png"
-    },
-    {
-      "nodeId": "19415:2110",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/dfad1f01-0930-4283-a43e-641036ca100a",
-      "localPath": "figma-export-showcase/images/image-14-19415-2110.png"
-    },
-    {
-      "nodeId": "19415:2112",
-      "nodeName": "Frame 1272636677",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a289a228-01f6-47f8-a2a9-194b6ffa9c04",
-      "localPath": "figma-export-showcase/images/Frame-1272636677-19415-2112.png"
-    },
-    {
-      "nodeId": "19415:2113",
-      "nodeName": "image 14",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e3af7d71-28a1-46ac-b90f-8ab1be872f98",
-      "localPath": "figma-export-showcase/images/image-14-19415-2113.png"
+      "nodeId": "19871:380",
+      "nodeName": "Rectangle 86",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a44b3ebb-1df0-428b-956f-ec2757a528be",
+      "localPath": "figma-export-showcase/images/Rectangle-86-19871-380.png"
     }
   ]
 }
