@@ -1812,10 +1812,58 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
       ],
     },
     blogs: commonBlogs,
-    faqs: buildFaqs(
-      'ribbons',
-      'Q4: Which ribbon material works best for premium gift boxes?',
-    ),
+    faqs: [
+      {
+        question: 'Q1: What is custom printed ribbon?',
+        answer:
+          'Custom printed ribbon is ribbon that can be printed with logos, brand names, or decorative patterns. It is widely used in packaging, gift wrapping, and retail branding.',
+      },
+      {
+        question: 'Q2: What materials are available for custom ribbon?',
+        answer:
+          'Common ribbon materials include satin ribbon, grosgrain ribbon, cotton ribbon, polyester ribbon, and organza ribbon. Each material offers a different texture and appearance.',
+      },
+      {
+        question: 'Q3: What printing methods can be used for ribbon?',
+        answer:
+          'Popular printing methods include hot foil stamping, silk screen printing, and digital printing. The choice depends on your logo design and packaging style.',
+      },
+      {
+        question: 'Q4: Can I print my logo on ribbon?',
+        answer:
+          'Yes. We can produce custom ribbon with logo printing, allowing brands to add their logo, brand name, or custom patterns.',
+      },
+      {
+        question: 'Q5: What ribbon width should I choose for packaging?',
+        answer:
+          'The best ribbon width depends on the packaging size. Small widths are suitable for hang tags, while wider ribbons are better for gift boxes and luxury packaging.',
+      },
+      {
+        question: 'Q6: What is the minimum order quantity for custom ribbon?',
+        answer:
+          'The MOQ usually depends on ribbon material and printing method. We provide flexible MOQ options for growing brands and packaging projects.',
+      },
+      {
+        question: 'Q7: How long does it take to produce custom ribbon?',
+        answer:
+          'Production usually takes 7-12 working days after artwork confirmation. Sampling can be arranged before mass production.',
+      },
+      {
+        question: 'Q8: Can I choose custom ribbon colors?',
+        answer:
+          'Yes. Sample production is available so customers can confirm the ribbon material, color, and printing quality.',
+      },
+      {
+        question: 'Q9: Do you provide samples before bulk production?',
+        answer:
+          'Yes. Sample production is available so customers can confirm the ribbon material, color, and printing quality.',
+      },
+      {
+        question: 'Q10: Do you ship custom ribbon internationally?',
+        answer:
+          'Yes. We provide global shipping for custom ribbon orders and support customers worldwide.',
+      },
+    ],
   },
   {
     slug: 'tape',
