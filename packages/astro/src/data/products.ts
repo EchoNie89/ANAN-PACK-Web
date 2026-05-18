@@ -2562,8 +2562,16 @@ Micro-Detailing: The "CAUTION UFO" text required razor-sharp edges within a tiny
       'Custom tissue paper hero banner from Figma',
       'products.tissuePaper.hero',
     ),
-    overview:
-      'Printed tissue paper adds softness, protection, and a memorable reveal moment. We coordinate paper weight, logo repeat, ink coverage, folding, packing, stickers, and matched ribbon.',
+    overview: `
+    Custom tissue paper is a lightweight packaging paper printed with logos, brand patterns, or custom designs. It is widely used by clothing brands, retailers, and e-commerce companies to enhance packaging presentation and strengthen brand identity.
+Compared with plain packaging paper, custom printed tissue paper creates a more professional and memorable unboxing experience.
+It is commonly used for:
+• clothing packaging
+• shoe packaging
+• gift packaging
+• boutique retail packaging
+Custom tissue paper helps brands create a consistent and elegant packaging style.
+    `,
     highlights: [...productShell.highlights],
     stats: [...productShell.stats],
     categories: [
@@ -2693,45 +2701,43 @@ Micro-Detailing: The "CAUTION UFO" text required razor-sharp edges within a tiny
       },
     ],
     process: [...productShell.process],
-    whyChooseTitle: 'Why Choose Us For Custom Tissue Paper?',
+    whyChooseTitle: 'Why choose us as your Trusted Dust Bag Supplier ?',
     whyChoose: [
       {
-        title: 'Low MOQ For Startup Brands',
+        title: 'Professional Sourcing Team',
         description:
-          'Start with a small test order, confirm the finish and handfeel, then scale into bulk production when your collection is ready.',
+          "With over 10 years of deep-rooted expertise, we act as your dedicated local sourcing partner to navigate the complexities of Chinese textile manufacturing. We go beyond simple procurement; we expertly curate fabrics—from breathable custom cotton dust bags to luxurious velvet—ensuring your packaging perfectly embodies your brand's DNA. We are the bridge that transforms your creative vision into a high-quality, market-ready reality.",
         image: image(
-          '/images/services/product-development.png',
+          '/images/products/tissue-paper/Frame 40 2.png',
           'Team reviewing packaging and trim samples',
           'products.tissuePaper.whyChoose.lowMoq',
         ),
       },
       {
-        title: 'One-stop Customization',
-        description:
-          'Match labels, hang tags, stickers, bags, tape, ribbons, and packaging trims in one managed workflow.',
+        title: 'Strict QC Steps',
+        description: `Leverage a decade of supply chain mastery. As a reliable dust bag manufacturer, our team eliminates the guesswork by strictly controlling every detail—from fabric thread count and stitching durability to precise logo printing. Whether you are ordering low MOQ custom pouches or large-scale wholesale batches, we ensure flawless execution and technical compatibility before anything leaves the factory.`,
         image: image(
-          '/images/services/quality.png',
+          '/images/products/tissue-paper/Frame 41.png',
           'Packaging customization desk with samples',
           'products.tissuePaper.whyChoose.customization',
         ),
       },
       {
-        title: 'Strict Quality Control',
-        description:
-          'We check artwork, material, color tolerance, finishing, packing, and final shipment details before dispatch.',
+        title: 'Combined Shipment',
+        description: `Backed by 10+ years of logistics experience, our specialists act as your eyes and ears in the Chinese market. We specialize in consolidating your entire packaging suite. By combining your custom dust bags with logo, woven labels, hang tags, and shipping tape into one seamless delivery, we drastically reduce your logistics overhead and ensure a consistent brand presentation from the factory to your customer's door.`,
         image: image(
-          '/images/services/warehouse-assembly.png',
+          '/images/products/tissue-paper/Frame 41-1.png',
           'Quality control and packing workflow',
           'products.tissuePaper.whyChoose.quality',
         ),
       },
     ],
     caseStudy: {
-      title: 'Tissue, sticker, and ribbon set for a gift launch',
-      description:
-        'A home lifestyle brand needed a soft unboxing set. We aligned tissue color, sticker finish, and ribbon width so the packaging felt cohesive.',
+      title:
+        'Structural Minimalism: Premium 28gsm White Kraft Tissue Paper with "Phantom" Branding for Polène',
+      description: `Polène is a prestigious Parisian leather goods house renowned for its sculptural designs and architectural lines. As a brand that defines modern luxury through form and material, Polène demands packaging that mirrors the structural integrity of its handbags. For them, the wrapping paper is not just a filler; it is a protective "second skin" that must convey a sense of mystery and "Old Money" elegance during the unboxing ritual.`,
       image: image(
-        '/images/solutions/home-lifestyle-case.png',
+        '/images/products/tissue-paper/image 10 (5).png',
         'Gift launch tissue paper case',
         'products.tissuePaper.caseStudy',
       ),
@@ -2740,12 +2746,101 @@ Micro-Detailing: The "CAUTION UFO" text required razor-sharp edges within a tiny
         'Sticker finish matched to tissue color',
         'Tissue and ribbon packed for fulfillment',
       ],
+      quote: `We were looking for a wrapping solution that felt as intentional as our leather goods. SENYE moved us away from flimsy, standard materials and engineered a custom 28gsm paper that holds its shape perfectly. The 'White-on-White' print is a masterpiece of subtlety—it's branding that you feel before you see.`,
+      quoteAuthor: 'Creative Operations Director, Polène Paris',
+      challenge: `
+      Polène identified three critical pain points with the industry-standard 17gsm tissue paper they were previously using:
+Lack of Structure: The 17gsm paper was too soft and flimsy. It crumbled into messy wrinkles instantly, failing to maintain the clean, crisp folds required for an architectural unboxing experience.
+Transparency Issues: Standard tissue was too sheer, revealing the product too quickly and removing the element of anticipation.
+Texture Quality: The brand wanted a Luxury Packaging Paper that felt substantial and smooth, providing a physical barrier against dust and scratches during international shipping without being abrasive.
+      `,
+      solutionIntro: `As an expert Packaging Solution Provider, SENYE engineered a custom 28gsm MG (Machine Glazed) White Kraft Paper solution that bridges the gap between delicate tissue and durable wrapping:`,
+      solutionPoints: [
+        'Material Science (28gsm Upgrade): We increased the paper density to 28gsm. This "sweet spot" weight provides enough stiffness to hold a crisp fold while remaining flexible enough for delicate wrapping.',
+        'Surface Engineering (MG Finish): We utilized the highly polished, smooth side of the Machine Glazed paper as the printing surface. This creates a silky tactile feel that glides against premium leather without causing micro-abrasions.',
+        'The "Phantom" Print Technique: To achieve the signature White-on-White branding, we used High-Solids White Ink printed on the glossy MG side. Because the ink sits on top of the surface rather than soaking in, the Polène logo emerges only when light hits it at specific angles—a pinnacle of Acid-Free Wrapping sophistication.',
+      ],
+      resultPoints: [
+        'Architectural Integrity: The 28gsm paper maintains clean, sharp lines and crisp folds, ensuring every handbag arrives looking organized and professionally wrapped.',
+        'Enhanced Tactile Luxury: The cool-to-the-touch Smooth White Kraft surface immediately communicates high value to the customer, elevating the perceived worth of the product inside.',
+        'Optimized Protection: The increased thickness offers superior physical protection against transit-related friction compared to standard 17gsm tissue, proving that Custom Printed White Kraft can be both beautiful and highly functional.',
+      ],
+      gallery: [
+        image(
+          '/images/products/tissue-paper/Frame 40.png',
+          'Reusable cotton pouch with mesh window front view',
+          'products.bag.caseStudy.gallery.0',
+        ),
+        image(
+          '/images/products/tissue-paper/image 16.png',
+          'Reusable cotton pouch folded detail',
+          'products.bag.caseStudy.gallery.1',
+        ),
+        image(
+          '/images/products/tissue-paper/Frame 40-1.png',
+          'Reusable cotton pouch folded detail',
+          'products.bag.caseStudy.gallery.2',
+        ),
+        image(
+          '/images/products/tissue-paper/Frame 40-2.png',
+          'Reusable cotton pouch folded detail',
+          'products.bag.caseStudy.gallery.3',
+        ),
+      ],
     },
     blogs: commonBlogs,
-    faqs: buildFaqs(
-      'tissue paper',
-      'Q4: Can tissue paper be printed with metallic or white ink?',
-    ),
+    faqs: [
+      {
+        question: 'Q1: What is custom tissue paper used for?',
+        answer:
+          'Custom tissue paper is widely used for product packaging, clothing packaging, gift wrapping, and retail presentation. It helps protect products while enhancing the overall packaging experience and brand identity.',
+      },
+      {
+        question: 'Q2: Can I print my logo on tissue paper?',
+        answer:
+          'Yes. We provide custom printed tissue paper with logo printing, allowing brands to print logos, brand names, or repeating patterns on the paper. This helps create a consistent and recognizable packaging style.',
+      },
+      {
+        question: 'Q3: What is the standard GSM for tissue paper?',
+        answer:
+          'Tissue paper used for packaging usually ranges between 17 GSM and 28 GSM. 17-20 GSM is suitable for lightweight packaging, 21-24 GSM is a standard packaging thickness, and 25-30 GSM is stronger tissue paper for premium products.',
+      },
+      {
+        question: 'Q4: What printing methods are available for tissue paper?',
+        answer:
+          'Common printing methods include flexographic printing for large production, offset printing for detailed designs, and digital printing for smaller orders. Each method ensures high-quality custom tissue paper printing depending on the design and quantity.',
+      },
+      {
+        question: 'Q5: What sizes can custom tissue paper be made?',
+        answer:
+          'Custom tissue paper can be produced in sheet or roll formats. Common sheet sizes include 50 x 70 cm, 60 x 90 cm, and 70 x 100 cm. Custom sizes can also be produced based on your packaging box dimensions.',
+      },
+      {
+        question: 'Q6: Is tissue paper suitable for clothing packaging?',
+        answer:
+          'Yes. Tissue paper is one of the most commonly used materials for clothing packaging. It protects garments from dust and creates a more premium unboxing experience.',
+      },
+      {
+        question: 'Q7: Can tissue paper be eco-friendly?',
+        answer:
+          'Yes. We offer recycled tissue paper and eco-friendly tissue paper made from recycled fibers. This option is ideal for brands that focus on sustainable packaging.',
+      },
+      {
+        question: 'Q8: What is the difference between tissue paper and wrapping paper?',
+        answer:
+          'Tissue paper is lightweight and usually used inside packaging boxes to wrap products. Wrapping paper is thicker and typically used outside gift boxes for decorative wrapping.',
+      },
+      {
+        question: 'Q9: What industries commonly use custom tissue paper?',
+        answer:
+          'Custom tissue paper is widely used in fashion and apparel packaging, retail product packaging, gift packaging, cosmetics and beauty packaging, and e-commerce packaging.',
+      },
+      {
+        question: 'Q10: What is the minimum order quantity for custom tissue paper?',
+        answer:
+          'The MOQ usually depends on the printing method and paper specifications. We offer flexible order quantities to support both small brands and large packaging projects.',
+      },
+    ],
   },
 ];
 
