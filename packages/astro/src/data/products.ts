@@ -610,8 +610,8 @@ export const productPages: ProductPageData[] = [
       'products.bag.hero',
     ),
     introTitle: 'What Are Custom Dust Bags?',
-    overview:
-      'Custom dust bags are protective fabric pouches designed to shield fashion and lifestyle products from dust, scratches, moisture, and friction while giving the packaging a more premium branded finish. They are commonly used for handbags, shoes, jewelry, cosmetics, eyewear, apparel, and accessories. With custom fabric, size, drawstring, logo printing, embroidery, and hardware options, dust bags become both practical product protection and a reusable brand touchpoint.',
+    overview: `Custom dust bags (often referred to as custom drawstring bags or custom fabric pouches) are the unsung heroes of premium packaging. While their primary job is to protect delicate handbags, footwear, and jewelry from moisture and scratches, their true value lies in customer retention. A high-quality branded dust bag is rarely thrown away; it becomes a reusable travel accessory, acting as a long-lasting, mobile billboard that keeps your brand in your customer's closet for years.
+      At SENYE, we redefine how growing brands source fabric packaging. As your dedicated dust bag manufacturer, we offer highly flexible low MOQ options without compromising on luxury. From sustainable cotton to rich velvet, our strict QC team ensures your logo is flawlessly printed or embroidered. By bundling your dust bags with your custom tags and tape into one seamless combined shipment, we help you deliver a perfectly cohesive, high-end unboxing moment while drastically cutting your logistics costs.`,
     highlights: [...productShell.highlights],
     stats: [...productShell.stats],
     showcaseGroups: [
