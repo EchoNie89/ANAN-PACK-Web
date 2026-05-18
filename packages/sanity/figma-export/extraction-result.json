@@ -1,442 +1,500 @@
 {
   "source": {
-    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=21443-2306",
+    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=19684-403&t=wllXfbMu5Hfh6Jfh-4",
     "fileKey": "SzOlgqIXHy4MBI2QXLE08L",
-    "nodeId": "21443:2306",
+    "nodeId": "19684:403",
     "fileName": "独立站设计-吊牌网站 (Copy)",
-    "lastModified": "2026-05-17T15:54:33Z"
+    "lastModified": "2026-05-18T14:36:39Z"
   },
   "structure": {
-    "nodeId": "21443:2306",
-    "nodeName": "Group 1272636733",
+    "nodeId": "19684:403",
+    "nodeName": "Group 1272636735",
     "nodeType": "GROUP",
     "children": [
       {
-        "nodeId": "21443:2307",
-        "nodeName": "Group 687",
-        "nodeType": "GROUP",
-        "children": [
-          {
-            "nodeId": "21443:2308",
-            "nodeName": "Group 671",
-            "nodeType": "GROUP",
-            "children": [
-              {
-                "nodeId": "21443:2309",
-                "nodeName": "Applications",
-                "nodeType": "TEXT",
-                "children": [],
-                "layout": {
-                  "width": 213,
-                  "height": 39
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#333333",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "21443:2310",
-                "nodeName": "Line 10",
-                "nodeType": "LINE",
-                "children": [],
-                "layout": {
-                  "width": 36.592891693115234,
-                  "height": 0
-                }
-              }
-            ],
-            "layout": {
-              "width": 213,
-              "height": 39
-            }
-          }
-        ],
+        "nodeId": "19684:404",
+        "nodeName": "Customization Options",
+        "nodeType": "TEXT",
+        "children": [],
         "layout": {
-          "width": 213,
+          "width": 386,
           "height": 39
-        }
+        },
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#333333",
+            "opacity": 1
+          }
+        ]
       },
       {
-        "nodeId": "21443:2311",
-        "nodeName": "Group 1272636731",
+        "nodeId": "19684:418",
+        "nodeName": "Group 1272636735",
         "nodeType": "GROUP",
         "children": [
           {
-            "nodeId": "21443:2312",
-            "nodeName": "Group 1272636727",
-            "nodeType": "GROUP",
+            "nodeId": "19684:419",
+            "nodeName": "Frame 1272636658",
+            "nodeType": "FRAME",
             "children": [
               {
-                "nodeId": "21443:2313",
-                "nodeName": "Rectangle 86",
-                "nodeType": "VECTOR",
+                "nodeId": "19684:420",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
                 "children": [],
                 "layout": {
-                  "width": 270,
-                  "height": 269
+                  "width": 386,
+                  "height": 258
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#000000",
+                    "opacity": 0.6000000238418579
+                  }
+                ]
+              },
+              {
+                "nodeId": "19684:421",
+                "nodeName": "image 15",
+                "nodeType": "RECTANGLE",
+                "children": [],
+                "layout": {
+                  "width": 386,
+                  "height": 258
                 }
-              },
-              {
-                "nodeId": "21443:2314",
-                "nodeName": "Instantly convey elegance with a silky, frictionless surface. Satin dust bags offer a luxurious unboxing feel, ideal for delicate lingerie, cosmetics, and premium hair extensions.",
-                "nodeType": "TEXT",
-                "children": [],
-                "layout": {
-                  "width": 270,
-                  "height": 130
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#333333",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "21443:2315",
-                "nodeName": "Apparel & Clothing",
-                "nodeType": "TEXT",
-                "children": [],
-                "layout": {
-                  "width": 181,
-                  "height": 30
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#333333",
-                    "opacity": 1
-                  }
-                ]
               }
             ],
             "layout": {
-              "width": 270,
-              "height": 469.056640625
-            }
+              "width": 385.400146484375,
+              "height": 255.3275909423828
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#878686",
+                "opacity": 1
+              }
+            ]
           },
           {
-            "nodeId": "21443:2316",
-            "nodeName": "Group 1272636730",
-            "nodeType": "GROUP",
+            "nodeId": "19684:424",
+            "nodeName": "Frame 1272636673",
+            "nodeType": "FRAME",
             "children": [
               {
-                "nodeId": "21443:2317",
-                "nodeName": "Rectangle 87",
-                "nodeType": "VECTOR",
+                "nodeId": "19684:425",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
                 "children": [],
                 "layout": {
-                  "width": 270,
-                  "height": 269
+                  "width": 386,
+                  "height": 258
                 }
-              },
-              {
-                "nodeId": "21443:2318",
-                "nodeName": "Beauty & Cosmetics",
-                "nodeType": "TEXT",
-                "children": [],
-                "layout": {
-                  "width": 195,
-                  "height": 30
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#333333",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "21443:2319",
-                "nodeName": "Perfect for boutique home goods. Use our sustainable custom cotton dust bags to package luxury bed linens, towels, and ceramics, adding an earthy, organic aesthetic to your home brand.",
-                "nodeType": "TEXT",
-                "children": [],
-                "layout": {
-                  "width": 270,
-                  "height": 156
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#333333",
-                    "opacity": 1
-                  }
-                ]
               }
             ],
             "layout": {
-              "width": 270,
-              "height": 495.056640625
-            }
+              "width": 386.20306396484375,
+              "height": 255.3275909423828
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#929292",
+                "opacity": 1
+              }
+            ]
           },
           {
-            "nodeId": "21443:2320",
-            "nodeName": "Group 1272636729",
-            "nodeType": "GROUP",
+            "nodeId": "19684:428",
+            "nodeName": "Frame 1272636674",
+            "nodeType": "FRAME",
             "children": [
               {
-                "nodeId": "21443:2321",
-                "nodeName": "Rectangle 86",
-                "nodeType": "VECTOR",
+                "nodeId": "19684:429",
+                "nodeName": "image 14",
+                "nodeType": "RECTANGLE",
                 "children": [],
                 "layout": {
-                  "width": 270,
-                  "height": 269
+                  "width": 386,
+                  "height": 258
                 }
-              },
-              {
-                "nodeId": "21443:2322",
-                "nodeName": "Bags & Luggage",
-                "nodeType": "TEXT",
-                "children": [],
-                "layout": {
-                  "width": 156,
-                  "height": 30
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#333333",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "21443:2323",
-                "nodeName": "Curate a memorable unboxing for delicate items. From perfumes to fine rings, our luxurious jewelry packaging pouches and small custom fabric pouches add an opulent, premium finishing touch to your beauty lines.",
-                "nodeType": "TEXT",
-                "children": [],
-                "layout": {
-                  "width": 270,
-                  "height": 156
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#333333",
-                    "opacity": 1
-                  }
-                ]
               }
             ],
             "layout": {
-              "width": 270,
-              "height": 495.056640625
-            }
-          },
-          {
-            "nodeId": "21443:2324",
-            "nodeName": "Group 1272636728",
-            "nodeType": "GROUP",
-            "children": [
+              "width": 385.400146484375,
+              "height": 255.3275909423828
+            },
+            "fills": [
               {
-                "nodeId": "21443:2325",
-                "nodeName": "Rectangle 86",
-                "nodeType": "VECTOR",
-                "children": [],
-                "layout": {
-                  "width": 270,
-                  "height": 269
-                }
-              },
-              {
-                "nodeId": "21443:2326",
-                "nodeName": "Home & Linen",
-                "nodeType": "TEXT",
-                "children": [],
-                "layout": {
-                  "width": 133,
-                  "height": 30
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#333333",
-                    "opacity": 1
-                  }
-                ]
-              },
-              {
-                "nodeId": "21443:2327",
-                "nodeName": "The ultimate safeguard for fine leather goods. Our custom dust bags for handbags prevent scratches and dust accumulation, ensuring your premium bags, belts, and wallets reach your customers in flawless condition.",
-                "nodeType": "TEXT",
-                "children": [],
-                "layout": {
-                  "width": 270,
-                  "height": 182
-                },
-                "fills": [
-                  {
-                    "type": "SOLID",
-                    "color": "#333333",
-                    "opacity": 1
-                  }
-                ]
+                "type": "SOLID",
+                "color": "#878686",
+                "opacity": 1
               }
-            ],
-            "layout": {
-              "width": 270,
-              "height": 521.056640625
-            }
+            ]
           }
         ],
         "layout": {
           "width": 1200,
-          "height": 521.056640625
+          "height": 255.3275909423828
+        }
+      },
+      {
+        "nodeId": "21440:1786",
+        "nodeName": "Group 1272636958",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19684:405",
+            "nodeName": "Group 351",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "19684:406",
+                "nodeName": "Frame 1272636658",
+                "nodeType": "FRAME",
+                "children": [
+                  {
+                    "nodeId": "19684:407",
+                    "nodeName": "image 14",
+                    "nodeType": "RECTANGLE",
+                    "children": [],
+                    "layout": {
+                      "width": 386,
+                      "height": 258
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#000000",
+                        "opacity": 0
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 385.400146484375,
+                  "height": 255.3275909423828
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#878686",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "19684:410",
+                "nodeName": "Frame 1272636673",
+                "nodeType": "FRAME",
+                "children": [
+                  {
+                    "nodeId": "19684:411",
+                    "nodeName": "image 14",
+                    "nodeType": "RECTANGLE",
+                    "children": [],
+                    "layout": {
+                      "width": 386,
+                      "height": 258
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 386.20306396484375,
+                  "height": 255.3275909423828
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#929292",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "19684:414",
+                "nodeName": "Frame 1272636674",
+                "nodeType": "FRAME",
+                "children": [
+                  {
+                    "nodeId": "19684:415",
+                    "nodeName": "image 14",
+                    "nodeType": "RECTANGLE",
+                    "children": [],
+                    "layout": {
+                      "width": 386,
+                      "height": 258
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 385.400146484375,
+                  "height": 255.3275909423828
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#878686",
+                    "opacity": 1
+                  }
+                ]
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 255.3275909423828
+            }
+          },
+          {
+            "nodeId": "19684:432",
+            "nodeName": "materials",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 108,
+              "height": 37.0563850402832
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 332.32757568359375
+        }
+      },
+      {
+        "nodeId": "19684:433",
+        "nodeName": "Printing",
+        "nodeType": "TEXT",
+        "children": [],
+        "layout": {
+          "width": 91,
+          "height": 37
+        },
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#333333",
+            "opacity": 1
+          }
+        ]
+      },
+      {
+        "nodeId": "19684:434",
+        "nodeName": "Group 1272636734",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19684:435",
+            "nodeName": "At SENYE, we believe your custom packaging tape  should perfectly reflect your brand's commitment to quality and sustainability. Our sourcing experts curate a specialized range of high-performance substrates to ensure your packages are not only secure but also visually striking. 1. Eco-Friendly Kraft Paper (The Sustainable Choice) The absolute gold standard for environmentally conscious brands. Water-Activated Kraft Tape: Features a natural starch adhesive that bonds permanently with cartons. This water activated kraft tape  provides ultimate tamper-evident security. Self-Adhesive Kraft: A convenient, peel-and-stick eco friendly packaging tape  perfect for lighter shipments and a rustic, organic brand aesthetic. 2. Durable Synthetics (Waterproof & Tear-Resistant) Engineered for longevity, high moisture resistance, and heavy-duty transit. BOPP/Poly Tape: Highly flexible and cost-effective. A custom clear poly tape  or white-base poly tape is ideal for vivid logo printing and long-distance global shipping. Biodegradable PLA: Offers the strength of traditional plastic but is completely compostable, serving as the ultimate biodegradable shipping tape  for zero-waste initiatives. 3. Reinforced Fiberglass (The Heavy-Duty Tier) Elevate your package security. We embed strong fiberglass yarns (in a diamond or linear pattern) between layers of kraft paper. This creates an ultra-strong apparel shipping tape  designed specifically for heavy bulk orders, winter coats, or footwear boxes. Perfect for inner packaging rather than outer shipping boxes. This boutique packaging tape  is used to seal tissue paper or garment bags, adding an artisanal, luxurious touch to the unboxing experience.",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 1200,
+              "height": 532
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 532
+        }
+      },
+      {
+        "nodeId": "19684:436",
+        "nodeName": "Group 1272636736",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19684:437",
+            "nodeName": "A simple roll of tape is your most cost-effective mobile billboard. Our Professional Sourcing Team guides you through advanced printing technologies, while our Strict QC Team ensures that your custom tape with logo  features high-fidelity, fade-resistant colors that survive the harshest shipping conditions. 1. Vibrant Flexographic & Offset Printing Features: Delivers vibrant, saturated colors directly onto the tape surface. We match Pantone colors precisely to ensure your branded packaging tape  is 100% consistent with your tags and labels. Best For: High-saturation logos, complex multi-color patterns, and high-volume custom printed tape manufacturer  orders. 2. Premium Finishes (Matte vs. Glossy) Features: Customize the tactile feel and light reflection of your poly tapes. A glossy finish makes colors pop, while a matte finish provides a muted, sophisticated, and scuff-resistant look. Best For: Luxury packaging tape  applications where the unboxing texture needs to align perfectly with a high-end brand identity. 3. Tamper-Evident & Security Craftsmanship Features: Utilizing specific custom gummed tape  adhesives that fuse with corrugated boxes. If removed, it leaves clear evidence of tampering. Best For: Premium clothing brands, jewelry, and cosmetics requiring maximum theft prevention and direct consumer trust. 4. Low-MOQ Specialized Customization Features: Flexible printing plates allow us to offer a custom tape low MOQ. We accommodate small-batch seasonal designs without compromising on industrial-grade print quality. Best For: Independent designers and startups looking for the best custom shipping tape for small business.",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 1200,
+              "height": 532
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          }
+        ],
+        "layout": {
+          "width": 1200,
+          "height": 532
         }
       }
     ],
     "layout": {
       "width": 1200,
-      "height": 600
+      "height": 1990
     }
   },
   "texts": [
     {
-      "nodeId": "21443:2309",
-      "nodeName": "Applications",
-      "text": "Applications",
+      "nodeId": "19684:404",
+      "nodeName": "Customization Options",
+      "text": "Customization Options",
       "style": {
         "fontFamily": "Inter",
         "fontSize": 32,
         "fontWeight": 800,
         "color": "#333333",
-        "textAlignHorizontal": "CENTER"
+        "textAlignHorizontal": "LEFT"
       }
     },
     {
-      "nodeId": "21443:2314",
-      "nodeName": "Instantly convey elegance with a silky, frictionless surface. Satin dust bags offer a luxurious unboxing feel, ideal for delicate lingerie, cosmetics, and premium hair extensions.",
-      "text": "Instantly convey elegance with a silky, frictionless surface. Satin dust bags offer a luxurious unboxing feel, ideal for delicate lingerie, cosmetics, and premium hair extensions.",
+      "nodeId": "19684:432",
+      "nodeName": "materials",
+      "text": "materials",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19684:433",
+      "nodeName": "Printing",
+      "text": "Printing ",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19684:435",
+      "nodeName": "At SENYE, we believe your custom packaging tape  should perfectly reflect your brand's commitment to quality and sustainability. Our sourcing experts curate a specialized range of high-performance substrates to ensure your packages are not only secure but also visually striking. 1. Eco-Friendly Kraft Paper (The Sustainable Choice) The absolute gold standard for environmentally conscious brands. Water-Activated Kraft Tape: Features a natural starch adhesive that bonds permanently with cartons. This water activated kraft tape  provides ultimate tamper-evident security. Self-Adhesive Kraft: A convenient, peel-and-stick eco friendly packaging tape  perfect for lighter shipments and a rustic, organic brand aesthetic. 2. Durable Synthetics (Waterproof & Tear-Resistant) Engineered for longevity, high moisture resistance, and heavy-duty transit. BOPP/Poly Tape: Highly flexible and cost-effective. A custom clear poly tape  or white-base poly tape is ideal for vivid logo printing and long-distance global shipping. Biodegradable PLA: Offers the strength of traditional plastic but is completely compostable, serving as the ultimate biodegradable shipping tape  for zero-waste initiatives. 3. Reinforced Fiberglass (The Heavy-Duty Tier) Elevate your package security. We embed strong fiberglass yarns (in a diamond or linear pattern) between layers of kraft paper. This creates an ultra-strong apparel shipping tape  designed specifically for heavy bulk orders, winter coats, or footwear boxes. Perfect for inner packaging rather than outer shipping boxes. This boutique packaging tape  is used to seal tissue paper or garment bags, adding an artisanal, luxurious touch to the unboxing experience.",
+      "text": "At SENYE, we believe your custom packaging tape  should perfectly reflect your brand's commitment to quality and sustainability. Our sourcing experts curate a specialized range of high-performance substrates to ensure your packages are not only secure but also visually striking.\n1. Eco-Friendly Kraft Paper (The Sustainable Choice)\nThe absolute gold standard for environmentally conscious brands.\nWater-Activated Kraft Tape: Features a natural starch adhesive that bonds permanently with cartons. This water activated kraft tape  provides ultimate tamper-evident security.\nSelf-Adhesive Kraft: A convenient, peel-and-stick eco friendly packaging tape  perfect for lighter shipments and a rustic, organic brand aesthetic.\n2. Durable Synthetics (Waterproof & Tear-Resistant)\nEngineered for longevity, high moisture resistance, and heavy-duty transit.\nBOPP/Poly Tape: Highly flexible and cost-effective. A custom clear poly tape  or white-base poly tape is ideal for vivid logo printing and long-distance global shipping.\nBiodegradable PLA: Offers the strength of traditional plastic but is completely compostable, serving as the ultimate biodegradable shipping tape  for zero-waste initiatives.\n3. Reinforced Fiberglass (The Heavy-Duty Tier) Elevate your package security. \nWe embed strong fiberglass yarns (in a diamond or linear pattern) between layers of kraft paper. This creates an ultra-strong apparel shipping tape  designed specifically for heavy bulk orders, winter coats, or footwear boxes.\nPerfect for inner packaging rather than outer shipping boxes. This boutique packaging tape  is used to seal tissue paper or garment bags, adding an artisanal, luxurious touch to the unboxing experience.",
       "style": {
         "fontFamily": "Inter",
         "fontSize": 15,
         "fontWeight": 400,
         "color": "#333333",
-        "textAlignHorizontal": "CENTER"
+        "textAlignHorizontal": "JUSTIFIED"
       }
     },
     {
-      "nodeId": "21443:2315",
-      "nodeName": "Apparel & Clothing",
-      "text": "Apparel & Clothing",
-      "style": {
-        "fontFamily": "Inter",
-        "fontSize": 20,
-        "fontWeight": 600,
-        "color": "#333333",
-        "textAlignHorizontal": "CENTER"
-      }
-    },
-    {
-      "nodeId": "21443:2318",
-      "nodeName": "Beauty & Cosmetics",
-      "text": "Beauty & Cosmetics",
-      "style": {
-        "fontFamily": "Inter",
-        "fontSize": 20,
-        "fontWeight": 600,
-        "color": "#333333",
-        "textAlignHorizontal": "CENTER"
-      }
-    },
-    {
-      "nodeId": "21443:2319",
-      "nodeName": "Perfect for boutique home goods. Use our sustainable custom cotton dust bags to package luxury bed linens, towels, and ceramics, adding an earthy, organic aesthetic to your home brand.",
-      "text": "Perfect for boutique home goods. Use our sustainable custom cotton dust bags to package luxury bed linens, towels, and ceramics, adding an earthy, organic aesthetic to your home brand.",
+      "nodeId": "19684:437",
+      "nodeName": "A simple roll of tape is your most cost-effective mobile billboard. Our Professional Sourcing Team guides you through advanced printing technologies, while our Strict QC Team ensures that your custom tape with logo  features high-fidelity, fade-resistant colors that survive the harshest shipping conditions. 1. Vibrant Flexographic & Offset Printing Features: Delivers vibrant, saturated colors directly onto the tape surface. We match Pantone colors precisely to ensure your branded packaging tape  is 100% consistent with your tags and labels. Best For: High-saturation logos, complex multi-color patterns, and high-volume custom printed tape manufacturer  orders. 2. Premium Finishes (Matte vs. Glossy) Features: Customize the tactile feel and light reflection of your poly tapes. A glossy finish makes colors pop, while a matte finish provides a muted, sophisticated, and scuff-resistant look. Best For: Luxury packaging tape  applications where the unboxing texture needs to align perfectly with a high-end brand identity. 3. Tamper-Evident & Security Craftsmanship Features: Utilizing specific custom gummed tape  adhesives that fuse with corrugated boxes. If removed, it leaves clear evidence of tampering. Best For: Premium clothing brands, jewelry, and cosmetics requiring maximum theft prevention and direct consumer trust. 4. Low-MOQ Specialized Customization Features: Flexible printing plates allow us to offer a custom tape low MOQ. We accommodate small-batch seasonal designs without compromising on industrial-grade print quality. Best For: Independent designers and startups looking for the best custom shipping tape for small business.",
+      "text": "A simple roll of tape is your most cost-effective mobile billboard. Our Professional Sourcing Team guides you through advanced printing technologies, while our Strict QC Team ensures that your custom tape with logo  features high-fidelity, fade-resistant colors that survive the harshest shipping conditions.\n1. Vibrant Flexographic & Offset Printing\nFeatures: Delivers vibrant, saturated colors directly onto the tape surface. We match Pantone colors precisely to ensure your branded packaging tape  is 100% consistent with your tags and labels.\nBest For: High-saturation logos, complex multi-color patterns, and high-volume custom printed tape manufacturer  orders.\n2. Premium Finishes (Matte vs. Glossy)\nFeatures: Customize the tactile feel and light reflection of your poly tapes. A glossy finish makes colors pop, while a matte finish provides a muted, sophisticated, and scuff-resistant look.\nBest For: Luxury packaging tape  applications where the unboxing texture needs to align perfectly with a high-end brand identity.\n3. Tamper-Evident & Security Craftsmanship\nFeatures: Utilizing specific custom gummed tape  adhesives that fuse with corrugated boxes. If removed, it leaves clear evidence of tampering.\nBest For: Premium clothing brands, jewelry, and cosmetics requiring maximum theft prevention and direct consumer trust.\n4. Low-MOQ Specialized Customization\nFeatures: Flexible printing plates allow us to offer a custom tape low MOQ. We accommodate small-batch seasonal designs without compromising on industrial-grade print quality.\nBest For: Independent designers and startups looking for the best custom shipping tape for small business.",
       "style": {
         "fontFamily": "Inter",
         "fontSize": 15,
         "fontWeight": 400,
         "color": "#333333",
-        "textAlignHorizontal": "CENTER"
-      }
-    },
-    {
-      "nodeId": "21443:2322",
-      "nodeName": "Bags & Luggage",
-      "text": "Bags & Luggage",
-      "style": {
-        "fontFamily": "Inter",
-        "fontSize": 20,
-        "fontWeight": 600,
-        "color": "#333333",
-        "textAlignHorizontal": "CENTER"
-      }
-    },
-    {
-      "nodeId": "21443:2323",
-      "nodeName": "Curate a memorable unboxing for delicate items. From perfumes to fine rings, our luxurious jewelry packaging pouches and small custom fabric pouches add an opulent, premium finishing touch to your beauty lines.",
-      "text": "Curate a memorable unboxing for delicate items. From perfumes to fine rings, our luxurious jewelry packaging pouches and small custom fabric pouches add an opulent, premium finishing touch to your beauty lines.",
-      "style": {
-        "fontFamily": "Inter",
-        "fontSize": 15,
-        "fontWeight": 400,
-        "color": "#333333",
-        "textAlignHorizontal": "CENTER"
-      }
-    },
-    {
-      "nodeId": "21443:2326",
-      "nodeName": "Home & Linen",
-      "text": "Home & Linen",
-      "style": {
-        "fontFamily": "Inter",
-        "fontSize": 20,
-        "fontWeight": 600,
-        "color": "#333333",
-        "textAlignHorizontal": "CENTER"
-      }
-    },
-    {
-      "nodeId": "21443:2327",
-      "nodeName": "The ultimate safeguard for fine leather goods. Our custom dust bags for handbags prevent scratches and dust accumulation, ensuring your premium bags, belts, and wallets reach your customers in flawless condition.",
-      "text": "The ultimate safeguard for fine leather goods. Our custom dust bags for handbags prevent scratches and dust accumulation, ensuring your premium bags, belts, and wallets reach your customers in flawless condition.",
-      "style": {
-        "fontFamily": "Inter",
-        "fontSize": 15,
-        "fontWeight": 400,
-        "color": "#333333",
-        "textAlignHorizontal": "CENTER"
+        "textAlignHorizontal": "JUSTIFIED"
       }
     }
   ],
   "images": [
     {
-      "nodeId": "21443:2306",
-      "nodeName": "Group 1272636733 (整体截图)",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aeb23a30-bace-43a5-847a-5659ae6cb17e",
-      "localPath": "figma-export/images/full-selection-21443-2306.png"
+      "nodeId": "19684:403",
+      "nodeName": "Group 1272636735 (整体截图)",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9770ca2b-aaf7-46ed-8e60-3ce8e5543769",
+      "localPath": "figma-export/images/full-selection-19684-403.png"
     },
     {
-      "nodeId": "21443:2313",
-      "nodeName": "Rectangle 86",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d386c97b-85fa-46c6-8c89-2b74371a8a5a",
-      "localPath": "figma-export/images/Rectangle-86-21443-2313.png"
+      "nodeId": "19684:419",
+      "nodeName": "Frame 1272636658",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d305bc34-8645-4834-9279-22a51936c779",
+      "localPath": "figma-export/images/Frame-1272636658-19684-419.png"
     },
     {
-      "nodeId": "21443:2317",
-      "nodeName": "Rectangle 87",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/bc820dee-0ced-4a61-a590-8ae70bce4818",
-      "localPath": "figma-export/images/Rectangle-87-21443-2317.png"
+      "nodeId": "19684:420",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/99094325-cc3a-4fc0-a640-a8ae646977ca",
+      "localPath": "figma-export/images/image-14-19684-420.png"
     },
     {
-      "nodeId": "21443:2321",
-      "nodeName": "Rectangle 86",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2866f1d8-8296-4d95-a60b-9e9140c01b51",
-      "localPath": "figma-export/images/Rectangle-86-21443-2321.png"
+      "nodeId": "19684:421",
+      "nodeName": "image 15",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/292992b4-92a8-4018-8e4d-c5d1e83c30a9",
+      "localPath": "figma-export/images/image-15-19684-421.png"
     },
     {
-      "nodeId": "21443:2325",
-      "nodeName": "Rectangle 86",
-      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/59cbd722-dfe2-442f-9dbb-618ff1e6f3ae",
-      "localPath": "figma-export/images/Rectangle-86-21443-2325.png"
+      "nodeId": "19684:424",
+      "nodeName": "Frame 1272636673",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9028745e-8612-43f0-a416-f525d96c18a0",
+      "localPath": "figma-export/images/Frame-1272636673-19684-424.png"
+    },
+    {
+      "nodeId": "19684:425",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a23d9724-8b7d-4494-8a11-a04571c3c4f3",
+      "localPath": "figma-export/images/image-14-19684-425.png"
+    },
+    {
+      "nodeId": "19684:428",
+      "nodeName": "Frame 1272636674",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2164385a-5d6f-40a2-81a7-4605af3c41ee",
+      "localPath": "figma-export/images/Frame-1272636674-19684-428.png"
+    },
+    {
+      "nodeId": "19684:429",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/6bae25ed-0452-48fd-8d76-22adf21b63fe",
+      "localPath": "figma-export/images/image-14-19684-429.png"
+    },
+    {
+      "nodeId": "19684:406",
+      "nodeName": "Frame 1272636658",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/25cf5c4d-225f-495e-a79b-c2aadd0630bb",
+      "localPath": "figma-export/images/Frame-1272636658-19684-406.png"
+    },
+    {
+      "nodeId": "19684:407",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2456b1b5-3dd5-4380-9db8-5497c49b1dd2",
+      "localPath": "figma-export/images/image-14-19684-407.png"
+    },
+    {
+      "nodeId": "19684:410",
+      "nodeName": "Frame 1272636673",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/bf1b206f-7066-49bc-ad95-b89ea93b0bf2",
+      "localPath": "figma-export/images/Frame-1272636673-19684-410.png"
+    },
+    {
+      "nodeId": "19684:411",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c8e9e4f9-bb00-461f-9a70-7d632f7ebd36",
+      "localPath": "figma-export/images/image-14-19684-411.png"
+    },
+    {
+      "nodeId": "19684:414",
+      "nodeName": "Frame 1272636674",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c7d2bf4d-436a-44bd-b0ab-3a5b85ac391c",
+      "localPath": "figma-export/images/Frame-1272636674-19684-414.png"
+    },
+    {
+      "nodeId": "19684:415",
+      "nodeName": "image 14",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/7ab6f3bb-9e30-437a-99b8-4c6ca31f9e91",
+      "localPath": "figma-export/images/image-14-19684-415.png"
     }
   ]
 }
