@@ -4,14 +4,14 @@ import SanityImage from "../../ui/SanityImage.astro";
 import type { ProductCard, ProductCustomizationGroup } from "../../../data/products";
 
 interface Props {
-  title: string;
-  materials: ProductCard[];
-  highlights: string[];
+  title?: string;
+  materials?: ProductCard[];
+  highlights?: string[];
   groups?: ProductCustomizationGroup[];
 }
 
-const { materials, highlights, groups = [] } = Astro.props;
-const visualCards = materials.slice(0, 3);
+const { materials = [], highlights = [], groups = [] } = Astro.props;
+const visualCards = materials.slice(0, 3).map((item) => item.image);
 const customizationGroups = groups.length
   ? groups
   : [
@@ -49,7 +49,7 @@ const customizationGroups = groups.length
                 <figure class="overflow-hidden bg-surface-muted">
                   <div class="aspect-[1.45]">
                     <SanityImage
-                      image={item.image}
+                      image={item}
                       class="size-full object-cover"
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />

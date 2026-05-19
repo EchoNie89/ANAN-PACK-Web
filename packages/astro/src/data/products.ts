@@ -1,20 +1,3 @@
-import {
-  labelApplicationItems,
-  labelCaseStudy,
-  labelCustomizationBlocks,
-  labelCustomizationImages,
-  labelFaqs,
-  labelFoldingBlocks,
-  labelFoldingIntro,
-  labelFoldingOptionImages,
-  labelIntroText,
-  labelProcessSteps,
-  labelShowcaseGroups,
-  labelSizeShapeBlocks,
-  labelSizeShapeIntro,
-  labelWhyItems,
-  type LabelImageItem,
-} from './labelsProduct';
 import type { SiteImageSource } from '../lib/local-images';
 import { resolveLocalImageSource } from '../lib/local-images';
 import type { SanityImageSource } from '../lib/sanity';
@@ -132,6 +115,18 @@ export interface ProductPageData {
   cta?: ProductCtaData;
 }
 
+interface LabelImageItem {
+  title: string;
+  image: string;
+  alt: string;
+  description?: string;
+}
+
+interface LabelShowcaseGroup {
+  title: string;
+  cards: LabelImageItem[];
+}
+
 const image = (
   src: string,
   alt: string,
@@ -158,14 +153,6 @@ const labelItemToCard = (
 const labelItemsToCards = (items: LabelImageItem[], sanityKeyPrefix: string) =>
   items.map((item, index) =>
     labelItemToCard(item, `${sanityKeyPrefix}.${index}`),
-  );
-
-const labelItemsToImages = (
-  items: LabelImageItem[],
-  sanityKeyPrefix: string,
-): ProductImage[] =>
-  items.map((item, index) =>
-    image(item.image, item.alt, `${sanityKeyPrefix}.${index}`),
   );
 
 const productShell = {
@@ -456,6 +443,314 @@ const buildFaqs = (product: string, materialQuestion: string): ProductFaq[] => [
   },
 ];
 
+const labelIntroText = `Custom labels are essential branding elements used in garments, accessories, and textile products. They display brand identity, product information, and care instructions while enhancing the professional appearance of clothing.
+Common types of labels include woven labels, printed labels, heat transfer labels, and leather labels. Each type offers different advantages in durability, texture, and application.
+For apparel brands, labels play a critical role in brand recognition and product quality perception.`;
+
+const labelShowcaseGroups: LabelShowcaseGroup[] = [
+  {
+    title: 'Woven Labels',
+    cards: [
+      {
+        title: 'Damask Woven Labels',
+        image: '/images/home/product-woven-labels.png',
+        alt: 'Damask woven labels with stitched logo details',
+      },
+      {
+        title: 'Satin Woven Labels',
+        image: '/images/solutions/home-lifestyle-kit-2.png',
+        alt: 'Satin woven label samples',
+      },
+      {
+        title: 'Taffeta Woven Labels',
+        image: '/images/solutions/fashion-gallery-3.png',
+        alt: 'Taffeta woven label detail',
+      },
+      {
+        title: 'High Density Woven Labels',
+        image: '/images/home/menu-labels.png',
+        alt: 'High density woven label samples',
+      },
+    ],
+  },
+  {
+    title: 'Printed Labels',
+    cards: [
+      {
+        title: 'Satin Printed Labels',
+        image: '/images/solutions/home-lifestyle-kit-2.png',
+        alt: 'Satin printed label material',
+      },
+      {
+        title: 'Cotton Printed Labels',
+        image: '/images/solutions/fashion-kit-2.png',
+        alt: 'Cotton printed clothing label cards',
+      },
+      {
+        title: 'Nylon Care Labels',
+        image: '/images/solutions/home-lifestyle-gallery-2.png',
+        alt: 'Nylon care label roll',
+      },
+      {
+        title: 'Color Printed Labels',
+        image: '/images/solutions/cosmetics-gallery-1.png',
+        alt: 'Color printed label samples',
+      },
+    ],
+  },
+  {
+    title: 'Special Labels',
+    cards: [
+      {
+        title: 'Leather Labels',
+        image: '/images/home/product-patches.png',
+        alt: 'Leather label and patch samples',
+      },
+      {
+        title: 'Rubber Labels',
+        image: '/images/solutions/jewelry-luxury-kit-1.png',
+        alt: 'Rubber label and accessory trim',
+      },
+      {
+        title: 'Silicone Labels',
+        image: '/images/solutions/jewelry-luxury-gallery-2.png',
+        alt: 'Silicone label sample',
+      },
+      {
+        title: 'PVC Labels',
+        image: '/images/solutions/cosmetics-kit-2.png',
+        alt: 'PVC label style sample',
+      },
+    ],
+  },
+  {
+    title: 'Eco & Cotton Labels',
+    cards: [
+      {
+        title: 'Recycled Labels',
+        image: '/images/blog/article-fsc-popular.jpg',
+        alt: 'Recycled material label reference',
+      },
+      {
+        title: 'Organic Cotton Labels',
+        image: '/images/solutions/home-lifestyle-kit-3.png',
+        alt: 'Organic cotton label sample',
+      },
+      {
+        title: 'Cotton Labels',
+        image: '/images/solutions/home-lifestyle-kit-2.png',
+        alt: 'Cotton fabric labels for apparel',
+      },
+      {
+        title: 'Natural Fabric Labels',
+        image: '/images/solutions/home-lifestyle-kit-1.png',
+        alt: 'Natural fabric label samples',
+      },
+    ],
+  },
+  {
+    title: 'Brand Label Styles',
+    cards: [
+      {
+        title: 'Logo Labels',
+        image: '/images/home/menu-labels.png',
+        alt: 'Logo label samples',
+      },
+      {
+        title: 'Patch Labels',
+        image: '/images/home/menu-patches.png',
+        alt: 'Patch label samples',
+      },
+      {
+        title: 'Woven Badges',
+        image: '/images/home/product-patches.png',
+        alt: 'Woven badge and label samples',
+      },
+      {
+        title: 'Main Labels',
+        image: '/images/home/product-woven-labels.png',
+        alt: 'Main apparel label samples',
+      },
+    ],
+  },
+  {
+    title: 'Application Labels',
+    cards: [
+      {
+        title: 'Neck Labels',
+        image: '/images/solutions/fashion-why.png',
+        alt: 'Neck label applied on apparel',
+      },
+      {
+        title: 'Size Labels',
+        image: '/images/solutions/home-lifestyle-gallery-1.png',
+        alt: 'Small size labels for garments',
+      },
+      {
+        title: 'Hem Labels',
+        image: '/images/solutions/fashion-gallery-4.png',
+        alt: 'Small hem label on garment edge',
+      },
+      {
+        title: 'Care Labels',
+        image: '/images/solutions/home-lifestyle-gallery-2.png',
+        alt: 'Care instruction labels for garments',
+      },
+    ],
+  },
+  {
+    title: 'Backing & Fold Options',
+    cards: [
+      {
+        title: 'Iron-on Labels',
+        image: '/images/solutions/cosmetics-gallery-4.png',
+        alt: 'Iron-on label sample',
+      },
+      {
+        title: 'Adhesive Labels',
+        image: '/images/home/product-stickers.png',
+        alt: 'Adhesive label and sticker sheet',
+      },
+      {
+        title: 'Loop Labels',
+        image: '/images/solutions/fashion-kit-3.png',
+        alt: 'Loop fold label sample',
+      },
+      {
+        title: 'Packaging Labels',
+        image: '/images/home/product-packaging-tape.png',
+        alt: 'Packaging label and tape sample',
+      },
+    ],
+  },
+];
+
+const labelApplicationItems: LabelImageItem[] = [
+  {
+    title: 'Fashion Apparel',
+    description: 'T-shirts, dresses, jackets, denim, and casual wear.',
+    image: '/images/solutions/fashion-gallery-1.png',
+    alt: 'Fashion apparel label applied near a garment neckline',
+  },
+  {
+    title: 'Sportswear & Activewear',
+    description: 'Comfortable tagless labels and durable woven branding.',
+    image: '/images/solutions/fashion-gallery-3.png',
+    alt: 'Sportswear garment with woven brand label',
+  },
+  {
+    title: 'Baby & Kids Clothing',
+    description: 'Soft labels designed for sensitive skin.',
+    image: '/images/solutions/home-lifestyle-kit-1.png',
+    alt: 'Soft fabric labels for baby and kids clothing',
+  },
+  {
+    title: 'Bags & Accessories',
+    description: 'Brand labels for backpacks, hats, and handbags.',
+    image: '/images/solutions/home-lifestyle-gallery-2.png',
+    alt: 'Label applied inside a bag or accessory',
+  },
+  {
+    title: 'Home Textiles',
+    description: 'Labels for bedding, towels, cushions, and fabric products.',
+    image: '/images/home/menu-labels.png',
+    alt: 'Woven labels for home textile products',
+  },
+];
+
+const labelProcessSteps: ProductProcessStep[] = [
+  {
+    title: 'Concept',
+    description:
+      'Collaborate With Our Sourcing Experts To Define Your Brand DNA Through The Perfect Choice Of Eco-Friendly Materials And Premium Finishing Options.',
+    icon: 'concept',
+  },
+  {
+    title: 'Designing',
+    description:
+      'We Provide Technical Design Audits And Rapid Prototyping To Ensure Your Artwork Translates Perfectly Onto Your Custom Hang Tags And Labels.',
+    icon: 'designing',
+  },
+  {
+    title: 'Manufacturing',
+    description:
+      'High-Precision Production Managed Through Our Audited Factory Pool, Offering The Flexibility Of Low MOQs And Stable Lead Times For Your Collections.',
+    icon: 'manufacturing',
+  },
+  {
+    title: 'Testing',
+    description:
+      'Our Strict QC Team Acts As Your On-Site Representative, Verifying Color Accuracy, Material Durability, And Craftsmanship To Meet Global Premium Standards.',
+    icon: 'testing',
+  },
+  {
+    title: 'Packaging',
+    description:
+      'Secure, Professional Packaging With Combined Shipment Options To Consolidate All Your Branding Elements-Tags, Labels, And Bags-Into One Seamless Delivery.',
+    icon: 'packaging',
+  },
+  {
+    title: 'Guaranteeing',
+    description:
+      'We Offer A Comprehensive Quality Guarantee And Dedicated After-Sales Support, Standing By Our Commitment As Your Trusted Supply Chain Partner.',
+    icon: 'guaranteing',
+  },
+];
+
+const labelFaqs: ProductFaq[] = [
+  {
+    question: 'Q1: What types of custom labels do you offer?',
+    answer:
+      'We provide a wide range of custom clothing labels, including woven labels, printed labels, heat transfer labels, leather labels, and PVC labels. Each type is suitable for different garments and branding needs.',
+  },
+  {
+    question: 'Q2: What is the minimum order quantity for custom labels?',
+    answer:
+      'Our minimum order quantity usually starts from 500 pieces, depending on the label type, material, and production process. Smaller trial orders may also be possible for certain label styles.',
+  },
+  {
+    question: 'Q3: What materials are available for clothing labels?',
+    answer:
+      'We offer various materials such as damask, satin, cotton, polyester, nylon, leather, and PVC. The material choice depends on the garment type, durability requirements, and brand positioning.',
+  },
+  {
+    question: 'Q4: Can you match our brand colors?',
+    answer:
+      'Yes. We can provide Pantone color matching to ensure your labels accurately represent your brand identity. This is especially important for woven labels and printed labels used in fashion branding.',
+  },
+  {
+    question: 'Q5: What file format should I send for the label design?',
+    answer:
+      'Vector files such as AI, EPS, or PDF are preferred for the best production results. If you only have a JPG or PNG file, our design team can also help convert it into a printable format.',
+  },
+  {
+    question: 'Q6: How long does it take to produce custom labels?',
+    answer:
+      'Production usually takes 7–12 working days after artwork confirmation. Sample production may take an additional few days depending on the label type.',
+  },
+  {
+    question: 'Q7: Can I order samples before mass production?',
+    answer:
+      'Yes. We can produce pre-production samples so you can check the material, color, and size before starting bulk production.',
+  },
+  {
+    question: 'Q8: What folding options are available for woven labels?',
+    answer:
+      'Common folding options include center fold, end fold, straight cut, loop fold, and Manhattan fold. The folding style depends on how the label will be attached to the garment.',
+  },
+  {
+    question:
+      'Q9: What is the difference between woven labels and printed labels?',
+    answer:
+      'Woven labels are created by weaving threads together, making them highly durable and suitable for brand logos. Printed labels are printed directly onto materials such as satin or cotton, which makes them ideal for care instructions and detailed text.',
+  },
+  {
+    question: 'Q10: Do you ship custom labels internationally?',
+    answer:
+      'Yes. We regularly ship custom clothing labels worldwide to apparel brands, designers, and garment manufacturers in North America, Europe, and other global markets.',
+  },
+];
+
 const labelsShowcaseGroups: ProductShowcaseGroup[] = labelShowcaseGroups.map(
   (group, groupIndex) => ({
     title: group.title,
@@ -465,53 +760,6 @@ const labelsShowcaseGroups: ProductShowcaseGroup[] = labelShowcaseGroups.map(
     ),
   }),
 );
-
-const labelsCustomizationGroups: ProductCustomizationGroup[] = [
-  {
-    title: 'Materials',
-    intro:
-      'As a leading dust bag manufacturer, SENYE understands that the right fabric is crucial for both product protection and brand perception. Our sourcing experts offer a diverse range of premium textiles to perfectly match your product’s weight, shape, and luxury level.',
-    images: labelItemsToImages(
-      labelCustomizationImages,
-      'products.labels.customization.materialImages',
-    ),
-    blocks: labelCustomizationBlocks,
-  },
-  {
-    title: 'Folding Options',
-    intro: labelFoldingIntro,
-    images: labelItemsToImages(
-      labelFoldingOptionImages,
-      'products.labels.customization.foldingImages',
-    ),
-    blocks: labelFoldingBlocks,
-  },
-  {
-    title: 'Size & Shape Options',
-    intro: labelSizeShapeIntro,
-    blocks: labelSizeShapeBlocks,
-  },
-];
-
-const labelsCaseStudy = {
-  title: labelCaseStudy.title,
-  description: labelCaseStudy.description,
-  image: image(
-    labelCaseStudy.image,
-    labelCaseStudy.alt,
-    'products.labels.caseStudy.hero',
-  ),
-  bullets: labelCaseStudy.resultPoints,
-  quote: labelCaseStudy.quote,
-  quoteAuthor: labelCaseStudy.quoteAuthor,
-  challenge: labelCaseStudy.challenge,
-  solutionIntro: labelCaseStudy.solutionIntro,
-  solutionPoints: labelCaseStudy.solutionPoints,
-  resultPoints: labelCaseStudy.resultPoints,
-  gallery: labelCaseStudy.gallery.map((item, index) =>
-    image(item.image, item.alt, `products.labels.caseStudy.gallery.${index}`),
-  ),
-};
 
 export const productPages: ProductPageData[] = [
   {

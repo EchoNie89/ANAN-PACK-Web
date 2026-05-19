@@ -13,12 +13,12 @@ import {
   sanityImageUrl,
   type SanityImageSource,
 } from "../../../lib/sanity";
-import LabelsApplications from "./LabelsApplications.astro";
-import LabelsCustomization from "./LabelsCustomization.astro";
-import LabelsShowcase from "./LabelsShowcase.astro";
+import ProductApplications from "./ProductApplications.astro";
 import ProductCaseStudy from "./ProductCaseStudy.astro";
+import ProductCustomization from "./ProductCustomization.astro";
 import ProductFaq from "./ProductFaq.astro";
 import ProductFeatureBand from "./ProductFeatureBand.astro";
+import ProductGalleryMatrix from "./ProductGalleryMatrix.astro";
 import ProductHero from "./ProductHero.astro";
 import ProductIntro from "./ProductIntro.astro";
 import ProductProcess from "./ProductProcess.astro";
@@ -122,14 +122,19 @@ const cta = page.cta ?? {
   />
   <ProductFeatureBand features={page.featureBand} />
   <ProductIntro heading={introHeading} overview={page.overview} />
-  <LabelsShowcase slug={page.slug} showcaseGroups={showcaseGroups} />
-  <LabelsApplications
+  <ProductGalleryMatrix
+    navLabel={page.navLabel}
+    categories={page.categories}
+    materials={page.materials}
+    showcaseGroups={showcaseGroups}
+  />
+  <ProductApplications
     title={applicationTitle}
     description={applicationDescription}
     applications={applications}
     layout={page.applicationLayout}
   />
-  <LabelsCustomization
+  <ProductCustomization
     groups={customizationGroups}
   />
   <ProductProcess process={page.process} subtitle={page.processSubtitle} />

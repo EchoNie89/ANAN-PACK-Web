@@ -30,6 +30,10 @@ function readBuiltHtml(relativePath) {
   return readFileSync(filePath, "utf8");
 }
 
+function readSource(relativePath) {
+  return readFileSync(join(astroDir, relativePath), "utf8");
+}
+
 function assertUsesAstroAssets(html, rawPaths) {
   for (const rawPath of rawPaths) {
     assert.equal(
@@ -191,4 +195,47 @@ test("product pages optimize local raster imagery", () => {
     const html = readBuiltHtml(pagePath);
     assertNoRawRasterImagePaths(html, pagePath);
   }
+});
+
+test("product pages no longer depend on the legacy labels component chain", () => {
+  const legacyFiles = [
+    "src/data/labelsProduct.ts",
+    "src/components/sections/products/LabelsApplications.astro",
+    "src/components/sections/products/LabelsCaseStudy.astro",
+    "src/components/sections/products/LabelsCustomization.astro",
+    "src/components/sections/products/LabelsFaq.astro",
+    "src/components/sections/products/LabelsFeatureBand.astro",
+    "src/components/sections/products/LabelsIntro.astro",
+    "src/components/sections/products/LabelsProcess.astro",
+    "src/components/sections/products/LabelsProductPage.astro",
+    "src/components/sections/products/LabelsShowcase.astro",
+    "src/components/sections/products/LabelsStyles.astro",
+    "src/components/sections/products/LabelsWhyChoose.astro",
+  ];
+
+  for (const relativePath of legacyFiles) {
+    assert.equal(
+      existsSync(join(astroDir, relativePath)),
+      false,
+      `Expected legacy labels file to be removed: ${relativePath}`,
+    );
+  }
+
+  const productPageSource = readSource("src/components/sections/products/ProductPage.astro");
+
+  assert.equal(
+    /Labels(?:Applications|Customization|Showcase|CaseStudy|Faq|FeatureBand|Intro|Process|ProductPage|Styles|WhyChoose)/.test(productPageSource),
+    false,
+    "Expected ProductPage to stop importing legacy labels components",
+  );
+});
+
+test("product applications keeps the four-column desktop grid from the legacy layout", () => {
+  const productApplicationsSource = readSource("src/components/sections/products/ProductApplications.astro");
+
+  assert.match(
+    productApplicationsSource,
+    /lg:grid-cols-4/,
+    "Expected desktop applications layout to keep four columns",
+  );
 });
