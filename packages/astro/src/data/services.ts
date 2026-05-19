@@ -1,4 +1,8 @@
+import type { SiteImageSource } from "../lib/local-images";
+import { getLocalImage } from "../lib/local-images";
+
 const base = "/images/services";
+const serviceImage = (fileName: string) => getLocalImage(`${base}/${fileName}`);
 
 export interface ServiceFeature {
   title: string;
@@ -9,7 +13,7 @@ export interface ServiceSection {
   kicker: string;
   title: string;
   description: string;
-  image: string;
+  image: SiteImageSource;
   alt: string;
   imageSide: "left" | "right";
   features: ServiceFeature[];
@@ -30,7 +34,7 @@ export const serviceHero = {
   title: "End-to-End Packaging Supply Chain Management",
   description:
     "We go beyond manufacturing. From sourcing the right materials to consolidating your shipment, we handle the complexities so you don't have to.",
-  image: `${base}/hero-logistics-figma-layer.png`,
+  image: serviceImage("hero-logistics-figma-layer.png"),
   alt: "Cargo ship, train, ferry, containers, and airplane in a logistics scene",
   cta: "Talk To A Specialist",
 };
@@ -71,7 +75,7 @@ export const serviceSections: ServiceSection[] = [
     title: "Strategic Sourcing & Design",
     description:
       "We help brands build the right packaging direction from the start by aligning materials, suppliers, and design thinking with brand goals.",
-    image: `${base}/sourcing.png`,
+    image: serviceImage("sourcing.png"),
     alt: "Hands reviewing custom packaging materials and garment trims",
     imageSide: "left",
     features: [
@@ -99,7 +103,7 @@ export const serviceSections: ServiceSection[] = [
     title: "Structural Design",
     description:
       "We create packaging structures that are visually refined, technically sound, and ready for manufacturing.",
-    image: `${base}/structural.png`,
+    image: serviceImage("structural.png"),
     alt: "Custom hang tag dieline engineering on a work table",
     imageSide: "right",
     features: [
@@ -127,7 +131,7 @@ export const serviceSections: ServiceSection[] = [
     title: "Product Development",
     description:
       "From concept to final sample, we manage the development process to keep your project moving clearly and efficiently.",
-    image: `${base}/product-development.png`,
+    image: serviceImage("product-development.png"),
     alt: "Packaging samples and material swatches during product development",
     imageSide: "left",
     features: [
@@ -159,7 +163,7 @@ export const serviceSections: ServiceSection[] = [
     title: "Risk-Free Quality Assurance",
     description:
       "We build quality control into every stage of the process to reduce defects, improve consistency, and protect every shipment.",
-    image: `${base}/quality.png`,
+    image: serviceImage("quality.png"),
     alt: "Factory quality control inspection for custom hang tags",
     imageSide: "right",
     features: [
@@ -189,21 +193,21 @@ export const warehousing = {
   cards: [
     {
       title: "Consolidation",
-      image: `${base}/warehouse-consolidation.png`,
+      image: serviceImage("warehouse-consolidation.png"),
       alt: "Warehouse consolidation with palletized cartons",
       description:
         "We consolidate products and packaging components from multiple suppliers into one centralized location, reducing fragmentation across your supply chain. By coordinating inbound shipments, verifying quantities, and organizing goods efficiently, we help you avoid delays, misalignment, and unnecessary logistics costs. This ensures your materials are ready, complete, and aligned before moving to the next stage of production or shipment.",
     },
     {
       title: "Assembly",
-      image: `${base}/warehouse-assembly.png`,
+      image: serviceImage("warehouse-assembly.png"),
       alt: "Packaging team assembling ready-to-use sets",
       description:
         "We provide kitting and assembly services to combine different packaging components into ready-to-use sets based on your requirements. Whether it's attaching tags, inserting packaging materials, or preparing complete product kits, our team ensures consistency and accuracy across every unit. This reduces your internal workload and ensures your products are fully prepared before reaching your warehouse or end customer.",
     },
     {
       title: "Inventory",
-      image: `${base}/warehouse-inventory.png`,
+      image: serviceImage("warehouse-inventory.png"),
       alt: "Inventory management dashboard beside warehouse shelving",
       description:
         "We offer flexible inventory management solutions to help you store, track, and manage packaging materials and components efficiently. With clear stock visibility and organized storage systems, you can better plan production, avoid shortages, and reduce overstock risks. Our system supports ongoing projects and repeat orders, making your supply chain more predictable and easier to manage.",
@@ -223,12 +227,12 @@ export const delivery = {
     "Trusted by global brands, supported by reliable logistics partners worldwide.",
   ],
   partners: [
-    { name: "DHL", image: `${base}/logo-dhl.png` },
-    { name: "FedEx", image: `${base}/logo-fedex.png` },
-    { name: "UPS", image: `${base}/logo-ups.png` },
-    { name: "Maersk Line", image: `${base}/logo-maersk.png` },
-    { name: "SF Express", image: `${base}/logo-sf.png` },
-    { name: "EMS", image: `${base}/logo-ems.png` },
+    { name: "DHL", image: serviceImage("logo-dhl.png") },
+    { name: "FedEx", image: serviceImage("logo-fedex.png") },
+    { name: "UPS", image: serviceImage("logo-ups.png") },
+    { name: "Maersk Line", image: serviceImage("logo-maersk.png") },
+    { name: "SF Express", image: serviceImage("logo-sf.png") },
+    { name: "EMS", image: serviceImage("logo-ems.png") },
   ],
 };
 
@@ -242,7 +246,7 @@ export const faqHero = {
   title: "Got Questions? We Have Answers",
   description:
     "Everything You Need To Know About Sourcing Custom Packaging & Garment Trims-From Low MOQ To Global Shipping.",
-  image: `${base}/faq-hero.png`,
+  image: serviceImage("faq-hero.png"),
   alt: "Hands reviewing garment trim samples and packaging notes",
 };
 

@@ -1,6 +1,8 @@
 ---
 import Container from "../../ui/Container.astro";
 import Breadcrumbs from "../../ui/Breadcrumbs.astro";
+import LocalImage from "../../ui/LocalImage.astro";
+import type { SiteImageSource } from "../../../lib/local-images";
 
 interface BreadcrumbItem {
   label: string;
@@ -10,7 +12,7 @@ interface BreadcrumbItem {
 interface Props {
   title: string;
   description?: string;
-  backgroundImage: string;
+  backgroundImage: SiteImageSource;
   breadcrumbs: BreadcrumbItem[];
   align?: "center" | "left";
   eyebrow?: string;
@@ -29,13 +31,15 @@ const isCentered = align === "center";
 ---
 
 <section class="relative isolate overflow-hidden">
-  <img
+  <LocalImage
     src={backgroundImage}
     alt=""
     aria-hidden="true"
     class="absolute inset-0 size-full object-cover"
     loading="eager"
-    decoding="async"
+    sizes="100vw"
+    widths={[640, 960, 1280, 1600, 1920]}
+    priority
   />
   <div class={`absolute inset-0 ${isCentered ? "bg-[linear-gradient(180deg,rgba(26,20,12,0.16),rgba(26,20,12,0.4))]" : "bg-[linear-gradient(90deg,rgba(26,20,12,0.58),rgba(26,20,12,0.18))]"}`}></div>
 

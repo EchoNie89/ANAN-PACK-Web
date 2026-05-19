@@ -1,6 +1,7 @@
 ---
 import { getBlogCategory } from "../../data/blog";
 import type { BlogArticle } from "../../data/blog";
+import LocalImage from "./LocalImage.astro";
 
 interface Props {
   article: BlogArticle;
@@ -18,12 +19,13 @@ const categoryLabel = getBlogCategory(article.category)?.label ?? article.catego
 <article class="overflow-hidden rounded-soft border border-border/60 bg-surface shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-soft">
   <a href={`/blog/${article.slug}`} class="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
     <div class="relative aspect-[374/228] overflow-hidden bg-surface-muted">
-      <img
+      <LocalImage
         src={article.image}
         alt={article.imageAlt}
         class="size-full object-cover transition duration-500 group-hover:scale-[1.03]"
         loading="lazy"
-        decoding="async"
+        sizes="(min-width: 1280px) 26vw, (min-width: 768px) 42vw, 100vw"
+        widths={[320, 480, 640, 800]}
       />
       <div class="absolute left-4 top-4 rounded-soft bg-white/30 px-4 py-2 text-center text-white backdrop-blur-sm">
         <p class="text-[26px] font-semibold leading-none">{badgeDay}</p>

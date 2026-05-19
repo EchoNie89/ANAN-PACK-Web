@@ -82,3 +82,80 @@ test("solutions pages optimize local imagery", () => {
     assertUsesAstroAssets(html, rawPaths);
   }
 });
+
+test("about page optimizes local imagery", () => {
+  buildSiteOnce();
+
+  const aboutHtml = readBuiltHtml("about-us/index.html");
+
+  assertUsesAstroAssets(aboutHtml, [
+    "/images/about/about-hero.png",
+    "/images/about/about-story-flatlay.png",
+    "/images/about/about-story-packing.png",
+    "/images/about/about-team-avatar.png",
+    "/images/about/about-network-map.png",
+  ]);
+});
+
+test("services pages optimize local imagery", () => {
+  buildSiteOnce();
+
+  const pageExpectations = [
+    {
+      path: "services/index.html",
+      rawPaths: [
+        "/images/services/hero-logistics-figma-layer.png",
+        "/images/services/sourcing.png",
+        "/images/services/product-development.png",
+        "/images/services/quality.png",
+        "/images/services/warehouse-assembly.png",
+        "/images/services/delivery-bg.png",
+      ],
+    },
+    {
+      path: "services/faq/index.html",
+      rawPaths: ["/images/services/faq-hero.png"],
+    },
+  ];
+
+  for (const { path, rawPaths } of pageExpectations) {
+    const html = readBuiltHtml(path);
+    assertUsesAstroAssets(html, rawPaths);
+  }
+});
+
+test("blog pages optimize local imagery", () => {
+  buildSiteOnce();
+
+  const pageExpectations = [
+    {
+      path: "blog/index.html",
+      rawPaths: [
+        "/images/blog/material-guides-hero.jpg",
+        "/images/blog/article-luxury-paper.jpg",
+        "/images/blog/article-kraft-paper.jpg",
+        "/images/blog/article-biodegradable-packaging.jpg",
+      ],
+    },
+    {
+      path: "blog/best-paper-materials-for-luxury-brand-packaging/index.html",
+      rawPaths: [
+        "/images/blog/material-guides-hero.jpg",
+        "/images/blog/article-luxury-paper.jpg",
+      ],
+    },
+  ];
+
+  for (const { path, rawPaths } of pageExpectations) {
+    const html = readBuiltHtml(path);
+    assertUsesAstroAssets(html, rawPaths);
+  }
+});
+
+test("contact page optimizes local imagery", () => {
+  buildSiteOnce();
+
+  const contactHtml = readBuiltHtml("contact-us/index.html");
+
+  assertUsesAstroAssets(contactHtml, ["/images/contact/contact-hero.png"]);
+});

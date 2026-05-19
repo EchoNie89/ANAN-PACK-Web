@@ -2,6 +2,7 @@
 import Container from "../../ui/Container.astro";
 import SectionTitle from "../../ui/SectionTitle.astro";
 import { aboutSustainability } from "../../../data/company";
+import LocalImage from "../../ui/LocalImage.astro";
 ---
 
 <section class="bg-page-muted py-16 md:py-24">
@@ -16,12 +17,13 @@ import { aboutSustainability } from "../../../data/company";
         aboutSustainability.map((item) => (
           <article class="text-center">
             <div class="mx-auto flex h-32 items-center justify-center rounded-soft bg-white px-6 shadow-card">
-              <img
+              <LocalImage
                 src={item.image}
                 alt={item.alt}
                 class="max-h-24 w-auto object-contain"
                 loading="lazy"
-                decoding="async"
+                sizes="128px"
+                widths={[128, 192, 256]}
               />
             </div>
             <h3 class="mt-5 text-lg font-bold text-ink">{item.title}</h3>

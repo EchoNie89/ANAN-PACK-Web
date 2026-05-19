@@ -6,7 +6,10 @@ import BlogCategoryHighlights from "../../components/sections/blog/BlogCategoryH
 import BlogListingSection from "../../components/sections/blog/BlogListingSection.astro";
 import BlogPageHero from "../../components/sections/blog/BlogPageHero.astro";
 import { blogCategories, featuredMaterialArticles, industryInsightArticles } from "../../data/blog";
+import { getLocalImage } from "../../lib/local-images";
 import Layout from "../../layouts/Layout.astro";
+
+const blogIndexHeroImage = getLocalImage("/images/blog/material-guides-hero.jpg");
 ---
 
 <Layout
@@ -18,7 +21,7 @@ import Layout from "../../layouts/Layout.astro";
     <BlogPageHero
       title="Blog"
       description="Expert guides on materials, printing, and production."
-      backgroundImage="/images/blog/material-guides-hero.jpg"
+      backgroundImage={blogIndexHeroImage}
       breadcrumbs={[
         { label: "Home", href: "/home" },
         { label: "Blog" },

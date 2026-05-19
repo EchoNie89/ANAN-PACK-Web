@@ -2,6 +2,10 @@
 import Container from "../../ui/Container.astro";
 import SectionTitle from "../../ui/SectionTitle.astro";
 import { aboutTeam } from "../../../data/company";
+import LocalImage from "../../ui/LocalImage.astro";
+import { getLocalImage } from "../../../lib/local-images";
+
+const teamAvatarImage = getLocalImage("/images/about/about-team-avatar.png");
 ---
 
 <section class="bg-white py-16 md:py-24">
@@ -16,12 +20,13 @@ import { aboutTeam } from "../../../data/company";
         aboutTeam.map((member) => (
           <article class="text-center">
             <div class="overflow-hidden rounded-soft bg-surface-muted shadow-card">
-              <img
-                src="/images/about/about-team-avatar.png"
+              <LocalImage
+                src={teamAvatarImage}
                 alt={member.name}
                 class={`aspect-[1.38/1] size-full object-cover ${member.imageClass}`}
                 loading="lazy"
-                decoding="async"
+                sizes="(min-width: 1280px) 18vw, (min-width: 768px) 42vw, 100vw"
+                widths={[320, 480, 640, 800]}
               />
             </div>
             <h3 class="mt-6 text-xl font-semibold leading-8 text-text-main">{member.name}</h3>

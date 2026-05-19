@@ -1,5 +1,6 @@
 ---
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
 import { serviceSections } from "../../../data/services";
 ---
 
@@ -14,14 +15,15 @@ import { serviceSections } from "../../../data/services";
         <article class="border-b border-[#e9e0d4] pb-16 last:border-b-0 last:pb-0">
           <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
             <div class={section.imageSide === "right" ? "lg:order-2" : ""}>
-              <img
+              <LocalImage
                 src={section.image}
                 alt={section.alt}
                 class={`h-72 w-full object-cover sm:h-96 lg:h-full ${
                   section.features.length > 3 ? "lg:min-h-[560px]" : "lg:min-h-[535px]"
                 }`}
                 loading="lazy"
-                decoding="async"
+                sizes="(min-width: 1024px) 52vw, 100vw"
+                widths={[480, 720, 960, 1280]}
               />
             </div>
 

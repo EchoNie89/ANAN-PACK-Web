@@ -1,15 +1,18 @@
 ---
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
 import { faqHero } from "../../../data/services";
 ---
 
 <section class="relative isolate overflow-hidden bg-[#dbdbdb]">
-  <img
+  <LocalImage
     src={faqHero.image}
     alt={faqHero.alt}
     class="absolute inset-0 z-0 size-full object-cover"
     loading="eager"
-    decoding="async"
+    sizes="100vw"
+    widths={[640, 960, 1280, 1600, 1920]}
+    priority
   />
   <div class="absolute inset-0 z-0 bg-[#8d8476]/25"></div>
   <Container class="relative z-10 flex min-h-[474px] items-center py-16 lg:!max-w-[1200px]">

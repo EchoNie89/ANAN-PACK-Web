@@ -1,5 +1,6 @@
 ---
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
 import { warehousing } from "../../../data/services";
 ---
 
@@ -13,12 +14,13 @@ import { warehousing } from "../../../data/services";
       {
         warehousing.cards.map((card) => (
           <article class="text-center">
-            <img
+            <LocalImage
               src={card.image}
               alt={card.alt}
               class="h-56 w-full object-cover md:h-48 lg:h-[210px]"
               loading="lazy"
-              decoding="async"
+              sizes="(min-width: 768px) 30vw, 100vw"
+              widths={[320, 480, 640, 800]}
             />
             <h3 class="mt-7 text-xl font-extrabold text-ink">{card.title}</h3>
             <p class="mt-5 text-sm leading-6 text-text-muted">{card.description}</p>

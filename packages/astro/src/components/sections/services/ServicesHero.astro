@@ -1,16 +1,19 @@
 ---
 import Button from "../../ui/Button.astro";
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
 import { serviceHero } from "../../../data/services";
 ---
 
 <section class="services-hero relative isolate overflow-hidden bg-[#dfe7e9]">
-  <img
+  <LocalImage
     src={serviceHero.image}
     alt={serviceHero.alt}
     class="pointer-events-none absolute inset-0 z-0 size-full object-cover"
     loading="eager"
-    decoding="async"
+    sizes="100vw"
+    widths={[640, 960, 1280, 1600, 1920]}
+    priority
   />
   <Container class="relative z-10 flex min-h-[474px] items-center py-16 lg:!max-w-[1200px]">
     <div class="max-w-3xl pt-3 text-white">

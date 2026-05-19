@@ -1,14 +1,19 @@
 ---
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
+import { getLocalImage } from "../../../lib/local-images";
+
+const networkImage = getLocalImage("/images/about/about-network-map.png");
 ---
 
 <section class="relative overflow-hidden bg-page-muted py-16 md:py-24">
-  <img
-    src="/images/about/about-network-map.png"
+  <LocalImage
+    src={networkImage}
     alt="Map of China showing partner manufacturing regions connected to Guangzhou"
     class="absolute inset-0 size-full object-cover object-center opacity-90"
     loading="lazy"
-    decoding="async"
+    sizes="100vw"
+    widths={[640, 960, 1280, 1600]}
   />
   <div class="absolute inset-0 bg-white/70"></div>
   <Container class="relative !max-w-[1200px]">

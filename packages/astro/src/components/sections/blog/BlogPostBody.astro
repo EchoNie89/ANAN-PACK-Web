@@ -1,6 +1,7 @@
 ---
 import { getBlogCategory } from "../../../data/blog";
 import type { BlogArticle } from "../../../data/blog";
+import LocalImage from "../../ui/LocalImage.astro";
 
 interface Props {
   article: BlogArticle;
@@ -32,12 +33,13 @@ const categoryLabel = getBlogCategory(article.category)?.label ?? article.catego
           {section.title && <h2 class="text-2xl font-bold text-ink">{section.title}</h2>}
           {section.image && (
             <figure class="overflow-hidden rounded-soft bg-surface-muted">
-              <img
+              <LocalImage
                 src={section.image.src}
                 alt={section.image.alt}
                 class="w-full object-cover"
                 loading="lazy"
-                decoding="async"
+                sizes="(min-width: 1024px) 62vw, 100vw"
+                widths={[480, 720, 960, 1280]}
               />
               {section.image.caption && <figcaption class="px-4 py-3 text-sm leading-6 text-text-muted">{section.image.caption}</figcaption>}
             </figure>

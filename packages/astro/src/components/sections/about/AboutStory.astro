@@ -1,6 +1,11 @@
 ---
 import SectionTitle from "../../ui/SectionTitle.astro";
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
+import { getLocalImage } from "../../../lib/local-images";
+
+const storyFlatlayImage = getLocalImage("/images/about/about-story-flatlay.png");
+const storyPackingImage = getLocalImage("/images/about/about-story-packing.png");
 ---
 
 <section id="our-story" class="bg-white py-16 md:py-24">
@@ -15,21 +20,23 @@ import Container from "../../ui/Container.astro";
         />
         <div class="grid gap-6 sm:grid-cols-2">
           <div class="overflow-hidden rounded-soft shadow-card">
-            <img
-              src="/images/about/about-story-flatlay.png"
+            <LocalImage
+              src={storyFlatlayImage}
               alt="Custom hang tags, labels, and trim materials laid out on a work surface"
               class="aspect-[1.15/1] size-full object-cover"
               loading="lazy"
-              decoding="async"
+              sizes="(min-width: 640px) 24vw, 100vw"
+              widths={[320, 480, 640, 800]}
             />
           </div>
           <div class="overflow-hidden rounded-soft shadow-card sm:translate-y-10">
-            <img
-              src="/images/about/about-story-packing.png"
+            <LocalImage
+              src={storyPackingImage}
               alt="A packaging shipment being checked and handed over"
               class="aspect-[1.15/1] size-full object-cover"
               loading="lazy"
-              decoding="async"
+              sizes="(min-width: 640px) 24vw, 100vw"
+              widths={[320, 480, 640, 800]}
             />
           </div>
         </div>

@@ -1,15 +1,21 @@
 ---
 import Container from "../../ui/Container.astro";
 import Button from "../../ui/Button.astro";
+import LocalImage from "../../ui/LocalImage.astro";
+import { getLocalImage } from "../../../lib/local-images";
+
+const heroImage = getLocalImage("/images/contact/contact-hero.png");
 ---
 
 <section class="relative overflow-hidden bg-page-muted">
-  <img
-    src="/images/contact/contact-hero.png"
+  <LocalImage
+    src={heroImage}
     alt="Packaging gift boxes, bags, ribbon, and cards arranged on a wooden table"
     class="absolute inset-0 size-full object-cover object-center"
     loading="eager"
-    decoding="async"
+    sizes="100vw"
+    widths={[640, 960, 1280, 1600, 1920]}
+    priority
   />
   <div class="absolute inset-0 bg-gradient-to-r from-[#f7e6cf]/85 via-[#f7e6cf]/35 to-transparent"></div>
   <Container class="relative !max-w-[1200px] px-4 py-20 sm:px-6 md:py-24 lg:min-h-[474px] lg:px-8 lg:py-28">

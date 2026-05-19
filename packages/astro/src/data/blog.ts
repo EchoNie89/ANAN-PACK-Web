@@ -1,3 +1,8 @@
+import type { SiteImageSource } from "../lib/local-images";
+import { getLocalImage } from "../lib/local-images";
+
+const blogImage = (fileName: string) => getLocalImage(`/images/blog/${fileName}`);
+
 export type BlogCategorySlug =
   | "material-guides"
   | "production-knowledge"
@@ -15,7 +20,7 @@ export interface BlogContentSection {
   paragraphs?: string[];
   bullets?: string[];
   image?: {
-    src: string;
+    src: SiteImageSource;
     alt: string;
     caption?: string;
   };
@@ -29,9 +34,9 @@ export interface BlogArticle {
   category: BlogCategorySlug;
   publishedAt: string;
   readTime: string;
-  image: string;
+  image: SiteImageSource;
   imageAlt: string;
-  heroImage?: string;
+  heroImage?: SiteImageSource;
   heroStyle?: "center" | "left";
   heroSummary?: string;
   lead: string[];
@@ -70,9 +75,9 @@ export const blogArticles: BlogArticle[] = [
     category: "material-guides",
     publishedAt: "2020-04-25",
     readTime: "8 min read",
-    image: "/images/blog/article-luxury-paper.jpg",
+    image: blogImage("article-luxury-paper.jpg"),
     imageAlt: "Luxury brand paper packaging samples arranged with hang tags and print references",
-    heroImage: "/images/blog/material-guides-hero.jpg",
+    heroImage: blogImage("material-guides-hero.jpg"),
     heroStyle: "center",
     heroSummary:
       "A practical look at premium paper choices, print response, and tactile finishes used in elevated apparel packaging.",
@@ -84,7 +89,7 @@ export const blogArticles: BlogArticle[] = [
     sections: [
       {
         image: {
-          src: "/images/blog/article-luxury-paper.jpg",
+          src: blogImage("article-luxury-paper.jpg"),
           alt: "Luxury packaging board and premium paper samples arranged on a presentation table",
           caption: "Material sampling is where surface feel, edge quality, and print density become easy to compare side by side.",
         },
@@ -144,7 +149,7 @@ export const blogArticles: BlogArticle[] = [
     category: "material-guides",
     publishedAt: "2023-06-07",
     readTime: "6 min read",
-    image: "/images/blog/article-kraft-paper.jpg",
+    image: blogImage("article-kraft-paper.jpg"),
     imageAlt: "Kraft paper and coated paper samples compared on a design desk",
     lead: [
       "Coated paper and kraft paper are often compared as if one is universally better. In practice, they solve different problems and communicate different brand moods.",
@@ -191,7 +196,7 @@ export const blogArticles: BlogArticle[] = [
     category: "material-guides",
     publishedAt: "2020-04-25",
     readTime: "5 min read",
-    image: "/images/blog/article-eco-paper-boxes.jpg",
+    image: blogImage("article-eco-paper-boxes.jpg"),
     imageAlt: "Eco-friendly packaging boxes and FSC paper samples laid out on a neutral table",
     lead: [
       "Sustainable packaging only works when the material story is clear and the structure still performs. Responsible paper choices should improve the system, not weaken the unboxing experience.",
@@ -229,7 +234,7 @@ export const blogArticles: BlogArticle[] = [
     category: "production-knowledge",
     publishedAt: "2020-04-25",
     readTime: "6 min read",
-    image: "/images/blog/article-sustainable-fashion-packaging.jpg",
+    image: blogImage("article-sustainable-fashion-packaging.jpg"),
     imageAlt: "Fashion brand packaging materials including labels, sleeves, and paper samples",
     lead: [
       "Material selection should begin with the full packaging system: how garments are packed, transported, stored, and presented. Sustainability claims only matter if the solution survives the real workflow.",
@@ -267,7 +272,7 @@ export const blogArticles: BlogArticle[] = [
     category: "production-knowledge",
     publishedAt: "2020-04-25",
     readTime: "4 min read",
-    image: "/images/blog/article-hangtag-paper.jpg",
+    image: blogImage("article-hangtag-paper.jpg"),
     imageAlt: "Custom hang tags and paper stock swatches displayed on a workbench",
     lead: [
       "A hang tag is handled closely, photographed often, and usually printed on both sides. That makes paper selection more visible than many teams expect.",
@@ -305,7 +310,7 @@ export const blogArticles: BlogArticle[] = [
     category: "production-knowledge",
     publishedAt: "2020-04-25",
     readTime: "5 min read",
-    image: "/images/blog/article-fsc-paper.jpg",
+    image: blogImage("article-fsc-paper.jpg"),
     imageAlt: "Green FSC-certified hang tag samples and paper packaging references",
     lead: [
       "FSC-certified paper is used to show that paper materials come from responsibly managed forest sources through a documented chain of custody.",
@@ -343,9 +348,9 @@ export const blogArticles: BlogArticle[] = [
     category: "industry-insights",
     publishedAt: "2020-04-25",
     readTime: "7 min read",
-    image: "/images/blog/article-biodegradable-packaging.jpg",
+    image: blogImage("article-biodegradable-packaging.jpg"),
     imageAlt: "Biodegradable fashion packaging materials including garment bags and paper boxes",
-    heroImage: "/images/blog/industry-insights-hero.jpg",
+    heroImage: blogImage("industry-insights-hero.jpg"),
     heroStyle: "left",
     heroSummary:
       "Why biodegradable films, paper systems, and responsible material sourcing are becoming part of apparel packaging strategy.",
@@ -357,7 +362,7 @@ export const blogArticles: BlogArticle[] = [
     sections: [
       {
         image: {
-          src: "/images/blog/industry-insights-body.jpg",
+          src: blogImage("industry-insights-body.jpg"),
           alt: "Biodegradable packaging display with folded apparel, paper boxes, and soft natural materials",
           caption: "The material story needs to work in both logistics and brand presentation, not just on a sustainability slide.",
         },
@@ -409,7 +414,7 @@ export const blogArticles: BlogArticle[] = [
     category: "industry-insights",
     publishedAt: "2020-04-25",
     readTime: "5 min read",
-    image: "/images/blog/article-brand-identity.jpg",
+    image: blogImage("article-brand-identity.jpg"),
     imageAlt: "Neutral-toned branded packaging bags and boxes for fashion identity references",
     lead: [
       "Brand identity is not communicated by logo alone. Structure, material, typography, and finishing all influence how premium, playful, or disciplined a fashion brand feels in the real world.",
@@ -447,7 +452,7 @@ export const blogArticles: BlogArticle[] = [
     category: "industry-insights",
     publishedAt: "2020-04-25",
     readTime: "6 min read",
-    image: "/images/blog/article-clothing-brand-packaging.jpg",
+    image: blogImage("article-clothing-brand-packaging.jpg"),
     imageAlt: "Custom clothing packaging references including paper bags, labels, and hanging tags",
     lead: [
       "There is no single best packaging format for apparel. The right choice changes with product category, retail channel, shipping distance, and how visible the packaging will be in the customer journey.",
@@ -485,7 +490,7 @@ export const blogArticles: BlogArticle[] = [
     category: "industry-insights",
     publishedAt: "2020-04-25",
     readTime: "6 min read",
-    image: "/images/blog/article-paper-vs-plastic.jpg",
+    image: blogImage("article-paper-vs-plastic.jpg"),
     imageAlt: "Paper shopping bags and recyclable plastic packaging compared for sustainability discussion",
     lead: [
       "Paper is not automatically more sustainable than plastic, and plastic is not automatically the wrong choice. Both need to be evaluated in context.",
@@ -523,7 +528,7 @@ export const blogArticles: BlogArticle[] = [
     category: "industry-insights",
     publishedAt: "2020-04-25",
     readTime: "5 min read",
-    image: "/images/blog/article-fsc-popular.jpg",
+    image: blogImage("article-fsc-popular.jpg"),
     imageAlt: "FSC-certified paper hang tags and branded packaging materials for fashion products",
     lead: [
       "FSC-certified paper has become more visible in fashion because it is simple to explain, flexible across formats, and aligned with how many brands already use paper-based packaging.",
@@ -561,7 +566,7 @@ export const blogArticles: BlogArticle[] = [
     category: "industry-insights",
     publishedAt: "2020-04-25",
     readTime: "5 min read",
-    image: "/images/blog/article-custom-packaging-ecommerce.jpg",
+    image: blogImage("article-custom-packaging-ecommerce.jpg"),
     imageAlt: "Custom fashion e-commerce packaging with branded box, pouch, and insert cards",
     lead: [
       "E-commerce has made packaging more visible than ever. When customers buy online, the shipment they open often stands in for the store environment itself.",

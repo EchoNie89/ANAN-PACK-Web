@@ -1,3 +1,5 @@
+import { getLocalImage } from "../lib/local-images";
+
 export const footerQuickLinks = [
   { label: "Products", href: "/home#products" },
   { label: "Services", href: "/services" },
@@ -79,21 +81,21 @@ export const aboutSustainability = [
     title: "FSC Certified Paper Options",
     description:
       "For paper-based packaging, we can help source FSC-certified paper options for brands with responsible sourcing requirements.",
-    image: "/images/home/cert-fsc.png",
+    image: getLocalImage("/images/home/cert-fsc.png"),
     alt: "FSC certified paper mark",
   },
   {
     title: "GRS Recycled Material Options",
     description:
       "For recycled materials, we coordinate with suppliers that support GRS-certified options when applicable.",
-    image: "/images/home/cert-grs.png",
+    image: getLocalImage("/images/home/cert-grs.png"),
     alt: "Global Recycled Standard mark",
   },
   {
     title: "Textile Safety & Compliance",
     description:
       "For textile-related trims and labels, we help match materials that meet relevant safety and textile standards.",
-    image: "/images/home/cert-oeko.png",
+    image: getLocalImage("/images/home/cert-oeko.png"),
     alt: "OEKO-TEX Standard 100 mark",
   },
 ] as const;

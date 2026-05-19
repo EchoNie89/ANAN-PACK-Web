@@ -5,6 +5,7 @@ import type { SiteImageSource } from "../../lib/local-images";
 interface Props {
   src: SiteImageSource;
   alt: string;
+  "aria-hidden"?: "true" | "false";
   class?: string;
   loading?: "eager" | "lazy";
   sizes?: string;
@@ -17,6 +18,7 @@ interface Props {
 const {
   src,
   alt,
+  ["aria-hidden"]: ariaHidden,
   class: className = "",
   loading = "lazy",
   sizes,
@@ -32,6 +34,7 @@ const {
     <img
       src={src}
       alt={alt}
+      aria-hidden={ariaHidden}
       class={className}
       loading={loading}
       decoding="async"
@@ -43,6 +46,7 @@ const {
     <Image
       src={src}
       alt={alt}
+      aria-hidden={ariaHidden}
       class={className}
       loading={loading}
       widths={widths}
