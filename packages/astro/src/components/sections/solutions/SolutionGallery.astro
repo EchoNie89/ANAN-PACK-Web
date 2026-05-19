@@ -1,5 +1,6 @@
 ---
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
 import type { SolutionPageData } from "../../../data/solutions";
 
 interface Props {
@@ -15,12 +16,13 @@ const { page } = Astro.props;
       {
         page.gallery.map((item) => (
           <figure class="group relative overflow-hidden rounded-sm bg-surface-muted">
-            <img
+            <LocalImage
               src={item.image}
               alt={item.alt}
               class="aspect-[1.5] w-full object-cover transition duration-500 group-hover:scale-[1.025]"
               loading="lazy"
-              decoding="async"
+              sizes="(min-width: 768px) 50vw, 100vw"
+              widths={[360, 540, 720, 960]}
             />
             <span class="absolute bottom-3 right-3 flex size-5 items-center justify-center rounded-full bg-white/75 text-xs font-bold text-text-muted">
               +

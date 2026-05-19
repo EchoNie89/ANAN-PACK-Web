@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import type { SiteImageSource } from "../../lib/local-images";
+
+interface Props {
+  src: SiteImageSource;
+  alt: string;
+  class?: string;
+  loading?: "eager" | "lazy";
+  sizes?: string;
+  widths?: number[];
+  width?: number;
+  height?: number;
+  priority?: boolean;
+}
+
+const {
+  src,
+  alt,
+  class: className = "",
+  loading = "lazy",
+  sizes,
+  widths,
+  width,
+  height,
+  priority = false,
+} = Astro.props;
+---
+
+{
+  typeof src === "string" ? (
+    <img
+      src={src}
+      alt={alt}
+      class={className}
+      loading={loading}
+      decoding="async"
+      width={width}
+      height={height}
+      fetchpriority={priority ? "high" : undefined}
+    />
+  ) : (
+    <Image
+      src={src}
+      alt={alt}
+      class={className}
+      loading={loading}
+      widths={widths}
+      sizes={sizes}
+      width={width}
+      height={height}
+      priority={priority}
+    />
+  )
+}

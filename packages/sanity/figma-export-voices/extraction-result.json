@@ -1,0 +1,3226 @@
+{
+  "source": {
+    "url": "https://www.figma.com/design/SzOlgqIXHy4MBI2QXLE08L/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=21246-477&t=iGdFThvJtMsPpPWV-4",
+    "fileKey": "SzOlgqIXHy4MBI2QXLE08L",
+    "nodeId": "21246:477",
+    "fileName": "独立站设计-吊牌网站 (Copy)",
+    "lastModified": "2026-05-18T15:51:22Z"
+  },
+  "structure": {
+    "nodeId": "21246:477",
+    "nodeName": "Frame 1272636867",
+    "nodeType": "FRAME",
+    "children": [
+      {
+        "nodeId": "20969:1154",
+        "nodeName": "Group 1272636854",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19413:1451",
+            "nodeName": "Voices of Our Partners",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 384,
+              "height": 39
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "20969:744",
+            "nodeName": "Real feedback from brands we work with, Long-term partnerships built on trust and results.",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 863,
+              "height": 22
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#666666",
+                "opacity": 1
+              }
+            ]
+          }
+        ],
+        "layout": {
+          "width": 863,
+          "height": 81
+        }
+      },
+      {
+        "nodeId": "19413:1388",
+        "nodeName": "Group 1272636705",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "19413:1389",
+            "nodeName": "Group 1272636703",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "20969:1365",
+                "nodeName": "Group 1272636861",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "20969:1366",
+                    "nodeName": "Rectangle 95",
+                    "nodeType": "RECTANGLE",
+                    "children": [],
+                    "layout": {
+                      "width": 375,
+                      "height": 353,
+                      "cornerRadius": 20
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#fefcfb",
+                        "opacity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "nodeId": "20969:1367",
+                    "nodeName": "Frame 1272636858",
+                    "nodeType": "FRAME",
+                    "children": [
+                      {
+                        "nodeId": "20969:1368",
+                        "nodeName": "“",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 38.84693908691406,
+                          "height": 44.65925598144531
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#e6dbcb",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:1369",
+                        "nodeName": "Communication is very easy. They understand my English! And the prices are clear. Very important.",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 335,
+                          "height": 72
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:1370",
+                        "nodeName": "Frame 1272636857",
+                        "nodeType": "FRAME",
+                        "children": [
+                          {
+                            "nodeId": "20969:1371",
+                            "nodeName": "Star 1",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1372",
+                            "nodeName": "Star 2",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1373",
+                            "nodeName": "Star 3",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1374",
+                            "nodeName": "Star 4",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1375",
+                            "nodeName": "Star 5",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "itemSpacing": 8,
+                          "width": 124.661865234375,
+                          "height": 18.532373428344727,
+                          "counterAxisAlignItems": "CENTER"
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1376",
+                        "nodeName": "Line 47",
+                        "nodeType": "LINE",
+                        "children": [],
+                        "layout": {
+                          "width": 335,
+                          "height": 0
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1377",
+                        "nodeName": "Group 1272636857",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:1378",
+                            "nodeName": "Group 1272636856",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:1379",
+                                "nodeName": "23-11-2025",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 79,
+                                  "height": 21
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#666666",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:1380",
+                                "nodeName": "Marco, olive oil producer (Italy)",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 249,
+                                  "height": 19
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#000000",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 249,
+                              "height": 45
+                            }
+                          },
+                          {
+                            "nodeId": "20969:1381",
+                            "nodeName": "Group 1272636850",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:1382",
+                                "nodeName": "Ellipse 14",
+                                "nodeType": "ELLIPSE",
+                                "children": [],
+                                "layout": {
+                                  "width": 60,
+                                  "height": 60
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#f6f4ef",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:1467",
+                                "nodeName": "橄榄油黄金产区 1",
+                                "nodeType": "FRAME",
+                                "children": [
+                                  {
+                                    "nodeId": "20969:1468",
+                                    "nodeName": "Vector",
+                                    "nodeType": "VECTOR",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 28.25837516784668,
+                                      "height": 37.99998474121094
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#73624a",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "layout": {
+                                  "width": 38,
+                                  "height": 38
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#ffffff",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 60,
+                              "height": 60
+                            }
+                          }
+                        ],
+                        "layout": {
+                          "width": 319,
+                          "height": 60
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1385",
+                        "nodeName": "Group 1272636858",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:1386",
+                            "nodeName": "Rectangle 4",
+                            "nodeType": "RECTANGLE",
+                            "children": [],
+                            "layout": {
+                              "width": 335,
+                              "height": 40,
+                              "cornerRadius": 30
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#e6dbcb",
+                                "opacity": 0.5
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1387",
+                            "nodeName": "Used for: Hang Tags + Labels",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 199,
+                              "height": 17
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 335,
+                          "height": 40,
+                          "cornerRadius": 30
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "itemSpacing": 20,
+                      "width": 335,
+                      "height": 335.1916198730469
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 375,
+                  "height": 353
+                }
+              },
+              {
+                "nodeId": "20969:1341",
+                "nodeName": "Group 1272636860",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "20969:1342",
+                    "nodeName": "Rectangle 95",
+                    "nodeType": "RECTANGLE",
+                    "children": [],
+                    "layout": {
+                      "width": 375,
+                      "height": 353,
+                      "cornerRadius": 20
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#fefcfb",
+                        "opacity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "nodeId": "20969:1343",
+                    "nodeName": "Frame 1272636858",
+                    "nodeType": "FRAME",
+                    "children": [
+                      {
+                        "nodeId": "20969:1344",
+                        "nodeName": "“",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 38.84693908691406,
+                          "height": 44.65925598144531
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#e6dbcb",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:1345",
+                        "nodeName": "Finally, a supplier that doesn't need things explained ten times. They just get it. Good on ya.",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 335,
+                          "height": 72
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:1346",
+                        "nodeName": "Frame 1272636857",
+                        "nodeType": "FRAME",
+                        "children": [
+                          {
+                            "nodeId": "20969:1347",
+                            "nodeName": "Star 1",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1348",
+                            "nodeName": "Star 2",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1349",
+                            "nodeName": "Star 3",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1350",
+                            "nodeName": "Star 4",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1351",
+                            "nodeName": "Star 5",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "itemSpacing": 8,
+                          "width": 124.661865234375,
+                          "height": 18.532373428344727,
+                          "counterAxisAlignItems": "CENTER"
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1352",
+                        "nodeName": "Line 47",
+                        "nodeType": "LINE",
+                        "children": [],
+                        "layout": {
+                          "width": 335,
+                          "height": 0
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1353",
+                        "nodeName": "Group 1272636857",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:1354",
+                            "nodeName": "Group 1272636856",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:1355",
+                                "nodeName": "23-11-2025",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 79,
+                                  "height": 21
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#666666",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:1356",
+                                "nodeName": "Tom, pet accessories",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 169,
+                                  "height": 19
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#000000",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 169,
+                              "height": 45
+                            }
+                          },
+                          {
+                            "nodeId": "20969:1357",
+                            "nodeName": "Group 1272636850",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:1358",
+                                "nodeName": "Ellipse 14",
+                                "nodeType": "ELLIPSE",
+                                "children": [],
+                                "layout": {
+                                  "width": 60,
+                                  "height": 60
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#f6f4ef",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:1462",
+                                "nodeName": "足迹记录 1",
+                                "nodeType": "FRAME",
+                                "children": [
+                                  {
+                                    "nodeId": "20969:1463",
+                                    "nodeName": "Vector",
+                                    "nodeType": "VECTOR",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 29.993000030517578,
+                                      "height": 27.375
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#73624a",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "layout": {
+                                  "width": 50,
+                                  "height": 50
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#ffffff",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 60,
+                              "height": 60
+                            }
+                          }
+                        ],
+                        "layout": {
+                          "width": 239,
+                          "height": 60
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1361",
+                        "nodeName": "Group 1272636858",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:1362",
+                            "nodeName": "Rectangle 4",
+                            "nodeType": "RECTANGLE",
+                            "children": [],
+                            "layout": {
+                              "width": 335,
+                              "height": 40,
+                              "cornerRadius": 30
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#e6dbcb",
+                                "opacity": 0.5
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1363",
+                            "nodeName": "Used for: Product Labels + Stickers",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 238,
+                              "height": 17
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 335,
+                          "height": 40,
+                          "cornerRadius": 30
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "itemSpacing": 20,
+                      "width": 335,
+                      "height": 335.1916198730469
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 375,
+                  "height": 353
+                }
+              },
+              {
+                "nodeId": "20969:1317",
+                "nodeName": "Group 1272636859",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "20969:1318",
+                    "nodeName": "Rectangle 95",
+                    "nodeType": "RECTANGLE",
+                    "children": [],
+                    "layout": {
+                      "width": 375,
+                      "height": 353,
+                      "cornerRadius": 20
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#fefcfb",
+                        "opacity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "nodeId": "20969:1319",
+                    "nodeName": "Frame 1272636858",
+                    "nodeType": "FRAME",
+                    "children": [
+                      {
+                        "nodeId": "20969:1320",
+                        "nodeName": "“",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 38.84693908691406,
+                          "height": 44.65925598144531
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#e6dbcb",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:1321",
+                        "nodeName": "They're terribly efficient. Even the time difference hasn't been a bother. Cheers for that!",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 335,
+                          "height": 72
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:1322",
+                        "nodeName": "Frame 1272636857",
+                        "nodeType": "FRAME",
+                        "children": [
+                          {
+                            "nodeId": "20969:1323",
+                            "nodeName": "Star 1",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1324",
+                            "nodeName": "Star 2",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1325",
+                            "nodeName": "Star 3",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1326",
+                            "nodeName": "Star 4",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1327",
+                            "nodeName": "Star 5",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "itemSpacing": 8,
+                          "width": 124.661865234375,
+                          "height": 18.532373428344727,
+                          "counterAxisAlignItems": "CENTER"
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1328",
+                        "nodeName": "Line 47",
+                        "nodeType": "LINE",
+                        "children": [],
+                        "layout": {
+                          "width": 335,
+                          "height": 0
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1329",
+                        "nodeName": "Group 1272636857",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:1330",
+                            "nodeName": "Group 1272636856",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:1331",
+                                "nodeName": "23-11-2025",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 79,
+                                  "height": 21
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#666666",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:1332",
+                                "nodeName": "Gemma, stationery subscription",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 255,
+                                  "height": 19
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#000000",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 255,
+                              "height": 45
+                            }
+                          },
+                          {
+                            "nodeId": "20969:1333",
+                            "nodeName": "Group 1272636850",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:1334",
+                                "nodeName": "Ellipse 14",
+                                "nodeType": "ELLIPSE",
+                                "children": [],
+                                "layout": {
+                                  "width": 60,
+                                  "height": 60
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#f6f4ef",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:1472",
+                                "nodeName": "文具 1",
+                                "nodeType": "FRAME",
+                                "children": [
+                                  {
+                                    "nodeId": "20969:1473",
+                                    "nodeName": "Vector",
+                                    "nodeType": "VECTOR",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 23.75,
+                                      "height": 33.25
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#73624a",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "layout": {
+                                  "width": 38,
+                                  "height": 38
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#ffffff",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 60,
+                              "height": 60
+                            }
+                          }
+                        ],
+                        "layout": {
+                          "width": 325,
+                          "height": 60
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1337",
+                        "nodeName": "Group 1272636858",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:1338",
+                            "nodeName": "Rectangle 4",
+                            "nodeType": "RECTANGLE",
+                            "children": [],
+                            "layout": {
+                              "width": 335,
+                              "height": 40,
+                              "cornerRadius": 30
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#e6dbcb",
+                                "opacity": 0.5
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1339",
+                            "nodeName": "Used for: Packaging + Stickers",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 207,
+                              "height": 17
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 335,
+                          "height": 40,
+                          "cornerRadius": 30
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "itemSpacing": 20,
+                      "width": 335,
+                      "height": 335.1916198730469
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 375,
+                  "height": 353
+                }
+              }
+            ],
+            "layout": {
+              "width": 1201,
+              "height": 353
+            }
+          },
+          {
+            "nodeId": "20969:1389",
+            "nodeName": "Group 1272636705",
+            "nodeType": "GROUP",
+            "children": [
+              {
+                "nodeId": "20969:1390",
+                "nodeName": "Group 1272636861",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "20969:1391",
+                    "nodeName": "Rectangle 95",
+                    "nodeType": "RECTANGLE",
+                    "children": [],
+                    "layout": {
+                      "width": 375,
+                      "height": 403,
+                      "cornerRadius": 20
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#fefcfb",
+                        "opacity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "nodeId": "20969:1392",
+                    "nodeName": "Frame 1272636858",
+                    "nodeType": "FRAME",
+                    "children": [
+                      {
+                        "nodeId": "20969:1393",
+                        "nodeName": "“",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 38.84693908691406,
+                          "height": 44.65925598144531
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#e6dbcb",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:1394",
+                        "nodeName": "They're not just an order-taker. They suggested a small design tweak that cut our shipping cost by 15%. That's money right back in our pocket.",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 335,
+                          "height": 120
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:1395",
+                        "nodeName": "Frame 1272636857",
+                        "nodeType": "FRAME",
+                        "children": [
+                          {
+                            "nodeId": "20969:1396",
+                            "nodeName": "Star 1",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1397",
+                            "nodeName": "Star 2",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1398",
+                            "nodeName": "Star 3",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1399",
+                            "nodeName": "Star 4",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1400",
+                            "nodeName": "Star 5",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "itemSpacing": 8,
+                          "width": 124.661865234375,
+                          "height": 18.532373428344727,
+                          "counterAxisAlignItems": "CENTER"
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1401",
+                        "nodeName": "Line 47",
+                        "nodeType": "LINE",
+                        "children": [],
+                        "layout": {
+                          "width": 335,
+                          "height": 0
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1402",
+                        "nodeName": "Group 1272636857",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:1403",
+                            "nodeName": "Group 1272636856",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:1404",
+                                "nodeName": "23-11-2025",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 79,
+                                  "height": 21
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#666666",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:1405",
+                                "nodeName": "Devin, e-commerce apparel",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 221,
+                                  "height": 19
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#000000",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 221,
+                              "height": 45
+                            }
+                          },
+                          {
+                            "nodeId": "20969:1406",
+                            "nodeName": "Group 1272636850",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:1407",
+                                "nodeName": "Ellipse 14",
+                                "nodeType": "ELLIPSE",
+                                "children": [],
+                                "layout": {
+                                  "width": 60,
+                                  "height": 60
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#f6f4ef",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:1492",
+                                "nodeName": "服装 1",
+                                "nodeType": "FRAME",
+                                "children": [
+                                  {
+                                    "nodeId": "20969:1493",
+                                    "nodeName": "Vector",
+                                    "nodeType": "VECTOR",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 34.007381439208984,
+                                      "height": 15.058823585510254
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#73624a",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "nodeId": "20969:1494",
+                                    "nodeName": "Vector",
+                                    "nodeType": "VECTOR",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 1.889298915863037,
+                                      "height": 6.5882344245910645
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#73624a",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "nodeId": "20969:1495",
+                                    "nodeName": "Vector",
+                                    "nodeType": "VECTOR",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 15.114391326904297,
+                                      "height": 14.812234878540039
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#73624a",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "layout": {
+                                  "width": 34,
+                                  "height": 32
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#ffffff",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 60,
+                              "height": 60
+                            }
+                          }
+                        ],
+                        "layout": {
+                          "width": 291,
+                          "height": 60
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1410",
+                        "nodeName": "Group 1272636858",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:1411",
+                            "nodeName": "Rectangle 4",
+                            "nodeType": "RECTANGLE",
+                            "children": [],
+                            "layout": {
+                              "width": 335,
+                              "height": 40,
+                              "cornerRadius": 30
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#e6dbcb",
+                                "opacity": 0.5
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1412",
+                            "nodeName": "Used for: Hang Tags + Care Labels",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 234,
+                              "height": 17
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 335,
+                          "height": 40,
+                          "cornerRadius": 30
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "itemSpacing": 20,
+                      "width": 335,
+                      "height": 383.1916198730469
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 375,
+                  "height": 403
+                }
+              },
+              {
+                "nodeId": "20969:1413",
+                "nodeName": "Group 1272636860",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "20969:1414",
+                    "nodeName": "Rectangle 95",
+                    "nodeType": "RECTANGLE",
+                    "children": [],
+                    "layout": {
+                      "width": 375,
+                      "height": 403,
+                      "cornerRadius": 20
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#fefcfb",
+                        "opacity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "nodeId": "20969:1415",
+                    "nodeName": "Frame 1272636858",
+                    "nodeType": "FRAME",
+                    "children": [
+                      {
+                        "nodeId": "20969:1416",
+                        "nodeName": "“",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 38.84693908691406,
+                          "height": 44.65925598144531
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#e6dbcb",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:1417",
+                        "nodeName": "The 'one-stop-shop' model is real. We used to manage 5 different suppliers; now we manage one. The efficiency gains are massive.",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 335,
+                          "height": 120
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:1418",
+                        "nodeName": "Frame 1272636857",
+                        "nodeType": "FRAME",
+                        "children": [
+                          {
+                            "nodeId": "20969:1419",
+                            "nodeName": "Star 1",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1420",
+                            "nodeName": "Star 2",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1421",
+                            "nodeName": "Star 3",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1422",
+                            "nodeName": "Star 4",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1423",
+                            "nodeName": "Star 5",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "itemSpacing": 8,
+                          "width": 124.661865234375,
+                          "height": 18.532373428344727,
+                          "counterAxisAlignItems": "CENTER"
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1424",
+                        "nodeName": "Line 47",
+                        "nodeType": "LINE",
+                        "children": [],
+                        "layout": {
+                          "width": 335,
+                          "height": 0
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1425",
+                        "nodeName": "Group 1272636857",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:1426",
+                            "nodeName": "Group 1272636856",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:1427",
+                                "nodeName": "23-11-2025",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 79,
+                                  "height": 21
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#666666",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:1428",
+                                "nodeName": "Olivia C., Operations Director, Beauty Brand",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 265,
+                                  "height": 38
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#000000",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 265,
+                              "height": 60.19140625
+                            }
+                          },
+                          {
+                            "nodeId": "20969:1429",
+                            "nodeName": "Group 1272636850",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:1430",
+                                "nodeName": "Ellipse 14",
+                                "nodeType": "ELLIPSE",
+                                "children": [],
+                                "layout": {
+                                  "width": 60,
+                                  "height": 60
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#f6f4ef",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:1484",
+                                "nodeName": "美体美容 1",
+                                "nodeType": "FRAME",
+                                "children": [
+                                  {
+                                    "nodeId": "20969:1485",
+                                    "nodeName": "Vector",
+                                    "nodeType": "VECTOR",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 3.4528841972351074,
+                                      "height": 1.885878324508667
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#73624a",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "nodeId": "20969:1486",
+                                    "nodeName": "Vector",
+                                    "nodeType": "VECTOR",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 33.292667388916016,
+                                      "height": 33.205448150634766
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#73624a",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "layout": {
+                                  "width": 38,
+                                  "height": 38
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#ffffff",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 60,
+                              "height": 60
+                            }
+                          }
+                        ],
+                        "layout": {
+                          "width": 335,
+                          "height": 60.19140625
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1433",
+                        "nodeName": "Group 1272636858",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:1434",
+                            "nodeName": "Rectangle 4",
+                            "nodeType": "RECTANGLE",
+                            "children": [],
+                            "layout": {
+                              "width": 335,
+                              "height": 40,
+                              "cornerRadius": 30
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#e6dbcb",
+                                "opacity": 0.5
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1435",
+                            "nodeName": "Used for: Labels + Bottle Neck Tags",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 242,
+                              "height": 17
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 335,
+                          "height": 40,
+                          "cornerRadius": 30
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "itemSpacing": 20,
+                      "width": 335,
+                      "height": 383.3830261230469
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 375,
+                  "height": 403
+                }
+              },
+              {
+                "nodeId": "20969:1436",
+                "nodeName": "Group 1272636859",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "20969:1437",
+                    "nodeName": "Rectangle 95",
+                    "nodeType": "RECTANGLE",
+                    "children": [],
+                    "layout": {
+                      "width": 375,
+                      "height": 403,
+                      "cornerRadius": 20
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#fefcfb",
+                        "opacity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "nodeId": "20969:1438",
+                    "nodeName": "Frame 1272636858",
+                    "nodeType": "FRAME",
+                    "children": [
+                      {
+                        "nodeId": "20969:1439",
+                        "nodeName": "“",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 38.84693908691406,
+                          "height": 44.65925598144531
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#e6dbcb",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:1440",
+                        "nodeName": "Frankly, I've taken all the time I saved on sourcing and put it back into growing the business. The process is brutally simple, and honestly, it costs the same. Makes you wonder what you were doing before.",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 335,
+                          "height": 120
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:1441",
+                        "nodeName": "Frame 1272636857",
+                        "nodeType": "FRAME",
+                        "children": [
+                          {
+                            "nodeId": "20969:1442",
+                            "nodeName": "Star 1",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1443",
+                            "nodeName": "Star 2",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1444",
+                            "nodeName": "Star 3",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1445",
+                            "nodeName": "Star 4",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1446",
+                            "nodeName": "Star 5",
+                            "nodeType": "STAR",
+                            "children": [],
+                            "layout": {
+                              "width": 18.532373428344727,
+                              "height": 18.532373428344727
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#d0aa4c",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "itemSpacing": 8,
+                          "width": 124.661865234375,
+                          "height": 18.532373428344727,
+                          "counterAxisAlignItems": "CENTER"
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1447",
+                        "nodeName": "Line 47",
+                        "nodeType": "LINE",
+                        "children": [],
+                        "layout": {
+                          "width": 335,
+                          "height": 0
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1448",
+                        "nodeName": "Group 1272636857",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:1449",
+                            "nodeName": "Group 1272636856",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:1450",
+                                "nodeName": "23-11-2025",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 79,
+                                  "height": 21
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#666666",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:1451",
+                                "nodeName": "Tom, Owner of a Craft Brewery",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 245,
+                                  "height": 19
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#000000",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 245,
+                              "height": 45
+                            }
+                          },
+                          {
+                            "nodeId": "20969:1452",
+                            "nodeName": "Group 1272636850",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:1453",
+                                "nodeName": "Ellipse 14",
+                                "nodeType": "ELLIPSE",
+                                "children": [],
+                                "layout": {
+                                  "width": 60,
+                                  "height": 60
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#f6f4ef",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:1477",
+                                "nodeName": "啤酒 1",
+                                "nodeType": "FRAME",
+                                "children": [
+                                  {
+                                    "nodeId": "20969:1478",
+                                    "nodeName": "Vector",
+                                    "nodeType": "VECTOR",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 26.54190444946289,
+                                      "height": 32.32133102416992
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#73624a",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "layout": {
+                                  "width": 38,
+                                  "height": 38
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#ffffff",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 60,
+                              "height": 60
+                            }
+                          }
+                        ],
+                        "layout": {
+                          "width": 315,
+                          "height": 60
+                        }
+                      },
+                      {
+                        "nodeId": "20969:1456",
+                        "nodeName": "Group 1272636858",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:1457",
+                            "nodeName": "Rectangle 4",
+                            "nodeType": "RECTANGLE",
+                            "children": [],
+                            "layout": {
+                              "width": 335,
+                              "height": 40,
+                              "cornerRadius": 30
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#e6dbcb",
+                                "opacity": 0.5
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:1458",
+                            "nodeName": "Used for: Labels + Packaging Tape",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 234,
+                              "height": 17
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 335,
+                          "height": 40,
+                          "cornerRadius": 30
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "itemSpacing": 20,
+                      "width": 335,
+                      "height": 383.1916198730469
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 375,
+                  "height": 403
+                }
+              }
+            ],
+            "layout": {
+              "width": 1201,
+              "height": 403
+            }
+          }
+        ],
+        "layout": {
+          "width": 1202,
+          "height": 794
+        }
+      },
+      {
+        "nodeId": "21246:466",
+        "nodeName": "Group 1272636888",
+        "nodeType": "GROUP",
+        "children": [
+          {
+            "nodeId": "20969:1581",
+            "nodeName": "Rectangle 95",
+            "nodeType": "RECTANGLE",
+            "children": [],
+            "layout": {
+              "width": 1202,
+              "height": 124,
+              "cornerRadius": 10
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#ffffff",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "21246:439",
+            "nodeName": "Frame 1272636866",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "21246:440",
+                "nodeName": "Group 1272636887",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "21246:441",
+                    "nodeName": "Group 1272636882",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "21246:442",
+                        "nodeName": "500+",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 55,
+                          "height": 20
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "21246:443",
+                        "nodeName": "Brands Served",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 99,
+                          "height": 20
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    ],
+                    "layout": {
+                      "width": 99,
+                      "height": 44
+                    }
+                  },
+                  {
+                    "nodeId": "21246:444",
+                    "nodeName": "人数 1",
+                    "nodeType": "FRAME",
+                    "children": [
+                      {
+                        "nodeId": "21246:445",
+                        "nodeName": "Vector",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 48.601715087890625,
+                          "height": 30.94806671142578
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "21246:446",
+                        "nodeName": "Vector",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 34.48353958129883,
+                          "height": 40.51764678955078
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    ],
+                    "layout": {
+                      "width": 49,
+                      "height": 42
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#ffffff",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 168,
+                  "height": 44
+                }
+              },
+              {
+                "nodeId": "21246:447",
+                "nodeName": "Line 53",
+                "nodeType": "LINE",
+                "children": [],
+                "layout": {
+                  "width": 0.0000028385911718942225,
+                  "height": 47
+                }
+              },
+              {
+                "nodeId": "21246:448",
+                "nodeName": "Group 1272636886",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "21246:449",
+                    "nodeName": "Group 1272636881",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "21246:450",
+                        "nodeName": "50+",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 41,
+                          "height": 20
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "21246:451",
+                        "nodeName": "Countries Shipped",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 125,
+                          "height": 20
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    ],
+                    "layout": {
+                      "width": 125,
+                      "height": 44
+                    }
+                  },
+                  {
+                    "nodeId": "21246:383",
+                    "nodeName": "Sphere (圆球)",
+                    "nodeType": "COMPONENT",
+                    "children": [
+                      {
+                        "nodeId": "21246:379",
+                        "nodeName": "Vector",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 40.83333206176758,
+                          "height": 16.333332061767578
+                        }
+                      },
+                      {
+                        "nodeId": "21246:380",
+                        "nodeName": "Vector",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 16.333332061767578,
+                          "height": 40.83333206176758
+                        }
+                      },
+                      {
+                        "nodeId": "21246:381",
+                        "nodeName": "Vector",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 40.83333206176758,
+                          "height": 40.83333206176758
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "width": 49,
+                      "height": 49
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 194,
+                  "height": 49
+                }
+              },
+              {
+                "nodeId": "21246:452",
+                "nodeName": "Line 54",
+                "nodeType": "LINE",
+                "children": [],
+                "layout": {
+                  "width": 0.0000028385911718942225,
+                  "height": 47
+                }
+              },
+              {
+                "nodeId": "21246:453",
+                "nodeName": "Group 1272636885",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "21246:454",
+                    "nodeName": "安全 (1) 1",
+                    "nodeType": "FRAME",
+                    "children": [
+                      {
+                        "nodeId": "21246:455",
+                        "nodeName": "Vector",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 36.75,
+                          "height": 46.502525329589844
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "21246:456",
+                        "nodeName": "Vector",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 20.681718826293945,
+                          "height": 15.238386154174805
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    ],
+                    "layout": {
+                      "width": 49,
+                      "height": 49
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#ffffff",
+                        "opacity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "nodeId": "21246:457",
+                    "nodeName": "Group 1272636880",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "21246:458",
+                        "nodeName": "98%",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 44,
+                          "height": 20
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "21246:459",
+                        "nodeName": "Reorder Rate",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 88,
+                          "height": 20
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    ],
+                    "layout": {
+                      "width": 88,
+                      "height": 44
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 157,
+                  "height": 49
+                }
+              },
+              {
+                "nodeId": "21246:460",
+                "nodeName": "Line 55",
+                "nodeType": "LINE",
+                "children": [],
+                "layout": {
+                  "width": 0.0000028385911718942225,
+                  "height": 47
+                }
+              },
+              {
+                "nodeId": "21246:461",
+                "nodeName": "Group 1272636884",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "21246:474",
+                    "nodeName": "徽章1 1",
+                    "nodeType": "FRAME",
+                    "children": [
+                      {
+                        "nodeId": "21246:475",
+                        "nodeName": "Vector",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 42.23303985595703,
+                          "height": 48.96561050415039
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    ],
+                    "layout": {
+                      "width": 49,
+                      "height": 49
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#ffffff",
+                        "opacity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "nodeId": "21246:462",
+                    "nodeName": "Group 1272636883",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "21246:463",
+                        "nodeName": "Zero",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 46,
+                          "height": 20
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "21246:464",
+                        "nodeName": "Quality Claims",
+                        "nodeType": "TEXT",
+                        "children": [],
+                        "layout": {
+                          "width": 96,
+                          "height": 20
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#333333",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    ],
+                    "layout": {
+                      "width": 96,
+                      "height": 44
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 165,
+                  "height": 49
+                }
+              }
+            ],
+            "layout": {
+              "mode": "HORIZONTAL",
+              "itemSpacing": 60,
+              "width": 1044,
+              "height": 49,
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER"
+            }
+          }
+        ],
+        "layout": {
+          "width": 1202,
+          "height": 124
+        }
+      }
+    ],
+    "layout": {
+      "mode": "VERTICAL",
+      "itemSpacing": 60,
+      "width": 1202,
+      "height": 1119,
+      "counterAxisAlignItems": "CENTER"
+    }
+  },
+  "texts": [
+    {
+      "nodeId": "19413:1451",
+      "nodeName": "Voices of Our Partners",
+      "text": "Voices of Our Partners",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 32,
+        "fontWeight": 800,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "20969:744",
+      "nodeName": "Real feedback from brands we work with, Long-term partnerships built on trust and results.",
+      "text": "Real feedback from brands we work with, Long-term partnerships built on trust and results. ",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 20,
+        "fontWeight": 400,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "20969:1368",
+      "nodeName": "“",
+      "text": "“",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 80,
+        "fontWeight": 800,
+        "color": "#e6dbcb",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1369",
+      "nodeName": "Communication is very easy. They understand my English! And the prices are clear. Very important.",
+      "text": "Communication is very easy. They understand my English! And the prices are clear. Very important.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1379",
+      "nodeName": "23-11-2025",
+      "text": "23-11-2025",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "color": "#666666",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1380",
+      "nodeName": "Marco, olive oil producer (Italy)",
+      "text": "Marco, olive oil producer (Italy)",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "color": "#000000",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1387",
+      "nodeName": "Used for: Hang Tags + Labels",
+      "text": "Used for: Hang Tags + Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "20969:1344",
+      "nodeName": "“",
+      "text": "“",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 80,
+        "fontWeight": 800,
+        "color": "#e6dbcb",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1345",
+      "nodeName": "Finally, a supplier that doesn't need things explained ten times. They just get it. Good on ya.",
+      "text": "Finally, a supplier that doesn't need things explained ten times. They just get it. Good on ya.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1355",
+      "nodeName": "23-11-2025",
+      "text": "23-11-2025",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "color": "#666666",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1356",
+      "nodeName": "Tom, pet accessories",
+      "text": "Tom, pet accessories",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "color": "#000000",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1363",
+      "nodeName": "Used for: Product Labels + Stickers",
+      "text": "Used for: Product Labels + Stickers",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "20969:1320",
+      "nodeName": "“",
+      "text": "“",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 80,
+        "fontWeight": 800,
+        "color": "#e6dbcb",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1321",
+      "nodeName": "They're terribly efficient. Even the time difference hasn't been a bother. Cheers for that!",
+      "text": "They're terribly efficient. Even the time difference hasn't been a bother. Cheers for that!",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1331",
+      "nodeName": "23-11-2025",
+      "text": "23-11-2025",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "color": "#666666",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1332",
+      "nodeName": "Gemma, stationery subscription",
+      "text": "Gemma, stationery subscription",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "color": "#000000",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1339",
+      "nodeName": "Used for: Packaging + Stickers",
+      "text": "Used for: Packaging + Stickers",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "20969:1393",
+      "nodeName": "“",
+      "text": "“",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 80,
+        "fontWeight": 800,
+        "color": "#e6dbcb",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1394",
+      "nodeName": "They're not just an order-taker. They suggested a small design tweak that cut our shipping cost by 15%. That's money right back in our pocket.",
+      "text": "They're not just an order-taker. They suggested a small design tweak that cut our shipping cost by 15%. That's money right back in our pocket.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1404",
+      "nodeName": "23-11-2025",
+      "text": "23-11-2025",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "color": "#666666",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1405",
+      "nodeName": "Devin, e-commerce apparel",
+      "text": "Devin, e-commerce apparel",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "color": "#000000",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1412",
+      "nodeName": "Used for: Hang Tags + Care Labels",
+      "text": "Used for: Hang Tags + Care Labels",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "20969:1416",
+      "nodeName": "“",
+      "text": "“",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 80,
+        "fontWeight": 800,
+        "color": "#e6dbcb",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1417",
+      "nodeName": "The 'one-stop-shop' model is real. We used to manage 5 different suppliers; now we manage one. The efficiency gains are massive.",
+      "text": "The 'one-stop-shop' model is real. We used to manage 5 different suppliers; now we manage one. The efficiency gains are massive.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1427",
+      "nodeName": "23-11-2025",
+      "text": "23-11-2025",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "color": "#666666",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1428",
+      "nodeName": "Olivia C., Operations Director, Beauty Brand",
+      "text": "Olivia C., Operations Director, \nBeauty Brand",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "color": "#000000",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1435",
+      "nodeName": "Used for: Labels + Bottle Neck Tags",
+      "text": "Used for: Labels + Bottle Neck Tags",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "20969:1439",
+      "nodeName": "“",
+      "text": "“",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 80,
+        "fontWeight": 800,
+        "color": "#e6dbcb",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1440",
+      "nodeName": "Frankly, I've taken all the time I saved on sourcing and put it back into growing the business. The process is brutally simple, and honestly, it costs the same. Makes you wonder what you were doing before.",
+      "text": "Frankly, I've taken all the time I saved on sourcing and put it back into growing the business. The process is brutally simple, and honestly, it costs the same. Makes you wonder what you were doing before.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1450",
+      "nodeName": "23-11-2025",
+      "text": "23-11-2025",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "color": "#666666",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1451",
+      "nodeName": "Tom, Owner of a Craft Brewery",
+      "text": "Tom, Owner of a Craft Brewery",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "color": "#000000",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:1458",
+      "nodeName": "Used for: Labels + Packaging Tape",
+      "text": "Used for: Labels + Packaging Tape",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 600,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "21246:442",
+      "nodeName": "500+",
+      "text": "500+",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 20,
+        "fontWeight": 700,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21246:443",
+      "nodeName": "Brands Served",
+      "text": "Brands Served",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21246:450",
+      "nodeName": "50+",
+      "text": "50+",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 20,
+        "fontWeight": 700,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21246:451",
+      "nodeName": "Countries Shipped",
+      "text": "Countries Shipped",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21246:458",
+      "nodeName": "98%",
+      "text": "98%",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 20,
+        "fontWeight": 700,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21246:459",
+      "nodeName": "Reorder Rate",
+      "text": "Reorder Rate",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21246:463",
+      "nodeName": "Zero",
+      "text": "Zero",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 20,
+        "fontWeight": 700,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "21246:464",
+      "nodeName": "Quality Claims",
+      "text": "Quality Claims",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    }
+  ],
+  "images": [
+    {
+      "nodeId": "21246:477",
+      "nodeName": "Frame 1272636867 (整体截图)",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d9eb8e79-6bbf-4fd8-9aec-14167d057082",
+      "localPath": "figma-export-voices/images/full-selection-21246-477.png"
+    }
+  ]
+}

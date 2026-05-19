@@ -1,16 +1,22 @@
 ---
 import Button from "../ui/Button.astro";
 import Container from "../ui/Container.astro";
+import LocalImage from "../ui/LocalImage.astro";
+import { getLocalImage } from "../../lib/local-images";
+
+const solutionsHeroImage = getLocalImage("/images/home/solution-cosmetics-hero.png");
 ---
 
 <section class="relative h-[474px] overflow-hidden bg-[#d5c3aa]">
   <div class="absolute inset-0">
-    <img
-      src="/images/home/solution-cosmetics-hero.png"
+    <LocalImage
+      src={solutionsHeroImage}
       alt="Cosmetics and beauty packaging materials arranged on paper textures"
       class="size-full object-cover object-center"
-      fetchpriority="high"
-      decoding="async"
+      loading="eager"
+      sizes="100vw"
+      widths={[640, 960, 1280, 1600, 1920]}
+      priority
     />
     <div class="absolute inset-0 bg-black/5"></div>
   </div>

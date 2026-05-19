@@ -1,7 +1,10 @@
 ---
+import type { SiteImageSource } from "../../lib/local-images";
+import LocalImage from "./LocalImage.astro";
+
 interface Props {
   title: string;
-  image: string;
+  image: SiteImageSource;
   alt: string;
   href: string;
   active?: boolean;
@@ -22,12 +25,13 @@ const isActive = active || normalizePath(Astro.url.pathname) === normalizePath(h
   class="group/card block overflow-hidden bg-white focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
 >
   <div class="relative h-[156px] overflow-hidden bg-surface-muted">
-    <img
+    <LocalImage
       src={image}
       alt={alt}
       class="size-full object-cover transition duration-500 group-hover/card:scale-105"
       loading="lazy"
-      decoding="async"
+      sizes="156px"
+      widths={[156, 312, 468]}
     />
     {isActive && <div class="absolute inset-0 bg-[#b77120]/60"></div>}
   </div>

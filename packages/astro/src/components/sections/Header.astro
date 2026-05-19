@@ -1,5 +1,6 @@
 ---
 import Container from "../ui/Container.astro";
+import LocalImage from "../ui/LocalImage.astro";
 import ProductsMegaMenu from "./ProductsMegaMenu.astro";
 import ServicesDropdown from "./ServicesDropdown.astro";
 import SolutionsDropdown from "./SolutionsDropdown.astro";
@@ -141,7 +142,14 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                         isCurrentPath(product.href) ? "bg-brand-soft/60 text-brand" : "text-text-main"
                       }`}
                     >
-                      <img src={product.image} alt="" class="size-12 rounded object-cover" loading="lazy" decoding="async" />
+                      <LocalImage
+                        src={product.image}
+                        alt=""
+                        class="size-12 rounded object-cover"
+                        loading="lazy"
+                        sizes="48px"
+                        widths={[48, 96]}
+                      />
                       <span>{product.title}</span>
                     </a>
                   ))}

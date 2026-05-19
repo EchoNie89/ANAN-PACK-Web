@@ -1,6 +1,9 @@
 ---
+import type { SiteImageSource } from "../../lib/local-images";
+import LocalImage from "./LocalImage.astro";
+
 interface Props {
-  image: string;
+  image: SiteImageSource;
   title: string;
   alt: string;
   action?: string;
@@ -20,12 +23,13 @@ const {
   class={`group overflow-hidden rounded-panel border border-border bg-white shadow-card transition hover:-translate-y-1 hover:shadow-soft ${className}`}
 >
   <div class="aspect-[4/3] overflow-hidden bg-surface-muted">
-    <img
+    <LocalImage
       src={image}
       alt={alt}
       class="size-full object-cover transition duration-500 group-hover:scale-105"
       loading="lazy"
-      decoding="async"
+      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+      widths={[320, 480, 640, 800]}
     />
   </div>
   <div class="flex items-center justify-between gap-4 px-5 py-4">

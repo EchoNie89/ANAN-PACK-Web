@@ -6,10 +6,10 @@ interface Props {
 const { rating = 5 } = Astro.props;
 ---
 
-<div class="flex gap-1 text-brand" aria-label={`${rating} out of 5 stars`}>
+<div class="flex gap-2 text-[var(--color-star)]" aria-label={`${rating} out of 5 stars`}>
   {
     Array.from({ length: rating }).map(() => (
-      <svg viewBox="0 0 20 20" class="size-4 fill-current" aria-hidden="true">
+      <svg viewBox="0 0 20 20" class="size-[18.532px] fill-current" aria-hidden="true">
         <path d="M10 1.7l2.35 5.03 5.5.85-3.98 3.9.94 5.5L10 14.4l-4.81 2.58.94-5.5-3.98-3.9 5.5-.85L10 1.7z" />
       </svg>
     ))

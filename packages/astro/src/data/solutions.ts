@@ -1,3 +1,6 @@
+import type { SiteImageSource } from "../lib/local-images";
+import { getLocalImage } from "../lib/local-images";
+
 export type SolutionIconName =
   | "stack"
   | "sample"
@@ -11,7 +14,7 @@ export type SolutionIconName =
 export interface SolutionCard {
   title: string;
   description: string;
-  image: string;
+  image: SiteImageSource;
   alt: string;
 }
 
@@ -35,7 +38,7 @@ export interface SolutionPageData {
   hero: {
     title: string;
     description: string;
-    image: string;
+    image: SiteImageSource;
     alt: string;
     cta: string;
   };
@@ -50,7 +53,7 @@ export interface SolutionPageData {
   };
   why: {
     title: string;
-    image: string;
+    image: SiteImageSource;
     alt: string;
     points: SolutionTextBlock[];
   };
@@ -60,7 +63,7 @@ export interface SolutionPageData {
     cta: string;
   };
   caseStudy: {
-    image: string;
+    image: SiteImageSource;
     alt: string;
     title: string;
     headline: string;
@@ -70,7 +73,7 @@ export interface SolutionPageData {
     sections: SolutionCaseSection[];
   };
   gallery: Array<{
-    image: string;
+    image: SiteImageSource;
     alt: string;
   }>;
   cta: {
@@ -82,6 +85,7 @@ export interface SolutionPageData {
 }
 
 const base = "/images/solutions";
+const solutionImage = (fileName: string) => getLocalImage(`${base}/${fileName}`);
 
 export const solutionPages: SolutionPageData[] = [
   {
@@ -95,7 +99,7 @@ export const solutionPages: SolutionPageData[] = [
       title: "Premium Branding & Labeling Solutions For Cosmetics & Beauty",
       description:
         "Elevate your beauty brand with high-precision labels and luxury packaging. From oil-resistant product stickers to bespoke secondary packaging, we ensure your brand looks flawless on every shelf.",
-      image: `${base}/cosmetics-hero.png`,
+      image: solutionImage("cosmetics-hero.png"),
       alt: "Cosmetics and beauty packaging materials arranged on textured paper",
       cta: "Get A Solution Quote",
     },
@@ -137,21 +141,21 @@ export const solutionPages: SolutionPageData[] = [
       items: [
         {
           title: "Hang Tags & Seals",
-          image: `${base}/cosmetics-kit-1.png`,
+          image: solutionImage("cosmetics-kit-1.png"),
           alt: "Cosmetics hang tags and seals in neutral tones",
           description:
             "Premium branding starts here. We offer high-precision printing and diverse material options to ensure your brand identity is captured in every small detail.",
         },
         {
           title: "Woven Labels",
-          image: `${base}/cosmetics-kit-2.png`,
+          image: solutionImage("cosmetics-kit-2.png"),
           alt: "Beauty packaging boxes and woven branding labels",
           description:
             "Crafted with high-density weaving techniques for a soft touch and sharp logos. Our labels stay durable, skin-friendly, and consistent across batches.",
         },
         {
           title: "E-com Packaging",
-          image: `${base}/cosmetics-kit-3.png`,
+          image: solutionImage("cosmetics-kit-3.png"),
           alt: "Printed tissue paper for beauty e-commerce packaging",
           description:
             "From eco-friendly mailers to custom gift boxes, we consolidate your packaging needs to improve unboxing and protect every product.",
@@ -160,7 +164,7 @@ export const solutionPages: SolutionPageData[] = [
     },
     why: {
       title: "Why Sourcing Via SENYE Is Better?",
-      image: `${base}/cosmetics-why.png`,
+      image: solutionImage("cosmetics-why.png"),
       alt: "Cosmetics packaging samples arranged for sourcing review",
       points: [
         {
@@ -210,7 +214,7 @@ export const solutionPages: SolutionPageData[] = [
       ],
     },
     caseStudy: {
-      image: `${base}/cosmetics-case.png`,
+      image: solutionImage("cosmetics-case.png"),
       alt: "Retail display and reusable pouch packaging case study",
       title: "Case Study",
       headline: "How We Engineered 100% Plastic-Free Reusable Pouches For Purcotton",
@@ -244,10 +248,10 @@ export const solutionPages: SolutionPageData[] = [
       ],
     },
     gallery: [
-      { image: `${base}/cosmetics-gallery-1.png`, alt: "Reusable pouch packaging detail" },
-      { image: `${base}/cosmetics-gallery-2.png`, alt: "Folded soft packaging pouch" },
-      { image: `${base}/cosmetics-gallery-3.png`, alt: "Close-up of pouch label stitching" },
-      { image: `${base}/cosmetics-gallery-4.png`, alt: "Reusable pouch closure and label detail" },
+      { image: solutionImage("cosmetics-gallery-1.png"), alt: "Reusable pouch packaging detail" },
+      { image: solutionImage("cosmetics-gallery-2.png"), alt: "Folded soft packaging pouch" },
+      { image: solutionImage("cosmetics-gallery-3.png"), alt: "Close-up of pouch label stitching" },
+      { image: solutionImage("cosmetics-gallery-4.png"), alt: "Reusable pouch closure and label detail" },
     ],
     cta: {
       title: "Make Your Beauty Brand Unforgettable.",
@@ -268,7 +272,7 @@ export const solutionPages: SolutionPageData[] = [
       title: "One-Stop Packaging Solutions For Fashion & Apparel Brands",
       description:
         "Tags? Packaging? Difficult suppliers? We source, pack, and coordinate for you, helping you build a cleaner and more reliable brand system.",
-      image: `${base}/fashion-hero.png`,
+      image: solutionImage("fashion-hero.png"),
       alt: "Fashion packaging boxes, bags, and tags in green tones",
       cta: "Get A Solution Quote",
     },
@@ -306,21 +310,21 @@ export const solutionPages: SolutionPageData[] = [
       items: [
         {
           title: "Product Labels & Stickers",
-          image: `${base}/fashion-kit-1.png`,
+          image: solutionImage("fashion-kit-1.png"),
           alt: "Apparel product labels and stickers",
           description:
             "Wash labels, neck labels, price stickers, and branded seals produced with matching colors and finishes.",
         },
         {
           title: "Luxury Secondary Packaging",
-          image: `${base}/fashion-kit-2.png`,
+          image: solutionImage("fashion-kit-2.png"),
           alt: "Luxury apparel boxes, bags, and pouches",
           description:
             "Custom boxes, shopping bags, pouches, and sleeves that give every order a retail-ready unboxing moment.",
         },
         {
           title: "Security & Tamper-Evident Seals",
-          image: `${base}/fashion-kit-3.png`,
+          image: solutionImage("fashion-kit-3.png"),
           alt: "Tamper-evident label and sticker sheets",
           description:
             "Seals, warranty stickers, and anti-counterfeit details help protect your products and reinforce brand trust.",
@@ -329,7 +333,7 @@ export const solutionPages: SolutionPageData[] = [
     },
     why: {
       title: "Why Sourcing Via [Our Company Name] Is Better?",
-      image: `${base}/fashion-why.png`,
+      image: solutionImage("fashion-why.png"),
       alt: "Pink apparel packaging gift set",
       points: [
         {
@@ -379,7 +383,7 @@ export const solutionPages: SolutionPageData[] = [
       ],
     },
     caseStudy: {
-      image: `${base}/fashion-case.png`,
+      image: solutionImage("fashion-case.png"),
       alt: "Premium foil label display for food and fashion brand case study",
       title: "Case Study",
       headline: "How We Engineered Premium Foil Labels For Suji & Co",
@@ -413,10 +417,10 @@ export const solutionPages: SolutionPageData[] = [
       ],
     },
     gallery: [
-      { image: `${base}/fashion-gallery-1.png`, alt: "Foil label on product jar" },
-      { image: `${base}/fashion-gallery-2.png`, alt: "Printed label sheets before application" },
-      { image: `${base}/fashion-gallery-3.png`, alt: "Custom printed sticker sheets" },
-      { image: `${base}/fashion-gallery-4.png`, alt: "Finished product with custom label" },
+      { image: solutionImage("fashion-gallery-1.png"), alt: "Foil label on product jar" },
+      { image: solutionImage("fashion-gallery-2.png"), alt: "Printed label sheets before application" },
+      { image: solutionImage("fashion-gallery-3.png"), alt: "Custom printed sticker sheets" },
+      { image: solutionImage("fashion-gallery-4.png"), alt: "Finished product with custom label" },
     ],
     cta: {
       title: "Need A Reliable Supply Chain Partner In China?",
@@ -437,7 +441,7 @@ export const solutionPages: SolutionPageData[] = [
       title: "Professional Branding & Durable Packaging For Home & Lifestyle",
       description:
         "Enhance your home textile brand with durable labels and high-end packaging, from care labels and heavy-duty eco-friendly packs to refined storage solutions.",
-      image: `${base}/home-lifestyle-hero.png`,
+      image: solutionImage("home-lifestyle-hero.png"),
       alt: "Home textile packaging and labels in soft blue fabric",
       cta: "Get A Solution Quote",
     },
@@ -475,21 +479,21 @@ export const solutionPages: SolutionPageData[] = [
       items: [
         {
           title: "High-Intensity Woven Labels",
-          image: `${base}/home-lifestyle-kit-1.png`,
+          image: solutionImage("home-lifestyle-kit-1.png"),
           alt: "Durable woven labels for home textiles",
           description:
             "Strong woven labels built for home textile use, repeated washing, and clear brand recognition.",
         },
         {
           title: "Double-Faced Satin Jacquard Printed",
-          image: `${base}/home-lifestyle-kit-2.png`,
+          image: solutionImage("home-lifestyle-kit-2.png"),
           alt: "Soft satin labels on textile products",
           description:
             "Soft satin and jacquard labels designed for skin contact, premium texture, and long-term readability.",
         },
         {
           title: "Heavy-Duty & Reusable Packaging",
-          image: `${base}/home-lifestyle-kit-3.png`,
+          image: solutionImage("home-lifestyle-kit-3.png"),
           alt: "Reusable textile packaging bundle",
           description:
             "Storage bags, wraps, and textile-ready packaging structures that protect volume without feeling wasteful.",
@@ -498,7 +502,7 @@ export const solutionPages: SolutionPageData[] = [
     },
     why: {
       title: "Why Sourcing Via [Our Company Name] Is Better?",
-      image: `${base}/home-lifestyle-why.png`,
+      image: solutionImage("home-lifestyle-why.png"),
       alt: "Home lifestyle packaging set with tags and boxes",
       points: [
         {
@@ -548,7 +552,7 @@ export const solutionPages: SolutionPageData[] = [
       ],
     },
     caseStudy: {
-      image: `${base}/home-lifestyle-case.png`,
+      image: solutionImage("home-lifestyle-case.png"),
       alt: "Home lifestyle case study image with warm interior",
       title: "Case Study",
       headline:
@@ -583,10 +587,10 @@ export const solutionPages: SolutionPageData[] = [
       ],
     },
     gallery: [
-      { image: `${base}/home-lifestyle-gallery-1.png`, alt: "Custom kraft tape roll" },
-      { image: `${base}/home-lifestyle-gallery-2.png`, alt: "Kraft tape in hand" },
-      { image: `${base}/home-lifestyle-gallery-3.png`, alt: "Custom kraft tape detail" },
-      { image: `${base}/home-lifestyle-gallery-4.png`, alt: "Branded kraft tape rolls and strip" },
+      { image: solutionImage("home-lifestyle-gallery-1.png"), alt: "Custom kraft tape roll" },
+      { image: solutionImage("home-lifestyle-gallery-2.png"), alt: "Kraft tape in hand" },
+      { image: solutionImage("home-lifestyle-gallery-3.png"), alt: "Custom kraft tape detail" },
+      { image: solutionImage("home-lifestyle-gallery-4.png"), alt: "Branded kraft tape rolls and strip" },
     ],
     cta: {
       title: "Scale Your Home Brand With Quality That Lasts.",
@@ -607,7 +611,7 @@ export const solutionPages: SolutionPageData[] = [
       title: "Exquisite Branding & Bespoke Packaging For Jewelry & Luxury",
       description:
         "From plush pouches and premium boxes to embossed labels and delicate trims, we create packaging that turns every detail into a luxury moment.",
-      image: `${base}/jewelry-luxury-hero.png`,
+      image: solutionImage("jewelry-luxury-hero.png"),
       alt: "Luxury jewelry packaging with pouch, card, ribbon, and tags",
       cta: "Get A Solution Quote",
     },
@@ -649,21 +653,21 @@ export const solutionPages: SolutionPageData[] = [
       items: [
         {
           title: "Embossed & Metallic Labels",
-          image: `${base}/jewelry-luxury-kit-1.png`,
+          image: solutionImage("jewelry-luxury-kit-1.png"),
           alt: "Embossed and metallic luxury labels",
           description:
             "Foil, embossing, metallic inks, and soft-touch labels create refined details for boxes, cards, and product tags.",
         },
         {
           title: "Artisanal Display & Gift Boxes",
-          image: `${base}/jewelry-luxury-kit-2.png`,
+          image: solutionImage("jewelry-luxury-kit-2.png"),
           alt: "Luxury display and gift boxes",
           description:
             "Rigid boxes, inserts, trays, and sleeves are engineered around the product to protect and present each piece.",
         },
         {
           title: "Pouches & Premium Wraps",
-          image: `${base}/jewelry-luxury-kit-3.png`,
+          image: solutionImage("jewelry-luxury-kit-3.png"),
           alt: "Premium jewelry pouches and cards",
           description:
             "Velvet, suede, cotton, satin, and specialty wraps add tactility while keeping jewelry safe in transit.",
@@ -672,7 +676,7 @@ export const solutionPages: SolutionPageData[] = [
     },
     why: {
       title: "Why Sourcing Via SENYE Is Better (The Luxury Edge)",
-      image: `${base}/jewelry-luxury-why.png`,
+      image: solutionImage("jewelry-luxury-why.png"),
       alt: "Luxury jewelry packaging box with pouch and accessories",
       points: [
         {
@@ -722,7 +726,7 @@ export const solutionPages: SolutionPageData[] = [
       ],
     },
     caseStudy: {
-      image: `${base}/jewelry-luxury-case.png`,
+      image: solutionImage("jewelry-luxury-case.png"),
       alt: "Pink luxury jewelry gift packaging case study",
       title: "Case Study",
       headline:
@@ -757,10 +761,10 @@ export const solutionPages: SolutionPageData[] = [
       ],
     },
     gallery: [
-      { image: `${base}/jewelry-luxury-gallery-1.png`, alt: "Pink jewelry gift box with ribbon" },
-      { image: `${base}/jewelry-luxury-gallery-2.png`, alt: "Luxury jewelry box and pouch arrangement" },
-      { image: `${base}/jewelry-luxury-gallery-3.png`, alt: "Pink drawstring jewelry pouch and box" },
-      { image: `${base}/jewelry-luxury-gallery-4.png`, alt: "Coordinated pink jewelry packaging set" },
+      { image: solutionImage("jewelry-luxury-gallery-1.png"), alt: "Pink jewelry gift box with ribbon" },
+      { image: solutionImage("jewelry-luxury-gallery-2.png"), alt: "Luxury jewelry box and pouch arrangement" },
+      { image: solutionImage("jewelry-luxury-gallery-3.png"), alt: "Pink drawstring jewelry pouch and box" },
+      { image: solutionImage("jewelry-luxury-gallery-4.png"), alt: "Coordinated pink jewelry packaging set" },
     ],
     cta: {
       title: "Give Your Luxury Brand The Packaging It Deserves.",

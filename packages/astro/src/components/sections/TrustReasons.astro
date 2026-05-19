@@ -1,8 +1,12 @@
 ---
 import Container from "../ui/Container.astro";
 import IconFeature from "../ui/IconFeature.astro";
+import LocalImage from "../ui/LocalImage.astro";
 import SectionTitle from "../ui/SectionTitle.astro";
 import { trustReasons } from "../../data/home";
+import { getLocalImage } from "../../lib/local-images";
+
+const trustImage = getLocalImage("/images/home/trust-qc.png");
 ---
 
 <section id="trust" class="bg-surface-muted py-16 md:py-20">
@@ -11,12 +15,13 @@ import { trustReasons } from "../../data/home";
     <div class="mt-10 overflow-hidden rounded-card border border-border bg-white p-4 shadow-card md:p-5">
       <div class="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
         <div class="overflow-hidden rounded-panel bg-surface-muted">
-          <img
-            src="/images/home/trust-qc.png"
+          <LocalImage
+            src={trustImage}
             alt="Quality control inspection for custom hang tags"
             class="aspect-[1.08/1] size-full object-cover"
             loading="lazy"
-            decoding="async"
+            sizes="(min-width: 1024px) 55vw, 100vw"
+            widths={[480, 720, 960, 1280]}
           />
         </div>
         <div class="px-1 py-2 md:px-4">

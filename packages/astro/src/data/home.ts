@@ -1,3 +1,7 @@
+import { getLocalImage } from "../lib/local-images";
+
+const homeImage = (fileName: string) => getLocalImage(`/images/home/${fileName}`);
+
 export const navItems = [
   { label: 'Home', href: '/home' },
   { label: 'Products', href: '/home#products' },
@@ -78,22 +82,22 @@ export const valueProps = [
 export const industries = [
   {
     title: 'Fashion & Apparel',
-    image: '/images/home/industry-fashion.png',
+    image: homeImage('industry-fashion.png'),
     alt: 'Fashion models wearing apparel for brand packaging use cases',
   },
   {
     title: 'Home & Lifestyle',
-    image: '/images/home/industry-home.png',
+    image: homeImage('industry-home.png'),
     alt: 'Home products arranged for packaging solutions',
   },
   {
     title: 'Leather & Accessories',
-    image: '/images/home/industry-luxury.png',
+    image: homeImage('industry-luxury.png'),
     alt: 'Leather accessories and premium trim packaging',
   },
   {
     title: 'Premium Packaging',
-    image: '/images/home/industry-gift.png',
+    image: homeImage('industry-gift.png'),
     alt: 'Green premium gift boxes and bags',
   },
 ];
@@ -101,42 +105,42 @@ export const industries = [
 export const products = [
   {
     title: 'Woven Labels',
-    image: '/images/home/product-woven-labels.png',
+    image: homeImage('product-woven-labels.png'),
     alt: 'Woven labels with stitched brand details',
   },
   {
     title: 'Patches',
-    image: '/images/home/product-patches.png',
+    image: homeImage('product-patches.png'),
     alt: 'Custom embroidered patch samples',
   },
   {
     title: 'Ribbons',
-    image: '/images/home/product-ribbons.png',
+    image: homeImage('product-ribbons.png'),
     alt: 'Printed ribbon rolls for packaging',
   },
   {
     title: 'Tissue Paper',
-    image: '/images/home/product-tissue.png',
+    image: homeImage('product-tissue.png'),
     alt: 'Pink custom printed tissue paper',
   },
   {
     title: 'Packaging Tape',
-    image: '/images/home/product-packaging-tape.png',
+    image: homeImage('product-packaging-tape.png'),
     alt: 'Printed packaging tape and labels',
   },
   {
     title: 'Drawstring Bags',
-    image: '/images/home/product-drawstring.png',
+    image: homeImage('product-drawstring.png'),
     alt: 'Cotton drawstring bag with printed logo',
   },
   {
     title: 'Hang Tags',
-    image: '/images/home/product-hang-tags.png',
+    image: homeImage('product-hang-tags.png'),
     alt: 'Red garment with custom hang tag',
   },
   {
     title: 'Stickers',
-    image: '/images/home/product-stickers.png',
+    image: homeImage('product-stickers.png'),
     alt: 'Minimal sticker and label sheet',
   },
 ];
@@ -144,49 +148,49 @@ export const products = [
 export const productMenuItems = [
   {
     title: 'Labels',
-    image: '/images/home/menu-labels.png',
+    image: homeImage('menu-labels.png'),
     alt: 'Custom woven labels',
     href: '/products/labels',
   },
   {
     title: 'Patches',
-    image: '/images/home/menu-patches.png',
+    image: homeImage('menu-patches.png'),
     alt: 'Custom embroidered patches',
     href: '/products/patches',
   },
   {
     title: 'Ribbon',
-    image: '/images/home/menu-ribbon.png',
+    image: homeImage('menu-ribbon.png'),
     alt: 'Printed ribbon rolls',
     href: '/products/ribbon',
   },
   {
     title: 'Tissue Paper',
-    image: '/images/home/menu-tissue-paper.png',
+    image: homeImage('menu-tissue-paper.png'),
     alt: 'Custom printed tissue paper',
     href: '/products/tissue-paper',
   },
   {
     title: 'Tape',
-    image: '/images/home/menu-tape.png',
+    image: homeImage('menu-tape.png'),
     alt: 'Custom packaging tape',
     href: '/products/tape',
   },
   {
     title: 'Bag',
-    image: '/images/home/menu-bag.png',
+    image: homeImage('menu-bag.png'),
     alt: 'Custom drawstring bag',
     href: '/products/bag',
   },
   {
     title: 'Hanging Tag',
-    image: '/images/home/menu-hanging-tag.png',
+    image: homeImage('menu-hanging-tag.png'),
     alt: 'Custom hang tag attached to apparel',
     href: '/products/hanging-tag',
   },
   {
     title: 'Sticker',
-    image: '/images/home/menu-sticker.png',
+    image: homeImage('menu-sticker.png'),
     alt: 'Custom printed stickers',
     href: '/products/sticker',
   },
@@ -214,35 +218,35 @@ export const trustReasons = [
 ] as const;
 
 export const logos = [
-  '/images/home/logo-01.png',
-  '/images/home/logo-03.png',
-  '/images/home/logo-04.png',
-  '/images/home/logo-05.png',
-  '/images/home/logo-06.png',
-  '/images/home/logo-07.png',
-  '/images/home/logo-08.png',
-  '/images/home/logo-09.png',
+  homeImage('logo-01.png'),
+  homeImage('logo-03.png'),
+  homeImage('logo-04.png'),
+  homeImage('logo-05.png'),
+  homeImage('logo-06.png'),
+  homeImage('logo-07.png'),
+  homeImage('logo-08.png'),
+  homeImage('logo-09.png'),
 ];
 
 export const certifications = [
   {
     title: 'FSC',
-    image: '/images/home/cert-fsc.png',
+    image: homeImage('cert-fsc.png'),
     alt: 'FSC certification mark',
   },
   {
     title: 'OEKO-TEX Standard 100',
-    image: '/images/home/cert-oeko.png',
+    image: homeImage('cert-oeko.png'),
     alt: 'OEKO-TEX Standard 100 certification mark',
   },
   {
     title: 'Global Recycled Standard',
-    image: '/images/home/cert-grs.png',
+    image: homeImage('cert-grs.png'),
     alt: 'Global Recycled Standard certification mark',
   },
   {
     title: 'ISO 9001',
-    image: '/images/home/cert-iso.png',
+    image: homeImage('cert-iso.png'),
     alt: 'ISO 9001 certification mark',
   },
 ];
@@ -250,51 +254,57 @@ export const certifications = [
 export const testimonials = [
   {
     quote:
-      'I needed a small batch of premium hangtags, and everyone else said no. These guys made it easy.',
-    name: 'Marco, olive oil producer',
+      'Communication is very easy. They understand my English! And the prices are clear. Very important.',
+    name: 'Marco, olive oil producer (Italy)',
     date: '23-11-2025',
     usedFor: 'Hang Tags + Labels',
+    icon: homeImage('icons/icon-olive-oil.svg'),
   },
   {
     quote:
-      'Finally, a supplier that does not need things explained ten times. They just get it.',
+      "Finally, a supplier that doesn't need things explained ten times. They just get it. Good on ya.",
     name: 'Tom, pet accessories',
     date: '23-11-2025',
     usedFor: 'Product Labels + Stickers',
+    icon: homeImage('icons/icon-pet.svg'),
   },
   {
     quote:
-      'They are efficient. Even the time difference has not been a bother. Clear updates every step.',
+      "They're terribly efficient. Even the time difference hasn't been a bother. Cheers for that!",
     name: 'Gemma, stationery subscription',
     date: '23-11-2025',
     usedFor: 'Packaging + Stickers',
+    icon: homeImage('icons/icon-stationery.svg'),
   },
   {
     quote:
-      'They suggested a small design tweak that cut our shipping cost by 15%. That is money back in our pocket.',
+      "They're not just an order-taker. They suggested a small design tweak that cut our shipping cost by 15%. That's money right back in our pocket.",
     name: 'Devin, e-commerce apparel',
     date: '23-11-2025',
     usedFor: 'Hang Tags + Care Labels',
+    icon: homeImage('icons/icon-apparel.svg'),
   },
   {
     quote:
-      'The one-stop model is real. We used to manage five suppliers; now we manage one.',
-    name: 'Olivia C., Operations Director',
+      "The 'one-stop-shop' model is real. We used to manage 5 different suppliers; now we manage one. The efficiency gains are massive.",
+    name: 'Olivia C., Operations Director,\nBeauty Brand',
     date: '23-11-2025',
     usedFor: 'Labels + Bottle Neck Tags',
+    icon: homeImage('icons/icon-beauty.svg'),
   },
   {
     quote:
-      'The process is brutally simple, and it costs the same. It freed us to focus on growth.',
+      "Frankly, I've taken all the time I saved on sourcing and put it back into growing the business. The process is brutally simple, and honestly, it costs the same. Makes you wonder what you were doing before.",
     name: 'Tom, Owner of a Craft Brewery',
     date: '23-11-2025',
     usedFor: 'Labels + Packaging Tape',
+    icon: homeImage('icons/icon-brewery.svg'),
   },
 ];
 
 export const metrics = [
-  { value: '500+', label: 'Brands Served' },
-  { value: '50+', label: 'Countries Shipped' },
-  { value: '98%', label: 'Reorder Rate' },
-  { value: 'Zero', label: 'Quality Claims' },
+  { value: '500+', label: 'Brands Served', icon: homeImage('icons/icon-brands-served.svg') },
+  { value: '50+', label: 'Countries Shipped', icon: homeImage('icons/icon-countries.svg') },
+  { value: '98%', label: 'Reorder Rate', icon: homeImage('icons/icon-reorder.svg') },
+  { value: 'Zero', label: 'Quality Claims', icon: homeImage('icons/icon-quality.svg') },
 ];

@@ -1,5 +1,6 @@
 ---
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
 import type { SolutionPageData } from "../../../data/solutions";
 
 interface Props {
@@ -25,12 +26,13 @@ const { page } = Astro.props;
           ))
         }
       </div>
-      <img
+      <LocalImage
         src={page.why.image}
         alt={page.why.alt}
         class="aspect-[1.26] w-full rounded-sm object-cover"
         loading="lazy"
-        decoding="async"
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        widths={[480, 720, 960, 1280]}
       />
     </div>
   </Container>

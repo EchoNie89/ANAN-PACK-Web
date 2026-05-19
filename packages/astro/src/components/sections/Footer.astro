@@ -1,11 +1,15 @@
 ---
 import Container from '../ui/Container.astro';
+import LocalImage from '../ui/LocalImage.astro';
 import SymbolIcon from '../ui/SymbolIcon.astro';
 import {
   contactDetails,
   footerHighlights,
   footerQuickLinks,
 } from '../../data/company';
+import { getLocalImage } from '../../lib/local-images';
+
+const footerQrImage = getLocalImage('/images/home/qr-code.png');
 
 const footerContacts = [
   {
@@ -122,12 +126,13 @@ const footerContacts = [
       ></div>
 
       <div class="max-w-[160px]">
-        <img
-          src="/images/home/qr-code.png"
+        <LocalImage
+          src={footerQrImage}
           alt="WhatsApp QR code"
           class="size-[140px] bg-white object-contain"
           loading="lazy"
-          decoding="async"
+          sizes="140px"
+          widths={[140, 280]}
         />
         <p class="mt-6 text-sm leading-5 text-text-main">
           Scan to contact us on <strong class="font-bold">WhatsApp</strong>

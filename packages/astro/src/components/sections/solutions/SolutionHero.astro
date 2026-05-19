@@ -1,6 +1,7 @@
 ---
 import Button from "../../ui/Button.astro";
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
 import type { SolutionPageData } from "../../../data/solutions";
 
 interface Props {
@@ -12,12 +13,14 @@ const { page } = Astro.props;
 
 <section class="relative min-h-[430px] overflow-hidden bg-brand-soft md:h-[474px] md:min-h-0">
   <div class="absolute inset-0">
-    <img
+    <LocalImage
       src={page.hero.image}
       alt={page.hero.alt}
       class="size-full object-cover object-center"
-      fetchpriority="high"
-      decoding="async"
+      loading="eager"
+      sizes="100vw"
+      widths={[640, 960, 1280, 1600, 1920]}
+      priority
     />
     <div class="absolute inset-0 bg-gradient-to-r from-black/28 via-black/10 to-transparent"></div>
   </div>

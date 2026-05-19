@@ -1,5 +1,6 @@
 ---
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
 import type { SolutionPageData } from "../../../data/solutions";
 
 interface Props {
@@ -18,12 +19,13 @@ const { page } = Astro.props;
       {
         page.kit.items.map((item) => (
           <article>
-            <img
+            <LocalImage
               src={item.image}
               alt={item.alt}
               class="aspect-[1.43] w-full rounded-sm object-cover"
               loading="lazy"
-              decoding="async"
+              sizes="(min-width: 768px) 33vw, 100vw"
+              widths={[320, 480, 640, 800]}
             />
             <div class="mt-5 text-center">
               <h3 class="font-display text-lg font-medium text-ink md:text-xl">{item.title}</h3>

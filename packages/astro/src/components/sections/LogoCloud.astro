@@ -1,6 +1,7 @@
 ---
 import Container from "../ui/Container.astro";
 import Card from "../ui/Card.astro";
+import LocalImage from "../ui/LocalImage.astro";
 import { logos } from "../../data/home";
 ---
 
@@ -11,12 +12,13 @@ import { logos } from "../../data/home";
       <div class="mt-8 grid grid-cols-2 items-center gap-x-8 gap-y-6 sm:grid-cols-4 lg:grid-cols-8">
         {
           logos.map((logo, index) => (
-            <img
+            <LocalImage
               src={logo}
               alt={`Partner logo ${index + 1}`}
               class="mx-auto max-h-8 max-w-28 object-contain grayscale"
               loading="lazy"
-              decoding="async"
+              sizes="112px"
+              widths={[112, 224]}
             />
           ))
         }

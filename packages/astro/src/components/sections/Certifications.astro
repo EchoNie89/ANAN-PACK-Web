@@ -1,6 +1,7 @@
 ---
 import Container from "../ui/Container.astro";
 import Card from "../ui/Card.astro";
+import LocalImage from "../ui/LocalImage.astro";
 import { certifications } from "../../data/home";
 ---
 
@@ -14,12 +15,13 @@ import { certifications } from "../../data/home";
         {
           certifications.map((cert) => (
             <article class="rounded-panel bg-surface-warm p-6 text-center">
-              <img
+              <LocalImage
                 src={cert.image}
                 alt={cert.alt}
                 class="mx-auto h-20 w-full object-contain"
                 loading="lazy"
-                decoding="async"
+                sizes="160px"
+                widths={[160, 320]}
               />
               <h3 class="mt-4 text-xs font-bold text-ink">{cert.title}</h3>
             </article>

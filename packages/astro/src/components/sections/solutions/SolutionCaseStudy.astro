@@ -1,6 +1,7 @@
 ---
 import Button from "../../ui/Button.astro";
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
 import type { SolutionPageData } from "../../../data/solutions";
 
 interface Props {
@@ -13,12 +14,13 @@ const { page } = Astro.props;
 <section class="bg-white py-14 md:py-20">
   <Container class="!max-w-[1200px]">
     <div class="grid items-start gap-10 lg:grid-cols-[0.88fr_1fr] lg:gap-14">
-      <img
+      <LocalImage
         src={page.caseStudy.image}
         alt={page.caseStudy.alt}
         class="aspect-[0.98] w-full rounded-sm object-cover lg:aspect-[0.98]"
         loading="lazy"
-        decoding="async"
+        sizes="(min-width: 1024px) 45vw, 100vw"
+        widths={[480, 720, 960, 1280]}
       />
       <div>
         <p class="font-display text-2xl font-black tracking-[0.03em] text-text-main">{page.caseStudy.title}</p>
