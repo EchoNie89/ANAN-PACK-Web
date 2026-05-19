@@ -1,14 +1,17 @@
 ---
 import Container from "../../ui/Container.astro";
 import SymbolIcon from "../../ui/SymbolIcon.astro";
-import { contactDetails, contactNextSteps } from "../../../data/company";
+import { contactNextSteps } from "../../../data/company";
+import { getSiteContactDetails } from "../../../lib/site-settings";
+
+const contactDetails = await getSiteContactDetails();
 
 const infoItems = [
   { label: "Email", value: contactDetails.email, icon: "mail" },
   { label: "WhatsApp", value: contactDetails.whatsapp, icon: "phone" },
   { label: "Phone", value: contactDetails.phone, icon: "phone" },
-  { label: "Address", value: contactDetails.location, icon: "location" },
-  { label: "Business Hours", value: `${contactDetails.hours[0]} ${contactDetails.hours[1]}`, icon: "clock" },
+  { label: "Address", value: contactDetails.address, icon: "location" },
+  { label: "Business Hours", value: contactDetails.businessHours, icon: "clock" },
 ] as const;
 
 const inputClass =

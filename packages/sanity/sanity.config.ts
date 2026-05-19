@@ -8,7 +8,27 @@ export default defineConfig({
   title: 'ANAN PACK Web',
   projectId: '44m142o0', // TODO: 替换为你的 Sanity project ID
   dataset: 'production',
-  plugins: [structureTool(), visionTool()],
+  plugins: [
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title('Content')
+          .items([
+            S.documentTypeListItem('product').title('Products'),
+            S.listItem()
+              .title('Site Settings')
+              .child(
+                S.document().schemaType('siteSettings').documentId('siteSettings'),
+              ),
+            S.listItem()
+              .title('About Page')
+              .child(
+                S.document().schemaType('aboutPage').documentId('aboutPage'),
+              ),
+          ]),
+    }),
+    visionTool(),
+  ],
   schema: {
     types: schemaTypes,
   },

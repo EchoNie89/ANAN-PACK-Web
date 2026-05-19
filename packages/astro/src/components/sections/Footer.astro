@@ -3,19 +3,20 @@ import Container from '../ui/Container.astro';
 import LocalImage from '../ui/LocalImage.astro';
 import SymbolIcon from '../ui/SymbolIcon.astro';
 import {
-  contactDetails,
   footerHighlights,
   footerQuickLinks,
 } from '../../data/company';
 import { getLocalImage } from '../../lib/local-images';
+import { getSiteContactDetails } from '../../lib/site-settings';
 
 const footerQrImage = getLocalImage('/images/home/qr-code.png');
+const contactDetails = await getSiteContactDetails();
 
 const footerContacts = [
   {
     icon: 'location',
     label: 'Location',
-    value: 'Guangzhou, China',
+    value: contactDetails.location,
   },
   {
     icon: 'phone',

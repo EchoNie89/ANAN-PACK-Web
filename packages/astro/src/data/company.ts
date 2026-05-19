@@ -9,15 +9,6 @@ export const footerQuickLinks = [
   { label: "About Us", href: "/about-us" },
 ] as const;
 
-export const contactDetails = {
-  location: "Room 503, Nanguang Industrial Park, Guangzhou",
-  whatsapp: "+86 15072350032",
-  phone: "+86 20 8673 0000",
-  email: "echo@anancn.com",
-  hours: ["Monday-Friday", "9:00 AM - 6:00 PM (CST)"],
-  qrNote: "Scan to contact us on WhatsApp for samples, project details, and quotation support.",
-} as const;
-
 export const footerHighlights = [
   { icon: "box", title: "Multi-category Sourcing" },
   { icon: "shield", title: "Factory Audit & Quality Control" },
@@ -56,22 +47,30 @@ export const aboutTeam = [
   {
     name: "Sourcing Lead",
     description: "Responsible for factory matching, cost comparison, and supplier coordination.",
+    image: getLocalImage("/images/about/about-team-avatar.png"),
+    imageAlt: "Sourcing lead portrait",
     imageClass: "",
   },
   {
     name: "Product Development Specialist",
     description:
       "Supports material selection, artwork review, sampling, and production-ready specifications.",
+    image: getLocalImage("/images/about/about-team-avatar.png"),
+    imageAlt: "Product development specialist portrait",
     imageClass: "scale-x-[-1] saturate-75",
   },
   {
     name: "Quality Control Coordinator",
     description: "Follows up on production standards, inspection details, and shipment readiness.",
+    image: getLocalImage("/images/about/about-team-avatar.png"),
+    imageAlt: "Quality control coordinator portrait",
     imageClass: "sepia-[0.18] hue-rotate-[8deg]",
   },
   {
     name: "Project Manager",
     description: "Keeps communication clear, timelines aligned, and responsibilities accountable.",
+    image: getLocalImage("/images/about/about-team-avatar.png"),
+    imageAlt: "Project manager portrait",
     imageClass: "brightness-95 contrast-105",
   },
 ] as const;
