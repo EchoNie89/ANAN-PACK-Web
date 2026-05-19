@@ -1,7 +1,18 @@
 ---
 import PageCTA from "../PageCTA.astro";
-import { defaultProductWhyChoose, type ProductPageData, type ProductShowcaseGroup } from "../../../data/products";
-import { getProductApplications, getProductCustomization, getProductShowcase, sanityImageUrl } from "../../../lib/sanity";
+import {
+  defaultProductWhyChoose,
+  type ProductImage,
+  type ProductPageData,
+  type ProductShowcaseGroup,
+} from "../../../data/products";
+import {
+  getProductApplications,
+  getProductCustomization,
+  getProductShowcase,
+  sanityImageUrl,
+  type SanityImageSource,
+} from "../../../lib/sanity";
 import LabelsApplications from "./LabelsApplications.astro";
 import LabelsCustomization from "./LabelsCustomization.astro";
 import LabelsShowcase from "./LabelsShowcase.astro";
@@ -19,6 +30,17 @@ interface Props {
 
 const { page } = Astro.props;
 
+function mapSanityImage(source: SanityImageSource, alt: string, sanityKey: string): ProductImage {
+  return {
+    src: sanityImageUrl(source).width(1600).auto("format").fit("max").url(),
+    alt,
+    sanityKey,
+    sanitySource: source,
+    width: source.dimensions?.width,
+    height: source.dimensions?.height,
+  };
+}
+
 const sanityShowcase = await getProductShowcase(page.slug).catch(() => null);
 const sanityShowcaseGroups = sanityShowcase?.showcaseGroups
   ?.map((group, groupIndex) => ({
@@ -29,11 +51,11 @@ const sanityShowcaseGroups = sanityShowcase?.showcaseGroups
       .map((card, cardIndex) => ({
         title: card.title,
         description: card.description,
-        image: {
-          src: sanityImageUrl(card.image).width(600).auto("format").url(),
-          alt: card.alt ?? card.title,
-          sanityKey: `sanity.products.${page.slug}.showcase.${groupIndex}.${cardIndex}`,
-        },
+        image: mapSanityImage(
+          card.image,
+          card.alt ?? card.title,
+          `sanity.products.${page.slug}.showcase.${groupIndex}.${cardIndex}`,
+        ),
       })),
   }))
   .filter((group) => group.cards.length) satisfies ProductShowcaseGroup[] | undefined;
@@ -46,11 +68,11 @@ const sanityApplications = sanityApplicationsData?.applications
   .map((card, cardIndex) => ({
     title: card.title,
     description: card.description,
-    image: {
-      src: sanityImageUrl(card.image).width(600).auto("format").url(),
-      alt: card.alt ?? card.title,
-      sanityKey: `sanity.products.${page.slug}.applications.${cardIndex}`,
-    },
+    image: mapSanityImage(
+      card.image,
+      card.alt ?? card.title,
+      `sanity.products.${page.slug}.applications.${cardIndex}`,
+    ),
   }));
 
 const applicationTitle = sanityApplicationsData?.applicationTitle ?? page.applicationTitle;
@@ -65,11 +87,13 @@ const sanityCustomizationGroups = sanityCustomizationData?.customizationGroups
     intro: group.intro,
     images: (group.images || [])
       .filter((img) => img.image?.asset?._ref)
-      .map((img, imgIndex) => ({
-        src: sanityImageUrl(img.image).width(600).auto("format").url(),
-        alt: img.alt ?? group.title,
-        sanityKey: `sanity.products.${page.slug}.customization.${groupIndex}.${imgIndex}`,
-      })),
+      .map((img, imgIndex) =>
+        mapSanityImage(
+          img.image,
+          img.alt ?? group.title,
+          `sanity.products.${page.slug}.customization.${groupIndex}.${imgIndex}`,
+        )
+      ),
     blocks: group.blocks,
   }));
 const customizationGroups = sanityCustomizationGroups?.length ? sanityCustomizationGroups : page.customizationGroups;

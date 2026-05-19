@@ -15,11 +15,17 @@ import {
   labelWhyItems,
   type LabelImageItem,
 } from './labelsProduct';
+import type { SiteImageSource } from '../lib/local-images';
+import { resolveLocalImageSource } from '../lib/local-images';
+import type { SanityImageSource } from '../lib/sanity';
 
 export interface ProductImage {
-  src: string;
+  src: SiteImageSource;
   alt: string;
   sanityKey: string;
+  sanitySource?: SanityImageSource;
+  width?: number;
+  height?: number;
 }
 
 export interface ProductCard {
@@ -126,10 +132,18 @@ export interface ProductPageData {
   cta?: ProductCtaData;
 }
 
-const image = (src: string, alt: string, sanityKey: string): ProductImage => ({
-  src,
+const image = (
+  src: string,
+  alt: string,
+  sanityKey: string,
+  options: Partial<
+    Pick<ProductImage, 'sanitySource' | 'width' | 'height'>
+  > = {},
+): ProductImage => ({
+  src: resolveLocalImageSource(src),
   alt,
   sanityKey,
+  ...options,
 });
 
 const labelItemToCard = (
@@ -2228,7 +2242,7 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
           'products.bag.caseStudy.gallery.1',
         ),
         image(
-          '/images/products/tap/Frame 40.png',
+          '/images/products/tape/Frame 40.png',
           'Reusable cotton pouch folded detail',
           'products.bag.caseStudy.gallery.1',
         ),

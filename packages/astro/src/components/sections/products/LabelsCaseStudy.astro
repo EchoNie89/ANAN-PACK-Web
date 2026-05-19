@@ -1,24 +1,29 @@
 ---
 import Button from "../../ui/Button.astro";
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
 import { labelCaseStudy } from "../../../data/labelsProduct";
+import { resolveLocalImageSource } from "../../../lib/local-images";
 
 const challengeParagraphs = labelCaseStudy.challenge
   .split(/\n+/)
   .map((paragraph) => paragraph.trim())
   .filter(Boolean);
+
+const caseStudyImage = resolveLocalImageSource(labelCaseStudy.image);
 ---
 
 <section class="bg-white py-14 md:py-20">
   <Container class="!max-w-[1120px]">
     <div class="grid gap-7 md:gap-9 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
       <div class="overflow-hidden bg-surface-muted">
-        <img
-          src={labelCaseStudy.image}
+        <LocalImage
+          src={caseStudyImage}
           alt={labelCaseStudy.alt}
           class="aspect-[1.02] size-full object-cover"
           loading="lazy"
-          decoding="async"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          widths={[480, 720, 960, 1280]}
         />
       </div>
 
@@ -90,12 +95,13 @@ const challengeParagraphs = labelCaseStudy.challenge
     <div class="mt-12 grid gap-6 md:mt-20 md:grid-cols-2">
       {
         labelCaseStudy.gallery.map((item) => (
-          <img
-            src={item.image}
+          <LocalImage
+            src={resolveLocalImageSource(item.image)}
             alt={item.alt}
             class="aspect-[1.05] size-full object-cover"
             loading="lazy"
-            decoding="async"
+            sizes="(min-width: 768px) 50vw, 100vw"
+            widths={[480, 720, 960, 1280]}
           />
         ))
       }

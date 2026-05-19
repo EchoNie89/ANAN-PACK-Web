@@ -43,6 +43,19 @@ function assertUsesAstroAssets(html, rawPaths) {
   assert.match(html, /srcset=/, "Expected responsive image output in built HTML");
 }
 
+function assertNoRawRasterImagePaths(html, pagePath) {
+  const rawRasterPathPattern =
+    /\/images\/(?:products|blog|services|home|solutions|contact|about)\/[^"' )]+\.(?:png|jpe?g|webp|avif)/g;
+  const matches = html.match(rawRasterPathPattern) ?? [];
+
+  assert.equal(
+    matches.length,
+    0,
+    `Expected optimized raster assets for ${pagePath}, found raw paths: ${matches.join(", ")}`,
+  );
+  assert.match(html, /srcset=/, `Expected responsive image output in built HTML for ${pagePath}`);
+}
+
 test("home page optimizes core local imagery", () => {
   buildSiteOnce();
 
@@ -158,4 +171,24 @@ test("contact page optimizes local imagery", () => {
   const contactHtml = readBuiltHtml("contact-us/index.html");
 
   assertUsesAstroAssets(contactHtml, ["/images/contact/contact-hero.png"]);
+});
+
+test("product pages optimize local raster imagery", () => {
+  buildSiteOnce();
+
+  const pagePaths = [
+    "products/hanging-tag/index.html",
+    "products/bag/index.html",
+    "products/labels/index.html",
+    "products/ribbon/index.html",
+    "products/tape/index.html",
+    "products/sticker/index.html",
+    "products/patches/index.html",
+    "products/tissue-paper/index.html",
+  ];
+
+  for (const pagePath of pagePaths) {
+    const html = readBuiltHtml(pagePath);
+    assertNoRawRasterImagePaths(html, pagePath);
+  }
 });

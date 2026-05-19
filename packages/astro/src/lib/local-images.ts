@@ -30,3 +30,7 @@ export function getLocalImage(path: string): ImageMetadata {
 
   return image;
 }
+
+export function resolveLocalImageSource(path: string): SiteImageSource {
+  return localImages.get(path) ?? path;
+}

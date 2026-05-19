@@ -1,11 +1,15 @@
 ---
+import { Image } from "astro:assets";
 import type { ProductImage } from "../../data/products";
+import { sanityImageUrl } from "../../lib/sanity";
 
 interface Props {
   image: ProductImage;
   class?: string;
   loading?: "eager" | "lazy";
   sizes?: string;
+  widths?: number[];
+  priority?: boolean;
 }
 
 const {
@@ -13,18 +17,64 @@ const {
   class: className = "",
   loading = "lazy",
   sizes,
+  widths,
+  priority = false,
 } = Astro.props;
 
-// Sanity handoff: keep `image.sanityKey` stable so this component can later
-// switch from local `src` values to Sanity image URL generation in one place.
+const defaultWidths = widths ?? [320, 480, 640, 768, 960, 1200, 1600];
+const intrinsicWidth = image.width ?? image.sanitySource?.dimensions?.width;
+const intrinsicHeight = image.height ?? image.sanitySource?.dimensions?.height;
+const responsiveWidths = Array.from(
+  new Set(
+    (intrinsicWidth
+      ? defaultWidths.filter((candidate) => candidate < intrinsicWidth).concat(intrinsicWidth)
+      : defaultWidths
+    ).filter((candidate) => candidate > 0),
+  ),
+).sort((left, right) => left - right);
+
+const sanitySrc = image.sanitySource
+  ? sanityImageUrl(image.sanitySource)
+      .width(responsiveWidths.at(-1) ?? 1600)
+      .auto("format")
+      .fit("max")
+      .url()
+  : undefined;
+const sanitySrcSet = image.sanitySource
+  ? responsiveWidths
+      .map((candidate) =>
+        `${sanityImageUrl(image.sanitySource!).width(candidate).auto("format").fit("max").url()} ${candidate}w`
+      )
+      .join(", ")
+  : undefined;
 ---
 
-<img
-  src={image.src}
-  alt={image.alt}
-  class={className}
-  loading={loading}
-  decoding="async"
-  sizes={sizes}
-  data-sanity-key={image.sanityKey}
-/>
+{
+  typeof image.src === "string" ? (
+    <img
+      src={sanitySrc ?? image.src}
+      srcset={sanitySrcSet}
+      sizes={sizes}
+      alt={image.alt}
+      class={className}
+      loading={loading}
+      decoding="async"
+      width={intrinsicWidth}
+      height={intrinsicHeight}
+      fetchpriority={priority ? "high" : undefined}
+      data-sanity-key={image.sanityKey}
+    />
+  ) : (
+    <Image
+      src={image.src}
+      alt={image.alt}
+      class={className}
+      loading={loading}
+      sizes={sizes}
+      widths={responsiveWidths}
+      width={intrinsicWidth}
+      height={intrinsicHeight}
+      priority={priority}
+    />
+  )
+}

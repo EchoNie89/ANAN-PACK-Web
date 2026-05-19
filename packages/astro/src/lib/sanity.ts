@@ -1,5 +1,5 @@
 import { createClient } from '@sanity/client';
-import imageUrlBuilder from '@sanity/image-url';
+import { createImageUrlBuilder } from '@sanity/image-url';
 
 export const sanityClient = createClient({
   projectId: import.meta.env.SANITY_PROJECT_ID || '',
@@ -8,9 +8,24 @@ export const sanityClient = createClient({
   useCdn: true,
 });
 
-const builder = imageUrlBuilder(sanityClient);
+const builder = createImageUrlBuilder(sanityClient);
 
-export function sanityImageUrl(source: any) {
+export interface SanityImageDimensions {
+  width: number;
+  height: number;
+  aspectRatio?: number;
+}
+
+export interface SanityImageSource {
+  _type?: 'image';
+  asset: {
+    _ref?: string;
+    _type?: 'reference';
+  };
+  dimensions?: SanityImageDimensions;
+}
+
+export function sanityImageUrl(source: SanityImageSource) {
   return builder.image(source);
 }
 
@@ -18,13 +33,7 @@ export function sanityImageUrl(source: any) {
 
 export interface ApplicationCard {
   title: string;
-  image: {
-    _type: 'image';
-    asset: {
-      _ref: string;
-      _type: 'reference';
-    };
-  };
+  image: SanityImageSource;
   alt?: string;
   description?: string;
 }
@@ -39,13 +48,7 @@ export interface ProductApplications {
 
 export interface ShowcaseCard {
   title: string;
-  image: {
-    _type: 'image';
-    asset: {
-      _ref: string;
-      _type: 'reference';
-    };
-  };
+  image: SanityImageSource;
   alt?: string;
   description?: string;
 }
@@ -69,11 +72,7 @@ export interface CustomizationBlock {
 }
 
 export interface CustomizationImage {
-  image: {
-    asset: {
-      _ref: string;
-    };
-  };
+  image: SanityImageSource;
   alt?: string;
 }
 
@@ -101,7 +100,11 @@ const PRODUCT_APPLICATIONS_QUERY = `
       applicationDescription,
       applications[]{
         title,
-        image,
+        "image": image{
+          _type,
+          asset,
+          "dimensions": asset->metadata.dimensions
+        },
         alt,
         description
       }
@@ -113,7 +116,11 @@ const PRODUCT_APPLICATIONS_QUERY = `
       applicationDescription,
       applications[]{
         title,
-        image,
+        "image": image{
+          _type,
+          asset,
+          "dimensions": asset->metadata.dimensions
+        },
         alt,
         description
       }
@@ -132,7 +139,11 @@ const PRODUCT_SHOWCASE_QUERY = `
         description,
         cards[]{
           title,
-          image,
+          "image": image{
+            _type,
+            asset,
+            "dimensions": asset->metadata.dimensions
+          },
           alt,
           description
         }
@@ -147,7 +158,11 @@ const PRODUCT_SHOWCASE_QUERY = `
         description,
         cards[]{
           title,
-          image,
+          "image": image{
+            _type,
+            asset,
+            "dimensions": asset->metadata.dimensions
+          },
           alt,
           description
         }
@@ -166,7 +181,11 @@ const ALL_PRODUCT_SHOWCASES_QUERY = `
       description,
       cards[]{
         title,
-        image,
+        "image": image{
+          _type,
+          asset,
+          "dimensions": asset->metadata.dimensions
+        },
         alt,
         description
       }
@@ -185,7 +204,8 @@ const PRODUCT_CUSTOMIZATION_QUERY = `
         images[]{
           image{
             _type,
-            asset
+            asset,
+            "dimensions": asset->metadata.dimensions
           },
           alt
         },
@@ -204,7 +224,8 @@ const PRODUCT_CUSTOMIZATION_QUERY = `
         images[]{
           image{
             _type,
-            asset
+            asset,
+            "dimensions": asset->metadata.dimensions
           },
           alt
         },
