@@ -2,32 +2,44 @@
 import Footer from "../../components/sections/Footer.astro";
 import Header from "../../components/sections/Header.astro";
 import BlogPostPage from "../../components/sections/blog/BlogPostPage.astro";
-import { blogArticles, getBlogArticleBySlug } from "../../data/blog";
+import {
+  getAllBlogArticles,
+  getBlogArticleBySlug,
+  type BlogArticle,
+} from "../../lib/blog";
 import Layout from "../../layouts/Layout.astro";
 
-export function getStaticPaths() {
-  return blogArticles.map((article) => ({
+export async function getStaticPaths() {
+  const articles = await getAllBlogArticles();
+
+  return articles.map((article) => ({
     params: { slug: article.slug },
-    props: { article },
+    props: { article, articles },
   }));
 }
 
-const { article } = Astro.props;
-const currentArticle = article ?? getBlogArticleBySlug(Astro.params.slug ?? "");
+interface Props {
+  article?: BlogArticle;
+  articles?: BlogArticle[];
+}
+
+const { article, articles = [] } = Astro.props as Props;
+const allArticles = articles.length ? articles : await getAllBlogArticles();
+const currentArticle = article ?? (await getBlogArticleBySlug(Astro.params.slug ?? ""));
 
 const currentIndex = currentArticle
-  ? blogArticles.findIndex((entry) => entry.slug === currentArticle.slug)
+  ? allArticles.findIndex((entry) => entry.slug === currentArticle.slug)
   : -1;
 
-const previousArticle = currentIndex > 0 ? blogArticles[currentIndex - 1] : undefined;
+const previousArticle = currentIndex > 0 ? allArticles[currentIndex - 1] : undefined;
 const nextArticle =
-  currentIndex >= 0 && currentIndex < blogArticles.length - 1
-    ? blogArticles[currentIndex + 1]
+  currentIndex >= 0 && currentIndex < allArticles.length - 1
+    ? allArticles[currentIndex + 1]
     : undefined;
 
 const recentArticles = currentArticle
-  ? blogArticles.filter((entry) => entry.slug !== currentArticle.slug).slice(0, 5)
-  : blogArticles.slice(0, 5);
+  ? allArticles.filter((entry) => entry.slug !== currentArticle.slug).slice(0, 5)
+  : allArticles.slice(0, 5);
 ---
 
 {

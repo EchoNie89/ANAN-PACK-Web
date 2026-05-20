@@ -7,5 +7,17 @@ import customizationBlock from './customizationBlock';
 import customizationImage from './customizationImage';
 import siteSettings from './siteSettings';
 import aboutPage from './aboutPage';
+import blogPost from './blogPost';
 
-export const schemaTypes = [product, showcaseGroup, showcaseCard, applicationCard, customizationGroup, customizationBlock, customizationImage, siteSettings, aboutPage];
+export const schemaTypes = [
+  product,
+  showcaseGroup,
+  showcaseCard,
+  applicationCard,
+  customizationGroup,
+  customizationBlock,
+  customizationImage,
+  siteSettings,
+  aboutPage,
+  blogPost,
+];

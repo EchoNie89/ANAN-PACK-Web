@@ -1,6 +1,5 @@
 ---
-import { getBlogCategory } from "../../../data/blog";
-import type { BlogArticle } from "../../../data/blog";
+import { getBlogCategory, type BlogArticle } from "../../../lib/blog";
 import Container from "../../ui/Container.astro";
 import PageCTA from "../PageCTA.astro";
 import BlogPageHero from "./BlogPageHero.astro";
@@ -22,8 +21,7 @@ const categoryLabel = getBlogCategory(article.category)?.label ?? article.catego
   <BlogPageHero
     title={article.title}
     description={article.heroSummary ?? article.excerpt}
-    backgroundImage={article.heroImage ?? article.image}
-    align={article.heroStyle ?? "center"}
+    backgroundImage={article.heroImage.src}
     eyebrow={categoryLabel}
     breadcrumbs={[
       { label: "Home", href: "/home" },

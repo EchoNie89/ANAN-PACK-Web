@@ -1,6 +1,5 @@
 ---
-import { getBlogCategory } from "../../data/blog";
-import type { BlogArticle } from "../../data/blog";
+import { getBlogCategory, parsePublishedDate, type BlogArticle } from "../../lib/blog";
 import LocalImage from "./LocalImage.astro";
 
 interface Props {
@@ -9,7 +8,7 @@ interface Props {
 
 const { article } = Astro.props;
 
-const publishedDate = new Date(`${article.publishedAt}T00:00:00`);
+const publishedDate = parsePublishedDate(article.publishedAt);
 const badgeDay = publishedDate.getDate().toString().padStart(2, "0");
 const badgeMonth = publishedDate.toLocaleString("en-US", { month: "short" });
 const badgeYear = publishedDate.getFullYear();
@@ -20,12 +19,14 @@ const categoryLabel = getBlogCategory(article.category)?.label ?? article.catego
   <a href={`/blog/${article.slug}`} class="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
     <div class="relative aspect-[374/228] overflow-hidden bg-surface-muted">
       <LocalImage
-        src={article.image}
-        alt={article.imageAlt}
+        src={article.heroImage.src}
+        alt={article.heroImage.alt}
         class="size-full object-cover transition duration-500 group-hover:scale-[1.03]"
         loading="lazy"
         sizes="(min-width: 1280px) 26vw, (min-width: 768px) 42vw, 100vw"
         widths={[320, 480, 640, 800]}
+        width={article.heroImage.width}
+        height={article.heroImage.height}
       />
       <div class="absolute left-4 top-4 rounded-soft bg-white/30 px-4 py-2 text-center text-white backdrop-blur-sm">
         <p class="text-[26px] font-semibold leading-none">{badgeDay}</p>

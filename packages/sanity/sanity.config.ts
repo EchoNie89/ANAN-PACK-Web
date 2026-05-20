@@ -15,6 +15,7 @@ export default defineConfig({
           .title('Content')
           .items([
             S.documentTypeListItem('product').title('Products'),
+            S.documentTypeListItem('blogPost').title('Blog Posts'),
             S.listItem()
               .title('Site Settings')
               .child(

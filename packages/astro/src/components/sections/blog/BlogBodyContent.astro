@@ -1,0 +1,58 @@
+---
+import type { BlogBodyBlock } from "../../../lib/blog";
+import LocalImage from "../../ui/LocalImage.astro";
+
+interface Props {
+  blocks: BlogBodyBlock[];
+}
+
+const { blocks } = Astro.props;
+---
+
+<div class="mt-10 space-y-10">
+  {
+    blocks.map((block) =>
+      block.type === "heading" ? (
+        block.level === 2 ? (
+          <h2 class="text-2xl font-bold text-ink" set:html={block.html} />
+        ) : (
+          <h3 class="text-xl font-bold text-ink" set:html={block.html} />
+        )
+      ) : block.type === "paragraph" ? (
+        <p class="text-base leading-8 text-text-muted" set:html={block.html} />
+      ) : block.type === "quote" ? (
+        <blockquote class="rounded-soft border-l-4 border-brand bg-surface-muted/45 px-5 py-4 text-base leading-8 italic text-text-main">
+          <p set:html={block.html} />
+        </blockquote>
+      ) : block.type === "list" ? (
+        block.style === "number" ? (
+          <ol class="list-decimal space-y-3 pl-6 text-base leading-8 text-text-muted marker:text-brand">
+            {block.items.map((item) => <li set:html={item} />)}
+          </ol>
+        ) : (
+          <ul class="list-disc space-y-3 pl-6 text-base leading-8 text-text-muted marker:text-brand">
+            {block.items.map((item) => <li set:html={item} />)}
+          </ul>
+        )
+      ) : (
+        <figure class="overflow-hidden rounded-soft bg-surface-muted">
+          <LocalImage
+            src={block.image.src}
+            alt={block.image.alt}
+            class="w-full object-cover"
+            loading="lazy"
+            sizes="(min-width: 1024px) 62vw, 100vw"
+            widths={[480, 720, 960, 1280]}
+            width={block.image.width}
+            height={block.image.height}
+          />
+          {block.image.caption && (
+            <figcaption class="px-4 py-3 text-sm leading-6 text-text-muted">
+              {block.image.caption}
+            </figcaption>
+          )}
+        </figure>
+      ),
+    )
+  }
+</div>

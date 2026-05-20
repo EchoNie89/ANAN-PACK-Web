@@ -1,5 +1,5 @@
 ---
-import type { BlogArticle } from "../../../data/blog";
+import { parsePublishedDate, type BlogArticle } from "../../../lib/blog";
 import LocalImage from "../../ui/LocalImage.astro";
 
 interface Props {
@@ -20,16 +20,18 @@ const { articles } = Astro.props;
             class="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 rounded-soft bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
           >
             <LocalImage
-              src={article.image}
-              alt={article.imageAlt}
+              src={article.heroImage.src}
+              alt={article.heroImage.alt}
               class="h-20 w-full rounded object-cover"
               loading="lazy"
               sizes="96px"
               widths={[96, 192, 288]}
+              width={article.heroImage.width}
+              height={article.heroImage.height}
             />
             <div class="min-w-0">
               <p class="text-xs font-semibold uppercase tracking-[0.12em] text-brand">
-                {new Date(`${article.publishedAt}T00:00:00`).toLocaleDateString("en-CA")}
+                {parsePublishedDate(article.publishedAt).toLocaleDateString("en-CA")}
               </p>
               <p class="mt-2 text-sm font-medium leading-6 text-text-main transition group-hover:text-brand">
                 {article.title}

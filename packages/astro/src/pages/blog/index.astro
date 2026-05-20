@@ -5,11 +5,19 @@ import PageCTA from "../../components/sections/PageCTA.astro";
 import BlogCategoryHighlights from "../../components/sections/blog/BlogCategoryHighlights.astro";
 import BlogListingSection from "../../components/sections/blog/BlogListingSection.astro";
 import BlogPageHero from "../../components/sections/blog/BlogPageHero.astro";
-import { blogCategories, featuredMaterialArticles, industryInsightArticles } from "../../data/blog";
+import {
+  blogCategories,
+  getAllBlogArticles,
+  getFeaturedBlogArticles,
+  getIndustryInsightArticles,
+} from "../../lib/blog";
 import { getLocalImage } from "../../lib/local-images";
 import Layout from "../../layouts/Layout.astro";
 
 const blogIndexHeroImage = getLocalImage("/images/blog/material-guides-hero.jpg");
+const allBlogArticles = await getAllBlogArticles();
+const featuredMaterialArticles = getFeaturedBlogArticles(allBlogArticles);
+const industryInsightArticles = getIndustryInsightArticles(allBlogArticles);
 ---
 
 <Layout
