@@ -1,121 +1,134 @@
 ---
-import Container from "../../ui/Container.astro";
-import SymbolIcon from "../../ui/SymbolIcon.astro";
-import { contactNextSteps } from "../../../data/company";
-import { getSiteContactDetails } from "../../../lib/site-settings";
+import Container from '../../ui/Container.astro';
+import SymbolIcon from '../../ui/SymbolIcon.astro';
+import { contactNextSteps } from '../../../data/company';
+import { getSiteContactDetails } from '../../../lib/site-settings';
 
 const contactDetails = await getSiteContactDetails();
 
 const infoItems = [
-  { label: "Email", value: contactDetails.email, icon: "mail" },
-  { label: "WhatsApp", value: contactDetails.whatsapp, icon: "phone" },
-  { label: "Phone", value: contactDetails.phone, icon: "phone" },
-  { label: "Address", value: contactDetails.address, icon: "location" },
-  { label: "Business Hours", value: contactDetails.businessHours, icon: "clock" },
+  { label: 'Email', value: contactDetails.email, icon: 'contactMail' },
+  { label: 'WhatsApp', value: contactDetails.whatsapp, icon: 'whatsapp' },
+  { label: 'Phone', value: contactDetails.phone, icon: 'contactPhone' },
+  { label: 'Address', value: contactDetails.address, icon: 'contactLocation' },
+  {
+    label: 'Business Hours',
+    value: contactDetails.businessHours,
+    icon: 'contactClock',
+  },
 ] as const;
 
 const inputClass =
-  "w-full rounded-soft border border-[#d9dee5] bg-white px-4 py-3 text-sm text-text-main outline-none transition placeholder:text-[#9ca3af] focus:border-brand focus:ring-2 focus:ring-brand/15";
+  'w-full rounded-soft border border-[#d9dee5] bg-white px-4 py-3 text-sm text-text-main outline-none transition placeholder:text-[#9ca3af] focus:border-brand focus:ring-2 focus:ring-brand/15';
 ---
 
 <section id="project-form" class="bg-page-muted py-16 md:py-24">
   <Container class="!max-w-[1200px]">
-    <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_392px] lg:items-start">
-      <div class="rounded-soft bg-white p-6 shadow-card md:p-8">
-        <h2 class="text-3xl font-extrabold tracking-tight text-ink">Send Us Your Project Details</h2>
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_392px] lg:items-stretch">
+      <div class="flex h-full flex-col rounded-soft bg-white p-6 shadow-card md:p-8">
+        <h2 class="text-3xl font-extrabold tracking-tight text-ink">
+          Send Us Your Project Details
+        </h2>
         <p class="mt-2 text-sm text-text-muted">
           One more detail you provide, the more accurate our quotation will be.
         </p>
-        <form class="mt-8 space-y-4">
+        <form class="mt-8 flex flex-1 flex-col space-y-4">
           <div class="grid gap-4 md:grid-cols-2">
             <div>
               <label class="sr-only" for="contact-name">Name</label>
-              <input id="contact-name" class={inputClass} type="text" placeholder="* Name" />
+              <input
+                id="contact-name"
+                class={inputClass}
+                type="text"
+                placeholder="* Name"
+              />
             </div>
             <div>
               <label class="sr-only" for="contact-company">Company Name</label>
-              <input id="contact-company" class={inputClass} type="text" placeholder="* Company Name" />
-            </div>
-            <div>
-              <label class="sr-only" for="contact-email">Email</label>
-              <input id="contact-email" class={inputClass} type="email" placeholder="* Email" />
-            </div>
-            <div>
-              <label class="sr-only" for="contact-phone">WhatsApp / Phone</label>
-              <input id="contact-phone" class={inputClass} type="text" placeholder="WhatsApp / Phone" />
-            </div>
-            <div>
-              <label class="sr-only" for="contact-country">Country / Region</label>
-              <select id="contact-country" class={inputClass}>
-                <option selected disabled>Country / Region</option>
-                <option>United States</option>
-                <option>United Kingdom</option>
-                <option>Australia</option>
-                <option>Germany</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div>
-              <label class="sr-only" for="contact-category">Product Category</label>
-              <select id="contact-category" class={inputClass}>
-                <option selected disabled>Product Category</option>
-                <option>Hang Tags</option>
-                <option>Labels & Patches</option>
-                <option>Rigid Boxes</option>
-                <option>Bags & Ribbon</option>
-                <option>Mixed Packaging Program</option>
-              </select>
+              <input
+                id="contact-company"
+                class={inputClass}
+                type="text"
+                placeholder="* Company Name"
+              />
             </div>
             <div class="md:col-span-2">
-              <label class="sr-only" for="contact-quantity">Estimated Quantity</label>
-              <input id="contact-quantity" class={inputClass} type="text" placeholder="Estimated Quantity" />
+              <label class="sr-only" for="contact-email">Email</label>
+              <input
+                id="contact-email"
+                class={inputClass}
+                type="email"
+                placeholder="* Email"
+              />
+            </div>
+            <div class="md:col-span-2">
+              <label class="sr-only" for="contact-phone">WhatsApp / Phone</label
+              >
+              <input
+                id="contact-phone"
+                class={inputClass}
+                type="text"
+                placeholder="WhatsApp / Phone"
+              />
+            </div>
+            <div class="md:col-span-2">
+              <label class="sr-only" for="contact-country"
+                >Country / Region</label
+              >
+              <input
+                id="contact-country"
+                class={inputClass}
+                type="text"
+                placeholder="Country / Region"
+              />
             </div>
           </div>
 
           <div>
-            <label class="sr-only" for="contact-message">Project Details / Message</label>
+            <label class="sr-only" for="contact-message"
+              >Project Details / Message</label
+            >
             <textarea
               id="contact-message"
               class={`${inputClass} min-h-[160px] resize-y`}
               placeholder="* Project Details / Message"
-              maxlength="1000"
-            ></textarea>
+              maxlength="1000"></textarea>
             <p class="mt-2 text-right text-xs text-[#9ca3af]">0 / 1000</p>
           </div>
 
-          <label class="flex cursor-pointer items-center justify-center gap-3 rounded-soft border border-[#d9dee5] bg-[#fbfbfb] px-4 py-4 text-center text-sm text-text-muted transition hover:border-brand hover:bg-brand-soft/20">
-            <SymbolIcon name="upload" class="size-5 text-brand" />
-            <span>Upload Artwork (Reference Optional) JPG, PNG, PDF, AI, CDR up to 20MB</span>
-            <input type="file" class="sr-only" />
-          </label>
+          <div class="mt-auto space-y-4 pt-2">
+            <button
+              type="button"
+              class="mt-auto flex w-full items-center justify-center rounded-soft bg-brand px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+            >
+              Submit Inquiry
+            </button>
 
-          <button
-            type="button"
-            class="flex w-full items-center justify-center rounded-soft bg-brand px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
-          >
-            Submit Inquiry
-          </button>
-
-          <p class="inline-flex items-center gap-2 text-xs text-text-muted">
-            <SymbolIcon name="check" class="size-4" />
-            We usually respond within 24 hours on business days.
-          </p>
+            <p class="inline-flex items-center gap-2 text-xs text-text-muted">
+              <SymbolIcon name="check" class="size-4" />
+              We usually respond within 24 hours on business days.
+            </p>
+          </div>
         </form>
       </div>
 
       <div class="space-y-5">
         <aside class="rounded-soft bg-white p-6 shadow-card md:p-7">
-          <h2 class="text-2xl font-extrabold tracking-tight text-ink">Get In Touch With Us</h2>
-          <div class="mt-7 space-y-6">
+          <h2 class="text-2xl font-extrabold tracking-tight text-ink">
+            Get In Touch With Us
+          </h2>
+          <div class="mt-6 space-y-5">
             {
               infoItems.map((item) => (
-                <div class="flex items-start gap-4">
-                  <div class="mt-1 flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-soft/35 text-brand">
-                    <SymbolIcon name={item.icon} class="size-5" />
+                <div class="flex items-start gap-3">
+                  <div class="flex size-[52px] shrink-0 items-center justify-center rounded-full bg-[#f1e9dd] text-[#ac7431]">
+                    <SymbolIcon name={item.icon} class="size-[30px]" />
                   </div>
                   <div>
                     <h3 class="text-sm font-bold text-ink">{item.label}</h3>
-                    <p class="mt-1 text-sm leading-6 text-text-muted">{item.value}</p>
+                    <p class="mt-1 text-sm leading-6 text-text-muted">
+                      {item.value}
+                    </p>
                   </div>
                 </div>
               ))
@@ -124,7 +137,9 @@ const inputClass =
         </aside>
 
         <aside class="rounded-soft bg-brand-soft/45 p-6 shadow-card md:p-7">
-          <h2 class="text-xl font-extrabold tracking-tight text-ink">What Happens Next?</h2>
+          <h2 class="text-xl font-extrabold tracking-tight text-ink">
+            What Happens Next?
+          </h2>
           <ol class="mt-6 space-y-4">
             {
               contactNextSteps.map((step, index) => (
