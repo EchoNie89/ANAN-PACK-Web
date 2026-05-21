@@ -27,6 +27,11 @@ test("contact inquiry form is wired for Formspree async submission", () => {
 
   for (const fieldName of ["name", "company", "email", "phone", "country", "message"]) {
     assert.match(source, new RegExp(`name="${fieldName}"`));
+    assert.match(
+      source,
+      new RegExp(`data-fs-error="${fieldName}"`),
+      `Expected a field-level Formspree error target for ${fieldName}`,
+    );
   }
 
   for (const requiredFieldId of [
