@@ -32,6 +32,16 @@ test("contact inquiry form is wired for Formspree async submission", () => {
       new RegExp(`data-fs-error="${fieldName}"`),
       `Expected a field-level Formspree error target for ${fieldName}`,
     );
+    assert.match(
+      source,
+      new RegExp(`class="[^"]*empty:hidden[^"]*"[^>]*data-fs-error="${fieldName}"|data-fs-error="${fieldName}"[^>]*class="[^"]*empty:hidden[^"]*"`),
+      `Expected ${fieldName} field error target to stay compact when empty but become visible when Formspree injects text`,
+    );
+    assert.doesNotMatch(
+      source,
+      new RegExp(`class="[^"]*(?:^|\\s)hidden(?:\\s|$)[^"]*"[^>]*data-fs-error="${fieldName}"|data-fs-error="${fieldName}"[^>]*class="[^"]*(?:^|\\s)hidden(?:\\s|$)[^"]*"`),
+      `Expected ${fieldName} field error target to avoid a hard hidden class that Formspree cannot remove`,
+    );
   }
 
   for (const requiredFieldId of [
