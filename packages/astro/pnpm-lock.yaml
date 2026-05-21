@@ -11,6 +11,9 @@ importers:
       '@astrojs/check':
         specifier: ^0.9.9
         version: 0.9.9(prettier@3.8.3)(typescript@6.0.3)
+      '@formspree/ajax':
+        specifier: 1.1.5
+        version: 1.1.5
       '@sanity/client':
         specifier: ^7.22.0
         version: 7.22.0
@@ -281,6 +284,12 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@formspree/ajax@1.1.5':
+    resolution: {integrity: sha512-7vwR5P/c03o+a2B4TtQ92Q8OV5UfJuGcOgYnxcEWNc2fP//QznIXdd2crC5wt+HWfv39qYHjD7NeDSnDqfSs8w==}
+
+  '@formspree/core@4.0.0':
+    resolution: {integrity: sha512-geNlUut5nME1Ztej5Pzx1BrlQ1fFIcJYIqmF+Vm0jaUbpZxjXvt7SDOGeQVkuxn80QJiIHlwBGGjSBFjPX/KDw==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -652,6 +661,10 @@ packages:
 
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
+
+  '@stripe/stripe-js@5.10.0':
+    resolution: {integrity: sha512-PTigkxMdMUP6B5ISS7jMqJAKhgrhZwjprDqR1eATtFfh0OpKVNp110xiH+goeVdrJ29/4LeZJR4FaHHWstsu0A==}
+    engines: {node: '>=12.16'}
 
   '@tailwindcss/node@4.3.0':
     resolution: {integrity: sha512-aFb4gUhFOgdh9AXo4IzBEOzBkkAxm9VigwDJnMIYv3lcfXCJVesNfbEaBl4BNgVRyid92AmdviqwBUBRKSeY3g==}
@@ -2248,6 +2261,14 @@ snapshots:
   '@esbuild/win32-x64@0.27.7':
     optional: true
 
+  '@formspree/ajax@1.1.5':
+    dependencies:
+      '@formspree/core': 4.0.0
+
+  '@formspree/core@4.0.0':
+    dependencies:
+      '@stripe/stripe-js': 5.10.0
+
   '@img/colour@1.1.0':
     optional: true
 
@@ -2515,6 +2536,8 @@ snapshots:
       '@types/hast': 3.0.4
 
   '@shikijs/vscode-textmate@10.0.2': {}
+
+  '@stripe/stripe-js@5.10.0': {}
 
   '@tailwindcss/node@4.3.0':
     dependencies:

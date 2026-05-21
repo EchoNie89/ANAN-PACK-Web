@@ -20,96 +20,160 @@ const infoItems = [
 
 const inputClass =
   'w-full rounded-soft border border-[#d9dee5] bg-white px-4 py-3 text-sm text-text-main outline-none transition placeholder:text-[#9ca3af] focus:border-brand focus:ring-2 focus:ring-brand/15';
+
 ---
 
 <section id="project-form" class="bg-page-muted py-16 md:py-24">
   <Container class="!max-w-[1200px]">
     <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_392px] lg:items-stretch">
       <div class="flex h-full flex-col rounded-soft bg-white p-6 shadow-card md:p-8">
-        <h2 class="text-3xl font-extrabold tracking-tight text-ink">
-          Send Us Your Project Details
-        </h2>
-        <p class="mt-2 text-sm text-text-muted">
-          One more detail you provide, the more accurate our quotation will be.
-        </p>
-        <form class="mt-8 flex flex-1 flex-col space-y-4">
-          <div class="grid gap-4 md:grid-cols-2">
+        <div data-contact-form-shell class="flex h-full flex-col">
+          <h2 class="text-3xl font-extrabold tracking-tight text-ink">
+            Send Us Your Project Details
+          </h2>
+          <p class="mt-2 text-sm text-text-muted">
+            One more detail you provide, the more accurate our quotation will be.
+          </p>
+          <form class="mt-8 flex flex-1 flex-col space-y-4" id="contact-project-form">
+            <div class="grid gap-4 md:grid-cols-2">
+              <div>
+                <label class="sr-only" for="contact-name">Name</label>
+                <input
+                  id="contact-name"
+                  class={inputClass}
+                  type="text"
+                  name="name"
+                  placeholder="* Name"
+                  required
+                  data-fs-field
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="contact-company">Company Name</label>
+                <input
+                  id="contact-company"
+                  class={inputClass}
+                  type="text"
+                  name="company"
+                  placeholder="* Company Name"
+                  required
+                  data-fs-field
+                />
+              </div>
+              <div class="md:col-span-2">
+                <label class="sr-only" for="contact-email">Email</label>
+                <input
+                  id="contact-email"
+                  class={inputClass}
+                  type="email"
+                  name="email"
+                  placeholder="* Email"
+                  required
+                  data-fs-field
+                />
+              </div>
+              <div class="md:col-span-2">
+                <label class="sr-only" for="contact-phone">WhatsApp / Phone</label
+                >
+                <input
+                  id="contact-phone"
+                  class={inputClass}
+                  type="text"
+                  name="phone"
+                  placeholder="WhatsApp / Phone"
+                  data-fs-field
+                />
+              </div>
+              <div class="md:col-span-2">
+                <label class="sr-only" for="contact-country"
+                  >Country / Region</label
+                >
+                <input
+                  id="contact-country"
+                  class={inputClass}
+                  type="text"
+                  name="country"
+                  placeholder="Country / Region"
+                  data-fs-field
+                />
+              </div>
+            </div>
+
+            <div class="hidden" aria-hidden="true">
+              <label class="sr-only" for="contact-gotcha">Leave this field empty</label>
+              <input
+                id="contact-gotcha"
+                type="text"
+                name="_gotcha"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
             <div>
-              <label class="sr-only" for="contact-name">Name</label>
-              <input
-                id="contact-name"
-                class={inputClass}
-                type="text"
-                placeholder="* Name"
-              />
-            </div>
-            <div>
-              <label class="sr-only" for="contact-company">Company Name</label>
-              <input
-                id="contact-company"
-                class={inputClass}
-                type="text"
-                placeholder="* Company Name"
-              />
-            </div>
-            <div class="md:col-span-2">
-              <label class="sr-only" for="contact-email">Email</label>
-              <input
-                id="contact-email"
-                class={inputClass}
-                type="email"
-                placeholder="* Email"
-              />
-            </div>
-            <div class="md:col-span-2">
-              <label class="sr-only" for="contact-phone">WhatsApp / Phone</label
+              <label class="sr-only" for="contact-message"
+                >Project Details / Message</label
               >
-              <input
-                id="contact-phone"
-                class={inputClass}
-                type="text"
-                placeholder="WhatsApp / Phone"
-              />
+              <textarea
+                id="contact-message"
+                class={`${inputClass} min-h-[160px] resize-y`}
+                name="message"
+                placeholder="* Project Details / Message"
+                maxlength="1000"
+                required
+                data-fs-field></textarea>
+              <p class="mt-2 text-right text-xs text-[#9ca3af]">
+                <span data-contact-message-count>0</span> / 1000
+              </p>
             </div>
-            <div class="md:col-span-2">
-              <label class="sr-only" for="contact-country"
-                >Country / Region</label
+
+            <div class="mt-auto space-y-4 pt-2">
+              <div
+                class="hidden rounded-soft border border-[#f0c7cb] bg-[#fff4f4] px-4 py-3 text-sm text-[#9d3748]"
+                data-contact-form-error
+                data-fs-error
+                role="alert"
+              ></div>
+
+              <button
+                type="submit"
+                class="mt-auto flex w-full items-center justify-center rounded-soft bg-brand px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-brand/70 disabled:text-white/85 disabled:hover:bg-brand/70"
+                data-fs-submit-btn
               >
-              <input
-                id="contact-country"
-                class={inputClass}
-                type="text"
-                placeholder="Country / Region"
-              />
+                <span data-submit-label>Submit Inquiry</span>
+              </button>
+
+              <p class="inline-flex items-center gap-2 text-xs text-text-muted">
+                <SymbolIcon name="check" class="size-4" />
+                We usually respond within 24 hours on business days.
+              </p>
             </div>
-          </div>
+          </form>
+        </div>
 
-          <div>
-            <label class="sr-only" for="contact-message"
-              >Project Details / Message</label
-            >
-            <textarea
-              id="contact-message"
-              class={`${inputClass} min-h-[160px] resize-y`}
-              placeholder="* Project Details / Message"
-              maxlength="1000"></textarea>
-            <p class="mt-2 text-right text-xs text-[#9ca3af]">0 / 1000</p>
-          </div>
-
-          <div class="mt-auto space-y-4 pt-2">
-            <button
-              type="button"
-              class="mt-auto flex w-full items-center justify-center rounded-soft bg-brand px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
-            >
-              Submit Inquiry
-            </button>
-
-            <p class="inline-flex items-center gap-2 text-xs text-text-muted">
-              <SymbolIcon name="check" class="size-4" />
+        <div
+          class="hidden h-full rounded-soft border border-[#d9e6d8] bg-[#f7fcf6] p-6 md:p-8"
+          data-contact-form-success
+          aria-live="polite"
+        >
+          <div class="flex h-full flex-col justify-center">
+            <div class="flex size-12 items-center justify-center rounded-full bg-[#e1f1df] text-[#3b7a3f]">
+              <SymbolIcon name="check" class="size-6" />
+            </div>
+            <h2 class="mt-6 text-3xl font-extrabold tracking-tight text-ink">
+              Thank You For Your Inquiry
+            </h2>
+            <p class="mt-3 text-sm leading-6 text-text-main">
+              We've received your project details.
+            </p>
+            <p class="mt-3 text-sm leading-6 text-text-muted">
               We usually respond within 24 hours on business days.
             </p>
+            <p class="mt-3 text-sm leading-6 text-text-muted">
+              If your request is urgent, feel free to contact us via WhatsApp or email.
+            </p>
           </div>
-        </form>
+        </div>
       </div>
 
       <div class="space-y-5">
@@ -157,3 +221,115 @@ const inputClass =
     </div>
   </Container>
 </section>
+
+<script>
+  import { initForm } from "@formspree/ajax";
+
+  const formElement = document.querySelector("#contact-project-form");
+
+  if (formElement instanceof HTMLFormElement && !formElement.dataset.formspreeBound) {
+    formElement.dataset.formspreeBound = "true";
+
+    const formId = import.meta.env.PUBLIC_FORMSPREE_FORM_ID?.trim();
+    const formShell = formElement.closest("[data-contact-form-shell]");
+    const successShell = formShell?.parentElement?.querySelector("[data-contact-form-success]");
+    const errorRegion = formElement.querySelector("[data-contact-form-error]");
+    const submitButton = formElement.querySelector("[data-fs-submit-btn]");
+    const submitLabel = formElement.querySelector("[data-submit-label]");
+    const messageField = formElement.querySelector("#contact-message");
+    const messageCount = formElement.querySelector("[data-contact-message-count]");
+
+    const defaultSubmitLabel = submitLabel?.textContent?.trim() || "Submit Inquiry";
+
+    const updateMessageCount = () => {
+      if (
+        !(messageField instanceof HTMLTextAreaElement) ||
+        !(messageCount instanceof HTMLElement)
+      ) {
+        return;
+      }
+
+      messageCount.textContent = String(messageField.value.length);
+    };
+
+    const clearError = () => {
+      if (!(errorRegion instanceof HTMLElement)) return;
+      errorRegion.textContent = "";
+      errorRegion.classList.add("hidden");
+      errorRegion.removeAttribute("data-fs-active");
+    };
+
+    const showError = (message) => {
+      if (!(errorRegion instanceof HTMLElement)) return;
+      errorRegion.textContent = message;
+      errorRegion.classList.remove("hidden");
+      errorRegion.setAttribute("data-fs-active", "");
+    };
+
+    const setSubmitting = (isSubmitting) => {
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.disabled = isSubmitting;
+      }
+
+      if (submitLabel instanceof HTMLElement) {
+        submitLabel.textContent = isSubmitting ? "Submitting..." : defaultSubmitLabel;
+      }
+    };
+
+    const showSuccess = () => {
+      clearError();
+
+      if (formShell instanceof HTMLElement) {
+        formShell.classList.add("hidden");
+      }
+
+      if (successShell instanceof HTMLElement) {
+        successShell.classList.remove("hidden");
+      }
+    };
+
+    const genericErrorMessage =
+      "Unable to submit your inquiry right now. Please try again or contact us via WhatsApp or email.";
+
+    updateMessageCount();
+
+    if (messageField instanceof HTMLTextAreaElement) {
+      messageField.addEventListener("input", updateMessageCount);
+    }
+
+    if (!formId) {
+      showError("Form configuration is missing: PUBLIC_FORMSPREE_FORM_ID.");
+    } else {
+      initForm({
+        formElement,
+        formId,
+        useDefaultStyles: false,
+        onSubmit: () => {
+          clearError();
+        },
+        onSuccess: (context) => {
+          context.form.reset();
+          updateMessageCount();
+          showSuccess();
+        },
+        onError: (context, error) => {
+          const formErrors = error.getFormErrors().map((entry) => entry.message);
+          showError(formErrors[0] || genericErrorMessage);
+          updateMessageCount();
+        },
+        onFailure: () => {
+          showError(genericErrorMessage);
+          updateMessageCount();
+        },
+        disable: () => {
+          setSubmitting(true);
+        },
+        enable: () => {
+          setSubmitting(false);
+        },
+        renderSuccess: () => {},
+        renderFormError: () => {},
+      });
+    }
+  }
+</script>

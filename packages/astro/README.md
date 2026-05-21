@@ -1,46 +1,31 @@
-# Astro Starter Kit: Basics
+# Astro Site
+
+## Commands
+
+Run all commands from `packages/astro`:
+
+| Command | Action |
+| :--- | :--- |
+| `pnpm install` | Install dependencies |
+| `pnpm dev` | Start the Astro dev server at `http://localhost:4321` |
+| `pnpm build` | Build the production site |
+| `pnpm preview` | Preview the production build locally |
+
+## Inquiry Form Setup
+
+The `/contact-us` inquiry form submits directly to Formspree with the public form id from your environment.
+
+1. Create `packages/astro/.env`.
+2. Add your Formspree form id:
+
+```dotenv
+PUBLIC_FORMSPREE_FORM_ID=your_form_id_here
+```
+
+3. Start the site from `packages/astro`:
 
 ```sh
-pnpm create astro@latest -- --template basics
+pnpm dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+If `PUBLIC_FORMSPREE_FORM_ID` is missing, the contact form stays on the page and shows a configuration error instead of a false success state.
