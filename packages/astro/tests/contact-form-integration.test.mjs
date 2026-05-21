@@ -22,6 +22,7 @@ test("contact inquiry form is wired for Formspree async submission", () => {
   assert.match(source, /data-contact-form-success/);
   assert.match(source, /aria-live="polite"/);
   assert.match(source, /data-fs-submit-btn/);
+  assert.match(source, /data-submit-label/);
   assert.match(source, /type="submit"/);
 
   for (const fieldName of ["name", "company", "email", "phone", "country", "message"]) {
@@ -51,7 +52,35 @@ test("contact inquiry form is wired for Formspree async submission", () => {
 
   assert.match(
     source,
-    /if \(!formId\) \{[\s\S]*showError\("Form configuration is missing: PUBLIC_FORMSPREE_FORM_ID\."\);[\s\S]*setSubmitting\(true\);/,
-    "Expected missing PUBLIC_FORMSPREE_FORM_ID to surface an error and disable submission",
+    /const unavailableSubmitLabel = "Inquiry Form Unavailable";/,
+    "Expected a dedicated unavailable label instead of reusing the submitting label",
+  );
+
+  assert.match(
+    source,
+    /const setButtonState = \(\{ disabled, label \}\) => \{/,
+    "Expected button state handling to distinguish disabled state from displayed label",
+  );
+
+  assert.match(
+    source,
+    /setButtonState\(\{[\s\S]*disabled: isSubmitting,[\s\S]*label: isSubmitting \? "Submitting\.\.\." : defaultSubmitLabel,[\s\S]*\}\);/,
+    "Expected active submission state to be the only path that shows Submitting...",
+  );
+
+  assert.match(
+    source,
+    /if \(!formId\) \{[\s\S]*showError\("Form configuration is missing: PUBLIC_FORMSPREE_FORM_ID\."\);[\s\S]*setButtonState\(\{ disabled: true, label: unavailableSubmitLabel \}\);/,
+    "Expected missing PUBLIC_FORMSPREE_FORM_ID to disable the button with an unavailable label",
+  );
+});
+
+test("package test script includes the contact regression in the standard test path", () => {
+  const packageSource = readSource("package.json");
+
+  assert.match(
+    packageSource,
+    /"test":\s*"node --test tests\/contact-form-integration\.test\.mjs tests\/image-optimization\.test\.mjs tests\/site-settings\.test\.mjs tests\/testimonials-figma\.test\.mjs"/,
+    "Expected pnpm test to run the contact regression with the existing package-level tests",
   );
 });

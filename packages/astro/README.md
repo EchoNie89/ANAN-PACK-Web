@@ -9,6 +9,7 @@ Run all commands from `packages/astro`:
 | `pnpm install` | Install dependencies |
 | `pnpm dev` | Start the Astro dev server at `http://localhost:4321` |
 | `pnpm build` | Build the production site |
+| `pnpm test` | Run the package regression tests, including the contact form checks |
 | `pnpm preview` | Preview the production build locally |
 
 ## Inquiry Form Setup
@@ -28,4 +29,6 @@ PUBLIC_FORMSPREE_FORM_ID=your_form_id_here
 pnpm dev
 ```
 
-If `PUBLIC_FORMSPREE_FORM_ID` is missing, the contact form stays on the page and shows a configuration error instead of a false success state.
+Install dependencies from the workspace root with `pnpm install` so the root `pnpm-lock.yaml` stays authoritative for the monorepo.
+
+If `PUBLIC_FORMSPREE_FORM_ID` is missing, the contact form stays on the page, shows a configuration error, and disables the submit button without showing a false in-flight state.

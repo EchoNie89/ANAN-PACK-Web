@@ -237,6 +237,7 @@ const inputClass =
     const messageCount = formElement.querySelector("[data-contact-message-count]");
 
     const defaultSubmitLabel = submitLabel?.textContent?.trim() || "Submit Inquiry";
+    const unavailableSubmitLabel = "Inquiry Form Unavailable";
 
     const updateMessageCount = () => {
       if (
@@ -263,14 +264,21 @@ const inputClass =
       errorRegion.setAttribute("data-fs-active", "");
     };
 
-    const setSubmitting = (isSubmitting) => {
+    const setButtonState = ({ disabled, label }) => {
       if (submitButton instanceof HTMLButtonElement) {
-        submitButton.disabled = isSubmitting;
+        submitButton.disabled = disabled;
       }
 
       if (submitLabel instanceof HTMLElement) {
-        submitLabel.textContent = isSubmitting ? "Submitting..." : defaultSubmitLabel;
+        submitLabel.textContent = label;
       }
+    };
+
+    const setSubmitting = (isSubmitting) => {
+      setButtonState({
+        disabled: isSubmitting,
+        label: isSubmitting ? "Submitting..." : defaultSubmitLabel,
+      });
     };
 
     const showSuccess = () => {
@@ -296,7 +304,7 @@ const inputClass =
 
     if (!formId) {
       showError("Form configuration is missing: PUBLIC_FORMSPREE_FORM_ID.");
-      setSubmitting(true);
+      setButtonState({ disabled: true, label: unavailableSubmitLabel });
     } else {
       initForm({
         formElement,
