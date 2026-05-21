@@ -43,10 +43,15 @@ test("contact inquiry form is wired for Formspree async submission", () => {
 
   for (const copy of [
     "Thank You For Your Inquiry",
-    "We've received your project details.",
-    "within 24 hours on business days",
+    "We've received your project details. Our team will review them and get back to you within 24 hours on business days.",
     "If your request is urgent, feel free to contact us via WhatsApp or email.",
   ]) {
     assert.match(source, new RegExp(copy.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   }
+
+  assert.match(
+    source,
+    /if \(!formId\) \{[\s\S]*showError\("Form configuration is missing: PUBLIC_FORMSPREE_FORM_ID\."\);[\s\S]*setSubmitting\(true\);/,
+    "Expected missing PUBLIC_FORMSPREE_FORM_ID to surface an error and disable submission",
+  );
 });

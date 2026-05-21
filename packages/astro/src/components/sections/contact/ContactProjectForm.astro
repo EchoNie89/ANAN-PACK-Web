@@ -164,10 +164,7 @@ const inputClass =
               Thank You For Your Inquiry
             </h2>
             <p class="mt-3 text-sm leading-6 text-text-main">
-              We've received your project details.
-            </p>
-            <p class="mt-3 text-sm leading-6 text-text-muted">
-              We usually respond within 24 hours on business days.
+              We've received your project details. Our team will review them and get back to you within 24 hours on business days.
             </p>
             <p class="mt-3 text-sm leading-6 text-text-muted">
               If your request is urgent, feel free to contact us via WhatsApp or email.
@@ -299,6 +296,7 @@ const inputClass =
 
     if (!formId) {
       showError("Form configuration is missing: PUBLIC_FORMSPREE_FORM_ID.");
+      setSubmitting(true);
     } else {
       initForm({
         formElement,
