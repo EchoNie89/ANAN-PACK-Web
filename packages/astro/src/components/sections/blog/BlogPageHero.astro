@@ -15,7 +15,9 @@ interface Props {
   backgroundImage: SiteImageSource;
   breadcrumbs: BreadcrumbItem[];
   align?: "center" | "left";
+  breadcrumbsAlign?: "center" | "left";
   eyebrow?: string;
+  variant?: "default" | "blog-index";
 }
 
 const {
@@ -24,10 +26,15 @@ const {
   backgroundImage,
   breadcrumbs,
   align = "center",
+  breadcrumbsAlign,
   eyebrow,
+  variant = "default",
 } = Astro.props;
 
 const isCentered = align === "center";
+const resolvedBreadcrumbsAlign = breadcrumbsAlign ?? (isCentered ? "center" : "left");
+const isBlogIndex = variant === "blog-index";
+const hasAfterContentSlot = Astro.slots.has("afterContent");
 ---
 
 <section class="relative isolate overflow-hidden">
@@ -41,20 +48,59 @@ const isCentered = align === "center";
     widths={[640, 960, 1280, 1600, 1920]}
     priority
   />
-  <div class={`absolute inset-0 ${isCentered ? "bg-[linear-gradient(180deg,rgba(26,20,12,0.16),rgba(26,20,12,0.4))]" : "bg-[linear-gradient(90deg,rgba(26,20,12,0.58),rgba(26,20,12,0.18))]"}`}></div>
+  <div
+    class={`absolute inset-0 ${
+      isBlogIndex
+        ? "bg-[linear-gradient(90deg,rgba(235,230,222,0.92)_0%,rgba(235,230,222,0.72)_34%,rgba(235,230,222,0.2)_62%,rgba(235,230,222,0)_100%)]"
+        : isCentered
+          ? "bg-[linear-gradient(180deg,rgba(26,20,12,0.16),rgba(26,20,12,0.4))]"
+          : "bg-[linear-gradient(90deg,rgba(26,20,12,0.58),rgba(26,20,12,0.18))]"
+    }`}
+  ></div>
 
-  <Container class="relative !max-w-[1200px] pb-12 pt-28 md:pb-16 md:pt-36">
-    <div class={isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      <Breadcrumbs items={breadcrumbs} light center={isCentered} />
+  <Container
+    class={`relative !max-w-[1200px] ${
+      isBlogIndex
+        ? "min-h-[620px] pb-[52px] pt-[32px]"
+        : "pb-12 pt-28 md:pb-16 md:pt-36"
+    }`}
+  >
+    <div class={isBlogIndex ? "text-left" : isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
+      <Breadcrumbs
+        items={breadcrumbs}
+        light
+        center={resolvedBreadcrumbsAlign === "center"}
+        separator=">"
+        class={isBlogIndex ? "text-[13px]" : ""}
+      />
+    </div>
+
+    <div class={isBlogIndex ? "mx-auto mt-[72px] max-w-4xl text-center" : isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
       {eyebrow && <p class="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-white/80">{eyebrow}</p>}
-      <h1 class={`mt-5 font-display text-white ${isCentered ? "text-4xl font-extrabold md:text-5xl" : "text-4xl font-black md:text-[48px] md:leading-[1.08]"}`}>
+      <h1 class={`font-display text-white ${isBlogIndex ? "text-[34px] font-black leading-[1.05] md:text-[52px]" : isCentered ? "mt-5 text-4xl font-extrabold md:text-5xl" : "mt-5 text-4xl font-black md:text-[48px] md:leading-[1.08]"}`}>
         {title}
       </h1>
       {description && (
-        <p class={`mt-4 text-base leading-7 text-white/85 md:text-lg ${isCentered ? "mx-auto max-w-2xl" : "max-w-2xl"}`}>
+        <p
+          class={`text-white/95 ${
+            isBlogIndex
+              ? "mx-auto mt-[18px] max-w-4xl text-[18px] font-medium leading-[1.25] md:text-[20px]"
+              : isCentered
+                ? "mx-auto mt-4 max-w-2xl text-base leading-7 text-white/85 md:text-lg"
+                : "mt-4 max-w-2xl text-base leading-7 text-white/85 md:text-lg"
+          }`}
+        >
           {description}
         </p>
       )}
     </div>
+
+    {
+      hasAfterContentSlot && (
+        <div class={isBlogIndex ? "mt-[110px]" : "mt-12"}>
+          <slot name="afterContent" />
+        </div>
+      )
+    }
   </Container>
 </section>

@@ -9,9 +9,16 @@ interface Props {
   class?: string;
   light?: boolean;
   center?: boolean;
+  separator?: string;
 }
 
-const { items, class: className = "", light = false, center = false } = Astro.props;
+const {
+  items,
+  class: className = "",
+  light = false,
+  center = false,
+  separator = "/",
+} = Astro.props;
 ---
 
 <nav aria-label="Breadcrumb" class={`text-sm ${className}`}>
@@ -35,7 +42,7 @@ const { items, class: className = "", light = false, center = false } = Astro.pr
               </span>
             )}
           </li>
-          {index < items.length - 1 && <li aria-hidden="true">/</li>}
+          {index < items.length - 1 && <li aria-hidden="true">{separator}</li>}
         </>
       ))
     }

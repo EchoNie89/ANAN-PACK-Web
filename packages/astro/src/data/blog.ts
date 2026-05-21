@@ -1,7 +1,9 @@
 import type { SiteImageSource } from "../lib/local-images";
 import { getLocalImage } from "../lib/local-images";
+import type { ImageMetadata } from "astro";
 
 const blogImage = (fileName: string) => getLocalImage(`/images/blog/${fileName}`);
+const blogIcon = (fileName: string) => getLocalImage(`/images/blog/icons/${fileName}`);
 
 export type BlogCategorySlug =
   | "material-guides"
@@ -12,7 +14,7 @@ export interface BlogCategory {
   slug: BlogCategorySlug;
   label: string;
   description: string;
-  icon: "swatch" | "process" | "insight";
+  icon: ImageMetadata;
 }
 
 export interface BlogContentSection {
@@ -48,19 +50,19 @@ export const blogCategories: BlogCategory[] = [
     slug: "material-guides",
     label: "Material Guides",
     description: "Paper stocks, recycled options, FSC choices, and tactile finishing references.",
-    icon: "swatch",
+    icon: blogIcon("icon-material-guides.png"),
   },
   {
     slug: "production-knowledge",
     label: "Production Knowledge",
     description: "Practical decisions on dielines, hang tags, finishes, and production-ready specs.",
-    icon: "process",
+    icon: blogIcon("icon-production-knowledge.png"),
   },
   {
     slug: "industry-insights",
     label: "Industry Insights",
     description: "Packaging trends shaping fashion, apparel, and modern e-commerce presentation.",
-    icon: "insight",
+    icon: blogIcon("icon-industry-insights.png"),
   },
 ];
 

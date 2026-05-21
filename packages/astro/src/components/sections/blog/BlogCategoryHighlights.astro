@@ -1,51 +1,70 @@
 ---
 import type { BlogCategory } from "../../../lib/blog";
 import Container from "../../ui/Container.astro";
+import LocalImage from "../../ui/LocalImage.astro";
 
 interface Props {
   categories: BlogCategory[];
+  inHero?: boolean;
 }
 
-const { categories } = Astro.props;
+const { categories, inHero = false } = Astro.props;
 ---
 
-<div class="relative -mt-10 z-10 pb-6 md:-mt-14 md:pb-10">
-  <Container class="!max-w-[1200px]">
-    <div class="grid gap-4 md:grid-cols-3">
+{
+  inHero ? (
+    <div class="grid gap-5 md:grid-cols-3 md:gap-8">
       {
         categories.map((category) => (
-          <div class="rounded-soft border border-white/40 bg-white/50 px-5 py-5 text-center shadow-soft backdrop-blur md:px-6 md:py-6">
-            <div class="mx-auto flex size-14 items-center justify-center rounded-full bg-white/80 text-brand shadow-card">
-              {
-                category.icon === "swatch" ? (
-                  <svg viewBox="0 0 24 24" class="size-7" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                    <path d="M4 16.5a3.5 3.5 0 1 0 3.7-3.5h4.5a4.8 4.8 0 1 0 0-9.5A5.7 5.7 0 0 0 6.8 9" />
-                    <path d="m8 7 8 10" />
-                  </svg>
-                ) : category.icon === "process" ? (
-                  <svg viewBox="0 0 24 24" class="size-7" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                    <rect x="3" y="4" width="7" height="6" rx="1.5" />
-                    <rect x="14" y="4" width="7" height="6" rx="1.5" />
-                    <rect x="8.5" y="14" width="7" height="6" rx="1.5" />
-                    <path d="M10 7h4m-2 3v4" />
-                  </svg>
-                ) : (
-                  <svg viewBox="0 0 24 24" class="size-7" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                    <path d="M4 18h16" />
-                    <path d="M6 15.5 10 11l3 2.5 5-6" />
-                    <circle cx="6" cy="15.5" r="1" fill="currentColor" stroke="none" />
-                    <circle cx="10" cy="11" r="1" fill="currentColor" stroke="none" />
-                    <circle cx="13" cy="13.5" r="1" fill="currentColor" stroke="none" />
-                    <circle cx="18" cy="7.5" r="1" fill="currentColor" stroke="none" />
-                  </svg>
-                )
-              }
+          <div class="flex flex-col items-center text-center">
+            <div class="flex h-[100px] w-[100px] items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] md:h-[128px] md:w-[128px]">
+              <LocalImage
+                src={category.icon}
+                alt=""
+                aria-hidden="true"
+                class="h-auto w-[64px] object-contain md:w-[80px]"
+                loading="lazy"
+                sizes="95px"
+                widths={[95, 190]}
+                width={category.icon.width}
+                height={category.icon.height}
+              />
             </div>
-            <h2 class="mt-4 text-lg font-semibold text-text-main">{category.label}</h2>
-            <p class="mt-2 text-sm leading-6 text-text-muted">{category.description}</p>
+            <h2 class="mt-4 text-[14px] font-semibold leading-6 text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.28)] md:text-[16px]">
+              {category.label}
+            </h2>
           </div>
         ))
       }
     </div>
-  </Container>
-</div>
+  ) : (
+    <div class="relative z-10 -mt-[84px] pb-8 md:-mt-[132px] md:pb-14">
+      <Container class="!max-w-[1200px]">
+        <div class="grid gap-6 md:grid-cols-3 md:gap-10">
+          {
+            categories.map((category) => (
+              <div class="flex flex-col items-center text-center">
+                <div class="flex h-[112px] w-[112px] items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] md:h-[134px] md:w-[134px]">
+                  <LocalImage
+                    src={category.icon}
+                    alt=""
+                    aria-hidden="true"
+                    class="h-auto w-[72px] object-contain md:w-[95px]"
+                    loading="lazy"
+                    sizes="95px"
+                    widths={[95, 190]}
+                    width={category.icon.width}
+                    height={category.icon.height}
+                  />
+                </div>
+                <h2 class="mt-5 text-sm font-medium leading-6 text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.28)] md:text-[15px]">
+                  {category.label}
+                </h2>
+              </div>
+            ))
+          }
+        </div>
+      </Container>
+    </div>
+  )
+}
