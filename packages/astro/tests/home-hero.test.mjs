@@ -50,13 +50,13 @@ test("home hero matches the approved redesign content and structure", () => {
 
   assert.match(
     source,
-    /href="\/contact-us#project-form"/,
+    /href:\s*"\/contact-us#project-form"/,
     "Expected the primary CTA destination to remain the contact inquiry form",
   );
 
   assert.match(
     source,
-    /href="#solutions"/,
+    /href:\s*"#solutions"/,
     "Expected the secondary CTA destination to remain the solutions section",
   );
 });
