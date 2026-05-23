@@ -44,8 +44,8 @@ test("home hero matches the approved redesign content and structure", () => {
 
   assert.match(
     source,
-    /md:min-h-\[680px\]/,
-    "Expected the desktop hero height to be reduced for a less tall background image presentation",
+    /lg:min-h-\[calc\(100dvh-88px\)\]/,
+    "Expected the desktop hero to fill the remaining viewport height beneath the sticky 88px header",
   );
 
   assert.match(
