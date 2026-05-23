@@ -5,12 +5,28 @@ import ServicesCtaBand from "../../components/sections/services/ServicesCtaBand.
 import Footer from "../../components/sections/Footer.astro";
 import Header from "../../components/sections/Header.astro";
 import Layout from "../../layouts/Layout.astro";
-import { faqCta } from "../../data/services";
+import { faqCta, faqGroups } from "../../data/services";
+import {
+  buildBreadcrumbJsonLd,
+  buildFaqJsonLd,
+} from "../../lib/seo";
+
+const faqItems = faqGroups.flatMap((group) => group.items);
+const seoJsonLd = [
+  buildBreadcrumbJsonLd([
+    { label: "Home", href: "/home" },
+    { label: "Services", href: "/services" },
+    { label: "FAQ" },
+  ]),
+  buildFaqJsonLd(faqItems),
+].filter(Boolean);
 ---
 
 <Layout
   title="FAQ | Tagora Packaging & Trims"
   description="Answers about custom packaging sourcing, design support, MOQ, production, quality control, logistics, and after-sales support."
+  schemaType="FAQPage"
+  jsonLd={seoJsonLd}
 >
   <Header activeNav="Services" />
   <main>

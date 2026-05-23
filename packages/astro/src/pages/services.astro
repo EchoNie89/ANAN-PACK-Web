@@ -8,12 +8,34 @@ import WarehousingSection from "../components/sections/services/WarehousingSecti
 import Footer from "../components/sections/Footer.astro";
 import Header from "../components/sections/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import { serviceCta } from "../data/services";
+import { serviceCta, serviceHero } from "../data/services";
+import {
+  buildBreadcrumbJsonLd,
+  buildServiceJsonLd,
+  toAbsoluteUrl,
+} from "../lib/seo";
+
+const seoJsonLd = [
+  buildBreadcrumbJsonLd([
+    { label: "Home", href: "/home" },
+    { label: "Services" },
+  ]),
+  buildServiceJsonLd({
+    name: "Packaging Supply Chain Services",
+    description:
+      "End-to-end sourcing, development, quality control, warehousing, kitting, and door-to-door delivery for custom packaging and garment trims.",
+    url: toAbsoluteUrl("/services"),
+    serviceType: "Packaging supply chain management",
+  }),
+].filter(Boolean);
 ---
 
 <Layout
   title="Packaging Supply Chain Services | Tagora"
   description="End-to-end sourcing, development, quality control, warehousing, kitting, and door-to-door delivery for custom packaging and garment trims."
+  schemaType="Service"
+  image={serviceHero.image}
+  jsonLd={seoJsonLd}
 >
   <Header activeNav="Services" openMenu="services" />
   <main>

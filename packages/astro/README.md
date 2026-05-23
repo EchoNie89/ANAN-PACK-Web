@@ -21,6 +21,7 @@ The `/contact-us` inquiry form submits directly to Formspree with the public for
 
 ```dotenv
 PUBLIC_FORMSPREE_FORM_ID=your_form_id_here
+PUBLIC_SITE_URL=https://www.your-domain.com
 ```
 
 3. Start the site from `packages/astro`:
@@ -32,3 +33,5 @@ pnpm dev
 Install dependencies from the workspace root with `pnpm install` so the root `pnpm-lock.yaml` stays authoritative for the monorepo.
 
 If `PUBLIC_FORMSPREE_FORM_ID` is missing, the contact form stays on the page, shows a configuration error, and disables the submit button without showing a false in-flight state.
+
+Set `PUBLIC_SITE_URL` to your production domain so canonical tags, `robots.txt`, and `sitemap.xml` use the correct absolute URLs.

@@ -5,9 +5,16 @@ import BlogPostPage from "../../components/sections/blog/BlogPostPage.astro";
 import {
   getAllBlogArticles,
   getBlogArticleBySlug,
+  getBlogCategory,
   type BlogArticle,
 } from "../../lib/blog";
 import Layout from "../../layouts/Layout.astro";
+import {
+  buildBlogPostingJsonLd,
+  buildBreadcrumbJsonLd,
+  resolveSeoImage,
+  toAbsoluteUrl,
+} from "../../lib/seo";
 
 export async function getStaticPaths() {
   const articles = await getAllBlogArticles();
@@ -40,11 +47,43 @@ const nextArticle =
 const recentArticles = currentArticle
   ? allArticles.filter((entry) => entry.slug !== currentArticle.slug).slice(0, 5)
   : allArticles.slice(0, 5);
+const categoryLabel = currentArticle
+  ? getBlogCategory(currentArticle.category)?.label ?? currentArticle.category
+  : undefined;
+const blogHeroImageSrc = currentArticle
+  ? resolveSeoImage(currentArticle.heroImage)?.src
+  : undefined;
+const seoJsonLd = currentArticle
+  ? [
+      buildBreadcrumbJsonLd([
+        { label: "Home", href: "/home" },
+        { label: "Blog", href: "/blog" },
+        { label: currentArticle.title },
+      ]),
+      buildBlogPostingJsonLd({
+        title: currentArticle.title,
+        description: currentArticle.metaDescription,
+        url: toAbsoluteUrl(`/blog/${currentArticle.slug}`),
+        image: blogHeroImageSrc ? toAbsoluteUrl(blogHeroImageSrc) : undefined,
+        publishedTime: currentArticle.publishedAt,
+        section: categoryLabel,
+      }),
+    ].filter(Boolean)
+  : [];
 ---
 
 {
   currentArticle && (
-    <Layout title={`${currentArticle.title} | Tagora Blog`} description={currentArticle.metaDescription}>
+    <Layout
+      title={`${currentArticle.title} | Tagora Blog`}
+      description={currentArticle.metaDescription}
+      image={currentArticle.heroImage}
+      openGraphType="article"
+      schemaType="Article"
+      jsonLd={seoJsonLd}
+      articlePublishedTime={currentArticle.publishedAt}
+      articleModifiedTime={currentArticle.publishedAt}
+    >
       <Header activeNav="Blog" />
       <BlogPostPage
         article={currentArticle}

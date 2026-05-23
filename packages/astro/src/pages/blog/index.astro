@@ -13,6 +13,11 @@ import {
 } from '../../lib/blog';
 import { getLocalImage } from '../../lib/local-images';
 import Layout from '../../layouts/Layout.astro';
+import {
+  buildBreadcrumbJsonLd,
+  buildCollectionPageJsonLd,
+  toAbsoluteUrl,
+} from '../../lib/seo';
 
 const blogIndexHeroImage = getLocalImage(
   '/images/blog/material-guide-hero.jpg',
@@ -20,11 +25,31 @@ const blogIndexHeroImage = getLocalImage(
 const allBlogArticles = await getAllBlogArticles();
 const featuredMaterialArticles = getFeaturedBlogArticles(allBlogArticles);
 const industryInsightArticles = getIndustryInsightArticles(allBlogArticles);
+const blogListItems = allBlogArticles.flatMap((article) => {
+  const url = toAbsoluteUrl(`/blog/${article.slug}`);
+  return url ? [{ name: article.title, url }] : [];
+});
+const seoJsonLd = [
+  buildBreadcrumbJsonLd([
+    { label: 'Home', href: '/home' },
+    { label: 'Blog' },
+  ]),
+  buildCollectionPageJsonLd({
+    title: 'Blog | Tagora Packaging & Trims',
+    description:
+      'Expert guides on packaging materials, production decisions, and fashion industry insights.',
+    url: toAbsoluteUrl('/blog'),
+    items: blogListItems,
+  }),
+].filter(Boolean);
 ---
 
 <Layout
   title="Blog | Tagora Packaging & Trims"
   description="Expert guides on packaging materials, production decisions, and fashion industry insights."
+  schemaType="CollectionPage"
+  image={blogIndexHeroImage}
+  jsonLd={seoJsonLd}
 >
   <Header activeNav="Blog" />
   <main>

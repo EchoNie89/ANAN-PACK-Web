@@ -6,11 +6,21 @@ import ContactHero from "../components/sections/contact/ContactHero.astro";
 import ContactProjectForm from "../components/sections/contact/ContactProjectForm.astro";
 import ContactTrustStrip from "../components/sections/contact/ContactTrustStrip.astro";
 import Layout from "../layouts/Layout.astro";
+import { buildBreadcrumbJsonLd } from "../lib/seo";
+
+const seoJsonLd = [
+  buildBreadcrumbJsonLd([
+    { label: "Home", href: "/home" },
+    { label: "Contact Us" },
+  ]),
+].filter(Boolean);
 ---
 
 <Layout
   title="Contact Us | Tagora Packaging & Trims"
   description="Tell Tagora about your packaging, trims, and sourcing requirements to receive sampling guidance, pricing, and project support."
+  schemaType="ContactPage"
+  jsonLd={seoJsonLd}
 >
   <Header activeNav="Contact Us" />
   <main>

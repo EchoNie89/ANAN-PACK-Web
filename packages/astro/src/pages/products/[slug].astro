@@ -4,6 +4,13 @@ import Header from "../../components/sections/Header.astro";
 import ProductPage from "../../components/sections/products/ProductPage.astro";
 import { getProductBySlug, productPages } from "../../data/products";
 import Layout from "../../layouts/Layout.astro";
+import {
+  buildBreadcrumbJsonLd,
+  buildFaqJsonLd,
+  buildProductJsonLd,
+  resolveSeoImage,
+  toAbsoluteUrl,
+} from "../../lib/seo";
 
 export function getStaticPaths() {
   return productPages.map((page) => ({
@@ -14,11 +21,36 @@ export function getStaticPaths() {
 
 const { page } = Astro.props;
 const product = page ?? getProductBySlug(Astro.params.slug ?? "");
+const productHeroImageSrc = product
+  ? resolveSeoImage(product.heroImage)?.src
+  : undefined;
+const seoJsonLd = product
+  ? [
+      buildBreadcrumbJsonLd([
+        { label: "Home", href: "/home" },
+        { label: "Products", href: "/home#products" },
+        { label: product.title },
+      ]),
+      buildProductJsonLd({
+        name: product.title,
+        description: product.metaDescription,
+        url: toAbsoluteUrl(`/products/${product.slug}`),
+        image: productHeroImageSrc ? toAbsoluteUrl(productHeroImageSrc) : undefined,
+        category: product.navLabel,
+      }),
+      buildFaqJsonLd(product.faqs),
+    ].filter(Boolean)
+  : [];
 ---
 
 {
   product && (
-    <Layout title={product.title} description={product.metaDescription}>
+    <Layout
+      title={product.title}
+      description={product.metaDescription}
+      image={product.heroImage}
+      jsonLd={seoJsonLd}
+    >
       <Header activeNav="Products" />
       <ProductPage page={product} />
       <Footer />

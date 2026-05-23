@@ -10,11 +10,21 @@ import AboutSustainability from "../components/sections/about/AboutSustainabilit
 import AboutTeam from "../components/sections/about/AboutTeam.astro";
 import AboutValues from "../components/sections/about/AboutValues.astro";
 import Layout from "../layouts/Layout.astro";
+import { buildBreadcrumbJsonLd } from "../lib/seo";
+
+const seoJsonLd = [
+  buildBreadcrumbJsonLd([
+    { label: "Home", href: "/home" },
+    { label: "About Us" },
+  ]),
+].filter(Boolean);
 ---
 
 <Layout
   title="About Us | Tagora Packaging & Trims"
   description="Learn how Tagora coordinates sourcing, factory management, quality control, and delivery for growing packaging programs."
+  schemaType="AboutPage"
+  jsonLd={seoJsonLd}
 >
   <Header activeNav="About Us" />
   <main>

@@ -4,6 +4,12 @@ import Header from "../../components/sections/Header.astro";
 import SolutionPage from "../../components/sections/solutions/SolutionPage.astro";
 import { getSolutionBySlug, solutionPages } from "../../data/solutions";
 import Layout from "../../layouts/Layout.astro";
+import {
+  buildBreadcrumbJsonLd,
+  resolveSeoImage,
+  buildServiceJsonLd,
+  toAbsoluteUrl,
+} from "../../lib/seo";
 
 export function getStaticPaths() {
   return solutionPages.map((page) => ({
@@ -14,11 +20,36 @@ export function getStaticPaths() {
 
 const { page } = Astro.props;
 const solution = page ?? getSolutionBySlug(Astro.params.slug ?? "");
+const solutionHeroImageSrc = solution
+  ? resolveSeoImage(solution.hero.image)?.src
+  : undefined;
+const seoJsonLd = solution
+  ? [
+      buildBreadcrumbJsonLd([
+        { label: "Home", href: "/home" },
+        { label: "Solutions", href: "/solutions" },
+        { label: solution.title },
+      ]),
+      buildServiceJsonLd({
+        name: solution.title,
+        description: solution.metaDescription,
+        url: toAbsoluteUrl(`/solutions/${solution.slug}`),
+        image: solutionHeroImageSrc ? toAbsoluteUrl(solutionHeroImageSrc) : undefined,
+        serviceType: solution.navLabel,
+      }),
+    ].filter(Boolean)
+  : [];
 ---
 
 {
   solution && (
-    <Layout title={solution.title} description={solution.metaDescription}>
+    <Layout
+      title={solution.title}
+      description={solution.metaDescription}
+      schemaType="Service"
+      image={solution.hero.image}
+      jsonLd={seoJsonLd}
+    >
       <Header activeNav="Solutions" />
       <SolutionPage page={solution} />
       <Footer />

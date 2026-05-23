@@ -9,6 +9,9 @@ import Layout from "../layouts/Layout.astro";
 <Layout
   title={defaultSolution.title}
   description={defaultSolution.metaDescription}
+  canonicalPath={`/solutions/${defaultSolution.slug}`}
+  image={defaultSolution.hero.image}
+  noindex
 >
   <Header activeNav="Solutions" />
   <SolutionPage page={defaultSolution} />
