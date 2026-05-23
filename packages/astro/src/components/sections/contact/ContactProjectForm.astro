@@ -360,8 +360,7 @@ const inputClass =
         },
         onSuccess: (context) => {
           context.form.reset();
-          updateMessageCount();
-          showSuccess();
+          window.location.href = "/thank-you";
         },
         onError: (context, error) => {
           const formErrors = error.getFormErrors().map((entry) => entry.message);

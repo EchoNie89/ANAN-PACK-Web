@@ -1,21 +1,35 @@
 ---
-import Button from "../../ui/Button.astro";
-import Container from "../../ui/Container.astro";
-import { faqGroups } from "../../../data/services";
+import Button from '../../ui/Button.astro';
+import Container from '../../ui/Container.astro';
+import { faqGroups } from '../../../data/services';
 ---
 
 <section class="bg-white py-16 md:py-20">
   <Container class="space-y-16 lg:!max-w-[1200px]">
     {
       faqGroups.map((group) => (
-        <section aria-labelledby={group.title.toLowerCase().replaceAll(" ", "-").replaceAll(":", "")}>
-          <h2 id={group.title.toLowerCase().replaceAll(" ", "-").replaceAll(":", "")} class="text-2xl font-extrabold text-ink md:text-3xl">
+        <section
+          aria-labelledby={group.title
+            .toLowerCase()
+            .replaceAll(' ', '-')
+            .replaceAll(':', '')}
+        >
+          <h2
+            id={group.title
+              .toLowerCase()
+              .replaceAll(' ', '-')
+              .replaceAll(':', '')}
+            class="text-2xl font-extrabold text-ink md:text-3xl"
+          >
             {group.title}
           </h2>
 
           <div class="mt-8">
             {group.items.map((item, itemIndex) => (
-              <details class="group border-b border-[#e3e3e3] open:bg-[#fffaf2]" open={itemIndex === 0}>
+              <details
+                class="group border-b border-[#e3e3e3] open:bg-[#fffaf2]"
+                open={itemIndex === 0}
+              >
                 <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-base font-extrabold text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-brand">
                   <span>{item.question}</span>
                   <svg
@@ -28,16 +42,12 @@ import { faqGroups } from "../../../data/services";
                   </svg>
                 </summary>
                 <div class="pb-6 pr-10">
-                  <p class="max-w-5xl text-sm leading-7 text-text-main">{item.answer}</p>
+                  <p class="max-w-5xl text-sm leading-7 text-text-main">
+                    {item.answer}
+                  </p>
                 </div>
               </details>
             ))}
-          </div>
-
-          <div class="mt-8 flex justify-end">
-            <Button href="/home#contact" variant="soft" class="min-w-44 px-8 py-3 text-sm normal-case tracking-normal">
-              View More
-            </Button>
           </div>
         </section>
       ))

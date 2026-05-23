@@ -1,10 +1,10 @@
 ---
-import Button from "../ui/Button.astro";
-import Container from "../ui/Container.astro";
-import LocalImage from "../ui/LocalImage.astro";
-import { getLocalImage } from "../../lib/local-images";
+import Button from '../ui/Button.astro';
+import Container from '../ui/Container.astro';
+import LocalImage from '../ui/LocalImage.astro';
+import { getLocalImage } from '../../lib/local-images';
 
-const heroImage = getLocalImage("/images/home/hero-packaging.png");
+const heroImage = getLocalImage('/images/home/hero-packaging.png');
 ---
 
 <section class="relative overflow-hidden bg-[#ded2bd]">
@@ -18,21 +18,38 @@ const heroImage = getLocalImage("/images/home/hero-packaging.png");
       widths={[640, 960, 1280, 1600, 1920]}
       priority
     />
-    <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-white/10"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-white/10"
+    >
+    </div>
   </div>
 
-  <Container class="relative flex min-h-[560px] items-center py-20 md:min-h-[650px]">
+  <Container
+    class="relative flex min-h-[560px] items-center py-20 md:min-h-[650px]"
+  >
     <div class="max-w-2xl text-white">
-      <p class="text-xs font-bold uppercase tracking-[0.18em]">Custom Manufacturer</p>
-      <h1 class="mt-7 max-w-xl text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
-        Factory-Direct Packaging & Trims for Fashion Brands
+      <p class="text-xs font-bold uppercase tracking-[0.18em]">
+        Custom Manufacturer
+      </p>
+      <h1
+        class="mt-7 max-w-xl text-4xl font-extrabold leading-tight tracking-tight md:text-6xl"
+      >
+        One-Stop Packaging & Trims Supply Chain Partner For fashion, home
+        textile, and lifestyle brands.
       </h1>
-      <p class="mt-7 max-w-xl text-base font-medium leading-8 text-white/86 md:text-lg">
-        Hang Tags / Woven Labels / Packaging Bags / Patches. Factory-direct sourcing with Low MOQ and 72h Sampling.
+      <p
+        class="mt-7 max-w-xl text-base font-medium leading-8 text-white/86 md:text-lg"
+      >
+        Hang Tags / Woven Labels / Packaging Bags / Patches. Factory-direct
+        sourcing with Low MOQ and 72h Sampling.
       </p>
       <div class="mt-9 flex flex-col gap-4 sm:flex-row">
-        <Button href="#contact">Request a Quote</Button>
-        <Button href="#solutions" variant="secondary" class="bg-white/20 text-white hover:bg-white/30">
+        <Button href="/contact-us#project-form">Request a Quote</Button>
+        <Button
+          href="#solutions"
+          variant="secondary"
+          class="bg-white/20 text-white hover:bg-white/30"
+        >
           Explore Solutions
         </Button>
       </div>

@@ -1,6 +1,7 @@
-import { getLocalImage } from "../lib/local-images";
+import { getLocalImage } from '../lib/local-images';
 
-const homeImage = (fileName: string) => getLocalImage(`/images/home/${fileName}`);
+const homeImage = (fileName: string) =>
+  getLocalImage(`/images/home/${fileName}`);
 
 export const navItems = [
   { label: 'Home', href: '/home' },
@@ -33,11 +34,6 @@ export const solutionMenuItems = [
     href: '/solutions/jewelry-luxury',
     tone: 'plain',
   },
-  {
-    title: 'For Startup & Emerging Brands',
-    href: '/solutions#startup-emerging',
-    tone: 'highlight',
-  },
 ] as const;
 
 export const serviceMenuItems = [
@@ -47,7 +43,7 @@ export const serviceMenuItems = [
     tone: 'tan',
   },
   {
-    title: 'FAQ',
+    title: 'Services FAQ',
     href: '/services/faq',
     tone: 'plain',
   },
@@ -84,21 +80,25 @@ export const industries = [
     title: 'Fashion & Apparel',
     image: homeImage('industry-fashion.png'),
     alt: 'Fashion models wearing apparel for brand packaging use cases',
+    href: '/solutions/fashion-apparel',
   },
   {
     title: 'Home & Lifestyle',
     image: homeImage('industry-home.png'),
     alt: 'Home products arranged for packaging solutions',
+    href: '/solutions/home-lifestyle',
   },
   {
     title: 'Leather & Accessories',
     image: homeImage('industry-luxury.png'),
     alt: 'Leather accessories and premium trim packaging',
+    href: '/solutions/jewelry-luxury',
   },
   {
     title: 'Premium Packaging',
     image: homeImage('industry-gift.png'),
     alt: 'Green premium gift boxes and bags',
+    href: '/solutions/cosmetics-beauty',
   },
 ];
 
@@ -107,41 +107,49 @@ export const products = [
     title: 'Woven Labels',
     image: homeImage('product-woven-labels.png'),
     alt: 'Woven labels with stitched brand details',
+    href: '/products/labels',
   },
   {
     title: 'Patches',
     image: homeImage('product-patches.png'),
     alt: 'Custom embroidered patch samples',
+    href: '/products/patches',
   },
   {
     title: 'Ribbons',
     image: homeImage('product-ribbons.png'),
     alt: 'Printed ribbon rolls for packaging',
+    href: '/products/ribbon',
   },
   {
     title: 'Tissue Paper',
     image: homeImage('product-tissue.png'),
     alt: 'Pink custom printed tissue paper',
+    href: '/products/tissue-paper',
   },
   {
     title: 'Packaging Tape',
     image: homeImage('product-packaging-tape.png'),
     alt: 'Printed packaging tape and labels',
+    href: '/products/tape',
   },
   {
     title: 'Drawstring Bags',
     image: homeImage('product-drawstring.png'),
     alt: 'Cotton drawstring bag with printed logo',
+    href: '/products/bag',
   },
   {
     title: 'Hang Tags',
     image: homeImage('product-hang-tags.png'),
     alt: 'Red garment with custom hang tag',
+    href: '/products/hanging-tag',
   },
   {
     title: 'Stickers',
     image: homeImage('product-stickers.png'),
     alt: 'Minimal sticker and label sheet',
+    href: '/products/sticker',
   },
 ];
 
@@ -303,8 +311,24 @@ export const testimonials = [
 ];
 
 export const metrics = [
-  { value: '500+', label: 'Brands Served', icon: homeImage('icons/icon-brands-served.svg') },
-  { value: '50+', label: 'Countries Shipped', icon: homeImage('icons/icon-countries.svg') },
-  { value: '98%', label: 'Reorder Rate', icon: homeImage('icons/icon-reorder.svg') },
-  { value: 'Zero', label: 'Quality Claims', icon: homeImage('icons/icon-quality.svg') },
+  {
+    value: '500+',
+    label: 'Brands Served',
+    icon: homeImage('icons/icon-brands-served.svg'),
+  },
+  {
+    value: '50+',
+    label: 'Countries Shipped',
+    icon: homeImage('icons/icon-countries.svg'),
+  },
+  {
+    value: '98%',
+    label: 'Reorder Rate',
+    icon: homeImage('icons/icon-reorder.svg'),
+  },
+  {
+    value: 'Zero',
+    label: 'Quality Claims',
+    icon: homeImage('icons/icon-quality.svg'),
+  },
 ];

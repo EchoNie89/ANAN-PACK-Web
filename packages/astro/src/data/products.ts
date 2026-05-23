@@ -1586,7 +1586,7 @@ export const productPages: ProductPageData[] = [
     cta: {
       title: "Ready To Upgrade Your Brand's Packaging?",
       description: 'Send us your design, get a quote within 6 hours.',
-      href: '/contact-us',
+      href: '/contact-us#project-form',
       buttonLabel: 'Request A Quote',
       note: "We'll reply within 6 hours.",
     },
@@ -1968,7 +1968,7 @@ export const productPages: ProductPageData[] = [
     cta: {
       title: "Ready to Upgrade Your Brand's Packaging?",
       description: 'Send us your design, get a quote within 6 hours.',
-      href: '/contact-us',
+      href: '/contact-us#project-form',
       buttonLabel: 'Request A Quote',
       note: "We'll reply within 6 hours.",
     },
