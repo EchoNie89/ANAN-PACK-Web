@@ -68,13 +68,13 @@ test("home hero matches the approved redesign content and structure", () => {
 
   assert.match(
     source,
-    /md:max-w-\[48rem\]/,
+    /md:max-w-\[52rem\]/,
     "Expected the desktop hero content block to widen so each headline line carries more text",
   );
 
   assert.match(
     source,
-    /md:text-\[3\.5rem\]/,
+    /md:text-\[3\.25rem\]/,
     "Expected the desktop hero headline to be slightly smaller than the previous 64px treatment",
   );
 
