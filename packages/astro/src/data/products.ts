@@ -2273,8 +2273,6 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
     introTitle: 'What is Custom Packaging Tape？',
     subtitle:
       'Upgrade your unboxing experience with our custom tape with logo. Sustainable materials, strict QC & low MOQ. We engineer the perfect supply chain for your growth.',
-    heroTone: 'warm',
-    heroAlign: 'left',
     heroImage: image(
       '/images/products/optimized/hero-tape.jpg',
       'Custom packaging tape hero banner from Figma',

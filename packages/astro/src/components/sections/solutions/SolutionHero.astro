@@ -11,12 +11,12 @@ interface Props {
 const { page } = Astro.props;
 ---
 
-<section class="relative min-h-[430px] overflow-hidden bg-brand-soft md:h-[474px] md:min-h-0 lg:h-[calc(100dvh-88px)]">
+<section class="relative overflow-hidden bg-brand-soft md:h-[474px]">
   <div class="absolute inset-0">
     <LocalImage
       src={page.hero.image}
       alt={page.hero.alt}
-      class="size-full object-cover object-center"
+      class="size-full object-cover object-top"
       loading="eager"
       sizes="100vw"
       widths={[640, 960, 1280, 1600, 1920]}
@@ -25,29 +25,29 @@ const { page } = Astro.props;
     <div class="absolute inset-0 bg-gradient-to-r from-black/28 via-black/10 to-transparent"></div>
   </div>
 
-  <Container class="relative flex h-full flex-col !max-w-[1200px] py-9 text-white md:py-12 lg:h-full lg:min-h-0">
-    <nav class="text-sm text-white/75" aria-label="Breadcrumb">
+  <Container class="relative flex h-full flex-col !max-w-[1200px] py-9 text-white md:py-12">
+    <nav class="text-[14px]" aria-label="Breadcrumb">
       <ol class="flex flex-wrap items-center gap-3 md:gap-4">
-        <li><a href="/home" class="transition hover:text-white">Home</a></li>
-        <li aria-hidden="true">&gt;</li>
-        <li><a href="/solutions/" class="transition hover:text-white">Solutions</a></li>
-        <li aria-hidden="true">&gt;</li>
-        <li class="text-white">{page.breadcrumb}</li>
+        <li><a href="/home" class="font-normal text-white/75 transition hover:text-white">Home</a></li>
+        <li aria-hidden="true" class="text-white/75">&gt;</li>
+        <li><a href="/solutions/" class="font-normal text-white/75 transition hover:text-white">Solutions</a></li>
+        <li aria-hidden="true" class="text-white/75">&gt;</li>
+        <li class="font-normal text-white">{page.breadcrumb}</li>
       </ol>
     </nav>
 
-    <div class="mt-16 max-w-4xl md:mt-24 lg:max-w-[1030px]">
-      <h1 class="font-display text-3xl font-black leading-tight tracking-[0.01em] md:text-5xl lg:text-[52px] lg:leading-[1.15]">
+    <div class="mt-10 max-w-4xl md:mt-16 lg:max-w-[1030px]">
+      <h1 class="font-display text-3xl font-black leading-tight tracking-[0.01em] text-white md:text-5xl lg:text-[52px] lg:leading-[1.15]">
         {page.hero.title}
       </h1>
-      <p class="mt-5 max-w-[1160px] text-base font-medium leading-7 md:text-xl md:leading-8">
+      <p class="mt-5 max-w-[1160px] text-base font-medium leading-7 text-white/90 md:text-xl md:leading-8">
         {page.hero.description}
       </p>
-      <div class="mt-8 md:mt-14">
+      <div class="mt-6 md:mt-10">
         <Button
-          href="/home#contact"
+          href="/contact-us#project-form"
           variant="secondary"
-          class="!h-12 !rounded-[999px] border border-[#f8ebda] !bg-[#f4e6d2] !px-7 !py-0 !text-[1rem] !font-semibold !normal-case !tracking-[-0.035em] !text-[#3b3a37] shadow-[0_4px_0_rgba(0,0,0,0.24),0_10px_16px_rgba(0,0,0,0.18)] transition hover:!bg-[#efdfc5] hover:shadow-[0_3px_0_rgba(0,0,0,0.24),0_8px_14px_rgba(0,0,0,0.17)] md:!h-12 md:!px-7 md:!text-[1rem]"
+          class="!h-10 w-[195px] !rounded-[8px] border-0 !bg-[#E6DBCB] !px-0 !py-0 !text-[16px] !font-semibold !normal-case !tracking-normal !text-[#333333] transition hover:!bg-[#d4c9b5]"
         >
           {page.hero.cta}
         </Button>

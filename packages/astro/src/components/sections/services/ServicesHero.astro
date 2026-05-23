@@ -5,7 +5,7 @@ import LocalImage from "../../ui/LocalImage.astro";
 import { serviceHero } from "../../../data/services";
 ---
 
-<section class="services-hero relative isolate overflow-hidden bg-[#dfe7e9] lg:h-[calc(100dvh-88px)]">
+<section class="services-hero relative isolate overflow-hidden bg-[#dfe7e9] md:h-[474px]">
   <LocalImage
     src={serviceHero.image}
     alt={serviceHero.alt}
@@ -15,7 +15,7 @@ import { serviceHero } from "../../../data/services";
     widths={[640, 960, 1280, 1600, 1920]}
     priority
   />
-  <Container class="relative z-10 flex min-h-[474px] items-center py-16 lg:h-full lg:min-h-0 lg:!max-w-[1200px]">
+  <Container class="relative z-10 flex min-h-[360px] items-center py-16 md:min-h-[474px] lg:h-full lg:min-h-0 lg:!max-w-[1200px]">
     <div class="max-w-3xl pt-3 text-white">
       <nav class="mb-14 flex items-center gap-4 text-sm font-medium text-white/65" aria-label="Breadcrumb">
         <a href="/home" class="transition hover:text-white focus:outline-none focus:ring-2 focus:ring-white/70">Home</a>

@@ -7,12 +7,12 @@ import { getLocalImage } from "../../lib/local-images";
 const solutionsHeroImage = getLocalImage("/images/home/solution-cosmetics-hero.png");
 ---
 
-<section class="relative h-[474px] overflow-hidden bg-[#d5c3aa]">
+<section class="relative min-h-[320px] overflow-hidden bg-[#d5c3aa] md:h-[474px]">
   <div class="absolute inset-0">
     <LocalImage
       src={solutionsHeroImage}
       alt="Cosmetics and beauty packaging materials arranged on paper textures"
-      class="size-full object-cover object-center"
+      class="size-full object-cover object-top"
       loading="eager"
       sizes="100vw"
       widths={[640, 960, 1280, 1600, 1920]}
@@ -41,7 +41,7 @@ const solutionsHeroImage = getLocalImage("/images/home/solution-cosmetics-hero.p
       </p>
       <div class="mt-14">
         <Button
-          href="/home#contact"
+          href="/contact-us#project-form"
           variant="secondary"
           class="h-10 w-[195px] border-0 bg-brand-soft px-4 py-0 text-base normal-case text-text-main shadow-[0_4px_2px_rgba(0,0,0,0.25)] hover:bg-brand-soft"
         >
