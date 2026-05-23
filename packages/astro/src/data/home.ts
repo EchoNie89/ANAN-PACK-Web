@@ -51,25 +51,37 @@ export const serviceMenuItems = [
 
 export const valueProps = [
   {
-    icon: 'factory',
+    icon: {
+      src: homeImage('icons/icon-low-moq.svg'),
+      alt: '',
+    },
     title: 'Flexible Low MOQ',
     description:
       'Start from 100 pcs. Grow your brand without inventory pressure.',
   },
   {
-    icon: 'clock',
+    icon: {
+      src: homeImage('icons/icon-rapid-sampling.svg'),
+      alt: '',
+    },
     title: '72h Rapid Sampling',
     description:
       'Samples in 3 days. See your design in reality faster than ever.',
   },
   {
-    icon: 'percent',
+    icon: {
+      src: homeImage('icons/icon-factory-pricing.svg'),
+      alt: '',
+    },
     title: 'Factory-Direct Pricing',
     description:
       'No middleman. Save up to 30% with our consolidated supply chain.',
   },
   {
-    icon: 'cubes',
+    icon: {
+      src: homeImage('icons/icon-eco-certified.svg'),
+      alt: '',
+    },
     title: 'Eco-Certified Materials',
     description: 'FSC and biodegradable options for conscious brands.',
   },
@@ -206,22 +218,31 @@ export const productMenuItems = [
 
 export const trustReasons = [
   {
-    icon: 'shield',
-    title: 'Boots-on-the-Ground QC',
+    icon: {
+      src: homeImage('icons/icon-trust-qc.svg'),
+      alt: '',
+    },
+    title: 'Boots-On-The-Ground QC',
     description:
-      'Factories make mistakes. We catch them with on-site checks before your tags, labels, and bags ship.',
+      'Factories Make Mistakes. We Catch Them. Our Engineers Inspect Your Tags, Labels, And Bags On-Site To Ensure Zero Defects Before Shipping.',
   },
   {
-    icon: 'palette',
+    icon: {
+      src: homeImage('icons/icon-trust-color-match.svg'),
+      alt: '',
+    },
     title: 'Perfect Color Match',
     description:
-      'We keep color consistent across hang tags, woven labels, packaging bags, and different materials.',
+      'Nothing Is Worse Than Mismatched Colors. We Ensure Your Woven Label Blue Matches Your Hang Tag Blue Perfectly Across Different Materials.',
   },
   {
-    icon: 'package',
+    icon: {
+      src: homeImage('icons/icon-trust-kitting.svg'),
+      alt: '',
+    },
     title: 'Kitting & Stringing',
     description:
-      'We pre-string hang tags, pack labels in sets, and prepare retail-ready packaging before delivery.',
+      'Save Your Time. We Pre-String Your Hang Tags, Pack Labels In Sets, Or Insert Items Into Biodegradable Bags For You. Retail-Ready Arrival.',
   },
 ] as const;
 

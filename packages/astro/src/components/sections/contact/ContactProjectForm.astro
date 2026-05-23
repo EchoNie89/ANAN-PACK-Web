@@ -6,11 +6,44 @@ import { getSiteContactDetails } from '../../../lib/site-settings';
 
 const contactDetails = await getSiteContactDetails();
 
+const emailHref = `mailto:${contactDetails.email}`;
+const whatsappDigits = contactDetails.whatsapp.replace(/[^0-9]/g, '');
+const whatsappHref = `whatsapp://send?phone=${whatsappDigits}`;
+const whatsappFallbackHref = `https://wa.me/${whatsappDigits}`;
+const phoneHref = `tel:${contactDetails.phone.replace(/[^+\d]/g, '')}`;
+const mapsQuery = [contactDetails.address, contactDetails.location]
+  .filter(Boolean)
+  .join(', ');
+const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
+
 const infoItems = [
-  { label: 'Email', value: contactDetails.email, icon: 'contactMail' },
-  { label: 'WhatsApp', value: contactDetails.whatsapp, icon: 'whatsapp' },
-  { label: 'Phone', value: contactDetails.phone, icon: 'contactPhone' },
-  { label: 'Address', value: contactDetails.address, icon: 'contactLocation' },
+  {
+    label: 'Email',
+    value: contactDetails.email,
+    icon: 'contactMail',
+    href: emailHref,
+  },
+  {
+    label: 'WhatsApp',
+    value: contactDetails.whatsapp,
+    icon: 'whatsapp',
+    href: whatsappHref,
+    fallbackHref: whatsappFallbackHref,
+  },
+  {
+    label: 'Phone',
+    value: contactDetails.phone,
+    icon: 'contactPhone',
+    href: phoneHref,
+  },
+  {
+    label: 'Address',
+    value: contactDetails.address,
+    icon: 'contactLocation',
+    href: mapsHref,
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
   {
     label: 'Business Hours',
     value: contactDetails.businessHours,
@@ -232,9 +265,23 @@ const inputClass =
                   </div>
                   <div>
                     <h3 class="text-sm font-bold text-ink">{item.label}</h3>
-                    <p class="mt-1 text-sm leading-6 text-text-muted">
-                      {item.value}
-                    </p>
+                    {
+                      item.href ? (
+                        <a
+                          href={item.href}
+                          target={item.target}
+                          rel={item.rel}
+                          data-whatsapp-fallback={item.fallbackHref}
+                          class="mt-1 inline-block text-sm leading-6 text-text-muted transition hover:text-brand hover:underline"
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p class="mt-1 text-sm leading-6 text-text-muted">
+                          {item.value}
+                        </p>
+                      )
+                    }
                   </div>
                 </div>
               ))
@@ -382,4 +429,41 @@ const inputClass =
       });
     }
   }
+
+  document
+    .querySelectorAll("[data-whatsapp-fallback]")
+    .forEach((linkElement) => {
+      if (
+        !(linkElement instanceof HTMLAnchorElement) ||
+        linkElement.dataset.whatsappBound
+      ) {
+        return;
+      }
+
+      linkElement.dataset.whatsappBound = "true";
+      linkElement.addEventListener("click", () => {
+        const fallbackHref = linkElement.dataset.whatsappFallback;
+
+        if (!fallbackHref) return;
+
+        const fallbackTimer = window.setTimeout(() => {
+          if (document.visibilityState === "visible") {
+            window.location.href = fallbackHref;
+          }
+        }, 900);
+
+        const clearFallback = () => window.clearTimeout(fallbackTimer);
+
+        window.addEventListener("pagehide", clearFallback, { once: true });
+        document.addEventListener(
+          "visibilitychange",
+          () => {
+            if (document.visibilityState === "hidden") {
+              clearFallback();
+            }
+          },
+          { once: true },
+        );
+      });
+    });
 </script>

@@ -43,49 +43,21 @@ const industryInsightArticles = getIndustryInsightArticles(allBlogArticles);
       title="Master Your Materials"
       description="Learn how paper stocks, recyclable formats, and production details shape premium packaging results."
       articles={featuredMaterialArticles}
+      pageSize={6}
+      paginationParam="materialsPage"
+      paginationAlign="center"
+      paginationLabel="Featured blog pagination"
     />
-    <section class="pb-10">
-      <div class="mx-auto flex max-w-[1200px] items-center justify-center px-4 sm:px-6 lg:px-8">
-        <nav aria-label="Featured blog pagination" class="flex items-center gap-[10px] text-[14px] text-[#999999]">
-          <span class="font-semibold text-[#333333]">1</span>
-          <span>2</span>
-          <span>3</span>
-          <span>...</span>
-          <span>66</span>
-          <span class="inline-flex items-center justify-center text-[#333333]" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="m7 5 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span>
-        </nav>
-      </div>
-    </section>
     <BlogListingSection
       id="industry-insights"
       title="Industry Trends & Knowledge"
       articles={industryInsightArticles}
       variant="industry"
+      pageSize={6}
+      paginationParam="insightsPage"
+      paginationAlign="end"
+      paginationLabel="Blog pagination"
     />
-
-    <section class="pb-6">
-      <div
-        class="mx-auto flex max-w-[1200px] items-center justify-end px-4 sm:px-6 lg:px-8"
-      >
-        <nav
-          aria-label="Blog pagination"
-          class="flex items-center gap-[10px] text-[14px] text-[#999999]"
-        >
-          <span class="font-semibold text-[#333333]">1</span>
-          <span>2</span>
-          <span>Next page</span>
-          <span class="inline-flex items-center justify-center text-[#333333]" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="m7 5 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span>
-        </nav>
-      </div>
-    </section>
 
     <PageCTA
       title="Need A Custom Template Or Dieline?"

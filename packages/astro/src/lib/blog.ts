@@ -502,9 +502,9 @@ async function fetchSanityBlogArticles(): Promise<BlogArticle[]> {
       .map((document) => normalizeSanityArticle(document))
       .filter((article): article is BlogArticle => Boolean(article));
 
-    return normalizedArticles.length ? normalizedArticles : fallbackArticles;
+    return normalizedArticles;
   } catch {
-    return fallbackArticles;
+    return [];
   }
 }
 

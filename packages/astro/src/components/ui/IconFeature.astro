@@ -1,14 +1,36 @@
 ---
+import LocalImage from "./LocalImage.astro";
+import type { SiteImageSource } from "../../lib/local-images";
+
+type IconToken =
+  | "factory"
+  | "clock"
+  | "percent"
+  | "cubes"
+  | "shield"
+  | "palette"
+  | "package";
+
+interface IconImage {
+  src: SiteImageSource;
+  alt?: string;
+}
+
 interface Props {
-  icon: "factory" | "clock" | "percent" | "cubes" | "shield" | "palette" | "package";
+  icon: IconToken | IconImage;
   title: string;
   description: string;
   variant?: "simple" | "detailed";
 }
 
 const { icon, title, description, variant = "simple" } = Astro.props;
-const iconWrap =
-  variant === "detailed"
+const imageIcon = typeof icon === "string" ? null : icon;
+const inlineIcon = typeof icon === "string" ? icon : null;
+const iconWrap = imageIcon
+  ? variant === "detailed"
+    ? "flex size-14 shrink-0 items-center justify-center rounded-full bg-surface-muted text-ink"
+    : "mx-auto mb-5 flex h-[83px] items-center justify-center text-ink"
+  : variant === "detailed"
     ? "flex size-14 shrink-0 items-center justify-center rounded-full bg-surface-muted text-ink"
     : "mx-auto mb-5 flex size-14 items-center justify-center text-ink";
 ---
@@ -18,7 +40,17 @@ const iconWrap =
 >
   <div class={iconWrap} aria-hidden="true">
     {
-      icon === "factory" && (
+      imageIcon ? (
+        <LocalImage
+          src={imageIcon.src}
+          alt={imageIcon.alt ?? ""}
+          aria-hidden="true"
+          class={variant === "detailed" ? "size-9 object-contain" : "h-full w-auto object-contain"}
+          loading="eager"
+          width={96}
+          height={96}
+        />
+      ) : inlineIcon === "factory" && (
         <svg viewBox="0 0 48 48" class="size-10" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M6 36h36M10 36V18l10 5v-5l10 5v-5l8 4v14" />
           <path d="M14 36v-7h6v7M26 36v-7h6v7M12 14h10" />
@@ -26,7 +58,7 @@ const iconWrap =
       )
     }
     {
-      icon === "clock" && (
+      inlineIcon === "clock" && (
         <svg viewBox="0 0 48 48" class="size-10" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="24" cy="24" r="16" />
           <path d="M24 13v12l8 5M12 11l4-4M36 11l-4-4" />
@@ -34,7 +66,7 @@ const iconWrap =
       )
     }
     {
-      icon === "percent" && (
+      inlineIcon === "percent" && (
         <svg viewBox="0 0 48 48" class="size-10" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M14 36 34 12" />
           <circle cx="16" cy="16" r="5" />
@@ -44,7 +76,7 @@ const iconWrap =
       )
     }
     {
-      icon === "cubes" && (
+      inlineIcon === "cubes" && (
         <svg viewBox="0 0 48 48" class="size-10" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M8 18 18 12l10 6-10 6-10-6zM28 18l10-6 6 4v12l-10 6-6-4V18z" />
           <path d="M8 18v12l10 6 10-6V18M18 24v12M34 24v10" />
@@ -52,7 +84,7 @@ const iconWrap =
       )
     }
     {
-      icon === "shield" && (
+      inlineIcon === "shield" && (
         <svg viewBox="0 0 48 48" class="size-8" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M24 6 38 12v10c0 9-5.8 16.2-14 20-8.2-3.8-14-11-14-20V12l14-6z" />
           <path d="m17 24 5 5 10-12" />
@@ -60,7 +92,7 @@ const iconWrap =
       )
     }
     {
-      icon === "palette" && (
+      inlineIcon === "palette" && (
         <svg viewBox="0 0 48 48" class="size-8" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M24 7c-9.4 0-17 6.8-17 15.2 0 6.5 4.9 12 11.6 14.2 2.1.7 2.9-.4 2.9-1.9v-2.1c0-1.6 1.3-2.9 2.9-2.9H28c7.2 0 13-5 13-11.1C41 12.1 33.4 7 24 7z" />
           <circle cx="16" cy="19" r="2" />
@@ -70,7 +102,7 @@ const iconWrap =
       )
     }
     {
-      icon === "package" && (
+      inlineIcon === "package" && (
         <svg viewBox="0 0 48 48" class="size-8" fill="none" stroke="currentColor" stroke-width="2">
           <path d="m8 16 16-8 16 8-16 8-16-8zM8 16v16l16 8 16-8V16" />
           <path d="M24 24v16M16 12l16 8" />

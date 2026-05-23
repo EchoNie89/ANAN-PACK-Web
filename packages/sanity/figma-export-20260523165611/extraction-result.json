@@ -1,0 +1,1251 @@
+{
+  "source": {
+    "url": "https://www.figma.com/design/0CldtKHA7r5tShp3qxIsST/%E7%8B%AC%E7%AB%8B%E7%AB%99%E8%AE%BE%E8%AE%A1-%E5%90%8A%E7%89%8C%E7%BD%91%E7%AB%99--Copy-?node-id=19413-1599",
+    "fileKey": "0CldtKHA7r5tShp3qxIsST",
+    "nodeId": "19413:1599",
+    "fileName": "独立站设计-吊牌网站 (Copy)",
+    "lastModified": "2026-05-23T08:37:54Z"
+  },
+  "structure": {
+    "nodeId": "19413:1599",
+    "nodeName": "Group 722",
+    "nodeType": "GROUP",
+    "children": [
+      {
+        "nodeId": "19413:1600",
+        "nodeName": "Frame 1272636732",
+        "nodeType": "FRAME",
+        "children": [
+          {
+            "nodeId": "19413:1601",
+            "nodeName": "Why Trust Us?",
+            "nodeType": "TEXT",
+            "children": [],
+            "layout": {
+              "width": 244,
+              "height": 39
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#333333",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "19413:1602",
+            "nodeName": "Frame 739",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "19413:1603",
+                "nodeName": "Frame 1272636628",
+                "nodeType": "FRAME",
+                "children": [
+                  {
+                    "nodeId": "19413:1604",
+                    "nodeName": "image 4",
+                    "nodeType": "RECTANGLE",
+                    "children": [],
+                    "layout": {
+                      "width": 759,
+                      "height": 558
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 624,
+                  "height": 577,
+                  "cornerRadius": 10
+                }
+              },
+              {
+                "nodeId": "19413:1605",
+                "nodeName": "We Manage the Risk. You Build the Brand",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 384,
+                  "height": 92
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#333333",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "19413:1606",
+                "nodeName": "Frame 1272636731",
+                "nodeType": "FRAME",
+                "children": [
+                  {
+                    "nodeId": "19413:1607",
+                    "nodeName": "Group 718",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "20969:663",
+                        "nodeName": "Group 1272636850",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:664",
+                            "nodeName": "Ellipse 14",
+                            "nodeType": "ELLIPSE",
+                            "children": [],
+                            "layout": {
+                              "width": 80,
+                              "height": 80
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#f6f4ef",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:665",
+                            "nodeName": "盾牌保险质量_o 1",
+                            "nodeType": "FRAME",
+                            "children": [
+                              {
+                                "nodeId": "20969:666",
+                                "nodeName": "Vector",
+                                "nodeType": "VECTOR",
+                                "children": [],
+                                "layout": {
+                                  "width": 33.75,
+                                  "height": 40.5
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#444444",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 54,
+                              "height": 54
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#ffffff",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 80,
+                          "height": 80
+                        }
+                      },
+                      {
+                        "nodeId": "20969:668",
+                        "nodeName": "Group 1272636851",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "19413:1609",
+                            "nodeName": "Boots-on-the-Ground QC",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 303,
+                              "height": 36
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#333333",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "19413:1613",
+                            "nodeName": "Factories make mistakes. We catch them. Our engineers inspect your tags, labels, and bags on-site to ensure zero defects before shipping.",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 387,
+                              "height": 69
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 387,
+                          "height": 115
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "width": 486.5,
+                      "height": 115
+                    }
+                  },
+                  {
+                    "nodeId": "20969:655",
+                    "nodeName": "Line 46",
+                    "nodeType": "LINE",
+                    "children": [],
+                    "layout": {
+                      "width": 486,
+                      "height": 0
+                    }
+                  },
+                  {
+                    "nodeId": "19413:1614",
+                    "nodeName": "Group 719",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "20969:677",
+                        "nodeName": "Group 1272636850",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:678",
+                            "nodeName": "Ellipse 14",
+                            "nodeType": "ELLIPSE",
+                            "children": [],
+                            "layout": {
+                              "width": 80,
+                              "height": 80
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#f6f4ef",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:689",
+                            "nodeName": "搭配 1",
+                            "nodeType": "FRAME",
+                            "children": [
+                              {
+                                "nodeId": "20969:690",
+                                "nodeName": "Vector",
+                                "nodeType": "VECTOR",
+                                "children": [],
+                                "layout": {
+                                  "width": 35.92427062988281,
+                                  "height": 10.134385108947754
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#000000",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:691",
+                                "nodeName": "Vector",
+                                "nodeType": "VECTOR",
+                                "children": [],
+                                "layout": {
+                                  "width": 28.878524780273438,
+                                  "height": 13.673013687133789
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#000000",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:692",
+                                "nodeName": "Vector",
+                                "nodeType": "VECTOR",
+                                "children": [],
+                                "layout": {
+                                  "width": 27.901283264160156,
+                                  "height": 8.529943466186523
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#000000",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:693",
+                                "nodeName": "Vector",
+                                "nodeType": "VECTOR",
+                                "children": [],
+                                "layout": {
+                                  "width": 30.14708137512207,
+                                  "height": 9.97605037689209
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#000000",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 54,
+                              "height": 54
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#ffffff",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 80,
+                          "height": 80
+                        }
+                      },
+                      {
+                        "nodeId": "20969:682",
+                        "nodeName": "Group 1272636852",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "19413:1621",
+                            "nodeName": "Perfect Color Match",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 231,
+                              "height": 36
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#333333",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "19413:1623",
+                            "nodeName": "Nothing is worse than mismatched colors. We ensure your Woven Label blue matches your Hang Tag blue perfectly across different materials.",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 387,
+                              "height": 69
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 388,
+                          "height": 115
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "width": 482,
+                      "height": 115
+                    }
+                  },
+                  {
+                    "nodeId": "20969:657",
+                    "nodeName": "Line 47",
+                    "nodeType": "LINE",
+                    "children": [],
+                    "layout": {
+                      "width": 486,
+                      "height": 0
+                    }
+                  },
+                  {
+                    "nodeId": "19413:1624",
+                    "nodeName": "Group 720",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "20969:684",
+                        "nodeName": "Group 1272636850",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "20969:685",
+                            "nodeName": "Ellipse 14",
+                            "nodeType": "ELLIPSE",
+                            "children": [],
+                            "layout": {
+                              "width": 80,
+                              "height": 80
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#f6f4ef",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "20969:695",
+                            "nodeName": "菜单栏-采购-采购在途汇总 2",
+                            "nodeType": "FRAME",
+                            "children": [
+                              {
+                                "nodeId": "20969:696",
+                                "nodeName": "Vector",
+                                "nodeType": "VECTOR",
+                                "children": [],
+                                "layout": {
+                                  "width": 2.9250004291534424,
+                                  "height": 11.64374828338623
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#035dff",
+                                    "opacity": 1
+                                  }
+                                ]
+                              },
+                              {
+                                "nodeId": "20969:697",
+                                "nodeName": "Vector",
+                                "nodeType": "VECTOR",
+                                "children": [],
+                                "layout": {
+                                  "width": 37.80000305175781,
+                                  "height": 30.82499885559082
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#2b2f36",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 54,
+                              "height": 54
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#ffffff",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 80,
+                          "height": 80
+                        }
+                      },
+                      {
+                        "nodeId": "20969:683",
+                        "nodeName": "Group 1272636853",
+                        "nodeType": "GROUP",
+                        "children": [
+                          {
+                            "nodeId": "19413:1629",
+                            "nodeName": "Kitting & Stringing",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 208,
+                              "height": 36
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#333333",
+                                "opacity": 1
+                              }
+                            ]
+                          },
+                          {
+                            "nodeId": "19413:1630",
+                            "nodeName": "Save your time. We pre-string your hang tags, pack labels in sets, or insert items into biodegradable bags for you. Retail-ready arrival.",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 385,
+                              "height": 69
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 385,
+                          "height": 115
+                        }
+                      }
+                    ],
+                    "layout": {
+                      "width": 480,
+                      "height": 115
+                    }
+                  }
+                ],
+                "layout": {
+                  "mode": "VERTICAL",
+                  "itemSpacing": 20,
+                  "width": 486,
+                  "height": 425
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 617,
+              "cornerRadius": 20
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#ffffff",
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "nodeId": "20969:728",
+            "nodeName": "Frame 1272636854",
+            "nodeType": "FRAME",
+            "children": [
+              {
+                "nodeId": "20969:699",
+                "nodeName": "Group 734",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "20969:700",
+                    "nodeName": "Group 1272636706",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "20969:701",
+                        "nodeName": "Frame 733",
+                        "nodeType": "FRAME",
+                        "children": [
+                          {
+                            "nodeId": "20969:702",
+                            "nodeName": "Group 725",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:703",
+                                "nodeName": "图片加描述",
+                                "nodeType": "FRAME",
+                                "children": [
+                                  {
+                                    "nodeId": "20969:704",
+                                    "nodeName": "Frame 40",
+                                    "nodeType": "FRAME",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 238.39996337890625,
+                                      "height": 216.3297882080078
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#dbdbdb",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "layout": {
+                                  "width": 238.4042510986328,
+                                  "height": 216.3297882080078
+                                }
+                              }
+                            ],
+                            "layout": {
+                              "width": 238.4042510986328,
+                              "height": 216.3297882080078
+                            }
+                          },
+                          {
+                            "nodeId": "20969:706",
+                            "nodeName": "FSC",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 29,
+                              "height": 17
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 264,
+                          "height": 233,
+                          "cornerRadius": 8.829787254333496
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#ffffff",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:707",
+                        "nodeName": "Frame 732",
+                        "nodeType": "FRAME",
+                        "children": [
+                          {
+                            "nodeId": "20969:708",
+                            "nodeName": "Group 726",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:709",
+                                "nodeName": "图片加描述",
+                                "nodeType": "FRAME",
+                                "children": [
+                                  {
+                                    "nodeId": "20969:710",
+                                    "nodeName": "Frame 40",
+                                    "nodeType": "FRAME",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 238.39996337890625,
+                                      "height": 216.3297882080078
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#dbdbdb",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "layout": {
+                                  "width": 238.4042510986328,
+                                  "height": 216.3297882080078
+                                }
+                              }
+                            ],
+                            "layout": {
+                              "width": 238.4042510986328,
+                              "height": 216.3297882080078
+                            }
+                          },
+                          {
+                            "nodeId": "20969:712",
+                            "nodeName": "OEKO-TEX Standard 100",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 187,
+                              "height": 17
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 264,
+                          "height": 233,
+                          "cornerRadius": 8.829787254333496
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#ffffff",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:713",
+                        "nodeName": "Frame 731",
+                        "nodeType": "FRAME",
+                        "children": [
+                          {
+                            "nodeId": "20969:714",
+                            "nodeName": "Group 727",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:715",
+                                "nodeName": "图片加描述",
+                                "nodeType": "FRAME",
+                                "children": [
+                                  {
+                                    "nodeId": "20969:716",
+                                    "nodeName": "Frame 40",
+                                    "nodeType": "FRAME",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 238.39996337890625,
+                                      "height": 216.3297882080078
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#dbdbdb",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "layout": {
+                                  "width": 238.4042510986328,
+                                  "height": 216.3297882080078
+                                }
+                              }
+                            ],
+                            "layout": {
+                              "width": 238.4042510986328,
+                              "height": 216.3297882080078
+                            }
+                          },
+                          {
+                            "nodeId": "20969:718",
+                            "nodeName": "Global Recycled Standard",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 221,
+                              "height": 17
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 264,
+                          "height": 233,
+                          "cornerRadius": 8.829787254333496
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#ffffff",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:719",
+                        "nodeName": "Frame 730",
+                        "nodeType": "FRAME",
+                        "children": [
+                          {
+                            "nodeId": "20969:720",
+                            "nodeName": "Group 728",
+                            "nodeType": "GROUP",
+                            "children": [
+                              {
+                                "nodeId": "20969:721",
+                                "nodeName": "图片加描述",
+                                "nodeType": "FRAME",
+                                "children": [
+                                  {
+                                    "nodeId": "20969:722",
+                                    "nodeName": "Frame 40",
+                                    "nodeType": "FRAME",
+                                    "children": [],
+                                    "layout": {
+                                      "width": 238.39996337890625,
+                                      "height": 216.3297882080078
+                                    },
+                                    "fills": [
+                                      {
+                                        "type": "SOLID",
+                                        "color": "#dbdbdb",
+                                        "opacity": 1
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "layout": {
+                                  "width": 238.4042510986328,
+                                  "height": 184.67176818847656
+                                }
+                              },
+                              {
+                                "nodeId": "20969:724",
+                                "nodeName": "Text",
+                                "nodeType": "TEXT",
+                                "children": [],
+                                "layout": {
+                                  "width": 0,
+                                  "height": 21.159833908081055
+                                },
+                                "fills": [
+                                  {
+                                    "type": "SOLID",
+                                    "color": "#333333",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "layout": {
+                              "width": 238.4042510986328,
+                              "height": 202.4288787841797
+                            }
+                          },
+                          {
+                            "nodeId": "20969:725",
+                            "nodeName": "ISO 9001",
+                            "nodeType": "TEXT",
+                            "children": [],
+                            "layout": {
+                              "width": 64,
+                              "height": 17
+                            },
+                            "fills": [
+                              {
+                                "type": "SOLID",
+                                "color": "#666666",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": {
+                          "width": 264,
+                          "height": 233,
+                          "cornerRadius": 8.829787254333496
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#ffffff",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    ],
+                    "layout": {
+                      "width": 1116,
+                      "height": 233,
+                      "cornerRadius": 8.829787254333496
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 1116,
+                  "height": 233,
+                  "cornerRadius": 8.829787254333496
+                }
+              },
+              {
+                "nodeId": "20969:726",
+                "nodeName": "Certified Materials & Standards",
+                "nodeType": "TEXT",
+                "children": [],
+                "layout": {
+                  "width": 520,
+                  "height": 39
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#000000",
+                    "opacity": 1
+                  }
+                ]
+              },
+              {
+                "nodeId": "20969:729",
+                "nodeName": "Group 233",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "20969:730",
+                    "nodeName": "Rectangle 42",
+                    "nodeType": "RECTANGLE",
+                    "children": [],
+                    "layout": {
+                      "width": 42,
+                      "height": 42
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#ffffff",
+                        "opacity": 1
+                      }
+                    ]
+                  },
+                  {
+                    "nodeId": "20969:731",
+                    "nodeName": "Vector",
+                    "nodeType": "VECTOR",
+                    "children": [],
+                    "layout": {
+                      "width": 7.5,
+                      "height": 15
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#ffffff",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                ],
+                "layout": {
+                  "width": 42,
+                  "height": 42
+                }
+              },
+              {
+                "nodeId": "20969:733",
+                "nodeName": "Group 736",
+                "nodeType": "GROUP",
+                "children": [
+                  {
+                    "nodeId": "20969:734",
+                    "nodeName": "Group 234",
+                    "nodeType": "GROUP",
+                    "children": [
+                      {
+                        "nodeId": "20969:735",
+                        "nodeName": "Rectangle 42",
+                        "nodeType": "RECTANGLE",
+                        "children": [],
+                        "layout": {
+                          "width": 42,
+                          "height": 42
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#ffffff",
+                            "opacity": 1
+                          }
+                        ]
+                      },
+                      {
+                        "nodeId": "20969:736",
+                        "nodeName": "Vector",
+                        "nodeType": "VECTOR",
+                        "children": [],
+                        "layout": {
+                          "width": 7.5,
+                          "height": 15
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "color": "#ffffff",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    ],
+                    "layout": {
+                      "width": 42,
+                      "height": 42
+                    }
+                  }
+                ],
+                "layout": {
+                  "width": 42,
+                  "height": 42
+                }
+              }
+            ],
+            "layout": {
+              "width": 1200,
+              "height": 340,
+              "cornerRadius": 20
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#e6dbcb",
+                "opacity": 0.20000000298023224
+              }
+            ]
+          }
+        ],
+        "layout": {
+          "width": 1440,
+          "height": 1489
+        },
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#f9f9f9",
+            "opacity": 1
+          }
+        ]
+      }
+    ],
+    "layout": {
+      "width": 1440,
+      "height": 1489
+    }
+  },
+  "texts": [
+    {
+      "nodeId": "19413:1601",
+      "nodeName": "Why Trust Us?",
+      "text": "Why Trust Us?",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 32,
+        "fontWeight": 800,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "19413:1605",
+      "nodeName": "We Manage the Risk. You Build the Brand",
+      "text": "We Manage the Risk. You Build the Brand",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 32,
+        "fontWeight": 700,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19413:1609",
+      "nodeName": "Boots-on-the-Ground QC",
+      "text": "Boots-on-the-Ground QC",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 500,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19413:1613",
+      "nodeName": "Factories make mistakes. We catch them. Our engineers inspect your tags, labels, and bags on-site to ensure zero defects before shipping.",
+      "text": "Factories make mistakes. We catch them. Our engineers inspect your tags, labels, and bags on-site to ensure zero defects before shipping.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#666666",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19413:1621",
+      "nodeName": "Perfect Color Match",
+      "text": "Perfect Color Match",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 500,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19413:1623",
+      "nodeName": "Nothing is worse than mismatched colors. We ensure your Woven Label blue matches your Hang Tag blue perfectly across different materials.",
+      "text": "Nothing is worse than mismatched colors. We ensure your Woven Label blue matches your Hang Tag blue perfectly across different materials.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#666666",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19413:1629",
+      "nodeName": "Kitting & Stringing",
+      "text": "Kitting & Stringing",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 24,
+        "fontWeight": 500,
+        "color": "#333333",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "19413:1630",
+      "nodeName": "Save your time. We pre-string your hang tags, pack labels in sets, or insert items into biodegradable bags for you. Retail-ready arrival.",
+      "text": "Save your time. We pre-string your hang tags, pack labels in sets, or insert items into biodegradable bags for you. Retail-ready arrival.",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "color": "#666666",
+        "textAlignHorizontal": "LEFT"
+      }
+    },
+    {
+      "nodeId": "20969:706",
+      "nodeName": "FSC",
+      "text": "FSC ",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14.127659797668457,
+        "fontWeight": 500,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "20969:712",
+      "nodeName": "OEKO-TEX Standard 100",
+      "text": "OEKO-TEX Standard 100",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14.127659797668457,
+        "fontWeight": 500,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "20969:718",
+      "nodeName": "Global Recycled Standard",
+      "text": "Global Recycled Standard",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14.127659797668457,
+        "fontWeight": 500,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "20969:724",
+      "nodeName": "Text",
+      "text": " ",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 17.659574508666992,
+        "fontWeight": 600,
+        "color": "#333333",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "20969:725",
+      "nodeName": "ISO 9001",
+      "text": "ISO 9001",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 14.127659797668457,
+        "fontWeight": 500,
+        "color": "#666666",
+        "textAlignHorizontal": "CENTER"
+      }
+    },
+    {
+      "nodeId": "20969:726",
+      "nodeName": "Certified Materials & Standards",
+      "text": "Certified Materials & Standards",
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 32,
+        "fontWeight": 700,
+        "color": "#000000",
+        "textAlignHorizontal": "CENTER"
+      }
+    }
+  ],
+  "images": [
+    {
+      "nodeId": "19413:1599",
+      "nodeName": "Group 722 (整体截图)",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/53d69b9a-ccc2-4588-8dd2-c7c0147c5c7a",
+      "localPath": "figma-export-20260523165611/images/full-selection-19413-1599.png"
+    },
+    {
+      "nodeId": "19413:1600",
+      "nodeName": "Frame 1272636732",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/98c73cd4-4d15-4de8-b938-44c0ecc69ce0",
+      "localPath": "figma-export-20260523165611/images/Frame-1272636732-19413-1600.png"
+    },
+    {
+      "nodeId": "19413:1602",
+      "nodeName": "Frame 739",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/923ae421-0977-4dde-b0b8-7e6591417a62",
+      "localPath": "figma-export-20260523165611/images/Frame-739-19413-1602.png"
+    },
+    {
+      "nodeId": "19413:1603",
+      "nodeName": "Frame 1272636628",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/29f782a1-8083-4179-a7dd-761a0916e9cb",
+      "localPath": "figma-export-20260523165611/images/Frame-1272636628-19413-1603.png"
+    },
+    {
+      "nodeId": "19413:1603",
+      "nodeName": "Frame 1272636628",
+      "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/29f782a1-8083-4179-a7dd-761a0916e9cb",
+      "localPath": "figma-export-20260523165611/images/Frame-1272636628-19413-1603.png"
+    }
+  ]
+}

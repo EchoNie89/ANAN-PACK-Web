@@ -8,6 +8,10 @@ import { products } from "../../data/home";
 <section id="products" class="bg-white py-16 md:py-24">
   <Container>
     <SectionTitle eyebrow="Product Categories" title="Explore Our Product Range" />
+    <p class="mx-auto mt-5 max-w-[760px] text-center text-[20px] leading-relaxed text-[#666666]">
+      From labels and patches to packaging bags and custom tissue paper,
+      discover the key categories we manufacture for fashion and lifestyle brands.
+    </p>
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {products.map((product) => <ImageCard {...product} />)}
     </div>

@@ -1,11 +1,11 @@
 ---
-import Badge from "../ui/Badge.astro";
-import Button from "../ui/Button.astro";
-import Container from "../ui/Container.astro";
-import LocalImage from "../ui/LocalImage.astro";
-import { getLocalImage } from "../../lib/local-images";
+import Badge from '../ui/Badge.astro';
+import Button from '../ui/Button.astro';
+import Container from '../ui/Container.astro';
+import LocalImage from '../ui/LocalImage.astro';
+import { getLocalImage } from '../../lib/local-images';
 
-const aboutFactoryImage = getLocalImage("/images/home/about-factory.png");
+const aboutFactoryImage = getLocalImage('/images/home/about-factory.png');
 ---
 
 <section id="about" class="bg-white py-16 md:py-24">
@@ -14,16 +14,40 @@ const aboutFactoryImage = getLocalImage("/images/home/about-factory.png");
       <div class="max-w-xl">
         <Badge>About Us</Badge>
         <div class="mt-4 h-0.5 w-12 bg-brand"></div>
-        <h2 class="mt-7 text-3xl font-extrabold leading-tight text-ink md:text-4xl">
+        <h2
+          class="mt-7 text-3xl font-extrabold leading-tight text-ink md:text-4xl"
+        >
           ABC Company, Founded in 2023. Built On A Decade Of Expertise
         </h2>
         <p class="mt-6 text-sm leading-7 text-text-muted md:text-base">
-          We started Senye with a simple mission: to bridge the gap between creative designs and factory production. While big factories chase big orders, we focus on emerging brands. We bring you premium garment trims and soft packaging with the flexibility you need and the quality you deserve.
+          We started Senye with a simple mission: to bridge the gap between
+          creative designs and factory production. While big factories chase big
+          orders, we focus on emerging brands. We bring you premium garment
+          trims and soft packaging with the flexibility you need and the quality
+          you deserve.
         </p>
         <div class="mt-9">
-          <Button href="/about-us" variant="secondary" class="bg-brand-soft/55">
-            Learn More About Us -&gt;
-          </Button>
+          <a
+            href="/about-us"
+            class="inline-flex h-[47px] w-[258px] items-center justify-center rounded-[8px] bg-[#E6DBCB] text-[16px] font-semibold text-[#333333] transition hover:bg-[#d4c9b5]"
+          >
+            <span class="mr-2">Learn more about us </span>
+
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14"></path>
+              <path d="m13 5 7 7-7 7"></path>
+            </svg>
+          </a>
         </div>
       </div>
       <div class="overflow-hidden rounded-panel bg-surface-muted shadow-card">
