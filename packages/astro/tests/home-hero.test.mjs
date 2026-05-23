@@ -44,8 +44,20 @@ test("home hero matches the approved redesign content and structure", () => {
 
   assert.match(
     source,
-    /md:min-h-\[766px\]/,
-    "Expected the desktop hero height to be tuned to the Figma composition instead of the old generic height",
+    /md:min-h-\[680px\]/,
+    "Expected the desktop hero height to be reduced for a less tall background image presentation",
+  );
+
+  assert.match(
+    source,
+    /md:max-w-\[48rem\]/,
+    "Expected the desktop hero content block to widen so each headline line carries more text",
+  );
+
+  assert.match(
+    source,
+    /md:text-\[3\.5rem\]/,
+    "Expected the desktop hero headline to be slightly smaller than the previous 64px treatment",
   );
 
   assert.match(
