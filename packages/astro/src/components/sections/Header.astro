@@ -116,13 +116,30 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
       }
     </nav>
 
-    <details class="relative lg:hidden">
-      <summary class="flex cursor-pointer list-none items-center rounded-button border border-border px-4 py-2 text-xs font-bold uppercase text-ink">
+    <div class="relative lg:hidden" data-mobile-nav data-open="false">
+      <button
+        type="button"
+        class="relative z-[60] flex cursor-pointer items-center rounded-button border border-border px-4 py-2 text-xs font-bold uppercase text-ink"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+        data-mobile-nav-trigger
+      >
         Menu
-      </summary>
+      </button>
+      <button
+        type="button"
+        class="fixed inset-0 top-16 z-40 bg-black/18 backdrop-blur-[1px]"
+        aria-label="Close navigation menu"
+        data-mobile-nav-backdrop
+        hidden
+      ></button>
       <nav
-        class="absolute right-0 top-12 grid max-h-[75vh] w-72 gap-2 overflow-y-auto rounded-panel border border-border bg-white p-4 text-sm font-semibold shadow-soft"
+        id="mobile-navigation"
+        class="fixed inset-x-4 top-[72px] z-50 grid max-h-[calc(100dvh-96px)] gap-2 overflow-y-auto overscroll-contain rounded-panel border border-border bg-white p-4 text-sm font-semibold shadow-soft sm:left-auto sm:w-72"
         aria-label="Mobile navigation"
+        data-mobile-nav-panel
+        hidden
       >
         {
           navItems.map((item) =>
@@ -207,7 +224,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
           )
         }
       </nav>
-    </details>
+    </div>
   </Container>
 </header>
 
@@ -286,5 +303,61 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
 
     window.addEventListener("hashchange", syncActiveMenuLinks);
     syncActiveMenuLinks();
+  }
+
+  const mobileNav = document.querySelector("[data-mobile-nav]");
+
+  if (mobileNav instanceof HTMLElement) {
+    const mobileNavTrigger = mobileNav.querySelector("[data-mobile-nav-trigger]");
+    const mobileNavPanel = mobileNav.querySelector("[data-mobile-nav-panel]");
+    const mobileNavBackdrop = mobileNav.querySelector("[data-mobile-nav-backdrop]");
+    const mobileNavLinks = Array.from(mobileNav.querySelectorAll("a"));
+
+    const setMobileNavOpen = (isOpen) => {
+      mobileNav.dataset.open = String(isOpen);
+      document.documentElement.classList.toggle("overflow-hidden", isOpen);
+      document.body.classList.toggle("overflow-hidden", isOpen);
+
+      if (mobileNavTrigger instanceof HTMLButtonElement) {
+        mobileNavTrigger.setAttribute("aria-expanded", String(isOpen));
+      }
+
+      if (mobileNavBackdrop instanceof HTMLButtonElement) {
+        mobileNavBackdrop.hidden = !isOpen;
+      }
+
+      if (mobileNavPanel instanceof HTMLElement) {
+        mobileNavPanel.hidden = !isOpen;
+      }
+    };
+
+    const closeMobileNav = () => {
+      if (mobileNav.dataset.open !== "true") return;
+      setMobileNavOpen(false);
+    };
+
+    if (mobileNavTrigger instanceof HTMLButtonElement) {
+      mobileNavTrigger.addEventListener("click", () => {
+        setMobileNavOpen(mobileNav.dataset.open !== "true");
+      });
+    }
+
+    if (mobileNavBackdrop instanceof HTMLButtonElement) {
+      mobileNavBackdrop.addEventListener("click", closeMobileNav);
+    }
+
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", closeMobileNav);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMobileNav();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024) closeMobileNav();
+    });
+
+    setMobileNavOpen(false);
   }
 </script>

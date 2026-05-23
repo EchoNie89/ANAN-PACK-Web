@@ -51,7 +51,7 @@ const hasAfterContentSlot = Astro.slots.has("afterContent");
   <div
     class={`absolute inset-0 ${
       isBlogIndex
-        ? "bg-[linear-gradient(90deg,rgba(235,230,222,0.92)_0%,rgba(235,230,222,0.72)_34%,rgba(235,230,222,0.2)_62%,rgba(235,230,222,0)_100%)]"
+        ? "bg-[linear-gradient(180deg,rgba(235,230,222,0.94)_0%,rgba(235,230,222,0.82)_34%,rgba(235,230,222,0.34)_72%,rgba(235,230,222,0.12)_100%)] md:bg-[linear-gradient(90deg,rgba(235,230,222,0.92)_0%,rgba(235,230,222,0.72)_34%,rgba(235,230,222,0.2)_62%,rgba(235,230,222,0)_100%)]"
         : isCentered
           ? "bg-[linear-gradient(180deg,rgba(26,20,12,0.16),rgba(26,20,12,0.4))]"
           : "bg-[linear-gradient(90deg,rgba(26,20,12,0.58),rgba(26,20,12,0.18))]"
@@ -61,7 +61,7 @@ const hasAfterContentSlot = Astro.slots.has("afterContent");
   <Container
     class={`relative !max-w-[1200px] ${
       isBlogIndex
-        ? "min-h-[620px] pb-[52px] pt-[32px] lg:flex lg:h-full lg:min-h-0 lg:flex-col lg:pb-10 lg:pt-8"
+        ? "min-h-[470px] pb-8 pt-6 sm:min-h-[540px] sm:pb-10 sm:pt-8 lg:flex lg:h-full lg:min-h-0 lg:flex-col lg:pb-10 lg:pt-8"
         : "pb-12 pt-28 md:pb-16 md:pt-36"
     }`}
   >
@@ -75,16 +75,16 @@ const hasAfterContentSlot = Astro.slots.has("afterContent");
       />
     </div>
 
-    <div class={isBlogIndex ? "mx-auto mt-[72px] max-w-4xl text-center lg:mt-14" : isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
+    <div class={isBlogIndex ? "mx-auto mt-10 max-w-4xl text-center sm:mt-14 lg:mt-14" : isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
       {eyebrow && <p class="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-white/80">{eyebrow}</p>}
-      <h1 class={`font-display text-white ${isBlogIndex ? "text-[34px] font-black leading-[1.05] md:text-[52px]" : isCentered ? "mt-5 text-4xl font-extrabold md:text-5xl" : "mt-5 text-4xl font-black md:text-[48px] md:leading-[1.08]"}`}>
+      <h1 class={`font-display text-white ${isBlogIndex ? "text-[2.25rem] font-black leading-[1.02] tracking-[-0.03em] sm:text-[2.5rem] md:text-[52px]" : isCentered ? "mt-5 text-4xl font-extrabold md:text-5xl" : "mt-5 text-4xl font-black md:text-[48px] md:leading-[1.08]"}`}>
         {title}
       </h1>
       {description && (
         <p
           class={`text-white/95 ${
             isBlogIndex
-              ? "mx-auto mt-[18px] max-w-4xl text-[18px] font-medium leading-[1.25] md:text-[20px]"
+              ? "mx-auto mt-4 max-w-[22rem] text-[1rem] font-medium leading-[1.35] sm:max-w-[30rem] sm:text-[1.125rem] md:max-w-4xl md:text-[20px]"
               : isCentered
                 ? "mx-auto mt-4 max-w-2xl text-base leading-7 text-white/85 md:text-lg"
                 : "mt-4 max-w-2xl text-base leading-7 text-white/85 md:text-lg"
@@ -97,7 +97,7 @@ const hasAfterContentSlot = Astro.slots.has("afterContent");
 
     {
       hasAfterContentSlot && (
-        <div class={isBlogIndex ? "mt-[110px] lg:mt-auto lg:pt-10" : "mt-12"}>
+        <div class={isBlogIndex ? "mt-12 sm:mt-16 lg:mt-auto lg:pt-10" : "mt-12"}>
           <slot name="afterContent" />
         </div>
       )
