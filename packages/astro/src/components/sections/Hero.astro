@@ -1,56 +1,87 @@
 ---
-import Button from '../ui/Button.astro';
-import Container from '../ui/Container.astro';
-import LocalImage from '../ui/LocalImage.astro';
-import { getLocalImage } from '../../lib/local-images';
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+import LocalImage from "../ui/LocalImage.astro";
+import { getLocalImage } from "../../lib/local-images";
 
-const heroImage = getLocalImage('/images/home/hero-packaging.png');
+const heroImage = getLocalImage("/images/home/hero-packaging.png");
+
+const heroContent = {
+  eyebrow: "PACKAGING & TRIMS SOURCING PARTNER",
+  titleLines: [
+    "One-Stop Packaging & Trims",
+    "Supply Chain Partner For Fashion, Home",
+    "Textile, And Lifestyle Brands.",
+  ],
+  description:
+    "From hang tags and woven labels to bags, stickers, and tissue paper, we coordinate sourcing, development, sampling, and quality control for your brand.",
+  primaryCta: {
+    label: "REQUEST A QUOTE",
+    href: "/contact-us#project-form",
+  },
+  secondaryCta: {
+    label: "EXPLORE SOLUTIONS",
+    href: "#solutions",
+  },
+};
 ---
 
-<section class="relative overflow-hidden bg-[#ded2bd]">
+<section class="relative isolate overflow-hidden bg-[#d7c5af] lg:h-[calc(100dvh-88px)]">
   <div class="absolute inset-0">
     <LocalImage
       src={heroImage}
       alt="Custom packaging, tags, ribbons, and cotton bags arranged on a table"
-      class="size-full object-cover object-center"
+      class="size-full object-cover object-[72%_center] md:object-center"
       loading="eager"
       sizes="100vw"
       widths={[640, 960, 1280, 1600, 1920]}
       priority
     />
     <div
-      class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-white/10"
-    >
-    </div>
+      class="absolute inset-0 bg-[linear-gradient(107deg,rgba(11,22,13,0.76)_0%,rgba(30,40,25,0.62)_22%,rgba(92,81,61,0.26)_49%,rgba(255,250,243,0)_76%)]"
+    ></div>
   </div>
 
   <Container
-    class="relative flex min-h-[560px] items-center py-20 md:min-h-[650px]"
+    class="relative flex min-h-[560px] items-end pb-14 pt-24 md:min-h-[680px] md:items-start md:pb-[112px] md:pt-[206px] lg:h-full lg:min-h-0 lg:pt-24 lg:pb-16"
   >
-    <div class="max-w-2xl text-white">
-      <p class="text-xs font-bold uppercase tracking-[0.18em]">
-        Custom Manufacturer
-      </p>
-      <h1
-        class="mt-7 max-w-xl text-4xl font-extrabold leading-tight tracking-tight md:text-6xl"
-      >
-        One-Stop Packaging & Trims Supply Chain Partner For fashion, home
-        textile, and lifestyle brands.
-      </h1>
+    <div class="max-w-[40rem] text-white md:max-w-[48rem]">
       <p
-        class="mt-7 max-w-xl text-base font-medium leading-8 text-white/86 md:text-lg"
+        class="text-[0.8125rem] font-extrabold uppercase tracking-[0.12em] text-[#fff5ea] md:text-[1.25rem] md:tracking-[0.02em]"
       >
-        Hang Tags / Woven Labels / Packaging Bags / Patches. Factory-direct
-        sourcing with Low MOQ and 72h Sampling.
+        {heroContent.eyebrow}
       </p>
-      <div class="mt-9 flex flex-col gap-4 sm:flex-row">
-        <Button href="/contact-us#project-form">Request a Quote</Button>
+
+      <h1
+        class="mt-5 max-w-[61rem] font-display text-[2.125rem] font-black leading-[1.12] tracking-[-0.02em] text-[#fffffc] md:mt-6 md:text-[3.5rem] md:leading-[1.15]"
+      >
+        {
+          heroContent.titleLines.map((line) => (
+            <span class="block">{line}</span>
+          ))
+        }
+      </h1>
+
+      <p
+        class="mt-6 max-w-[40rem] text-lg leading-7 text-white/92 md:mt-7 md:max-w-[700px] md:text-[1.375rem] md:leading-[1.32]"
+      >
+        {heroContent.description}
+      </p>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:mt-9">
         <Button
-          href="#solutions"
-          variant="secondary"
-          class="bg-white/20 text-white hover:bg-white/30"
+          href={heroContent.primaryCta.href}
+          variant="primary"
+          class="!h-10 !w-full !min-w-[195px] !px-6 !py-0 !text-sm !font-semibold !tracking-[0.01em] shadow-[0_4px_10px_rgba(0,0,0,0.24)] sm:!w-auto"
         >
-          Explore Solutions
+          {heroContent.primaryCta.label}
+        </Button>
+        <Button
+          href={heroContent.secondaryCta.href}
+          variant="primary"
+          class="!h-10 !w-full !min-w-[207px] !px-6 !py-0 !text-sm !font-semibold !tracking-[0.01em] shadow-[0_4px_10px_rgba(0,0,0,0.24)] sm:!w-auto"
+        >
+          {heroContent.secondaryCta.label}
         </Button>
       </div>
     </div>

@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "node --test tests/contact-form-integration.test.mjs tests/image-optimization.test.mjs tests/site-settings.test.mjs tests/testimonials-figma.test.mjs",
+    "test": "node --test --test-concurrency=1 tests/contact-form-integration.test.mjs tests/home-hero.test.mjs tests/page-hero-viewport.test.mjs tests/image-optimization.test.mjs tests/site-settings.test.mjs tests/testimonials-figma.test.mjs",
     "test:images": "node --test tests/image-optimization.test.mjs tests/site-settings.test.mjs"
   },
   "dependencies": {

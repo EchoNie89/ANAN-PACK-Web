@@ -60,7 +60,7 @@ const buttonClass = isLeft
     } md:mt-0 md:-translate-x-1/2`;
 ---
 
-<section class="relative isolate overflow-hidden bg-ink text-white md:h-[474px]">
+<section class="relative isolate overflow-hidden bg-ink text-white md:h-[474px] lg:h-[calc(100dvh-88px)]">
   <SanityImage
     image={heroImage}
     class="absolute inset-0 -z-20 size-full object-cover"
@@ -71,7 +71,7 @@ const buttonClass = isLeft
   />
   <div class={`absolute inset-0 -z-10 ${overlayClass}`}></div>
 
-  <Container class="relative min-h-[520px] !max-w-[1200px] py-8 md:h-[474px] md:min-h-0 md:py-0">
+  <Container class="relative min-h-[520px] !max-w-[1200px] py-8 md:h-[474px] md:min-h-0 md:py-0 lg:h-full lg:min-h-0">
     <nav class={`flex flex-wrap items-center text-xs capitalize md:absolute md:left-8 md:top-[41px] md:text-sm ${navClass}`} aria-label="Breadcrumb">
       <a href="/home" class={navLinkClass}>Home</a>
       <span class="px-2 md:px-3">&gt;</span>

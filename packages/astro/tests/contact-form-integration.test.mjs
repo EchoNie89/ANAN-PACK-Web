@@ -95,7 +95,7 @@ test("package test script includes the contact regression in the standard test p
 
   assert.match(
     packageSource,
-    /"test":\s*"node --test tests\/contact-form-integration\.test\.mjs tests\/image-optimization\.test\.mjs tests\/site-settings\.test\.mjs tests\/testimonials-figma\.test\.mjs"/,
+    /"test":\s*"node --test --test-concurrency=1 tests\/contact-form-integration\.test\.mjs tests\/home-hero\.test\.mjs tests\/page-hero-viewport\.test\.mjs tests\/image-optimization\.test\.mjs tests\/site-settings\.test\.mjs tests\/testimonials-figma\.test\.mjs"/,
     "Expected pnpm test to run the contact regression with the existing package-level tests",
   );
 });

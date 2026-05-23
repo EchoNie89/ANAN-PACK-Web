@@ -12,7 +12,7 @@ const menuItems = [
 const heroImage = getLocalImage("/images/about/about-hero.png");
 ---
 
-<section class="relative overflow-hidden bg-page-muted">
+<section class="relative overflow-hidden bg-page-muted lg:h-[calc(100dvh-88px)]">
   <LocalImage
     src={heroImage}
     alt="Premium packaging collection arranged in a modern showroom"
@@ -23,7 +23,7 @@ const heroImage = getLocalImage("/images/about/about-hero.png");
     priority
   />
   <div class="absolute inset-0 bg-white/5"></div>
-  <Container class="!max-w-[1200px] px-4 py-20 sm:px-6 md:py-24 lg:min-h-[474px] lg:px-8 lg:py-28">
+  <Container class="!max-w-[1200px] px-4 py-20 sm:px-6 md:py-24 lg:h-full lg:min-h-0 lg:px-8 lg:py-24">
     <div>
       <div class="max-w-[530px] rounded-soft bg-white/54 p-6 backdrop-blur-[2px] lg:mt-12 lg:bg-transparent lg:p-0 lg:backdrop-blur-0">
         <h1 class="font-display text-4xl font-black leading-tight tracking-[-0.03em] text-[#111827] md:text-5xl">
