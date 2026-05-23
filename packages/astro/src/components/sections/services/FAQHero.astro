@@ -4,7 +4,7 @@ import LocalImage from "../../ui/LocalImage.astro";
 import { faqHero } from "../../../data/services";
 ---
 
-<section class="relative isolate overflow-hidden bg-[#dbdbdb]">
+<section class="relative isolate overflow-hidden bg-[#dbdbdb] lg:h-[calc(100dvh-88px)]">
   <LocalImage
     src={faqHero.image}
     alt={faqHero.alt}
@@ -15,7 +15,7 @@ import { faqHero } from "../../../data/services";
     priority
   />
   <div class="absolute inset-0 z-0 bg-[#8d8476]/25"></div>
-  <Container class="relative z-10 flex min-h-[474px] items-center py-16 lg:!max-w-[1200px]">
+  <Container class="relative z-10 flex min-h-[474px] items-center py-16 lg:h-full lg:min-h-0 lg:!max-w-[1200px]">
     <div class="max-w-4xl text-white">
       <h1 class="font-display text-4xl font-black leading-tight tracking-normal md:text-5xl">
         {faqHero.title}

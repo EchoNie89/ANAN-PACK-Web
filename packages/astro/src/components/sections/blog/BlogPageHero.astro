@@ -37,7 +37,7 @@ const isBlogIndex = variant === "blog-index";
 const hasAfterContentSlot = Astro.slots.has("afterContent");
 ---
 
-<section class="relative isolate overflow-hidden">
+<section class={`relative isolate overflow-hidden ${isBlogIndex ? "lg:h-[calc(100dvh-88px)]" : ""}`}>
   <LocalImage
     src={backgroundImage}
     alt=""
@@ -61,7 +61,7 @@ const hasAfterContentSlot = Astro.slots.has("afterContent");
   <Container
     class={`relative !max-w-[1200px] ${
       isBlogIndex
-        ? "min-h-[620px] pb-[52px] pt-[32px]"
+        ? "min-h-[620px] pb-[52px] pt-[32px] lg:flex lg:h-full lg:min-h-0 lg:flex-col lg:pb-10 lg:pt-8"
         : "pb-12 pt-28 md:pb-16 md:pt-36"
     }`}
   >
@@ -75,7 +75,7 @@ const hasAfterContentSlot = Astro.slots.has("afterContent");
       />
     </div>
 
-    <div class={isBlogIndex ? "mx-auto mt-[72px] max-w-4xl text-center" : isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
+    <div class={isBlogIndex ? "mx-auto mt-[72px] max-w-4xl text-center lg:mt-14" : isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
       {eyebrow && <p class="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-white/80">{eyebrow}</p>}
       <h1 class={`font-display text-white ${isBlogIndex ? "text-[34px] font-black leading-[1.05] md:text-[52px]" : isCentered ? "mt-5 text-4xl font-extrabold md:text-5xl" : "mt-5 text-4xl font-black md:text-[48px] md:leading-[1.08]"}`}>
         {title}
@@ -97,7 +97,7 @@ const hasAfterContentSlot = Astro.slots.has("afterContent");
 
     {
       hasAfterContentSlot && (
-        <div class={isBlogIndex ? "mt-[110px]" : "mt-12"}>
+        <div class={isBlogIndex ? "mt-[110px] lg:mt-auto lg:pt-10" : "mt-12"}>
           <slot name="afterContent" />
         </div>
       )
