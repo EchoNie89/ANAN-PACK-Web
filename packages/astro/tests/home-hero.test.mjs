@@ -44,8 +44,26 @@ test("home hero matches the approved redesign content and structure", () => {
 
   assert.match(
     source,
+    /section class="[^"]*lg:h-\[calc\(100dvh-88px\)\]/,
+    "Expected the hero section itself to own the desktop viewport-height sizing beneath the sticky 88px header",
+  );
+
+  assert.match(
+    source,
+    /lg:h-full lg:min-h-0/,
+    "Expected the inner hero container to stretch to the section height instead of competing with it via a desktop min-height",
+  );
+
+  assert.doesNotMatch(
+    source,
     /lg:min-h-\[calc\(100dvh-88px\)\]/,
-    "Expected the desktop hero to fill the remaining viewport height beneath the sticky 88px header",
+    "Expected the desktop viewport-height rule to move off the inner container so it can take effect on the visible hero block",
+  );
+
+  assert.match(
+    source,
+    /lg:pt-24 lg:pb-16/,
+    "Expected the desktop hero to reduce its vertical padding so the content can fit inside the viewport-driven height on common laptop screens",
   );
 
   assert.match(
