@@ -129,7 +129,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
       </button>
       <button
         type="button"
-        class="fixed inset-0 top-16 z-40 bg-black/18 backdrop-blur-[1px]"
+        class="fixed inset-x-0 bottom-0 top-16 z-40 bg-black/18 backdrop-blur-[1px]"
         aria-label="Close navigation menu"
         data-mobile-nav-backdrop
         hidden
@@ -145,7 +145,11 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
           navItems.map((item) =>
             item.label === "Products" ? (
               <details class="rounded px-2 py-2 hover:bg-surface-muted">
-                <summary class="flex cursor-pointer list-none items-center justify-between text-brand">
+                <summary
+                  class={`flex cursor-pointer list-none items-center justify-between ${
+                    activeNav === "Products" ? "text-brand" : "text-ink"
+                  }`}
+                >
                   Products
                   <svg viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="m4 6 4 4 4-4" />
@@ -156,7 +160,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                     <a
                       href={product.href}
                       class={`flex items-center gap-3 rounded p-2 ${
-                        isCurrentPath(product.href) ? "bg-brand-soft/60 text-brand" : "text-text-main"
+                        isCurrentPath(product.href) ? "bg-brand-soft/60 text-brand" : "text-text-main hover:bg-surface-muted"
                       }`}
                     >
                       <LocalImage
@@ -174,7 +178,11 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
               </details>
             ) : item.label === "Solutions" ? (
               <details class="rounded px-2 py-2 hover:bg-surface-muted" open={openMenu === "solutions"}>
-                <summary class="flex cursor-pointer list-none items-center justify-between text-brand">
+                <summary
+                  class={`flex cursor-pointer list-none items-center justify-between ${
+                    activeNav === "Solutions" ? "text-brand" : "text-ink"
+                  }`}
+                >
                   Solutions
                   <svg viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="m4 6 4 4 4-4" />
@@ -185,11 +193,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                     <a
                       href={solution.href}
                       class={`rounded px-3 py-2 ${
-                        solution.tone === "tan"
-                          ? "bg-[#d4aa77] text-white"
-                          : solution.tone === "highlight"
-                            ? "bg-[#ffc76e] text-black"
-                            : "text-text-main"
+                        isCurrentPath(solution.href) ? "bg-brand-soft/60 text-brand" : "text-text-main hover:bg-surface-muted"
                       }`}
                     >
                       {solution.title}
@@ -199,7 +203,11 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
               </details>
             ) : item.label === "Services" ? (
               <details class="rounded px-2 py-2 hover:bg-surface-muted" open={activeNav === "Services" || openMenu === "services"}>
-                <summary class="flex cursor-pointer list-none items-center justify-between text-brand">
+                <summary
+                  class={`flex cursor-pointer list-none items-center justify-between ${
+                    activeNav === "Services" ? "text-brand" : "text-ink"
+                  }`}
+                >
                   Services
                   <svg viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="m4 6 4 4 4-4" />
@@ -210,7 +218,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                     <a
                       href={service.href}
                       class={`rounded px-3 py-2 ${
-                        service.tone === "tan" ? "bg-[#d4aa77] text-white" : "bg-[#fffffa] text-text-main"
+                        isCurrentPath(service.href) ? "bg-brand-soft/60 text-brand" : "text-text-main hover:bg-surface-muted"
                       }`}
                     >
                       {service.title}
@@ -219,7 +227,14 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                 </div>
               </details>
             ) : (
-              <a class="rounded px-2 py-2 hover:bg-surface-muted" href={item.href}>{item.label}</a>
+              <a
+                class={`rounded px-2 py-2 ${
+                  activeNav === item.label ? "bg-brand-soft/60 text-brand" : "text-ink hover:bg-surface-muted"
+                }`}
+                href={item.href}
+              >
+                {item.label}
+              </a>
             )
           )
         }
@@ -315,8 +330,6 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
 
     const setMobileNavOpen = (isOpen) => {
       mobileNav.dataset.open = String(isOpen);
-      document.documentElement.classList.toggle("overflow-hidden", isOpen);
-      document.body.classList.toggle("overflow-hidden", isOpen);
 
       if (mobileNavTrigger instanceof HTMLButtonElement) {
         mobileNavTrigger.setAttribute("aria-expanded", String(isOpen));
@@ -348,6 +361,17 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
 
     mobileNavLinks.forEach((link) => {
       link.addEventListener("click", closeMobileNav);
+    });
+
+    document.addEventListener("pointerdown", (event) => {
+      if (mobileNav.dataset.open !== "true") return;
+
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      if (target.closest("[data-mobile-nav-panel]")) return;
+      if (target.closest("[data-mobile-nav-trigger]")) return;
+
+      closeMobileNav();
     });
 
     document.addEventListener("keydown", (event) => {
