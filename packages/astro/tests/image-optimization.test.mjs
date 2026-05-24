@@ -90,13 +90,7 @@ test("solutions pages optimize local imagery", () => {
 
   for (const pagePath of pagePaths) {
     const html = readBuiltHtml(pagePath);
-    const rawPaths = ["/images/solutions/"];
-
-    if (pagePath === "solutions/index.html") {
-      rawPaths.push("/images/home/solution-cosmetics-hero.png");
-    }
-
-    assertUsesAstroAssets(html, rawPaths);
+    assertNoRawRasterImagePaths(html, pagePath);
   }
 });
 

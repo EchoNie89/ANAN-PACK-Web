@@ -72,7 +72,11 @@ const buttonClass = isLeft
   <div class={`absolute inset-0 -z-10 ${overlayClass}`}></div>
 
   <Container class="relative z-10 flex flex-col !max-w-[1200px] py-8 md:h-[474px] md:py-0">
-    <nav class={`flex flex-wrap items-center text-xs capitalize md:absolute md:left-8 md:top-[41px] md:text-sm ${navClass}`} aria-label="Breadcrumb">
+    <nav
+      class={`motion-enter flex flex-wrap items-center text-xs capitalize md:absolute md:left-8 md:top-[41px] md:text-sm ${navClass}`}
+      aria-label="Breadcrumb"
+      style="--motion-delay: 80ms;"
+    >
       <a href="/" class={navLinkClass}>Home</a>
       <span class="px-2 md:px-3">&gt;</span>
       <a href="/#products" class={navLinkClass}>Products</a>
@@ -81,7 +85,10 @@ const buttonClass = isLeft
     </nav>
 
     <div class={contentClass}>
-      <h1 class={`font-display text-[32px] font-black leading-[1.15] tracking-tight md:text-[40px] md:leading-[51px] ${titleClass}`}>
+      <h1
+        class={`motion-enter font-display text-[32px] font-black leading-[1.15] tracking-tight md:text-[40px] md:leading-[51px] ${titleClass}`}
+        style="--motion-delay: 160ms;"
+      >
         {
           heroTitleLines?.length
             ? heroTitleLines.map((line, index) => (
@@ -94,14 +101,17 @@ const buttonClass = isLeft
       </h1>
       {
         subtitle && (
-          <p class={`mt-3 max-w-[1055px] text-base font-medium leading-6 md:text-[22px] md:leading-6 ${isLeft ? "" : "mx-auto"} ${subtitleClass}`}>
+          <p
+            class={`motion-enter mt-3 max-w-[1055px] text-base font-medium leading-6 md:text-[22px] md:leading-6 ${isLeft ? "" : "mx-auto"} ${subtitleClass}`}
+            style="--motion-delay: 240ms;"
+          >
             {subtitle}
           </p>
         )
       }
     </div>
 
-    <div class={buttonClass}>
+    <div class={`motion-enter ${buttonClass}`} style="--motion-delay: 320ms;">
       <Button href="/contact-us#project-form" variant="soft" class="h-10 w-full max-w-[220px] !px-4 !py-0 text-sm font-semibold !normal-case !tracking-normal shadow-[0_4px_2px_rgba(0,0,0,0.25)] sm:w-[195px] md:text-base">
         Request A Quote
       </Button>

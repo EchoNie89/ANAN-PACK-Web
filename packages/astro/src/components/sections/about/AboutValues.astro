@@ -7,11 +7,17 @@ import { aboutValues } from "../../../data/company";
 
 <section class="bg-white py-16 md:py-24">
   <Container class="!max-w-[1200px]">
-    <SectionTitle eyebrow="OUR VALUES" title="How We Work With Growing Brands." align="center" />
+    <div data-reveal>
+      <SectionTitle eyebrow="OUR VALUES" title="How We Work With Growing Brands." align="center" />
+    </div>
     <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
       {
-        aboutValues.map((item) => (
-          <article class="relative rounded-soft border-b-2 border-black bg-surface-panel px-6 pb-8 pt-14 shadow-card">
+        aboutValues.map((item, index) => (
+          <article
+            class="motion-hover-card relative rounded-soft border-b-2 border-black bg-surface-panel px-6 pb-8 pt-14 shadow-card"
+            data-reveal
+            style={`--reveal-delay: ${index * 80}ms;`}
+          >
             <div class="absolute left-1/2 top-0 flex size-[78px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_4px_5px_rgba(0,0,0,0.05)]">
               <SymbolIcon name="check" class="size-9 text-brand" />
             </div>

@@ -10,17 +10,19 @@ const columns = [
 
 <section class="bg-[#f5f6fa] py-16 md:py-20">
   <Container class="lg:!max-w-[1200px]">
-    <h2 class="text-center text-2xl font-extrabold text-ink md:text-3xl">
+    <h2 class="text-center text-2xl font-extrabold text-ink md:text-3xl" data-reveal>
       {sourcingComparison.title}
     </h2>
 
     <div class="mt-12 grid gap-5 lg:grid-cols-2">
       {
-        columns.map((column) => (
+        columns.map((column, index) => (
           <article
-            class={`relative overflow-hidden rounded-md border bg-white p-6 md:p-8 ${
+            class={`motion-hover-card relative overflow-hidden rounded-md border bg-white p-6 md:p-8 ${
               column.tone === "brand" ? "border-[#d4aa77]" : "border-[#e5e5e5]"
             }`}
+            data-reveal
+            style={`--reveal-delay: ${index * 90}ms;`}
           >
             {column.tone === "brand" && (
               <span class="absolute right-0 top-0 bg-[#d4aa77] px-5 py-2 text-xs font-bold text-white">
@@ -93,7 +95,11 @@ const columns = [
       }
     </div>
 
-    <div class="mt-8 flex items-center justify-center gap-3 bg-[#fbf1df] px-4 py-5 text-center text-sm font-semibold text-text-main">
+    <div
+      class="mt-8 flex items-center justify-center gap-3 bg-[#fbf1df] px-4 py-5 text-center text-sm font-semibold text-text-main"
+      data-reveal
+      style="--reveal-delay: 120ms;"
+    >
       <span class="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-[#c9852b] text-white" aria-hidden="true">
         <svg viewBox="0 0 20 20" class="size-5" fill="none" stroke="currentColor" stroke-width="1.8">
           <path d="M10 4v12" />

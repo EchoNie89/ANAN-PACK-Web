@@ -12,28 +12,33 @@ const { page } = Astro.props;
 
 <section class="bg-white py-14 md:py-20">
   <Container class="!max-w-[1200px]">
-    <h2 class="text-center font-display text-xl font-black tracking-[0.02em] text-ink md:text-[28px]">
+    <h2
+      class="text-center font-display text-xl font-black tracking-[0.02em] text-ink md:text-[28px]"
+      data-reveal
+    >
       {page.why.title}
     </h2>
     <div class="mt-10 grid items-start gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-14">
       <div class="grid gap-6">
         {
-          page.why.points.map((point) => (
-            <article>
+          page.why.points.map((point, index) => (
+            <article data-reveal style={`--reveal-delay: ${80 + index * 70}ms;`}>
               <h3 class="text-lg font-extrabold text-text-main md:text-xl">{point.title}</h3>
               <p class="mt-2 text-sm leading-7 text-text-muted md:text-[15px]">{point.description}</p>
             </article>
           ))
         }
       </div>
-      <LocalImage
-        src={page.why.image}
-        alt={page.why.alt}
-        class="aspect-[1.26] w-full rounded-sm object-cover"
-        loading="lazy"
-        sizes="(min-width: 1024px) 50vw, 100vw"
-        widths={[480, 720, 960, 1280]}
-      />
+      <div data-reveal style="--reveal-delay: 160ms;">
+        <LocalImage
+          src={page.why.image}
+          alt={page.why.alt}
+          class="aspect-[1.26] w-full rounded-sm object-cover"
+          loading="lazy"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          widths={[480, 720, 960, 1280]}
+        />
+      </div>
     </div>
   </Container>
 </section>

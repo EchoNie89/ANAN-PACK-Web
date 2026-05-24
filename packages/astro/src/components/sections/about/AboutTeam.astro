@@ -10,15 +10,21 @@ const teamMembers = await getAboutTeamMembers();
 
 <section class="bg-white py-16 md:py-24">
   <Container class="!max-w-[1200px]">
-    <SectionTitle
-      eyebrow="THE TEAM BEHIND EVERY PROJECT"
-      title="More Than a Supplier, We Are Your Supply Chain Partner."
-      align="center"
-    />
+    <div data-reveal>
+      <SectionTitle
+        eyebrow="THE TEAM BEHIND EVERY PROJECT"
+        title="More Than a Supplier, We Are Your Supply Chain Partner."
+        align="center"
+      />
+    </div>
     <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
       {
-        teamMembers.map((member) => (
-          <article class="text-center">
+        teamMembers.map((member, index) => (
+          <article
+            class="motion-hover-card text-center"
+            data-reveal
+            style={`--reveal-delay: ${index * 80}ms;`}
+          >
             <div class="overflow-hidden rounded-soft bg-white shadow-card">
               {
                 member.sanitySource ? (

@@ -7,15 +7,21 @@ import LocalImage from "../../ui/LocalImage.astro";
 
 <section class="bg-page-muted py-16 md:py-24">
   <Container class="!max-w-[1200px]">
-    <SectionTitle
-      eyebrow="SUSTAINABLE & CERTIFIED MATERIAL OPTIONS"
-      title="Supporting Your Brand’s Sustainability Goals."
-      align="center"
-    />
+    <div data-reveal>
+      <SectionTitle
+        eyebrow="SUSTAINABLE & CERTIFIED MATERIAL OPTIONS"
+        title="Supporting Your Brand’s Sustainability Goals."
+        align="center"
+      />
+    </div>
     <div class="mt-12 grid gap-8 md:grid-cols-3">
       {
-        aboutSustainability.map((item) => (
-          <article class="text-center">
+        aboutSustainability.map((item, index) => (
+          <article
+            class="motion-hover-card text-center"
+            data-reveal
+            style={`--reveal-delay: ${index * 80}ms;`}
+          >
             <div class="mx-auto flex h-32 items-center justify-center rounded-soft bg-white px-6 shadow-card">
               <LocalImage
                 src={item.image}

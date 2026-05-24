@@ -26,17 +26,24 @@ const heroImage = getLocalImage("/images/about/about-hero.png");
   <Container class="!max-w-[1200px] px-4 py-20 sm:px-6 md:py-24 lg:h-full lg:min-h-0 lg:px-8 lg:py-24">
     <div>
       <div class="max-w-[530px] rounded-soft bg-white/54 p-6 backdrop-blur-[2px] lg:mt-12 lg:bg-transparent lg:p-0 lg:backdrop-blur-0">
-        <h1 class="font-display text-4xl font-black leading-tight tracking-[-0.03em] text-[#111827] md:text-5xl">
+        <h1
+          class="motion-enter font-display text-4xl font-black leading-tight tracking-[-0.03em] text-[#111827] md:text-5xl"
+          style="--motion-delay: 100ms;"
+        >
           Your Packaging Supply Chain Partner In China
         </h1>
-        <p class="mt-5 max-w-[530px] text-base leading-8 text-[#4b5563]">
+        <p
+          class="motion-enter mt-5 max-w-[530px] text-base leading-8 text-[#4b5563]"
+          style="--motion-delay: 200ms;"
+        >
           We help apparel, home, and lifestyle brands manage packaging sourcing, production coordination, quality control, and delivery through one reliable system.
         </p>
       </div>
 
       <nav
-        class="mt-10 overflow-hidden rounded-none bg-surface-panel shadow-menu lg:absolute lg:left-[calc(50%+378px)] lg:top-0 lg:mt-0 lg:w-[226px] lg:-translate-x-1/2"
+        class="motion-enter mt-10 overflow-hidden rounded-none bg-surface-panel shadow-menu lg:absolute lg:left-[calc(50%+378px)] lg:top-0 lg:mt-0 lg:w-[226px] lg:-translate-x-1/2"
         aria-label="About page menu"
+        style="--motion-delay: 280ms;"
       >
         {
           menuItems.map((item) => (

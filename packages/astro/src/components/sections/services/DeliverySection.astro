@@ -17,18 +17,26 @@ const deliveryBackdrop = getLocalImage("/images/services/delivery-bg.png");
     widths={[640, 960, 1280, 1600]}
   />
   <Container class="relative z-10 lg:!max-w-[1200px]">
-    <div class="mx-auto max-w-5xl text-center">
+    <div class="mx-auto max-w-5xl text-center" data-reveal>
       <h2 class="text-3xl font-extrabold text-ink md:text-4xl">{delivery.title}</h2>
       <p class="mt-8 text-xl font-bold capitalize leading-8 text-text-muted md:text-2xl">
         {delivery.subtitle}
       </p>
     </div>
 
-    <div class="mx-auto mt-10 max-w-6xl space-y-6 text-sm leading-7 text-text-muted">
+    <div
+      class="mx-auto mt-10 max-w-6xl space-y-6 text-sm leading-7 text-text-muted"
+      data-reveal
+      style="--reveal-delay: 100ms;"
+    >
       {delivery.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
     </div>
 
-    <div class="mt-10 grid grid-cols-2 items-center gap-6 sm:grid-cols-3 lg:grid-cols-6">
+    <div
+      class="mt-10 grid grid-cols-2 items-center gap-6 sm:grid-cols-3 lg:grid-cols-6"
+      data-reveal
+      style="--reveal-delay: 180ms;"
+    >
       {
         delivery.partners.map((partner) => (
           <div class="flex h-16 items-center justify-center">

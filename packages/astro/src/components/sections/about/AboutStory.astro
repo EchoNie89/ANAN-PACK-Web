@@ -12,14 +12,16 @@ const storyPackingImage = getLocalImage("/images/about/about-story-packing.png")
   <Container class="!max-w-[1200px]">
     <div class="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
       <div class="space-y-8">
-        <SectionTitle
-          eyebrow="WE ARE ANAN PACK"
-          title="ANAN PACK is a packaging and trim supply chain partner for apparel, home textile, lifestyle, and e-commerce brands."
-          description="We focus on helping growing brands manage sourcing with more clarity and less friction. From hang tags and labels to packaging boxes, ribbons, and retail-ready kits, we bridge design intent with reliable manufacturing execution."
-          align="left"
-        />
+        <div data-reveal>
+          <SectionTitle
+            eyebrow="WE ARE ANAN PACK"
+            title="ANAN PACK is a packaging and trim supply chain partner for apparel, home textile, lifestyle, and e-commerce brands."
+            description="We focus on helping growing brands manage sourcing with more clarity and less friction. From hang tags and labels to packaging boxes, ribbons, and retail-ready kits, we bridge design intent with reliable manufacturing execution."
+            align="left"
+          />
+        </div>
         <div class="grid gap-6 sm:grid-cols-2">
-          <div class="overflow-hidden rounded-soft shadow-card">
+          <div class="overflow-hidden rounded-soft shadow-card" data-reveal style="--reveal-delay: 80ms;">
             <LocalImage
               src={storyFlatlayImage}
               alt="Custom hang tags, labels, and trim materials laid out on a work surface"
@@ -29,7 +31,11 @@ const storyPackingImage = getLocalImage("/images/about/about-story-packing.png")
               widths={[320, 480, 640, 800]}
             />
           </div>
-          <div class="overflow-hidden rounded-soft shadow-card sm:translate-y-10">
+          <div
+            class="overflow-hidden rounded-soft shadow-card sm:translate-y-10"
+            data-reveal
+            style="--reveal-delay: 160ms;"
+          >
             <LocalImage
               src={storyPackingImage}
               alt="A packaging shipment being checked and handed over"
@@ -42,7 +48,7 @@ const storyPackingImage = getLocalImage("/images/about/about-story-packing.png")
         </div>
       </div>
 
-      <div class="rounded-card bg-surface-muted p-7 md:p-9">
+      <div class="rounded-card bg-surface-muted p-7 md:p-9" data-reveal style="--reveal-delay: 120ms;">
         <SectionTitle
           eyebrow="WHY WE STARTED"
           title="We created this team to solve the real challenges of sourcing in China."

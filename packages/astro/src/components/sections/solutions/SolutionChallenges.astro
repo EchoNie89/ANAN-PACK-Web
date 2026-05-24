@@ -12,14 +12,21 @@ const { page } = Astro.props;
 
 <section class="bg-white py-12 md:py-16">
   <Container class="!max-w-[1200px]">
-    <h2 class="text-center font-display text-xl font-black tracking-[0.02em] text-ink md:text-[26px]">
+    <h2
+      class="text-center font-display text-xl font-black tracking-[0.02em] text-ink md:text-[26px]"
+      data-reveal
+    >
       {page.challenges.title}
     </h2>
     <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
       {
-        page.challenges.items.map((item) => (
-          <article class="text-center">
-            <div class="mx-auto flex size-16 items-center justify-center rounded-full bg-white shadow-card">
+        page.challenges.items.map((item, index) => (
+          <article
+            class="group text-center transition-transform duration-300"
+            data-reveal
+            style={`--reveal-delay: ${index * 80}ms;`}
+          >
+            <div class="mx-auto flex size-16 items-center justify-center rounded-full bg-white shadow-card transition duration-300 group-hover:-translate-y-1 group-hover:shadow-soft">
               <SolutionLineIcon icon={item.icon} />
             </div>
             <h3 class="mt-5 text-sm font-extrabold text-ink md:text-base">{item.title}</h3>

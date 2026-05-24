@@ -48,13 +48,15 @@ const heroContent = {
   >
     <div class="max-w-[22rem] text-white sm:max-w-[28rem] md:max-w-[56rem]">
       <p
-        class="text-[0.75rem] font-extrabold uppercase tracking-[0.1em] text-[#fff5ea] sm:text-[0.8125rem] md:text-[1.25rem] md:tracking-[0.02em]"
+        class="motion-enter text-[0.75rem] font-extrabold uppercase tracking-[0.1em] text-[#fff5ea] sm:text-[0.8125rem] md:text-[1.25rem] md:tracking-[0.02em]"
+        style="--motion-delay: 80ms;"
       >
         {heroContent.eyebrow}
       </p>
 
       <h1
-        class="mt-4 max-w-[61rem] font-display text-[1.95rem] font-black leading-[1.06] tracking-[-0.03em] text-[#fffffc] sm:mt-5 sm:text-[2.125rem] sm:leading-[1.1] md:mt-6 md:text-[3.25rem] md:leading-[1.15]"
+        class="motion-enter mt-4 max-w-[61rem] font-display text-[1.95rem] font-black leading-[1.06] tracking-[-0.03em] text-[#fffffc] sm:mt-5 sm:text-[2.125rem] sm:leading-[1.1] md:mt-6 md:text-[3.25rem] md:leading-[1.15]"
+        style="--motion-delay: 160ms;"
       >
         {
           heroContent.titleLines.map((line) => (
@@ -64,12 +66,16 @@ const heroContent = {
       </h1>
 
       <p
-        class="mt-5 max-w-[24rem] text-[1rem] leading-[1.5] text-white/92 sm:mt-6 sm:max-w-[32rem] sm:text-lg sm:leading-7 md:mt-7 md:max-w-[760px] md:text-[1.375rem] md:leading-[1.32]"
+        class="motion-enter mt-5 max-w-[24rem] text-[1rem] leading-[1.5] text-white/92 sm:mt-6 sm:max-w-[32rem] sm:text-lg sm:leading-7 md:mt-7 md:max-w-[760px] md:text-[1.375rem] md:leading-[1.32]"
+        style="--motion-delay: 240ms;"
       >
         {heroContent.description}
       </p>
 
-      <div class="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap md:mt-9">
+      <div
+        class="motion-enter mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap md:mt-9"
+        style="--motion-delay: 320ms;"
+      >
         <Button
           href={heroContent.primaryCta.href}
           variant="primary"

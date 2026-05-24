@@ -12,21 +12,30 @@ const { page } = Astro.props;
 
 <section class="bg-white py-14 md:py-20">
   <Container class="!max-w-[1200px]">
-    <h2 class="text-center font-display text-xl font-black tracking-[0.02em] text-ink md:text-[28px]">
+    <h2
+      class="text-center font-display text-xl font-black tracking-[0.02em] text-ink md:text-[28px]"
+      data-reveal
+    >
       {page.kit.title}
     </h2>
     <div class="mt-10 grid gap-8 md:grid-cols-3 md:gap-10">
       {
-        page.kit.items.map((item) => (
-          <article>
-            <LocalImage
-              src={item.image}
-              alt={item.alt}
-              class="aspect-[1.43] w-full rounded-sm object-cover"
-              loading="lazy"
-              sizes="(min-width: 768px) 33vw, 100vw"
-              widths={[320, 480, 640, 800]}
-            />
+        page.kit.items.map((item, index) => (
+          <article
+            class="group transition-transform duration-300 hover:-translate-y-1"
+            data-reveal
+            style={`--reveal-delay: ${index * 80}ms;`}
+          >
+            <div class="overflow-hidden rounded-sm">
+              <LocalImage
+                src={item.image}
+                alt={item.alt}
+                class="aspect-[1.43] w-full rounded-sm object-cover transition duration-500 group-hover:scale-[1.03]"
+                loading="lazy"
+                sizes="(min-width: 768px) 33vw, 100vw"
+                widths={[320, 480, 640, 800]}
+              />
+            </div>
             <div class="mt-5 text-center">
               <h3 class="font-display text-lg font-medium text-ink md:text-xl">{item.title}</h3>
               <p class="mx-auto mt-4 max-w-sm text-sm leading-7 text-text-muted">{item.description}</p>

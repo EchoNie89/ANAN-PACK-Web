@@ -7,12 +7,14 @@ import { faqGroups } from '../../../data/services';
 <section class="bg-white py-16 md:py-20">
   <Container class="space-y-16 lg:!max-w-[1200px]">
     {
-      faqGroups.map((group) => (
+      faqGroups.map((group, index) => (
         <section
           aria-labelledby={group.title
             .toLowerCase()
             .replaceAll(' ', '-')
             .replaceAll(':', '')}
+          data-reveal
+          style={`--reveal-delay: ${index * 80}ms;`}
         >
           <h2
             id={group.title

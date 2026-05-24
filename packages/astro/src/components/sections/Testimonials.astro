@@ -7,7 +7,7 @@ import { testimonials, metrics } from "../../data/home";
 
 <section class="py-16 md:py-24">
   <Container>
-    <div class="mx-auto max-w-[863px] text-center">
+    <div class="mx-auto max-w-[863px] text-center" data-reveal>
       <h2 class="text-[32px] font-extrabold tracking-[0.03em] text-text-main">
         Voices Of Our Partners
       </h2>
@@ -16,9 +16,15 @@ import { testimonials, metrics } from "../../data/home";
       </p>
     </div>
     <div class="mt-[60px] grid items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-[38px]">
-      {testimonials.map((testimonial) => <TestimonialCard {...testimonial} />)}
+      {
+        testimonials.map((testimonial, index) => (
+          <div data-reveal style={`--reveal-delay: ${index * 90}ms;`}>
+            <TestimonialCard {...testimonial} />
+          </div>
+        ))
+      }
     </div>
-    <div class="mt-[60px] rounded-[10px] border border-border bg-surface shadow-card">
+    <div class="mt-[60px] rounded-[10px] border border-border bg-surface shadow-card" data-reveal>
       <div class="grid divide-y divide-border lg:grid-cols-4 lg:divide-x lg:divide-y-0">
         {metrics.map((m) => (
           <div class="flex items-center gap-5 px-6 py-7 lg:px-[38px] lg:py-[38px]">

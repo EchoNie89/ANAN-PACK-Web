@@ -17,8 +17,6 @@ test("non-article page heroes fill the remaining desktop viewport beneath the st
     "src/components/sections/contact/ContactHero.astro",
     "src/components/sections/services/ServicesHero.astro",
     "src/components/sections/services/FAQHero.astro",
-    "src/components/sections/solutions/SolutionHero.astro",
-    "src/components/sections/products/ProductHero.astro",
   ]) {
     const source = readSource(relativePath);
 
@@ -34,6 +32,38 @@ test("non-article page heroes fill the remaining desktop viewport beneath the st
       `Expected ${relativePath} to have an inner hero container that stretches to the desktop hero height`,
     );
   }
+});
+
+test("product hero keeps the approved fixed desktop height instead of filling the remaining viewport", () => {
+  const source = readSource("src/components/sections/products/ProductHero.astro");
+
+  assert.match(
+    source,
+    /section class="[^"]*md:h-\[474px\]/,
+    "Expected the product hero section to keep the approved 474px desktop-height treatment",
+  );
+
+  assert.doesNotMatch(
+    source,
+    /lg:h-\[calc\(100dvh-88px\)\]/,
+    "Expected the product hero to avoid the full-viewport desktop hero treatment",
+  );
+});
+
+test("solution hero keeps the approved fixed desktop height instead of filling the remaining viewport", () => {
+  const source = readSource("src/components/sections/solutions/SolutionHero.astro");
+
+  assert.match(
+    source,
+    /section class="[^"]*md:h-\[474px\]/,
+    "Expected the solution hero section to keep the approved 474px desktop-height treatment",
+  );
+
+  assert.doesNotMatch(
+    source,
+    /lg:h-\[calc\(100dvh-88px\)\]/,
+    "Expected the solution hero to avoid the full-viewport desktop hero treatment",
+  );
 });
 
 test("blog listing hero fills the desktop viewport without forcing article heroes full-screen", () => {
