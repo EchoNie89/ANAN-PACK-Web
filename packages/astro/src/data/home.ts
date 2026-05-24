@@ -4,8 +4,8 @@ const homeImage = (fileName: string) =>
   getLocalImage(`/images/home/${fileName}`);
 
 export const navItems = [
-  { label: 'Home', href: '/home' },
-  { label: 'Products', href: '/home#products' },
+  { label: 'Home', href: '/' },
+  { label: 'Products', href: '/#products' },
   { label: 'Solutions', href: '/solutions' },
   { label: 'Services', href: '/services' },
   { label: 'Blog', href: '/blog' },

@@ -40,7 +40,7 @@ export const GET: APIRoute = async () => {
   const blogArticles = await getAllBlogArticles();
 
   const staticEntries: SitemapEntry[] = [
-    { path: "/home", priority: "1.0", changefreq: "weekly" },
+    { path: "/", priority: "1.0", changefreq: "weekly" },
     { path: "/about-us", priority: "0.8", changefreq: "monthly" },
     { path: "/contact-us", priority: "0.9", changefreq: "monthly" },
     { path: "/services", priority: "0.8", changefreq: "weekly" },

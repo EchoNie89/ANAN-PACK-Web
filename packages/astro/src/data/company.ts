@@ -1,9 +1,9 @@
 import { getLocalImage } from "../lib/local-images";
 
 export const footerQuickLinks = [
-  { label: "Products", href: "/home#products" },
+  { label: "Products", href: "/#products" },
   { label: "Services", href: "/services" },
-  { label: "Case Studies", href: "/home#case-study" },
+  { label: "Case Studies", href: "/#case-study" },
   { label: "Why Us", href: "/about-us#why-choose-us" },
   { label: "FAQs", href: "/services/faq" },
   { label: "About Us", href: "/about-us" },

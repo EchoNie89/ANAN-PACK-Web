@@ -341,7 +341,7 @@ export const solutionPages: SolutionPageData[] = [
         },
         {
           title: 'Security & Tamper-Evident Seals',
-          image: solutionImage('fashion-kit-3.png'),
+          image: solutionImage('fashion-kit-4.png'),
           alt: 'Tamper-evident label and sticker sheets',
           description:
             'Seals, warranty stickers, and anti-counterfeit details help protect your products and reinforce brand trust.',
@@ -483,7 +483,7 @@ export const solutionPages: SolutionPageData[] = [
             'Labels must survive repeated washing without losing legibility or softness.',
         },
         {
-          icon: 'box',
+          icon: 'sample',
           title: 'Packaging Bulk',
           description:
             'Bulky textiles need protective packaging that still ships efficiently.',
@@ -495,7 +495,7 @@ export const solutionPages: SolutionPageData[] = [
             'Sizes, sets, colorways, and care details must be packed with low error rates.',
         },
         {
-          icon: 'shield',
+          icon: 'chat',
           title: 'Global Compliance',
           description:
             'Care labels and packaging claims need to align with destination-market rules.',

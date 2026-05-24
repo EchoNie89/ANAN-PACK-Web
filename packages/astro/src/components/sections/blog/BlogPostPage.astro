@@ -24,7 +24,7 @@ const categoryLabel = getBlogCategory(article.category)?.label ?? article.catego
     backgroundImage={article.heroImage.src}
     eyebrow={categoryLabel}
     breadcrumbs={[
-      { label: "Home", href: "/home" },
+      { label: "Home", href: "/" },
       { label: "Blog", href: "/blog" },
       { label: article.title },
     ]}

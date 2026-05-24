@@ -91,9 +91,9 @@ const trustHeadingLines = ['We Manage the Risk.', 'You Build the Brand'];
       >
         Trusted By
       </h3>
-      <div class="mt-8 grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-3 md:mt-10 md:grid-cols-4 lg:flex lg:flex-wrap lg:items-center lg:justify-between lg:gap-6 lg:px-8">
+      <div class="mt-8 grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-4 md:mt-10 lg:grid-cols-8 lg:gap-6 lg:px-8">
           {logos.map((logo, index) => (
-            <div class="flex h-[72px] items-center justify-center rounded-[18px] bg-[#fffdf8] px-3 sm:h-[78px] md:h-[82px] lg:w-[124px] lg:rounded-none lg:bg-transparent lg:px-0">
+            <div class="flex h-[72px] items-center justify-center rounded-[18px] bg-[#fffdf8] px-3 sm:h-[78px] md:h-[82px]">
               <LocalImage
                 src={logo}
                 alt={`Partner logo ${index + 1}`}

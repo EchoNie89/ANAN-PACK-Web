@@ -27,8 +27,8 @@ const productHeroImageSrc = product
 const seoJsonLd = product
   ? [
       buildBreadcrumbJsonLd([
-        { label: "Home", href: "/home" },
-        { label: "Products", href: "/home#products" },
+        { label: "Home", href: "/" },
+        { label: "Products", href: "/#products" },
         { label: product.title },
       ]),
       buildProductJsonLd({
