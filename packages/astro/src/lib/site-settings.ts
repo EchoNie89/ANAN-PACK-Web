@@ -10,11 +10,9 @@ export interface SiteContactDetails {
 }
 
 export type SiteSocialMediaPlatform =
-  | "facebook"
-  | "instagram"
-  | "x"
   | "linkedin"
-  | "twitter";
+  | "youtube"
+  | "instagram";
 
 export interface SiteSocialMediaLink {
   platform: SiteSocialMediaPlatform;
@@ -82,11 +80,9 @@ function normalizeSiteSocialMedia(
   source?: Array<Partial<SiteSocialMediaLink> | null> | null,
 ): SiteSocialMediaLink[] {
   const validPlatforms = new Set<SiteSocialMediaPlatform>([
-    "facebook",
-    "instagram",
-    "x",
     "linkedin",
-    "twitter",
+    "youtube",
+    "instagram",
   ]);
 
   return (source ?? []).flatMap((item) => {

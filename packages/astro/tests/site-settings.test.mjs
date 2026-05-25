@@ -39,6 +39,11 @@ test("site settings schema exists for shared contact information", () => {
     /name:\s*['"]socialMedia['"]/,
     "Expected site settings schema to expose footer social media entries",
   );
+  assert.match(
+    siteSettingsSource,
+    /title:\s*['"]YouTube['"]\s*,\s*value:\s*['"]youtube['"]/,
+    "Expected site settings schema to allow YouTube links in footer social media settings",
+  );
 });
 
 test("footer and contact page use a shared site settings getter", () => {
@@ -85,13 +90,13 @@ test("footer contact column includes a social media icon row", () => {
 
   assert.match(
     footerSource,
-    /socialMedia\.length > 0 &&/,
-    "Expected Footer to hide social media when site settings are empty",
+    /footerSocialMediaItems/,
+    "Expected Footer to build a fixed social media icon list instead of hiding the row when Sanity has no links",
   );
   assert.match(
     footerSource,
-    /<div[^>]*>\s*<h2 class="text-base font-bold text-black">Contact Us<\/h2>[\s\S]*socialMedia\.length > 0 &&[\s\S]*>Social Media</,
-    "Expected Footer Contact Us column to include a Social Media label",
+    /<div class="max-w-\[210px\]">[\s\S]*<h2 class="text-base font-bold text-black">Contact Us<\/h2>[\s\S]*<ul class="mt-4 flex flex-wrap gap-\[15px\]">/,
+    "Expected Footer Contact Us column to keep the social media icon row below the contact details",
   );
   assert.match(
     footerSource,
@@ -100,22 +105,80 @@ test("footer contact column includes a social media icon row", () => {
   );
   assert.match(
     footerSource,
-    /href=\{item\.url\}/,
-    "Expected Footer social media icons to link to the Sanity-provided URL",
+    /item\.url \? \(/,
+    "Expected Footer to render links only when Sanity provides a social media URL",
+  );
+  assert.match(
+    footerSource,
+    /:\s*\(\s*<span/,
+    "Expected Footer to render a static icon when no social media URL is available",
   );
   assert.equal(
     /rounded-\[2px\] bg-black\/10/.test(footerSource),
     false,
     "Expected Footer social media icons to stop using square corner wrappers",
   );
+  assert.match(
+    footerSource,
+    /\['linkedin', 'youtube', 'instagram'\] as const/,
+    "Expected Footer social media defaults to keep only LinkedIn, YouTube, and Instagram",
+  );
 
-  for (const iconName of ["facebook", "instagram", "x", "linkedin", "twitter"]) {
+  for (const iconName of ["linkedin", "youtube", "instagram"]) {
     assert.match(
       symbolIconSource,
       new RegExp(`name === "${iconName}"`),
       `Expected SymbolIcon to support the ${iconName} glyph`,
     );
   }
+});
+
+test("footer contact items link out to their third-party destinations", () => {
+  const footerSource = readAstroSource("src/components/sections/Footer.astro");
+
+  assert.match(
+    footerSource,
+    /const footerEmailHref = `mailto:\$\{contactDetails\.email\}`;/,
+    "Expected Footer email to link through a mailto destination",
+  );
+
+  assert.match(
+    footerSource,
+    /const footerWhatsappHref = `https:\/\/wa\.me\/\$\{footerWhatsappDigits\}`;/,
+    "Expected Footer WhatsApp to link through a wa.me destination",
+  );
+
+  assert.match(
+    footerSource,
+    /const footerMapsHref = `https:\/\/www\.google\.com\/maps\/search\/\?api=1&query=\$\{encodeURIComponent\(footerMapsQuery\)\}`;/,
+    "Expected Footer location to link through a Google Maps search destination",
+  );
+
+  assert.match(
+    footerSource,
+    /item\.href \? \(\s*<a[\s\S]*href=\{item\.href\}/,
+    "Expected Footer contact values to render clickable links when a destination exists",
+  );
+});
+
+test("footer legal links use standard naming without sitemap entry", () => {
+  const footerSource = readAstroSource("src/components/sections/Footer.astro");
+
+  assert.match(
+    footerSource,
+    />Privacy Policy</,
+    "Expected Footer to use the standard Privacy Policy label",
+  );
+  assert.match(
+    footerSource,
+    />Terms of Use</,
+    "Expected Footer to use the standard Terms of Use label",
+  );
+  assert.equal(
+    />Sitemap</.test(footerSource),
+    false,
+    "Expected Footer to remove the sitemap link from the legal row",
+  );
 });
 
 test("contact page contact card uses the figma contact icon set", () => {
@@ -334,5 +397,51 @@ test("about team cards use a white image backdrop", () => {
     /rounded-soft bg-surface-muted shadow-card/.test(aboutTeamSource),
     false,
     "Expected About team portraits to stop using the muted background that shows through transparent PNG edges",
+  );
+});
+
+test("about reasons section uses the figma card layout and local figma icon assets", () => {
+  const aboutReasonsSource = readAstroSource("src/components/sections/about/AboutReasons.astro");
+  const companySource = readAstroSource("src/data/company.ts");
+
+  assert.match(
+    aboutReasonsSource,
+    /bg-\[#f9f9f9\]/,
+    "Expected About reasons section to use the lighter Figma section background",
+  );
+  assert.match(
+    aboutReasonsSource,
+    /rounded-\[10px\] border border-black\/10 bg-white/,
+    "Expected About reasons cards to use the Figma 10px rounded white cards with a light border",
+  );
+  assert.match(
+    aboutReasonsSource,
+    /LocalImage[\s\S]*size-\[60px\]/,
+    "Expected About reasons cards to render the 60px local Figma icon assets",
+  );
+  assert.match(
+    companySource,
+    /about-reason-integrated\.svg/,
+    "Expected company data to source the integrated sourcing icon from a local Figma SVG asset",
+  );
+  assert.match(
+    companySource,
+    /about-reason-factory\.svg/,
+    "Expected company data to source the audited factory network icon from a local Figma SVG asset",
+  );
+  assert.match(
+    companySource,
+    /about-reason-project\.svg/,
+    "Expected company data to source the project management icon from a local Figma SVG asset",
+  );
+  assert.match(
+    companySource,
+    /about-reason-quality\.svg/,
+    "Expected company data to source the quality icon from a local Figma SVG asset",
+  );
+  assert.match(
+    companySource,
+    /title:\s*"Integrated Sourcing"/,
+    "Expected the first About reasons title to match the Figma copy",
   );
 });

@@ -86,8 +86,22 @@ const jsonLdNodes = [
     <meta name="googlebot" content={robotsContent} />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#be6c0d" />
-    <meta name="google-site-verification" content="{import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION ?? ''}" />
-    <meta name="msvalidate.01" content="{import.meta.env.PUBLIC_BING_SITE_VERIFICATION ?? ''}" />
+    {
+      import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION && (
+        <meta
+          name="google-site-verification"
+          content={import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION}
+        />
+      )
+    }
+    {
+      import.meta.env.PUBLIC_BING_SITE_VERIFICATION && (
+        <meta
+          name="msvalidate.01"
+          content={import.meta.env.PUBLIC_BING_SITE_VERIFICATION}
+        />
+      )
+    }
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -114,7 +128,7 @@ const jsonLdNodes = [
       ))
     }
   </head>
-  <body>
+  <body id="site-top">
     <slot />
     <script is:inline>
       (() => {

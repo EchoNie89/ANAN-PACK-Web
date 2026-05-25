@@ -31,7 +31,7 @@ const blogListItems = allBlogArticles.flatMap((article) => {
 });
 const seoJsonLd = [
   buildBreadcrumbJsonLd([
-    { label: 'Home', href: '/home' },
+    { label: 'Home', href: '/' },
     { label: 'Blog' },
   ]),
   buildCollectionPageJsonLd({
@@ -59,7 +59,7 @@ const seoJsonLd = [
       backgroundImage={blogIndexHeroImage}
       variant="blog-index"
       breadcrumbsAlign="left"
-      breadcrumbs={[{ label: 'Home', href: '/home' }, { label: 'Blog' }]}
+      breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Blog' }]}
     >
       <BlogCategoryHighlights slot="afterContent" categories={blogCategories} inHero />
     </BlogPageHero>

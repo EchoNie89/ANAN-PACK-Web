@@ -63,7 +63,7 @@ function assertNoRawRasterImagePaths(html, pagePath) {
 test("home page optimizes core local imagery", () => {
   buildSiteOnce();
 
-  const homeHtml = readBuiltHtml("home/index.html");
+  const homeHtml = readBuiltHtml("index.html");
 
   assertUsesAstroAssets(homeHtml, [
     "/images/home/hero-packaging.png",

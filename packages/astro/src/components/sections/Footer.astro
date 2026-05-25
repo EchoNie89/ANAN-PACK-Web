@@ -2,10 +2,7 @@
 import Container from '../ui/Container.astro';
 import LocalImage from '../ui/LocalImage.astro';
 import SymbolIcon from '../ui/SymbolIcon.astro';
-import {
-  footerHighlights,
-  footerQuickLinks,
-} from '../../data/company';
+import { footerHighlights, footerQuickLinks } from '../../data/company';
 import { getLocalImage } from '../../lib/local-images';
 import { getSiteSettings } from '../../lib/site-settings';
 
@@ -13,28 +10,49 @@ const footerQrImage = getLocalImage('/images/home/qr-code.png');
 const { contactDetails, socialMedia } = await getSiteSettings();
 
 const socialMediaLabels = {
-  facebook: 'Facebook',
   instagram: 'Instagram',
-  x: 'X',
   linkedin: 'LinkedIn',
-  twitter: 'Twitter',
+  youtube: 'YouTube',
 } as const;
+
+const footerSocialMediaItems = (
+  ['linkedin', 'youtube', 'instagram'] as const
+).map((platform) => ({
+  platform,
+  label: socialMediaLabels[platform],
+  url: socialMedia.find((item) => item.platform === platform)?.url,
+}));
+
+const footerEmailHref = `mailto:${contactDetails.email}`;
+const footerWhatsappDigits = contactDetails.whatsapp.replace(/[^0-9]/g, '');
+const footerWhatsappHref = `https://wa.me/${footerWhatsappDigits}`;
+const footerMapsQuery = [contactDetails.address, contactDetails.location]
+  .filter(Boolean)
+  .join(', ');
+const footerMapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(footerMapsQuery)}`;
 
 const footerContacts = [
   {
     icon: 'location',
     label: 'Location',
     value: contactDetails.location,
+    href: footerMapsHref,
+    target: '_blank',
+    rel: 'noopener noreferrer',
   },
   {
     icon: 'phone',
     label: 'WhatsApp',
     value: contactDetails.whatsapp,
+    href: footerWhatsappHref,
+    target: '_blank',
+    rel: 'noopener noreferrer',
   },
   {
     icon: 'mail',
     label: 'Email',
     value: contactDetails.email,
+    href: footerEmailHref,
   },
 ] as const;
 ---
@@ -125,37 +143,58 @@ const footerContacts = [
                   />
                   <span class="font-medium leading-5">{item.label}</span>
                 </div>
-                <p class="mt-1.5 pl-[30px] leading-[22px]">{item.value}</p>
+                <p class="mt-1.5 pl-[30px] leading-[22px]">
+                  {
+                    item.href ? (
+                      <a
+                        href={item.href}
+                        target={item.target}
+                        rel={item.rel}
+                        class="transition hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      item.value
+                    )
+                  }
+                </p>
               </li>
             ))
           }
         </ul>
-        {
-          socialMedia.length > 0 && (
-            <div class="mt-6">
-              <p class="text-sm font-semibold leading-5 text-black">Social Media</p>
-              <ul class="mt-4 flex flex-wrap gap-[15px]">
-                {
-                  socialMedia.map((item) => (
-                    <li>
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        class="flex size-[30px] items-center justify-center rounded-full bg-black/10 text-[#333333] transition hover:bg-black/15 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
-                        title={socialMediaLabels[item.platform]}
-                        aria-label={socialMediaLabels[item.platform]}
-                      >
-                        <span class="sr-only">{socialMediaLabels[item.platform]}</span>
-                        <SymbolIcon name={item.platform} class="size-[14px]" />
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          )
-        }
+        <div class="mt-6">
+          <ul class="mt-4 flex flex-wrap gap-[15px]">
+            {
+              footerSocialMediaItems.map((item) => (
+                <li>
+                  {item.url ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      class="flex size-[30px] items-center justify-center rounded-full bg-black/10 text-[#333333] transition hover:bg-black/15 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+                      title={item.label}
+                      aria-label={item.label}
+                    >
+                      <span class="sr-only">{item.label}</span>
+                      <SymbolIcon name={item.platform} class="size-[14px]" />
+                    </a>
+                  ) : (
+                    <span
+                      class="flex size-[30px] items-center justify-center rounded-full bg-black/10 text-[#333333]"
+                      title={item.label}
+                      aria-label={item.label}
+                    >
+                      <span class="sr-only">{item.label}</span>
+                      <SymbolIcon name={item.platform} class="size-[14px]" />
+                    </span>
+                  )}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </div>
 
       <div class="hidden bg-border lg:block" aria-hidden="true"></div>
@@ -187,13 +226,11 @@ const footerContacts = [
         Reserved.
       </p>
       <div class="flex items-center gap-4">
-        <a href="#" class="hover:text-brand">Privacy</a>
+        <span>Privacy Policy</span>
         <span class="h-3 w-px bg-text-muted/40" aria-hidden="true"></span>
-        <a href="#" class="hover:text-brand">Term Of Use</a>
-        <span class="h-3 w-px bg-text-muted/40" aria-hidden="true"></span>
-        <a href="#" class="hover:text-brand">Sitemap</a>
+        <span>Terms of Use</span>
         <a
-          href="#"
+          href="#site-top"
           class="ml-1 flex size-5 items-center justify-center rounded-full border border-text-muted/50 text-text-muted transition hover:border-brand hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
           aria-label="Back to top"
         >

@@ -18,25 +18,29 @@ export const footerHighlights = [
 
 export const aboutReasons = [
   {
-    icon: "box",
-    title: "Integrated Sourcing System",
+    icon: getLocalImage("/images/about/about-reason-integrated.svg"),
+    iconAlt: "Integrated sourcing icon",
+    title: "Integrated Sourcing",
     description:
-      "From trims to packaging and accessories, we coordinate the right factories and keep each category aligned under one process.",
+      "We handle multiple packaging categories through one coordinated system.",
   },
   {
-    icon: "shield",
+    icon: getLocalImage("/images/about/about-reason-factory.svg"),
+    iconAlt: "Audited factory network icon",
     title: "Audited Factory Network",
     description:
       "We work with selected factories that meet our standards for quality, communication, and delivery.",
   },
   {
-    icon: "users",
+    icon: getLocalImage("/images/about/about-reason-project.svg"),
+    iconAlt: "Dedicated project management icon",
     title: "Dedicated Project Management",
     description:
       "Each project is followed by a responsible team member to ensure clear communication and on-time progress.",
   },
   {
-    icon: "clock",
+    icon: getLocalImage("/images/about/about-reason-quality.svg"),
+    iconAlt: "Quality and delivery control icon",
     title: "Quality & Delivery Control",
     description:
       "We follow up on key production stages to help ensure stable quality and predictable delivery.",

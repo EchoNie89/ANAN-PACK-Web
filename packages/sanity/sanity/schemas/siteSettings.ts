@@ -61,7 +61,8 @@ export default defineType({
     defineField({
       name: 'socialMedia',
       title: 'Social Media',
-      description: 'Optional footer social media links. If empty, the footer hides the section.',
+      description:
+        'Optional footer social media links. The footer always shows the platform icons; saved URLs make the matching icon clickable.',
       type: 'array',
       of: [
         defineArrayMember({
@@ -73,11 +74,9 @@ export default defineType({
               type: 'string',
               options: {
                 list: [
-                  { title: 'Facebook', value: 'facebook' },
-                  { title: 'Instagram', value: 'instagram' },
-                  { title: 'X', value: 'x' },
                   { title: 'LinkedIn', value: 'linkedin' },
-                  { title: 'Twitter', value: 'twitter' },
+                  { title: 'YouTube', value: 'youtube' },
+                  { title: 'Instagram', value: 'instagram' },
                 ],
               },
               validation: (Rule) => Rule.required(),
