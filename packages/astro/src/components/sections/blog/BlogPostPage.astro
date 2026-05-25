@@ -17,7 +17,7 @@ const { article, previousArticle, nextArticle, recentArticles } = Astro.props;
 const categoryLabel = getBlogCategory(article.category)?.label ?? article.category;
 ---
 
-<main>
+<main id="main-content" tabindex="-1">
   <BlogPageHero
     title={article.title}
     description={article.heroSummary ?? article.excerpt}

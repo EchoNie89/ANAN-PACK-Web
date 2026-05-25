@@ -4,10 +4,12 @@ import LocalImage from '../ui/LocalImage.astro';
 import SymbolIcon from '../ui/SymbolIcon.astro';
 import { footerHighlights, footerQuickLinks } from '../../data/company';
 import { getLocalImage } from '../../lib/local-images';
+import { getSiteName } from '../../lib/seo';
 import { getSiteSettings } from '../../lib/site-settings';
 
 const footerQrImage = getLocalImage('/images/home/qr-code.png');
 const { contactDetails, socialMedia } = await getSiteSettings();
+const siteName = getSiteName();
 
 const socialMediaLabels = {
   instagram: 'Instagram',
@@ -69,7 +71,7 @@ const footerContacts = [
         >
           <img
             src="/images/home/logoipsum-header.svg"
-            alt="Logoipsum"
+            alt={siteName}
             class="h-12 w-auto"
             loading="lazy"
             decoding="async"

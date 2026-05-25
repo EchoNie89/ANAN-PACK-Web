@@ -17,7 +17,7 @@ interface Props {
 const { page } = Astro.props;
 ---
 
-<main>
+<main id="main-content" tabindex="-1">
   <SolutionHero page={page} />
   <SolutionChallenges page={page} />
   <SolutionStrip text={page.strips[0]} />

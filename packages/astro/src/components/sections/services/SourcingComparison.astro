@@ -25,7 +25,7 @@ const columns = [
             style={`--reveal-delay: ${index * 90}ms;`}
           >
             {column.tone === "brand" && (
-              <span class="absolute right-0 top-0 bg-[#d4aa77] px-5 py-2 text-xs font-bold text-white">
+              <span class="absolute right-0 top-0 bg-nav-active px-5 py-2 text-xs font-bold text-white">
                 {column.label}
               </span>
             )}
@@ -35,7 +35,7 @@ const columns = [
                 <p
                   class={`mt-4 inline-flex rounded px-4 py-2 text-xs font-semibold ${
                     column.tone === "brand"
-                      ? "bg-brand-soft text-brand"
+                      ? "bg-brand-soft text-brand-dark"
                       : "bg-[#f4f4f4] text-text-muted"
                   }`}
                 >
@@ -85,7 +85,7 @@ const columns = [
 
             <p
               class={`-mx-6 -mb-6 mt-8 px-6 py-5 text-center text-sm font-semibold md:-mx-8 md:-mb-8 ${
-                column.tone === "brand" ? "bg-[#fff1dd] text-[#c17418]" : "bg-[#f3f3f3] text-text-muted"
+                column.tone === "brand" ? "bg-[#fff1dd] text-brand-dark" : "bg-[#f3f3f3] text-text-muted"
               }`}
             >
               {column.summary}
@@ -100,7 +100,7 @@ const columns = [
       data-reveal
       style="--reveal-delay: 120ms;"
     >
-      <span class="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-[#c9852b] text-white" aria-hidden="true">
+      <span class="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-dark text-white" aria-hidden="true">
         <svg viewBox="0 0 20 20" class="size-5" fill="none" stroke="currentColor" stroke-width="1.8">
           <path d="M10 4v12" />
           <path d="M4 10h12" />

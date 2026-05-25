@@ -5,6 +5,7 @@ import ProductsMegaMenu from "./ProductsMegaMenu.astro";
 import ServicesDropdown from "./ServicesDropdown.astro";
 import SolutionsDropdown from "./SolutionsDropdown.astro";
 import { navItems, productMenuItems, serviceMenuItems, solutionMenuItems } from "../../data/home";
+import { getSiteName } from "../../lib/seo";
 
 interface Props {
   activeNav?: string;
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const { activeNav = "Home", openMenu } = Astro.props;
+const siteName = getSiteName();
 
 const normalizePath = (value: string) => {
   const [path = "/"] = value.split("#");
@@ -31,7 +33,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
     >
       <img
         src="/images/home/logoipsum-header.svg"
-        alt="Logoipsum"
+        alt={siteName}
         class="h-10 w-auto md:h-[60px]"
         loading="eager"
         decoding="async"
@@ -139,6 +141,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
         class="fixed inset-x-4 top-[72px] z-50 grid max-h-[calc(100dvh-96px)] gap-2 overflow-y-auto overscroll-contain rounded-panel border border-border bg-white p-4 text-sm font-semibold shadow-soft sm:left-auto sm:w-72"
         aria-label="Mobile navigation"
         data-mobile-nav-panel
+        tabindex="-1"
         hidden
       >
         {
@@ -147,7 +150,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
               <details class="rounded px-2 py-2 hover:bg-surface-muted">
                 <summary
                   class={`flex cursor-pointer list-none items-center justify-between ${
-                    activeNav === "Products" ? "text-brand" : "text-ink"
+                    activeNav === "Products" ? "text-brand-dark" : "text-ink"
                   }`}
                 >
                   Products
@@ -160,7 +163,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                     <a
                       href={product.href}
                       class={`flex items-center gap-3 rounded p-2 ${
-                        isCurrentPath(product.href) ? "bg-brand-soft/60 text-brand" : "text-text-main hover:bg-surface-muted"
+                        isCurrentPath(product.href) ? "bg-brand-soft/80 text-brand-dark" : "text-text-main hover:bg-surface-muted"
                       }`}
                     >
                       <LocalImage
@@ -180,7 +183,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
               <details class="rounded px-2 py-2 hover:bg-surface-muted" open={openMenu === "solutions"}>
                 <summary
                   class={`flex cursor-pointer list-none items-center justify-between ${
-                    activeNav === "Solutions" ? "text-brand" : "text-ink"
+                    activeNav === "Solutions" ? "text-brand-dark" : "text-ink"
                   }`}
                 >
                   Solutions
@@ -193,7 +196,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                     <a
                       href={solution.href}
                       class={`rounded px-3 py-2 ${
-                        isCurrentPath(solution.href) ? "bg-brand-soft/60 text-brand" : "text-text-main hover:bg-surface-muted"
+                        isCurrentPath(solution.href) ? "bg-brand-soft/80 text-brand-dark" : "text-text-main hover:bg-surface-muted"
                       }`}
                     >
                       {solution.title}
@@ -205,7 +208,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
               <details class="rounded px-2 py-2 hover:bg-surface-muted" open={activeNav === "Services" || openMenu === "services"}>
                 <summary
                   class={`flex cursor-pointer list-none items-center justify-between ${
-                    activeNav === "Services" ? "text-brand" : "text-ink"
+                    activeNav === "Services" ? "text-brand-dark" : "text-ink"
                   }`}
                 >
                   Services
@@ -218,7 +221,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                     <a
                       href={service.href}
                       class={`rounded px-3 py-2 ${
-                        isCurrentPath(service.href) ? "bg-brand-soft/60 text-brand" : "text-text-main hover:bg-surface-muted"
+                        isCurrentPath(service.href) ? "bg-brand-soft/80 text-brand-dark" : "text-text-main hover:bg-surface-muted"
                       }`}
                     >
                       {service.title}
@@ -229,7 +232,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
             ) : (
               <a
                 class={`rounded px-2 py-2 ${
-                  activeNav === item.label ? "bg-brand-soft/60 text-brand" : "text-ink hover:bg-surface-muted"
+                  activeNav === item.label ? "bg-brand-soft/80 text-brand-dark" : "text-ink hover:bg-surface-muted"
                 }`}
                 href={item.href}
               >
@@ -327,12 +330,40 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
     const mobileNavPanel = mobileNav.querySelector("[data-mobile-nav-panel]");
     const mobileNavBackdrop = mobileNav.querySelector("[data-mobile-nav-backdrop]");
     const mobileNavLinks = Array.from(mobileNav.querySelectorAll("a"));
+    const mobileHeader = mobileNav.closest("header");
+    const inertTargets = Array.from(document.body.children).filter(
+      (element) => element instanceof HTMLElement && element !== mobileHeader,
+    );
+    const focusableSelector =
+      'a[href], button:not([disabled]), summary, [tabindex]:not([tabindex="-1"])';
 
-    const setMobileNavOpen = (isOpen) => {
+    const getMobileNavFocusables = () => {
+      if (!(mobileNavPanel instanceof HTMLElement)) return [];
+
+      return Array.from(mobileNavPanel.querySelectorAll(focusableSelector)).filter(
+        (element) =>
+          element instanceof HTMLElement &&
+          !element.hasAttribute("hidden") &&
+          element.getAttribute("aria-hidden") !== "true",
+      );
+    };
+
+    const setInertSiblings = (isInert) => {
+      inertTargets.forEach((element) => {
+        if (!(element instanceof HTMLElement)) return;
+        element.inert = isInert;
+      });
+    };
+
+    const setMobileNavOpen = (isOpen, { restoreFocus = true } = {}) => {
       mobileNav.dataset.open = String(isOpen);
 
       if (mobileNavTrigger instanceof HTMLButtonElement) {
         mobileNavTrigger.setAttribute("aria-expanded", String(isOpen));
+        mobileNavTrigger.setAttribute(
+          "aria-label",
+          isOpen ? "Close navigation menu" : "Open navigation menu",
+        );
       }
 
       if (mobileNavBackdrop instanceof HTMLButtonElement) {
@@ -342,16 +373,27 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
       if (mobileNavPanel instanceof HTMLElement) {
         mobileNavPanel.hidden = !isOpen;
       }
+
+      setInertSiblings(isOpen);
+
+      if (isOpen) {
+        window.requestAnimationFrame(() => {
+          const [firstFocusable] = getMobileNavFocusables();
+          firstFocusable?.focus();
+        });
+      } else if (restoreFocus && mobileNavTrigger instanceof HTMLButtonElement) {
+        mobileNavTrigger.focus();
+      }
     };
 
-    const closeMobileNav = () => {
+    const closeMobileNav = (options) => {
       if (mobileNav.dataset.open !== "true") return;
-      setMobileNavOpen(false);
+      setMobileNavOpen(false, options);
     };
 
     if (mobileNavTrigger instanceof HTMLButtonElement) {
       mobileNavTrigger.addEventListener("click", () => {
-        setMobileNavOpen(mobileNav.dataset.open !== "true");
+        setMobileNavOpen(mobileNav.dataset.open !== "true", { restoreFocus: false });
       });
     }
 
@@ -375,11 +417,46 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeMobileNav();
+      if (mobileNav.dataset.open !== "true") return;
+
+      if (event.key === "Escape") {
+        closeMobileNav();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusables = getMobileNavFocusables();
+      if (focusables.length === 0) {
+        event.preventDefault();
+        mobileNavPanel?.focus();
+        return;
+      }
+
+      const firstFocusable = focusables[0];
+      const lastFocusable = focusables[focusables.length - 1];
+      const activeElement = document.activeElement;
+
+      if (!(activeElement instanceof HTMLElement) || !mobileNavPanel?.contains(activeElement)) {
+        event.preventDefault();
+        firstFocusable.focus();
+        return;
+      }
+
+      if (event.shiftKey && activeElement === firstFocusable) {
+        event.preventDefault();
+        lastFocusable.focus();
+        return;
+      }
+
+      if (!event.shiftKey && activeElement === lastFocusable) {
+        event.preventDefault();
+        firstFocusable.focus();
+      }
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth >= 1024) closeMobileNav();
+      if (window.innerWidth >= 1024) closeMobileNav({ restoreFocus: false });
     });
 
     setMobileNavOpen(false);

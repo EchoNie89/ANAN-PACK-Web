@@ -42,6 +42,16 @@ test("contact inquiry form is wired for Formspree async submission", () => {
       new RegExp(`class="[^"]*(?:^|\\s)hidden(?:\\s|$)[^"]*"[^>]*data-fs-error="${fieldName}"|data-fs-error="${fieldName}"[^>]*class="[^"]*(?:^|\\s)hidden(?:\\s|$)[^"]*"`),
       `Expected ${fieldName} field error target to avoid a hard hidden class that Formspree cannot remove`,
     );
+    assert.match(
+      source,
+      new RegExp(`aria-describedby="[^"]*contact-${fieldName}-error[^"]*"`),
+      `Expected ${fieldName} to expose its field-level error target via aria-describedby`,
+    );
+    assert.match(
+      source,
+      new RegExp(`aria-invalid="false"[\\s\\S]*name="${fieldName}"|name="${fieldName}"[\\s\\S]*aria-invalid="false"`),
+      `Expected ${fieldName} to initialize with an explicit non-invalid state before submission errors occur`,
+    );
   }
 
   for (const requiredFieldId of [
@@ -79,6 +89,42 @@ test("contact inquiry form is wired for Formspree async submission", () => {
 
   assert.match(
     source,
+    /const clearFieldErrors = \(\) => \{/,
+    "Expected the contact form to maintain a dedicated field-error reset path for accessibility state",
+  );
+
+  assert.match(
+    source,
+    /const renderFieldErrors = \(_, error\) => \{/,
+    "Expected the contact form to render field-level validation state explicitly instead of relying on generic summaries only",
+  );
+
+  assert.match(
+    source,
+    /fieldElement\.setAttribute\("aria-invalid", "true"\)/,
+    "Expected invalid fields to announce their error state to assistive technology",
+  );
+
+  assert.match(
+    source,
+    /fieldErrorElement\.setAttribute\("data-fs-active", ""\)/,
+    "Expected field-level errors to become visibly active when Formspree reports them",
+  );
+
+  assert.match(
+    source,
+    /if \(firstInvalidField instanceof HTMLElement\) \{\s*firstInvalidField\.focus\(\);/s,
+    "Expected submission errors to move focus to the first invalid field",
+  );
+
+  assert.match(
+    source,
+    /id="contact-form-error-summary"[\s\S]*tabindex="-1"/,
+    "Expected the form-level error summary to be focusable when unexpected submission failures occur",
+  );
+
+  assert.match(
+    source,
     /setButtonState\(\{[\s\S]*disabled: isSubmitting,[\s\S]*label: isSubmitting \? "Submitting\.\.\." : defaultSubmitLabel,[\s\S]*\}\);/,
     "Expected active submission state to be the only path that shows Submitting...",
   );
@@ -95,7 +141,7 @@ test("package test script includes the contact regression in the standard test p
 
   assert.match(
     packageSource,
-    /"test":\s*"node --test --test-concurrency=1[\s\S]*tests\/contact-form-integration\.test\.mjs[\s\S]*tests\/seo-foundation\.test\.mjs"/,
+    /"test":\s*"node --test --test-concurrency=1[\s\S]*tests\/contact-form-integration\.test\.mjs[\s\S]*tests\/seo-foundation\.test\.mjs[\s\S]*tests\/accessibility-foundation\.test\.mjs"/,
     "Expected pnpm test to run the contact regression with the existing package-level tests",
   );
 });

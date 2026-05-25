@@ -78,9 +78,12 @@ const inputClass =
                   name="name"
                   placeholder="* Name"
                   required
+                  aria-invalid="false"
+                  aria-describedby="contact-name-error"
                   data-fs-field
                 />
                 <p
+                  id="contact-name-error"
                   class="mt-2 text-xs leading-5 text-[#9d3748] empty:hidden"
                   data-fs-error="name"
                 ></p>
@@ -94,9 +97,12 @@ const inputClass =
                   name="company"
                   placeholder="* Company Name"
                   required
+                  aria-invalid="false"
+                  aria-describedby="contact-company-error"
                   data-fs-field
                 />
                 <p
+                  id="contact-company-error"
                   class="mt-2 text-xs leading-5 text-[#9d3748] empty:hidden"
                   data-fs-error="company"
                 ></p>
@@ -110,9 +116,12 @@ const inputClass =
                   name="email"
                   placeholder="* Email"
                   required
+                  aria-invalid="false"
+                  aria-describedby="contact-email-error"
                   data-fs-field
                 />
                 <p
+                  id="contact-email-error"
                   class="mt-2 text-xs leading-5 text-[#9d3748] empty:hidden"
                   data-fs-error="email"
                 ></p>
@@ -126,9 +135,12 @@ const inputClass =
                   type="text"
                   name="phone"
                   placeholder="WhatsApp / Phone"
+                  aria-invalid="false"
+                  aria-describedby="contact-phone-error"
                   data-fs-field
                 />
                 <p
+                  id="contact-phone-error"
                   class="mt-2 text-xs leading-5 text-[#9d3748] empty:hidden"
                   data-fs-error="phone"
                 ></p>
@@ -143,9 +155,12 @@ const inputClass =
                   type="text"
                   name="country"
                   placeholder="Country / Region"
+                  aria-invalid="false"
+                  aria-describedby="contact-country-error"
                   data-fs-field
                 />
                 <p
+                  id="contact-country-error"
                   class="mt-2 text-xs leading-5 text-[#9d3748] empty:hidden"
                   data-fs-error="country"
                 ></p>
@@ -174,27 +189,32 @@ const inputClass =
                 placeholder="* Project Details / Message"
                 maxlength="1000"
                 required
+                aria-invalid="false"
+                aria-describedby="contact-message-error contact-message-help"
                 data-fs-field></textarea>
               <p
+                id="contact-message-error"
                 class="mt-2 text-xs leading-5 text-[#9d3748] empty:hidden"
                 data-fs-error="message"
               ></p>
-              <p class="mt-2 text-right text-xs text-[#9ca3af]">
+              <p id="contact-message-help" class="mt-2 text-right text-xs text-[#9ca3af]">
                 <span data-contact-message-count>0</span> / 1000
               </p>
             </div>
 
             <div class="mt-auto space-y-4 pt-2">
               <div
+                id="contact-form-error-summary"
                 class="hidden rounded-soft border border-[#f0c7cb] bg-[#fff4f4] px-4 py-3 text-sm text-[#9d3748]"
                 data-contact-form-error
                 data-fs-error
                 role="alert"
+                tabindex="-1"
               ></div>
 
               <button
                 type="submit"
-                class="mt-auto flex w-full items-center justify-center rounded-soft bg-brand px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-brand/70 disabled:text-white/85 disabled:hover:bg-brand/70"
+                class="mt-auto flex w-full items-center justify-center rounded-soft bg-brand-dark px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-deep focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-brand-dark/70 disabled:text-white/85 disabled:hover:bg-brand-dark/70"
                 data-fs-submit-btn
               >
                 <span data-submit-label>Submit Inquiry</span>
@@ -327,6 +347,26 @@ const inputClass =
     const submitLabel = formElement.querySelector("[data-submit-label]");
     const messageField = formElement.querySelector("#contact-message");
     const messageCount = formElement.querySelector("[data-contact-message-count]");
+    const fieldElements = Array.from(formElement.querySelectorAll("[data-fs-field]")).filter(
+      (element) =>
+        element instanceof HTMLInputElement ||
+        element instanceof HTMLTextAreaElement ||
+        element instanceof HTMLSelectElement,
+    );
+    const fieldErrorMap = new Map(
+      Array.from(formElement.querySelectorAll("[data-fs-error]"))
+        .map((element) => {
+          if (!(element instanceof HTMLElement)) return null;
+          const fieldName = element.getAttribute("data-fs-error");
+          return fieldName ? [fieldName, element] : null;
+        })
+        .filter(Boolean),
+    );
+    const fieldElementMap = new Map(
+      fieldElements
+        .map((element) => [element.getAttribute("name"), element])
+        .filter(([fieldName]) => typeof fieldName === "string" && fieldName.length > 0),
+    );
 
     const defaultSubmitLabel = submitLabel?.textContent?.trim() || "Submit Inquiry";
     const unavailableSubmitLabel = "Inquiry Form Unavailable";
@@ -354,6 +394,44 @@ const inputClass =
       errorRegion.textContent = message;
       errorRegion.classList.remove("hidden");
       errorRegion.setAttribute("data-fs-active", "");
+      errorRegion.focus();
+    };
+
+    const clearFieldErrors = () => {
+      fieldElements.forEach((element) => {
+        element.setAttribute("aria-invalid", "false");
+      });
+
+      fieldErrorMap.forEach((element) => {
+        element.textContent = "";
+        element.removeAttribute("data-fs-active");
+      });
+    };
+
+    const renderFieldErrors = (_, error) => {
+      clearFieldErrors();
+
+      if (!error) return;
+
+      const allFieldErrors = error.getAllFieldErrors();
+
+      allFieldErrors.forEach(([fieldName, fieldErrors]) => {
+        const [firstError] = fieldErrors;
+        if (!firstError?.message) return;
+
+        const fieldKey = String(fieldName);
+        const fieldElement = fieldElementMap.get(fieldKey);
+        const fieldErrorElement = fieldErrorMap.get(fieldKey);
+
+        if (fieldElement) {
+          fieldElement.setAttribute("aria-invalid", "true");
+        }
+
+        if (fieldErrorElement) {
+          fieldErrorElement.textContent = firstError.message;
+          fieldErrorElement.setAttribute("data-fs-active", "");
+        }
+      });
     };
 
     const setButtonState = ({ disabled, label }) => {
@@ -404,6 +482,7 @@ const inputClass =
         useDefaultStyles: false,
         onSubmit: () => {
           clearError();
+          clearFieldErrors();
         },
         onSuccess: (context) => {
           context.form.reset();
@@ -411,7 +490,26 @@ const inputClass =
         },
         onError: (context, error) => {
           const formErrors = error.getFormErrors().map((entry) => entry.message);
-          showError(formErrors[0] || genericErrorMessage);
+          const allFieldErrors = error.getAllFieldErrors();
+
+          if (formErrors[0]) {
+            showError(formErrors[0]);
+          } else {
+            clearError();
+          }
+
+          if (!formErrors[0] && allFieldErrors.length === 0) {
+            showError(genericErrorMessage);
+          }
+
+          const firstInvalidField = allFieldErrors
+            .map(([fieldName]) => fieldElementMap.get(String(fieldName)))
+            .find(Boolean);
+
+          if (firstInvalidField instanceof HTMLElement) {
+            firstInvalidField.focus();
+          }
+
           updateMessageCount();
         },
         onFailure: () => {
@@ -424,6 +522,7 @@ const inputClass =
         enable: () => {
           setSubmitting(false);
         },
+        renderFieldErrors,
         renderSuccess: () => {},
         renderFormError: () => {},
       });

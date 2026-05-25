@@ -5,7 +5,7 @@ import { serviceSections } from "../../../data/services";
 ---
 
 <section class="bg-white">
-  <div class="bg-[#d4c2a4] px-4 py-5 text-center text-base font-medium italic text-white md:text-lg" data-reveal>
+  <div class="bg-[#d4c2a4] px-4 py-5 text-center text-base font-medium italic text-text-main md:text-lg" data-reveal>
     One Point Of Contact, Infinite Possibilities.
   </div>
 
@@ -32,9 +32,9 @@ import { serviceSections } from "../../../data/services";
             </div>
 
             <div class={section.imageSide === "right" ? "lg:order-1" : ""}>
-              <p class="text-sm font-extrabold uppercase text-[#bca690]">{section.kicker}</p>
+              <p class="text-sm font-extrabold uppercase text-brand-dark">{section.kicker}</p>
               <h2 class="mt-4 text-3xl font-extrabold text-ink md:text-4xl">{section.title}</h2>
-              <p class="mt-5 text-base font-semibold leading-7 text-[#999999]">{section.description}</p>
+              <p class="mt-5 text-base font-semibold leading-7 text-text-muted">{section.description}</p>
 
               <div class="mt-8 grid gap-4">
                 {section.features.map((feature) => (

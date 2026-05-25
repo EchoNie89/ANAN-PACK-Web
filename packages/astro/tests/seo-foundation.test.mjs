@@ -125,3 +125,60 @@ test("footer and blog UI no longer ship hash-placeholder links", () => {
     "Expected Layout to expose a real in-page anchor target for Back to top",
   );
 });
+
+test("contrast-sensitive UI uses darker brand fills for interactive states", () => {
+  const globalSource = readSource("src/styles/global.css");
+  const buttonSource = readSource("src/components/ui/Button.astro");
+  const thankYouSource = readSource("src/pages/thank-you.astro");
+  const servicesDropdownSource = readSource("src/components/sections/ServicesDropdown.astro");
+  const solutionsDropdownSource = readSource("src/components/sections/SolutionsDropdown.astro");
+  const serviceProcessSource = readSource("src/components/sections/services/ServiceProcess.astro");
+  const sourcingComparisonSource = readSource("src/components/sections/services/SourcingComparison.astro");
+  const solutionStripSource = readSource("src/components/sections/solutions/SolutionStrip.astro");
+
+  assert.match(
+    globalSource,
+    /--color-nav-active: #81572b;/,
+    "Expected the shared nav active token to use a darker fill that keeps white text readable",
+  );
+  assert.match(
+    buttonSource,
+    /primary:\s*"bg-brand-dark text-white hover:bg-brand-deep"/,
+    "Expected primary buttons to use the darker brand fill instead of the low-contrast default brand tone",
+  );
+  assert.match(
+    thankYouSource,
+    /bg-brand-dark[\s\S]*hover:bg-brand-deep/,
+    "Expected the thank-you CTA to use the same contrast-safe primary button treatment",
+  );
+  assert.match(
+    servicesDropdownSource,
+    /data-\[active=true\]:bg-nav-active data-\[active=true\]:text-white/,
+    "Expected active service menu items to use the darker shared nav fill",
+  );
+  assert.match(
+    solutionsDropdownSource,
+    /data-\[active=true\]:bg-nav-active data-\[active=true\]:text-white/,
+    "Expected active solution menu items to use the darker shared nav fill",
+  );
+  assert.match(
+    serviceProcessSource,
+    /bg-\[#d4c2a4\][\s\S]*text-text-main/,
+    "Expected the service process strapline to stop using white text on a light tan background",
+  );
+  assert.match(
+    sourcingComparisonSource,
+    /bg-nav-active[\s\S]*text-white/,
+    "Expected the sourcing comparison badge to use the darker nav fill for white text",
+  );
+  assert.match(
+    sourcingComparisonSource,
+    /bg-brand-soft text-brand-dark/,
+    "Expected the managed sourcing tag to use darker accent text on the soft brand background",
+  );
+  assert.match(
+    solutionStripSource,
+    /bg-brand-soft[\s\S]*text-text-main/,
+    "Expected the solution strip to stop using white text on the soft brand background",
+  );
+});

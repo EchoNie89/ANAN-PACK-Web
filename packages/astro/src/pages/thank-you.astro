@@ -16,7 +16,7 @@ const emailHref = `mailto:${contact.email}`;
   noindex
 >
   <Header />
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="bg-page-muted py-20 md:py-28">
       <Container class="!max-w-[720px]">
         <div class="rounded-soft bg-white p-8 shadow-card md:p-12 text-center">
@@ -60,7 +60,7 @@ const emailHref = `mailto:${contact.email}`;
           <div class="mt-10">
             <a
               href="/"
-              class="inline-flex items-center justify-center rounded-button bg-brand px-6 py-3 text-xs font-bold uppercase tracking-[0.02em] text-white transition hover:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+              class="inline-flex items-center justify-center rounded-button bg-brand-dark px-6 py-3 text-xs font-bold uppercase tracking-[0.02em] text-white transition hover:bg-brand-deep focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
             >
               Back to Home
             </a>

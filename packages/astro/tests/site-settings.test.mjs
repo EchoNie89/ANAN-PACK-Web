@@ -285,8 +285,8 @@ test("contact project form keeps first contact simple", () => {
   );
   assert.match(
     contactFormSource,
-    /class="mt-auto flex w-full items-center justify-center rounded-soft bg-brand/,
-    "Expected the submit button to pin itself to the bottom of the form card",
+    /class="mt-auto flex w-full items-center justify-center rounded-soft bg-brand-dark/,
+    "Expected the submit button to pin itself to the bottom of the form card with a contrast-safe brand fill",
   );
 });
 
