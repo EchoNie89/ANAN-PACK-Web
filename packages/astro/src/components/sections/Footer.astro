@@ -60,7 +60,7 @@ const footerContacts = [
 ---
 
 <footer class="bg-page-muted" id="footer">
-  <Container class="!max-w-[1200px] py-16 md:py-20 lg:py-[86px]">
+  <Container class="!max-w-[1280px] py-16 md:py-20 lg:py-[86px]">
     <div
       class="grid gap-12 md:grid-cols-2 lg:grid-cols-[minmax(0,1.28fr)_0.56fr_minmax(200px,0.86fr)_1px_140px] lg:gap-10 xl:grid-cols-[420px_130px_210px_1px_140px] xl:gap-12"
     >
@@ -111,7 +111,7 @@ const footerContacts = [
         </div>
       </div>
 
-      <div>
+      <div class="w-full">
         <h2 class="text-base font-bold text-black">Quick Links</h2>
         <div class="mt-6 h-0.5 w-10 bg-brand"></div>
         <nav
@@ -131,7 +131,7 @@ const footerContacts = [
         </nav>
       </div>
 
-      <div class="max-w-[210px]">
+      <div class="w-full max-w-none lg:max-w-[210px]">
         <h2 class="text-base font-bold text-black">Contact Us</h2>
         <div class="mt-6 h-0.5 w-10 bg-brand"></div>
         <ul class="mt-9 grid gap-5 text-sm text-text-main">
@@ -201,11 +201,11 @@ const footerContacts = [
 
       <div class="hidden bg-border lg:block" aria-hidden="true"></div>
 
-      <div class="max-w-[140px]">
+      <div class="w-full max-w-none lg:max-w-[140px]">
         <LocalImage
           src={footerQrImage}
           alt="WhatsApp QR code"
-          class="size-[140px] bg-white object-contain"
+          class="h-auto w-[140px] max-w-full bg-white object-contain"
           loading="lazy"
           sizes="140px"
           widths={[140, 280]}
@@ -221,7 +221,7 @@ const footerContacts = [
   </Container>
   <div class="bg-brand-soft py-5">
     <Container
-      class="!max-w-[1200px] flex flex-col gap-3 text-xs text-text-muted md:flex-row md:items-center md:justify-between"
+      class="!max-w-[1280px] flex flex-col gap-3 text-xs text-text-muted md:flex-row md:items-center md:justify-between"
     >
       <p>
         2026 ANAN PACK. Product Purchasing Agent (Shenzhen) Co., Ltd. All Rights

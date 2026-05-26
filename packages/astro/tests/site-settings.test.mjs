@@ -95,8 +95,8 @@ test("footer contact column includes a social media icon row", () => {
   );
   assert.match(
     footerSource,
-    /<div class="max-w-\[210px\]">[\s\S]*<h2 class="text-base font-bold text-black">Contact Us<\/h2>[\s\S]*<ul class="mt-4 flex flex-wrap gap-\[15px\]">/,
-    "Expected Footer Contact Us column to keep the social media icon row below the contact details",
+    /<div class="w-full max-w-none lg:max-w-\[210px\]">[\s\S]*<h2 class="text-base font-bold text-black">Contact Us<\/h2>[\s\S]*<ul class="mt-4 flex flex-wrap gap-\[15px\]">/,
+    "Expected Footer Contact Us column to stay full width on mobile while keeping the social media icon row below the contact details",
   );
   assert.match(
     footerSource,
