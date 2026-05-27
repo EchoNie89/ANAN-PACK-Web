@@ -22,25 +22,25 @@ test("mobile navigation closes through outside pointer interaction without locki
 
   assert.match(
     source,
-    /mobileNavBackdrop\.addEventListener\("click", closeMobileNav\)/,
+    /mobileNavBackdrop\.addEventListener\(['"]click['"], closeMobileNav\)/,
     "Expected the mobile nav backdrop to reuse the shared close handler when clicking outside the panel",
   );
 
   assert.match(
     source,
-    /document\.addEventListener\("pointerdown", \(event\) => \{/,
+    /document\.addEventListener\(['"]pointerdown['"], \(event\) => \{/,
     "Expected the mobile nav to listen for outside pointer interactions while open",
   );
 
   assert.match(
     source,
-    /target\.closest\("\[data-mobile-nav-panel\]"\)/,
+    /target\.closest\(['"]\[data-mobile-nav-panel\]['"]\)/,
     "Expected the outside-pointer handler to ignore interactions inside the mobile nav panel",
   );
 
   assert.match(
     source,
-    /target\.closest\("\[data-mobile-nav-trigger\]"\)/,
+    /target\.closest\(['"]\[data-mobile-nav-trigger\]['"]\)/,
     "Expected the outside-pointer handler to ignore interactions on the menu trigger itself",
   );
 
@@ -74,7 +74,7 @@ test("mobile navigation manages focus and keeps keyboard users inside the open p
 
   assert.match(
     source,
-    /mobileNavTrigger\.setAttribute\(\s*"aria-label",\s*isOpen \? "Close navigation menu" : "Open navigation menu",\s*\)/,
+    /mobileNavTrigger\.setAttribute\(\s*['"]aria-label['"],\s*isOpen \? ['"]Close navigation menu['"] : ['"]Open navigation menu['"],\s*\)/,
     "Expected the trigger accessible name to switch between open and close states",
   );
 
@@ -104,7 +104,7 @@ test("mobile navigation manages focus and keeps keyboard users inside the open p
 
   assert.match(
     source,
-    /if \(event\.key !== "Tab"\) return;/,
+    /if \(event\.key !== ['"]Tab['"]\) return;/,
     "Expected the mobile nav keyboard handler to intercept Tab while the menu is open",
   );
 
@@ -127,43 +127,43 @@ test("mobile navigation keeps products solutions and services neutral by default
 
   assert.match(
     mobilePanelSource,
-    /activeNav === "Products" \? "text-brand-dark" : "text-ink"/,
+    /activeNav === ['"]Products['"]\s*\?\s*['"]text-brand-dark['"]\s*:\s*['"]text-ink['"]/,
     "Expected the products summary to stay neutral by default and switch to the darker accent color when active",
   );
 
   assert.match(
     mobilePanelSource,
-    /activeNav === "Solutions" \? "text-brand-dark" : "text-ink"/,
+    /activeNav === ['"]Solutions['"]\s*\?\s*['"]text-brand-dark['"]\s*:\s*['"]text-ink['"]/,
     "Expected the solutions summary to stay neutral by default and switch to the darker accent color when active",
   );
 
   assert.match(
     mobilePanelSource,
-    /activeNav === "Services" \? "text-brand-dark" : "text-ink"/,
+    /activeNav === ['"]Services['"]\s*\?\s*['"]text-brand-dark['"]\s*:\s*['"]text-ink['"]/,
     "Expected the services summary to stay neutral by default and switch to the darker accent color when active",
   );
 
   assert.match(
     mobilePanelSource,
-    /isCurrentPath\(product\.href\) \? "bg-brand-soft\/80 text-brand-dark" : "text-text-main hover:bg-surface-muted"/,
+    /isCurrentPath\(product\.href\)\s*\?\s*['"]bg-brand-soft\/80 text-brand-dark['"]\s*:\s*['"]text-text-main hover:bg-surface-muted['"]/,
     "Expected active product links to regain the higher-contrast accent treatment while keeping neutral defaults",
   );
 
   assert.match(
     mobilePanelSource,
-    /isCurrentPath\(solution\.href\) \? "bg-brand-soft\/80 text-brand-dark" : "text-text-main hover:bg-surface-muted"/,
+    /isCurrentPath\(solution\.href\)\s*\?\s*['"]bg-brand-soft\/80 text-brand-dark['"]\s*:\s*['"]text-text-main hover:bg-surface-muted['"]/,
     "Expected active solution links to regain the higher-contrast accent treatment while keeping neutral defaults",
   );
 
   assert.match(
     mobilePanelSource,
-    /isCurrentPath\(service\.href\) \? "bg-brand-soft\/80 text-brand-dark" : "text-text-main hover:bg-surface-muted"/,
+    /isCurrentPath\(service\.href\)\s*\?\s*['"]bg-brand-soft\/80 text-brand-dark['"]\s*:\s*['"]text-text-main hover:bg-surface-muted['"]/,
     "Expected active service links to regain the higher-contrast accent treatment while keeping neutral defaults",
   );
 
   assert.match(
     mobilePanelSource,
-    /activeNav === item\.label \? "bg-brand-soft\/80 text-brand-dark" : "text-ink hover:bg-surface-muted"/,
+    /activeNav === item\.label\s*\?\s*['"]bg-brand-soft\/80 text-brand-dark['"]\s*:\s*['"]text-ink hover:bg-surface-muted['"]/,
     "Expected regular top-level mobile nav links to regain the higher-contrast accent treatment when they represent the current page",
   );
 });

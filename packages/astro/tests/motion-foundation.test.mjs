@@ -24,6 +24,58 @@ test("global motion foundation keeps the low-cost animation primitives wired in"
   assert.match(layoutSource, /\[data-reveal\]/);
 });
 
+test("trusted by logos use a fixed-size marquee with motion-safe autoplay", () => {
+  const trustReasonsSource = readSource("src/components/sections/TrustReasons.astro");
+  const globalStyles = readSource("src/styles/global.css");
+
+  assert.match(
+    trustReasonsSource,
+    /data-logo-marquee/,
+    "Expected the Trusted By block to expose a marquee wrapper hook",
+  );
+  assert.match(
+    trustReasonsSource,
+    /data-logo-marquee-track/,
+    "Expected the Trusted By block to expose a scrolling track hook",
+  );
+  assert.match(
+    trustReasonsSource,
+    /w-\[124px\]\s+h-\[82px\]|h-\[82px\]\s+w-\[124px\]/,
+    "Expected each Trusted By logo tile to use the requested 124x82 footprint",
+  );
+  assert.match(
+    trustReasonsSource,
+    /gap-\[var\(--logo-gap\)\]/,
+    "Expected the Trusted By marquee to keep explicit spacing between logos",
+  );
+  assert.match(
+    trustReasonsSource,
+    /aria-hidden="true"/,
+    "Expected the duplicated marquee logos to stay hidden from assistive technology",
+  );
+
+  assert.match(
+    globalStyles,
+    /@keyframes logo-marquee-scroll/,
+    "Expected global styles to define the Trusted By marquee keyframes",
+  );
+  assert.match(
+    globalStyles,
+    /\.logo-marquee-track/,
+    "Expected global styles to include the Trusted By marquee track utility",
+  );
+  assert.match(
+    globalStyles,
+    /animation:\s*logo-marquee-scroll var\(--logo-marquee-duration, 28s\) linear infinite/,
+    "Expected the Trusted By marquee track to autoplay with a linear infinite animation",
+  );
+  assert.match(
+    globalStyles,
+    /\.logo-marquee:hover \.logo-marquee-track/,
+    "Expected hovering the Trusted By marquee to pause the autoplayed track",
+  );
+});
+
 test("home and solution pages opt into the approved motion hooks", () => {
   const heroSource = readSource("src/components/sections/Hero.astro");
   const solutionHeroSource = readSource("src/components/sections/solutions/SolutionHero.astro");

@@ -21,7 +21,7 @@ const visibilityClass =
   id="services-menu"
   data-menu-panel="services"
   data-open={forceOpen ? "true" : "false"}
-  class={`fixed left-1/2 top-[88px] z-50 w-[226px] -translate-x-1/2 overflow-hidden bg-[#fffffa] shadow-[-4px_4px_20px_rgba(0,0,0,0.1)] transition duration-200 xl:left-[calc(50%+230px)] ${visibilityClass}`}
+  class={`absolute left-1/2 top-full z-50 w-[226px] -translate-x-1/2 overflow-hidden bg-[#fffffa] shadow-[-4px_4px_20px_rgba(0,0,0,0.1)] transition duration-200 ${visibilityClass}`}
 >
   <nav aria-label="Services menu">
     {
@@ -33,7 +33,7 @@ const visibilityClass =
             href={item.href}
             data-menu-link
             data-active={isActive ? "true" : "false"}
-            class="flex h-[51px] items-center justify-center bg-white px-4 text-center text-base font-bold capitalize text-black transition hover:brightness-95 data-[active=true]:bg-nav-active data-[active=true]:text-white focus:outline-none focus:ring-2 focus:ring-brand focus:ring-inset"
+            class="flex h-[51px] items-center justify-center bg-white px-4 text-center text-base font-bold capitalize text-black transition hover:brightness-95 data-[active=true]:bg-nav-dropdown-active data-[active=true]:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-inset"
           >
             {item.title}
           </a>

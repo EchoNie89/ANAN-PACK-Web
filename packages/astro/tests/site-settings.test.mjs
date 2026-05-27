@@ -46,6 +46,37 @@ test("site settings schema exists for shared contact information", () => {
   );
 });
 
+test("site settings fetch uses the shared timed Sanity fallback path", () => {
+  const siteSettingsSource = readAstroSource("src/lib/site-settings.ts");
+  const sanitySource = readAstroSource("src/lib/sanity.ts");
+
+  assert.match(
+    siteSettingsSource,
+    /fetchSanityQuery/,
+    "Expected site settings reads to use the shared Sanity fetch helper instead of calling the live API directly",
+  );
+  assert.equal(
+    /sanityClient\.fetch/.test(siteSettingsSource),
+    false,
+    "Expected site settings to stop calling sanityClient.fetch directly so stalled live API requests do not block SSR",
+  );
+  assert.match(
+    sanitySource,
+    /sanityCdnClient/,
+    "Expected the shared Sanity module to define a CDN fallback client for read queries",
+  );
+  assert.match(
+    sanitySource,
+    /setTimeout/,
+    "Expected the shared Sanity fetch helper to enforce a timeout before falling back",
+  );
+  assert.match(
+    sanitySource,
+    /sanityCdnClient\.fetch/,
+    "Expected the shared Sanity fetch helper to retry against the CDN client after a live API failure",
+  );
+});
+
 test("footer and contact page use a shared site settings getter", () => {
   const footerSource = readAstroSource("src/components/sections/Footer.astro");
   const contactFormSource = readAstroSource("src/components/sections/contact/ContactProjectForm.astro");

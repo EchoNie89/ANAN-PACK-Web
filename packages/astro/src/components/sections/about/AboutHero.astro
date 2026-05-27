@@ -43,17 +43,16 @@ const heroImage = getLocalImage("/images/about/about-hero.png");
       <nav
         class="motion-enter mt-10 overflow-hidden rounded-none bg-surface-panel shadow-menu lg:absolute lg:left-[calc(50%+378px)] lg:top-0 lg:mt-0 lg:w-[226px] lg:-translate-x-1/2"
         aria-label="About page menu"
+        data-about-menu
         style="--motion-delay: 280ms;"
       >
         {
           menuItems.map((item) => (
             <a
               href={item.href}
-              class={`flex min-h-[51px] items-center justify-center px-5 text-center text-base font-bold transition ${
-                item.active
-                  ? "bg-nav-active text-white"
-                  : "bg-surface-panel text-black hover:bg-brand-soft/55"
-              }`}
+              data-about-menu-link
+              data-active={item.active ? "true" : "false"}
+              class="flex min-h-[51px] items-center justify-center bg-white px-4 text-center text-base font-bold text-black transition hover:brightness-95 data-[active=true]:bg-nav-dropdown-active data-[active=true]:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-inset"
             >
               {item.label}
             </a>
@@ -63,3 +62,26 @@ const heroImage = getLocalImage("/images/about/about-hero.png");
     </div>
   </Container>
 </section>
+
+<script>
+  const aboutMenu = document.querySelector('[data-about-menu]');
+
+  if (aboutMenu instanceof HTMLElement) {
+    const aboutMenuLinks = Array.from(
+      aboutMenu.querySelectorAll('[data-about-menu-link]'),
+    );
+
+    const syncAboutMenuLinks = () => {
+      const currentHash = window.location.hash || '#our-story';
+
+      aboutMenuLinks.forEach((link) => {
+        if (!(link instanceof HTMLAnchorElement)) return;
+        const href = link.getAttribute('href') ?? '';
+        link.setAttribute('data-active', String(href === currentHash));
+      });
+    };
+
+    window.addEventListener('hashchange', syncAboutMenuLinks);
+    syncAboutMenuLinks();
+  }
+</script>

@@ -1,12 +1,53 @@
 import { createClient } from '@sanity/client';
 import { createImageUrlBuilder } from '@sanity/image-url';
 
-export const sanityClient = createClient({
+const sanityConfig = {
   projectId: import.meta.env.SANITY_PROJECT_ID || '',
   dataset: import.meta.env.SANITY_DATASET || 'production',
   apiVersion: '2024-01-01',
+};
+
+export const sanityClient = createClient({
+  ...sanityConfig,
+  useCdn: false,
+});
+
+export const sanityCdnClient = createClient({
+  ...sanityConfig,
   useCdn: true,
 });
+
+const SANITY_FETCH_TIMEOUT_MS = 2500;
+
+function withSanityTimeout<T>(operation: Promise<T>, message: string): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timeoutId = setTimeout(() => reject(new Error(message)), SANITY_FETCH_TIMEOUT_MS);
+
+    operation
+      .then((value) => {
+        clearTimeout(timeoutId);
+        resolve(value);
+      })
+      .catch((error) => {
+        clearTimeout(timeoutId);
+        reject(error);
+      });
+  });
+}
+
+export async function fetchSanityQuery<T>(
+  query: string,
+  params: Record<string, unknown> = {},
+): Promise<T> {
+  try {
+    return await withSanityTimeout(
+      sanityClient.fetch<T>(query, params),
+      'Timed out fetching Sanity data from live API',
+    );
+  } catch {
+    return sanityCdnClient.fetch<T>(query, params);
+  }
+}
 
 const builder = createImageUrlBuilder(sanityClient);
 
@@ -239,25 +280,25 @@ const PRODUCT_CUSTOMIZATION_QUERY = `
 `;
 
 export async function getProductApplications(slug: string): Promise<ProductApplications | null> {
-  return sanityClient.fetch(PRODUCT_APPLICATIONS_QUERY, {
+  return fetchSanityQuery(PRODUCT_APPLICATIONS_QUERY, {
     slug,
     documentId: `product-${slug}`,
   });
 }
 
 export async function getProductShowcase(slug: string): Promise<ProductShowcase | null> {
-  return sanityClient.fetch(PRODUCT_SHOWCASE_QUERY, {
+  return fetchSanityQuery(PRODUCT_SHOWCASE_QUERY, {
     slug,
     documentId: `product-${slug}`,
   });
 }
 
 export async function getAllProductShowcases(): Promise<ProductShowcase[]> {
-  return sanityClient.fetch(ALL_PRODUCT_SHOWCASES_QUERY);
+  return fetchSanityQuery(ALL_PRODUCT_SHOWCASES_QUERY);
 }
 
 export async function getProductCustomization(slug: string): Promise<ProductCustomization | null> {
-  return sanityClient.fetch(PRODUCT_CUSTOMIZATION_QUERY, {
+  return fetchSanityQuery(PRODUCT_CUSTOMIZATION_QUERY, {
     slug,
     documentId: `product-${slug}`,
   });

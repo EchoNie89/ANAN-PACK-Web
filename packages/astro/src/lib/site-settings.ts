@@ -1,4 +1,4 @@
-import { sanityClient } from "./sanity";
+import { fetchSanityQuery } from "./sanity";
 
 export interface SiteContactDetails {
   email: string;
@@ -113,10 +113,12 @@ export async function getSiteSettings(): Promise<SiteSettings> {
     return DEFAULT_SITE_SETTINGS;
   }
 
-  siteSettingsPromise = sanityClient
-    .fetch<SiteSettingsDocument | null>(SITE_SETTINGS_QUERY, {
+  siteSettingsPromise = fetchSanityQuery<SiteSettingsDocument | null>(
+    SITE_SETTINGS_QUERY,
+    {
       documentId: "siteSettings",
-    })
+    },
+  )
     .then((document) => normalizeSiteSettings(document))
     .catch(() => DEFAULT_SITE_SETTINGS);
 

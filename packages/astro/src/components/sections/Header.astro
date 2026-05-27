@@ -1,31 +1,40 @@
 ---
-import Container from "../ui/Container.astro";
-import LocalImage from "../ui/LocalImage.astro";
-import ProductsMegaMenu from "./ProductsMegaMenu.astro";
-import ServicesDropdown from "./ServicesDropdown.astro";
-import SolutionsDropdown from "./SolutionsDropdown.astro";
-import { navItems, productMenuItems, serviceMenuItems, solutionMenuItems } from "../../data/home";
-import { getSiteName } from "../../lib/seo";
+import Container from '../ui/Container.astro';
+import LocalImage from '../ui/LocalImage.astro';
+import ProductsMegaMenu from './ProductsMegaMenu.astro';
+import ServicesDropdown from './ServicesDropdown.astro';
+import SolutionsDropdown from './SolutionsDropdown.astro';
+import {
+  navItems,
+  productMenuItems,
+  serviceMenuItems,
+  solutionMenuItems,
+} from '../../data/home';
+import { getSiteName } from '../../lib/seo';
 
 interface Props {
   activeNav?: string;
-  openMenu?: "products" | "solutions" | "services";
+  openMenu?: 'products' | 'solutions' | 'services';
 }
 
-const { activeNav = "Home", openMenu } = Astro.props;
+const { activeNav = 'Home', openMenu } = Astro.props;
 const siteName = getSiteName();
 
 const normalizePath = (value: string) => {
-  const [path = "/"] = value.split("#");
-  return path === "/" ? "/" : path.replace(/\/+$/, "");
+  const [path = '/'] = value.split('#');
+  return path === '/' ? '/' : path.replace(/\/+$/, '');
 };
 
 const currentPath = normalizePath(Astro.url.pathname);
 const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
 ---
 
-<header class="sticky top-0 z-50 border-b border-border/60 bg-white/95 backdrop-blur">
-  <Container class="flex h-16 items-center justify-between lg:h-[88px] lg:!max-w-[1280px]">
+<header
+  class="sticky top-0 z-50 border-b border-border/60 bg-white/95 backdrop-blur"
+>
+  <Container
+    class="flex h-16 items-center justify-between lg:h-[88px] lg:!max-w-[1280px]"
+  >
     <a
       href="/"
       class="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
@@ -47,73 +56,135 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
     >
       {
         navItems.map((item) =>
-          item.label === "Products" ? (
-            <div class="group/nav relative flex h-full items-center" data-menu-root>
+          item.label === 'Products' ? (
+            <div
+              class="group/nav relative flex h-full items-center"
+              data-menu-root
+            >
               <button
                 type="button"
                 data-menu-trigger="products"
                 aria-controls="products-menu"
-                aria-expanded={openMenu === "products" ? "true" : "false"}
-                class={`relative inline-flex items-center gap-1 leading-none transition after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:bg-nav-active after:content-[''] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
-                  activeNav === "Products" ? "text-nav-active after:opacity-100" : "text-ink after:opacity-0 hover:text-brand"
+                aria-expanded={openMenu === 'products' ? 'true' : 'false'}
+                class={`inline-flex items-center gap-1 leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
+                  activeNav === 'Products'
+                    ? 'text-nav-highlight'
+                    : 'text-ink hover:text-brand'
                 } cursor-pointer border-0 bg-transparent p-0 text-base font-bold`}
                 aria-haspopup="true"
               >
-                {item.label}
-                <svg viewBox="0 0 20 20" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <span
+                  class={`relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-nav-highlight after:content-[''] ${
+                    activeNav === 'Products'
+                      ? 'after:opacity-100'
+                      : 'after:opacity-0'
+                  }`}
+                >
+                  {item.label}
+                </span>
+                <svg
+                  viewBox="0 0 20 20"
+                  class="size-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
                   <path d="m5 8 5 5 5-5" />
                 </svg>
               </button>
-              <ProductsMegaMenu forceOpen={openMenu === "products"} />
+              <ProductsMegaMenu forceOpen={openMenu === 'products'} />
             </div>
-          ) : item.label === "Solutions" ? (
-            <div class="group/nav relative flex h-full items-center" data-menu-root>
+          ) : item.label === 'Solutions' ? (
+            <div
+              class="group/nav relative flex h-full items-center"
+              data-menu-root
+            >
               <button
                 type="button"
                 data-menu-trigger="solutions"
                 aria-controls="solutions-menu"
-                aria-expanded={openMenu === "solutions" ? "true" : "false"}
-                class={`relative inline-flex items-center gap-1 leading-none transition after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:bg-nav-active after:content-[''] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
-                  activeNav === "Solutions" ? "text-nav-active after:opacity-100" : "text-ink after:opacity-0 hover:text-brand"
+                aria-expanded={openMenu === 'solutions' ? 'true' : 'false'}
+                class={`inline-flex items-center gap-1 leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
+                  activeNav === 'Solutions'
+                    ? 'text-nav-highlight'
+                    : 'text-ink hover:text-brand'
                 } cursor-pointer border-0 bg-transparent p-0 text-base font-bold`}
                 aria-haspopup="true"
               >
-                {item.label}
-                <svg viewBox="0 0 20 20" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <span
+                  class={`relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-nav-highlight after:content-[''] ${
+                    activeNav === 'Solutions'
+                      ? 'after:opacity-100'
+                      : 'after:opacity-0'
+                  }`}
+                >
+                  {item.label}
+                </span>
+                <svg
+                  viewBox="0 0 20 20"
+                  class="size-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
                   <path d="m5 8 5 5 5-5" />
                 </svg>
               </button>
-              <SolutionsDropdown forceOpen={openMenu === "solutions"} />
+              <SolutionsDropdown forceOpen={openMenu === 'solutions'} />
             </div>
-          ) : item.label === "Services" ? (
-            <div class="group/nav relative flex h-full items-center" data-menu-root>
+          ) : item.label === 'Services' ? (
+            <div
+              class="group/nav relative flex h-full items-center"
+              data-menu-root
+            >
               <button
                 type="button"
                 data-menu-trigger="services"
                 aria-controls="services-menu"
-                aria-expanded={openMenu === "services" ? "true" : "false"}
-                class={`relative inline-flex items-center gap-1 leading-none transition after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:bg-nav-active after:content-[''] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
-                  activeNav === "Services" ? "text-nav-active after:opacity-100" : "text-ink after:opacity-0 hover:text-brand"
+                aria-expanded={openMenu === 'services' ? 'true' : 'false'}
+                class={`inline-flex items-center gap-1 leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
+                  activeNav === 'Services'
+                    ? 'text-nav-highlight'
+                    : 'text-ink hover:text-brand'
                 } cursor-pointer border-0 bg-transparent p-0 text-base font-bold`}
                 aria-haspopup="true"
               >
-                {item.label}
-                <svg viewBox="0 0 20 20" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <span
+                  class={`relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-nav-highlight after:content-[''] ${
+                    activeNav === 'Services'
+                      ? 'after:opacity-100'
+                      : 'after:opacity-0'
+                  }`}
+                >
+                  {item.label}
+                </span>
+                <svg
+                  viewBox="0 0 20 20"
+                  class="size-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
                   <path d="m5 8 5 5 5-5" />
                 </svg>
               </button>
-              <ServicesDropdown forceOpen={openMenu === "services"} />
+              <ServicesDropdown forceOpen={openMenu === 'services'} />
             </div>
           ) : (
             <a
               href={item.href}
-              class={`inline-flex items-center leading-none transition hover:text-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
-                activeNav === item.label ? "text-nav-active" : "text-ink"
+              class={`relative inline-flex items-center leading-none transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-nav-highlight after:content-[''] hover:text-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
+                activeNav === item.label
+                  ? 'text-nav-highlight after:opacity-100'
+                  : 'text-ink after:opacity-0 hover:text-brand'
               }`}
             >
               {item.label}
             </a>
-          )
+          ),
         )
       }
     </nav>
@@ -134,8 +205,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
         class="fixed inset-x-0 bottom-0 top-16 z-40 bg-black/18 backdrop-blur-[1px]"
         aria-label="Close navigation menu"
         data-mobile-nav-backdrop
-        hidden
-      ></button>
+        hidden></button>
       <nav
         id="mobile-navigation"
         class="fixed inset-x-4 top-[72px] z-50 grid max-h-[calc(100dvh-96px)] gap-2 overflow-y-auto overscroll-contain rounded-panel border border-border bg-white p-4 text-sm font-semibold shadow-soft sm:left-auto sm:w-72"
@@ -146,15 +216,22 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
       >
         {
           navItems.map((item) =>
-            item.label === "Products" ? (
+            item.label === 'Products' ? (
               <details class="rounded px-2 py-2 hover:bg-surface-muted">
                 <summary
                   class={`flex cursor-pointer list-none items-center justify-between ${
-                    activeNav === "Products" ? "text-brand-dark" : "text-ink"
+                    activeNav === 'Products' ? 'text-brand-dark' : 'text-ink'
                   }`}
                 >
                   Products
-                  <svg viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 16 16"
+                    class="size-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
                     <path d="m4 6 4 4 4-4" />
                   </svg>
                 </summary>
@@ -163,7 +240,9 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                     <a
                       href={product.href}
                       class={`flex items-center gap-3 rounded p-2 ${
-                        isCurrentPath(product.href) ? "bg-brand-soft/80 text-brand-dark" : "text-text-main hover:bg-surface-muted"
+                        isCurrentPath(product.href)
+                          ? 'bg-brand-soft/80 text-brand-dark'
+                          : 'text-text-main hover:bg-surface-muted'
                       }`}
                     >
                       <LocalImage
@@ -179,15 +258,25 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                   ))}
                 </div>
               </details>
-            ) : item.label === "Solutions" ? (
-              <details class="rounded px-2 py-2 hover:bg-surface-muted" open={openMenu === "solutions"}>
+            ) : item.label === 'Solutions' ? (
+              <details
+                class="rounded px-2 py-2 hover:bg-surface-muted"
+                open={openMenu === 'solutions'}
+              >
                 <summary
                   class={`flex cursor-pointer list-none items-center justify-between ${
-                    activeNav === "Solutions" ? "text-brand-dark" : "text-ink"
+                    activeNav === 'Solutions' ? 'text-brand-dark' : 'text-ink'
                   }`}
                 >
                   Solutions
-                  <svg viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 16 16"
+                    class="size-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
                     <path d="m4 6 4 4 4-4" />
                   </svg>
                 </summary>
@@ -196,7 +285,9 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                     <a
                       href={solution.href}
                       class={`rounded px-3 py-2 ${
-                        isCurrentPath(solution.href) ? "bg-brand-soft/80 text-brand-dark" : "text-text-main hover:bg-surface-muted"
+                        isCurrentPath(solution.href)
+                          ? 'bg-brand-soft/80 text-brand-dark'
+                          : 'text-text-main hover:bg-surface-muted'
                       }`}
                     >
                       {solution.title}
@@ -204,15 +295,25 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                   ))}
                 </div>
               </details>
-            ) : item.label === "Services" ? (
-              <details class="rounded px-2 py-2 hover:bg-surface-muted" open={activeNav === "Services" || openMenu === "services"}>
+            ) : item.label === 'Services' ? (
+              <details
+                class="rounded px-2 py-2 hover:bg-surface-muted"
+                open={activeNav === 'Services' || openMenu === 'services'}
+              >
                 <summary
                   class={`flex cursor-pointer list-none items-center justify-between ${
-                    activeNav === "Services" ? "text-brand-dark" : "text-ink"
+                    activeNav === 'Services' ? 'text-brand-dark' : 'text-ink'
                   }`}
                 >
                   Services
-                  <svg viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 16 16"
+                    class="size-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
                     <path d="m4 6 4 4 4-4" />
                   </svg>
                 </summary>
@@ -221,7 +322,9 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                     <a
                       href={service.href}
                       class={`rounded px-3 py-2 ${
-                        isCurrentPath(service.href) ? "bg-brand-soft/80 text-brand-dark" : "text-text-main hover:bg-surface-muted"
+                        isCurrentPath(service.href)
+                          ? 'bg-brand-soft/80 text-brand-dark'
+                          : 'text-text-main hover:bg-surface-muted'
                       }`}
                     >
                       {service.title}
@@ -232,13 +335,15 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
             ) : (
               <a
                 class={`rounded px-2 py-2 ${
-                  activeNav === item.label ? "bg-brand-soft/80 text-brand-dark" : "text-ink hover:bg-surface-muted"
+                  activeNav === item.label
+                    ? 'bg-brand-soft/80 text-brand-dark'
+                    : 'text-ink hover:bg-surface-muted'
                 }`}
                 href={item.href}
               >
                 {item.label}
               </a>
-            )
+            ),
           )
         }
       </nav>
@@ -247,18 +352,24 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
 </header>
 
 <script>
-  const primaryNav = document.querySelector("[data-primary-nav]");
+  const primaryNav = document.querySelector('[data-primary-nav]');
 
   if (primaryNav) {
-    const triggers = Array.from(primaryNav.querySelectorAll("[data-menu-trigger]"));
-    const panels = Array.from(primaryNav.querySelectorAll("[data-menu-panel]"));
-    const menuLinks = Array.from(primaryNav.querySelectorAll("[data-menu-link]"));
-    const menuRoots = Array.from(primaryNav.querySelectorAll("[data-menu-root]"));
+    const triggers = Array.from(
+      primaryNav.querySelectorAll('[data-menu-trigger]'),
+    );
+    const panels = Array.from(primaryNav.querySelectorAll('[data-menu-panel]'));
+    const menuLinks = Array.from(
+      primaryNav.querySelectorAll('[data-menu-link]'),
+    );
+    const menuRoots = Array.from(
+      primaryNav.querySelectorAll('[data-menu-root]'),
+    );
 
     const normalizePath = (value) => {
-      const [path = "/"] = String(value ?? "").split("#");
-      if (path === "/") return "/";
-      return path.replace(/\/+$/, "");
+      const [path = '/'] = String(value ?? '').split('#');
+      if (path === '/') return '/';
+      return path.replace(/\/+$/, '');
     };
 
     const syncActiveMenuLinks = () => {
@@ -266,71 +377,76 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
       const currentHash = window.location.hash;
 
       menuLinks.forEach((link) => {
-        const href = link.getAttribute("href") ?? "";
-        const [pathPart, hashPart] = href.split("#");
+        const href = link.getAttribute('href') ?? '';
+        const [pathPart, hashPart] = href.split('#');
         const isActive = hashPart
-          ? normalizePath(pathPart || "/") === currentPath && `#${hashPart}` === currentHash
+          ? normalizePath(pathPart || '/') === currentPath &&
+            `#${hashPart}` === currentHash
           : normalizePath(href) === currentPath;
 
-        link.setAttribute("data-active", String(isActive));
+        link.setAttribute('data-active', String(isActive));
       });
     };
 
     const setOpenMenu = (menuName) => {
       triggers.forEach((trigger) => {
-        const isOpen = trigger.getAttribute("data-menu-trigger") === menuName;
-        trigger.setAttribute("aria-expanded", String(isOpen));
+        const isOpen = trigger.getAttribute('data-menu-trigger') === menuName;
+        trigger.setAttribute('aria-expanded', String(isOpen));
       });
 
       panels.forEach((panel) => {
-        const isOpen = panel.getAttribute("data-menu-panel") === menuName;
-        panel.setAttribute("data-open", String(isOpen));
+        const isOpen = panel.getAttribute('data-menu-panel') === menuName;
+        panel.setAttribute('data-open', String(isOpen));
       });
     };
 
     triggers.forEach((trigger) => {
-      trigger.addEventListener("click", (event) => {
+      trigger.addEventListener('click', (event) => {
         event.preventDefault();
-        const menuName = trigger.getAttribute("data-menu-trigger");
-        const isOpen = trigger.getAttribute("aria-expanded") === "true";
+        const menuName = trigger.getAttribute('data-menu-trigger');
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
         setOpenMenu(isOpen ? null : menuName);
       });
     });
 
-    primaryNav.addEventListener("click", (event) => {
+    primaryNav.addEventListener('click', (event) => {
       const target = event.target;
       if (!(target instanceof Element)) return;
-      if (target.closest("[data-menu-panel] a")) setOpenMenu(null);
+      if (target.closest('[data-menu-panel] a')) setOpenMenu(null);
     });
 
-    document.addEventListener("click", (event) => {
+    document.addEventListener('click', (event) => {
       const target = event.target;
       if (!(target instanceof Element)) return;
-      if (!target.closest("[data-menu-root]")) setOpenMenu(null);
+      if (!target.closest('[data-menu-root]')) setOpenMenu(null);
     });
 
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") setOpenMenu(null);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setOpenMenu(null);
     });
 
     menuRoots.forEach((menuRoot) => {
-      menuRoot.addEventListener("pointerleave", () => {
+      menuRoot.addEventListener('pointerleave', () => {
         setOpenMenu(null);
       });
     });
 
-    window.addEventListener("hashchange", syncActiveMenuLinks);
+    window.addEventListener('hashchange', syncActiveMenuLinks);
     syncActiveMenuLinks();
   }
 
-  const mobileNav = document.querySelector("[data-mobile-nav]");
+  const mobileNav = document.querySelector('[data-mobile-nav]');
 
   if (mobileNav instanceof HTMLElement) {
-    const mobileNavTrigger = mobileNav.querySelector("[data-mobile-nav-trigger]");
-    const mobileNavPanel = mobileNav.querySelector("[data-mobile-nav-panel]");
-    const mobileNavBackdrop = mobileNav.querySelector("[data-mobile-nav-backdrop]");
-    const mobileNavLinks = Array.from(mobileNav.querySelectorAll("a"));
-    const mobileHeader = mobileNav.closest("header");
+    const mobileNavTrigger = mobileNav.querySelector(
+      '[data-mobile-nav-trigger]',
+    );
+    const mobileNavPanel = mobileNav.querySelector('[data-mobile-nav-panel]');
+    const mobileNavBackdrop = mobileNav.querySelector(
+      '[data-mobile-nav-backdrop]',
+    );
+    const mobileNavLinks = Array.from(mobileNav.querySelectorAll('a'));
+    const mobileHeader = mobileNav.closest('header');
     const inertTargets = Array.from(document.body.children).filter(
       (element) => element instanceof HTMLElement && element !== mobileHeader,
     );
@@ -340,11 +456,13 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
     const getMobileNavFocusables = () => {
       if (!(mobileNavPanel instanceof HTMLElement)) return [];
 
-      return Array.from(mobileNavPanel.querySelectorAll(focusableSelector)).filter(
+      return Array.from(
+        mobileNavPanel.querySelectorAll(focusableSelector),
+      ).filter(
         (element) =>
           element instanceof HTMLElement &&
-          !element.hasAttribute("hidden") &&
-          element.getAttribute("aria-hidden") !== "true",
+          !element.hasAttribute('hidden') &&
+          element.getAttribute('aria-hidden') !== 'true',
       );
     };
 
@@ -359,10 +477,10 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
       mobileNav.dataset.open = String(isOpen);
 
       if (mobileNavTrigger instanceof HTMLButtonElement) {
-        mobileNavTrigger.setAttribute("aria-expanded", String(isOpen));
+        mobileNavTrigger.setAttribute('aria-expanded', String(isOpen));
         mobileNavTrigger.setAttribute(
-          "aria-label",
-          isOpen ? "Close navigation menu" : "Open navigation menu",
+          'aria-label',
+          isOpen ? 'Close navigation menu' : 'Open navigation menu',
         );
       }
 
@@ -381,50 +499,55 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
           const [firstFocusable] = getMobileNavFocusables();
           firstFocusable?.focus();
         });
-      } else if (restoreFocus && mobileNavTrigger instanceof HTMLButtonElement) {
+      } else if (
+        restoreFocus &&
+        mobileNavTrigger instanceof HTMLButtonElement
+      ) {
         mobileNavTrigger.focus();
       }
     };
 
     const closeMobileNav = (options) => {
-      if (mobileNav.dataset.open !== "true") return;
+      if (mobileNav.dataset.open !== 'true') return;
       setMobileNavOpen(false, options);
     };
 
     if (mobileNavTrigger instanceof HTMLButtonElement) {
-      mobileNavTrigger.addEventListener("click", () => {
-        setMobileNavOpen(mobileNav.dataset.open !== "true", { restoreFocus: false });
+      mobileNavTrigger.addEventListener('click', () => {
+        setMobileNavOpen(mobileNav.dataset.open !== 'true', {
+          restoreFocus: false,
+        });
       });
     }
 
     if (mobileNavBackdrop instanceof HTMLButtonElement) {
-      mobileNavBackdrop.addEventListener("click", closeMobileNav);
+      mobileNavBackdrop.addEventListener('click', closeMobileNav);
     }
 
     mobileNavLinks.forEach((link) => {
-      link.addEventListener("click", closeMobileNav);
+      link.addEventListener('click', closeMobileNav);
     });
 
-    document.addEventListener("pointerdown", (event) => {
-      if (mobileNav.dataset.open !== "true") return;
+    document.addEventListener('pointerdown', (event) => {
+      if (mobileNav.dataset.open !== 'true') return;
 
       const target = event.target;
       if (!(target instanceof Element)) return;
-      if (target.closest("[data-mobile-nav-panel]")) return;
-      if (target.closest("[data-mobile-nav-trigger]")) return;
+      if (target.closest('[data-mobile-nav-panel]')) return;
+      if (target.closest('[data-mobile-nav-trigger]')) return;
 
       closeMobileNav();
     });
 
-    document.addEventListener("keydown", (event) => {
-      if (mobileNav.dataset.open !== "true") return;
+    document.addEventListener('keydown', (event) => {
+      if (mobileNav.dataset.open !== 'true') return;
 
-      if (event.key === "Escape") {
+      if (event.key === 'Escape') {
         closeMobileNav();
         return;
       }
 
-      if (event.key !== "Tab") return;
+      if (event.key !== 'Tab') return;
 
       const focusables = getMobileNavFocusables();
       if (focusables.length === 0) {
@@ -437,7 +560,10 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
       const lastFocusable = focusables[focusables.length - 1];
       const activeElement = document.activeElement;
 
-      if (!(activeElement instanceof HTMLElement) || !mobileNavPanel?.contains(activeElement)) {
+      if (
+        !(activeElement instanceof HTMLElement) ||
+        !mobileNavPanel?.contains(activeElement)
+      ) {
         event.preventDefault();
         firstFocusable.focus();
         return;
@@ -455,7 +581,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
       }
     });
 
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
       if (window.innerWidth >= 1024) closeMobileNav({ restoreFocus: false });
     });
 
