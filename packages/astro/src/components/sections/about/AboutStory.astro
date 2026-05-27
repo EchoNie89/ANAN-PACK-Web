@@ -1,5 +1,4 @@
 ---
-import SectionTitle from "../../ui/SectionTitle.astro";
 import Container from "../../ui/Container.astro";
 import LocalImage from "../../ui/LocalImage.astro";
 import { getLocalImage } from "../../../lib/local-images";
@@ -10,60 +9,61 @@ const storyPackingImage = getLocalImage("/images/about/about-story-packing.png")
 
 <section id="our-story" class="bg-white py-16 md:py-24">
   <Container class="!max-w-[1280px]">
-    <div class="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
-      <div class="space-y-8">
-        <div data-reveal>
-          <SectionTitle
-            eyebrow="WE ARE ANAN PACK"
-            title="ANAN PACK is a packaging and trim supply chain partner for apparel, home textile, lifestyle, and e-commerce brands."
-            description="We focus on helping growing brands manage sourcing with more clarity and less friction. From hang tags and labels to packaging boxes, ribbons, and retail-ready kits, we bridge design intent with reliable manufacturing execution."
-            align="left"
+    <div class="space-y-14 md:space-y-20 lg:space-y-[120px]">
+      <div class="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-start lg:gap-[52px]">
+        <div class="overflow-hidden rounded-[4px] shadow-card" data-reveal>
+          <LocalImage
+            src={storyFlatlayImage}
+            alt="Custom hang tags, labels, and trim materials laid out on a work surface"
+            class="aspect-[591/380] size-full object-cover"
+            loading="lazy"
+            sizes="(min-width: 1024px) 46vw, 100vw"
+            widths={[480, 640, 800, 960, 1200]}
           />
         </div>
-        <div class="grid gap-6 sm:grid-cols-2">
-          <div class="overflow-hidden rounded-soft shadow-card" data-reveal style="--reveal-delay: 80ms;">
-            <LocalImage
-              src={storyFlatlayImage}
-              alt="Custom hang tags, labels, and trim materials laid out on a work surface"
-              class="aspect-[1.15/1] size-full object-cover"
-              loading="lazy"
-              sizes="(min-width: 640px) 24vw, 100vw"
-              widths={[320, 480, 640, 800]}
-            />
-          </div>
-          <div
-            class="overflow-hidden rounded-soft shadow-card sm:translate-y-10"
-            data-reveal
-            style="--reveal-delay: 160ms;"
-          >
-            <LocalImage
-              src={storyPackingImage}
-              alt="A packaging shipment being checked and handed over"
-              class="aspect-[1.15/1] size-full object-cover"
-              loading="lazy"
-              sizes="(min-width: 640px) 24vw, 100vw"
-              widths={[320, 480, 640, 800]}
-            />
+
+        <div class="space-y-5 lg:pl-1" data-reveal style="--reveal-delay: 100ms;">
+          <p class="text-base font-extrabold uppercase tracking-[0.03em] text-brand">WHO WE ARE</p>
+          <h2 class="max-w-[591px] text-[22px] font-extrabold leading-[1.3] tracking-[0.02em] text-text-main md:text-[24px]">
+            ANAN PACK Is A Packaging And Trim Supply Chain Partner For Apparel, Home Textile, Lifestyle, And E-Commerce Brands.
+          </h2>
+          <div class="max-w-[591px] space-y-3 text-[15px] leading-[26px] text-text-main md:space-y-4">
+            <p>
+              We are not a single factory. Instead, we integrate a network of audited manufacturing partners and manage multi-category packaging projects through one coordinated process.
+            </p>
+            <p>
+              From labels, hang tags, stickers, paper bags, poly bags, boxes, and other packaging materials, we help brands simplify sourcing, reduce supplier fragmentation, and improve project visibility.
+            </p>
           </div>
         </div>
       </div>
 
-      <div class="rounded-card bg-surface-muted p-7 md:p-9" data-reveal style="--reveal-delay: 120ms;">
-        <SectionTitle
-          eyebrow="WHY WE STARTED"
-          title="We created this team to solve the real challenges of sourcing in China."
-          align="left"
-        />
-        <div class="mt-6 space-y-4 text-sm leading-7 text-text-muted md:text-[15px]">
-          <p>
-            Many overseas brands need more than a single supplier. They need a sourcing partner who can coordinate multiple categories, review artwork, check production progress, and keep communication consistent.
-          </p>
-          <p>
-            Instead of sending clients from one factory to another, we built a practical system around supplier verification, project management, quality follow-up, and delivery planning.
-          </p>
-          <p>
-            The result is a workflow that helps brands move faster, reduce avoidable mistakes, and scale packaging programs with more confidence.
-          </p>
+      <div class="grid gap-8 lg:grid-cols-[0.98fr_1.02fr] lg:items-start lg:gap-[52px]">
+        <div class="space-y-5 lg:pr-1" data-reveal>
+          <p class="text-base font-extrabold tracking-[0.03em] text-brand">Why We Started ANAN PACK</p>
+          <h2 class="max-w-[591px] text-[22px] font-extrabold leading-[1.3] tracking-[0.02em] text-text-main md:text-[24px]">
+            We Were Created To Solve The Real Challenges Of Sourcing In China
+          </h2>
+          <div class="max-w-[591px] space-y-3 text-[15px] leading-[26px] text-text-main md:space-y-4">
+            <p>
+              Many growing brands face the same challenge when sourcing packaging in China: different products require different suppliers, communication becomes fragmented, and quality standards are difficult to keep consistent.
+            </p>
+            <p>ANAN PACK was created to solve this problem.</p>
+            <p>
+              With experience in packaging sourcing, international trade, factory coordination, and quality follow-up, our team helps brands manage packaging projects with less risk, clearer communication, and more predictable delivery.
+            </p>
+          </div>
+        </div>
+
+        <div class="overflow-hidden rounded-[4px] shadow-card" data-reveal style="--reveal-delay: 100ms;">
+          <LocalImage
+            src={storyPackingImage}
+            alt="A packaging shipment being checked and handed over"
+            class="aspect-[591/380] size-full object-cover"
+            loading="lazy"
+            sizes="(min-width: 1024px) 46vw, 100vw"
+            widths={[480, 640, 800, 960, 1200]}
+          />
         </div>
       </div>
     </div>

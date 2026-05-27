@@ -125,6 +125,14 @@ test("about and services pages opt into the same motion system", () => {
   assert.match(faqGroupsSource, /data-reveal/);
 });
 
+test("about story follows the updated alternating editorial layout", () => {
+  const aboutStorySource = readSource("src/components/sections/about/AboutStory.astro");
+
+  assert.match(aboutStorySource, /WHO WE ARE/);
+  assert.match(aboutStorySource, /Why We Started ANAN PACK/);
+  assert.match(aboutStorySource, /lg:grid-cols-\[0\.98fr_1\.02fr\]/);
+});
+
 test("product pages opt into the same motion system", () => {
   const productHeroSource = readSource("src/components/sections/products/ProductHero.astro");
   const productProcessSource = readSource("src/components/sections/products/ProductProcess.astro");
