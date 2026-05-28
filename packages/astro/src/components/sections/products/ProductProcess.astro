@@ -35,7 +35,7 @@ const timelinePositions = [
       {
         process.map((step, index) => (
           <article
-            class="motion-hover-card relative rounded-panel bg-white px-5 pb-6 pt-7 text-center shadow-card"
+            class="relative rounded-panel bg-white px-5 pb-6 pt-7 text-center shadow-card"
             data-reveal
             style={`--reveal-delay: ${index * 80}ms;`}
           >
@@ -58,7 +58,7 @@ const timelinePositions = [
       {
         process.map((step, index) => (
           <article
-            class={`motion-hover-card ${timelinePositions[index] ?? ""} mx-auto w-full max-w-[255px] text-center`}
+            class={`${timelinePositions[index] ?? ""} mx-auto w-full max-w-[255px] text-center`}
             data-reveal
             style={`--reveal-delay: ${index * 70}ms;`}
           >

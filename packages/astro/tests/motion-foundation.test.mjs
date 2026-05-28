@@ -144,7 +144,7 @@ test("product pages opt into the same motion system", () => {
   assert.match(productHeroSource, /md:h-\[474px\]/);
 
   assert.match(productProcessSource, /data-reveal/);
-  assert.match(productProcessSource, /motion-hover-card/);
+  assert.doesNotMatch(productProcessSource, /motion-hover-card/);
   assert.match(productApplicationsSource, /data-reveal/);
   assert.match(productApplicationsSource, /motion-hover-card/);
   assert.match(productCaseStudySource, /data-reveal/);

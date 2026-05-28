@@ -233,3 +233,91 @@ test("product applications keeps the four-column desktop grid from the legacy la
     "Expected desktop applications layout to keep four columns",
   );
 });
+
+test("product applications adds a dedicated three-card layout for three-item sets", () => {
+  const productApplicationsSource = readSource("src/components/sections/products/ProductApplications.astro");
+
+  assert.match(
+    productApplicationsSource,
+    /applications\.length === 3/,
+    "Expected applications layout to special-case three-item sets",
+  );
+  assert.match(
+    productApplicationsSource,
+    /lg:grid-cols-3/,
+    "Expected three-item applications layout to use a three-column desktop grid",
+  );
+  assert.match(
+    productApplicationsSource,
+    /aspect-\[378\/265\]/,
+    "Expected three-item applications cards to use the Figma image ratio",
+  );
+});
+
+test("product case study uses the figma top layout with a fixed view more button", () => {
+  const productCaseStudySource = readSource("src/components/sections/products/ProductCaseStudy.astro");
+
+  assert.match(
+    productCaseStudySource,
+    /aspect-\[531\/545\]/,
+    "Expected product case study image to use the squarer Figma ratio",
+  );
+  assert.match(
+    productCaseStudySource,
+    /md:text-\[24px\]/,
+    "Expected product case study headline to match the Figma title scale",
+  );
+  assert.match(
+    productCaseStudySource,
+    /h-\[50px\] w-\[180px\]/,
+    "Expected product case study button to use the fixed Figma dimensions",
+  );
+  assert.doesNotMatch(
+    productCaseStudySource,
+    /w-full px-9 py-3 text-sm normal-case/,
+    "Expected product case study button to stop using the old fluid button sizing",
+  );
+});
+
+test("product customization process icons use local figma svg assets", () => {
+  const productProcessIconSource = readSource("src/components/sections/products/ProductProcessIcon.astro");
+
+  assert.match(
+    productProcessIconSource,
+    /\/images\/products\/process\/concept\.svg/,
+    "Expected product process icons to reference local Figma svg assets",
+  );
+  assert.match(
+    productProcessIconSource,
+    /\/images\/products\/process\/guaranteeing\.svg/,
+    "Expected guaranteeing icon to come from the local Figma asset set",
+  );
+  assert.doesNotMatch(
+    productProcessIconSource,
+    /M32 7c-11 0-20 8\.4-20 19/,
+    "Expected old inline concept icon path to be removed",
+  );
+});
+
+test("home and solutions case study sections mirror the product figma layout", () => {
+  const homeCaseStudySource = readSource("src/components/sections/CaseStudy.astro");
+  const solutionCaseStudySource = readSource("src/components/sections/solutions/SolutionCaseStudy.astro");
+
+  for (const source of [homeCaseStudySource, solutionCaseStudySource]) {
+    assert.match(
+      source,
+      /aspect-\[531\/545\]/,
+      "Expected home and solution case study images to use the product figma ratio",
+    );
+    assert.match(
+      source,
+      /md:text-\[24px\]/,
+      "Expected home and solution case study headlines to match the product title scale",
+    );
+    assert.match(
+      source,
+      /h-\[50px\] w-\[180px\]/,
+      "Expected home and solution case study buttons to use the fixed product dimensions",
+    );
+  }
+});

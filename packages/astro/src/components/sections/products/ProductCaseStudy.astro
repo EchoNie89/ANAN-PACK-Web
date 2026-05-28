@@ -1,5 +1,4 @@
 ---
-import Button from "../../ui/Button.astro";
 import Container from "../../ui/Container.astro";
 import SanityImage from "../../ui/SanityImage.astro";
 import type { ProductPageData } from "../../../data/products";
@@ -18,35 +17,35 @@ const challengeParagraphs = caseStudy.challenge
 
 <section class="bg-white py-14 md:py-20">
   <Container class="!max-w-[1280px]">
-    <div class="grid gap-7 md:gap-9 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+    <div class="grid gap-8 md:gap-10 lg:grid-cols-[minmax(0,531px)_minmax(0,609px)] lg:justify-between lg:gap-[60px]">
       <div class="overflow-hidden bg-surface-muted" data-reveal>
         <SanityImage
           image={caseStudy.image}
-          class="aspect-[1.02] size-full object-cover"
+          class="aspect-[531/545] size-full object-cover"
           sizes="(min-width: 1024px) 50vw, 100vw"
         />
       </div>
 
       <div data-reveal style="--reveal-delay: 100ms;">
-        <h2 class="text-2xl font-extrabold tracking-[0.03em] text-text-main md:text-[36px]">
+        <h2 class="text-[30px] font-extrabold tracking-[0.03em] text-text-main md:text-[32px]">
           Case Study
         </h2>
-        <h3 class="mt-4 max-w-2xl text-lg font-extrabold leading-snug text-ink md:text-2xl">
+        <h3 class="mt-4 max-w-[609px] text-[22px] font-bold leading-[1.5] text-text-main md:text-[24px]">
           {caseStudy.title}
         </h3>
-        <p class="mt-5 text-left text-sm leading-7 text-text-muted md:text-justify">
+        <p class="mt-5 max-w-[605px] text-[15px] leading-[1.5] text-text-muted text-justify">
           {caseStudy.description}
         </p>
 
         {
           caseStudy.quote && (
-            <div class="mt-8">
-              <div class="text-6xl font-extrabold leading-none text-ink">"</div>
-              <blockquote class="-mt-2 text-sm italic leading-6 text-text-muted">
+            <div class="mt-10 max-w-[608px]">
+              <div class="text-[68px] font-extrabold leading-none text-text-main md:text-[80px]">“</div>
+              <blockquote class="-mt-3 text-[14px] italic leading-[22px] text-text-muted text-justify">
                 {caseStudy.quote}
               </blockquote>
               {caseStudy.quoteAuthor && (
-                <p class="mt-7 text-xs font-extrabold italic text-ink">
+                <p class="mt-6 text-[15px] font-bold italic leading-[22px] text-text-main">
                   {caseStudy.quoteAuthor}
                 </p>
               )}
@@ -54,9 +53,12 @@ const challengeParagraphs = caseStudy.challenge
           )
         }
 
-        <Button href="/contact-us" variant="soft" class="mt-8 w-full px-9 py-3 text-sm normal-case tracking-normal sm:w-auto">
+        <a
+          href="/contact-us"
+          class="mt-10 inline-flex h-[50px] w-[180px] items-center justify-center rounded-[200px] bg-[#E6DBCB] text-[18px] font-semibold leading-none text-text-main transition hover:bg-[#d9c7af] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+        >
           View More
-        </Button>
+        </a>
       </div>
     </div>
 
