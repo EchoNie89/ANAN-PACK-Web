@@ -1,0 +1,137 @@
+---
+import Footer from "../components/sections/Footer.astro";
+import Header from "../components/sections/Header.astro";
+import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
+import Container from "../components/ui/Container.astro";
+import Layout from "./Layout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  effectiveDate?: string;
+  eyebrow?: string;
+  frontmatter?: Partial<{
+    title: string;
+    description: string;
+    effectiveDate: string;
+    eyebrow: string;
+  }>;
+}
+
+const frontmatter = Astro.props.frontmatter ?? {};
+
+const {
+  title = frontmatter.title ?? "Legal Information",
+  description = frontmatter.description ?? "",
+  effectiveDate = frontmatter.effectiveDate,
+  eyebrow = frontmatter.eyebrow,
+} = Astro.props;
+---
+
+<Layout
+  title={`${title} | ANAN PACK`}
+  description={description}
+  canonicalPath={Astro.url.pathname}
+>
+  <Header />
+  <main id="main-content" tabindex="-1">
+    <section class="bg-[linear-gradient(180deg,#f6f5f1_0%,#f9f9f9_100%)] pb-8 pt-16 md:pb-10 md:pt-20">
+      <Container class="!max-w-[1280px]">
+        <div class="rounded-[28px] border border-white/70 bg-white/80 px-6 py-8 shadow-[0_24px_60px_rgba(43,32,18,0.08)] backdrop-blur-sm md:px-10 md:py-10 lg:px-12">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: title }]} />
+          <div class="mt-8 max-w-[820px]">
+            {
+              eyebrow && (
+                <span class="inline-flex rounded-full bg-brand-soft/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand">
+                  {eyebrow}
+                </span>
+              )
+            }
+            <h1 class="mt-5 font-display text-[2rem] font-black leading-[1.08] tracking-[-0.03em] text-ink md:text-[2.8rem]">
+              {title}
+            </h1>
+            {
+              effectiveDate && (
+                <p class="mt-4 text-sm leading-7 text-text-main md:text-base md:leading-8">
+                  Effective Date: {effectiveDate}
+                </p>
+              )
+            }
+            {
+              !effectiveDate && description && (
+                <p class="mt-4 max-w-3xl text-sm leading-7 text-text-muted md:text-base md:leading-8">
+                  {description}
+                </p>
+              )
+            }
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <section class="bg-page-muted pb-16 md:pb-20 lg:pb-24">
+      <Container class="!max-w-[1280px]">
+        <article class="legal-content rounded-[28px] border border-[#efe7db] bg-white px-6 py-8 shadow-card md:px-10 md:py-10 lg:px-12 lg:py-12">
+          <slot />
+        </article>
+      </Container>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .legal-content :global(h2) {
+    margin: 2.5rem 0 1rem;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--color-ink);
+    scroll-margin-top: 7rem;
+  }
+
+  .legal-content :global(p) {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.85;
+    color: var(--color-text-main);
+  }
+
+  .legal-content :global(p + p) {
+    margin-top: 1rem;
+  }
+
+  .legal-content :global(ul) {
+    margin: 1rem 0 0;
+    padding-left: 1.2rem;
+    color: var(--color-text-main);
+  }
+
+  .legal-content :global(li) {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+  }
+
+  .legal-content :global(li + li) {
+    margin-top: 0.5rem;
+  }
+
+  .legal-content :global(a) {
+    color: var(--color-brand-dark);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
+  .legal-content :global(strong) {
+    color: var(--color-ink);
+    font-weight: 700;
+  }
+
+  @media (min-width: 768px) {
+    .legal-content :global(h2) {
+      font-size: 1.5rem;
+    }
+  }
+</style>

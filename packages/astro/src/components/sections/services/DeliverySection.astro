@@ -1,56 +1,327 @@
 ---
-import Container from "../../ui/Container.astro";
-import LocalImage from "../../ui/LocalImage.astro";
-import { delivery } from "../../../data/services";
-import { getLocalImage } from "../../../lib/local-images";
+import Container from '../../ui/Container.astro';
+import LocalImage from '../../ui/LocalImage.astro';
+import { delivery } from '../../../data/services';
+import { getLocalImage } from '../../../lib/local-images';
 
-const deliveryBackdrop = getLocalImage("/images/services/delivery-bg.png");
+const deliveryBackdrop = getLocalImage(
+  '/images/services/delivery-bg-transparent.png',
+);
+const deliveryBody = delivery.paragraphs.slice(0, -1);
+const deliveryClosingLine = delivery.paragraphs.at(-1);
+const deliveryCarouselPartners = [...delivery.partners, ...delivery.partners];
+const deliveryPartnerCount = delivery.partners.length;
 ---
 
-<section class="relative isolate overflow-hidden bg-[#f6f6f6] py-16 md:py-20">
-  <LocalImage
-    src={deliveryBackdrop}
-    alt=""
-    class="pointer-events-none absolute bottom-28 left-1/2 z-0 w-full max-w-5xl -translate-x-1/2 opacity-30"
-    loading="lazy"
-    sizes="100vw"
-    widths={[640, 960, 1280, 1600]}
-  />
-  <Container class="relative z-10 lg:!max-w-[1280px]">
-    <div class="mx-auto max-w-5xl text-center" data-reveal>
-      <h2 class="text-3xl font-extrabold text-ink md:text-4xl">{delivery.title}</h2>
-      <p class="mt-8 text-xl font-bold capitalize leading-8 text-text-muted md:text-2xl">
-        {delivery.subtitle}
-      </p>
+<section
+  class="relative isolate overflow-hidden bg-[#f9f9f9] py-16 md:py-20 lg:py-24"
+  data-delivery-carousel-root
+  data-partner-count={deliveryPartnerCount}
+>
+  <div
+    class="pointer-events-none absolute inset-x-0 bottom-[70px] z-0 flex justify-center sm:bottom-[64px] md:bottom-[76px] lg:bottom-[120px]"
+  >
+    <LocalImage
+      src={deliveryBackdrop}
+      alt=""
+      class="h-[180px] w-[130%] max-w-none object-fill [filter:contrast(1.12)_brightness(0.9)] sm:h-[210px] sm:w-[134%] md:h-[252px] md:w-[138%] lg:h-[296px] lg:w-[1440px]"
+      loading="lazy"
+      sizes="100vw"
+      widths={[640, 960, 1280, 1600]}
+    />
+  </div>
+
+  <Container class="relative lg:!max-w-[1200px]">
+    <div class="relative mx-auto max-w-[1200px]">
+      <div class="relative z-10 mx-auto max-w-[1200px] text-center" data-reveal>
+        <h2
+          class="text-[30px] font-extrabold tracking-[0.03em] text-[#333333] md:text-[32px]"
+        >
+          {delivery.title}
+        </h2>
+        <p
+          class="mx-auto mt-7 max-w-[1200px] text-[22px] font-semibold capitalize leading-[1.2] text-[#666666] md:text-[28px] md:leading-[34px]"
+        >
+          {delivery.subtitle}
+        </p>
+      </div>
+
+      <div
+        class="relative z-10 mx-auto mt-8 max-w-[1200px] space-y-5 text-[15px] leading-[26px] text-[#666666] md:mt-10"
+        data-reveal
+        style="--reveal-delay: 100ms;"
+      >
+        {deliveryBody.map((paragraph) => <p>{paragraph}</p>)}
+        {
+          deliveryClosingLine ? (
+            <p class="font-bold text-[#555555]">{deliveryClosingLine}</p>
+          ) : null
+        }
+      </div>
     </div>
 
     <div
-      class="mx-auto mt-10 max-w-[1280px] space-y-6 text-sm leading-7 text-text-muted"
-      data-reveal
-      style="--reveal-delay: 100ms;"
-    >
-      {delivery.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-    </div>
-
-    <div
-      class="mt-10 grid grid-cols-2 items-center gap-6 sm:grid-cols-3 lg:grid-cols-6"
+      class="relative z-10 mt-10 flex items-center justify-center gap-3 md:mt-14 md:gap-[35px]"
       data-reveal
       style="--reveal-delay: 180ms;"
     >
-      {
-        delivery.partners.map((partner) => (
-          <div class="flex h-16 items-center justify-center">
-            <LocalImage
-              src={partner.image}
-              alt={`${partner.name} logistics partner logo`}
-              class="max-h-12 max-w-[130px] object-contain"
-              loading="lazy"
-              sizes="130px"
-              widths={[130, 260, 390]}
-            />
+      <button
+        type="button"
+        class="delivery-carousel-button flex size-10 shrink-0 items-center justify-center rounded-full text-[#9f9f9f] transition hover:text-[#666666] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d0aa4c] md:size-[42px]"
+        aria-label="Scroll logistics partners left"
+        data-carousel-prev
+      >
+        <svg
+          viewBox="0 0 24 24"
+          class="size-5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M14.5 5.5 8 12l6.5 6.5"></path>
+        </svg>
+      </button>
+
+      <div class="min-w-0 flex-1 overflow-hidden" data-carousel-shell>
+        <div
+          class="delivery-carousel-viewport overflow-x-auto scroll-smooth"
+          data-carousel-viewport
+          tabindex="0"
+          aria-label="Logistics partner logos"
+        >
+          <div class="flex min-w-max items-center gap-[10px]" role="list">
+            {
+              deliveryCarouselPartners.map((partner, index) => (
+                <div
+                  class="flex h-[82px] w-[141px] shrink-0 items-center justify-center"
+                  role="listitem"
+                  data-carousel-item
+                  aria-hidden={
+                    index >= deliveryPartnerCount ? 'true' : undefined
+                  }
+                >
+                  <LocalImage
+                    src={partner.image}
+                    alt={
+                      index < deliveryPartnerCount
+                        ? `${partner.name} logistics partner logo`
+                        : ''
+                    }
+                    class="max-h-[54px] max-w-[137px] object-contain"
+                    loading="lazy"
+                    sizes="137px"
+                    widths={[137, 274]}
+                  />
+                </div>
+              ))
+            }
           </div>
-        ))
-      }
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="delivery-carousel-button flex size-10 shrink-0 items-center justify-center rounded-full text-[#9f9f9f] transition hover:text-[#666666] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d0aa4c] md:size-[42px]"
+        aria-label="Scroll logistics partners right"
+        data-carousel-next
+      >
+        <svg
+          viewBox="0 0 24 24"
+          class="size-5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M9.5 5.5 16 12l-6.5 6.5"></path>
+        </svg>
+      </button>
     </div>
   </Container>
 </section>
+
+<style>
+  .delivery-carousel-viewport {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .delivery-carousel-viewport::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  (() => {
+    const initDeliveryCarousels = () => {
+      const roots = Array.from(
+        document.querySelectorAll('[data-delivery-carousel-root]'),
+      );
+
+      roots.forEach((root) => {
+        if (!(root instanceof HTMLElement)) return;
+        if (root.dataset.carouselReady === 'true') return;
+
+        const viewport = root.querySelector('[data-carousel-viewport]');
+        const prevButton = root.querySelector('[data-carousel-prev]');
+        const nextButton = root.querySelector('[data-carousel-next]');
+        const items = Array.from(
+          root.querySelectorAll('[data-carousel-item]'),
+        ).filter((item) => item instanceof HTMLElement);
+        const partnerCount = Number(root.dataset.partnerCount || '0');
+
+        if (
+          !(viewport instanceof HTMLElement) ||
+          !(prevButton instanceof HTMLButtonElement) ||
+          !(nextButton instanceof HTMLButtonElement) ||
+          items.length === 0 ||
+          partnerCount <= 0
+        ) {
+          return;
+        }
+
+        root.dataset.carouselReady = 'true';
+
+        const reduceMotion = window.matchMedia(
+          '(prefers-reduced-motion: reduce)',
+        );
+        let isPaused = reduceMotion.matches;
+        let resumeTimeoutId = 0;
+        let animationFrameId = 0;
+
+        const getLoopWidth = () => {
+          const loopStart = items[0];
+          const loopEnd = items[partnerCount];
+
+          if (!loopStart || !loopEnd) return viewport.scrollWidth / 2;
+
+          return loopEnd.offsetLeft - loopStart.offsetLeft;
+        };
+
+        const getStepWidth = () => {
+          const firstItem = items[0];
+          const secondItem = items[1];
+
+          if (!firstItem) return 0;
+          if (!secondItem) return firstItem.offsetWidth;
+
+          return secondItem.offsetLeft - firstItem.offsetLeft;
+        };
+
+        const normalizeScrollPosition = () => {
+          const loopWidth = getLoopWidth();
+
+          if (loopWidth <= 0) return;
+
+          if (viewport.scrollLeft >= loopWidth) {
+            viewport.scrollLeft -= loopWidth;
+          } else if (viewport.scrollLeft < 0) {
+            viewport.scrollLeft += loopWidth;
+          }
+        };
+
+        const pauseAutoScroll = () => {
+          isPaused = true;
+          window.clearTimeout(resumeTimeoutId);
+        };
+
+        const resumeAutoScroll = () => {
+          if (reduceMotion.matches) return;
+          isPaused = false;
+        };
+
+        const scheduleResume = (delay = 1800) => {
+          window.clearTimeout(resumeTimeoutId);
+          if (reduceMotion.matches) return;
+
+          resumeTimeoutId = window.setTimeout(() => {
+            isPaused = false;
+          }, delay);
+        };
+
+        const scrollByStep = (direction) => {
+          const loopWidth = getLoopWidth();
+          const stepWidth = getStepWidth();
+
+          if (loopWidth <= 0 || stepWidth <= 0) return;
+
+          pauseAutoScroll();
+
+          if (direction < 0 && viewport.scrollLeft <= stepWidth / 2) {
+            viewport.scrollLeft += loopWidth;
+          }
+
+          if (
+            direction > 0 &&
+            viewport.scrollLeft >= loopWidth - stepWidth / 2
+          ) {
+            viewport.scrollLeft -= loopWidth;
+          }
+
+          viewport.scrollBy({
+            left: direction * stepWidth,
+            behavior: 'smooth',
+          });
+
+          window.setTimeout(() => {
+            normalizeScrollPosition();
+            scheduleResume();
+          }, 420);
+        };
+
+        const tick = () => {
+          if (!isPaused && !reduceMotion.matches) {
+            viewport.scrollLeft += 0.35;
+            normalizeScrollPosition();
+          }
+
+          animationFrameId = window.requestAnimationFrame(tick);
+        };
+
+        prevButton.addEventListener('click', () => scrollByStep(-1));
+        nextButton.addEventListener('click', () => scrollByStep(1));
+
+        root.addEventListener('pointerenter', pauseAutoScroll);
+        root.addEventListener('pointerleave', resumeAutoScroll);
+        root.addEventListener('focusin', pauseAutoScroll);
+        root.addEventListener('focusout', (event) => {
+          const nextTarget = event.relatedTarget;
+          if (nextTarget instanceof Node && root.contains(nextTarget)) return;
+          scheduleResume(250);
+        });
+
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            pauseAutoScroll();
+          } else {
+            scheduleResume(200);
+          }
+        });
+
+        reduceMotion.addEventListener('change', (event) => {
+          isPaused = event.matches;
+        });
+
+        animationFrameId = window.requestAnimationFrame(tick);
+
+        root.addEventListener('remove', () => {
+          window.cancelAnimationFrame(animationFrameId);
+          window.clearTimeout(resumeTimeoutId);
+        });
+      });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initDeliveryCarousels, {
+        once: true,
+      });
+    } else {
+      initDeliveryCarousels();
+    }
+  })();
+</script>

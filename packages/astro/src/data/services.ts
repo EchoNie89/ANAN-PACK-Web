@@ -7,6 +7,7 @@ const serviceImage = (fileName: string) => getLocalImage(`${base}/${fileName}`);
 export interface ServiceFeature {
   title: string;
   description: string;
+  textWidth?: number;
 }
 
 export interface ServiceSection {
@@ -14,6 +15,7 @@ export interface ServiceSection {
   title: string;
   description: string;
   image: SiteImageSource;
+  featureIcon?: SiteImageSource;
   alt: string;
   imageSide: 'left' | 'right';
   features: ServiceFeature[];
@@ -76,6 +78,7 @@ export const serviceSections: ServiceSection[] = [
     description:
       'We help brands build the right packaging direction from the start by aligning materials, suppliers, and design thinking with brand goals.',
     image: serviceImage('sourcing.png'),
+    featureIcon: serviceImage('service-feature-delivery.png'),
     alt: 'Hands reviewing custom packaging materials and garment trims',
     imageSide: 'left',
     features: [
@@ -83,16 +86,19 @@ export const serviceSections: ServiceSection[] = [
         title: 'Multi-Material Capabilities:',
         description:
           'We identify suitable materials and sourcing options based on your product, positioning, and budget.',
+        textWidth: 340,
       },
       {
         title: 'Cost & Sustainability Balance:',
         description:
           'We help balance visual impact, cost targets, and sustainability requirements from the early stage.',
+        textWidth: 340,
       },
       {
         title: 'Design-Led Planning:',
         description:
           'We support your team with practical design input that connects creative ideas with real production possibilities.',
+        textWidth: 385,
       },
     ],
     body: 'At the beginning of any packaging project, the right sourcing strategy can save time, reduce risk, and improve consistency. We help brands evaluate materials, supplier options, and packaging directions based on their brand image, cost structure, and sustainability priorities. By combining sourcing knowledge with design understanding, we create a clearer starting point for development and help you move forward with greater confidence.',

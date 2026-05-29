@@ -9,46 +9,68 @@ import { serviceSections } from "../../../data/services";
     One Point Of Contact, Infinite Possibilities.
   </div>
 
-  <Container class="space-y-20 py-16 md:py-20 lg:!max-w-[1280px]">
+  <Container class="space-y-20 py-16 md:py-20 lg:!max-w-[1200px]">
     {
       serviceSections.map((section, index) => (
         <article
-          class="border-b border-[#e9e0d4] pb-16 last:border-b-0 last:pb-0"
+          class="border-b border-[#e5ddd0] pb-11 last:border-b-0 last:pb-0 md:pb-14"
           data-reveal
           style={`--reveal-delay: ${index * 70}ms;`}
         >
-          <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <div
+            class={`grid gap-10 lg:items-start lg:gap-8 xl:gap-[41px] ${
+              section.imageSide === "right"
+                ? "lg:grid-cols-[524px_minmax(0,1fr)] xl:grid-cols-[524px_636px]"
+                : "lg:grid-cols-[minmax(0,1fr)_524px] xl:grid-cols-[636px_524px]"
+            }`}
+          >
             <div class={section.imageSide === "right" ? "lg:order-2" : ""}>
               <LocalImage
                 src={section.image}
                 alt={section.alt}
-                class={`h-72 w-full object-cover sm:h-96 lg:h-full ${
-                  section.features.length > 3 ? "lg:min-h-[560px]" : "lg:min-h-[535px]"
-                }`}
+                class="aspect-[636/538] w-full bg-[#f7f1e8] object-cover"
                 loading="lazy"
-                sizes="(min-width: 1024px) 52vw, 100vw"
-                widths={[480, 720, 960, 1280]}
+                sizes="(min-width: 1280px) 636px, (min-width: 1024px) calc(100vw - 620px), 100vw"
+                widths={[480, 636, 960, 1280]}
               />
             </div>
 
-            <div class={section.imageSide === "right" ? "lg:order-1" : ""}>
-              <p class="text-sm font-extrabold uppercase text-brand-dark">{section.kicker}</p>
-              <h2 class="mt-4 text-3xl font-extrabold text-ink md:text-4xl">{section.title}</h2>
-              <p class="mt-5 text-base font-semibold leading-7 text-text-muted">{section.description}</p>
+            <div class={`flex flex-col gap-4 ${section.imageSide === "right" ? "lg:order-1" : ""} lg:pt-[3px]`}>
+              <p class="text-[14px] font-extrabold uppercase tracking-[0.01em] text-[#bca690]">{section.kicker}</p>
+              <h2 class="text-[30px] font-bold leading-[1.18] text-black md:text-[32px] md:leading-[37px]">
+                {section.title}
+              </h2>
+              <p class="text-[16px] font-semibold leading-7 text-[#999999]">
+                {section.description}
+              </p>
 
-              <div class="mt-8 grid gap-4">
+              <div class="flex flex-col gap-4">
                 {section.features.map((feature) => (
-                  <div class="motion-hover-card flex gap-5 rounded-md border border-[#d0aa4c]/50 bg-white p-5">
-                    <div class="flex size-14 shrink-0 items-center justify-center rounded-full bg-[#fbf2e5] text-brand">
-                      <svg viewBox="0 0 24 24" class="size-8" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-                        <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" />
-                        <path d="m4 7.5 8 4.5 8-4.5" />
-                        <path d="M12 12v9" />
-                      </svg>
+                  <div class="motion-hover-card flex h-[115px] gap-5 rounded-[5px] border border-[#d0aa4c]/50 bg-white px-5">
+                    <div class="mt-[26px] flex size-16 shrink-0 items-center justify-center rounded-full bg-[#fbf2e5]">
+                      {
+                        section.featureIcon ? (
+                          <LocalImage
+                            src={section.featureIcon}
+                            alt=""
+                            aria-hidden="true"
+                            class="size-[38px]"
+                            loading="lazy"
+                            widths={[38, 76]}
+                            sizes="38px"
+                          />
+                        ) : (
+                          <svg viewBox="0 0 24 24" class="size-8 text-brand" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                            <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" />
+                            <path d="m4 7.5 8 4.5 8-4.5" />
+                            <path d="M12 12v9" />
+                          </svg>
+                        )
+                      }
                     </div>
-                    <div>
-                      <h3 class="text-base font-bold text-ink">{feature.title}</h3>
-                      <p class="mt-2 text-sm leading-6 text-text-muted">{feature.description}</p>
+                    <div class="mt-5 flex flex-col gap-[10px]" style={feature.textWidth ? `width: ${feature.textWidth}px;` : undefined}>
+                      <h3 class="text-[16px] font-semibold leading-[22px] text-black">{feature.title}</h3>
+                      <p class="text-[14px] leading-[22px] text-[#666666]">{feature.description}</p>
                     </div>
                   </div>
                 ))}
@@ -56,7 +78,7 @@ import { serviceSections } from "../../../data/services";
             </div>
           </div>
 
-          <p class="mt-8 text-justify text-sm leading-7 text-text-muted md:text-[15px]">
+          <p class="mt-8 text-[15px] leading-[26px] text-[#666666] text-justify">
             {section.body}
           </p>
         </article>
