@@ -12,7 +12,7 @@ const menuItems = [
 const heroImage = getLocalImage("/images/about/about-hero.png");
 ---
 
-<section class="relative overflow-hidden bg-page-muted lg:h-[calc(100dvh-88px)]">
+<section class="relative overflow-hidden bg-page-muted min-h-[420px] lg:h-[474px]">
   <LocalImage
     src={heroImage}
     alt="Premium packaging collection arranged in a modern showroom"
@@ -22,29 +22,36 @@ const heroImage = getLocalImage("/images/about/about-hero.png");
     widths={[640, 960, 1280, 1600, 1920]}
     priority
   />
-  <div class="absolute inset-0 bg-white/5"></div>
-  <Container class="!max-w-[1280px] px-4 py-20 sm:px-6 md:py-24 lg:h-full lg:min-h-0 lg:px-8 lg:py-24">
+  <div class="absolute inset-0 bg-black/[0.03]"></div>
+  <Container class="relative !max-w-[1280px] px-4 py-16 sm:px-6 md:py-20 lg:h-full lg:min-h-0 lg:px-8 lg:py-0">
     <div>
-      <div class="max-w-[530px] rounded-soft bg-white/54 p-6 backdrop-blur-[2px] lg:mt-12 lg:bg-transparent lg:p-0 lg:backdrop-blur-0">
+      <div class="max-w-[530px] rounded-soft bg-white/54 p-6 backdrop-blur-[2px] lg:pt-[99px] lg:bg-transparent lg:p-0 lg:backdrop-blur-0">
         <h1
-          class="motion-enter font-display text-4xl font-black leading-tight tracking-[-0.03em] text-[#111827] md:text-5xl"
+          class="motion-enter font-display text-4xl font-black leading-tight tracking-[-0.03em] text-[#111827] lg:text-[32px] lg:leading-[51px]"
           style="--motion-delay: 100ms;"
         >
-          Your Packaging Supply Chain Partner In China
+          Your Packaging Supply Chain Partner in China
         </h1>
         <p
-          class="motion-enter mt-5 max-w-[530px] text-base leading-8 text-[#4b5563]"
+          class="motion-enter mt-5 max-w-[530px] text-base leading-6 text-[#4b5563] lg:mt-[21px]"
           style="--motion-delay: 200ms;"
         >
           We help apparel, home, and lifestyle brands manage packaging sourcing, production coordination, quality control, and delivery through one reliable system.
         </p>
+        <a
+          href="#about-contact-cta"
+          class="motion-enter mt-8 inline-flex h-[40px] w-[195px] items-center justify-center rounded-[200px] bg-[linear-gradient(90deg,#a37137_0%,#eaa857_100%)] text-base font-semibold text-white transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 lg:mt-[31px]"
+          style="--motion-delay: 280ms;"
+        >
+          Talk To Our Team
+        </a>
       </div>
 
       <nav
         class="motion-enter mt-10 overflow-hidden rounded-none bg-surface-panel shadow-menu lg:absolute lg:left-[calc(50%+378px)] lg:top-0 lg:mt-0 lg:w-[226px] lg:-translate-x-1/2"
         aria-label="About page menu"
         data-about-menu
-        style="--motion-delay: 280ms;"
+        style="--motion-delay: 360ms;"
       >
         {
           menuItems.map((item) => (

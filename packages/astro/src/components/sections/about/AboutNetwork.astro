@@ -3,29 +3,29 @@ import Container from "../../ui/Container.astro";
 import LocalImage from "../../ui/LocalImage.astro";
 import { getLocalImage } from "../../../lib/local-images";
 
-const networkImage = getLocalImage("/images/about/about-network-map.png");
+const networkImage = getLocalImage("/images/about/about-network-map-rectangle-75.png");
 ---
 
-<section class="relative overflow-hidden bg-page-muted py-16 md:py-24">
+<section class="relative overflow-hidden bg-page-muted py-16 md:py-20 lg:h-[619px] lg:py-0">
   <LocalImage
     src={networkImage}
     alt="Map of China showing partner manufacturing regions connected to Guangzhou"
-    class="absolute inset-0 size-full object-cover object-center opacity-90"
+    class="absolute inset-0 size-full object-cover object-right"
     loading="lazy"
     sizes="100vw"
-    widths={[640, 960, 1280, 1600]}
+    widths={[640, 960, 1280, 1440]}
   />
-  <div class="absolute inset-0 bg-white/70"></div>
-  <Container class="relative !max-w-[1280px]">
-    <div class="max-w-[640px]">
+  <div class="absolute inset-0 bg-white/22"></div>
+  <Container class="relative !max-w-none lg:h-full lg:px-[140px]">
+    <div class="lg:pt-[150px]">
       <p
-        class="text-lg font-extrabold uppercase tracking-[0.03em] text-brand md:text-2xl"
+        class="max-w-[620px] capitalize text-[20px] font-extrabold leading-[1.12] tracking-[0.03em] text-[#a67237] md:text-[24px]"
         data-reveal
       >
         Connected to China’s Packaging Manufacturing Network
       </p>
       <div
-        class="mt-10 space-y-6 text-base leading-8 text-text-main md:text-xl md:leading-9"
+        class="mt-14 max-w-[900px] space-y-0 capitalize text-base font-normal leading-[1.28] text-[#333333] md:text-[20px] md:leading-[1.14]"
         data-reveal
         style="--reveal-delay: 80ms;"
       >
@@ -37,11 +37,11 @@ const networkImage = getLocalImage("/images/about/about-network-map.png");
         </p>
       </div>
       <p
-        class="mt-12 max-w-[960px] text-lg font-semibold leading-8 text-text-main md:text-xl"
+        class="mt-24 max-w-[1240px] capitalize text-[22px] font-bold leading-[1.22] text-[#333333] md:text-[28px]"
         data-reveal
         style="--reveal-delay: 160ms;"
       >
-        Tell us your product category, quantity, and packaging requirements. Our team will help you plan the next step.
+        Tell Us Your Product Category, Quantity, And Packaging Requirements — Our Team Will Help You Plan The Next Step.
       </p>
     </div>
   </Container>
