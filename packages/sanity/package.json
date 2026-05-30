@@ -9,7 +9,11 @@
     "build": "sanity build",
     "start": "sanity start",
     "deploy": "sanity deploy",
-    "seed:blog": "tsx scripts/seed-blog-posts.ts"
+    "seed:blog": "tsx scripts/seed-blog-posts.ts",
+    "baseline:products": "tsx scripts/export-product-baseline.ts",
+    "compare:products": "tsx scripts/compare-product-baseline.ts",
+    "seed:products": "tsx scripts/seed-products.ts",
+    "seed:products:all": "tsx scripts/seed-all-products.ts"
   },
   "dependencies": {
     "@sanity/client": "^7.22.0",

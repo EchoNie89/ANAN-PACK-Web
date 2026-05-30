@@ -10,6 +10,7 @@ export default defineType({
       title: 'Source Key',
       type: 'string',
       hidden: true,
+      readOnly: true,
     }),
     defineField({
       name: 'image',

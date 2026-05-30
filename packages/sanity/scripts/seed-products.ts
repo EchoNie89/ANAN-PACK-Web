@@ -22,8 +22,14 @@ import type {
   ProductImportGroup,
   ProductImportManifest,
   ProductImportCustomizationGroup,
-  ProductImportTextBlock,
 } from "../import-data/products/types";
+import { productSourcePages } from "../../astro/src/data/product-source";
+import {
+  getProductBaselineBySlug,
+  type ProductBaselineEntry,
+  type ProductBaselineFaqItem,
+  type ProductBaselineImage,
+} from "./product-content-source";
 
 declare const require: any;
 declare const process: {
@@ -68,7 +74,7 @@ type ProductSlug =
   | "hanging-tag"
   | "sticker";
 
-type ImportSection = "showcaseGroups" | "applications";
+type ImportSection = "showcaseGroups" | "applications" | "customizationGroups";
 
 type ResolvedImage = {
   manifestPath: string;
@@ -110,26 +116,61 @@ type ExistingTextFields = {
   description?: string;
 };
 
+type ExistingImageField = {
+  asset?: { _ref?: string };
+  alt?: string;
+};
+
 type ExistingCustomizationGroup = {
   sourceKey?: string;
   title?: string;
   intro?: string;
-  images?: Array<ExistingTextFields & { sourceKey?: string; alt?: string; image?: { asset?: { _ref?: string } } }>;
+  images?: Array<ExistingTextFields & { sourceKey?: string; alt?: string; image?: ExistingImageField }>;
   blocks?: Array<{ title?: string; items?: string[] }>;
 };
 
 type ExistingProduct = {
   _id: string;
   _rev: string;
-  title?: string;
+  name?: string;
+  slug?: string;
+  pageTitle?: string;
+  seoTitle?: string;
+  metaDescription?: string;
+  hero?: {
+    title?: string;
+    description?: string;
+    image?: ExistingImageField;
+  };
+  megaMenuCard?: {
+    image?: ExistingImageField;
+  };
+  whatAreCustom?: {
+    title?: string;
+    overview?: string;
+  };
+  caseStudy?: {
+    title?: string;
+    description?: string;
+    image?: ExistingImageField;
+    bullets?: string[];
+    quote?: string;
+    quoteAuthor?: string;
+    challenge?: string;
+    solutionIntro?: string;
+    solutionPoints?: string[];
+    resultPoints?: string[];
+    gallery?: ExistingImageField[];
+  };
+  faqItems?: Array<{ question?: string; answer?: string }>;
   applicationTitle?: string;
   applicationDescription?: string;
   showcaseGroups?: Array<{
     sourceKey?: string;
     title?: string;
-    cards?: Array<ExistingTextFields & { sourceKey?: string; image?: { asset?: { _ref?: string } } }>;
+    cards?: Array<ExistingTextFields & { sourceKey?: string; image?: ExistingImageField }>;
   }>;
-  applications?: Array<ExistingTextFields & { sourceKey?: string; image?: { asset?: { _ref?: string } } }>;
+  applications?: Array<ExistingTextFields & { sourceKey?: string; image?: ExistingImageField }>;
   customizationGroups?: ExistingCustomizationGroup[];
 };
 
@@ -141,21 +182,10 @@ const IMPORT_ASSETS_PRODUCTS_DIR = path.resolve(
   STUDIO_ROOT,
   "import-assets/products"
 );
-const ASTRO_PUBLIC_DIR = path.resolve(
-  STUDIO_ROOT,
-  "../tagora-official-site/public"
+const ASTRO_ASSETS_DIR = path.resolve(STUDIO_ROOT, "../astro/src/assets");
+const ALLOWED_PRODUCT_SLUGS = new Set<ProductSlug>(
+  productSourcePages.map((page) => page.slug as ProductSlug),
 );
-const ASTRO_PUBLIC_IMAGES_DIR = path.resolve(ASTRO_PUBLIC_DIR, "images");
-const ALLOWED_PRODUCT_SLUGS = new Set<ProductSlug>([
-  "labels",
-  "patches",
-  "ribbon",
-  "tissue-paper",
-  "tape",
-  "bag",
-  "hanging-tag",
-  "sticker",
-]);
 const ALLOWED_IMPORT_SECTIONS = new Set<ImportSection>([
   "showcaseGroups",
   "applications",
@@ -293,20 +323,20 @@ function resolveImagePath(imagePath: string, slug: ProductSlug): ResolvedImage {
 
   if (trimmedPath.startsWith("/images/")) {
     const resolvedPath = path.resolve(
-      ASTRO_PUBLIC_IMAGES_DIR,
+      ASTRO_ASSETS_DIR,
       trimmedPath.slice("/images/".length)
     );
 
-    if (!isInsideDirectory(resolvedPath, ASTRO_PUBLIC_IMAGES_DIR)) {
-      throw new Error(`Image path escapes Astro public images directory: "${imagePath}"`);
+    if (!isInsideDirectory(resolvedPath, ASTRO_ASSETS_DIR)) {
+      throw new Error(`Image path escapes Astro asset directory: "${imagePath}"`);
     }
 
     if (fs.existsSync(resolvedPath)) {
-      const realAstroImagesDir = realpathExisting(ASTRO_PUBLIC_IMAGES_DIR);
+      const realAstroImagesDir = realpathExisting(ASTRO_ASSETS_DIR);
       const realImagePath = realpathExisting(resolvedPath);
 
       if (!isInsideDirectory(realImagePath, realAstroImagesDir)) {
-        throw new Error(`Image path escapes Astro public images directory: "${imagePath}"`);
+        throw new Error(`Image path escapes Astro asset directory: "${imagePath}"`);
       }
 
       return {
@@ -316,7 +346,7 @@ function resolveImagePath(imagePath: string, slug: ProductSlug): ResolvedImage {
     }
 
     throw new Error(
-      `Image not found for "${imagePath}". Compatibility /images/... paths resolve under Astro public images.`
+      `Image not found for "${imagePath}". Compatibility /images/... paths resolve under packages/astro/src/assets.`
     );
   }
 
@@ -348,11 +378,11 @@ function resolveImagePath(imagePath: string, slug: ProductSlug): ResolvedImage {
 
     if (
       path.isAbsolute(trimmedPath) &&
-      fs.existsSync(ASTRO_PUBLIC_IMAGES_DIR)
+      fs.existsSync(ASTRO_ASSETS_DIR)
     ) {
       isContainedInAstroImages = isInsideDirectory(
         realImagePath,
-        realpathExisting(ASTRO_PUBLIC_IMAGES_DIR)
+        realpathExisting(ASTRO_ASSETS_DIR)
       );
     }
 
@@ -667,7 +697,7 @@ function indexGroupsBySourceKey(
 
 type ExistingCardWithImage = {
   sourceKey?: string;
-  image?: { asset?: { _ref?: string } };
+  image?: ExistingImageField;
 };
 
 type ExistingGroupWithImages = {
@@ -675,23 +705,133 @@ type ExistingGroupWithImages = {
   cards?: ExistingCardWithImage[];
 };
 
-type ExistingProductWithImages = {
-  _id: string;
-  _rev: string;
-  title?: string;
-  applicationTitle?: string;
-  applicationDescription?: string;
+type ResolvedBaselineImage = ProductBaselineImage & {
+  resolvedImagePath: string;
+};
+
+type ResolvedProductBaseline = Omit<
+  ProductBaselineEntry,
+  "hero" | "megaMenuCard" | "caseStudy"
+> & {
+  hero: ProductBaselineEntry["hero"] & {
+    image: ResolvedBaselineImage;
+  };
+  megaMenuCard: ProductBaselineEntry["megaMenuCard"] & {
+    image: ResolvedBaselineImage;
+  };
+  caseStudy: Omit<ProductBaselineEntry["caseStudy"], "image" | "gallery"> & {
+    image: ResolvedBaselineImage;
+    gallery?: ResolvedBaselineImage[];
+  };
+};
+
+type ExistingProductWithImages = ExistingProduct & {
   showcaseGroups?: ExistingGroupWithImages[];
   applications?: ExistingCardWithImage[];
 };
 
-/**
- * Build a map from resolvedImagePath -> existing Sanity asset _id
- * by matching manifest cards to existing product cards via sourceKey.
- */
+function resolveBaselineImage(
+  image: ProductBaselineImage,
+  slug: ProductSlug,
+): ResolvedBaselineImage {
+  const resolvedImage = resolveImagePath(image.imagePath, slug);
+
+  return {
+    ...image,
+    resolvedImagePath: resolvedImage.filePath,
+  };
+}
+
+function resolveProductBaseline(
+  baseline: ProductBaselineEntry,
+): ResolvedProductBaseline {
+  return {
+    ...baseline,
+    hero: {
+      ...baseline.hero,
+      image: resolveBaselineImage(baseline.hero.image, baseline.slug as ProductSlug),
+    },
+    megaMenuCard: {
+      ...baseline.megaMenuCard,
+      image: resolveBaselineImage(
+        baseline.megaMenuCard.image,
+        baseline.slug as ProductSlug,
+      ),
+    },
+    caseStudy: {
+      ...baseline.caseStudy,
+      image: resolveBaselineImage(
+        baseline.caseStudy.image,
+        baseline.slug as ProductSlug,
+      ),
+      ...(baseline.caseStudy.gallery?.length
+        ? {
+            gallery: baseline.caseStudy.gallery.map((image) =>
+              resolveBaselineImage(image, baseline.slug as ProductSlug),
+            ),
+          }
+        : {}),
+    },
+  };
+}
+
+function keepExistingStringArray(
+  existingValue: string[] | undefined,
+  sourceValue: string[] | undefined,
+  forceText: boolean,
+): string[] | undefined {
+  if (!sourceValue) {
+    return sourceValue;
+  }
+
+  if (
+    !forceText &&
+    existingValue?.length &&
+    existingValue.some((value) => value.trim().length > 0)
+  ) {
+    return existingValue;
+  }
+
+  return sourceValue;
+}
+
+function keepExistingFaqItems(
+  existingValue: ExistingProduct["faqItems"],
+  sourceValue: ProductBaselineFaqItem[],
+  forceText: boolean,
+): ProductBaselineFaqItem[] {
+  if (
+    !forceText &&
+    existingValue?.length &&
+    existingValue.every(
+      (item) => item.question?.trim() && item.answer?.trim(),
+    )
+  ) {
+    return existingValue.map((item) => ({
+      question: item.question || "",
+      answer: item.answer || "",
+    }));
+  }
+
+  return sourceValue;
+}
+
+function buildImageField(
+  assetId: string,
+  existingAlt: string | undefined,
+  sourceAlt: string,
+  forceText: boolean,
+) {
+  return {
+    ...imageRef(assetId),
+    alt: keepExistingText(existingAlt, sourceAlt, forceText),
+  };
+}
+
 function buildExistingAssetMap(
   manifest: ValidatedManifest,
-  existingProduct: ExistingProductWithImages | null
+  baseline: ResolvedProductBaseline,
+  existingProduct: ExistingProductWithImages | null,
 ): Map<string, string> {
   const map = new Map<string, string>();
 
@@ -759,12 +899,35 @@ function buildExistingAssetMap(
     }
   }
 
+  const heroRef = existingProduct.hero?.image?.asset?._ref;
+  if (heroRef) {
+    map.set(baseline.hero.image.resolvedImagePath, heroRef);
+  }
+
+  const megaMenuCardRef = existingProduct.megaMenuCard?.image?.asset?._ref;
+  if (megaMenuCardRef) {
+    map.set(baseline.megaMenuCard.image.resolvedImagePath, megaMenuCardRef);
+  }
+
+  const caseStudyRef = existingProduct.caseStudy?.image?.asset?._ref;
+  if (caseStudyRef) {
+    map.set(baseline.caseStudy.image.resolvedImagePath, caseStudyRef);
+  }
+
+  for (const [index, image] of (baseline.caseStudy.gallery || []).entries()) {
+    const existingRef = existingProduct.caseStudy?.gallery?.[index]?.asset?._ref;
+    if (existingRef) {
+      map.set(image.resolvedImagePath, existingRef);
+    }
+  }
+
   return map;
 }
 
 async function uploadImages(
   manifest: ValidatedManifest,
-  existingAssetMap: Map<string, string>
+  baseline: ResolvedProductBaseline,
+  existingAssetMap: Map<string, string>,
 ): Promise<Map<string, string>> {
   const imagePaths = new Set<string>();
 
@@ -788,6 +951,14 @@ async function uploadImages(
         imagePaths.add(img.resolvedImagePath);
       }
     }
+  }
+
+  imagePaths.add(baseline.hero.image.resolvedImagePath);
+  imagePaths.add(baseline.megaMenuCard.image.resolvedImagePath);
+  imagePaths.add(baseline.caseStudy.image.resolvedImagePath);
+
+  for (const image of baseline.caseStudy.gallery || []) {
+    imagePaths.add(image.resolvedImagePath);
   }
 
   const uploadedAssets = new Map<string, string>();
@@ -825,6 +996,240 @@ function imageRef(assetId: string): SanityImage {
       _ref: assetId,
     },
   };
+}
+
+function buildHero(
+  baseline: ResolvedProductBaseline,
+  existingProduct: ExistingProduct | null,
+  uploadedAssets: Map<string, string>,
+  forceText: boolean,
+) {
+  const assetId = uploadedAssets.get(baseline.hero.image.resolvedImagePath);
+
+  if (!assetId) {
+    throw new Error(`Missing uploaded asset for ${baseline.hero.image.imagePath}`);
+  }
+
+  return {
+    _type: "productHero",
+    title: keepExistingText(
+      existingProduct?.hero?.title,
+      baseline.hero.title,
+      forceText,
+    ),
+    description: keepExistingText(
+      existingProduct?.hero?.description,
+      baseline.hero.description,
+      forceText,
+    ),
+    image: buildImageField(
+      assetId,
+      existingProduct?.hero?.image?.alt,
+      baseline.hero.image.alt,
+      forceText,
+    ),
+  };
+}
+
+function buildMegaMenuCard(
+  baseline: ResolvedProductBaseline,
+  existingProduct: ExistingProduct | null,
+  uploadedAssets: Map<string, string>,
+  forceText: boolean,
+) {
+  const assetId = uploadedAssets.get(baseline.megaMenuCard.image.resolvedImagePath);
+
+  if (!assetId) {
+    throw new Error(
+      `Missing uploaded asset for ${baseline.megaMenuCard.image.imagePath}`,
+    );
+  }
+
+  return {
+    _type: "productMegaMenuCard",
+    image: buildImageField(
+      assetId,
+      existingProduct?.megaMenuCard?.image?.alt,
+      baseline.megaMenuCard.image.alt,
+      forceText,
+    ),
+  };
+}
+
+function buildWhatAreCustom(
+  baseline: ResolvedProductBaseline,
+  existingProduct: ExistingProduct | null,
+  forceText: boolean,
+) {
+  const title = keepExistingText(
+    existingProduct?.whatAreCustom?.title,
+    baseline.whatAreCustom.title,
+    forceText,
+  );
+
+  return {
+    _type: "productWhatAreCustom",
+    ...(title ? { title } : {}),
+    overview: keepExistingText(
+      existingProduct?.whatAreCustom?.overview,
+      baseline.whatAreCustom.overview,
+      forceText,
+    ),
+  };
+}
+
+function buildCaseStudy(
+  baseline: ResolvedProductBaseline,
+  existingProduct: ExistingProduct | null,
+  uploadedAssets: Map<string, string>,
+  forceText: boolean,
+) {
+  const assetId = uploadedAssets.get(baseline.caseStudy.image.resolvedImagePath);
+
+  if (!assetId) {
+    throw new Error(`Missing uploaded asset for ${baseline.caseStudy.image.imagePath}`);
+  }
+
+  const gallery = (baseline.caseStudy.gallery || []).map((image, index) => {
+    const galleryAssetId = uploadedAssets.get(image.resolvedImagePath);
+
+    if (!galleryAssetId) {
+      throw new Error(`Missing uploaded asset for ${image.imagePath}`);
+    }
+
+    return {
+      _key: stableKey(`${baseline.slug}-case-gallery-${index}`),
+      ...buildImageField(
+        galleryAssetId,
+        existingProduct?.caseStudy?.gallery?.[index]?.alt,
+        image.alt,
+        forceText,
+      ),
+    };
+  });
+
+  return {
+    _type: "productCaseStudy",
+    title: keepExistingText(
+      existingProduct?.caseStudy?.title,
+      baseline.caseStudy.title,
+      forceText,
+    ),
+    description: keepExistingText(
+      existingProduct?.caseStudy?.description,
+      baseline.caseStudy.description,
+      forceText,
+    ),
+    image: buildImageField(
+      assetId,
+      existingProduct?.caseStudy?.image?.alt,
+      baseline.caseStudy.image.alt,
+      forceText,
+    ),
+    bullets: keepExistingStringArray(
+      existingProduct?.caseStudy?.bullets,
+      baseline.caseStudy.bullets,
+      forceText,
+    ),
+    ...(keepExistingText(
+      existingProduct?.caseStudy?.quote,
+      baseline.caseStudy.quote,
+      forceText,
+    )
+      ? {
+          quote: keepExistingText(
+            existingProduct?.caseStudy?.quote,
+            baseline.caseStudy.quote,
+            forceText,
+          ),
+        }
+      : {}),
+    ...(keepExistingText(
+      existingProduct?.caseStudy?.quoteAuthor,
+      baseline.caseStudy.quoteAuthor,
+      forceText,
+    )
+      ? {
+          quoteAuthor: keepExistingText(
+            existingProduct?.caseStudy?.quoteAuthor,
+            baseline.caseStudy.quoteAuthor,
+            forceText,
+          ),
+        }
+      : {}),
+    ...(keepExistingText(
+      existingProduct?.caseStudy?.challenge,
+      baseline.caseStudy.challenge,
+      forceText,
+    )
+      ? {
+          challenge: keepExistingText(
+            existingProduct?.caseStudy?.challenge,
+            baseline.caseStudy.challenge,
+            forceText,
+          ),
+        }
+      : {}),
+    ...(keepExistingText(
+      existingProduct?.caseStudy?.solutionIntro,
+      baseline.caseStudy.solutionIntro,
+      forceText,
+    )
+      ? {
+          solutionIntro: keepExistingText(
+            existingProduct?.caseStudy?.solutionIntro,
+            baseline.caseStudy.solutionIntro,
+            forceText,
+          ),
+        }
+      : {}),
+    ...(baseline.caseStudy.solutionPoints?.length
+      ? {
+          solutionPoints: keepExistingStringArray(
+            existingProduct?.caseStudy?.solutionPoints,
+            baseline.caseStudy.solutionPoints,
+            forceText,
+          ),
+        }
+      : {}),
+    ...(baseline.caseStudy.resultPoints?.length
+      ? {
+          resultPoints: keepExistingStringArray(
+            existingProduct?.caseStudy?.resultPoints,
+            baseline.caseStudy.resultPoints,
+            forceText,
+          ),
+        }
+      : {}),
+    ...(gallery.length ? { gallery } : {}),
+  };
+}
+
+function countImageCards(
+  manifest: ValidatedManifest,
+  baseline: ResolvedProductBaseline,
+): number {
+  let count = 3 + (baseline.caseStudy.gallery?.length || 0);
+
+  if (manifest.sections.includes("showcaseGroups")) {
+    count += (manifest.showcaseGroups || []).reduce(
+      (total, group) => total + group.cards.length,
+      0,
+    );
+  }
+
+  if (manifest.sections.includes("applications")) {
+    count += manifest.applications?.length || 0;
+  }
+
+  if (manifest.sections.includes("customizationGroups")) {
+    count += (manifest.customizationGroups || []).reduce(
+      (total, group) => total + (group.images?.length || 0),
+      0,
+    );
+  }
+
+  return count;
 }
 
 function buildShowcaseGroups(
@@ -961,39 +1366,17 @@ function buildCustomizationGroups(
   });
 }
 
-function countImageCards(manifest: ValidatedManifest): number {
-  let count = 0;
-
-  if (manifest.sections.includes("showcaseGroups")) {
-    count += (manifest.showcaseGroups || []).reduce(
-      (total, group) => total + group.cards.length,
-      0
-    );
-  }
-
-  if (manifest.sections.includes("applications")) {
-    count += manifest.applications?.length || 0;
-  }
-
-  if (manifest.sections.includes("customizationGroups")) {
-    count += (manifest.customizationGroups || []).reduce(
-      (total, group) => total + (group.images?.length || 0),
-      0
-    );
-  }
-
-  return count;
-}
-
 async function main() {
   const args = parseArgs(process.argv);
   const manifest = validateManifest(await loadManifest(args.slug), args.slug);
+  const baseline = resolveProductBaseline(getProductBaselineBySlug(args.slug));
 
   if (args.dryRun) {
     console.log("Product import dry run");
     console.log(`Slug: ${manifest.slug}`);
     console.log(`Sections: ${manifest.sections.join(", ")}`);
-    console.log(`Image count: ${countImageCards(manifest)}`);
+    console.log(`Image count: ${countImageCards(manifest, baseline)}`);
+    console.log("Content fields: hero, megaMenuCard, whatAreCustom, caseStudy, faqItems");
     console.log("No writes were made.");
     return;
   }
@@ -1007,26 +1390,114 @@ async function main() {
   console.log(`Dataset: ${DATASET}`);
 
   const documentId = `product-${manifest.slug}`;
+  const draftDocumentId = `drafts.${documentId}`;
+  const productProjection = `{
+      _id,
+      _rev,
+      name,
+      "slug": coalesce(slug.current, slug),
+      pageTitle,
+      seoTitle,
+      metaDescription,
+      hero{title,description,image{asset{_ref},alt}},
+      megaMenuCard{image{asset{_ref},alt}},
+      whatAreCustom{title,overview},
+      caseStudy{
+        title,
+        description,
+        image{asset{_ref},alt},
+        bullets,
+        quote,
+        quoteAuthor,
+        challenge,
+        solutionIntro,
+        solutionPoints,
+        resultPoints,
+        gallery[]{asset{_ref},alt}
+      },
+      faqItems[]{question,answer},
+      applicationTitle,
+      applicationDescription,
+      showcaseGroups[]{sourceKey,title,cards[]{sourceKey,title,alt,description,image{asset{_ref}}}},
+      applications[]{sourceKey,title,alt,description,image{asset{_ref}}},
+      customizationGroups[]{sourceKey,title,intro,images[]{sourceKey,alt,image{asset{_ref}}},blocks[]{title,items}}
+    }`;
 
   await client.createIfNotExists({
     _id: documentId,
     _type: "product",
-    slug: manifest.slug,
-    title: manifest.title,
+    name: baseline.name,
+    slug: {
+      _type: "slug",
+      current: baseline.slug,
+    },
+    pageTitle: baseline.pageTitle,
+    seoTitle: baseline.seoTitle,
+    metaDescription: baseline.metaDescription,
   });
 
   const existingProduct = await client.fetch<ExistingProduct | null>(
-    `*[_id == $id][0]{_id,_rev,title,applicationTitle,applicationDescription,showcaseGroups[]{sourceKey,title,cards[]{sourceKey,title,alt,description,image{asset{_ref}}}},applications[]{sourceKey,title,alt,description,image{asset{_ref}}},customizationGroups[]{sourceKey,title,intro,images[]{sourceKey,alt,image{asset{_ref}}},blocks[]{title,items}}}`,
-    { id: documentId }
+    `*[_id == $id][0]${productProjection}`,
+    { id: documentId },
+  );
+  const existingDraft = await client.fetch<ExistingProduct | null>(
+    `*[_id == $id][0]${productProjection}`,
+    { id: draftDocumentId },
   );
 
   if (!existingProduct?._rev) {
     throw new Error(`Product document was not found after createIfNotExists: ${documentId}`);
   }
 
-  const existingAssetMap = buildExistingAssetMap(manifest, existingProduct);
-  const uploadedAssets = await uploadImages(manifest, existingAssetMap);
-  let patch = client.patch(documentId);
+  const existingAssetMap = buildExistingAssetMap(manifest, baseline, existingProduct);
+  const uploadedAssets = await uploadImages(manifest, baseline, existingAssetMap);
+  const faqItems = keepExistingFaqItems(
+    existingProduct?.faqItems,
+    baseline.faqItems,
+    args.forceText,
+  ).map((item, index) => ({
+    _key: stableKey(`${baseline.slug}-faq-${index}`),
+    _type: "productFaqItem",
+    question: item.question,
+    answer: item.answer,
+  }));
+  let patch = client.patch(documentId).set({
+    name: keepExistingText(existingProduct?.name, baseline.name, args.forceText),
+    slug: {
+      _type: "slug",
+      current: baseline.slug,
+    },
+    pageTitle: keepExistingText(
+      existingProduct?.pageTitle,
+      baseline.pageTitle,
+      args.forceText,
+    ),
+    seoTitle: keepExistingText(
+      existingProduct?.seoTitle,
+      baseline.seoTitle,
+      args.forceText,
+    ),
+    metaDescription: keepExistingText(
+      existingProduct?.metaDescription,
+      baseline.metaDescription,
+      args.forceText,
+    ),
+    hero: buildHero(baseline, existingProduct, uploadedAssets, args.forceText),
+    megaMenuCard: buildMegaMenuCard(
+      baseline,
+      existingProduct,
+      uploadedAssets,
+      args.forceText,
+    ),
+    whatAreCustom: buildWhatAreCustom(baseline, existingProduct, args.forceText),
+    caseStudy: buildCaseStudy(
+      baseline,
+      existingProduct,
+      uploadedAssets,
+      args.forceText,
+    ),
+    faqItems,
+  }).unset(["title"]);
 
   if (manifest.sections.includes("showcaseGroups")) {
     patch = patch.set({
@@ -1082,9 +1553,115 @@ async function main() {
   }
 
   const result = await patch.ifRevisionId(existingProduct._rev).commit();
+
+  if (existingDraft?._rev) {
+    const draftFaqItems = keepExistingFaqItems(
+      existingDraft.faqItems,
+      baseline.faqItems,
+      args.forceText,
+    ).map((item, index) => ({
+      _key: stableKey(`${baseline.slug}-faq-${index}`),
+      _type: "productFaqItem",
+      question: item.question,
+      answer: item.answer,
+    }));
+    let draftPatch = client.patch(draftDocumentId).set({
+      name: keepExistingText(existingDraft?.name, baseline.name, args.forceText),
+      slug: {
+        _type: "slug",
+        current: baseline.slug,
+      },
+      pageTitle: keepExistingText(
+        existingDraft?.pageTitle,
+        baseline.pageTitle,
+        args.forceText,
+      ),
+      seoTitle: keepExistingText(
+        existingDraft?.seoTitle,
+        baseline.seoTitle,
+        args.forceText,
+      ),
+      metaDescription: keepExistingText(
+        existingDraft?.metaDescription,
+        baseline.metaDescription,
+        args.forceText,
+      ),
+      hero: buildHero(baseline, existingDraft, uploadedAssets, args.forceText),
+      megaMenuCard: buildMegaMenuCard(
+        baseline,
+        existingDraft,
+        uploadedAssets,
+        args.forceText,
+      ),
+      whatAreCustom: buildWhatAreCustom(baseline, existingDraft, args.forceText),
+      caseStudy: buildCaseStudy(
+        baseline,
+        existingDraft,
+        uploadedAssets,
+        args.forceText,
+      ),
+      faqItems: draftFaqItems,
+    }).unset(["title"]);
+
+    if (manifest.sections.includes("showcaseGroups")) {
+      draftPatch = draftPatch.set({
+        showcaseGroups: buildShowcaseGroups(
+          manifest,
+          existingDraft,
+          uploadedAssets,
+          args.forceText,
+        ),
+      });
+    }
+
+    if (manifest.sections.includes("applications")) {
+      const draftApplicationsPatch: PatchSet = {
+        applications: buildApplications(
+          manifest,
+          existingDraft,
+          uploadedAssets,
+          args.forceText,
+        ),
+      };
+      const draftApplicationTitle = keepExistingText(
+        existingDraft?.applicationTitle,
+        manifest.applicationTitle,
+        args.forceText,
+      );
+      const draftApplicationDescription = keepExistingText(
+        existingDraft?.applicationDescription,
+        manifest.applicationDescription,
+        args.forceText,
+      );
+
+      if (draftApplicationTitle !== undefined) {
+        draftApplicationsPatch.applicationTitle = draftApplicationTitle;
+      }
+
+      if (draftApplicationDescription !== undefined) {
+        draftApplicationsPatch.applicationDescription = draftApplicationDescription;
+      }
+
+      draftPatch = draftPatch.set(draftApplicationsPatch);
+    }
+
+    if (manifest.sections.includes("customizationGroups")) {
+      draftPatch = draftPatch.set({
+        customizationGroups: buildCustomizationGroups(
+          manifest,
+          existingDraft,
+          uploadedAssets,
+          args.forceText,
+        ),
+      });
+    }
+
+    await draftPatch.ifRevisionId(existingDraft._rev).commit();
+  }
+
   console.log(`Imported ${result._id}`);
   console.log(`Sections: ${manifest.sections.join(", ")}`);
-  console.log(`Image count: ${countImageCards(manifest)}`);
+  console.log(`Image count: ${countImageCards(manifest, baseline)}`);
 }
 
 main().catch((error) => {

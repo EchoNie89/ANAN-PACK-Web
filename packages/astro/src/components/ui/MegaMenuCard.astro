@@ -1,10 +1,10 @@
 ---
-import type { SiteImageSource } from "../../lib/local-images";
-import LocalImage from "./LocalImage.astro";
+import type { ProductImage } from "../../data/products";
+import SanityImage from "./SanityImage.astro";
 
 interface Props {
   title: string;
-  image: SiteImageSource;
+  image: ProductImage;
   alt: string;
   href: string;
   active?: boolean;
@@ -25,9 +25,8 @@ const isActive = active || normalizePath(Astro.url.pathname) === normalizePath(h
   class="group/card block overflow-hidden bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
 >
   <div class="relative h-[156px] overflow-hidden bg-surface-muted">
-    <LocalImage
-      src={image}
-      alt={alt}
+    <SanityImage
+      image={image}
       class="size-full object-cover transition duration-500 group-hover/card:scale-105"
       loading="lazy"
       sizes="156px"

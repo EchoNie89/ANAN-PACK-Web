@@ -6,6 +6,13 @@ export default defineType({
   type: 'object',
   fields: [
     defineField({
+      name: 'sourceKey',
+      title: 'Source Key',
+      type: 'string',
+      hidden: true,
+      readOnly: true,
+    }),
+    defineField({
       name: 'title',
       title: 'Group Title',
       type: 'string',

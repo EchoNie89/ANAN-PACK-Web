@@ -27,6 +27,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'megaMenuCard',
+      title: 'Mega Menu Card',
+      type: 'productMegaMenuCard',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'pageTitle',
       title: 'Page Title',
       type: 'string',
@@ -52,26 +58,9 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'megaMenuCard',
-      title: 'Mega Menu Card',
-      type: 'productMegaMenuCard',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'whatAreCustom',
       title: 'What Are Custom',
       type: 'productWhatAreCustom',
-    }),
-    defineField({
-      name: 'caseStudy',
-      title: 'Case Study',
-      type: 'productCaseStudy',
-    }),
-    defineField({
-      name: 'faqItems',
-      title: 'FAQ Items',
-      type: 'array',
-      of: [{ type: 'productFaqItem' }],
     }),
     defineField({
       name: 'showcaseGroups',
@@ -103,6 +92,17 @@ export default defineType({
       title: 'Customization Groups',
       type: 'array',
       of: [{ type: 'customizationGroup' }],
+    }),
+    defineField({
+      name: 'caseStudy',
+      title: 'Case Study',
+      type: 'productCaseStudy',
+    }),
+    defineField({
+      name: 'faqItems',
+      title: 'FAQ Items',
+      type: 'array',
+      of: [{ type: 'productFaqItem' }],
     }),
   ],
   preview: {

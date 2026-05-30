@@ -22,6 +22,7 @@ The `/contact-us` inquiry form submits directly to Formspree with the public for
 ```dotenv
 PUBLIC_FORMSPREE_FORM_ID=your_form_id_here
 PUBLIC_SITE_URL=https://www.your-domain.com
+PUBLIC_PRODUCTS_ENABLE_LOCAL_FALLBACK=true
 ```
 
 3. Start the site from `packages/astro`:
@@ -35,3 +36,5 @@ Install dependencies from the workspace root with `pnpm install` so the root `pn
 If `PUBLIC_FORMSPREE_FORM_ID` is missing, the contact form stays on the page, shows a configuration error, and disables the submit button without showing a false in-flight state.
 
 Set `PUBLIC_SITE_URL` to your production domain so canonical tags, `robots.txt`, and `sitemap.xml` use the correct absolute URLs.
+
+Set `PUBLIC_PRODUCTS_ENABLE_LOCAL_FALLBACK=false` when you want product pages and the desktop Products menu to show only published Sanity data with no local fallback.

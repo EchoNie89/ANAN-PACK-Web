@@ -1,15 +1,15 @@
 ---
 import Container from '../ui/Container.astro';
-import LocalImage from '../ui/LocalImage.astro';
+import SanityImage from '../ui/SanityImage.astro';
 import ProductsMegaMenu from './ProductsMegaMenu.astro';
 import ServicesDropdown from './ServicesDropdown.astro';
 import SolutionsDropdown from './SolutionsDropdown.astro';
 import {
   navItems,
-  productMenuItems,
   serviceMenuItems,
   solutionMenuItems,
 } from '../../data/home';
+import { getProductMenuItems } from '../../lib/product-pages';
 import { getSiteName } from '../../lib/seo';
 
 interface Props {
@@ -19,6 +19,7 @@ interface Props {
 
 const { activeNav = 'Home', openMenu } = Astro.props;
 const siteName = getSiteName();
+const productMenuItems = await getProductMenuItems();
 
 const normalizePath = (value: string) => {
   const [path = '/'] = value.split('#');
@@ -93,7 +94,10 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                   <path d="m5 8 5 5 5-5" />
                 </svg>
               </button>
-              <ProductsMegaMenu forceOpen={openMenu === 'products'} />
+              <ProductsMegaMenu
+                forceOpen={openMenu === 'products'}
+                items={productMenuItems}
+              />
             </div>
           ) : item.label === 'Solutions' ? (
             <div
@@ -245,9 +249,8 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                           : 'text-text-main hover:bg-surface-muted'
                       }`}
                     >
-                      <LocalImage
-                        src={product.image}
-                        alt=""
+                      <SanityImage
+                        image={product.image}
                         class="size-12 rounded object-cover"
                         loading="lazy"
                         sizes="48px"

@@ -29,6 +29,8 @@ interface Props {
 }
 
 const { page } = Astro.props;
+const enableLocalProductFallback =
+  import.meta.env.PUBLIC_PRODUCTS_ENABLE_LOCAL_FALLBACK?.trim().toLowerCase() !== "false";
 
 function mapSanityImage(source: SanityImageSource, alt: string, sanityKey: string): ProductImage {
   return {
@@ -60,7 +62,11 @@ const sanityShowcaseGroups = sanityShowcase?.showcaseGroups
   }))
   .filter((group) => group.cards.length) satisfies ProductShowcaseGroup[] | undefined;
 
-const showcaseGroups = sanityShowcaseGroups?.length ? sanityShowcaseGroups : page.showcaseGroups;
+const showcaseGroups = sanityShowcaseGroups?.length
+  ? sanityShowcaseGroups
+  : enableLocalProductFallback
+    ? page.showcaseGroups
+    : [];
 
 const sanityApplicationsData = await getProductApplications(page.slug).catch(() => null);
 const sanityApplications = sanityApplicationsData?.applications
@@ -75,9 +81,15 @@ const sanityApplications = sanityApplicationsData?.applications
     ),
   }));
 
-const applicationTitle = sanityApplicationsData?.applicationTitle ?? page.applicationTitle;
-const applicationDescription = sanityApplicationsData?.applicationDescription ?? page.applicationDescription;
-const applications = sanityApplications?.length ? sanityApplications : page.applications;
+const applicationTitle = sanityApplicationsData?.applicationTitle
+  ?? (enableLocalProductFallback ? page.applicationTitle : undefined);
+const applicationDescription = sanityApplicationsData?.applicationDescription
+  ?? (enableLocalProductFallback ? page.applicationDescription : undefined);
+const applications = sanityApplications?.length
+  ? sanityApplications
+  : enableLocalProductFallback
+    ? page.applications
+    : [];
 
 const sanityCustomizationData = await getProductCustomization(page.slug).catch(() => null);
 const sanityCustomizationGroups = sanityCustomizationData?.customizationGroups
@@ -96,16 +108,45 @@ const sanityCustomizationGroups = sanityCustomizationData?.customizationGroups
       ),
     blocks: group.blocks,
   }));
-const customizationGroups = sanityCustomizationGroups?.length ? sanityCustomizationGroups : page.customizationGroups;
+const customizationGroups = sanityCustomizationGroups?.length
+  ? sanityCustomizationGroups
+  : enableLocalProductFallback
+    ? page.customizationGroups
+    : [];
 const introHeading = page.introTitle ?? `What Are Custom ${page.navLabel}?`;
-const whyChooseItems = page.whyChoose ?? defaultProductWhyChoose;
-const cta = page.cta ?? {
-  title: "Ready to Upgrade Your Brand's Packaging?",
-  description: "Send us your design, get a quote within 6 hours.",
-  href: "/contact-us",
-  buttonLabel: "Request A Quote  ->",
-  note: "We'll reply within 6 hours.",
-};
+const whyChooseItems = page.whyChoose?.length
+  ? page.whyChoose
+  : enableLocalProductFallback
+    ? defaultProductWhyChoose
+    : [];
+const cta = page.cta ?? (enableLocalProductFallback
+  ? {
+      title: "Ready to Upgrade Your Brand's Packaging?",
+      description: "Send us your design, get a quote within 6 hours.",
+      href: "/contact-us",
+      buttonLabel: "Request A Quote  ->",
+      note: "We'll reply within 6 hours.",
+    }
+  : undefined);
+const hasOverview = Boolean(page.overview.trim());
+const hasFeatureBand = Boolean(page.featureBand?.length);
+const hasShowcase = Boolean(showcaseGroups?.some((group) => group.cards.length));
+const hasApplications = applications.length > 0;
+const hasCustomization = Boolean(customizationGroups?.length);
+const hasProcess = page.process.length > 0;
+const hasWhyChoose = whyChooseItems.length > 0;
+const hasCaseStudy = Boolean(
+  page.caseStudy.title.trim()
+  || page.caseStudy.description.trim()
+  || page.caseStudy.bullets.length
+  || page.caseStudy.resultPoints?.length
+  || page.caseStudy.quote?.trim()
+  || page.caseStudy.challenge?.trim()
+  || page.caseStudy.solutionIntro?.trim()
+  || page.caseStudy.solutionPoints?.length
+  || page.caseStudy.gallery?.length,
+);
+const hasFaqs = page.faqs.length > 0;
 ---
 
 <main id="main-content" tabindex="-1">
@@ -120,37 +161,47 @@ const cta = page.cta ?? {
     heroTitleLines={page.heroTitleLines}
     heroImage={page.heroImage}
   />
-  <ProductFeatureBand features={page.featureBand} />
-  <ProductIntro heading={introHeading} overview={page.overview} />
-  <ProductGalleryMatrix
-    navLabel={page.navLabel}
-    categories={page.categories}
-    materials={page.materials}
-    showcaseGroups={showcaseGroups}
-  />
-  <ProductApplications
-    title={applicationTitle}
-    description={applicationDescription}
-    applications={applications}
-    layout={page.applicationLayout}
-  />
-  <ProductCustomization
-    groups={customizationGroups}
-  />
-  <ProductProcess process={page.process} subtitle={page.processSubtitle} />
-  <ProductWhyChoose
-    title={page.whyChooseTitle ?? `Why Choose Us For Custom ${page.navLabel}?`}
-    items={whyChooseItems}
-  />
-  <ProductCaseStudy caseStudy={page.caseStudy} />
-  <ProductFaq faqs={page.faqs} />
-  <PageCTA
-    title={cta.title}
-    description={cta.description}
-    href={cta.href}
-    buttonLabel={cta.buttonLabel}
-    note={cta.note}
-    tone="tan"
-    class="bg-surface"
-  />
+  {hasFeatureBand && <ProductFeatureBand features={page.featureBand} />}
+  {hasOverview && <ProductIntro heading={introHeading} overview={page.overview} />}
+  {hasShowcase && (
+    <ProductGalleryMatrix
+      navLabel={page.navLabel}
+      categories={page.categories}
+      materials={page.materials}
+      showcaseGroups={showcaseGroups}
+    />
+  )}
+  {hasApplications && (
+    <ProductApplications
+      title={applicationTitle}
+      description={applicationDescription}
+      applications={applications}
+      layout={page.applicationLayout}
+    />
+  )}
+  {hasCustomization && (
+    <ProductCustomization
+      groups={customizationGroups}
+    />
+  )}
+  {hasProcess && <ProductProcess process={page.process} subtitle={page.processSubtitle} />}
+  {hasWhyChoose && (
+    <ProductWhyChoose
+      title={page.whyChooseTitle ?? `Why Choose Us For Custom ${page.navLabel}?`}
+      items={whyChooseItems}
+    />
+  )}
+  {hasCaseStudy && <ProductCaseStudy caseStudy={page.caseStudy} />}
+  {hasFaqs && <ProductFaq faqs={page.faqs} />}
+  {cta && (
+    <PageCTA
+      title={cta.title}
+      description={cta.description}
+      href={cta.href}
+      buttonLabel={cta.buttonLabel}
+      note={cta.note}
+      tone="tan"
+      class="bg-surface"
+    />
+  )}
 </main>

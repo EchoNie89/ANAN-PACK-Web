@@ -76,3 +76,46 @@ test("product schema exposes the new Sanity-managed product sections", () => {
     "Expected the mega menu card object schema to be registered",
   );
 });
+
+test("nested product content schemas preserve hidden import metadata fields", () => {
+  const applicationCardSchema = readSource("sanity/schemas/applicationCard.ts");
+  const showcaseGroupSchema = readSource("sanity/schemas/showcaseGroup.ts");
+  const showcaseCardSchema = readSource("sanity/schemas/showcaseCard.ts");
+  const customizationGroupSchema = readSource("sanity/schemas/customizationGroup.ts");
+
+  assert.match(
+    applicationCardSchema,
+    /name: 'sourceKey'[\s\S]*hidden: true/,
+    "Expected application cards to keep sourceKey as a hidden metadata field",
+  );
+  assert.match(
+    applicationCardSchema,
+    /name: 'figmaNodeId'[\s\S]*hidden: true/,
+    "Expected application cards to keep figmaNodeId as a hidden metadata field",
+  );
+  assert.match(
+    showcaseGroupSchema,
+    /name: 'sourceKey'[\s\S]*hidden: true/,
+    "Expected showcase groups to keep sourceKey as a hidden metadata field",
+  );
+  assert.match(
+    showcaseGroupSchema,
+    /name: 'figmaNodeId'[\s\S]*hidden: true/,
+    "Expected showcase groups to keep figmaNodeId as a hidden metadata field",
+  );
+  assert.match(
+    showcaseCardSchema,
+    /name: 'sourceKey'[\s\S]*hidden: true/,
+    "Expected showcase cards to keep sourceKey as a hidden metadata field",
+  );
+  assert.match(
+    showcaseCardSchema,
+    /name: 'figmaNodeId'[\s\S]*hidden: true/,
+    "Expected showcase cards to keep figmaNodeId as a hidden metadata field",
+  );
+  assert.match(
+    customizationGroupSchema,
+    /name: 'sourceKey'[\s\S]*hidden: true/,
+    "Expected customization groups to keep sourceKey as a hidden metadata field",
+  );
+});

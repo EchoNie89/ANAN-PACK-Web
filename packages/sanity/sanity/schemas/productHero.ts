@@ -16,7 +16,6 @@ export default defineType({
       title: 'Description',
       type: 'text',
       rows: 4,
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'image',

@@ -30,6 +30,7 @@ This is an incremental migration, not a full rewrite. During migration, the fron
 - Upload migrated module images to Sanity instead of relying only on local asset paths.
 - Generate product pages from published Sanity products.
 - Populate the desktop Products dropdown from published Sanity products.
+- Manage the desktop Products dropdown card image from Sanity per product.
 - Keep new products append-only in menu order by creation time.
 - Support internal scrolling for the desktop dropdown when more than eight products exist.
 
@@ -64,6 +65,7 @@ The user approved the following scope and constraints:
   - customization
 - New products should keep non-migrated sections on current shared defaults.
 - Product names should be used for menu labels.
+- Mega menu card images should be managed in Sanity per product.
 - Product slugs should be generated automatically from product names rather than manually maintained by editors.
 - Products in the desktop top dropdown should be ordered by creation time, with newer products appended to the end.
 
@@ -158,6 +160,16 @@ The FAQ section only needs:
 
 The section title remains fixed in the frontend and should not be stored in Sanity.
 
+### Mega Menu Card Fields
+
+Each product should also carry a dedicated menu card media field for the desktop Products dropdown:
+
+- `megaMenuCard`
+  - `image`
+  - `alt`
+
+This field exists so the dropdown image can be curated independently from the hero image. Existing products should migrate their current local menu card image into this field so the dropdown stays visually unchanged after the CMS cutover.
+
 ### Existing Sanity-Backed Product Fields
 
 Continue to use the current Sanity-backed areas for:
@@ -195,6 +207,7 @@ The baseline should capture, per product:
 - full case study text fields
 - case study image paths
 - faq items
+- mega menu card image path
 - current data-source notes for showcase, applications, and customization
 - notes for sections still driven by shared defaults
 
@@ -213,6 +226,7 @@ The import should:
   - hero images
   - case study main images
   - case study gallery images
+  - mega menu card images
   - images for approved migrated modules that still live only in local assets
 - preserve existing compatible Sanity data for showcase, applications, and customization when already present
 
@@ -258,6 +272,7 @@ The published Sanity product collection should become the primary source for:
 
 - static route generation
 - desktop Products dropdown entries
+- desktop Products dropdown card images
 
 Unpublished products should not generate pages and should not appear in the menu.
 
@@ -275,6 +290,7 @@ For a newly created and published product in Sanity:
 
 - a product detail page should be generated automatically
 - the product should appear automatically in the desktop Products dropdown
+- the dropdown card image should come from `megaMenuCard.image`
 - the page should read these sections from Sanity:
   - hero
   - what are custom
@@ -295,6 +311,7 @@ Rules:
 
 - use published Sanity products only
 - use `name` as the menu label
+- use `megaMenuCard.image` as the dropdown card image
 - order products by creation time ascending
 - append newly created products to the bottom of the list
 
@@ -310,6 +327,7 @@ Mobile behavior should remain unchanged. The mobile expanded list can continue f
 ## Error Handling And Fallbacks
 
 - Existing migrated products with missing Sanity fields during rollout should fall back to local content where available.
+- Existing migrated products with a missing `megaMenuCard` image during rollout may temporarily fall back to the current local menu image, but the target state is Sanity-owned menu media.
 - Newly created Sanity-only products should render the minimum valid page structure from Sanity plus shared defaults. If a required Sanity field is missing, the system should fail in a controlled way rather than rendering corrupt content silently.
 - Unpublished Sanity products should never enter the site or the menu.
 - Duplicate or conflicting slug generation should be blocked or surfaced clearly in the CMS workflow.
@@ -325,6 +343,7 @@ Verify that:
 - base fields match the local baseline
 - hero, what-are-custom, case-study, and faq content match exactly
 - migrated images are uploaded and attached correctly
+- migrated mega menu card images are uploaded and attached correctly
 - existing showcase, applications, and customization content remains intact
 
 ### Frontend Verification
@@ -349,6 +368,7 @@ Create a test product in Sanity and confirm that, after publish:
 
 - the page is generated
 - the product appears in the desktop Products dropdown
+- the dropdown card image renders from the Sanity `megaMenuCard` field
 - Sanity-backed modules render correctly
 - no local code addition is required
 
@@ -364,6 +384,7 @@ Confirm:
 
 - internal dropdown scrolling only starts above 8
 - all items remain reachable and clickable
+- menu card images remain correct for existing migrated products
 - newly created products appear at the bottom
 
 ### Fallback Verification

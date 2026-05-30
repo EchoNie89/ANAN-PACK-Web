@@ -2,7 +2,7 @@
 import Footer from "../../components/sections/Footer.astro";
 import Header from "../../components/sections/Header.astro";
 import ProductPage from "../../components/sections/products/ProductPage.astro";
-import { getProductBySlug, productPages } from "../../data/products";
+import { getAllProductPages, getProductPageBySlug } from "../../lib/product-pages";
 import Layout from "../../layouts/Layout.astro";
 import {
   buildBreadcrumbJsonLd,
@@ -12,7 +12,9 @@ import {
   toAbsoluteUrl,
 } from "../../lib/seo";
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const productPages = await getAllProductPages();
+
   return productPages.map((page) => ({
     params: { slug: page.slug },
     props: { page },
@@ -20,7 +22,7 @@ export function getStaticPaths() {
 }
 
 const { page } = Astro.props;
-const product = page ?? getProductBySlug(Astro.params.slug ?? "");
+const product = page ?? await getProductPageBySlug(Astro.params.slug ?? "");
 const productHeroImageSrc = product
   ? resolveSeoImage(product.heroImage)?.src
   : undefined;
@@ -46,7 +48,7 @@ const seoJsonLd = product
 {
   product && (
     <Layout
-      title={`${product.title} | Tagora Packaging & Trims`}
+      title={product.seoTitle}
       description={product.metaDescription}
       image={product.heroImage}
       jsonLd={seoJsonLd}
