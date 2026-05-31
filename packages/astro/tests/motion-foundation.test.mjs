@@ -157,6 +157,7 @@ test("product pages opt into the same motion system", () => {
 test("blog heroes opt into low-cost motion without animating breadcrumbs", () => {
   const blogHeroSource = readSource("src/components/sections/blog/BlogPageHero.astro");
   const blogCategoryHighlightsSource = readSource("src/components/sections/blog/BlogCategoryHighlights.astro");
+  const globalStyles = readSource("src/styles/global.css");
 
   assert.match(blogHeroSource, /motion-enter/);
   assert.match(blogHeroSource, /--motion-delay:/);
@@ -172,5 +173,30 @@ test("blog heroes opt into low-cost motion without animating breadcrumbs", () =>
     blogCategoryHighlightsSource,
     /grid grid-cols-3 gap-2 sm:gap-4 md:gap-6/,
     "Expected the blog hero category logos to use the tighter approved spacing",
+  );
+  assert.match(
+    blogCategoryHighlightsSource,
+    /blog-hero-category-hover/,
+    "Expected the blog hero category items to expose a dedicated hover hook",
+  );
+  assert.match(
+    blogCategoryHighlightsSource,
+    /blog-hero-category-icon/,
+    "Expected the blog hero category icon circle to expose a dedicated hover target",
+  );
+  assert.match(
+    blogCategoryHighlightsSource,
+    /blog-hero-category-title/,
+    "Expected the blog hero category title to expose a dedicated hover target",
+  );
+  assert.match(
+    globalStyles,
+    /\.blog-hero-category-hover:hover \.blog-hero-category-icon/,
+    "Expected the blog hero icon circle to animate on desktop hover",
+  );
+  assert.match(
+    globalStyles,
+    /\.blog-hero-category-hover:hover \.blog-hero-category-title/,
+    "Expected the blog hero category title to respond on desktop hover",
   );
 });
