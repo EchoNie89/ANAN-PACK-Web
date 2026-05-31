@@ -146,6 +146,10 @@ test("product pages opt into the same motion system", () => {
   assert.match(productProcessSource, /data-reveal/);
   assert.doesNotMatch(productProcessSource, /motion-hover-card/);
   assert.match(productApplicationsSource, /data-reveal/);
-  assert.match(productApplicationsSource, /motion-hover-card/);
+  assert.doesNotMatch(
+    productApplicationsSource,
+    /motion-hover-card/,
+    "Expected product application cards to skip the outer hover-card treatment",
+  );
   assert.match(productCaseStudySource, /data-reveal/);
 });
