@@ -255,6 +255,8 @@ export const logos = [
   homeImage('logo-07.png'),
   homeImage('logo-08.png'),
   homeImage('logo-09.png'),
+  homeImage('logo-10-twelvelittle.webp'),
+  homeImage('logo-11-sanrio.webp'),
 ];
 
 export const certifications = [
