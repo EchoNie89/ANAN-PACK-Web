@@ -76,19 +76,30 @@ const hasAfterContentSlot = Astro.slots.has("afterContent");
     </div>
 
     <div class={isBlogIndex ? "mx-auto mt-10 max-w-4xl text-center sm:mt-14 lg:mt-14" : isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      {eyebrow && <p class="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-white/80">{eyebrow}</p>}
-      <h1 class={`font-display text-white ${isBlogIndex ? "text-[2.25rem] font-black leading-[1.02] tracking-[-0.03em] sm:text-[2.5rem] md:text-[52px]" : isCentered ? "mt-5 text-4xl font-extrabold md:text-5xl" : "mt-5 text-4xl font-black md:text-[48px] md:leading-[1.08]"}`}>
+      {eyebrow && (
+        <p
+          class="motion-enter mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-white/80"
+          style="--motion-delay: 80ms; --motion-distance: 14px;"
+        >
+          {eyebrow}
+        </p>
+      )}
+      <h1
+        class={`motion-enter font-display text-white ${isBlogIndex ? "text-[2.25rem] font-black leading-[1.02] tracking-[-0.03em] sm:text-[2.5rem] md:text-[52px]" : isCentered ? "mt-5 text-4xl font-extrabold md:text-5xl" : "mt-5 text-4xl font-black md:text-[48px] md:leading-[1.08]"}`}
+        style={`--motion-delay: ${eyebrow ? "160ms" : "100ms"}; --motion-distance: 16px;`}
+      >
         {title}
       </h1>
       {description && (
         <p
-          class={`text-white/95 ${
+          class={`motion-enter text-white/95 ${
             isBlogIndex
               ? "mx-auto mt-4 max-w-[22rem] text-[1rem] font-medium leading-[1.35] sm:max-w-[30rem] sm:text-[1.125rem] md:max-w-4xl md:text-[20px]"
               : isCentered
                 ? "mx-auto mt-4 max-w-2xl text-base leading-7 text-white/85 md:text-lg"
                 : "mt-4 max-w-2xl text-base leading-7 text-white/85 md:text-lg"
           }`}
+          style={`--motion-delay: ${eyebrow ? "240ms" : "180ms"}; --motion-distance: 16px;`}
         >
           {description}
         </p>

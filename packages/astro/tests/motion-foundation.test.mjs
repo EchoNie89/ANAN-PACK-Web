@@ -153,3 +153,24 @@ test("product pages opt into the same motion system", () => {
   );
   assert.match(productCaseStudySource, /data-reveal/);
 });
+
+test("blog heroes opt into low-cost motion without animating breadcrumbs", () => {
+  const blogHeroSource = readSource("src/components/sections/blog/BlogPageHero.astro");
+  const blogCategoryHighlightsSource = readSource("src/components/sections/blog/BlogCategoryHighlights.astro");
+
+  assert.match(blogHeroSource, /motion-enter/);
+  assert.match(blogHeroSource, /--motion-delay:/);
+  assert.doesNotMatch(
+    blogHeroSource,
+    /<Breadcrumbs[^>]*motion-enter/,
+    "Expected blog hero breadcrumbs to remain static while the text content animates",
+  );
+
+  assert.match(blogCategoryHighlightsSource, /data-reveal/);
+  assert.match(blogCategoryHighlightsSource, /--reveal-delay:/);
+  assert.match(
+    blogCategoryHighlightsSource,
+    /grid grid-cols-3 gap-2 sm:gap-4 md:gap-6/,
+    "Expected the blog hero category logos to use the tighter approved spacing",
+  );
+});

@@ -13,10 +13,14 @@ const { categories, inHero = false } = Astro.props;
 
 {
   inHero ? (
-    <div class="grid grid-cols-3 gap-3 sm:gap-5 md:gap-8">
+    <div class="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6">
       {
-        categories.map((category) => (
-          <div class="flex flex-col items-center text-center">
+        categories.map((category, index) => (
+          <div
+            class="flex flex-col items-center text-center"
+            data-reveal
+            style={`--reveal-delay: ${220 + index * 80}ms; --reveal-distance: 14px;`}
+          >
             <div class="flex h-[84px] w-[84px] items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] sm:h-[96px] sm:w-[96px] md:h-[128px] md:w-[128px]">
               <LocalImage
                 src={category.icon}
