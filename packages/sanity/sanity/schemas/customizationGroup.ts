@@ -32,9 +32,13 @@ export default defineType({
     }),
     defineField({
       name: 'blocks',
-      title: 'Text Blocks',
+      title: 'Content Blocks',
       type: 'array',
-      of: [{ type: 'customizationBlock' }],
+      of: [
+        { type: 'paragraphBlock' },
+        { type: 'listBlock' },
+        { type: 'entryListBlock' },
+      ],
       validation: (Rule) => Rule.required().min(1),
     }),
   ],
