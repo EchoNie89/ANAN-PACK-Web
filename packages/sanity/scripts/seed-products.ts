@@ -17,8 +17,13 @@ try {
 
 import { createClient } from "@sanity/client";
 import { HttpsProxyAgent } from "https-proxy-agent";
+import {
+  normalizeCustomizationBlock,
+  type CustomizationMarkerStyle,
+} from "../../astro/src/lib/customization-content";
 import type {
   ProductImportCard,
+  ProductImportCustomizationBlockLike,
   ProductImportGroup,
   ProductImportManifest,
   ProductImportCustomizationGroup,
@@ -121,12 +126,36 @@ type ExistingImageField = {
   alt?: string;
 };
 
+type ExistingCustomizationDetailGroup = {
+  label?: string;
+  markerStyle?: CustomizationMarkerStyle;
+  items?: string[];
+  note?: string;
+};
+
+type ExistingCustomizationEntry = {
+  title?: string;
+  paragraphs?: string[];
+  detailGroups?: ExistingCustomizationDetailGroup[];
+  note?: string;
+};
+
+type ExistingCustomizationBlock = {
+  _type?: "paragraphBlock" | "listBlock" | "entryListBlock";
+  title?: string;
+  text?: string;
+  markerStyle?: CustomizationMarkerStyle;
+  items?: string[];
+  note?: string;
+  entries?: ExistingCustomizationEntry[];
+};
+
 type ExistingCustomizationGroup = {
   sourceKey?: string;
   title?: string;
   intro?: string;
   images?: Array<ExistingTextFields & { sourceKey?: string; alt?: string; image?: ExistingImageField }>;
-  blocks?: Array<{ title?: string; items?: string[] }>;
+  blocks?: ExistingCustomizationBlock[];
 };
 
 type ExistingProduct = {
@@ -1318,6 +1347,58 @@ function buildApplications(
   });
 }
 
+function buildCustomizationBlock(
+  block: ProductImportCustomizationBlockLike,
+  blockKey: string,
+) {
+  const normalizedBlock = normalizeCustomizationBlock(block);
+
+  if (normalizedBlock._type === "paragraphBlock") {
+    return {
+      _key: stableKey(blockKey),
+      _type: "paragraphBlock",
+      text: normalizedBlock.text,
+    };
+  }
+
+  if (normalizedBlock._type === "listBlock") {
+    return {
+      _key: stableKey(blockKey),
+      _type: "listBlock",
+      ...(normalizedBlock.title ? { title: normalizedBlock.title } : {}),
+      markerStyle: normalizedBlock.markerStyle,
+      items: [...normalizedBlock.items],
+      ...(normalizedBlock.note ? { note: normalizedBlock.note } : {}),
+    };
+  }
+
+  return {
+    _key: stableKey(blockKey),
+    _type: "entryListBlock",
+    ...(normalizedBlock.title ? { title: normalizedBlock.title } : {}),
+    markerStyle: normalizedBlock.markerStyle,
+    entries: normalizedBlock.entries.map((entry, entryIndex) => ({
+      _key: stableKey(`${blockKey}-entry-${entryIndex}`),
+      _type: "customizationEntry",
+      ...(entry.title ? { title: entry.title } : {}),
+      ...(entry.paragraphs?.length ? { paragraphs: [...entry.paragraphs] } : {}),
+      ...(entry.detailGroups?.length
+        ? {
+            detailGroups: entry.detailGroups.map((detailGroup, detailGroupIndex) => ({
+              _key: stableKey(`${blockKey}-entry-${entryIndex}-detail-${detailGroupIndex}`),
+              _type: "customizationDetailGroup",
+              ...(detailGroup.label ? { label: detailGroup.label } : {}),
+              markerStyle: detailGroup.markerStyle,
+              items: [...detailGroup.items],
+              ...(detailGroup.note ? { note: detailGroup.note } : {}),
+            })),
+          }
+        : {}),
+      ...(entry.note ? { note: entry.note } : {}),
+    })),
+  };
+}
+
 function buildCustomizationGroups(
   manifest: ValidatedManifest,
   existingProduct: ExistingProduct | null,
@@ -1347,12 +1428,12 @@ function buildCustomizationGroups(
       };
     });
 
-    const blocks = (group.blocks || []).map((block, blockIndex) => ({
-      _key: stableKey(`${group.sourceKey}-block-${blockIndex}`),
-      _type: "customizationBlock",
-      title: block.title,
-      items: block.items,
-    }));
+    const blocks = (group.blocks || []).map((block, blockIndex) =>
+      buildCustomizationBlock(
+        block,
+        `${group.sourceKey}-block-${blockIndex}`,
+      ),
+    );
 
     return {
       _key: stableKey(group.sourceKey),
@@ -1420,7 +1501,31 @@ async function main() {
       applicationDescription,
       showcaseGroups[]{sourceKey,title,cards[]{sourceKey,title,alt,description,image{asset{_ref}}}},
       applications[]{sourceKey,title,alt,description,image{asset{_ref}}},
-      customizationGroups[]{sourceKey,title,intro,images[]{sourceKey,alt,image{asset{_ref}}},blocks[]{title,items}}
+      customizationGroups[]{
+        sourceKey,
+        title,
+        intro,
+        images[]{sourceKey,alt,image{asset{_ref}}},
+        blocks[]{
+          _type,
+          title,
+          text,
+          markerStyle,
+          items,
+          note,
+          entries[]{
+            title,
+            paragraphs,
+            note,
+            detailGroups[]{
+              label,
+              markerStyle,
+              items,
+              note
+            }
+          }
+        }
+      }
     }`;
 
   await client.createIfNotExists({

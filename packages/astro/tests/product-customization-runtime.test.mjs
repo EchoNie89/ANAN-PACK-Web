@@ -9,6 +9,8 @@ test("customization runtime uses a shared block union and legacy normalizer", as
   const helperSource = readSource("src/lib/customization-content.ts");
   const productSource = readSource("src/data/product-source.ts");
   const productsSource = readSource("src/data/products.ts");
+  const sanitySource = readSource("src/lib/sanity.ts");
+  const seedProductsSource = readSource("../sanity/scripts/seed-products.ts");
   const importTypesSource = readSource("../sanity/import-data/products/types.ts");
   const baselineSource = readSource("../sanity/scripts/product-content-source.ts");
   const {
@@ -33,6 +35,18 @@ test("customization runtime uses a shared block union and legacy normalizer", as
   assert.match(importTypesSource, /export type ProductImportCustomizationBlockLike =/);
   assert.match(importTypesSource, /blocks: ProductImportCustomizationBlockLike\[];/);
   assert.match(baselineSource, /type ProductBaselineCustomizationBlock =/);
+  assert.match(sanitySource, /export type CustomizationBlock =/);
+  assert.match(sanitySource, /_type,/);
+  assert.match(sanitySource, /text,/);
+  assert.match(sanitySource, /markerStyle,/);
+  assert.match(sanitySource, /entries\[]\{/);
+  assert.match(sanitySource, /detailGroups\[]\{/);
+  assert.match(sanitySource, /note/);
+  assert.match(seedProductsSource, /function buildCustomizationBlock/);
+  assert.match(seedProductsSource, /_type: "paragraphBlock"/);
+  assert.match(seedProductsSource, /_type: "listBlock"/);
+  assert.match(seedProductsSource, /_type: "entryListBlock"/);
+  assert.doesNotMatch(seedProductsSource, /_type: "customizationBlock"/);
 
   const legacyBlock = {
     title: "Decoration options",

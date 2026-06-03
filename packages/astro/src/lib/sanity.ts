@@ -107,10 +107,34 @@ export interface ProductShowcase {
   showcaseGroups: ShowcaseGroup[];
 }
 
-export interface CustomizationBlock {
-  title: string;
-  items: string[];
-}
+export type CustomizationBlock =
+  | {
+      _type: 'paragraphBlock';
+      text: string;
+    }
+  | {
+      _type: 'listBlock';
+      title?: string;
+      markerStyle: 'bullet' | 'number' | 'plain';
+      items: string[];
+      note?: string;
+    }
+  | {
+      _type: 'entryListBlock';
+      title?: string;
+      markerStyle: 'bullet' | 'number' | 'plain';
+      entries: Array<{
+        title?: string;
+        paragraphs?: string[];
+        detailGroups?: Array<{
+          label?: string;
+          markerStyle: 'bullet' | 'number' | 'plain';
+          items: string[];
+          note?: string;
+        }>;
+        note?: string;
+      }>;
+    };
 
 export interface CustomizationImage {
   image: SanityImageSource;
@@ -251,8 +275,23 @@ const PRODUCT_CUSTOMIZATION_QUERY = `
           alt
         },
         blocks[]{
+          _type,
           title,
-          items
+          text,
+          markerStyle,
+          items,
+          note,
+          entries[]{
+            title,
+            paragraphs,
+            note,
+            detailGroups[]{
+              label,
+              markerStyle,
+              items,
+              note
+            }
+          }
         }
       }
     },
@@ -271,8 +310,23 @@ const PRODUCT_CUSTOMIZATION_QUERY = `
           alt
         },
         blocks[]{
+          _type,
           title,
-          items
+          text,
+          markerStyle,
+          items,
+          note,
+          entries[]{
+            title,
+            paragraphs,
+            note,
+            detailGroups[]{
+              label,
+              markerStyle,
+              items,
+              note
+            }
+          }
         }
       }
     }
