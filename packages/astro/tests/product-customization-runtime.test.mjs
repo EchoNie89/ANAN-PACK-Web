@@ -14,6 +14,7 @@ test("customization runtime uses a shared block union and legacy normalizer", as
   const importTypesSource = readSource("../sanity/import-data/products/types.ts");
   const baselineSource = readSource("../sanity/scripts/product-content-source.ts");
   const {
+    isLegacyCustomizationBlock,
     normalizeCustomizationBlock,
     normalizeLegacyCustomizationBlock,
   } = await import("../src/lib/customization-content.ts");
@@ -21,6 +22,8 @@ test("customization runtime uses a shared block union and legacy normalizer", as
   assert.match(helperSource, /export type CustomizationMarkerStyle = 'bullet' \| 'number' \| 'plain';/);
   assert.match(helperSource, /export type ProductCustomizationBlock =/);
   assert.match(helperSource, /export function normalizeLegacyCustomizationBlock/);
+  assert.match(helperSource, /_type: 'customizationBlock';/);
+  assert.match(helperSource, /block\._type === 'customizationBlock'/);
 
   assert.match(
     productSource,
@@ -85,4 +88,27 @@ test("customization runtime uses a shared block union and legacy normalizer", as
     items: ["Screen print", "Foil stamp"],
   });
   assert.notStrictEqual(normalizedFromUnion.items, legacyBlock.items);
+
+  const persistedLegacyBlock = {
+    _type: "customizationBlock",
+    title: "Decoration options",
+    items: ["Screen print", "Foil stamp"],
+  };
+
+  assert.equal(isLegacyCustomizationBlock(persistedLegacyBlock), true);
+
+  const normalizedFromPersistedLegacy = normalizeCustomizationBlock(
+    persistedLegacyBlock,
+  );
+
+  assert.deepEqual(normalizedFromPersistedLegacy, {
+    _type: "listBlock",
+    title: "Decoration options",
+    markerStyle: "bullet",
+    items: ["Screen print", "Foil stamp"],
+  });
+  assert.notStrictEqual(
+    normalizedFromPersistedLegacy.items,
+    persistedLegacyBlock.items,
+  );
 });

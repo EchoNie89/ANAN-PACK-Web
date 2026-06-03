@@ -40,29 +40,42 @@ export type ProductCustomizationBlock =
   | EntryListBlock;
 
 export interface LegacyCustomizationBlock {
-  title: string;
+  title?: string;
+  note?: string;
+  items: string[];
+}
+
+export interface PersistedLegacyCustomizationBlock {
+  _type: 'customizationBlock';
+  title?: string;
+  note?: string;
   items: string[];
 }
 
 export function isLegacyCustomizationBlock(
-  block: ProductCustomizationBlock | LegacyCustomizationBlock,
-): block is LegacyCustomizationBlock {
-  return !('_type' in block);
+  block: ProductCustomizationBlock | LegacyCustomizationBlock | PersistedLegacyCustomizationBlock,
+): block is LegacyCustomizationBlock | PersistedLegacyCustomizationBlock {
+  if (!('_type' in block)) {
+    return true;
+  }
+
+  return block._type === 'customizationBlock';
 }
 
 export function normalizeLegacyCustomizationBlock(
-  block: LegacyCustomizationBlock,
+  block: LegacyCustomizationBlock | PersistedLegacyCustomizationBlock,
 ): ListBlock {
   return {
     _type: 'listBlock',
-    title: block.title,
     markerStyle: 'bullet',
+    ...(block.title ? { title: block.title } : {}),
     items: [...block.items],
+    ...(block.note ? { note: block.note } : {}),
   };
 }
 
 export function normalizeCustomizationBlock(
-  block: ProductCustomizationBlock | LegacyCustomizationBlock,
+  block: ProductCustomizationBlock | LegacyCustomizationBlock | PersistedLegacyCustomizationBlock,
 ): ProductCustomizationBlock {
   return isLegacyCustomizationBlock(block)
     ? normalizeLegacyCustomizationBlock(block)

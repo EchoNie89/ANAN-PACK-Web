@@ -25,6 +25,10 @@ function getMarkerClass(markerStyle: CustomizationMarkerStyle) {
     return markerClassByStyle.bullet;
   }
 
+  if (markerStyle === "plain") {
+    return markerClassByStyle.plain;
+  }
+
   return markerClassByStyle.plain;
 }
 ---

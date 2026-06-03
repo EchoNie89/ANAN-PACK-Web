@@ -47,6 +47,8 @@ test("product customization renderer handles normalized structured blocks", () =
   assert.match(customizationSource, /block\._type === "entryListBlock"/);
   assert.match(customizationSource, /markerStyle === "number"/);
   assert.match(customizationSource, /markerStyle === "bullet"/);
+  assert.match(customizationSource, /markerStyle === "plain"/);
   assert.match(customizationSource, /block\.note/);
+  assert.match(customizationSource, /entry\.note/);
   assert.match(customizationSource, /detailGroup\.note/);
 });
