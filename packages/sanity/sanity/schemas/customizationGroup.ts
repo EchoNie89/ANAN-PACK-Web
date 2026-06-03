@@ -13,6 +13,13 @@ export default defineType({
       readOnly: true,
     }),
     defineField({
+      name: 'figmaNodeId',
+      title: 'Figma Node ID',
+      type: 'string',
+      hidden: true,
+      readOnly: true,
+    }),
+    defineField({
       name: 'title',
       title: 'Group Title',
       type: 'string',

@@ -28,6 +28,7 @@ import type {
   ProductImportManifest,
   ProductImportCustomizationGroup,
 } from "../import-data/products/types";
+import { validateCustomizationBlockLike } from "./customization-block-validation";
 import { productSourcePages } from "../../astro/src/data/product-source";
 import {
   getProductBaselineBySlug,
@@ -544,6 +545,15 @@ function validateManifest(
 
       if (!group.blocks?.length) {
         errors.push(`customizationGroups[${groupIndex}].blocks must include at least one block`);
+      } else {
+        group.blocks.forEach((block, blockIndex) => {
+          errors.push(
+            ...validateCustomizationBlockLike(
+              block,
+              `customizationGroups[${groupIndex}].blocks[${blockIndex}]`,
+            ),
+          );
+        });
       }
 
       const images = (group.images || []).map((img, imgIndex) =>
@@ -1350,6 +1360,8 @@ function buildApplications(
 function buildCustomizationBlock(
   block: ProductImportCustomizationBlockLike,
   blockKey: string,
+  existingBlock: ExistingCustomizationBlock | undefined,
+  forceText: boolean,
 ) {
   const normalizedBlock = normalizeCustomizationBlock(block);
 
@@ -1357,45 +1369,110 @@ function buildCustomizationBlock(
     return {
       _key: stableKey(blockKey),
       _type: "paragraphBlock",
-      text: normalizedBlock.text,
+      text: keepExistingText(
+        existingBlock?.text,
+        normalizedBlock.text,
+        forceText,
+      ) || normalizedBlock.text,
     };
   }
 
   if (normalizedBlock._type === "listBlock") {
+    const title = keepExistingText(
+      existingBlock?.title,
+      normalizedBlock.title,
+      forceText,
+    );
+    const items = keepExistingStringArray(
+      existingBlock?.items,
+      normalizedBlock.items,
+      forceText,
+    ) || [...normalizedBlock.items];
+    const note = keepExistingText(
+      existingBlock?.note,
+      normalizedBlock.note,
+      forceText,
+    );
+
     return {
       _key: stableKey(blockKey),
       _type: "listBlock",
-      ...(normalizedBlock.title ? { title: normalizedBlock.title } : {}),
+      ...(title ? { title } : {}),
       markerStyle: normalizedBlock.markerStyle,
-      items: [...normalizedBlock.items],
-      ...(normalizedBlock.note ? { note: normalizedBlock.note } : {}),
+      items,
+      ...(note ? { note } : {}),
     };
   }
+
+  const title = keepExistingText(
+    existingBlock?.title,
+    normalizedBlock.title,
+    forceText,
+  );
 
   return {
     _key: stableKey(blockKey),
     _type: "entryListBlock",
-    ...(normalizedBlock.title ? { title: normalizedBlock.title } : {}),
+    ...(title ? { title } : {}),
     markerStyle: normalizedBlock.markerStyle,
-    entries: normalizedBlock.entries.map((entry, entryIndex) => ({
-      _key: stableKey(`${blockKey}-entry-${entryIndex}`),
-      _type: "customizationEntry",
-      ...(entry.title ? { title: entry.title } : {}),
-      ...(entry.paragraphs?.length ? { paragraphs: [...entry.paragraphs] } : {}),
-      ...(entry.detailGroups?.length
-        ? {
-            detailGroups: entry.detailGroups.map((detailGroup, detailGroupIndex) => ({
-              _key: stableKey(`${blockKey}-entry-${entryIndex}-detail-${detailGroupIndex}`),
-              _type: "customizationDetailGroup",
-              ...(detailGroup.label ? { label: detailGroup.label } : {}),
-              markerStyle: detailGroup.markerStyle,
-              items: [...detailGroup.items],
-              ...(detailGroup.note ? { note: detailGroup.note } : {}),
-            })),
-          }
-        : {}),
-      ...(entry.note ? { note: entry.note } : {}),
-    })),
+    entries: normalizedBlock.entries.map((entry, entryIndex) => {
+      const existingEntry = existingBlock?.entries?.[entryIndex];
+      const entryTitle = keepExistingText(
+        existingEntry?.title,
+        entry.title,
+        forceText,
+      );
+      const paragraphs = keepExistingStringArray(
+        existingEntry?.paragraphs,
+        entry.paragraphs,
+        forceText,
+      );
+      const note = keepExistingText(
+        existingEntry?.note,
+        entry.note,
+        forceText,
+      );
+
+      return {
+        _key: stableKey(`${blockKey}-entry-${entryIndex}`),
+        _type: "customizationEntry",
+        ...(entryTitle ? { title: entryTitle } : {}),
+        ...(paragraphs?.length ? { paragraphs } : {}),
+        ...(entry.detailGroups?.length
+          ? {
+              detailGroups: entry.detailGroups.map((detailGroup, detailGroupIndex) => {
+                const existingDetailGroup =
+                  existingEntry?.detailGroups?.[detailGroupIndex];
+                const label = keepExistingText(
+                  existingDetailGroup?.label,
+                  detailGroup.label,
+                  forceText,
+                );
+                const items = keepExistingStringArray(
+                  existingDetailGroup?.items,
+                  detailGroup.items,
+                  forceText,
+                ) || [...detailGroup.items];
+                const detailNote = keepExistingText(
+                  existingDetailGroup?.note,
+                  detailGroup.note,
+                  forceText,
+                );
+
+                return {
+                  _key: stableKey(`${blockKey}-entry-${entryIndex}-detail-${detailGroupIndex}`),
+                  _type: "customizationDetailGroup",
+                  ...(label ? { label } : {}),
+                  markerStyle: detailGroup.markerStyle,
+                  items,
+                  ...(detailNote ? { note: detailNote } : {}),
+                };
+              }),
+            }
+          : {}),
+        ...(note ? { note } : {}),
+      };
+    }),
   };
 }
 
@@ -1432,6 +1509,8 @@ function buildCustomizationGroups(
       buildCustomizationBlock(
         block,
         `${group.sourceKey}-block-${blockIndex}`,
+        existingGroup?.blocks?.[blockIndex],
+        forceText,
       ),
     );
 
@@ -1439,6 +1518,7 @@ function buildCustomizationGroups(
       _key: stableKey(group.sourceKey),
       _type: "customizationGroup",
       sourceKey: group.sourceKey,
+      ...(group.figmaNodeId ? { figmaNodeId: group.figmaNodeId } : {}),
       title: keepExistingText(existingGroup?.title, group.title, forceText),
       ...(group.intro ? { intro: keepExistingText(existingGroup?.intro, group.intro, forceText) } : {}),
       ...(images.length ? { images } : {}),

@@ -1,3 +1,8 @@
+import type {
+  LegacyCustomizationBlock,
+  ProductCustomizationBlock,
+} from "../../../astro/src/lib/customization-content.ts";
+
 export type ProductImportSection = "showcaseGroups" | "applications" | "customizationGroups";
 
 export interface ProductImportCard {
@@ -16,41 +21,9 @@ export interface ProductImportGroup {
   figmaNodeId?: string;
 }
 
-type ProductImportCustomizationMarkerStyle = "bullet" | "number" | "plain";
+export type ProductImportCustomizationBlock = ProductCustomizationBlock;
 
-export type ProductImportCustomizationBlock =
-  | {
-      _type: "paragraphBlock";
-      text: string;
-    }
-  | {
-      _type: "listBlock";
-      title?: string;
-      markerStyle: ProductImportCustomizationMarkerStyle;
-      items: string[];
-      note?: string;
-    }
-  | {
-      _type: "entryListBlock";
-      title?: string;
-      markerStyle: ProductImportCustomizationMarkerStyle;
-      entries: Array<{
-        title?: string;
-        paragraphs?: string[];
-        detailGroups?: Array<{
-          label?: string;
-          markerStyle: ProductImportCustomizationMarkerStyle;
-          items: string[];
-          note?: string;
-        }>;
-        note?: string;
-      }>;
-    };
-
-export type ProductImportLegacyCustomizationBlock = {
-  title: string;
-  items: string[];
-};
+export type ProductImportLegacyCustomizationBlock = LegacyCustomizationBlock;
 
 export type ProductImportCustomizationBlockLike =
   | ProductImportCustomizationBlock
@@ -59,6 +32,7 @@ export type ProductImportCustomizationBlockLike =
 export interface ProductImportCustomizationGroup {
   sourceKey: string;
   title: string;
+  figmaNodeId?: string;
   intro?: string;
   images?: ProductImportCard[];
   blocks: ProductImportCustomizationBlockLike[];

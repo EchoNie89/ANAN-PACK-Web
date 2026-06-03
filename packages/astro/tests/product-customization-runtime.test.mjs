@@ -34,9 +34,16 @@ test("customization runtime uses a shared block union and legacy normalizer", as
     /export interface ProductCustomizationGroup \{[\s\S]*blocks: ProductCustomizationBlockSeedLike\[];/,
   );
   assert.match(productsSource, /blocks: seed\.blocks\.map\(toProductCustomizationBlock\),/);
+  assert.match(
+    importTypesSource,
+    /import type \{\s*LegacyCustomizationBlock,\s*ProductCustomizationBlock,\s*\} from "\.\.\/\.\.\/\.\.\/astro\/src\/lib\/customization-content\.ts";/,
+  );
   assert.match(importTypesSource, /export type ProductImportCustomizationBlock =/);
   assert.match(importTypesSource, /export type ProductImportCustomizationBlockLike =/);
-  assert.match(importTypesSource, /blocks: ProductImportCustomizationBlockLike\[];/);
+  assert.match(
+    importTypesSource,
+    /export interface ProductImportCustomizationGroup \{[\s\S]*figmaNodeId\?: string;[\s\S]*blocks: ProductImportCustomizationBlockLike\[];/,
+  );
   assert.match(baselineSource, /type ProductBaselineCustomizationBlock =/);
   assert.match(sanitySource, /export type CustomizationBlock =/);
   assert.match(
@@ -51,17 +58,44 @@ test("customization runtime uses a shared block union and legacy normalizer", as
     sanitySource,
     /blocks\[\]\{[\s\S]*?entries\[\]\{\s*title,\s*paragraphs,\s*note,\s*detailGroups\[\]\{\s*label,\s*markerStyle,\s*items,\s*note\s*\}\s*\}/,
   );
-  assert.match(seedProductsSource, /function buildCustomizationBlock/);
+  assert.match(
+    seedProductsSource,
+    /function buildCustomizationBlock\(\s*block: ProductImportCustomizationBlockLike,\s*blockKey: string,\s*existingBlock: ExistingCustomizationBlock \| undefined,\s*forceText: boolean,\s*\)/,
+  );
   assert.match(seedProductsSource, /_type: "paragraphBlock"/);
   assert.match(seedProductsSource, /_type: "listBlock"/);
   assert.match(seedProductsSource, /_type: "entryListBlock"/);
   assert.match(
     seedProductsSource,
-    /entries:\s*normalizedBlock\.entries\.map\(\(entry,\s*entryIndex\)\s*=>\s*\(\{[\s\S]*?_type: "customizationEntry"/,
+    /text: keepExistingText\(\s*existingBlock\?\.text,\s*normalizedBlock\.text,\s*forceText,\s*\)/,
   );
   assert.match(
     seedProductsSource,
-    /detailGroups:\s*entry\.detailGroups\.map\(\(detailGroup,\s*detailGroupIndex\)\s*=>\s*\(\{[\s\S]*?_type: "customizationDetailGroup"/,
+    /const items = keepExistingStringArray\(\s*existingBlock\?\.items,\s*normalizedBlock\.items,\s*forceText,\s*\)\s*\|\|\s*\[\.\.\.normalizedBlock\.items\];/,
+  );
+  assert.match(
+    seedProductsSource,
+    /const entryTitle = keepExistingText\(\s*existingEntry\?\.title,\s*entry\.title,\s*forceText,\s*\);/,
+  );
+  assert.match(
+    seedProductsSource,
+    /const items = keepExistingStringArray\(\s*existingDetailGroup\?\.items,\s*detailGroup\.items,\s*forceText,\s*\)\s*\|\|\s*\[\.\.\.detailGroup\.items\];/,
+  );
+  assert.match(
+    seedProductsSource,
+    /entries:\s*normalizedBlock\.entries\.map\(\(entry,\s*entryIndex\)\s*=>\s*\{[\s\S]*?_type: "customizationEntry"/,
+  );
+  assert.match(
+    seedProductsSource,
+    /detailGroups:\s*entry\.detailGroups\.map\(\(detailGroup,\s*detailGroupIndex\)\s*=>\s*\{[\s\S]*?_type: "customizationDetailGroup"/,
+  );
+  assert.match(
+    seedProductsSource,
+    /buildCustomizationBlock\(\s*block,\s*`\$\{group\.sourceKey\}-block-\$\{blockIndex\}`,\s*existingGroup\?\.blocks\?\.\[blockIndex\],\s*forceText,\s*\)/,
+  );
+  assert.match(
+    seedProductsSource,
+    /\.\.\.\(group\.figmaNodeId \? \{ figmaNodeId: group\.figmaNodeId \} : \{\}\),/,
   );
   assert.doesNotMatch(seedProductsSource, /_type: "customizationBlock"/);
 

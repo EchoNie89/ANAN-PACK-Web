@@ -9,6 +9,7 @@ test("customization schemas register the new block union", () => {
   const groupSource = readSource("../sanity/sanity/schemas/customizationGroup.ts");
   const indexSource = readSource("../sanity/sanity/schemas/index.ts");
 
+  assert.match(groupSource, /name:\s*'figmaNodeId'/);
   assert.match(groupSource, /of:\s*\[\s*\{ type: 'paragraphBlock' \},/);
   assert.match(groupSource, /\{ type: 'listBlock' \}/);
   assert.match(groupSource, /\{ type: 'entryListBlock' \}/);
