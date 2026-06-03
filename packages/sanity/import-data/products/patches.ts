@@ -193,43 +193,146 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
-          title: "Merrow Border",
-          items: [
-            "A merrow border is created using a special overlock stitching machine that wraps thick thread around the edge of the patch. This stitching forms a rounded and raised edge that protects the patch from fraying.",
-            "Advantages: Strong and durable edge protection; classic stitched appearance; suitable for long-term garment use.",
-            "Limitations: Merrow borders require the patch shape to be relatively simple, usually round, oval, or rectangular.",
-            "Best Applications: embroidered patches; uniform patches; hat patches; traditional logo patches.",
-            "Merrow borders are one of the most common finishes used in embroidered patches for clothing.",
-          ],
-        },
-        {
-          title: "Heat Cut Border",
-          items: [
-            "Heat cutting uses a heated blade to cut the patch fabric and seal the edge at the same time. The heat melts the fibers slightly, preventing fraying.",
-            "Advantages: Clean and flat edges; suitable for detailed shapes; works well with woven patches.",
-            "Limitations: The edge is thinner than a merrow border and may be less decorative.",
-            "Best Applications: woven patches; detailed logo patches; fashion brand patches.",
-            "Heat cut borders are commonly used when the design includes sharp corners or detailed outlines.",
-          ],
-        },
-        {
-          title: "Laser Cut Border",
-          items: [
-            "Laser cutting uses a precision laser beam to cut the patch material along the exact outline of the design.",
-            "Advantages: Extremely precise edges; ideal for complex shapes; smooth and clean finish.",
-            "Limitations: Edges may require reinforcement depending on the material.",
-            "Best Applications: custom shaped patches; modern fashion patches; detailed logo patches.",
-            "Laser cut patches are often used by fashion brands seeking unique patch shapes.",
-          ],
-        },
-        {
-          title: "Die-Cut Border",
-          items: [
-            "Die-cutting uses a custom metal mold to stamp the patch into a specific shape.",
-            "Advantages: Perfectly consistent shapes; ideal for mass production; suitable for many materials.",
-            "Limitations: Requires a mold to be created, which may involve tooling costs.",
-            "Best Applications: custom logo patches; brand patches; unique shaped patches.",
-            "Die-cut patches are ideal for brands that want distinctive patch designs with consistent shapes.",
+          _type: "entryListBlock",
+          markerStyle: "plain",
+          entries: [
+            {
+              title: "Merrow Border",
+              paragraphs: [
+                "A merrow border is created using a special overlock stitching machine that wraps thick thread around the edge of the patch. This stitching forms a rounded and raised edge that protects the patch from fraying.",
+              ],
+              detailGroups: [
+                {
+                  label: "Advantages",
+                  markerStyle: "bullet",
+                  items: [
+                    "Strong and durable edge protection",
+                    "Classic stitched appearance",
+                    "Suitable for long-term garment use",
+                  ],
+                },
+                {
+                  label: "Limitations",
+                  markerStyle: "bullet",
+                  items: [
+                    "Merrow borders require the patch shape to be relatively simple, usually round, oval, or rectangular.",
+                  ],
+                },
+                {
+                  label: "Best Applications",
+                  markerStyle: "bullet",
+                  items: [
+                    "embroidered patches",
+                    "uniform patches",
+                    "hat patches",
+                    "traditional logo patches",
+                  ],
+                  note: "Merrow borders are one of the most common finishes used in embroidered patches for clothing.",
+                },
+              ],
+            },
+            {
+              title: "Heat Cut Border",
+              paragraphs: [
+                "Heat cutting uses a heated blade to cut the patch fabric and seal the edge at the same time. The heat melts the fibers slightly, preventing fraying.",
+              ],
+              detailGroups: [
+                {
+                  label: "Advantages",
+                  markerStyle: "bullet",
+                  items: [
+                    "Clean and flat edges",
+                    "Suitable for detailed shapes",
+                    "Works well with woven patches",
+                  ],
+                },
+                {
+                  label: "Limitations",
+                  markerStyle: "bullet",
+                  items: [
+                    "The edge is thinner than a merrow border and may be less decorative.",
+                  ],
+                },
+                {
+                  label: "Best Applications",
+                  markerStyle: "bullet",
+                  items: [
+                    "woven patches",
+                    "detailed logo patches",
+                    "fashion brand patches",
+                  ],
+                  note: "Heat cut borders are commonly used when the design includes sharp corners or detailed outlines.",
+                },
+              ],
+            },
+            {
+              title: "Laser Cut Border",
+              paragraphs: [
+                "Laser cutting uses a precision laser beam to cut the patch material along the exact outline of the design.",
+              ],
+              detailGroups: [
+                {
+                  label: "Advantages",
+                  markerStyle: "bullet",
+                  items: [
+                    "Extremely precise edges",
+                    "Ideal for complex shapes",
+                    "Smooth and clean finish",
+                  ],
+                },
+                {
+                  label: "Limitations",
+                  markerStyle: "bullet",
+                  items: [
+                    "Edges may require reinforcement depending on the material.",
+                  ],
+                },
+                {
+                  label: "Best Applications",
+                  markerStyle: "bullet",
+                  items: [
+                    "custom shaped patches",
+                    "modern fashion patches",
+                    "detailed logo patches",
+                  ],
+                  note: "Laser cut patches are often used by fashion brands seeking unique patch shapes.",
+                },
+              ],
+            },
+            {
+              title: "Die-Cut Border",
+              paragraphs: [
+                "Die-cutting uses a custom metal mold to stamp the patch into a specific shape.",
+              ],
+              detailGroups: [
+                {
+                  label: "Advantages",
+                  markerStyle: "bullet",
+                  items: [
+                    "Perfectly consistent shapes",
+                    "Ideal for mass production",
+                    "Suitable for many materials",
+                  ],
+                },
+                {
+                  label: "Limitations",
+                  markerStyle: "bullet",
+                  items: [
+                    "Requires a mold to be created, which may involve tooling costs.",
+                  ],
+                },
+                {
+                  label: "Best Applications",
+                  markerStyle: "bullet",
+                  items: [
+                    "custom logo patches",
+                    "brand patches",
+                    "unique shaped patches",
+                  ],
+                  note: "Die-cut patches are ideal for brands that want distinctive patch designs with consistent shapes.",
+                },
+              ],
+            },
           ],
         },
       ],
