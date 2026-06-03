@@ -65,7 +65,9 @@ const sanityShowcaseGroups = sanityShowcase?.showcaseGroups
 
 const showcaseGroups = sanityShowcaseGroups?.length
   ? sanityShowcaseGroups
-  : [];
+  : enableLocalProductFallback
+    ? page.showcaseGroups
+    : [];
 
 const sanityApplicationsData = await getProductApplications(page.slug).catch(() => null);
 const sanityApplications = sanityApplicationsData?.applications
@@ -80,11 +82,15 @@ const sanityApplications = sanityApplicationsData?.applications
     ),
   }));
 
-const applicationTitle = sanityApplicationsData?.applicationTitle;
-const applicationDescription = sanityApplicationsData?.applicationDescription;
+const applicationTitle = sanityApplicationsData?.applicationTitle
+  ?? (enableLocalProductFallback ? page.applicationTitle : undefined);
+const applicationDescription = sanityApplicationsData?.applicationDescription
+  ?? (enableLocalProductFallback ? page.applicationDescription : undefined);
 const applications = sanityApplications?.length
   ? sanityApplications
-  : [];
+  : enableLocalProductFallback
+    ? page.applications
+    : [];
 
 const sanityCustomizationData = await getProductCustomization(page.slug).catch(() => null);
 const sanityCustomizationGroups = sanityCustomizationData?.customizationGroups
@@ -105,7 +111,9 @@ const sanityCustomizationGroups = sanityCustomizationData?.customizationGroups
   }));
 const customizationGroups = sanityCustomizationGroups?.length
   ? sanityCustomizationGroups
-  : [];
+  : enableLocalProductFallback
+    ? page.customizationGroups
+    : [];
 const introHeading = page.introTitle ?? `What Are Custom ${page.navLabel}?`;
 const whyChooseItems = page.whyChoose?.length
   ? page.whyChoose

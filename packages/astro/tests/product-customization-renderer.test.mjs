@@ -21,6 +21,26 @@ test("product customization renderer handles normalized structured blocks", () =
     productPageSource,
     /blocks:\s*group\.blocks\.map\(\(block\)\s*=>\s*normalizeCustomizationBlock\(block\)\)/,
   );
+  assert.match(
+    productPageSource,
+    /const showcaseGroups = sanityShowcaseGroups\?\.length\s*\?\s*sanityShowcaseGroups\s*:\s*enableLocalProductFallback\s*\?\s*page\.showcaseGroups\s*:\s*\[];/,
+  );
+  assert.match(
+    productPageSource,
+    /const applicationTitle = sanityApplicationsData\?\.applicationTitle\s*\?\?\s*\(enableLocalProductFallback \? page\.applicationTitle : undefined\);/,
+  );
+  assert.match(
+    productPageSource,
+    /const applicationDescription = sanityApplicationsData\?\.applicationDescription\s*\?\?\s*\(enableLocalProductFallback \? page\.applicationDescription : undefined\);/,
+  );
+  assert.match(
+    productPageSource,
+    /const applications = sanityApplications\?\.length\s*\?\s*sanityApplications\s*:\s*enableLocalProductFallback\s*\?\s*page\.applications\s*:\s*\[];/,
+  );
+  assert.match(
+    productPageSource,
+    /const customizationGroups = sanityCustomizationGroups\?\.length\s*\?\s*sanityCustomizationGroups\s*:\s*enableLocalProductFallback\s*\?\s*page\.customizationGroups\s*:\s*\[];/,
+  );
 
   assert.match(customizationSource, /block\._type === "paragraphBlock"/);
   assert.match(customizationSource, /block\._type === "listBlock"/);
