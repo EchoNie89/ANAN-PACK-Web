@@ -16,7 +16,14 @@ test("customization runtime uses a shared block union and legacy normalizer", ()
   assert.match(helperSource, /export type ProductCustomizationBlock =/);
   assert.match(helperSource, /export function normalizeLegacyCustomizationBlock/);
 
-  assert.match(productSource, /blocks: ProductCustomizationBlockSeed\[];/);
+  assert.match(
+    productSource,
+    /export type ProductCustomizationBlockSeedLike =\s*\| ProductCustomizationBlockSeed\s*\| ProductLegacyCustomizationBlockSeed;/,
+  );
+  assert.match(
+    productSource,
+    /export interface ProductCustomizationGroup \{[\s\S]*blocks: ProductCustomizationBlockSeedLike\[];/,
+  );
   assert.match(productsSource, /blocks: seed\.blocks\.map\(toProductCustomizationBlock\),/);
   assert.match(importTypesSource, /export type ProductImportCustomizationBlock =/);
   assert.match(baselineSource, /type ProductBaselineCustomizationBlock =/);

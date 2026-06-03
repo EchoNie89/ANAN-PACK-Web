@@ -52,10 +52,6 @@ export type ProductCustomizationBlockSeedLike =
   | ProductCustomizationBlockSeed
   | ProductLegacyCustomizationBlockSeed;
 
-export interface ProductCustomizationGroupNormalized {
-  blocks: ProductCustomizationBlockSeed[];
-}
-
 export interface ProductCustomizationGroup {
   title: string;
   intro?: string;
