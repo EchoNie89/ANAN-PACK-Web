@@ -47,12 +47,21 @@ export type ProductImportCustomizationBlock =
       }>;
     };
 
+export type ProductImportLegacyCustomizationBlock = {
+  title: string;
+  items: string[];
+};
+
+export type ProductImportCustomizationBlockLike =
+  | ProductImportCustomizationBlock
+  | ProductImportLegacyCustomizationBlock;
+
 export interface ProductImportCustomizationGroup {
   sourceKey: string;
   title: string;
   intro?: string;
   images?: ProductImportCard[];
-  blocks: ProductImportCustomizationBlock[];
+  blocks: ProductImportCustomizationBlockLike[];
 }
 
 export interface ProductImportManifest {
