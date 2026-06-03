@@ -36,16 +36,30 @@ test("customization runtime uses a shared block union and legacy normalizer", as
   assert.match(importTypesSource, /blocks: ProductImportCustomizationBlockLike\[];/);
   assert.match(baselineSource, /type ProductBaselineCustomizationBlock =/);
   assert.match(sanitySource, /export type CustomizationBlock =/);
-  assert.match(sanitySource, /_type,/);
-  assert.match(sanitySource, /text,/);
-  assert.match(sanitySource, /markerStyle,/);
-  assert.match(sanitySource, /entries\[]\{/);
-  assert.match(sanitySource, /detailGroups\[]\{/);
-  assert.match(sanitySource, /note/);
+  assert.match(
+    sanitySource,
+    /blocks\[\]\{\s*"_type": select\(\s*_type == "customizationBlock" => "listBlock",\s*_type\s*\),/,
+  );
+  assert.match(
+    sanitySource,
+    /blocks\[\]\{[\s\S]*?"markerStyle": select\(\s*_type == "customizationBlock" => coalesce\(markerStyle, "bullet"\),\s*markerStyle\s*\),/,
+  );
+  assert.match(
+    sanitySource,
+    /blocks\[\]\{[\s\S]*?entries\[\]\{\s*title,\s*paragraphs,\s*note,\s*detailGroups\[\]\{\s*label,\s*markerStyle,\s*items,\s*note\s*\}\s*\}/,
+  );
   assert.match(seedProductsSource, /function buildCustomizationBlock/);
   assert.match(seedProductsSource, /_type: "paragraphBlock"/);
   assert.match(seedProductsSource, /_type: "listBlock"/);
   assert.match(seedProductsSource, /_type: "entryListBlock"/);
+  assert.match(
+    seedProductsSource,
+    /entries:\s*normalizedBlock\.entries\.map\(\(entry,\s*entryIndex\)\s*=>\s*\(\{[\s\S]*?_type: "customizationEntry"/,
+  );
+  assert.match(
+    seedProductsSource,
+    /detailGroups:\s*entry\.detailGroups\.map\(\(detailGroup,\s*detailGroupIndex\)\s*=>\s*\(\{[\s\S]*?_type: "customizationDetailGroup"/,
+  );
   assert.doesNotMatch(seedProductsSource, /_type: "customizationBlock"/);
 
   const legacyBlock = {

@@ -13,6 +13,7 @@ import {
   sanityImageUrl,
   type SanityImageSource,
 } from "../../../lib/sanity";
+import { normalizeCustomizationBlock } from "../../../lib/customization-content";
 import ProductApplications from "./ProductApplications.astro";
 import ProductCaseStudy from "./ProductCaseStudy.astro";
 import ProductCustomization from "./ProductCustomization.astro";
@@ -64,9 +65,7 @@ const sanityShowcaseGroups = sanityShowcase?.showcaseGroups
 
 const showcaseGroups = sanityShowcaseGroups?.length
   ? sanityShowcaseGroups
-  : enableLocalProductFallback
-    ? page.showcaseGroups
-    : [];
+  : [];
 
 const sanityApplicationsData = await getProductApplications(page.slug).catch(() => null);
 const sanityApplications = sanityApplicationsData?.applications
@@ -81,15 +80,11 @@ const sanityApplications = sanityApplicationsData?.applications
     ),
   }));
 
-const applicationTitle = sanityApplicationsData?.applicationTitle
-  ?? (enableLocalProductFallback ? page.applicationTitle : undefined);
-const applicationDescription = sanityApplicationsData?.applicationDescription
-  ?? (enableLocalProductFallback ? page.applicationDescription : undefined);
+const applicationTitle = sanityApplicationsData?.applicationTitle;
+const applicationDescription = sanityApplicationsData?.applicationDescription;
 const applications = sanityApplications?.length
   ? sanityApplications
-  : enableLocalProductFallback
-    ? page.applications
-    : [];
+  : [];
 
 const sanityCustomizationData = await getProductCustomization(page.slug).catch(() => null);
 const sanityCustomizationGroups = sanityCustomizationData?.customizationGroups
@@ -106,13 +101,11 @@ const sanityCustomizationGroups = sanityCustomizationData?.customizationGroups
           `sanity.products.${page.slug}.customization.${groupIndex}.${imgIndex}`,
         )
       ),
-    blocks: group.blocks,
+    blocks: group.blocks.map((block) => normalizeCustomizationBlock(block)),
   }));
 const customizationGroups = sanityCustomizationGroups?.length
   ? sanityCustomizationGroups
-  : enableLocalProductFallback
-    ? page.customizationGroups
-    : [];
+  : [];
 const introHeading = page.introTitle ?? `What Are Custom ${page.navLabel}?`;
 const whyChooseItems = page.whyChoose?.length
   ? page.whyChoose
@@ -165,9 +158,6 @@ const hasFaqs = page.faqs.length > 0;
   {hasOverview && <ProductIntro heading={introHeading} overview={page.overview} />}
   {hasShowcase && (
     <ProductGalleryMatrix
-      navLabel={page.navLabel}
-      categories={page.categories}
-      materials={page.materials}
       showcaseGroups={showcaseGroups}
     />
   )}

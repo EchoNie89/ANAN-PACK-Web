@@ -1,33 +1,32 @@
 ---
 import Container from "../../ui/Container.astro";
 import SanityImage from "../../ui/SanityImage.astro";
-import type { ProductCard, ProductCustomizationGroup } from "../../../data/products";
+import type { ProductCustomizationGroup } from "../../../data/products";
+import type { CustomizationMarkerStyle } from "../../../lib/customization-content";
 
 interface Props {
-  title?: string;
-  materials?: ProductCard[];
-  highlights?: string[];
   groups?: ProductCustomizationGroup[];
 }
 
-const { materials = [], highlights = [], groups = [] } = Astro.props;
-const visualCards = materials.slice(0, 3).map((item) => item.image);
-const customizationGroups = groups.length
-  ? groups
-  : [
-      {
-        title: "Materials",
-        intro:
-          "Match material, color, size, print technique, finish, and packing method across your product line.",
-        images: visualCards,
-        blocks: [
-          {
-            title: "Available Custom Options",
-            items: highlights,
-          },
-        ],
-      },
-    ];
+const { groups = [] } = Astro.props;
+
+const markerClassByStyle = {
+  bullet: "list-disc pl-5",
+  number: "list-decimal pl-5",
+  plain: "list-none pl-0",
+} as const satisfies Record<CustomizationMarkerStyle, string>;
+
+function getMarkerClass(markerStyle: CustomizationMarkerStyle) {
+  if (markerStyle === "number") {
+    return markerClassByStyle.number;
+  }
+
+  if (markerStyle === "bullet") {
+    return markerClassByStyle.bullet;
+  }
+
+  return markerClassByStyle.plain;
+}
 ---
 
 <section class="bg-white pb-14 md:pb-20">
@@ -37,7 +36,7 @@ const customizationGroups = groups.length
     </h2>
 
     {
-      customizationGroups.map((group, index) => (
+      groups.map((group, index) => (
         <section class={index === 0 ? "mt-4 md:mt-5" : "mt-14 md:mt-16"}>
           <h3 class="text-lg font-extrabold text-ink md:text-2xl">
             {group.title}
@@ -66,14 +65,53 @@ const customizationGroups = groups.length
               </p>
             )}
             <div class="mt-5 grid gap-7 text-sm leading-6 text-text-muted md:text-[15px] md:leading-7">
-              {group.blocks.map((block) => (
-                <section>
-                  <h4 class="text-base font-extrabold text-ink">{block.title}</h4>
-                  <ul class="mt-2 grid gap-2">
-                    {block.items.map((item) => <li>{item}</li>)}
-                  </ul>
-                </section>
-              ))}
+              {group.blocks.map((block) => {
+                if (block._type === "paragraphBlock") {
+                  return (
+                    <p>{block.text}</p>
+                  );
+                }
+
+                if (block._type === "listBlock") {
+                  return (
+                    <section class="grid gap-2">
+                      {block.title && <h4 class="text-base font-extrabold text-ink">{block.title}</h4>}
+                      <ul class={`grid gap-2 ${getMarkerClass(block.markerStyle)}`}>
+                        {block.items.map((item) => <li>{item}</li>)}
+                      </ul>
+                      {block.note && <p>{block.note}</p>}
+                    </section>
+                  );
+                }
+
+                if (block._type === "entryListBlock") {
+                  return (
+                    <section class="grid gap-4">
+                      {block.title && <h4 class="text-base font-extrabold text-ink">{block.title}</h4>}
+                      <ul class={`grid gap-4 ${getMarkerClass(block.markerStyle)}`}>
+                        {block.entries.map((entry) => (
+                          <li class="space-y-3">
+                            {entry.title && <p class="font-extrabold text-ink">{entry.title}</p>}
+                            {entry.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
+                            {entry.detailGroups?.map((detailGroup) => (
+                              <div class="space-y-2">
+                                {detailGroup.label && <p class="font-semibold text-ink">{detailGroup.label}</p>}
+                                <ul class={`grid gap-2 ${getMarkerClass(detailGroup.markerStyle)}`}>
+                                  {detailGroup.items.map((item) => <li>{item}</li>)}
+                                </ul>
+                                {detailGroup.note && <p>{detailGroup.note}</p>}
+                              </div>
+                            ))}
+                            {entry.note && <p>{entry.note}</p>}
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
+                  );
+                }
+
+                return null;
+              })}
             </div>
           </div>
         </section>

@@ -275,10 +275,16 @@ const PRODUCT_CUSTOMIZATION_QUERY = `
           alt
         },
         blocks[]{
-          _type,
+          "_type": select(
+            _type == "customizationBlock" => "listBlock",
+            _type
+          ),
           title,
           text,
-          markerStyle,
+          "markerStyle": select(
+            _type == "customizationBlock" => coalesce(markerStyle, "bullet"),
+            markerStyle
+          ),
           items,
           note,
           entries[]{
@@ -310,10 +316,16 @@ const PRODUCT_CUSTOMIZATION_QUERY = `
           alt
         },
         blocks[]{
-          _type,
+          "_type": select(
+            _type == "customizationBlock" => "listBlock",
+            _type
+          ),
           title,
           text,
-          markerStyle,
+          "markerStyle": select(
+            _type == "customizationBlock" => coalesce(markerStyle, "bullet"),
+            markerStyle
+          ),
           items,
           note,
           entries[]{
