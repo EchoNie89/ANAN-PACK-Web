@@ -2,6 +2,10 @@ import type { SiteImageSource } from '../lib/local-images';
 import { resolveLocalImageSource } from '../lib/local-images';
 import type { SanityImageSource } from '../lib/sanity';
 import {
+  normalizeCustomizationBlock,
+  type ProductCustomizationBlock,
+} from '../lib/customization-content';
+import {
   commonBlogs as commonBlogSeeds,
   defaultProductWhyChoose as defaultProductWhyChooseSeeds,
   productShell,
@@ -15,8 +19,9 @@ import {
   type ProductProcessIcon as ProductProcessIconSeed,
   type ProductProcessStep as ProductProcessStepSeed,
   type ProductShowcaseGroup as ProductShowcaseGroupSeed,
-  type ProductTextBlock as ProductTextBlockSeed,
 } from './product-source';
+
+export type { ProductCustomizationBlock } from '../lib/customization-content';
 
 export interface ProductImage {
   src: SiteImageSource;
@@ -58,16 +63,11 @@ export interface ProductShowcaseGroup {
   cards: ProductCard[];
 }
 
-export interface ProductTextBlock {
-  title: string;
-  items: string[];
-}
-
 export interface ProductCustomizationGroup {
   title: string;
   intro?: string;
   images?: ProductImage[];
-  blocks: ProductTextBlock[];
+  blocks: ProductCustomizationBlock[];
 }
 
 export interface ProductCtaData {
@@ -151,10 +151,32 @@ function toProductFaq(seed: ProductFaqSeed): ProductFaq {
   return { ...seed };
 }
 
-function toProductTextBlock(seed: ProductTextBlockSeed): ProductTextBlock {
+function toProductCustomizationBlock(
+  seed: ProductCustomizationGroupSeed['blocks'][number],
+): ProductCustomizationBlock {
+  const block = normalizeCustomizationBlock(seed);
+
+  if (block._type === 'paragraphBlock') {
+    return { ...block };
+  }
+
+  if (block._type === 'listBlock') {
+    return {
+      ...block,
+      items: [...block.items],
+    };
+  }
+
   return {
-    title: seed.title,
-    items: [...seed.items],
+    ...block,
+    entries: block.entries.map((entry) => ({
+      ...entry,
+      paragraphs: entry.paragraphs ? [...entry.paragraphs] : undefined,
+      detailGroups: entry.detailGroups?.map((detailGroup) => ({
+        ...detailGroup,
+        items: [...detailGroup.items],
+      })),
+    })),
   };
 }
 
@@ -165,7 +187,7 @@ function toProductCustomizationGroup(
     title: seed.title,
     intro: seed.intro,
     images: seed.images?.map(toProductImage),
-    blocks: seed.blocks.map(toProductTextBlock),
+    blocks: seed.blocks.map(toProductCustomizationBlock),
   };
 }
 

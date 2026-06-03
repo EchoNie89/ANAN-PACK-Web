@@ -16,17 +16,43 @@ export interface ProductImportGroup {
   figmaNodeId?: string;
 }
 
-export interface ProductImportTextBlock {
-  title: string;
-  items: string[];
-}
+type ProductImportCustomizationMarkerStyle = "bullet" | "number" | "plain";
+
+export type ProductImportCustomizationBlock =
+  | {
+      _type: "paragraphBlock";
+      text: string;
+    }
+  | {
+      _type: "listBlock";
+      title?: string;
+      markerStyle: ProductImportCustomizationMarkerStyle;
+      items: string[];
+      note?: string;
+    }
+  | {
+      _type: "entryListBlock";
+      title?: string;
+      markerStyle: ProductImportCustomizationMarkerStyle;
+      entries: Array<{
+        title?: string;
+        paragraphs?: string[];
+        detailGroups?: Array<{
+          label?: string;
+          markerStyle: ProductImportCustomizationMarkerStyle;
+          items: string[];
+          note?: string;
+        }>;
+        note?: string;
+      }>;
+    };
 
 export interface ProductImportCustomizationGroup {
   sourceKey: string;
   title: string;
   intro?: string;
   images?: ProductImportCard[];
-  blocks: ProductImportTextBlock[];
+  blocks: ProductImportCustomizationBlock[];
 }
 
 export interface ProductImportManifest {

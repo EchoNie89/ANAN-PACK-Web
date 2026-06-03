@@ -1,4 +1,8 @@
 import {
+  normalizeCustomizationBlock,
+  type CustomizationMarkerStyle,
+} from "../../astro/src/lib/customization-content";
+import {
   productSourcePages,
   type ProductCard,
   type ProductCustomizationGroup,
@@ -6,7 +10,6 @@ import {
   type ProductImage,
   type ProductPageData,
   type ProductShowcaseGroup,
-  type ProductTextBlock,
 } from "../../astro/src/data/product-source";
 
 export type ProductBaselineImage = {
@@ -20,16 +23,44 @@ export type ProductBaselineCard = {
   image: ProductBaselineImage;
 };
 
-export type ProductBaselineTextBlock = {
-  title: string;
+type ProductBaselineCustomizationDetailGroup = {
+  label?: string;
+  markerStyle: CustomizationMarkerStyle;
   items: string[];
+  note?: string;
 };
+
+type ProductBaselineCustomizationEntry = {
+  title?: string;
+  paragraphs?: string[];
+  detailGroups?: ProductBaselineCustomizationDetailGroup[];
+  note?: string;
+};
+
+export type ProductBaselineCustomizationBlock =
+  | {
+      _type: "paragraphBlock";
+      text: string;
+    }
+  | {
+      _type: "listBlock";
+      title?: string;
+      markerStyle: CustomizationMarkerStyle;
+      items: string[];
+      note?: string;
+    }
+  | {
+      _type: "entryListBlock";
+      title?: string;
+      markerStyle: CustomizationMarkerStyle;
+      entries: ProductBaselineCustomizationEntry[];
+    };
 
 export type ProductBaselineCustomizationGroup = {
   title: string;
   intro?: string;
   images?: ProductBaselineImage[];
-  blocks: ProductBaselineTextBlock[];
+  blocks: ProductBaselineCustomizationBlock[];
 };
 
 export type ProductBaselineFaqItem = {
@@ -137,10 +168,32 @@ function normalizeCard(card: ProductCard): ProductBaselineCard {
   };
 }
 
-function normalizeTextBlock(block: ProductTextBlock): ProductBaselineTextBlock {
+function normalizeProductCustomizationBlock(
+  block: ProductCustomizationGroup["blocks"][number],
+): ProductBaselineCustomizationBlock {
+  const normalized = normalizeCustomizationBlock(block);
+
+  if (normalized._type === "paragraphBlock") {
+    return { ...normalized };
+  }
+
+  if (normalized._type === "listBlock") {
+    return {
+      ...normalized,
+      items: [...normalized.items],
+    };
+  }
+
   return {
-    title: block.title,
-    items: [...block.items],
+    ...normalized,
+    entries: normalized.entries.map((entry) => ({
+      ...entry,
+      paragraphs: entry.paragraphs ? [...entry.paragraphs] : undefined,
+      detailGroups: entry.detailGroups?.map((detailGroup) => ({
+        ...detailGroup,
+        items: [...detailGroup.items],
+      })),
+    })),
   };
 }
 
@@ -153,7 +206,7 @@ function normalizeCustomizationGroup(
     ...(group.images?.length
       ? { images: group.images.map(normalizeImage) }
       : {}),
-    blocks: group.blocks.map(normalizeTextBlock),
+    blocks: group.blocks.map(normalizeProductCustomizationBlock),
   };
 }
 

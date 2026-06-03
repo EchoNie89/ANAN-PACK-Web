@@ -1,3 +1,8 @@
+import type {
+  LegacyCustomizationBlock as ProductLegacyCustomizationBlockSeed,
+  ProductCustomizationBlock as ProductCustomizationBlockSeed,
+} from '../lib/customization-content';
+
 export interface ProductImage {
   imagePath: string;
   alt: string;
@@ -43,16 +48,19 @@ export interface ProductShowcaseGroup {
   cards: ProductCard[];
 }
 
-export interface ProductTextBlock {
-  title: string;
-  items: string[];
+export type ProductCustomizationBlockSeedLike =
+  | ProductCustomizationBlockSeed
+  | ProductLegacyCustomizationBlockSeed;
+
+export interface ProductCustomizationGroupNormalized {
+  blocks: ProductCustomizationBlockSeed[];
 }
 
 export interface ProductCustomizationGroup {
   title: string;
   intro?: string;
   images?: ProductImage[];
-  blocks: ProductTextBlock[];
+  blocks: ProductCustomizationBlockSeedLike[];
 }
 
 export interface ProductCtaData {
