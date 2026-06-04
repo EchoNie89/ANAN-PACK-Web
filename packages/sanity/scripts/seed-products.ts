@@ -17,18 +17,16 @@ try {
 
 import { createClient } from "@sanity/client";
 import { HttpsProxyAgent } from "https-proxy-agent";
-import {
-  normalizeCustomizationBlock,
-  type CustomizationMarkerStyle,
-} from "../../astro/src/lib/customization-content";
+import type { CustomizationMarkerStyle } from "../../astro/src/lib/customization-content";
 import type {
   ProductImportCard,
-  ProductImportCustomizationBlockLike,
+  ProductImportCustomizationBlock,
   ProductImportGroup,
   ProductImportManifest,
   ProductImportCustomizationGroup,
+  ProductImportShowcaseCard,
 } from "../import-data/products/types";
-import { validateCustomizationBlockLike } from "./customization-block-validation";
+import { validateCustomizationBlock } from "./customization-block-validation";
 import { productSourcePages } from "../../astro/src/data/product-source";
 import {
   getProductBaselineBySlug,
@@ -91,8 +89,14 @@ type ResolvedCard = ProductImportCard & {
   resolvedImagePath: string;
 };
 
+type ResolvedShowcaseCard = ProductImportShowcaseCard & {
+  resolvedImagePath: string;
+};
+
+type ImportCardLike = ProductImportCard | ProductImportShowcaseCard;
+
 type ResolvedGroup = Omit<ProductImportGroup, "cards"> & {
-  cards: ResolvedCard[];
+  cards: ResolvedShowcaseCard[];
 };
 
 type ResolvedCustomizationGroup = Omit<ProductImportCustomizationGroup, "images"> & {
@@ -145,6 +149,7 @@ type ExistingCustomizationBlock = {
   _type?: "paragraphBlock" | "listBlock" | "entryListBlock";
   title?: string;
   text?: string;
+  intro?: string;
   markerStyle?: CustomizationMarkerStyle;
   items?: string[];
   note?: string;
@@ -495,7 +500,8 @@ function validateManifest(
           `showcaseGroups[${groupIndex}].cards[${cardIndex}]`,
           slug,
           cardSourceKeys,
-          errors
+          errors,
+          false,
         )
       );
 
@@ -509,11 +515,11 @@ function validateManifest(
 
   const resolvedApplications: ResolvedCard[] | undefined = manifest.applications?.map(
     (card, cardIndex) =>
-      validateAndResolveCard(
-        card,
-        `applications[${cardIndex}]`,
-        slug,
-        cardSourceKeys,
+        validateAndResolveCard(
+          card,
+          `applications[${cardIndex}]`,
+          slug,
+          cardSourceKeys,
         errors
       )
   );
@@ -548,7 +554,7 @@ function validateManifest(
       } else {
         group.blocks.forEach((block, blockIndex) => {
           errors.push(
-            ...validateCustomizationBlockLike(
+            ...validateCustomizationBlock(
               block,
               `customizationGroups[${groupIndex}].blocks[${blockIndex}]`,
             ),
@@ -608,13 +614,14 @@ function validateManifest(
   };
 }
 
-function validateAndResolveCard(
-  card: ProductImportCard,
+function validateAndResolveCard<T extends ImportCardLike>(
+  card: T,
   label: string,
   slug: ProductSlug,
   sourceKeys: Set<string>,
-  errors: string[]
-): ResolvedCard {
+  errors: string[],
+  requireTitle: boolean = true,
+): T & { resolvedImagePath: string } {
   const sourceKey = card.sourceKey?.trim() || "";
 
   if (!sourceKey) {
@@ -625,7 +632,7 @@ function validateAndResolveCard(
     sourceKeys.add(sourceKey);
   }
 
-  if (!card.title?.trim()) {
+  if (requireTitle && !card.title?.trim()) {
     errors.push(`${label}.title must be non-empty`);
   }
 
@@ -639,14 +646,14 @@ function validateAndResolveCard(
       ...card,
       sourceKey,
       resolvedImagePath: resolvedImage.filePath,
-    };
+    } as T & { resolvedImagePath: string };
   } catch (error) {
     errors.push(`${label}.${(error as Error).message}`);
     return {
       ...card,
       sourceKey,
       resolvedImagePath: "",
-    };
+    } as T & { resolvedImagePath: string };
   }
 }
 
@@ -1292,6 +1299,7 @@ function buildShowcaseGroups(
       cards: group.cards.map((card) => {
         const existingCard = existingCards.get(card.sourceKey);
         const assetId = uploadedAssets.get(card.resolvedImagePath);
+        const title = keepExistingText(existingCard?.title, card.title, forceText)?.trim();
 
         if (!assetId) {
           throw new Error(`Missing uploaded asset for ${card.imagePath}`);
@@ -1302,7 +1310,7 @@ function buildShowcaseGroups(
           _type: "showcaseCard",
           sourceKey: card.sourceKey,
           ...(card.figmaNodeId ? { figmaNodeId: card.figmaNodeId } : {}),
-          title: keepExistingText(existingCard?.title, card.title, forceText),
+          ...(title ? { title } : {}),
           image: imageRef(assetId),
           alt: keepExistingText(existingCard?.alt, card.alt, forceText),
           ...(keepExistingText(existingCard?.description, card.description, forceText)
@@ -1358,39 +1366,42 @@ function buildApplications(
 }
 
 function buildCustomizationBlock(
-  block: ProductImportCustomizationBlockLike,
+  block: ProductImportCustomizationBlock,
   blockKey: string,
   existingBlock: ExistingCustomizationBlock | undefined,
   forceText: boolean,
 ) {
-  const normalizedBlock = normalizeCustomizationBlock(block);
-
-  if (normalizedBlock._type === "paragraphBlock") {
+  if (block._type === "paragraphBlock") {
     return {
       _key: stableKey(blockKey),
       _type: "paragraphBlock",
       text: keepExistingText(
         existingBlock?.text,
-        normalizedBlock.text,
+        block.text,
         forceText,
-      ) || normalizedBlock.text,
+      ) || block.text,
     };
   }
 
-  if (normalizedBlock._type === "listBlock") {
+  if (block._type === "listBlock") {
     const title = keepExistingText(
       existingBlock?.title,
-      normalizedBlock.title,
+      block.title,
+      forceText,
+    );
+    const intro = keepExistingText(
+      existingBlock?.intro,
+      block.intro,
       forceText,
     );
     const items = keepExistingStringArray(
       existingBlock?.items,
-      normalizedBlock.items,
+      block.items,
       forceText,
-    ) || [...normalizedBlock.items];
+    ) || [...block.items];
     const note = keepExistingText(
       existingBlock?.note,
-      normalizedBlock.note,
+      block.note,
       forceText,
     );
 
@@ -1398,7 +1409,8 @@ function buildCustomizationBlock(
       _key: stableKey(blockKey),
       _type: "listBlock",
       ...(title ? { title } : {}),
-      markerStyle: normalizedBlock.markerStyle,
+      ...(intro ? { intro } : {}),
+      markerStyle: block.markerStyle,
       items,
       ...(note ? { note } : {}),
     };
@@ -1406,7 +1418,7 @@ function buildCustomizationBlock(
 
   const title = keepExistingText(
     existingBlock?.title,
-    normalizedBlock.title,
+    block.title,
     forceText,
   );
 
@@ -1414,8 +1426,8 @@ function buildCustomizationBlock(
     _key: stableKey(blockKey),
     _type: "entryListBlock",
     ...(title ? { title } : {}),
-    markerStyle: normalizedBlock.markerStyle,
-    entries: normalizedBlock.entries.map((entry, entryIndex) => {
+    markerStyle: block.markerStyle,
+    entries: block.entries.map((entry, entryIndex) => {
       const existingEntry = existingBlock?.entries?.[entryIndex];
       const entryTitle = keepExistingText(
         existingEntry?.title,
@@ -1590,6 +1602,7 @@ async function main() {
           _type,
           title,
           text,
+          intro,
           markerStyle,
           items,
           note,

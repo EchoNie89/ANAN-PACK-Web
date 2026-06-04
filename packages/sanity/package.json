@@ -12,7 +12,6 @@
     "seed:blog": "tsx scripts/seed-blog-posts.ts",
     "baseline:products": "tsx scripts/export-product-baseline.ts",
     "compare:products": "tsx scripts/compare-product-baseline.ts",
-    "migrate:customization-blocks": "tsx scripts/migrate-customization-blocks.ts --dry-run",
     "seed:products": "tsx scripts/seed-products.ts",
     "seed:products:all": "tsx scripts/seed-all-products.ts"
   },

@@ -49,6 +49,21 @@ export const serviceMenuItems = [
   },
 ] as const;
 
+export const aboutMenuItems = [
+  {
+    title: 'Our Story',
+    href: '/about-us#our-story',
+  },
+  {
+    title: 'Why Choose Us',
+    href: '/about-us#why-choose-us',
+  },
+  {
+    title: 'Contact Us',
+    href: '/about-us#about-contact-cta',
+  },
+] as const;
+
 export const valueProps = [
   {
     icon: {

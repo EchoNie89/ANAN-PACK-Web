@@ -1,29 +1,14 @@
 ---
 import Container from '../../ui/Container.astro';
 import SanityImage from '../../ui/SanityImage.astro';
-import type { ProductCard, ProductShowcaseGroup } from '../../../data/products';
+import type { ProductShowcaseGroup } from '../../../data/products';
 
 interface Props {
-  navLabel: string;
-  categories: ProductCard[];
-  materials: ProductCard[];
   showcaseGroups?: ProductShowcaseGroup[];
 }
 
-const { navLabel, categories, materials, showcaseGroups } = Astro.props;
-
-const fallbackGroups = [
-  {
-    title: 'Product ShowCase',
-    cards: [...categories, ...materials].slice(0, 4),
-  },
-  {
-    title: `Popular ${navLabel} Styles`,
-    cards: [...materials, ...categories].slice(0, 4),
-  },
-];
-
-const groups = showcaseGroups?.length ? showcaseGroups : fallbackGroups;
+const { showcaseGroups } = Astro.props;
+const groups = showcaseGroups?.length ? showcaseGroups : [];
 ---
 
 <section class="bg-white pb-14 md:pb-20">
@@ -39,7 +24,7 @@ const groups = showcaseGroups?.length ? showcaseGroups : fallbackGroups;
               {group.title}
             </h3>
             {group.description && (
-              <p class="mt-1 text-[18px] text-ink/60">
+              <p class="mt-1 text-[15px] text-ink/60">
                 {group.description}
               </p>
             )}
@@ -53,9 +38,11 @@ const groups = showcaseGroups?.length ? showcaseGroups : fallbackGroups;
                       sizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
                     />
                   </div>
-                  <h4 class="mt-4 text-center text-sm font-semibold capitalize text-text-main md:text-base">
-                    {card.title}
-                  </h4>
+                  {card.title?.trim() && (
+                    <h4 class="mt-4 text-center text-sm font-semibold capitalize text-text-main md:text-base">
+                      {card.title?.trim()}
+                    </h4>
+                  )}
                 </article>
               ))}
             </div>

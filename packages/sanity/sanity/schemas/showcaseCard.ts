@@ -23,8 +23,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required(),
-      description: 'e.g. Damask Woven Labels, Satin Printed Labels',
+      description: 'Optional image title, e.g. Damask Woven Labels, Satin Printed Labels.',
     }),
     defineField({
       name: 'image',

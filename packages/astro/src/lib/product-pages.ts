@@ -8,7 +8,6 @@ import {
   type ProductImage,
   type ProductPageData,
 } from "../data/products";
-import { productMenuItems as localProductMenuItems } from "../data/home";
 import {
   fetchSanityQuery,
   sanityImageUrl,
@@ -160,12 +159,44 @@ function toSanityProductImage(
   };
 }
 
-function mergeFaqs(
-  localFaqs: ProductFaq[],
+function hasSanityImage(
+  source: SanityImageWithAlt | undefined,
+): source is SanityImageWithAlt {
+  return Boolean(source?.asset?._ref);
+}
+
+function getProductEntryTitle(
+  document: SanityProductDocument,
+): string | undefined {
+  return (
+    document.pageTitle?.trim()
+    || document.hero?.title?.trim()
+    || document.name?.trim()
+  );
+}
+
+function isProductEntryEligible(
+  document: SanityProductDocument,
+): document is SanityProductDocument & {
+  slug: string;
+  metaDescription: string;
+  hero: { image: SanityImageWithAlt; title?: string; description?: string };
+  megaMenuCard: { image: SanityImageWithAlt };
+} {
+  return Boolean(
+    document.slug
+      && getProductEntryTitle(document)
+      && document.metaDescription?.trim()
+      && document.hero?.image?.asset?._ref
+      && document.megaMenuCard?.image?.asset?._ref,
+  );
+}
+
+function mapFaqs(
   sourceFaqs: SanityProductDocument["faqItems"] | undefined,
 ): ProductFaq[] {
   if (!sourceFaqs?.length) {
-    return localFaqs;
+    return [];
   }
 
   const mappedFaqs = sourceFaqs
@@ -175,90 +206,92 @@ function mergeFaqs(
       answer: item.answer!.trim(),
     }));
 
-  return mappedFaqs.length ? mappedFaqs : localFaqs;
+  return mappedFaqs;
 }
 
-function mergeCaseStudy(
-  localPage: ProductPageData,
+function buildCaseStudyFromSanity(
   document: SanityProductDocument,
+  slug: string,
+  fallbackImage: ProductImage,
+  titleFallback: string,
 ): ProductPageData["caseStudy"] {
-  const localCaseStudy = localPage.caseStudy;
   const sourceCaseStudy = document.caseStudy;
 
-  if (!sourceCaseStudy) {
-    return localCaseStudy;
+  if (!sourceCaseStudy || !hasSanityImage(sourceCaseStudy.image)) {
+    return {
+      title: "",
+      description: "",
+      image: fallbackImage,
+      bullets: [],
+      quote: undefined,
+      quoteAuthor: undefined,
+      challenge: undefined,
+      solutionIntro: undefined,
+      solutionPoints: undefined,
+      resultPoints: undefined,
+      gallery: undefined,
+    };
   }
 
   return {
-    ...localCaseStudy,
-    title: sourceCaseStudy.title ?? localCaseStudy.title,
-    description: sourceCaseStudy.description ?? localCaseStudy.description,
-    image:
-      sourceCaseStudy.image?.asset?._ref
-        ? toSanityProductImage(
-            sourceCaseStudy.image,
-            sourceCaseStudy.image.alt ?? localCaseStudy.image.alt,
-            `sanity.products.${localPage.slug}.caseStudy.image`,
-          )
-        : localCaseStudy.image,
-    bullets:
-      sourceCaseStudy.bullets?.length
-        ? sourceCaseStudy.bullets
-        : localCaseStudy.bullets,
-    quote: sourceCaseStudy.quote ?? localCaseStudy.quote,
-    quoteAuthor: sourceCaseStudy.quoteAuthor ?? localCaseStudy.quoteAuthor,
-    challenge: sourceCaseStudy.challenge ?? localCaseStudy.challenge,
-    solutionIntro:
-      sourceCaseStudy.solutionIntro ?? localCaseStudy.solutionIntro,
-    solutionPoints:
-      sourceCaseStudy.solutionPoints?.length
-        ? sourceCaseStudy.solutionPoints
-        : localCaseStudy.solutionPoints,
-    resultPoints:
-      sourceCaseStudy.resultPoints?.length
-        ? sourceCaseStudy.resultPoints
-        : localCaseStudy.resultPoints,
-    gallery:
-      sourceCaseStudy.gallery?.length
-        ? sourceCaseStudy.gallery
-            .filter((image) => image.asset?._ref)
-            .map((image, index) =>
-              toSanityProductImage(
-                image,
-                image.alt ?? localCaseStudy.gallery?.[index]?.alt ?? localCaseStudy.image.alt,
-                `sanity.products.${localPage.slug}.caseStudy.gallery.${index}`,
-              ),
-            )
-        : localCaseStudy.gallery,
+    title: document.caseStudy?.title ?? "",
+    description: document.caseStudy?.description ?? "",
+    image: toSanityProductImage(
+      sourceCaseStudy.image,
+      sourceCaseStudy.image.alt ?? titleFallback,
+      `sanity.products.${slug}.caseStudy.image`,
+    ),
+    bullets: sourceCaseStudy.bullets ?? [],
+    quote: sourceCaseStudy.quote,
+    quoteAuthor: sourceCaseStudy.quoteAuthor,
+    challenge: sourceCaseStudy.challenge,
+    solutionIntro: sourceCaseStudy.solutionIntro,
+    solutionPoints: sourceCaseStudy.solutionPoints,
+    resultPoints: sourceCaseStudy.resultPoints,
+    gallery: sourceCaseStudy.gallery
+      ?.filter(hasSanityImage)
+      .map((image, index) =>
+        toSanityProductImage(
+          image,
+          image.alt ?? titleFallback,
+          `sanity.products.${slug}.caseStudy.gallery.${index}`,
+        ),
+      ),
   };
 }
 
 function mergeLocalProductPage(
   localPage: ProductPageData,
-  document: SanityProductDocument | undefined,
+  document: SanityProductDocument & {
+    slug: string;
+    metaDescription: string;
+    hero: { image: SanityImageWithAlt; title?: string; description?: string };
+  },
 ): ResolvedProductPageData {
-  const pageTitle =
-    document?.pageTitle ?? document?.hero?.title ?? localPage.title;
+  const pageTitle = getProductEntryTitle(document) ?? localPage.title;
+  const heroImage = toSanityProductImage(
+    document.hero.image,
+    document.hero.image.alt ?? localPage.heroImage.alt,
+    `sanity.products.${localPage.slug}.hero`,
+  );
 
   return {
     ...localPage,
-    navLabel: document?.name ?? localPage.navLabel,
+    navLabel: document.name?.trim() || pageTitle,
     title: pageTitle,
-    seoTitle: document?.seoTitle ?? `${pageTitle} | Tagora Packaging & Trims`,
-    metaDescription: document?.metaDescription ?? localPage.metaDescription,
-    subtitle: document?.hero?.description ?? localPage.subtitle,
-    heroImage:
-      document?.hero?.image?.asset?._ref
-        ? toSanityProductImage(
-            document.hero.image,
-            document.hero.image.alt ?? localPage.heroImage.alt,
-            `sanity.products.${localPage.slug}.hero`,
-          )
-        : localPage.heroImage,
-    introTitle: document?.whatAreCustom?.title ?? localPage.introTitle,
-    overview: document?.whatAreCustom?.overview ?? localPage.overview,
-    caseStudy: mergeCaseStudy(localPage, document ?? { _id: "", _createdAt: "" }),
-    faqs: mergeFaqs(localPage.faqs, document?.faqItems),
+    seoTitle: document.seoTitle ?? `${pageTitle} | ANAN PACK`,
+    metaDescription: document.metaDescription,
+    subtitle: document.hero?.description ?? "",
+    heroImage,
+    introTitle: document.whatAreCustom?.title,
+    overview: document.whatAreCustom?.overview ?? "",
+    caseStudy: buildCaseStudyFromSanity(
+      document,
+      localPage.slug,
+      heroImage,
+      pageTitle,
+    ),
+    faqs: mapFaqs(document.faqItems),
   };
 }
 
@@ -266,25 +299,23 @@ function buildSanityOnlyProductPage(
   document: SanityProductDocument,
 ): ResolvedProductPageData | null {
   const fallbackPage = enableLocalProductFallback ? localProductPages[0] : undefined;
-  const slug = document.slug;
-  const title = document.pageTitle ?? document.hero?.title ?? document.name;
-  const heroImage = document.hero?.image?.asset?._ref
-    ? toSanityProductImage(
-        document.hero.image,
-        document.hero.image.alt ?? title ?? document.slug ?? "Product hero image",
-        `sanity.products.${slug}.hero`,
-      )
-    : fallbackPage?.heroImage;
-
-  if (!slug || !title || !heroImage || !document.metaDescription) {
+  if (!isProductEntryEligible(document)) {
     return null;
   }
+
+  const slug = document.slug;
+  const title = getProductEntryTitle(document) ?? document.slug;
+  const heroImage = toSanityProductImage(
+    document.hero.image,
+    document.hero.image.alt ?? title,
+    `sanity.products.${slug}.hero`,
+  );
 
   return {
     slug,
     navLabel: document.name ?? title,
     title,
-    seoTitle: document.seoTitle ?? `${title} | Tagora Packaging & Trims`,
+    seoTitle: document.seoTitle ?? `${title} | ANAN PACK`,
     metaDescription: document.metaDescription,
     subtitle: document.hero?.description ?? "",
     heroImage,
@@ -298,61 +329,14 @@ function buildSanityOnlyProductPage(
     applications: [],
     process: enableLocalProductFallback ? defaultProductProcess.map((step) => ({ ...step })) : [],
     processSubtitle: enableLocalProductFallback ? fallbackPage?.processSubtitle : undefined,
-    caseStudy: {
-      title: enableLocalProductFallback
-        ? document.caseStudy?.title ?? title
-        : document.caseStudy?.title ?? "",
-      description: document.caseStudy?.description ?? "",
-      image:
-        document.caseStudy?.image?.asset?._ref
-          ? toSanityProductImage(
-              document.caseStudy.image,
-              document.caseStudy.image.alt ?? title,
-              `sanity.products.${slug}.caseStudy.image`,
-            )
-          : heroImage,
-      bullets: document.caseStudy?.bullets ?? [],
-      quote: document.caseStudy?.quote,
-      quoteAuthor: document.caseStudy?.quoteAuthor,
-      challenge: document.caseStudy?.challenge,
-      solutionIntro: document.caseStudy?.solutionIntro,
-      solutionPoints: document.caseStudy?.solutionPoints,
-      resultPoints: document.caseStudy?.resultPoints,
-      gallery: document.caseStudy?.gallery
-        ?.filter((image) => image.asset?._ref)
-        .map((image, index) =>
-          toSanityProductImage(
-            image,
-            image.alt ?? title,
-            `sanity.products.${slug}.caseStudy.gallery.${index}`,
-          ),
-        ),
-    },
+    caseStudy: buildCaseStudyFromSanity(document, slug, heroImage, title),
     blogs: enableLocalProductFallback
       ? defaultProductBlogs.map((card) => ({
           ...card,
           image: { ...card.image },
         }))
       : [],
-    faqs: mergeFaqs([], document.faqItems),
-  };
-}
-
-function mapLocalMenuImage(
-  title: string,
-  href: string,
-  alt: string,
-  src: ProductMenuItemData["image"]["src"],
-): ProductMenuItemData {
-  return {
-    title,
-    href,
-    alt,
-    image: {
-      src,
-      alt,
-      sanityKey: `local.products.menu.${href}`,
-    },
+    faqs: mapFaqs(document.faqItems),
   };
 }
 
@@ -373,30 +357,26 @@ async function getSanityProductDocuments(): Promise<SanityProductDocument[]> {
 }
 
 export async function getAllProductPages(): Promise<ResolvedProductPageData[]> {
-  const documents = await getSanityProductDocuments();
-  const sanityOnlyPages = documents
-    .map(buildSanityOnlyProductPage)
-    .filter(Boolean) as ResolvedProductPageData[];
+  const documents = (await getSanityProductDocuments()).filter(isProductEntryEligible);
 
   if (!enableLocalProductFallback) {
-    return sanityOnlyPages;
+    return documents
+      .map(buildSanityOnlyProductPage)
+      .filter(Boolean) as ResolvedProductPageData[];
   }
 
-  const documentsBySlug = new Map(
-    documents
-      .filter((document) => document.slug)
-      .map((document) => [document.slug!, document]),
+  const localPagesBySlug = new Map(
+    localProductPages.map((page) => [page.slug, page] as const),
   );
-  const mergedLocalPages = localProductPages.map((page) =>
-    mergeLocalProductPage(page, documentsBySlug.get(page.slug)),
-  );
-  const localSlugs = new Set(localProductPages.map((page) => page.slug));
-  const appendedSanityPages = documents
-    .filter((document) => document.slug && !localSlugs.has(document.slug))
-    .map(buildSanityOnlyProductPage)
-    .filter(Boolean) as ResolvedProductPageData[];
 
-  return [...mergedLocalPages, ...appendedSanityPages];
+  return documents
+    .map((document) => {
+      const localPage = localPagesBySlug.get(document.slug);
+      return localPage
+        ? mergeLocalProductPage(localPage, document)
+        : buildSanityOnlyProductPage(document);
+    })
+    .filter(Boolean) as ResolvedProductPageData[];
 }
 
 export async function getProductPageBySlug(
@@ -407,12 +387,12 @@ export async function getProductPageBySlug(
 }
 
 export async function getProductMenuItems(): Promise<ProductMenuItemData[]> {
-  const documents = await getSanityProductDocuments();
-  const sanityOnlyItems = documents
-    .filter((document) => document.slug && document.megaMenuCard?.image?.asset?._ref)
+  const documents = (await getSanityProductDocuments()).filter(isProductEntryEligible);
+
+  return documents
     .map((document) => {
       const href = `/products/${document.slug}`;
-      const title = document.name ?? document.pageTitle ?? document.slug!;
+      const title = document.name ?? getProductEntryTitle(document) ?? document.slug;
       const alt = document.megaMenuCard?.image?.alt ?? title;
 
       return {
@@ -426,62 +406,4 @@ export async function getProductMenuItems(): Promise<ProductMenuItemData[]> {
         ),
       } satisfies ProductMenuItemData;
     });
-
-  if (!enableLocalProductFallback) {
-    return sanityOnlyItems;
-  }
-
-  const localBySlug = new Map(
-    localProductMenuItems.map((item) => {
-      const slug = item.href.replace(/^\/products\//, "");
-      return [
-        slug,
-        mapLocalMenuImage(item.title, item.href, item.alt, item.image),
-      ] as const;
-    }),
-  );
-  const mergedLocalItems = localProductMenuItems.map((item) => {
-    const slug = item.href.replace(/^\/products\//, "");
-    const document = documents.find((entry) => entry.slug === slug);
-
-    if (!document?.megaMenuCard?.image?.asset?._ref) {
-      return localBySlug.get(slug)!;
-    }
-
-    const title = document.name ?? item.title;
-    const alt = document.megaMenuCard.image.alt ?? item.alt;
-
-    return {
-      title,
-      href: item.href,
-      alt,
-      image: toSanityProductImage(
-        document.megaMenuCard.image,
-        alt,
-        `sanity.products.${slug}.megaMenuCard`,
-      ),
-    } satisfies ProductMenuItemData;
-  });
-  const localSlugs = new Set(localProductMenuItems.map((item) => item.href.replace(/^\/products\//, "")));
-  const appendedSanityItems = documents
-    .filter((document) => document.slug && !localSlugs.has(document.slug))
-    .filter((document) => document.megaMenuCard?.image?.asset?._ref)
-    .map((document) => {
-      const href = `/products/${document.slug}`;
-      const title = document.name ?? document.pageTitle ?? document.slug!;
-      const alt = document.megaMenuCard?.image?.alt ?? title;
-
-      return {
-        title,
-        href,
-        alt,
-        image: toSanityProductImage(
-          document.megaMenuCard!.image!,
-          alt,
-          `sanity.products.${document.slug}.megaMenuCard`,
-        ),
-      } satisfies ProductMenuItemData;
-    });
-
-  return [...mergedLocalItems, ...appendedSanityItems];
 }

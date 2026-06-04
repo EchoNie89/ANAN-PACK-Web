@@ -1,10 +1,7 @@
 import type { SiteImageSource } from '../lib/local-images';
 import { resolveLocalImageSource } from '../lib/local-images';
 import type { SanityImageSource } from '../lib/sanity';
-import {
-  normalizeCustomizationBlock,
-  type ProductCustomizationBlock,
-} from '../lib/customization-content';
+import type { ProductCustomizationBlock } from '../lib/customization-content';
 import {
   commonBlogs as commonBlogSeeds,
   defaultProductWhyChoose as defaultProductWhyChooseSeeds,
@@ -18,6 +15,7 @@ import {
   type ProductPageData as ProductPageSourceData,
   type ProductProcessIcon as ProductProcessIconSeed,
   type ProductProcessStep as ProductProcessStepSeed,
+  type ProductShowcaseCard as ProductShowcaseCardSeed,
   type ProductShowcaseGroup as ProductShowcaseGroupSeed,
 } from './product-source';
 
@@ -36,6 +34,10 @@ export interface ProductCard {
   title: string;
   description?: string;
   image: ProductImage;
+}
+
+export interface ProductShowcaseCard extends Omit<ProductCard, 'title'> {
+  title?: string;
 }
 
 export interface ProductFeature {
@@ -60,7 +62,7 @@ export interface ProductProcessStep {
 export interface ProductShowcaseGroup {
   title: string;
   description?: string;
-  cards: ProductCard[];
+  cards: ProductShowcaseCard[];
 }
 
 export interface ProductCustomizationGroup {
@@ -143,6 +145,14 @@ function toProductCard(seed: ProductCardSeed): ProductCard {
   };
 }
 
+function toProductShowcaseCard(seed: ProductShowcaseCardSeed): ProductShowcaseCard {
+  return {
+    title: seed.title,
+    description: seed.description,
+    image: toProductImage(seed.image),
+  };
+}
+
 function toProductFeature(seed: ProductFeatureSeed): ProductFeature {
   return { ...seed };
 }
@@ -154,7 +164,7 @@ function toProductFaq(seed: ProductFaqSeed): ProductFaq {
 function toProductCustomizationBlock(
   seed: ProductCustomizationGroupSeed['blocks'][number],
 ): ProductCustomizationBlock {
-  const block = normalizeCustomizationBlock(seed);
+  const block = seed;
 
   if (block._type === 'paragraphBlock') {
     return { ...block };
@@ -197,7 +207,7 @@ function toProductShowcaseGroup(
   return {
     title: seed.title,
     description: seed.description,
-    cards: seed.cards.map(toProductCard),
+    cards: seed.cards.map(toProductShowcaseCard),
   };
 }
 

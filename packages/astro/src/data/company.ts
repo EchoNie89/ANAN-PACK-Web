@@ -93,6 +93,7 @@ export const aboutSustainability = [
       "For recycled materials, we coordinate with suppliers that support GRS-certified options when applicable.",
     image: getLocalImage("/images/home/cert-grs.png"),
     alt: "Global Recycled Standard mark",
+    imageClass: "scale-[1.42]",
   },
   {
     title: "Textile Safety & Compliance",

@@ -13,7 +13,6 @@ import {
   sanityImageUrl,
   type SanityImageSource,
 } from "../../../lib/sanity";
-import { normalizeCustomizationBlock } from "../../../lib/customization-content";
 import ProductApplications from "./ProductApplications.astro";
 import ProductCaseStudy from "./ProductCaseStudy.astro";
 import ProductCustomization from "./ProductCustomization.astro";
@@ -56,7 +55,7 @@ const sanityShowcaseGroups = sanityShowcase?.showcaseGroups
         description: card.description,
         image: mapSanityImage(
           card.image,
-          card.alt ?? card.title,
+          card.alt ?? card.title ?? group.title ?? page.navLabel,
           `sanity.products.${page.slug}.showcase.${groupIndex}.${cardIndex}`,
         ),
       })),
@@ -107,7 +106,7 @@ const sanityCustomizationGroups = sanityCustomizationData?.customizationGroups
           `sanity.products.${page.slug}.customization.${groupIndex}.${imgIndex}`,
         )
       ),
-    blocks: group.blocks.map((block) => normalizeCustomizationBlock(block)),
+    blocks: group.blocks,
   }));
 const customizationGroups = sanityCustomizationGroups?.length
   ? sanityCustomizationGroups

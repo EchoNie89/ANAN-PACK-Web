@@ -1,4 +1,4 @@
-import type { SiteImageSource } from "./local-images";
+import { getLocalImage, type SiteImageSource } from "./local-images";
 import type { SiteSettings } from "./site-settings";
 
 export interface SeoImageLike {
@@ -23,8 +23,9 @@ export interface FaqJsonLdItem {
   answer: string;
 }
 
-const DEFAULT_SITE_NAME = "Tagora Packaging & Trims";
+const DEFAULT_SITE_NAME = "ANAN PACK";
 const DEFAULT_LOCALE = "en_US";
+const SITE_LOGO = getLocalImage("/images/home/anan-pack-logo.png");
 
 function trimTrailingSlash(value: string): string {
   return value.endsWith("/") ? value.slice(0, -1) : value;
@@ -85,7 +86,7 @@ export function buildOrganizationJsonLd(
   siteSettings: SiteSettings,
 ): Record<string, unknown> {
   const siteUrl = getSiteUrl();
-  const logoUrl = siteUrl ? toAbsoluteUrl("/favicon.svg", siteUrl) : undefined;
+  const logoUrl = toAbsoluteUrl(SITE_LOGO.src, siteUrl) ?? SITE_LOGO.src;
   const sameAs = siteSettings.socialMedia.map((item) => item.url);
 
   return {
@@ -211,7 +212,7 @@ export function buildBlogPostingJsonLd({
   section?: string;
 }): Record<string, unknown> {
   const siteUrl = getSiteUrl();
-  const logoUrl = siteUrl ? toAbsoluteUrl("/favicon.svg", siteUrl) : undefined;
+  const logoUrl = toAbsoluteUrl(SITE_LOGO.src, siteUrl) ?? SITE_LOGO.src;
 
   return {
     "@context": "https://schema.org",

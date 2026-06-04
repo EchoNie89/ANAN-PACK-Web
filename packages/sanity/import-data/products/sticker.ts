@@ -102,24 +102,32 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Eco-Friendly Paper & Kraft",
           items: [
             "Sourced from sustainable forests, our paper-based labels offer a natural, classic aesthetic. They are the perfect biodegradable choice for sealing tissue paper, retail boxes, and creating earthy sticker packaging."
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Durable Waterproof Vinyl",
           items: [
             "Engineered with premium plastic polymers, our custom vinyl stickers are tear-resistant and 100% waterproof. They are built to survive harsh transit conditions, making them ideal for shipping mailers and outdoor use."
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Ultra-Clear PET Film",
           items: [
             "Designed for a seamless, no-label look. Combined with our high-definition clear sticker printing, these transparent labels allow your product or packaging texture to shine through beautifully."
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Apparel Heat Transfer Film",
           items: [
             "Formulated specifically for the textile industry. Our heat transfer stickers for clothes provide a skin-friendly, tagless experience that is highly wash-resistant, acting as the perfect clothing label stickers."
@@ -142,24 +150,32 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "High-Definition Full Color Printing",
           items: [
             "As a professional sticker manufacturer, we utilize advanced digital and offset presses. This ensures your custom sticker printing delivers sharp text, vibrant colors, and flawless logo reproduction across any material."
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Precision Die-Cutting & Kiss-Cutting",
           items: [
             "We cut your stickers to any exact shape you desire. Choose from individual die-cut decals for promotional giveaways, or efficient custom sticker rolls for fast, high-volume automated application."
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Premium Foil & Holographic Enhancements",
           items: [
             "Elevate your brand with specialty finishes. We offer hot foil stamping in gold, silver, or rose gold, alongside holographic layers that catch the light, turning ordinary customized sticker labels into premium boutique experiences."
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Protective Lamination",
           items: [
             "We apply a protective top layer to enhance durability. Choose a glossy finish to make colors pop, or a smooth matte finish for a sophisticated, non-reflective elegance on your custom waterproof sticker orders."

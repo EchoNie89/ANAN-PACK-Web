@@ -196,21 +196,21 @@ export const solutionPages: SolutionPageData[] = [
       columns: [
         {
           title: 'PCR & Forest-Based Labeling',
-          kicker: 'Recycled materials, premium clarity.',
+          kicker: '"Recycled materials, premium clarity."',
           description:
-            'We source post-consumer recycled films, FSC paper labels, and mono-material label structures that keep beauty packaging polished and responsible.',
+            'Maintain your brand’s aesthetic while reducing plastic waste. We offer PCR (Post-Consumer Recycled) films and Forest Film—a wood-based plastic alternative. These materials provide the crystal-clear "no-label look" beauty brands crave while remaining 100% waterproof and oil-resistant for peak performance in bathrooms and vanities.',
         },
         {
           title: 'Tree-Free & High-Texture Eco-Papers',
-          kicker: 'Tactile experiences that tell a natural story.',
+          kicker: '"Tactile experiences that tell a natural story."',
           description:
-            'Choose cotton, bamboo, sugarcane, and other alternative fiber papers for secondary packaging with a soft, crafted feel.',
+            'Elevate your secondary packaging with specialty stocks made from Stone, Hemp, or Citrus Waste. These tree-free alternatives offer unique textures and organic tones that resonate with eco-conscious consumers. Perfect for luxury outer boxes and perfume sleeves, they turn your packaging into a statement of environmental stewardship.',
         },
         {
           title: 'Clean Printing & Circular Finishes',
-          kicker: 'Non-toxic vibrancy, fully recyclable results.',
+          kicker: '"Non-toxic vibrancy, fully recyclable results."',
           description:
-            'Water-based inks, low-migration coatings, and recyclable finishes help align luxury packaging with sustainability goals.',
+            'Our sustainability commitment extends to every drop of ink. We use Soy-based Inks for vibrant, low-VOC printing and recommend Water-based Coatings instead of plastic lamination. This ensures your folding cartons and gift boxes remain 100% recyclable, helping your brand meet the strict green standards of global retailers like Sephora and Ulta.',
         },
       ],
     },
@@ -381,21 +381,21 @@ export const solutionPages: SolutionPageData[] = [
       columns: [
         {
           title: 'Recycled Polyester Labels (GRS)',
-          kicker: 'Lower impact without losing hand feel.',
+          kicker: '',
           description:
-            'GRS recycled yarn labels help apparel brands reduce virgin material use while keeping woven details sharp.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
         },
         {
           title: 'FSC Certified Paper Tags',
-          kicker: 'Responsible paper for everyday retail.',
+          kicker: '',
           description:
-            'FSC hang tags, sleeves, and cards provide a clean sustainability story across the full apparel kit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
         },
         {
           title: 'Biodegradable Poly Bags',
-          kicker: 'Cleaner fulfillment packaging.',
+          kicker: '',
           description:
-            'Compostable and biodegradable bag options help reduce disposable plastic impact in e-commerce delivery.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
         },
       ],
     },
@@ -565,21 +565,21 @@ export const solutionPages: SolutionPageData[] = [
       columns: [
         {
           title: 'GRS-Certified Recycled Satin & Polyester',
-          kicker: 'Traceable recycled textile trims.',
+          kicker: '"From plastic bottles to premium ribbons."',
           description:
-            'Recycled satin and polyester options reduce virgin material use while keeping labels soft and resilient.',
+            'Shift to 100% recycled content for your care labels and ribbons. Our GRS-certified recycled satin offers the same silky-smooth texture as traditional materials but with a significantly lower carbon footprint, perfect for eco-luxury bedding collections.',
         },
         {
           title: 'FSC-Certified Heavyweight Hang Tags',
-          kicker: 'Responsible paper with premium weight.',
+          kicker: '"Sustainable strength for larger products."',
           description:
-            'FSC paper tags and cards support a natural home goods story without compromising tactile quality.',
+            'Home goods often require larger, more durable tags. We provide high-GSM, FSC-certified cardstock that provides the structural rigidity needed for heavy drapes or rugs while proving your commitment to responsible forestry.',
         },
         {
           title: 'Biodegradable Zipper Storage Bags',
-          kicker: 'Storage packaging with a cleaner end-of-life.',
+          kicker: '"Zero-waste protection for bulky items."',
           description:
-            'Biodegradable storage bags and reusable zipper systems help reduce disposable packaging impact.',
+            'Replace traditional vinyl bags with our compostable and biodegradable alternatives. These bags are tear-resistant and waterproof, protecting your linens from dust and moisture during the "last mile" while being fully earth-friendly.',
         },
       ],
     },
@@ -750,21 +750,21 @@ export const solutionPages: SolutionPageData[] = [
       columns: [
         {
           title: 'FSC-Certified Premium Art Papers',
-          kicker: 'Responsibly sourced, unmistakably high-end.',
+          kicker: '"Responsibly sourced, unmistakably high-end."',
           description:
-            'FSC-certified papers with linen, cotton, and textured finishes deliver a crafted feel while supporting responsible sourcing.',
+            "Choose from a wide array of FSC-certified papers with unique textures—from linen-pressed to cotton-based stocks. These materials provide a sophisticated, tactile feel while proving your brand’s commitment to preserving the world's forests.",
         },
         {
           title: 'Vegan Leather & Eco-Suede Pouches',
-          kicker: 'Cruelty-free luxury for the modern era.',
+          kicker: '"Cruelty-free luxury for the modern era."',
           description:
-            'Vegan leather and recycled microfiber suedes provide softness and durability without traditional animal skins.',
+            'Replace traditional animal skins with our high-performance vegan leathers and recycled microfiber suedes. These materials offer the same buttery softness and durability as premium hide but are 100% cruelty-free and more environmentally sustainable.',
         },
         {
           title: 'Recyclable Metal & Mineral Inks',
-          kicker: 'Luster that does not harm the earth.',
+          kicker: `"Luster that doesn't harm the earth."`,
           description:
-            'Lead-free hardware and mineral-safe inks help keep shimmer, foil, and metallic details more responsible.',
+            'We utilize lead-free metallic alloys for our hardware and soy-based, mineral-safe inks for our printing. This ensures that even your most shimmering gold-foil packaging remains non-toxic and compliant with international environmental standards.',
         },
       ],
     },

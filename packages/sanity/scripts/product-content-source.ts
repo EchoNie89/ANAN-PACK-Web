@@ -1,7 +1,4 @@
-import {
-  normalizeCustomizationBlock,
-  type CustomizationMarkerStyle,
-} from "../../astro/src/lib/customization-content";
+import type { CustomizationMarkerStyle } from "../../astro/src/lib/customization-content";
 import {
   productSourcePages,
   type ProductCard,
@@ -9,6 +6,7 @@ import {
   type ProductFaq,
   type ProductImage,
   type ProductPageData,
+  type ProductShowcaseCard,
   type ProductShowcaseGroup,
 } from "../../astro/src/data/product-source";
 
@@ -21,6 +19,10 @@ export type ProductBaselineCard = {
   title: string;
   description?: string;
   image: ProductBaselineImage;
+};
+
+type ProductBaselineShowcaseCard = Omit<ProductBaselineCard, "title"> & {
+  title?: string;
 };
 
 type ProductBaselineCustomizationDetailGroup = {
@@ -103,7 +105,7 @@ export type ProductBaselineEntry = {
   faqItems: ProductBaselineFaqItem[];
   showcaseGroups?: Array<{
     title: string;
-    cards: ProductBaselineCard[];
+    cards: ProductBaselineShowcaseCard[];
   }>;
   applicationTitle?: string;
   applicationDescription?: string;
@@ -168,10 +170,18 @@ function normalizeCard(card: ProductCard): ProductBaselineCard {
   };
 }
 
+function normalizeShowcaseCard(card: ProductShowcaseCard): ProductBaselineShowcaseCard {
+  return {
+    ...(card.title?.trim() ? { title: card.title.trim() } : {}),
+    ...(card.description ? { description: card.description } : {}),
+    image: normalizeImage(card.image),
+  };
+}
+
 function normalizeProductCustomizationBlock(
   block: ProductCustomizationGroup["blocks"][number],
 ): ProductBaselineCustomizationBlock {
-  const normalized = normalizeCustomizationBlock(block);
+  const normalized = block;
 
   if (normalized._type === "paragraphBlock") {
     return { ...normalized };
@@ -282,7 +292,7 @@ export function buildProductBaselineEntry(
       ? {
           showcaseGroups: page.showcaseGroups.map((group: ProductShowcaseGroup) => ({
             title: group.title,
-            cards: group.cards.map(normalizeCard),
+            cards: group.cards.map(normalizeShowcaseCard),
           })),
         }
       : {}),

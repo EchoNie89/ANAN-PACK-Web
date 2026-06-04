@@ -218,6 +218,8 @@ const ribbon: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Satin Ribbon - The Most Popular Choice for Custom Printed Ribbon",
           items: [
             "Satin ribbon features a smooth and glossy surface, making it ideal for elegant packaging and luxury product presentation.",
@@ -227,6 +229,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Grosgrain Ribbon - Durable and Textured",
           items: [
             "Grosgrain ribbon is known for its ribbed texture, which provides additional strength and durability compared to satin ribbon.",
@@ -236,6 +240,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Cotton Ribbon - Natural & Eco-Friendly",
           items: [
             "Cotton ribbon offers a natural, matte appearance and is often used by brands that prefer eco-friendly packaging materials.",
@@ -245,6 +251,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Polyester Ribbon - Strong and Versatile",
           items: [
             "Polyester ribbon is a versatile material that offers excellent durability and consistent color performance.",
@@ -254,6 +262,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Organza Ribbon - Lightweight and Decorative",
           items: [
             "Organza ribbon is made from thin, transparent fibers that create a delicate and decorative appearance.",
@@ -263,6 +273,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Choosing the Right Ribbon Material",
           items: [
             "The best ribbon material depends on your product packaging style, branding goals, and budget.",
@@ -330,6 +342,8 @@ const ribbon: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Hot Foil Stamping - Premium Metallic Finish",
           items: [
             "Hot foil stamping uses heat and pressure to transfer metallic foil onto the ribbon surface, creating a shiny and luxurious logo effect.",
@@ -339,6 +353,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Silk Screen Printing - Clear and Durable Logos",
           items: [
             "Silk screen printing applies ink directly onto the ribbon surface through a fine mesh screen.",
@@ -348,6 +364,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Digital Printing - Full Color Designs",
           items: [
             "Digital printing allows ribbons to be printed with detailed artwork, gradients, and multiple colors.",
@@ -357,6 +375,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Embossed Printing - Textured Branding Effect",
           items: [
             "Embossing creates a raised logo effect on the ribbon surface using pressure and specialized molds.",
@@ -366,6 +386,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Ribbon Width & Size",
           items: [
             "The width and size of ribbon play an important role in packaging design and visual presentation. Different ribbon widths create different decorative effects and are suitable for different packaging applications.",
@@ -375,6 +397,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Fashion & Apparel Packaging",
           items: [
             "Fashion brands often use ribbon to enhance product packaging and create a premium unboxing experience.",
@@ -383,6 +407,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Gift Packaging",
           items: [
             "Custom ribbon is one of the most popular decorative elements for gift packaging.",
@@ -391,6 +417,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Luxury Product Packaging",
           items: [
             "Luxury brands frequently use custom ribbon to elevate the perceived value of their products.",
@@ -399,6 +427,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Cosmetics & Beauty Packaging",
           items: [
             "Ribbons are widely used in cosmetic and beauty packaging to create a refined brand image.",
@@ -407,6 +437,8 @@ const ribbon: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Retail & E-Commerce Packaging",
           items: [
             "Online brands often use ribbon to improve their packaging experience and make products feel more special.",

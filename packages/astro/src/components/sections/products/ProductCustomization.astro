@@ -35,19 +35,19 @@ function getMarkerClass(markerStyle: CustomizationMarkerStyle) {
 
 <section class="bg-white pb-14 md:pb-20">
   <Container class="!max-w-[1280px]">
-    <h2 class="text-center text-2xl font-extrabold tracking-[0.03em] text-text-main md:text-[32px]">
+    <h2 class="text-center text-2xl font-extrabold leading-tight tracking-[0.01em] text-text-main md:text-[32px]">
       Customization Options
     </h2>
 
     {
       groups.map((group, index) => (
-        <section class={index === 0 ? "mt-4 md:mt-5" : "mt-14 md:mt-16"}>
-          <h3 class="text-lg font-extrabold text-ink md:text-2xl">
+        <section class={index === 0 ? "mt-3 md:mt-4" : "mt-12 md:mt-14"}>
+          <h3 class="text-[20px] font-semibold leading-tight text-text-main md:text-[24px]">
             {group.title}
           </h3>
 
           {group.images?.length ? (
-            <div class="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {group.images.map((item) => (
                 <figure class="overflow-hidden bg-surface-muted">
                   <div class="aspect-[1.45]">
@@ -62,13 +62,13 @@ function getMarkerClass(markerStyle: CustomizationMarkerStyle) {
             </div>
           ) : null}
 
-          <div class="mt-9">
+          <div class="mt-7">
             {group.intro && (
-              <p class="text-sm leading-6 text-text-muted md:text-[15px] md:leading-7">
+              <p class="text-sm leading-[24px] text-text-main md:text-[15px] md:leading-[25px]">
                 {group.intro}
               </p>
             )}
-            <div class="mt-5 grid gap-7 text-sm leading-6 text-text-muted md:text-[15px] md:leading-7">
+            <div class="mt-4 grid gap-5 text-sm leading-[24px] text-text-main md:text-[15px] md:leading-[25px]">
               {group.blocks.map((block) => {
                 if (block._type === "paragraphBlock") {
                   return (
@@ -78,9 +78,10 @@ function getMarkerClass(markerStyle: CustomizationMarkerStyle) {
 
                 if (block._type === "listBlock") {
                   return (
-                    <section class="grid gap-2">
-                      {block.title && <h4 class="text-base font-extrabold text-ink">{block.title}</h4>}
-                      <ul class={`grid gap-2 ${getMarkerClass(block.markerStyle)}`}>
+                    <section class="grid gap-1.5">
+                      {block.title && <h4 class="text-base font-semibold text-text-main">{block.title}</h4>}
+                      {block.intro && <p>{block.intro}</p>}
+                      <ul class={`grid gap-1.5 ${getMarkerClass(block.markerStyle)}`}>
                         {block.items.map((item) => <li>{item}</li>)}
                       </ul>
                       {block.note && <p>{block.note}</p>}
@@ -90,17 +91,17 @@ function getMarkerClass(markerStyle: CustomizationMarkerStyle) {
 
                 if (block._type === "entryListBlock") {
                   return (
-                    <section class="grid gap-4">
-                      {block.title && <h4 class="text-base font-extrabold text-ink">{block.title}</h4>}
-                      <ul class={`grid gap-4 ${getMarkerClass(block.markerStyle)}`}>
+                    <section class="grid gap-3">
+                      {block.title && <h4 class="text-base font-semibold text-text-main">{block.title}</h4>}
+                      <ul class={`grid gap-3 ${getMarkerClass(block.markerStyle)}`}>
                         {block.entries.map((entry) => (
-                          <li class="space-y-3">
-                            {entry.title && <p class="font-extrabold text-ink">{entry.title}</p>}
+                          <li class="space-y-2.5">
+                            {entry.title && <p class="font-semibold text-text-main">{entry.title}</p>}
                             {entry.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
                             {entry.detailGroups?.map((detailGroup) => (
-                              <div class="space-y-2">
-                                {detailGroup.label && <p class="font-semibold text-ink">{detailGroup.label}</p>}
-                                <ul class={`grid gap-2 ${getMarkerClass(detailGroup.markerStyle)}`}>
+                              <div class="space-y-1.5">
+                                {detailGroup.label && <p class="font-semibold text-text-main">{detailGroup.label}</p>}
+                                <ul class={`grid gap-1.5 ${getMarkerClass(detailGroup.markerStyle)}`}>
                                   {detailGroup.items.map((item) => <li>{item}</li>)}
                                 </ul>
                                 {detailGroup.note && <p>{detailGroup.note}</p>}

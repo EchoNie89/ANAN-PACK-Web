@@ -1,16 +1,18 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-test("seed customization validation rejects malformed structured blocks and keeps broad legacy compatibility", async () => {
-  const { validateCustomizationBlockLike } = await import(
+test("seed customization validation rejects malformed structured blocks", async () => {
+  const { validateCustomizationBlock } = await import(
     "../../sanity/scripts/customization-block-validation.ts"
   );
 
   assert.deepEqual(
-    validateCustomizationBlockLike(
+    validateCustomizationBlock(
       {
+        _type: "listBlock",
+        markerStyle: "bullet",
         items: ["Classic stitched edge"],
-        note: "Legacy blocks may still carry a trailing note.",
+        note: "Structured blocks may still carry a trailing note.",
       },
       "customizationGroups[0].blocks[0]",
     ),
@@ -18,7 +20,7 @@ test("seed customization validation rejects malformed structured blocks and keep
   );
 
   assert.deepEqual(
-    validateCustomizationBlockLike(
+    validateCustomizationBlock(
       {
         _type: "listBlock",
         items: [],
@@ -32,7 +34,7 @@ test("seed customization validation rejects malformed structured blocks and keep
   );
 
   assert.deepEqual(
-    validateCustomizationBlockLike(
+    validateCustomizationBlock(
       {
         _type: "entryListBlock",
         markerStyle: "plain",

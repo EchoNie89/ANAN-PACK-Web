@@ -98,6 +98,8 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Embroidered Patch Material",
           items: [
             "Embroidered patches are made by stitching colored threads onto a fabric base to create a raised, textured logo or design. This traditional technique gives patches a classic and premium appearance.",
@@ -107,6 +109,8 @@ const manifest: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Woven Patch Material",
           items: [
             "Woven patches are produced using fine threads woven together to create detailed artwork. Compared with embroidered patches, woven patches can display smaller text and more intricate designs.",
@@ -116,6 +120,8 @@ const manifest: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Chenille Patch Material",
           items: [
             "Chenille patches are made using looped yarn that creates a soft, fluffy texture. They are commonly associated with varsity jackets and sportswear.",
@@ -125,6 +131,8 @@ const manifest: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Leather Patch Material",
           items: [
             "Leather patches are crafted from genuine leather or PU leather and often feature embossed or debossed logos. They offer a premium and sophisticated appearance.",
@@ -134,6 +142,8 @@ const manifest: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "PVC & Rubber Patch Material",
           items: [
             "PVC patches are made from soft rubber materials that create a flexible and waterproof patch. These patches often feature 3D layered designs.",
@@ -143,6 +153,8 @@ const manifest: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Choosing the Right Patch Material",
           items: [
             "Selecting the right material depends on several factors: design complexity, product type, brand style, durability requirements, and budget.",
@@ -151,6 +163,8 @@ const manifest: ProductImportManifest = {
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Need Help Choosing Patch Materials?",
           items: [
             "If you're not sure which patch material is right for your product, our team can provide professional suggestions based on your logo design and application.",
@@ -371,51 +385,177 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
-          title: "Sew-On Backing",
-          items: [
-            "Sew-on patches are stitched directly onto garments using a sewing machine or hand stitching.",
-            "Advantages: Strongest and most durable attachment; suitable for repeated washing; works on almost all fabrics.",
-            "Limitations: Requires sewing during garment production.",
-            "Best Applications: jackets; uniforms; workwear; denim products.",
-            "Sew-on patches are considered the most reliable option for patches for clothing.",
-          ],
-        },
-        {
-          title: "Iron-On Backing",
-          items: [
-            "Iron-on patches have a heat-activated adhesive layer on the back. When heat and pressure are applied, the adhesive melts and bonds the patch to the fabric.",
-            "Advantages: Quick application; no sewing required; suitable for DIY or small runs.",
-            "Limitations: Adhesive strength may weaken after repeated washing if not reinforced with stitching.",
-            "Best Applications: fashion apparel; casual clothing; promotional garments.",
-            "Iron-on patches are one of the most popular types of custom patches for clothing brands.",
-          ],
-        },
-        {
-          title: "Velcro Backing",
-          items: [
-            "Velcro backing uses a hook-and-loop fastening system that allows patches to be attached and removed easily.",
-            "Advantages: Removable and reusable; easy replacement of patches; flexible use across garments.",
-            "Limitations: Requires a Velcro base to be sewn onto the garment first.",
-            "Best Applications: military patches; tactical gear; uniforms; outdoor equipment.",
-            "Velcro patches are widely used in tactical and utility apparel.",
-          ],
-        },
-        {
-          title: "Adhesive Backing",
-          items: [
-            "Adhesive backing uses a peel-and-stick layer on the back of the patch.",
-            "Advantages: Quick temporary application; no sewing or heating required.",
-            "Limitations: Not recommended for long-term garment use.",
-            "Best Applications: promotional patches; product packaging; temporary labeling.",
-          ],
-        },
-        {
-          title: "Heat Transfer Backing",
-          items: [
-            "Heat transfer patches are applied using a heat press that bonds the patch directly to the garment surface.",
-            "Advantages: Smooth and lightweight finish; suitable for modern apparel.",
-            "Limitations: Requires heat press equipment.",
-            "Best Applications: sportswear; activewear; lightweight garments.",
+          _type: "entryListBlock",
+          markerStyle: "plain",
+          entries: [
+            {
+              title: "Sew-On Backing",
+              paragraphs: [
+                "Sew-on patches are stitched directly onto garments using a sewing machine or hand stitching.",
+                "Sew-on patches are considered the most reliable option for patches for clothing.",
+              ],
+              detailGroups: [
+                {
+                  label: "Advantages",
+                  markerStyle: "bullet",
+                  items: [
+                    "Strongest and most durable attachment",
+                    "Suitable for repeated washing",
+                    "Works on almost all fabrics",
+                  ],
+                },
+                {
+                  label: "Limitations",
+                  markerStyle: "bullet",
+                  items: [
+                    "Requires sewing during garment production.",
+                  ],
+                },
+                {
+                  label: "Best Applications",
+                  markerStyle: "bullet",
+                  items: [
+                    "jackets",
+                    "uniforms",
+                    "workwear",
+                    "denim products",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "Iron-On Backing",
+              paragraphs: [
+                "Iron-on patches have a heat-activated adhesive layer on the back. When heat and pressure are applied, the adhesive melts and bonds the patch to the fabric.",
+                "Iron-on patches are one of the most popular types of custom patches for clothing brands.",
+              ],
+              detailGroups: [
+                {
+                  label: "Advantages",
+                  markerStyle: "bullet",
+                  items: [
+                    "quick application",
+                    "no sewing required",
+                    "suitable for DIY or small runs",
+                  ],
+                },
+                {
+                  label: "Limitations",
+                  markerStyle: "bullet",
+                  items: [
+                    "Adhesive strength may weaken after repeated washing if not reinforced with stitching.",
+                  ],
+                },
+                {
+                  label: "Best Applications",
+                  markerStyle: "bullet",
+                  items: [
+                    "fashion apparel",
+                    "casual clothing",
+                    "promotional garments",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "Velcro Backing",
+              paragraphs: [
+                "Velcro backing uses a hook-and-loop fastening system that allows patches to be attached and removed easily.",
+                "Velcro patches are widely used in tactical and utility apparel.",
+              ],
+              detailGroups: [
+                {
+                  label: "Advantages",
+                  markerStyle: "bullet",
+                  items: [
+                    "removable and reusable",
+                    "easy replacement of patches",
+                    "flexible use across garments",
+                  ],
+                },
+                {
+                  label: "Limitations",
+                  markerStyle: "bullet",
+                  items: [
+                    "Requires a Velcro base to be sewn onto the garment first.",
+                  ],
+                },
+                {
+                  label: "Best Applications",
+                  markerStyle: "bullet",
+                  items: [
+                    "military patches",
+                    "tactical gear",
+                    "uniforms",
+                    "outdoor equipment",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "Adhesive Backing",
+              paragraphs: [
+                "Adhesive backing uses a peel-and-stick layer on the back of the patch.",
+              ],
+              detailGroups: [
+                {
+                  label: "Advantages",
+                  markerStyle: "bullet",
+                  items: [
+                    "quick temporary application",
+                    "no sewing or heating required",
+                  ],
+                },
+                {
+                  label: "Limitations",
+                  markerStyle: "bullet",
+                  items: [
+                    "Not recommended for long-term garment use.",
+                  ],
+                },
+                {
+                  label: "Best Applications",
+                  markerStyle: "bullet",
+                  items: [
+                    "promotional patches",
+                    "product packaging",
+                    "temporary labeling.",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "Heat Transfer Backing",
+              paragraphs: [
+                "Heat transfer patches are applied using a heat press that bonds the patch directly to the garment surface.",
+              ],
+              detailGroups: [
+                {
+                  label: "Advantages",
+                  markerStyle: "bullet",
+                  items: [
+                    "smooth and lightweight finish",
+                    "suitable for modern apparel",
+                  ],
+                },
+                {
+                  label: "Limitations",
+                  markerStyle: "bullet",
+                  items: [
+                    "Requires heat press equipment.",
+                  ],
+                },
+                {
+                  label: "Best Applications",
+                  markerStyle: "bullet",
+                  items: [
+                    "sportswear",
+                    "activewear",
+                    "lightweight garments",
+                  ],
+                },
+              ],
+            },
           ],
         },
       ],
@@ -478,15 +618,41 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "entryListBlock",
           title: "Custom Patch Sizes",
-          items: [
-            "Patches can be produced in a wide range of sizes depending on the product and logo design.",
-            "Common Patch Sizes: Small patches (2-5 cm); medium patches (5-8 cm); large patches (8-12 cm or larger).",
-            "Best Applications: Small patches for hats, caps, and labels; medium patches for sleeves and chest logos; large patches for jacket backs and statement designs.",
-            "Choosing the right size ensures that the patch remains visible while maintaining a balanced look on the garment.",
+          markerStyle: "plain",
+          entries: [
+            {
+              paragraphs: [
+                "Patches can be produced in a wide range of sizes depending on the product and logo design.",
+                "Choosing the right size ensures that the patch remains visible while maintaining a balanced look on the garment.",
+              ],
+              detailGroups: [
+                {
+                  label: "Common Patch Sizes",
+                  markerStyle: "bullet",
+                  items: [
+                    "Small patches (2–5 cm)",
+                    "Medium patches (5–8 cm)",
+                    "Large patches (8–12 cm or larger)",
+                  ],
+                },
+                {
+                  label: "Best Applications",
+                  markerStyle: "bullet",
+                  items: [
+                    "Small patches — hats, caps, labels",
+                    "Medium patches — sleeves, chest logos",
+                    "Large patches — jacket backs and statement designs",
+                  ],
+                },
+              ],
+            },
           ],
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Standard Patch Shapes",
           items: [
             "Many brands choose standard shapes because they provide a clean and timeless appearance.",
@@ -495,20 +661,61 @@ const manifest: ProductImportManifest = {
           ],
         },
         {
+          _type: "entryListBlock",
           title: "Custom Die-Cut Shapes",
-          items: [
-            "Custom die-cut patches allow brands to create shapes that follow the outline of their logo or artwork.",
-            "Features: Unique and creative patch shapes; stronger brand recognition; more distinctive product appearance.",
-            "Best Applications: fashion brands; streetwear labels; promotional patches; creative apparel designs.",
-            "Die-cut patches are often used when brands want custom patches that stand out from standard designs.",
+          markerStyle: "plain",
+          entries: [
+            {
+              paragraphs: [
+                "Custom die-cut patches allow brands to create shapes that follow the outline of their logo or artwork.",
+                "Die-cut patches are often used when brands want custom patches that stand out from standard designs.",
+              ],
+              detailGroups: [
+                {
+                  label: "Features",
+                  markerStyle: "bullet",
+                  items: [
+                    "unique and creative patch shapes",
+                    "stronger brand recognition",
+                    "more distinctive product appearance",
+                  ],
+                },
+                {
+                  label: "Best Applications",
+                  markerStyle: "bullet",
+                  items: [
+                    "fashion brands",
+                    "streetwear labels",
+                    "promotional patches",
+                    "creative apparel designs",
+                  ],
+                },
+              ],
+            },
           ],
         },
         {
+          _type: "entryListBlock",
           title: "Rounded Corners & Edge Finishing",
-          items: [
-            "Rounded corners and smooth edges can improve the comfort and durability of patches.",
-            "Advantages: Reduces sharp edges; improves sewing durability; provides a cleaner visual appearance.",
-            "This option is often recommended for patches that will be used on garments and hats.",
+          markerStyle: "plain",
+          entries: [
+            {
+              paragraphs: [
+                "Rounded corners and smooth edges can improve the comfort and durability of patches.",
+                "This option is often recommended for patches that will be used on garments and hats.",
+              ],
+              detailGroups: [
+                {
+                  label: "Advantages",
+                  markerStyle: "bullet",
+                  items: [
+                    "reduces sharp edges",
+                    "improves sewing durability",
+                    "provides a cleaner visual appearance",
+                  ],
+                },
+              ],
+            },
           ],
         },
       ],

@@ -88,7 +88,7 @@ export interface ProductApplications {
 }
 
 export interface ShowcaseCard {
-  title: string;
+  title?: string;
   image: SanityImageSource;
   alt?: string;
   description?: string;
@@ -115,6 +115,7 @@ export type CustomizationBlock =
   | {
       _type: 'listBlock';
       title?: string;
+      intro?: string;
       markerStyle: 'bullet' | 'number' | 'plain';
       items: string[];
       note?: string;
@@ -275,16 +276,11 @@ const PRODUCT_CUSTOMIZATION_QUERY = `
           alt
         },
         blocks[]{
-          "_type": select(
-            _type == "customizationBlock" => "listBlock",
-            _type
-          ),
+          _type,
           title,
           text,
-          "markerStyle": select(
-            _type == "customizationBlock" => coalesce(markerStyle, "bullet"),
-            markerStyle
-          ),
+          intro,
+          markerStyle,
           items,
           note,
           entries[]{
@@ -316,16 +312,11 @@ const PRODUCT_CUSTOMIZATION_QUERY = `
           alt
         },
         blocks[]{
-          "_type": select(
-            _type == "customizationBlock" => "listBlock",
-            _type
-          ),
+          _type,
           title,
           text,
-          "markerStyle": select(
-            _type == "customizationBlock" => coalesce(markerStyle, "bullet"),
-            markerStyle
-          ),
+          intro,
+          markerStyle,
           items,
           note,
           entries[]{

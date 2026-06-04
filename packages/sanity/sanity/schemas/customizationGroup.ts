@@ -45,7 +45,6 @@ export default defineType({
         { type: 'paragraphBlock' },
         { type: 'listBlock' },
         { type: 'entryListBlock' },
-        { type: 'customizationBlock' },
       ],
       validation: (Rule) => Rule.required().min(1),
     }),

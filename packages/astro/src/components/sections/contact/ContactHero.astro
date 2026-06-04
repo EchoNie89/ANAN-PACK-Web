@@ -1,13 +1,15 @@
 ---
-import Container from "../../ui/Container.astro";
-import Button from "../../ui/Button.astro";
-import LocalImage from "../../ui/LocalImage.astro";
-import { getLocalImage } from "../../../lib/local-images";
+import Container from '../../ui/Container.astro';
+import Button from '../../ui/Button.astro';
+import LocalImage from '../../ui/LocalImage.astro';
+import { getLocalImage } from '../../../lib/local-images';
 
-const heroImage = getLocalImage("/images/contact/contact-hero.png");
+const heroImage = getLocalImage('/images/contact/contact-hero.png');
 ---
 
-<section class="relative overflow-hidden bg-page-muted lg:h-[calc(100dvh-88px)]">
+<section
+  class="relative overflow-hidden bg-page-muted lg:h-[calc(100dvh-88px)]"
+>
   <LocalImage
     src={heroImage}
     alt="Packaging gift boxes, bags, ribbon, and cards arranged on a wooden table"
@@ -17,16 +19,29 @@ const heroImage = getLocalImage("/images/contact/contact-hero.png");
     widths={[640, 960, 1280, 1600, 1920]}
     priority
   />
-  <div class="absolute inset-0 bg-gradient-to-r from-[#f7e6cf]/85 via-[#f7e6cf]/35 to-transparent"></div>
-  <Container class="relative !max-w-[1280px] px-4 py-20 sm:px-6 md:py-24 lg:h-full lg:min-h-0 lg:px-8 lg:py-24">
-    <div class="max-w-[420px] rounded-soft bg-white/25 p-6 backdrop-blur-[1px] lg:mt-14 lg:bg-transparent lg:p-0 lg:backdrop-blur-0">
-      <h1 class="font-display text-4xl font-black tracking-[-0.03em] text-[#111827] md:text-5xl">
-        Contact SANYE PACK
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-[#f7e6cf]/85 via-[#f7e6cf]/35 to-transparent"
+  >
+  </div>
+  <Container
+    class="relative !max-w-[1280px] px-4 py-20 sm:px-6 md:py-24 lg:h-full lg:min-h-0 lg:px-8 lg:py-24"
+  >
+    <div
+      class="max-w-[480px] rounded-soft bg-white/25 p-6 backdrop-blur-[1px] lg:mt-14 lg:bg-transparent lg:p-0 lg:backdrop-blur-0"
+    >
+      <h1
+        class="font-display text-4xl font-black tracking-[-0.03em] text-[#111827] md:text-5xl"
+      >
+        Contact ANAN PACK
       </h1>
       <p class="mt-5 text-base leading-8 text-text-main">
-        Tell us about your packaging project. Our team will help you with sourcing, sampling, quotation, and delivery.
+        Tell us about your packaging project. Our team will help you with
+        sourcing, sampling, quotation, and delivery.
       </p>
-      <Button href="#project-form" class="mt-8 px-7 py-3 text-sm normal-case tracking-normal">
+      <Button
+        href="#project-form"
+        class="mt-8 px-7 py-3 text-sm normal-case tracking-normal"
+      >
         Start Your Project
       </Button>
     </div>

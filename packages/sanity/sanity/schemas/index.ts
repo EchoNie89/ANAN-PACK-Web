@@ -11,7 +11,6 @@ import customizationGroup from './customizationGroup';
 import customizationParagraphBlock from './customizationParagraphBlock';
 import customizationListBlock from './customizationListBlock';
 import customizationEntryListBlock from './customizationEntryListBlock';
-import customizationBlock from './customizationBlock';
 import customizationEntry from './customizationEntry';
 import customizationDetailGroup from './customizationDetailGroup';
 import customizationImage from './customizationImage';
@@ -33,7 +32,6 @@ export const schemaTypes = [
   customizationParagraphBlock,
   customizationListBlock,
   customizationEntryListBlock,
-  customizationBlock,
   customizationEntry,
   customizationDetailGroup,
   customizationImage,

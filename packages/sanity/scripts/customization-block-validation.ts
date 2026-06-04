@@ -1,10 +1,8 @@
 import {
-  normalizeCustomizationBlock,
   type CustomizationMarkerStyle,
-  type LegacyCustomizationBlock,
   type ProductCustomizationBlock,
 } from "../../astro/src/lib/customization-content.ts";
-import type { ProductImportCustomizationBlockLike } from "../import-data/products/types";
+import type { ProductImportCustomizationBlock } from "../import-data/products/types";
 
 const MARKER_STYLES = new Set<CustomizationMarkerStyle>([
   "bullet",
@@ -95,14 +93,9 @@ function validateStructuredBlock(
   return errors;
 }
 
-export function validateCustomizationBlockLike(
-  block: ProductImportCustomizationBlockLike | LegacyCustomizationBlock,
+export function validateCustomizationBlock(
+  block: ProductImportCustomizationBlock,
   label: string,
 ): string[] {
-  return validateStructuredBlock(
-    normalizeCustomizationBlock(
-      block as ProductCustomizationBlock | LegacyCustomizationBlock,
-    ),
-    label,
-  );
+  return validateStructuredBlock(block, label);
 }

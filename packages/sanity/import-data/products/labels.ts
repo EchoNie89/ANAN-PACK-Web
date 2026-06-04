@@ -351,6 +351,8 @@ const manifest: ProductImportManifest = {
       ],
       "blocks": [
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "1. Woven Labels",
           "items": [
             "Focus: Durability, High-end feel, Intricate detail.",
@@ -366,6 +368,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "2. Printed Labels",
           "items": [
             "Focus: Skin-friendliness, Vivid colors, Compliance.",
@@ -381,6 +385,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "3. Specialty & Synthetic Materials",
           "items": [
             "Focus: Modern aesthetics, Weather resistance, Uniqueness.",
@@ -396,6 +402,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "4. Heat Transfer Labels",
           "items": [
             "Focus: Zero-friction, Tagless comfort.",
@@ -456,6 +464,8 @@ const manifest: ProductImportManifest = {
       ],
       "blocks": [
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "Straight Cut Labels",
           "items": [
             "Features: Flat labels with clean edges that are sewn directly onto garments.",
@@ -463,6 +473,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "Center Fold Labels",
           "items": [
             "Features: Folded in the middle so both sides can display information such as logo and size.",
@@ -470,6 +482,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "End Fold Labels",
           "items": [
             "Features: Both sides are folded under, allowing the label to be sewn neatly into seams.",
@@ -477,6 +491,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "Manhattan Fold Labels",
           "items": [
             "Features: A premium folding style where both sides fold back behind the label.",
@@ -484,6 +500,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "Loop Fold Labels",
           "items": [
             "Features: Folded to create a loop, allowing additional information to be displayed inside.",
@@ -498,6 +516,8 @@ const manifest: ProductImportManifest = {
       "intro": "All of our custom clothing labels are fully made to order. Brands can choose the exact size and shape to match their product design and brand identity.",
       "blocks": [
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "Custom Sizes",
           "items": [
             "Features: Labels can be produced in any width and length according to your garment requirements.",
@@ -505,6 +525,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "Standard Shapes",
           "items": [
             "Features: Classic shapes including rectangular and square labels for easy sewing and clean presentation.",
@@ -512,6 +534,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "Die-Cut Shapes",
           "items": [
             "Features: Custom die-cut labels designed in unique shapes to create a distinctive brand look.",
@@ -519,6 +543,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          "_type": "listBlock",
+          "markerStyle": "bullet",
           "title": "Rounded Corners",
           "items": [
             "Features: Smooth rounded edges that improve comfort and reduce irritation.",

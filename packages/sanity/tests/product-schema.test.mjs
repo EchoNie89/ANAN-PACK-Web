@@ -119,3 +119,19 @@ test("nested product content schemas preserve hidden import metadata fields", ()
     "Expected customization groups to keep sourceKey as a hidden metadata field",
   );
 });
+
+test("showcase schemas keep group titles required and card titles optional", () => {
+  const showcaseGroupSchema = readSource("sanity/schemas/showcaseGroup.ts");
+  const showcaseCardSchema = readSource("sanity/schemas/showcaseCard.ts");
+
+  assert.match(
+    showcaseGroupSchema,
+    /name: 'title'[\s\S]*?validation: \(Rule\) => Rule\.required\(\)/,
+    "Expected showcase group titles to remain required in Sanity",
+  );
+  assert.doesNotMatch(
+    showcaseCardSchema,
+    /name: 'title'[\s\S]*?type: 'string',\n\s*validation:/,
+    "Expected showcase card titles to omit field-level validation in Sanity",
+  );
+});

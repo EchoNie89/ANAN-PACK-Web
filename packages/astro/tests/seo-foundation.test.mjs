@@ -378,32 +378,75 @@ test("shared page ctas now mirror the home CTA surface and title weight", () => 
   );
 });
 
-test("about page section menu mirrors the dropdown hover and active treatment", () => {
+test("about us section links move from the hero into the header dropdown patterns", () => {
   const aboutHeroSource = readSource("src/components/sections/about/AboutHero.astro");
+  const headerSource = readSource("src/components/sections/Header.astro");
 
-  assert.match(
+  assert.doesNotMatch(
     aboutHeroSource,
     /data-about-menu/,
-    "Expected the About page section menu to expose a root hook for syncing active items",
+    "Expected the About hero to stop rendering its own local section menu root",
   );
-  assert.match(
+  assert.doesNotMatch(
     aboutHeroSource,
     /data-about-menu-link/,
-    "Expected the About page section menu links to expose hooks for active-state syncing",
+    "Expected the About hero to stop rendering local section menu links",
+  );
+
+  assert.match(
+    headerSource,
+    /item\.label === 'About Us'/,
+    "Expected Header to treat About Us as a dedicated dropdown nav branch",
   );
   assert.match(
-    aboutHeroSource,
-    /bg-white px-4 text-center text-base font-bold text-black transition hover:brightness-95 data-\[active=true\]:bg-nav-dropdown-active data-\[active=true\]:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-inset/,
-    "Expected the About page section menu links to share the dropdown hover and active styling",
+    headerSource,
+    /data-menu-trigger="about"/,
+    "Expected Header to expose an About Us desktop dropdown trigger",
   );
   assert.match(
-    aboutHeroSource,
-    /window\.addEventListener\('hashchange', syncAboutMenuLinks\);/,
-    "Expected the About page section menu to resync its active item when the hash changes",
+    headerSource,
+    /aria-controls="about-menu"/,
+    "Expected the About Us desktop trigger to control a dedicated menu panel",
   );
   assert.match(
-    aboutHeroSource,
-    /const currentHash = window\.location\.hash \|\| '#our-story';/,
-    "Expected the About page section menu to default to Our Story when no hash is present",
+    headerSource,
+    /<AboutDropdown forceOpen=\{openMenu === 'about'\} \/>/,
+    "Expected Header to render a dedicated About Us dropdown panel component",
+  );
+  assert.match(
+    headerSource,
+    /open=\{activeNav === 'About Us' \|\| openMenu === 'about'\}/,
+    "Expected the mobile header nav to expose About Us as a collapsible section",
+  );
+  assert.match(
+    headerSource,
+    /aboutMenuItems\.map\(\(aboutItem\) => \(/,
+    "Expected the mobile header nav to render the About Us section links from the shared menu data",
+  );
+  assert.match(
+    headerSource,
+    /const isDefaultAboutSection =\s*normalizePath\(pathPart \|\| '\/'\) === '\/about-us' &&\s*currentPath === '\/about-us' &&\s*!currentHash &&\s*hashPart === 'our-story';/s,
+    "Expected Header to default the About Us dropdown active state to Our Story when no hash is present",
+  );
+});
+
+test("about sustainability keeps the original grs mark but enlarges it without replacing the asset", () => {
+  const aboutSustainabilitySource = readSource("src/components/sections/about/AboutSustainability.astro");
+  const companySource = readSource("src/data/company.ts");
+
+  assert.match(
+    aboutSustainabilitySource,
+    /class=\{`max-h-24 w-auto object-contain \$\{item\.imageClass \?\? ""\}`\}/,
+    "Expected the sustainability certificate image element to accept a per-item class override for visual balancing",
+  );
+  assert.match(
+    companySource,
+    /title: "GRS Recycled Material Options"[\s\S]*image: getLocalImage\("\/images\/home\/cert-grs\.png"\)/,
+    "Expected the center GRS certification item to keep using the original raster asset",
+  );
+  assert.match(
+    companySource,
+    /title: "GRS Recycled Material Options"[\s\S]*imageClass: "scale-\[1\.(?:4|5)\d*\]"/,
+    "Expected the center GRS certification item to enlarge again through a uniform scale override instead of a distorted redraw",
   );
 });

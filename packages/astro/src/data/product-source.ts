@@ -1,7 +1,4 @@
-import type {
-  LegacyCustomizationBlock as ProductLegacyCustomizationBlockSeed,
-  ProductCustomizationBlock as ProductCustomizationBlockSeed,
-} from '../lib/customization-content';
+import type { ProductCustomizationBlock as ProductCustomizationBlockSeed } from '../lib/customization-content';
 
 export interface ProductImage {
   imagePath: string;
@@ -15,6 +12,10 @@ export interface ProductCard {
   title: string;
   description?: string;
   image: ProductImage;
+}
+
+export interface ProductShowcaseCard extends Omit<ProductCard, 'title'> {
+  title?: string;
 }
 
 export interface ProductFeature {
@@ -45,18 +46,14 @@ export interface ProductProcessStep {
 export interface ProductShowcaseGroup {
   title: string;
   description?: string;
-  cards: ProductCard[];
+  cards: ProductShowcaseCard[];
 }
-
-export type ProductCustomizationBlockSeedLike =
-  | ProductCustomizationBlockSeed
-  | ProductLegacyCustomizationBlockSeed;
 
 export interface ProductCustomizationGroup {
   title: string;
   intro?: string;
   images?: ProductImage[];
-  blocks: ProductCustomizationBlockSeedLike[];
+  blocks: ProductCustomizationBlockSeed[];
 }
 
 export interface ProductCtaData {

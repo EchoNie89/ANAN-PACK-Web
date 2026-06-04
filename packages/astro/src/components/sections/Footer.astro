@@ -8,6 +8,7 @@ import { getSiteName } from '../../lib/seo';
 import { getSiteSettings } from '../../lib/site-settings';
 
 const footerQrImage = getLocalImage('/images/home/qr-code.png');
+const footerLogoImage = getLocalImage('/images/home/anan-pack-logo.png');
 const { contactDetails, socialMedia } = await getSiteSettings();
 const siteName = getSiteName();
 
@@ -69,12 +70,13 @@ const footerContacts = [
           href="/"
           class="inline-flex focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
         >
-          <img
-            src="/images/home/logoipsum-header.svg"
+          <LocalImage
+            src={footerLogoImage}
             alt={siteName}
-            class="h-12 w-auto"
+            class="h-[45px] w-auto max-w-full"
             loading="lazy"
-            decoding="async"
+            sizes="229px"
+            widths={[229, 458]}
           />
         </a>
         <p class="mt-8 max-w-[420px] text-sm leading-[26px] text-text-main">
@@ -228,19 +230,9 @@ const footerContacts = [
         Reserved.
       </p>
       <div class="flex items-center gap-4">
-        <a
-          href="/privacy-policy"
-          class="transition hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
-        >
-          Privacy Policy
-        </a>
+        <a href="/privacy-policy" class="transition hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2">Privacy Policy</a>
         <span class="h-3 w-px bg-text-muted/40" aria-hidden="true"></span>
-        <a
-          href="/terms-of-use"
-          class="transition hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
-        >
-          Terms of Use
-        </a>
+        <a href="/terms-of-use" class="transition hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2">Terms of Use</a>
         <a
           href="#site-top"
           class="ml-1 flex size-5 items-center justify-center rounded-full border border-text-muted/50 text-text-muted transition hover:border-brand hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"

@@ -5,7 +5,7 @@ import test from "node:test";
 const readSource = (relativePath) =>
   readFileSync(new URL(`../${relativePath}`, import.meta.url), "utf8");
 
-test("product customization renderer handles normalized structured blocks", () => {
+test("product customization renderer handles structured blocks directly", () => {
   const productPageSource = readSource(
     "src/components/sections/products/ProductPage.astro",
   );
@@ -13,14 +13,8 @@ test("product customization renderer handles normalized structured blocks", () =
     "src/components/sections/products/ProductCustomization.astro",
   );
 
-  assert.match(
-    productPageSource,
-    /import\s*\{[^}]*normalizeCustomizationBlock[^}]*\}\s*from\s*["']\.\.\/\.\.\/\.\.\/lib\/customization-content["'];/,
-  );
-  assert.match(
-    productPageSource,
-    /blocks:\s*group\.blocks\.map\(\(block\)\s*=>\s*normalizeCustomizationBlock\(block\)\)/,
-  );
+  assert.doesNotMatch(productPageSource, /normalizeCustomizationBlock/);
+  assert.match(productPageSource, /blocks:\s*group\.blocks,/);
   assert.match(
     productPageSource,
     /const showcaseGroups = sanityShowcaseGroups\?\.length\s*\?\s*sanityShowcaseGroups\s*:\s*enableLocalProductFallback\s*\?\s*page\.showcaseGroups\s*:\s*\[];/,
@@ -48,7 +42,17 @@ test("product customization renderer handles normalized structured blocks", () =
   assert.match(customizationSource, /markerStyle === "number"/);
   assert.match(customizationSource, /markerStyle === "bullet"/);
   assert.match(customizationSource, /markerStyle === "plain"/);
+  assert.match(customizationSource, /block\.intro/);
   assert.match(customizationSource, /block\.note/);
   assert.match(customizationSource, /entry\.note/);
   assert.match(customizationSource, /detailGroup\.note/);
+  assert.match(customizationSource, /leading-tight tracking-\[0\.01em\] text-text-main md:text-\[32px\]/);
+  assert.match(customizationSource, /index === 0 \? "mt-3 md:mt-4" : "mt-12 md:mt-14"/);
+  assert.match(customizationSource, /text-\[20px\] font-semibold leading-tight text-text-main md:text-\[24px\]/);
+  assert.match(customizationSource, /text-sm leading-\[24px\] text-text-main md:text-\[15px\] md:leading-\[25px\]/);
+  assert.match(customizationSource, /mt-4 grid gap-5 text-sm leading-\[24px\] text-text-main md:text-\[15px\] md:leading-\[25px\]/);
+  assert.match(customizationSource, /<section class="grid gap-1\.5">/);
+  assert.match(customizationSource, /<section class="grid gap-3">/);
+  assert.match(customizationSource, /<li class="space-y-2\.5">/);
+  assert.match(customizationSource, /<div class="space-y-1\.5">/);
 });

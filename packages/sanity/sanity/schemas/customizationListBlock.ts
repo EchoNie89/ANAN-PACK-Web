@@ -7,6 +7,12 @@ export default defineType({
   fields: [
     defineField({ name: 'title', title: 'Title', type: 'string' }),
     defineField({
+      name: 'intro',
+      title: 'Introduction',
+      type: 'text',
+      rows: 3,
+    }),
+    defineField({
       name: 'markerStyle',
       title: 'Marker Style',
       type: 'string',

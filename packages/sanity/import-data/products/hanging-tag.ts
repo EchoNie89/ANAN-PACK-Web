@@ -131,6 +131,8 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Versatile Paper & Cardstock — The Classic Choice",
           items: [
             "The most popular and cost-effective option for apparel hang tags.",
@@ -140,6 +142,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Durable Synthetics — Waterproof & Tear-Resistant",
           items: [
             "Engineered for longevity and specialized environments like swimwear or outdoor gear.",
@@ -148,12 +152,16 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Luxury Metal Accents — The Prestige Tier",
           items: [
             "Elevate your brand to the elite tier with our custom metal labels. Available in Stainless Steel, Aluminum Alloy, and Copper, these tags are corrosion-resistant and provide a prestigious, weighty feel that resonates with luxury consumers."
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Tactile Fabric & Woven Tags — The Organic Touch",
           items: [
             "Soft to the touch and integrated seamlessly with apparel. We offer Cotton, Linen, and Polyester options. These add a craft-oriented, artisanal feel to boutique clothing and home textiles, often paired with our woven labels."
@@ -178,6 +186,8 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Luxury Finishes & Textures",
           items: [
             "Hot Foil Stamping (Gold/Silver/Custom Colors): Uses heat and pressure to transfer metallic foil, creating a prestigious, high-luster effect. Perfect for luxury hang tags and high-end brand statements.",
@@ -186,6 +196,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Precision Printing & Color Accuracy",
           items: [
             "High-Opacity Screen Printing: Delivers vibrant, saturated colors. It's the industry standard for solid spot colors and metallic inks on dark or specialty black cardstocks.",
@@ -194,6 +206,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Specialized Customization",
           items: [
             "Custom Die-Cutting & Silhouettes: Precision cutting into any unique shape or rounded corners to match your brand's silhouette. Perfect for creative branding and distinctive garment packaging.",

@@ -1,7 +1,4 @@
-import type {
-  LegacyCustomizationBlock,
-  ProductCustomizationBlock,
-} from "../../../astro/src/lib/customization-content.ts";
+import type { ProductCustomizationBlock } from "../../../astro/src/lib/customization-content.ts";
 
 export type ProductImportSection = "showcaseGroups" | "applications" | "customizationGroups";
 
@@ -14,20 +11,18 @@ export interface ProductImportCard {
   figmaNodeId?: string;
 }
 
+export interface ProductImportShowcaseCard extends Omit<ProductImportCard, 'title'> {
+  title?: string;
+}
+
 export interface ProductImportGroup {
   sourceKey: string;
   title: string;
-  cards: ProductImportCard[];
+  cards: ProductImportShowcaseCard[];
   figmaNodeId?: string;
 }
 
 export type ProductImportCustomizationBlock = ProductCustomizationBlock;
-
-export type ProductImportLegacyCustomizationBlock = LegacyCustomizationBlock;
-
-export type ProductImportCustomizationBlockLike =
-  | ProductImportCustomizationBlock
-  | ProductImportLegacyCustomizationBlock;
 
 export interface ProductImportCustomizationGroup {
   sourceKey: string;
@@ -35,7 +30,7 @@ export interface ProductImportCustomizationGroup {
   figmaNodeId?: string;
   intro?: string;
   images?: ProductImportCard[];
-  blocks: ProductImportCustomizationBlockLike[];
+  blocks: ProductImportCustomizationBlock[];
 }
 
 export interface ProductImportManifest {

@@ -308,6 +308,8 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Eco-Friendly Kraft Paper — The Sustainable Choice",
           items: [
             "The absolute gold standard for environmentally conscious brands.",
@@ -316,6 +318,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Durable Synthetics — Waterproof & Tear-Resistant",
           items: [
             "Engineered for longevity, high moisture resistance, and heavy-duty transit.",
@@ -324,6 +328,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Reinforced Fiberglass — The Heavy-Duty Tier",
           items: [
             "Elevate your package security. We embed strong fiberglass yarns (in a diamond or linear pattern) between layers of kraft paper. This creates an ultra-strong apparel shipping tape designed specifically for heavy bulk orders, winter coats, or footwear boxes.",
@@ -340,6 +346,8 @@ const manifest: ProductImportManifest = {
       figmaNodeId: "19684:433",
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Vibrant Flexographic & Offset Printing",
           items: [
             "Delivers vibrant, saturated colors directly onto the tape surface. We match Pantone colors precisely to ensure your branded packaging tape is 100% consistent with your tags and labels.",
@@ -347,6 +355,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Premium Finishes — Matte vs. Glossy",
           items: [
             "Customize the tactile feel and light reflection of your poly tapes. A glossy finish makes colors pop, while a matte finish provides a muted, sophisticated, and scuff-resistant look.",
@@ -354,6 +364,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Tamper-Evident & Security Craftsmanship",
           items: [
             "Utilizing specific custom gummed tape adhesives that fuse with corrugated boxes. If removed, it leaves clear evidence of tampering.",
@@ -361,6 +373,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Low-MOQ Specialized Customization",
           items: [
             "Flexible printing plates allow us to offer a custom tape low MOQ. We accommodate small-batch seasonal designs without compromising on industrial-grade print quality.",

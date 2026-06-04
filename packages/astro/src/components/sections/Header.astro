@@ -1,24 +1,29 @@
 ---
 import Container from '../ui/Container.astro';
+import LocalImage from '../ui/LocalImage.astro';
 import SanityImage from '../ui/SanityImage.astro';
+import AboutDropdown from './AboutDropdown.astro';
 import ProductsMegaMenu from './ProductsMegaMenu.astro';
 import ServicesDropdown from './ServicesDropdown.astro';
 import SolutionsDropdown from './SolutionsDropdown.astro';
 import {
+  aboutMenuItems,
   navItems,
   serviceMenuItems,
   solutionMenuItems,
 } from '../../data/home';
 import { getProductMenuItems } from '../../lib/product-pages';
+import { getLocalImage } from '../../lib/local-images';
 import { getSiteName } from '../../lib/seo';
 
 interface Props {
   activeNav?: string;
-  openMenu?: 'products' | 'solutions' | 'services';
+  openMenu?: 'products' | 'solutions' | 'services' | 'about';
 }
 
 const { activeNav = 'Home', openMenu } = Astro.props;
 const siteName = getSiteName();
+const headerLogoImage = getLocalImage('/images/home/anan-pack-logo.png');
 const productMenuItems = await getProductMenuItems();
 
 const normalizePath = (value: string) => {
@@ -39,14 +44,16 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
     <a
       href="/"
       class="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
-      aria-label="Tagora home"
+      aria-label={`${siteName} home`}
     >
-      <img
-        src="/images/home/logoipsum-header.svg"
+      <LocalImage
+        src={headerLogoImage}
         alt={siteName}
-        class="h-10 w-auto md:h-[60px]"
+        class="h-[30px] w-auto"
         loading="eager"
-        decoding="async"
+        sizes="152px"
+        widths={[152, 304]}
+        priority
       />
     </a>
 
@@ -176,6 +183,45 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                 </svg>
               </button>
               <ServicesDropdown forceOpen={openMenu === 'services'} />
+            </div>
+          ) : item.label === 'About Us' ? (
+            <div
+              class="group/nav relative flex h-full items-center"
+              data-menu-root
+            >
+              <button
+                type="button"
+                data-menu-trigger="about"
+                aria-controls="about-menu"
+                aria-expanded={openMenu === 'about' ? 'true' : 'false'}
+                class={`inline-flex items-center gap-1 leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
+                  activeNav === 'About Us'
+                    ? 'text-nav-highlight'
+                    : 'text-ink hover:text-brand'
+                } cursor-pointer border-0 bg-transparent p-0 text-base font-bold`}
+                aria-haspopup="true"
+              >
+                <span
+                  class={`relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-nav-highlight after:content-[''] ${
+                    activeNav === 'About Us'
+                      ? 'after:opacity-100'
+                      : 'after:opacity-0'
+                  }`}
+                >
+                  {item.label}
+                </span>
+                <svg
+                  viewBox="0 0 20 20"
+                  class="size-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path d="m5 8 5 5 5-5" />
+                </svg>
+              </button>
+              <AboutDropdown forceOpen={openMenu === 'about'} />
             </div>
           ) : (
             <a
@@ -335,6 +381,45 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
                   ))}
                 </div>
               </details>
+            ) : item.label === 'About Us' ? (
+              <details
+                class="rounded px-2 py-2 hover:bg-surface-muted"
+                open={activeNav === 'About Us' || openMenu === 'about'}
+              >
+                <summary
+                  class={`flex cursor-pointer list-none items-center justify-between ${
+                    activeNav === 'About Us' ? 'text-brand-dark' : 'text-ink'
+                  }`}
+                >
+                  About Us
+                  <svg
+                    viewBox="0 0 16 16"
+                    class="size-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path d="m4 6 4 4 4-4" />
+                  </svg>
+                </summary>
+                <div class="mt-3 grid gap-1">
+                  {aboutMenuItems.map((aboutItem) => (
+                    <a
+                      href={aboutItem.href}
+                      data-about-section-link
+                      data-active={
+                        activeNav === 'About Us' && aboutItem.href.endsWith('#our-story')
+                          ? 'true'
+                          : 'false'
+                      }
+                      class="rounded px-3 py-2 text-text-main hover:bg-surface-muted data-[active=true]:bg-brand-soft/80 data-[active=true]:text-brand-dark"
+                    >
+                      {aboutItem.title}
+                    </a>
+                  ))}
+                </div>
+              </details>
             ) : (
               <a
                 class={`rounded px-2 py-2 ${
@@ -363,7 +448,7 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
     );
     const panels = Array.from(primaryNav.querySelectorAll('[data-menu-panel]'));
     const menuLinks = Array.from(
-      primaryNav.querySelectorAll('[data-menu-link]'),
+      document.querySelectorAll('[data-menu-link], [data-about-section-link]'),
     );
     const menuRoots = Array.from(
       primaryNav.querySelectorAll('[data-menu-root]'),
@@ -382,9 +467,14 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
       menuLinks.forEach((link) => {
         const href = link.getAttribute('href') ?? '';
         const [pathPart, hashPart] = href.split('#');
+        const isDefaultAboutSection =
+          normalizePath(pathPart || '/') === '/about-us' &&
+          currentPath === '/about-us' &&
+          !currentHash &&
+          hashPart === 'our-story';
         const isActive = hashPart
           ? normalizePath(pathPart || '/') === currentPath &&
-            `#${hashPart}` === currentHash
+            (`#${hashPart}` === currentHash || isDefaultAboutSection)
           : normalizePath(href) === currentPath;
 
         link.setAttribute('data-active', String(isActive));

@@ -22,6 +22,11 @@ test("product migration scripts cover baseline export compare and batch seeding"
     true,
     "Expected a batch seed script for all local products",
   );
+  assert.equal(
+    existsSync(new URL("../scripts/migrate-customization-blocks.ts", import.meta.url)),
+    false,
+    "Expected legacy customization migration scripts to be removed after structured block rollout",
+  );
 
   const seedSource = readSource("scripts/seed-products.ts");
   const packageSource = readSource("package.json");
@@ -45,5 +50,37 @@ test("product migration scripts cover baseline export compare and batch seeding"
     packageSource,
     /seed:products:all/,
     "Expected a package script for batch seeding",
+  );
+  assert.doesNotMatch(
+    packageSource,
+    /migrate:customization-blocks/,
+    "Expected the legacy customization migration script entry to be removed",
+  );
+});
+
+test("showcase import pipeline allows cards without a title while keeping group titles required", () => {
+  const seedSource = readSource("scripts/seed-products.ts");
+  const importTypesSource = readSource("import-data/products/types.ts");
+  const baselineSource = readSource("scripts/product-content-source.ts");
+
+  assert.match(
+    importTypesSource,
+    /export interface ProductImportShowcaseCard extends Omit<ProductImportCard, 'title'> \{[\s\S]*title\?: string;/,
+    "Expected showcase import cards to allow an omitted title",
+  );
+  assert.match(
+    baselineSource,
+    /type ProductBaselineShowcaseCard = Omit<ProductBaselineCard, "title"> & \{[\s\S]*title\?: string;/,
+    "Expected the product baseline export type to allow showcase cards without a title",
+  );
+  assert.match(
+    seedSource,
+    /showcaseGroups\[\$\{groupIndex\}\]\.title must be non-empty/,
+    "Expected the seed pipeline to keep showcase group titles required",
+  );
+  assert.match(
+    seedSource,
+    /validateAndResolveCard\(\s*card,\s*`showcaseGroups\[\$\{groupIndex\}\]\.cards\[\$\{cardIndex\}\]`,\s*slug,\s*cardSourceKeys,\s*errors,\s*false,\s*\)/,
+    "Expected showcase card validation to allow an omitted title",
   );
 });

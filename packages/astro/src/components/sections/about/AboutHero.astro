@@ -3,16 +3,10 @@ import Container from "../../ui/Container.astro";
 import LocalImage from "../../ui/LocalImage.astro";
 import { getLocalImage } from "../../../lib/local-images";
 
-const menuItems = [
-  { label: "Our Story", href: "#our-story", active: true },
-  { label: "Why Choose Us", href: "#why-choose-us" },
-  { label: "Contact Us", href: "#about-contact-cta" },
-] as const;
-
 const heroImage = getLocalImage("/images/about/about-hero.png");
 ---
 
-<section class="relative overflow-hidden bg-page-muted min-h-[420px] lg:h-[474px]">
+<section class="relative overflow-hidden bg-page-muted min-h-[420px] lg:h-[calc(100dvh-88px)]">
   <LocalImage
     src={heroImage}
     alt="Premium packaging collection arranged in a modern showroom"
@@ -47,48 +41,6 @@ const heroImage = getLocalImage("/images/about/about-hero.png");
         </a>
       </div>
 
-      <nav
-        class="motion-enter mt-10 overflow-hidden rounded-none bg-surface-panel shadow-menu lg:absolute lg:left-[calc(50%+378px)] lg:top-0 lg:mt-0 lg:w-[226px] lg:-translate-x-1/2"
-        aria-label="About page menu"
-        data-about-menu
-        style="--motion-delay: 360ms;"
-      >
-        {
-          menuItems.map((item) => (
-            <a
-              href={item.href}
-              data-about-menu-link
-              data-active={item.active ? "true" : "false"}
-              class="flex min-h-[51px] items-center justify-center bg-white px-4 text-center text-base font-bold text-black transition hover:brightness-95 data-[active=true]:bg-nav-dropdown-active data-[active=true]:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-inset"
-            >
-              {item.label}
-            </a>
-          ))
-        }
-      </nav>
     </div>
   </Container>
 </section>
-
-<script>
-  const aboutMenu = document.querySelector('[data-about-menu]');
-
-  if (aboutMenu instanceof HTMLElement) {
-    const aboutMenuLinks = Array.from(
-      aboutMenu.querySelectorAll('[data-about-menu-link]'),
-    );
-
-    const syncAboutMenuLinks = () => {
-      const currentHash = window.location.hash || '#our-story';
-
-      aboutMenuLinks.forEach((link) => {
-        if (!(link instanceof HTMLAnchorElement)) return;
-        const href = link.getAttribute('href') ?? '';
-        link.setAttribute('data-active', String(href === currentHash));
-      });
-    };
-
-    window.addEventListener('hashchange', syncAboutMenuLinks);
-    syncAboutMenuLinks();
-  }
-</script>

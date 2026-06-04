@@ -219,6 +219,8 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Virgin Pulp Tissue Paper",
           items: [
             "Virgin pulp tissue paper is made from high-quality wood pulp, offering a smooth surface and consistent paper quality.",
@@ -228,6 +230,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Recycled Tissue Paper",
           items: [
             "Recycled tissue paper is produced using recycled fibers and offers a more sustainable packaging option.",
@@ -246,6 +250,8 @@ const manifest: ProductImportManifest = {
       figmaNodeId: "19756:1332",
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "17–20 GSM Tissue Paper",
           items: [
             "This is a lightweight tissue paper commonly used for delicate product packaging.",
@@ -253,6 +259,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "21–24 GSM Tissue Paper",
           items: [
             "This is the most common thickness used for custom printed tissue paper.",
@@ -261,6 +269,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "25–30 GSM Tissue Paper",
           items: [
             "Heavier tissue paper offers improved durability and a more premium feel.",
@@ -327,6 +337,8 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Flexographic Printing",
           items: [
             "Flexographic printing is one of the most widely used methods for large-scale tissue paper production.",
@@ -335,6 +347,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Offset Printing",
           items: [
             "Offset printing allows high-resolution printing with excellent color accuracy.",
@@ -343,6 +357,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Digital Printing",
           items: [
             "Digital printing allows flexible production for smaller orders and complex designs.",
@@ -410,6 +426,8 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Tissue Paper Sheets",
           items: [
             "Pre-cut tissue paper sheets are the most commonly used format for retail packaging.",
@@ -418,6 +436,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Tissue Paper Rolls",
           items: [
             "Tissue paper rolls are commonly used in automated packaging environments or high-volume operations.",
@@ -484,6 +504,8 @@ const manifest: ProductImportManifest = {
       ],
       blocks: [
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Custom Brand Colors",
           items: [
             "Tissue paper can be produced in custom colors to match your brand identity.",
@@ -491,6 +513,8 @@ const manifest: ProductImportManifest = {
           ]
         },
         {
+          _type: "listBlock",
+          markerStyle: "bullet",
           title: "Printed Patterns",
           items: [
             "In addition to logo printing, tissue paper can also include repeating brand patterns.",

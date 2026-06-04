@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 
 const readSource = (relativePath) =>
@@ -8,17 +8,21 @@ const readSource = (relativePath) =>
 test("customization schemas register the new block union", () => {
   const groupSource = readSource("../sanity/sanity/schemas/customizationGroup.ts");
   const indexSource = readSource("../sanity/sanity/schemas/index.ts");
+  const listBlockSource = readSource("../sanity/sanity/schemas/customizationListBlock.ts");
+  const legacySchemaUrl = new URL("../sanity/sanity/schemas/customizationBlock.ts", import.meta.url);
 
   assert.match(groupSource, /name:\s*'figmaNodeId'/);
   assert.match(groupSource, /of:\s*\[\s*\{ type: 'paragraphBlock' \},/);
   assert.match(groupSource, /\{ type: 'listBlock' \}/);
   assert.match(groupSource, /\{ type: 'entryListBlock' \}/);
-  assert.match(groupSource, /\{ type: 'customizationBlock' \}/);
+  assert.doesNotMatch(groupSource, /\{ type: 'customizationBlock' \}/);
 
   assert.match(indexSource, /import customizationParagraphBlock from '\.\/customizationParagraphBlock';/);
   assert.match(indexSource, /import customizationListBlock from '\.\/customizationListBlock';/);
   assert.match(indexSource, /import customizationEntryListBlock from '\.\/customizationEntryListBlock';/);
   assert.match(indexSource, /import customizationEntry from '\.\/customizationEntry';/);
   assert.match(indexSource, /import customizationDetailGroup from '\.\/customizationDetailGroup';/);
-  assert.match(indexSource, /import customizationBlock from '\.\/customizationBlock';/);
+  assert.doesNotMatch(indexSource, /import customizationBlock from '\.\/customizationBlock';/);
+  assert.match(listBlockSource, /name:\s*'intro'/);
+  assert.equal(existsSync(legacySchemaUrl), false);
 });
