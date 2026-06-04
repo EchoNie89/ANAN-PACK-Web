@@ -13,15 +13,12 @@ test("customization schemas register the new block union", () => {
   assert.match(groupSource, /of:\s*\[\s*\{ type: 'paragraphBlock' \},/);
   assert.match(groupSource, /\{ type: 'listBlock' \}/);
   assert.match(groupSource, /\{ type: 'entryListBlock' \}/);
+  assert.match(groupSource, /\{ type: 'customizationBlock' \}/);
 
   assert.match(indexSource, /import customizationParagraphBlock from '\.\/customizationParagraphBlock';/);
   assert.match(indexSource, /import customizationListBlock from '\.\/customizationListBlock';/);
   assert.match(indexSource, /import customizationEntryListBlock from '\.\/customizationEntryListBlock';/);
   assert.match(indexSource, /import customizationEntry from '\.\/customizationEntry';/);
   assert.match(indexSource, /import customizationDetailGroup from '\.\/customizationDetailGroup';/);
-
-  assert.doesNotMatch(
-    indexSource,
-    /import customizationBlock from '\.\/customizationBlock';/,
-  );
+  assert.match(indexSource, /import customizationBlock from '\.\/customizationBlock';/);
 });
