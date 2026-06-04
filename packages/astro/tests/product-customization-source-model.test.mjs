@@ -27,3 +27,20 @@ test("product manifests use explicit customization block types", async () => {
 
   assert.deepEqual(legacyBlocks, []);
 });
+
+test("local product source pages use explicit customization block types", async () => {
+  const { productSourcePages } = await import("../src/data/product-source.ts");
+  const legacyBlocks = [];
+
+  for (const page of productSourcePages) {
+    for (const group of page.customizationGroups ?? []) {
+      for (const block of group.blocks ?? []) {
+        if (!block._type) {
+          legacyBlocks.push(`${page.slug}:${group.title}:${block.title ?? "(untitled block)"}`);
+        }
+      }
+    }
+  }
+
+  assert.deepEqual(legacyBlocks, []);
+});

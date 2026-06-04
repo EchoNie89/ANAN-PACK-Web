@@ -896,6 +896,8 @@ export const productSourcePages: ProductPageData[] = [
         ],
         blocks: [
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: 'Available Custom Options',
             items: [...productShell.highlights],
           },
@@ -1304,6 +1306,8 @@ export const productSourcePages: ProductPageData[] = [
         ],
         blocks: [
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title:
               '1. Cotton & Canvas (The Breathable Standards) Sourced for maximum durability and environmental responsibility.',
             items: [
@@ -1312,6 +1316,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title:
               '2. Velvet & Suede (The Luxury Shields) Designed for high-end, scratch-free protection. ',
             items: [
@@ -1319,6 +1325,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title:
               '3. Glossy Satin (The Frictionless Finish) Offering a silky, high-end sheen, satin dust bags are specifically woven to minimize fabric friction. ',
             items: [
@@ -1326,6 +1334,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title:
               '4. Non-Woven (The High-Volume Solution) Lightweight, water-resistant, and incredibly cost-effective. ',
             items: [
@@ -1372,6 +1382,8 @@ export const productSourcePages: ProductPageData[] = [
         ],
         blocks: [
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '1. Precision Silkscreen Printing',
             items: [
               'Features: The most popular and versatile method for transferring your design onto fabric. We use eco-friendly, fade-resistant inks to ensure your custom dust bags with logo look sharp and vibrant, even on highly textured canvas.',
@@ -1379,6 +1391,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '2. Premium Embroidery',
             items: [
               'Features: Add a tactile, 3D dimension to your brand. Our high-density embroidery machines stitch your logo directly into the fabric, offering an unmatched level of sophistication and permanence.',
@@ -1386,6 +1400,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '3. Drawstrings & Hardware Customization',
             items: [
               'Features: The closure is the first thing your customer touches. Choose from natural cotton ropes, elegant satin ribbons, or durable nylon cords. We can also add custom metal stoppers, tassels, or branded tags to the drawstrings.',
@@ -1393,6 +1409,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '4. Low-MOQ & Flexible Production',
             items: [
               "Features: You don't need to order tens of thousands to get factory-direct quality. Our flexible production lines allow us to offer low MOQ custom pouches, making premium packaging accessible to independent designers and growing brands.",
@@ -1650,6 +1668,8 @@ export const productSourcePages: ProductPageData[] = [
         ],
         blocks: [
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '1. Woven Labels',
             items: [
               'Focus: Durability, High-end feel, Intricate detail.',
@@ -1665,6 +1685,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '2. Printed Labels',
             items: [
               'Focus: Skin-friendliness, Vivid colors, Compliance.',
@@ -1680,6 +1702,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '3. Specialty & Synthetic Materials',
             items: [
               'Focus: Modern aesthetics, Weather resistance, Uniqueness.',
@@ -1739,6 +1763,8 @@ export const productSourcePages: ProductPageData[] = [
         ],
         blocks: [
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '• Straight Cut Labels',
             items: [
               'Features: Flat labels with clean edges that are sewn directly onto garments.',
@@ -1746,6 +1772,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '• Center Fold Labels',
             items: [
               'Features: Folded in the middle so both sides can display information such as logo and size.',
@@ -1753,6 +1781,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '• End Fold Labels',
             items: [
               'Features: Both sides are folded under, allowing the label to be sewn neatly into seams.',
@@ -1760,6 +1790,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '• Manhattan Fold Labels',
             items: [
               'Features: A premium folding style where both sides fold back behind the label.',
@@ -1767,6 +1799,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '• Loop Fold Labels',
             items: [
               'Features: Folded to create a loop, allowing additional information to be displayed inside.',
@@ -1782,6 +1816,8 @@ export const productSourcePages: ProductPageData[] = [
         images: [],
         blocks: [
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '• Custom Sizes',
             items: [
               'Features: Labels can be produced in any width and length according to your garment requirements.',
@@ -1789,6 +1825,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '• Standard Shapes',
             items: [
               'Features: Classic shapes including rectangular and square labels for easy sewing and clean presentation.',
@@ -1796,6 +1834,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '• Die-Cut Shapes',
             items: [
               'Features: Custom die-cut labels designed in unique shapes to create a distinctive brand look.',
@@ -1803,6 +1843,8 @@ export const productSourcePages: ProductPageData[] = [
             ],
           },
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: '• Rounded Corners',
             items: [
               'Features: Smooth rounded edges that improve comfort and reduce irritation.',
@@ -2108,6 +2150,8 @@ export const productSourcePages: ProductPageData[] = [
         ],
         blocks: [
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: 'Available Custom Options',
             items: [...productShell.highlights],
           },
@@ -2401,6 +2445,8 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
         ],
         blocks: [
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: 'Available Custom Options',
             items: [...productShell.highlights],
           },
@@ -2682,6 +2728,8 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
         ],
         blocks: [
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: 'Available Custom Options',
             items: [...productShell.highlights],
           },
@@ -2913,6 +2961,8 @@ Common patch styles include embroidered patches, woven patches, chenille patches
         ],
         blocks: [
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: 'Available Custom Options',
             items: [...productShell.highlights],
           },
@@ -3206,6 +3256,8 @@ Custom tissue paper helps brands create a consistent and elegant packaging style
         ],
         blocks: [
           {
+            _type: 'listBlock',
+            markerStyle: 'bullet',
             title: 'Available Custom Options',
             items: [...productShell.highlights],
           },
