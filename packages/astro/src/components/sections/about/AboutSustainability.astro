@@ -1,42 +1,76 @@
 ---
 import Container from "../../ui/Container.astro";
-import SectionTitle from "../../ui/SectionTitle.astro";
 import { aboutSustainability } from "../../../data/company";
 import LocalImage from "../../ui/LocalImage.astro";
+
+const iconLayouts = [
+  {
+    slotClass: "h-[156px] w-full items-start justify-center",
+    frameClass: "h-[124px] w-[98px]",
+    imageClass: "size-full object-contain",
+    sizes: "98px",
+    widths: [128, 192, 256],
+  },
+  {
+    slotClass: "h-[156px] w-full items-start justify-center",
+    frameClass: "relative h-[125px] w-[258px] overflow-hidden",
+    imageClass: "absolute left-[-99px] top-[-108px] h-[339px] w-[454px] max-w-none",
+    sizes: "258px",
+    widths: [320, 512, 768],
+  },
+  {
+    slotClass: "h-[156px] w-full items-start justify-center",
+    frameClass: "relative h-[109px] w-[249px] overflow-hidden",
+    imageClass: "absolute left-[3px] top-0 h-[133px] w-[243px] max-w-none",
+    sizes: "249px",
+    widths: [256, 384, 512],
+  },
+] as const;
 ---
 
-<section class="bg-page-muted py-16 md:py-24">
-  <Container class="!max-w-[1280px]">
-    <div data-reveal>
-      <SectionTitle
-        eyebrow="SUSTAINABLE & CERTIFIED MATERIAL OPTIONS"
-        title="Supporting Your Brand’s Sustainability Goals."
-        align="center"
-      />
-    </div>
-    <div class="mt-12 grid gap-8 md:grid-cols-3">
-      {
-        aboutSustainability.map((item, index) => (
-          <article
-            class="motion-hover-card text-center"
-            data-reveal
-            style={`--reveal-delay: ${index * 80}ms;`}
-          >
-            <div class="mx-auto flex h-32 items-center justify-center rounded-soft bg-white px-6 shadow-card">
-              <LocalImage
-                src={item.image}
-                alt={item.alt}
-                class={`max-h-24 w-auto object-contain ${item.imageClass ?? ""}`}
-                loading="lazy"
-                sizes="128px"
-                widths={[128, 192, 256]}
-              />
-            </div>
-            <h3 class="mt-5 text-lg font-bold text-ink">{item.title}</h3>
-            <p class="mt-3 text-sm leading-7 text-text-muted">{item.description}</p>
-          </article>
-        ))
-      }
+<section class="bg-[#f9f9f9] py-16 md:py-20 lg:py-[59px]">
+  <Container class="!max-w-none lg:px-[121px]">
+    <div class="mx-auto lg:max-w-[1200px]">
+      <div class="text-center" data-reveal>
+        <p class="mx-auto max-w-[414px] text-[14px] font-extrabold uppercase tracking-[0.03em] text-[#a67237] md:text-[16px] md:leading-[normal]">
+          SUSTAINABLE & CERTIFIED MATERIAL OPTIONS
+        </p>
+        <h2 class="mx-auto mt-4 max-w-[570px] text-[22px] font-extrabold capitalize tracking-[0.03em] text-black md:text-[24px] md:leading-[normal]">
+          Supporting Your Brand’s Sustainability Goals.
+        </h2>
+      </div>
+      <div class="mt-14 grid gap-y-12 lg:mt-[60px] lg:grid-cols-[344px_344px_344px] lg:justify-between">
+        {
+          aboutSustainability.map((item, index) => {
+            const layout = iconLayouts[index];
+
+            return (
+              <article
+                class="flex w-full flex-col items-center lg:w-[344px]"
+                data-reveal
+                style={`--reveal-delay: ${index * 80}ms;`}
+              >
+                <h3 class="sr-only">{item.title}</h3>
+                <div class={`mx-auto flex ${layout.slotClass}`}>
+                  <div class={`mx-auto flex items-center justify-center ${layout.frameClass}`}>
+                    <LocalImage
+                      src={item.image}
+                      alt={item.alt}
+                      class={layout.imageClass}
+                      loading="lazy"
+                      sizes={layout.sizes}
+                      widths={layout.widths}
+                    />
+                  </div>
+                </div>
+                <p class="max-w-[344px] text-left text-[14px] leading-6 text-[#666666] capitalize md:text-justify lg:w-[344px]">
+                  {item.description}
+                </p>
+              </article>
+            );
+          })
+        }
+      </div>
     </div>
   </Container>
 </section>

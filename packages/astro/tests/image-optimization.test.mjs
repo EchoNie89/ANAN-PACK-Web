@@ -299,25 +299,62 @@ test("product customization process icons use local figma svg assets", () => {
   );
 });
 
-test("home and solutions case study sections mirror the product figma layout", () => {
+test("home case study follows the dedicated figma card layout", () => {
   const homeCaseStudySource = readSource("src/components/sections/CaseStudy.astro");
+
+  assert.match(
+    homeCaseStudySource,
+    /aspect-\[562\/486\]/,
+    "Expected the home case study image to use the Figma landscape ratio",
+  );
+  assert.match(
+    homeCaseStudySource,
+    /uppercase tracking-\[0\.03em\] text-\[#A67237\]/,
+    "Expected the home case study kicker to use the Figma brand accent styling",
+  );
+  assert.match(
+    homeCaseStudySource,
+    /bg-\[#F6F4EF\]/,
+    "Expected the home case study quote to sit inside the warm Figma card",
+  );
+  assert.match(
+    homeCaseStudySource,
+    /case-study-quote\.png/,
+    "Expected the home case study quote mark to use the downloaded Figma asset",
+  );
+  assert.match(
+    homeCaseStudySource,
+    /View More Case Studies/,
+    "Expected the home case study CTA copy to match the Figma button label",
+  );
+  assert.match(
+    homeCaseStudySource,
+    /SymbolIcon name=\"arrowLongRight\"/,
+    "Expected the home case study CTA to use the same long right arrow icon as the About Us button",
+  );
+  assert.match(
+    homeCaseStudySource,
+    /max-w-\[300px\][\s\S]*md:w-\[300px\]/,
+    "Expected the home case study CTA to use the fixed Figma width",
+  );
+});
+
+test("solution case study section still mirrors the product figma layout", () => {
   const solutionCaseStudySource = readSource("src/components/sections/solutions/SolutionCaseStudy.astro");
 
-  for (const source of [homeCaseStudySource, solutionCaseStudySource]) {
-    assert.match(
-      source,
-      /aspect-\[531\/545\]/,
-      "Expected home and solution case study images to use the product figma ratio",
-    );
-    assert.match(
-      source,
-      /md:text-\[24px\]/,
-      "Expected home and solution case study headlines to match the product title scale",
-    );
-    assert.match(
-      source,
-      /h-\[50px\] w-\[180px\]/,
-      "Expected home and solution case study buttons to use the fixed product dimensions",
-    );
-  }
+  assert.match(
+    solutionCaseStudySource,
+    /aspect-\[531\/545\]/,
+    "Expected solution case study images to use the product figma ratio",
+  );
+  assert.match(
+    solutionCaseStudySource,
+    /md:text-\[24px\]/,
+    "Expected solution case study headlines to match the product title scale",
+  );
+  assert.match(
+    solutionCaseStudySource,
+    /h-\[50px\] w-\[180px\]/,
+    "Expected solution case study buttons to use the fixed product dimensions",
+  );
 });

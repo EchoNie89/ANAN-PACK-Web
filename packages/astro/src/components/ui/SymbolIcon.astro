@@ -12,6 +12,7 @@ interface Props {
     | "globe"
     | "users"
     | "check"
+    | "arrowLongRight"
     | "facebook"
     | "instagram"
     | "x"
@@ -113,6 +114,14 @@ const { name, class: className = "size-5" } = Astro.props;
     <svg viewBox="0 0 24 24" class={className} fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
       <circle cx="12" cy="12" r="9" />
       <path d="m8.5 12 2.5 2.5 4.5-5" />
+    </svg>
+  )
+}
+{
+  name === "arrowLongRight" && (
+    <svg viewBox="0 0 24 24" class={className} fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M5 12h14" />
+      <path d="m13 5 7 7-7 7" />
     </svg>
   )
 }

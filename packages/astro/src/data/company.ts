@@ -91,15 +91,14 @@ export const aboutSustainability = [
     title: "GRS Recycled Material Options",
     description:
       "For recycled materials, we coordinate with suppliers that support GRS-certified options when applicable.",
-    image: getLocalImage("/images/home/cert-grs.png"),
+    image: getLocalImage("/images/home/cert-grs-figma.png"),
     alt: "Global Recycled Standard mark",
-    imageClass: "scale-[1.42]",
   },
   {
     title: "Textile Safety & Compliance",
     description:
       "For textile-related trims and labels, we help match materials that meet relevant safety and textile standards.",
-    image: getLocalImage("/images/home/cert-oeko.png"),
+    image: getLocalImage("/images/home/cert-oeko-horizontal.png"),
     alt: "OEKO-TEX Standard 100 mark",
   },
 ] as const;
