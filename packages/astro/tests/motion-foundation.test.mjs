@@ -111,13 +111,14 @@ test("about and services pages opt into the same motion system", () => {
 
   assert.match(aboutHeroSource, /motion-enter/);
   assert.match(aboutHeroSource, /--motion-delay:/);
+  assert.match(aboutHeroSource, /md:h-\[474px\]/);
   assert.match(aboutReasonsSource, /motion-hover-card/);
   assert.match(aboutStorySource, /data-reveal/);
 
   assert.match(servicesHeroSource, /motion-enter/);
-  assert.match(servicesHeroSource, /lg:h-\[calc\(100dvh-88px\)\]/);
+  assert.match(servicesHeroSource, /md:h-\[474px\]/);
   assert.match(faqHeroSource, /motion-enter/);
-  assert.match(faqHeroSource, /lg:h-\[calc\(100dvh-88px\)\]/);
+  assert.match(faqHeroSource, /md:h-\[474px\]/);
   assert.match(sourcingComparisonSource, /motion-hover-card/);
   assert.match(serviceProcessSource, /data-reveal/);
   assert.match(warehousingSource, /motion-hover-card/);

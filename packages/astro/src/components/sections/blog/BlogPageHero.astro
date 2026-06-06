@@ -37,7 +37,7 @@ const isBlogIndex = variant === "blog-index";
 const hasAfterContentSlot = Astro.slots.has("afterContent");
 ---
 
-<section class={`relative isolate overflow-hidden ${isBlogIndex ? "lg:h-[calc(100dvh-88px)]" : ""}`}>
+<section class="relative isolate overflow-hidden md:h-[474px]">
   <LocalImage
     src={backgroundImage}
     alt=""
@@ -61,8 +61,8 @@ const hasAfterContentSlot = Astro.slots.has("afterContent");
   <Container
     class={`relative !max-w-[1280px] ${
       isBlogIndex
-        ? "min-h-[470px] pb-8 pt-6 sm:min-h-[540px] sm:pb-10 sm:pt-8 lg:flex lg:h-full lg:min-h-0 lg:flex-col lg:pb-10 lg:pt-8"
-        : "pb-12 pt-28 md:pb-16 md:pt-36"
+        ? "min-h-[470px] pb-8 pt-6 sm:min-h-[540px] sm:pb-10 sm:pt-8 md:flex md:h-full md:min-h-0 md:flex-col md:pb-10 md:pt-8"
+        : "pb-12 pt-28 md:h-full md:pb-16 md:pt-36"
     }`}
   >
     <div class={isBlogIndex ? "text-left" : isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
@@ -108,7 +108,7 @@ const hasAfterContentSlot = Astro.slots.has("afterContent");
 
     {
       hasAfterContentSlot && (
-        <div class={isBlogIndex ? "mt-12 sm:mt-16 lg:mt-auto lg:pt-10" : "mt-12"}>
+        <div class={isBlogIndex ? "mt-12 sm:mt-16 md:mt-auto md:pt-10" : "mt-12"}>
           <slot name="afterContent" />
         </div>
       )

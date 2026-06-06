@@ -11,7 +11,7 @@ function readSource(relativePath) {
   return readFileSync(join(astroDir, relativePath), "utf8");
 }
 
-test("non-article page heroes fill the remaining desktop viewport beneath the sticky header", () => {
+test("non-home informational page heroes keep the approved fixed desktop height", () => {
   for (const relativePath of [
     "src/components/sections/about/AboutHero.astro",
     "src/components/sections/contact/ContactHero.astro",
@@ -22,14 +22,14 @@ test("non-article page heroes fill the remaining desktop viewport beneath the st
 
     assert.match(
       source,
-      /section class="[^"]*lg:h-\[calc\(100dvh-88px\)\]/,
-      `Expected ${relativePath} to size the outer hero section to the remaining desktop viewport height`,
+      /<section[\s\S]*class="[^"]*md:h-\[474px\]/,
+      `Expected ${relativePath} to keep the approved 474px desktop hero height`,
     );
 
-    assert.match(
+    assert.doesNotMatch(
       source,
-      /lg:h-full/,
-      `Expected ${relativePath} to have an inner hero container that stretches to the desktop hero height`,
+      /lg:h-\[calc\(100dvh-88px\)\]/,
+      `Expected ${relativePath} to avoid the full-viewport desktop hero treatment`,
     );
   }
 });
@@ -66,24 +66,30 @@ test("solution hero keeps the approved fixed desktop height instead of filling t
   );
 });
 
-test("blog listing hero fills the desktop viewport without forcing article heroes full-screen", () => {
+test("blog heroes keep the approved fixed desktop height across index and article variants", () => {
   const source = readSource("src/components/sections/blog/BlogPageHero.astro");
 
   assert.match(
     source,
-    /isBlogIndex\s*\?\s*"[^"]*lg:h-\[calc\(100dvh-88px\)\][^"]*"/,
-    "Expected the blog index hero variant to opt into the remaining desktop viewport height",
-  );
-
-  assert.doesNotMatch(
-    source,
-    /:\s*"[^"]*lg:h-\[calc\(100dvh-88px\)\][^"]*"/,
-    "Expected the default blog article hero variant to keep its existing non-fullscreen height behavior",
+    /<section class=.*md:h-\[474px\].*>/s,
+    "Expected the blog hero section to keep a 474px desktop height for both index and article variants",
   );
 
   assert.match(
     source,
-    /isBlogIndex\s*\?\s*"[^"]*lg:h-full[^"]*"/,
-    "Expected the blog index inner container to stretch to the full desktop hero height",
+    /isBlogIndex\s*\?\s*"[^"]*md:h-full[^"]*"/,
+    "Expected the blog index inner container to stretch to the fixed desktop hero height",
+  );
+
+  assert.match(
+    source,
+    /:\s*"[^"]*md:h-full[^"]*"/,
+    "Expected the default blog article inner container to stretch to the fixed desktop hero height",
+  );
+
+  assert.doesNotMatch(
+    source,
+    /lg:h-\[calc\(100dvh-88px\)\]/,
+    "Expected the blog hero to avoid the full-viewport desktop hero treatment",
   );
 });
