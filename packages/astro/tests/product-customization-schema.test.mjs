@@ -24,5 +24,10 @@ test("customization schemas register the new block union", () => {
   assert.match(indexSource, /import customizationDetailGroup from '\.\/customizationDetailGroup';/);
   assert.doesNotMatch(indexSource, /import customizationBlock from '\.\/customizationBlock';/);
   assert.match(listBlockSource, /name:\s*'intro'/);
+  assert.doesNotMatch(
+    listBlockSource,
+    /name:\s*'items'[\s\S]*?validation:/,
+    "Expected List Block items to stay optional in Studio",
+  );
   assert.equal(existsSync(legacySchemaUrl), false);
 });

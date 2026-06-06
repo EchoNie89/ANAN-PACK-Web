@@ -41,6 +41,50 @@ test("layout exposes canonical, social meta, and json-ld hooks", () => {
   );
 });
 
+test("layout publishes the full favicon set and manifest assets", () => {
+  const source = readSource("src/layouts/Layout.astro");
+
+  assert.match(
+    source,
+    /rel="icon" href="\/favicon\.ico" sizes="any"/,
+    "Expected Layout to expose the .ico favicon for broad browser support",
+  );
+  assert.match(
+    source,
+    /rel="icon" type="image\/png" sizes="32x32" href="\/favicon-32x32\.png"/,
+    "Expected Layout to expose the 32x32 PNG favicon asset",
+  );
+  assert.match(
+    source,
+    /rel="icon" type="image\/png" sizes="16x16" href="\/favicon-16x16\.png"/,
+    "Expected Layout to expose the 16x16 PNG favicon asset",
+  );
+  assert.match(
+    source,
+    /rel="apple-touch-icon" sizes="180x180" href="\/apple-touch-icon\.png"/,
+    "Expected Layout to expose the Apple touch icon asset",
+  );
+  assert.match(
+    source,
+    /rel="manifest" href="\/site\.webmanifest"/,
+    "Expected Layout to expose the web app manifest",
+  );
+
+  for (const filePath of [
+    "public/favicon.ico",
+    "public/favicon-16x16.png",
+    "public/favicon-32x32.png",
+    "public/apple-touch-icon.png",
+    "public/site.webmanifest",
+  ]) {
+    assert.equal(
+      existsSync(join(astroDir, filePath)),
+      true,
+      `Expected ${filePath} to exist in the public asset set`,
+    );
+  }
+});
+
 test("seo support files cover site url, robots, and sitemap", () => {
   const configSource = readSource("astro.config.mjs");
   const envExampleSource = readSource(".env.example");

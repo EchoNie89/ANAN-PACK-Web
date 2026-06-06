@@ -117,7 +117,7 @@ export type CustomizationBlock =
       title?: string;
       intro?: string;
       markerStyle: 'bullet' | 'number' | 'plain';
-      items: string[];
+      items?: string[];
       note?: string;
     }
   | {

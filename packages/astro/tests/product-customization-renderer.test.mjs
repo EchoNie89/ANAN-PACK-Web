@@ -46,6 +46,26 @@ test("product customization renderer handles structured blocks directly", () => 
   assert.match(customizationSource, /block\.note/);
   assert.match(customizationSource, /entry\.note/);
   assert.match(customizationSource, /detailGroup\.note/);
+  assert.match(
+    customizationSource,
+    /block\.intro && <p class="whitespace-pre-line">\{block\.intro\}<\/p>/,
+  );
+  assert.match(
+    customizationSource,
+    /\(block\.items \?\? \[\]\)\.filter\(\(item\) => item\.trim\(\)\.length > 0\)/,
+  );
+  assert.match(
+    customizationSource,
+    /block\.note && <p class="whitespace-pre-line">\{block\.note\}<\/p>/,
+  );
+  assert.match(
+    customizationSource,
+    /detailGroup\.note && <p class="whitespace-pre-line">\{detailGroup\.note\}<\/p>/,
+  );
+  assert.match(
+    customizationSource,
+    /entry\.note && <p class="whitespace-pre-line">\{entry\.note\}<\/p>/,
+  );
   assert.match(customizationSource, /leading-tight tracking-\[0\.01em\] text-text-main md:text-\[32px\]/);
   assert.match(customizationSource, /index === 0 \? "mt-3 md:mt-4" : "mt-12 md:mt-14"/);
   assert.match(customizationSource, /text-\[20px\] font-semibold leading-tight text-text-main md:text-\[24px\]/);

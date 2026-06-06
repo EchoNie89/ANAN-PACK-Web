@@ -80,11 +80,13 @@ function getMarkerClass(markerStyle: CustomizationMarkerStyle) {
                   return (
                     <section class="grid gap-1.5">
                       {block.title && <h4 class="text-base font-semibold text-text-main">{block.title}</h4>}
-                      {block.intro && <p>{block.intro}</p>}
-                      <ul class={`grid gap-1.5 ${getMarkerClass(block.markerStyle)}`}>
-                        {block.items.map((item) => <li>{item}</li>)}
-                      </ul>
-                      {block.note && <p>{block.note}</p>}
+                      {block.intro && <p class="whitespace-pre-line">{block.intro}</p>}
+                      {(block.items ?? []).filter((item) => item.trim().length > 0).length > 0 && (
+                        <ul class={`grid gap-1.5 ${getMarkerClass(block.markerStyle)}`}>
+                          {(block.items ?? []).filter((item) => item.trim().length > 0).map((item) => <li>{item}</li>)}
+                        </ul>
+                      )}
+                      {block.note && <p class="whitespace-pre-line">{block.note}</p>}
                     </section>
                   );
                 }
@@ -104,10 +106,10 @@ function getMarkerClass(markerStyle: CustomizationMarkerStyle) {
                                 <ul class={`grid gap-1.5 ${getMarkerClass(detailGroup.markerStyle)}`}>
                                   {detailGroup.items.map((item) => <li>{item}</li>)}
                                 </ul>
-                                {detailGroup.note && <p>{detailGroup.note}</p>}
+                                {detailGroup.note && <p class="whitespace-pre-line">{detailGroup.note}</p>}
                               </div>
                             ))}
-                            {entry.note && <p>{entry.note}</p>}
+                            {entry.note && <p class="whitespace-pre-line">{entry.note}</p>}
                           </li>
                         ))}
                       </ul>

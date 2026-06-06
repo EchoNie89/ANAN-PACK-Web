@@ -32,7 +32,6 @@ export default defineType({
       title: 'Items',
       type: 'array',
       of: [{ type: 'string' }],
-      validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
       name: 'note',
