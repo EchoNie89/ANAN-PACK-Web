@@ -444,6 +444,11 @@ test("about us section links move from the hero into the header dropdown pattern
   );
   assert.match(
     headerSource,
+    /item\.label === 'About Us' \? \([\s\S]*?<a\s+href=\{item\.href\}[\s\S]*?>[\s\S]*?\{item\.label\}[\s\S]*?<\/a>[\s\S]*?<AboutDropdown forceOpen=\{openMenu === 'about'\} \/>/,
+    "Expected the About Us desktop label to remain a real link to the about page",
+  );
+  assert.match(
+    headerSource,
     /data-menu-trigger="about"/,
     "Expected Header to expose an About Us desktop dropdown trigger",
   );

@@ -98,4 +98,10 @@ test("site chrome uses the real brand name for logo alternative text", () => {
     /alt=\{siteName\}/,
     "Expected the footer logo to use the shared site name for alt text",
   );
+
+  assert.match(
+    footerSource,
+    /class="h-\[40px\] w-auto max-w-full"/,
+    "Expected the footer logo to render at 40px tall",
+  );
 });

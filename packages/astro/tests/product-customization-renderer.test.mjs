@@ -48,6 +48,10 @@ test("product customization renderer handles structured blocks directly", () => 
   assert.match(customizationSource, /detailGroup\.note/);
   assert.match(
     customizationSource,
+    /group\.intro && \(\s*<p class="whitespace-pre-line text-sm leading-\[24px\] text-text-main md:text-\[15px\] md:leading-\[25px\]">\s*\{group\.intro\}\s*<\/p>\s*\)/,
+  );
+  assert.match(
+    customizationSource,
     /block\.intro && <p class="whitespace-pre-line">\{block\.intro\}<\/p>/,
   );
   assert.match(

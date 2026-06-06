@@ -186,30 +186,32 @@ const isCurrentPath = (href: string) => normalizePath(href) === currentPath;
             </div>
           ) : item.label === 'About Us' ? (
             <div
-              class="group/nav relative flex h-full items-center"
+              class="group/nav relative flex h-full items-center gap-1"
               data-menu-root
             >
+              <a
+                href={item.href}
+                class={`relative inline-flex items-center leading-none transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-nav-highlight after:content-[''] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
+                  activeNav === 'About Us'
+                    ? 'text-nav-highlight after:opacity-100'
+                    : 'text-ink after:opacity-0 hover:text-brand'
+                }`}
+              >
+                {item.label}
+              </a>
               <button
                 type="button"
                 data-menu-trigger="about"
                 aria-controls="about-menu"
                 aria-expanded={openMenu === 'about' ? 'true' : 'false'}
-                class={`inline-flex items-center gap-1 leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
+                class={`inline-flex items-center leading-none transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
                   activeNav === 'About Us'
                     ? 'text-nav-highlight'
                     : 'text-ink hover:text-brand'
                 } cursor-pointer border-0 bg-transparent p-0 text-base font-bold`}
                 aria-haspopup="true"
               >
-                <span
-                  class={`relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-nav-highlight after:content-[''] ${
-                    activeNav === 'About Us'
-                      ? 'after:opacity-100'
-                      : 'after:opacity-0'
-                  }`}
-                >
-                  {item.label}
-                </span>
+                <span class="sr-only">Open About Us menu</span>
                 <svg
                   viewBox="0 0 20 20"
                   class="size-4"
