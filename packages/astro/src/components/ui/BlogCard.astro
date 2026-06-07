@@ -5,7 +5,7 @@ import LocalImage from "./LocalImage.astro";
 interface Props {
   article: BlogArticle;
   variant?: "default" | "industry";
-  scale?: "regular" | "compact";
+  scale?: "regular" | "compact" | "mobileCompact";
 }
 
 const { article, variant = "default", scale = "regular" } = Astro.props;
@@ -21,6 +21,30 @@ const badgeMonth = publishedDate.toLocaleString("en-US", { month: "short" });
 const badgeYear = publishedDate.getFullYear();
 const isIndustry = variant === "industry";
 const isCompactDefault = !isIndustry && scale === "compact";
+const isMobileCompactDefault = !isIndustry && scale === "mobileCompact";
+const defaultBodyMinHeightClass = isCompactDefault
+  ? "min-h-[286px]"
+  : isMobileCompactDefault
+    ? "min-h-[286px] md:min-h-[326px]"
+    : "min-h-[326px]";
+const defaultBodyPaddingClass = isMobileCompactDefault
+  ? "px-5 pb-4 pt-4 md:pb-5 md:pt-5"
+  : "px-5 pb-5 pt-5";
+const defaultExcerptSpacingClass = isCompactDefault
+  ? "mt-3.5"
+  : isMobileCompactDefault
+    ? "mt-3.5 md:mt-4"
+    : "mt-4";
+const defaultCtaSpacingClass = isCompactDefault
+  ? "pt-4"
+  : isMobileCompactDefault
+    ? "pt-4 md:pt-5"
+    : "pt-5";
+const defaultCtaSizeClass = isCompactDefault
+  ? "h-9 min-w-[96px] text-[15px]"
+  : isMobileCompactDefault
+    ? "h-9 min-w-[96px] text-[15px] md:h-10 md:min-w-[108px] md:text-[16px]"
+    : "h-10 min-w-[108px] text-[16px]";
 const titleClampClass = "overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]";
 const excerptClampClass = "overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:4]";
 ---
@@ -29,18 +53,20 @@ const excerptClampClass = "overflow-hidden [display:-webkit-box] [-webkit-box-or
   isIndustry ? (
     <article class="overflow-hidden rounded-[10px] bg-[#f9f9f9] shadow-[0_4px_7.5px_rgba(0,0,0,0.1)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(0,0,0,0.12)]">
       <a href={`/blog/${article.slug}`} class="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
-        <div class="relative aspect-[374/228] overflow-hidden bg-surface-muted">
-          <LocalImage
-            src={article.heroImage.src}
-            alt={article.heroImage.alt}
-            class="size-full object-cover transition duration-500 group-hover:scale-[1.03]"
-            loading="lazy"
-            sizes="(min-width: 1280px) 26vw, (min-width: 768px) 42vw, 100vw"
-            widths={[320, 480, 640, 800]}
-            width={article.heroImage.width}
-            height={article.heroImage.height}
-          />
-          <div class="absolute left-5 top-[142px] flex h-[113px] w-[70px] flex-col items-center justify-center rounded-[10px] bg-white/30 text-center text-white shadow-[-2px_2px_4px_rgba(0,0,0,0.1)] backdrop-blur-[4px]">
+        <div class="relative aspect-[374/228]">
+          <div class="size-full overflow-hidden bg-surface-muted">
+            <LocalImage
+              src={article.heroImage.src}
+              alt={article.heroImage.alt}
+              class="size-full object-cover transition duration-500 group-hover:scale-[1.03]"
+              loading="lazy"
+              sizes="(min-width: 1280px) 26vw, (min-width: 768px) 42vw, 100vw"
+              widths={[320, 480, 640, 800]}
+              width={article.heroImage.width}
+              height={article.heroImage.height}
+            />
+          </div>
+          <div class="absolute left-5 top-[142px] z-10 flex h-[113px] w-[70px] flex-col items-center justify-center rounded-[10px] bg-white/30 text-center text-white shadow-[-2px_2px_4px_rgba(0,0,0,0.1)] backdrop-blur-[4px]">
             <p class="text-[28px] font-semibold leading-none">{badgeDay}</p>
             <p class="mt-1 text-[14px] font-semibold uppercase leading-none">{badgeMonth}</p>
             <p class="mt-1 text-[14px] font-semibold leading-none">{badgeYear}</p>
@@ -88,15 +114,15 @@ const excerptClampClass = "overflow-hidden [display:-webkit-box] [-webkit-box-or
           </div>
         </div>
 
-        <div class={`flex flex-col px-5 pb-5 pt-5 ${isCompactDefault ? "min-h-[286px]" : "min-h-[326px]"}`}>
+        <div class={`flex flex-col ${defaultBodyPaddingClass} ${defaultBodyMinHeightClass}`}>
           <h3 class={`text-[20px] font-semibold leading-[1.5] text-[#333333] transition group-hover:text-brand ${titleClampClass}`}>
             {article.title}
           </h3>
-          <p class={`flex-1 text-[14px] leading-[1.5] text-[#666666] ${isCompactDefault ? "mt-3.5" : "mt-4"} ${excerptClampClass}`}>
+          <p class={`flex-1 text-[14px] leading-[1.5] text-[#666666] ${defaultExcerptSpacingClass} ${excerptClampClass}`}>
             {article.excerpt}
           </p>
-          <div class={`mt-auto flex justify-end ${isCompactDefault ? "pt-4" : "pt-5"}`}>
-            <span class={`inline-flex items-center justify-center rounded-[2px] bg-[#e6dbcb] px-3 font-medium text-[#000000] transition group-hover:bg-[#d8cab7] ${isCompactDefault ? "h-9 min-w-[96px] text-[15px]" : "h-10 min-w-[108px] text-[16px]"}`}>
+          <div class={`mt-auto flex justify-end ${defaultCtaSpacingClass}`}>
+            <span class={`inline-flex items-center justify-center rounded-[2px] bg-[#e6dbcb] px-3 font-medium text-[#000000] transition group-hover:bg-[#d8cab7] ${defaultCtaSizeClass}`}>
               Read More
             </span>
           </div>
