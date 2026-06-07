@@ -27,6 +27,21 @@ test("testimonial cards use inline author icons instead of floating icons", () =
   assert.match(cardSource, /rounded-full border border-border bg-surface/);
   assert.match(cardSource, /Used For:/);
   assert.doesNotMatch(cardSource, /absolute right-5 bottom-5/);
+  assert.match(
+    cardSource,
+    /testimonialQuoteImage/,
+    "Expected TestimonialCard to replace the text quote mark with the provided local quote image asset",
+  );
+  assert.match(
+    cardSource,
+    /<Image[\s\S]*src=\{testimonialQuoteImage\}[\s\S]*alt=""[\s\S]*width=\{28\}[\s\S]*height=\{22\}/,
+    "Expected TestimonialCard to render the local quote image at its intended dimensions",
+  );
+  assert.doesNotMatch(
+    cardSource,
+    /text-\[64px\][\s\S]*“/,
+    "Expected TestimonialCard to stop rendering the oversized text quote glyph",
+  );
 
   assert.match(ratingSource, /gap-2/);
   assert.match(ratingSource, /size-\[18\.532px\]/);
