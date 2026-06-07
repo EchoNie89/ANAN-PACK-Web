@@ -43,7 +43,7 @@ test("master your materials uses a mobile-only compact card height", () => {
   );
   assert.match(
     cardSource,
-    /isMobileCompactDefault\s*\?\s*"min-h-\[286px\] md:min-h-\[326px\]"/,
-    "Expected the mobile-only compact blog card body to shrink on mobile while preserving the desktop height",
+    /isMobileCompactDefault\s*\?\s*"min-h-\[286px\] md:min-h-\[288px\]"/,
+    "Expected the mobile-only compact blog card body to stay shorter on mobile and use a lower desktop height for Master Your Materials",
   );
 });
