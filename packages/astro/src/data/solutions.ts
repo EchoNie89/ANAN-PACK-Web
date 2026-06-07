@@ -170,23 +170,19 @@ export const solutionPages: SolutionPageData[] = [
       points: [
         {
           title: 'Resilience-Tested Materials',
-          description:
-            'We match labels, boxes, and pouches to product use cases, including oil contact, humidity, and retail handling.',
+          description: `• We provide materials specifically tested for the beauty industry—guaranteed to resist oils, chemicals, and water without fading or peeling.`,
         },
         {
           title: 'High-End Decorative Finishes',
-          description:
-            'Foil stamping, embossing, debossing, tactile papers, and soft-touch films are coordinated through one workflow.',
+          description: `• Access luxury techniques usually reserved for large volumes: 3D UV, hot foil stamping, and micro-embossing, even for your limited edition launches.`,
         },
         {
           title: 'Perfect Fit & Dimensional Accuracy',
-          description:
-            'Custom inserts, boxes, wraps, and tags are sampled against your products before bulk production starts.',
+          description: `• Using high-precision die-cutting technology, we ensure every label and box fits your specific container dimensions with 100% accuracy.`,
         },
         {
           title: 'Small-Batch Luxury',
-          description:
-            'Flexible MOQs support boutique launches, seasonal drops, and limited editions without overbuying inventory.',
+          description: `• Launch your boutique skincare or makeup line without the burden of massive inventory. We support Flexible MOQs for premium-finish packaging.`,
         },
       ],
     },
@@ -220,30 +216,29 @@ export const solutionPages: SolutionPageData[] = [
       title: 'Case Study',
       headline:
         'How We Engineered 100% Plastic-Free Reusable Pouches For Purcotton',
-      intro:
-        'For eco-conscious lifestyle brands like Purcotton, packaging has to protect the product while reinforcing a responsible brand promise. We engineered a reusable pouch system that balanced softness, durability, and a plastic-free material story.',
-      quote:
-        'SENYE did not just manufacture a bag; they engineered a sustainable packaging solution that matched our brand values and improved our customer experience.',
+      intro: `For eco-conscious lifestyle brands like Purcotton, packaging must reflect their core philosophy of "Nature, Safety, and Sustainability." Traditional plastic polybags were contradicting their brand image. They needed a premium, 100% natural textile solution that not only protected their garments but also served as a highly functional, reusable travel organizer for their end consumers.`,
+      quote: `SENYE didn't just manufacture a bag; they engineered a sustainable packaging solution that perfectly aligns with our brand DNA. The innovative cotton mesh window solved our retail visibility issues while completely eliminating single-use plastics from our product line.`,
       attribution: 'Product Director, Purcotton',
       sections: [
         {
           title: 'The Challenge:',
-          body: 'The brand needed packaging that felt premium, avoided disposable plastic, and remained practical for shipping, display, and repeat customer use.',
+          body: `Purcotton faced a critical packaging dilemma: how to eliminate plastic while maintaining retail visibility. Customers and warehouse staff needed to instantly identify the product's color and texture without opening the package—a feature usually requiring clear plastic. Furthermore, they wanted to upgrade their standard packaging into premium custom fabric pouches that consumers would actively keep and reuse.`,
         },
         {
           title: 'Our Solution:',
           bullets: [
-            'Developed a reusable cotton pouch structure with reinforced seams and soft-touch finishing.',
-            'Matched drawcord, labels, and print color to the brand system across multiple SKUs.',
-            'Coordinated sampling, material checks, and batch production through a single supplier workflow.',
+            'As their trusted dust bag manufacturer, SENYE collaborated with Purcotton’s product team to develop a hybrid "Eco-Smart" zippered pouch:',
+            'Material Engineering: We selected 100% unbleached raw greige cotton. By skipping the chemical bleaching process, we minimized the environmental impact while achieving an authentic, earthy aesthetic.',
+            'Design Innovation: We integrated a high-density cotton mesh visualization window on the front panel. This brilliant detail allowed instant product identification without using a single drop of plastic.',
+            'Structural Versatility: We replaced standard drawstrings with a smooth, durable zipper, transforming the custom cotton dust bags into secure travel cubes available in a standardized 3-size system.',
           ],
         },
         {
           title: 'The Results:',
           bullets: [
-            'A plastic-free packaging unit that customers could keep and reuse.',
-            'Improved perceived value at unboxing without adding unnecessary secondary packaging.',
-            'Cleaner sourcing coordination and fewer handoffs during production.',
+            'Total Plastic Elimination: Successfully replaced millions of single-use plastic bags with biodegradable textile alternatives.',
+            'High Brand Retention: The functional design ensures an extremely high reuse rate as travel organizers, turning the packaging into a long-term "walking advertisement" for the brand.',
+            `Operational Efficiency: The clever mesh window maintained fast picking and packing efficiency in Purcotton's warehouses.`,
           ],
         },
       ],
@@ -355,23 +350,19 @@ export const solutionPages: SolutionPageData[] = [
       points: [
         {
           title: 'Color Consistency',
-          description:
-            'We coordinate all trims and packaging against the same color targets so your brand feels unified.',
+          description: `• Factories only know their own materials. We ensure your Pantone color stays consistent across paper, fabric, plastic, and metal components. Unified brand identity, zero deviation.`,
         },
         {
           title: 'Flexible MOQ For Scalability',
-          description:
-            'Start with test quantities, then scale the same approved materials as your collection grows.',
+          description: `• Traditional factories demand high MOQs. We aggregate orders to offer you flexible starting quantities, allowing you to test the market and scale up fast without inventory pressure.`,
         },
         {
           title: 'One Point Of Contact',
-          description:
-            'Sampling, quotation, production, packing, and QC are coordinated through one accountable team.',
+          description: `• Stop juggling 5 different factories with 5 different time zones. We manage the entire supply chain—from hang tags to mailer boxes—so you only deal with one dedicated project manager.`,
         },
         {
           title: 'Rapid Prototyping (Sampling)',
-          description:
-            'Fast sampling cycles help you approve trims before your production window gets tight.',
+          description: `• Don't let slow sampling kill your launch date. While factories prioritize big orders, our dedicated sampling lines deliver production-quality prototypes in as little as 3-5 days. Test fast, iterate faster.`,
         },
       ],
     },
@@ -404,43 +395,43 @@ export const solutionPages: SolutionPageData[] = [
       alt: 'Premium foil label display for food and fashion brand case study',
       title: 'Case Study',
       headline: 'How We Engineered Premium Foil Labels For Suji & Co',
-      intro:
-        'Suji & Co needed a premium label system that could scale across products while keeping a handmade, high-value look. The solution required accurate foil registration, consistent color, and repeatable sourcing.',
-      quote:
-        'SENYE completely transformed our product presentation. The labels look premium, arrived consistently, and gave our retail display a much stronger shelf presence.',
+      intro: `For premium artisanal brands like Suji & Co, the packaging must communicate "natural," "pure," and "hand-made" at a single glance. They needed a sophisticated sticker packaging solution that could bridge the gap between rustic watercolor charm and modern luxury, all while surviving the demanding environments of kitchens and refrigerators.`,
+      quote: `SENYE completely transformed our product presentation. Their precision with gold foil and moisture-resistant materials proved exactly why they are a top-tier sticker manufacturer. The labels adhere perfectly and look like pieces of art on our jars.`,
       attribution: 'Creative Director, Suji & Co',
       sections: [
         {
           title: 'The Challenge:',
-          body: 'The brand needed a cohesive label suite across product sizes without paying luxury-packaging MOQs for every small batch.',
+          body: `Artisanal jars and tubes present unique packaging hurdles. The brand required customized sticker labels that could adhere perfectly to small-diameter curved glass without the edges lifting (winging) over time. Furthermore, because the products are often refrigerated and handled frequently, the labels had to be oil and moisture-resistant while accurately reproducing delicate watercolor illustrations.`,
         },
         {
           title: 'Our Solution:',
           bullets: [
-            'Created a shared material and foil standard that could be reused across SKU sizes.',
-            'Managed color proofing and foil tests before bulk print approval.',
-            'Consolidated label production and packaging checks to reduce vendor coordination.',
+            'As experts in custom sticker printing, our engineering team developed a hybrid labeling solution tailored for premium retail:',
+            `Advanced Material & Adhesive: We utilized a specialized permanent acrylic adhesive designed specifically for glass and plastic. Paired with a matte finish, it acts as a reliable custom waterproof sticker that won't smudge or peel in damp environments.`,
+            `High-Definition Digital CMYK: To capture the artistic nuance of the fruit illustrations, we used high-resolution digital presses. This allowed us to replicate the soft watercolor textures with photographic clarity.`,
+            `Luxury Foil Accents: To elevate the custom sticker labels to a luxury tier, we applied precision Gold Hot Stamping. The metallic gold creates a high-contrast "pop," instantly signaling a premium price point to the consumer.`,
           ],
         },
         {
           title: 'The Results:',
           bullets: [
-            'Sharper retail presentation with stronger premium cues.',
-            'Lower reorder friction across seasonal product runs.',
-            'Consistent material, color, and finishing across the full label family.',
+            'Shelf-Ready Sophistication: The color consistency and gold foil quality remained perfectly identical across all SKUs and container sizes.',
+            'Tactile Quality: The specialized matte finish gives the packaging a refined "boutique" feel, easily distinguishing it from mass-market glossy labels.',
+            `Proven Durability: The labels maintain their structural integrity and strong adhesion from the retail shelf to the customer's table, ensuring lasting brand impact.`,
           ],
         },
       ],
     },
     gallery: [
       {
-        image: solutionImage('fashion-gallery-1.png'),
-        alt: 'Foil label on product jar',
-      },
-      {
         image: solutionImage('fashion-gallery-2.png'),
         alt: 'Printed label sheets before application',
       },
+      {
+        image: solutionImage('fashion-gallery-1.png'),
+        alt: 'Foil label on product jar',
+      },
+
       {
         image: solutionImage('fashion-gallery-3.png'),
         alt: 'Custom printed sticker sheets',
@@ -513,49 +504,42 @@ export const solutionPages: SolutionPageData[] = [
           title: 'High-Intensity Woven Labels',
           image: solutionImage('home-lifestyle-kit-1.png'),
           alt: 'Durable woven labels for home textiles',
-          description:
-            'Strong woven labels built for home textile use, repeated washing, and clear brand recognition.',
+          description: `Ultra-soft, high-definition woven labels designed for contact with skin. Certified OEKO-TEX® Standard 100, ensuring they are free from harmful substances and perfectly safe for bedding and towels.`,
         },
         {
           title: 'Double-Faced Satin Jacquard Printed',
           image: solutionImage('home-lifestyle-kit-2.png'),
           alt: 'Soft satin labels on textile products',
-          description:
-            'Soft satin and jacquard labels designed for skin contact, premium texture, and long-term readability.',
+          description: `Using specialized inks and premium nylon or satin ribbons, our care labels are tested to remain crisp and legible through 50+ industrial or home washes.`,
         },
         {
           title: 'Heavy-Duty & Reusable Packaging',
           image: solutionImage('home-lifestyle-kit-3.png'),
           alt: 'Reusable textile packaging bundle',
-          description:
-            'Storage bags, wraps, and textile-ready packaging structures that protect volume without feeling wasteful.',
+          description: `From large-format PVC-free zipper bags to reinforced eco-friendly mailers. Designed to protect bulky home goods during transit while providing a reusable storage option for the end user.`,
         },
       ],
     },
     why: {
       title: 'Why Sourcing Via [Our Company Name] Is Better?',
       image: solutionImage('home-lifestyle-why.png'),
-      alt: 'Home lifestyle packaging set with tags and boxes',
+      alt: 'Folded home textile packaging set with branded ribbons and zipper pouch',
       points: [
         {
           title: 'Wash-Test Guaranteed',
-          description:
-            'We specify labels and prints for washing, friction, and fabric-contact requirements before production.',
+          description: `• We don't just print; we simulate. Our home textile labels undergo rigorous wash-cycle testing to ensure zero ink migration and no fraying, even at high temperatures.`,
         },
         {
           title: 'Compliance-Ready Law Labels',
-          description:
-            'Fiber content, care information, and origin labels are checked for clarity and production accuracy.',
+          description: `• Navigating international textile regulations is hard. We help you design and produce "Law Labels" that meet US, EU, and Australian standards for material disclosure.`,
         },
         {
           title: 'Optimized Packaging Volume',
-          description:
-            'Packaging structures are developed to protect textiles while reducing wasted carton and warehouse space.',
+          description: `• We help you re-engineer your packaging to reduce "dead air." By switching to specialized vacuum-ready or flat-pack designs, we’ve helped clients reduce shipping volumes by up to 20%.`,
         },
         {
           title: 'Soft-Touch Engineering',
-          description:
-            'Material choices balance durability with a soft, premium hand feel suitable for bedding, towels, and lifestyle goods.',
+          description: `• For products that touch the skin, "feel" is everything. We use ultrasonic cutting for label edges to ensure they are 100% scratch-free, enhancing the user’s sleep experience.`,
         },
       ],
     },
@@ -589,30 +573,30 @@ export const solutionPages: SolutionPageData[] = [
       title: 'Case Study',
       headline:
         'How We Engineered High-Performance Custom Kraft Tape For Hyde & Hare & Achieved Zero-Failure Logistics',
-      intro:
-        'For premier lifestyle brands like Hyde & Hare England, the unboxing experience is a final brand touchpoint. The tape needed to feel natural, premium, secure, and sustainable.',
-      quote:
-        'SENYE completely transformed our shipping logistics into a true brand asset. They engineered a custom tape that matches our natural luxury aesthetic and provides unbreakable security during transit.',
+      intro: `For premier lifestyle brands like Hyde & Hare England, the "unboxing experience" is the final and most crucial touchpoint with their global clientele. In the competitive luxury market, tape is not just a utility to seal a box; it must reflect the brand’s commitment to natural beauty, premium craftsmanship, and frictionless sustainability.`,
+      quote: `SENYE completely transformed our shipping logistics into a true brand asset. They engineered a custom tape that not only perfectly matches our natural luxury aesthetic but also provides unbreakable security during transit. It's the ultimate sustainable solution.`,
       attribution: 'Operations Director, Hyde & Hare England',
       sections: [
         {
           title: 'The Challenge:',
-          body: 'Glossy plastic tape felt cheap against high-end home goods, while standard eco tapes failed to adhere reliably to recycled cartons.',
+          body: `Hyde & Hare faced a significant "Brand Consistency Gap." Sealing high-end leather goods with glossy plastic tape felt cheap and compromised their eco-friendly ethos. Furthermore, standard eco-friendly tapes failed to adhere properly to their high-fiber recycled cartons, leading to peeling during international transit and risking the security of their luxury accessories.`,
         },
         {
           title: 'Our Solution:',
           bullets: [
-            'Selected a heavy-duty kraft tape base that harmonized with earthy brand tones.',
-            'Used a high-tack natural rubber adhesive to bond securely with paper fibers.',
-            'Applied matte black ink to remove glare and keep the branding understated.',
+            'SENYE collaborated with the brand to engineer a 100% recyclable, premium custom printed kraft paper tape that balanced industrial-grade strength with an "Old Money" aesthetic:',
+            'Material Engineering: Selected a 70gsm heavy-duty custom kraft tape base that perfectly harmonizes with their earthy brand tones while resisting tears and punctures.',
+            'Chemical Innovation: Utilized a high-tack natural rubber adhesive that bonds aggressively with paper fibers, ensuring ultimate tamper-evident security in any climate.',
+            'Aesthetic Precision: Applied high-definition matte black ink to eliminate traditional glare, integrating their signature branding seamlessly into the paper surface.',
           ],
         },
         {
           title: 'The Results:',
           bullets: [
-            'Zero incidents of tape failure during international transit.',
-            'Shipping cartons became more premium and brand-aligned.',
-            'Customers could recycle the full shipping unit more easily.',
+            '100% Brand Alignment, turning standard shipping boxes into curated, premium gifts.',
+            'Zero incidents of tape failure or compromised parcels during international transit.',
+            '100% Recyclable shipping units, allowing customers to recycle the entire box effortlessly.',
+            'Significant boost in "Green" customer satisfaction ratings.',
           ],
         },
       ],
@@ -663,27 +647,24 @@ export const solutionPages: SolutionPageData[] = [
       items: [
         {
           icon: 'stack',
-          title: 'Overpackaging Perception',
+          title: 'Cheapening the Brand',
           description:
-            'Luxury packaging needs to feel substantial without looking wasteful or overbuilt.',
+            'Does your current packaging fail to reflect the high value of the jewelry inside?',
         },
         {
           icon: 'sample',
           title: 'Lack Of Customization',
-          description:
-            'Standard boxes and pouches rarely match the exact size, texture, and tone a luxury brand needs.',
+          description: `Tired of generic boxes that don't fit your unique design aesthetic?`,
         },
         {
           icon: 'spark',
           title: 'Durability & Elegance',
-          description:
-            'Delicate pieces need protective inserts and soft surfaces that still look refined.',
+          description: `Do your luxury tags fray or lose their luster during handling and display?`,
         },
         {
           icon: 'chat',
-          title: 'Quality Delicacy',
-          description:
-            'Small defects in foil, stitching, ribbons, or closures can undermine the full premium impression.',
+          title: 'Counterfeit Risks',
+          description: `Are you looking for subtle, high-end security features to protect your brand integrity?`,
         },
       ],
     },
@@ -698,22 +679,19 @@ export const solutionPages: SolutionPageData[] = [
           title: 'Embossed & Metallic Labels',
           image: solutionImage('jewelry-luxury-kit-1.png'),
           alt: 'Embossed and metallic luxury labels',
-          description:
-            'Foil, embossing, metallic inks, and soft-touch labels create refined details for boxes, cards, and product tags.',
+          description: `Premium zinc alloy tags or heavy-duty foil-stamped labels. We offer diverse finishes—from brushed antique gold to polished chrome—to complement your jewelry’s metal tones.`,
         },
         {
           title: 'Artisanal Display & Gift Boxes',
           image: solutionImage('jewelry-luxury-kit-2.png'),
           alt: 'Luxury display and gift boxes',
-          description:
-            'Rigid boxes, inserts, trays, and sleeves are engineered around the product to protect and present each piece.',
+          description: `Crafted from extra-thick, specialty art papers with letterpress, debossing, or silk-screen printing. These tags are designed to hold weight and add a tactile layer of luxury.`,
         },
         {
           title: 'Pouches & Premium Wraps',
           image: solutionImage('jewelry-luxury-kit-3.png'),
           alt: 'Premium jewelry pouches and cards',
-          description:
-            'Velvet, suede, cotton, satin, and specialty wraps add tactility while keeping jewelry safe in transit.',
+          description: `Bespoke microfiber, velvet, or silk pouches and rigid gift boxes. Featuring custom-molded inserts and magnetic closures to ensure a secure and world-class unboxing ceremony.`,
         },
       ],
     },
@@ -724,23 +702,19 @@ export const solutionPages: SolutionPageData[] = [
       points: [
         {
           title: 'High-End Craftsmanship',
-          description:
-            'We coordinate fine materials, specialty finishes, and tight tolerances for a refined luxury result.',
+          description: `• We utilize rare techniques like multi-level embossing, micro-printing, and hand-finished assembly to ensure every piece meets "High Jewelry" standards.`,
         },
         {
           title: 'Material Selection Mastery',
-          description:
-            'Papers, fabrics, linings, ribbons, inserts, and hardware are selected to match the desired premium feel.',
+          description: `• Access a library of global specialty papers, eco-certified vegan leathers, and tarnish-resistant fabrics specifically curated for the luxury market.`,
         },
         {
           title: 'Bespoke Structural Design',
-          description:
-            'Custom inserts and box structures protect fragile items while delivering a precise, elegant opening experience.',
+          description: `• Our engineers create custom inserts and structural prototypes that protect fragile items while ensuring a perfect, "click-to-close" fit every time.`,
         },
         {
           title: 'Small-Batch Exclusive Runs',
-          description:
-            'Flexible MOQs support limited collections, boutique launches, and seasonal luxury campaigns.',
+          description: `• Luxury shouldn't require mass-production. We offer Flexible MOQs for limited-edition collections and boutique designers, allowing for true exclusivity.`,
         },
       ],
     },
@@ -774,30 +748,30 @@ export const solutionPages: SolutionPageData[] = [
       title: 'Case Study',
       headline:
         'How We Engineered High-Performance Custom Kraft Tape For Hyde & Hare & Achieved Zero-Failure Logistics',
-      intro:
-        'For luxury brands, every packaging touchpoint needs to support the product story. The solution had to combine elegant materials, secure structure, and a premium unboxing flow.',
-      quote:
-        'SENYE translated our visual direction into packaging that felt precise, giftable, and consistent from sample to bulk order.',
-      attribution: 'Brand Director, Luxury Accessories Client',
+      intro: `For premier lifestyle brands like Hyde & Hare England, the "unboxing experience" is the final and most crucial touchpoint with their global clientele. In the competitive luxury market, tape is not just a utility to seal a box; it must reflect the brand’s commitment to natural beauty, premium craftsmanship, and frictionless sustainability.`,
+      quote: `SENYE completely transformed our shipping logistics into a true brand asset. They engineered a custom tape that not only perfectly matches our natural luxury aesthetic but also provides unbreakable security during transit. It's the ultimate sustainable solution.`,
+      attribution: 'Operations Director, Hyde & Hare England',
       sections: [
         {
           title: 'The Challenge:',
-          body: 'The brand needed protective jewelry packaging with a delicate color palette, clean finishing, and enough structure for shipping.',
+          body: `Hyde & Hare faced a significant "Brand Consistency Gap." Sealing high-end leather goods with glossy plastic tape felt cheap and compromised their eco-friendly ethos. Furthermore, standard eco-friendly tapes failed to adhere properly to their high-fiber recycled cartons, leading to peeling during international transit and risking the security of their luxury accessories.`,
         },
         {
           title: 'Our Solution:',
           bullets: [
-            'Developed coordinated boxes, pouches, ribbons, and cards using a unified material palette.',
-            'Controlled color matching across paper, textile, and printed surfaces.',
-            'Validated inserts and closures through sampling before bulk production.',
+            'SENYE collaborated with the brand to engineer a 100% recyclable, premium custom printed kraft paper tape that balanced industrial-grade strength with an "Old Money" aesthetic:',
+            'Material Engineering: Selected a 70gsm heavy-duty custom kraft tape base that perfectly harmonizes with their earthy brand tones while resisting tears and punctures.',
+            'Chemical Innovation: Utilized a high-tack natural rubber adhesive that bonds aggressively with paper fibers, ensuring ultimate tamper-evident security in any climate.',
+            'Aesthetic Precision: Applied high-definition matte black ink to eliminate traditional glare, integrating their signature branding seamlessly into the paper surface.',
           ],
         },
         {
           title: 'The Results:',
           bullets: [
-            'A more giftable luxury packaging system across the product range.',
-            'Cleaner supplier coordination and fewer approval loops.',
-            'Better protection for delicate items without sacrificing softness or detail.',
+            '100% Brand Alignment, turning standard shipping boxes into curated, premium gifts.',
+            'Zero incidents of tape failure or compromised parcels during international transit.',
+            '100% Recyclable shipping units, allowing customers to recycle the entire box effortlessly.',
+            'Significant boost in "Green" customer satisfaction ratings.',
           ],
         },
       ],
