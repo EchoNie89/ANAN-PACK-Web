@@ -1,16 +1,12 @@
 import {
-  blogArticles as fallbackBlogArticles,
   blogCategories,
   getBlogCategory,
-  type BlogArticle as LegacyBlogArticle,
   type BlogCategory,
   type BlogCategorySlug,
 } from "../data/blog";
-import type { SiteImageSource } from "./local-images";
 import {
   sanityClient,
   sanityImageUrl,
-  type SanityImageDimensions,
   type SanityImageSource,
 } from "./sanity";
 
@@ -187,22 +183,6 @@ function buildReadTime(minutes: number): string {
   return `${minutes} min read`;
 }
 
-function parseLegacyReadTime(readTime: string): number {
-  const matchedMinutes = readTime.match(/\d+/);
-  const minutes = matchedMinutes ? Number.parseInt(matchedMinutes[0], 10) : 0;
-  return Number.isFinite(minutes) && minutes > 0 ? minutes : 1;
-}
-
-function mapLocalImage(source: SiteImageSource, alt: string, caption?: string): BlogImage {
-  return {
-    src: source,
-    alt,
-    caption,
-    width: typeof source === "string" ? undefined : source.width,
-    height: typeof source === "string" ? undefined : source.height,
-  };
-}
-
 function mapSanityImage(
   source: SanityImageSource,
   alt: string,
@@ -217,76 +197,6 @@ function mapSanityImage(
     width: source.dimensions?.width,
     height: source.dimensions?.height,
     sanitySource: source,
-  };
-}
-
-function normalizeLegacyBody(article: LegacyBlogArticle): BlogBodyBlock[] {
-  const blocks: BlogBodyBlock[] = [];
-  let blockIndex = 0;
-
-  for (const paragraph of article.lead) {
-    blocks.push({
-      _key: createBlockKey(article.slug, blockIndex++),
-      type: "paragraph",
-      html: escapeHtml(paragraph),
-    });
-  }
-
-  for (const section of article.sections) {
-    if (section.title) {
-      blocks.push({
-        _key: createBlockKey(article.slug, blockIndex++),
-        type: "heading",
-        level: 2,
-        html: escapeHtml(section.title),
-      });
-    }
-
-    if (section.image) {
-      blocks.push({
-        _key: createBlockKey(article.slug, blockIndex++),
-        type: "image",
-        image: mapLocalImage(section.image.src, section.image.alt, section.image.caption),
-      });
-    }
-
-    for (const paragraph of section.paragraphs ?? []) {
-      blocks.push({
-        _key: createBlockKey(article.slug, blockIndex++),
-        type: "paragraph",
-        html: escapeHtml(paragraph),
-      });
-    }
-
-    if (section.bullets?.length) {
-      blocks.push({
-        _key: createBlockKey(article.slug, blockIndex++),
-        type: "list",
-        style: "bullet",
-        items: section.bullets.map((bullet) => escapeHtml(bullet)),
-      });
-    }
-  }
-
-  return blocks;
-}
-
-function normalizeFallbackArticle(article: LegacyBlogArticle): BlogArticle {
-  const readTimeMinutes = parseLegacyReadTime(article.readTime);
-  const heroSource = article.heroImage ?? article.image;
-
-  return {
-    slug: article.slug,
-    title: article.title,
-    excerpt: article.excerpt,
-    metaDescription: article.metaDescription || article.excerpt,
-    category: article.category,
-    publishedAt: article.publishedAt,
-    readTimeMinutes,
-    readTime: buildReadTime(readTimeMinutes),
-    heroImage: mapLocalImage(heroSource, article.imageAlt),
-    heroSummary: article.heroSummary,
-    body: normalizeLegacyBody(article),
   };
 }
 
@@ -483,11 +393,9 @@ function normalizeSanityArticle(article: SanityBlogPostDocument): BlogArticle | 
   };
 }
 
-const fallbackArticles = fallbackBlogArticles.map(normalizeFallbackArticle);
-
 async function fetchSanityBlogArticles(): Promise<BlogArticle[]> {
   if (!import.meta.env.SANITY_PROJECT_ID) {
-    return fallbackArticles;
+    return [];
   }
 
   try {
@@ -509,6 +417,10 @@ async function fetchSanityBlogArticles(): Promise<BlogArticle[]> {
 }
 
 export async function getAllBlogArticles(): Promise<BlogArticle[]> {
+  if (import.meta.env.DEV) {
+    return fetchSanityBlogArticles();
+  }
+
   if (!blogArticlesPromise) {
     blogArticlesPromise = fetchSanityBlogArticles();
   }

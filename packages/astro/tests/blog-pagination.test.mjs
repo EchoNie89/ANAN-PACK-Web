@@ -36,10 +36,11 @@ test("blog pagination uses an explicitly centered previous arrow control", () =>
   );
 });
 
-test("sanity-backed blog fetch no longer falls back to local articles when configured source is empty", () => {
+test("sanity-backed blog fetch uses Sanity only and bypasses process cache in dev", () => {
   const source = readSource("src/lib/blog.ts");
 
-  assert.match(source, /if \(!import\.meta\.env\.SANITY_PROJECT_ID\) \{\s*return fallbackArticles;/s);
+  assert.match(source, /if \(!import\.meta\.env\.SANITY_PROJECT_ID\) \{\s*return \[];\s*\}/s);
+  assert.match(source, /if \(import\.meta\.env\.DEV\) \{\s*return fetchSanityBlogArticles\(\);\s*\}/s);
   assert.match(source, /return normalizedArticles;/);
   assert.match(source, /catch \{\s*return \[];\s*\}/s);
 });

@@ -17,6 +17,8 @@ test("customization runtime uses only structured block types", () => {
   assert.match(helperSource, /export type CustomizationMarkerStyle = 'bullet' \| 'number' \| 'plain';/);
   assert.match(helperSource, /export type ProductCustomizationBlock =/);
   assert.match(helperSource, /export interface ListBlock \{[\s\S]*intro\?: string;/);
+  assert.match(helperSource, /export interface ListBlock \{[\s\S]*items\?: string\[];/);
+  assert.doesNotMatch(helperSource, /export interface EntryListBlock/);
   assert.doesNotMatch(helperSource, /LegacyCustomizationBlock/);
   assert.doesNotMatch(helperSource, /PersistedLegacyCustomizationBlock/);
   assert.doesNotMatch(helperSource, /normalizeLegacyCustomizationBlock/);
@@ -47,12 +49,9 @@ test("customization runtime uses only structured block types", () => {
   assert.doesNotMatch(sanitySource, /customizationBlock/);
   assert.match(
     sanitySource,
-    /blocks\[\]\{\s*_type,\s*title,\s*text,\s*intro,\s*markerStyle,\s*items,\s*note,/,
+    /blocks\[\]\{\s*_type,\s*title,\s*text,\s*intro,\s*markerStyle,\s*items,\s*note\s*,?/,
   );
-  assert.match(
-    sanitySource,
-    /blocks\[\]\{[\s\S]*?entries\[\]\{\s*title,\s*paragraphs,\s*note,\s*detailGroups\[\]\{\s*label,\s*markerStyle,\s*items,\s*note\s*\}\s*\}/,
-  );
+  assert.doesNotMatch(sanitySource, /entries\[\]\{/);
   assert.match(
     seedProductsSource,
     /function buildCustomizationBlock\(\s*block: ProductImportCustomizationBlock,\s*blockKey: string,\s*existingBlock: ExistingCustomizationBlock \| undefined,\s*forceText: boolean,\s*\)/,
@@ -63,7 +62,7 @@ test("customization runtime uses only structured block types", () => {
   assert.match(seedProductsSource, /intro\?: string;/);
   assert.match(seedProductsSource, /_type: "paragraphBlock"/);
   assert.match(seedProductsSource, /_type: "listBlock"/);
-  assert.match(seedProductsSource, /_type: "entryListBlock"/);
+  assert.doesNotMatch(seedProductsSource, /_type: "entryListBlock"/);
   assert.match(
     seedProductsSource,
     /text: keepExistingText\(\s*existingBlock\?\.text,\s*block\.text,\s*forceText,\s*\)/,
@@ -74,7 +73,7 @@ test("customization runtime uses only structured block types", () => {
   );
   assert.match(
     seedProductsSource,
-    /const items = keepExistingStringArray\(\s*existingBlock\?\.items,\s*block\.items,\s*forceText,\s*\)\s*\|\|\s*\[\.\.\.block\.items\];/,
+    /const items = keepExistingStringArray\(\s*existingBlock\?\.items,\s*block\.items,\s*forceText,\s*\);/,
   );
   assert.match(
     seedProductsSource,
@@ -82,20 +81,12 @@ test("customization runtime uses only structured block types", () => {
   );
   assert.match(
     seedProductsSource,
-    /const entryTitle = keepExistingText\(\s*existingEntry\?\.title,\s*entry\.title,\s*forceText,\s*\);/,
+    /\.\.\.\(items\?\.length \? \{ items \} : \{\}\),/,
   );
-  assert.match(
-    seedProductsSource,
-    /const items = keepExistingStringArray\(\s*existingDetailGroup\?\.items,\s*detailGroup\.items,\s*forceText,\s*\)\s*\|\|\s*\[\.\.\.detailGroup\.items\];/,
-  );
-  assert.match(
-    seedProductsSource,
-    /entries:\s*block\.entries\.map\(\(entry,\s*entryIndex\)\s*=>\s*\{[\s\S]*?_type: "customizationEntry"/,
-  );
-  assert.match(
-    seedProductsSource,
-    /detailGroups:\s*entry\.detailGroups\.map\(\(detailGroup,\s*detailGroupIndex\)\s*=>\s*\{[\s\S]*?_type: "customizationDetailGroup"/,
-  );
+  assert.doesNotMatch(seedProductsSource, /existingEntry\?\.title/);
+  assert.doesNotMatch(seedProductsSource, /existingDetailGroup\?\.items/);
+  assert.doesNotMatch(seedProductsSource, /entries:\s*block\.entries/);
+  assert.doesNotMatch(seedProductsSource, /detailGroups:\s*entry\.detailGroups/);
   assert.match(
     seedProductsSource,
     /buildCustomizationBlock\(\s*block,\s*`\$\{group\.sourceKey\}-block-\$\{blockIndex\}`,\s*existingGroup\?\.blocks\?\.\[blockIndex\],\s*forceText,\s*\)/,

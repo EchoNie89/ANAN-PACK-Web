@@ -29,8 +29,20 @@ test("seed customization validation rejects malformed structured blocks", async 
     ),
     [
       'customizationGroups[0].blocks[1].markerStyle must be "bullet", "number", or "plain"',
-      "customizationGroups[0].blocks[1].items must include at least one item",
+      "customizationGroups[0].blocks[1] must include intro, note, or at least one list item",
     ],
+  );
+
+  assert.deepEqual(
+    validateCustomizationBlock(
+      {
+        _type: "listBlock",
+        markerStyle: "plain",
+        intro: "Die-Cut Border",
+      },
+      "customizationGroups[0].blocks[2]",
+    ),
+    [],
   );
 
   assert.deepEqual(
@@ -38,23 +50,12 @@ test("seed customization validation rejects malformed structured blocks", async 
       {
         _type: "entryListBlock",
         markerStyle: "plain",
-        entries: [
-          {
-            title: "Die-Cut Border",
-            detailGroups: [
-              {
-                label: "Best Applications",
-                markerStyle: "bullet",
-                items: [],
-              },
-            ],
-          },
-        ],
+        entries: [],
       },
-      "customizationGroups[0].blocks[2]",
+      "customizationGroups[0].blocks[3]",
     ),
     [
-      "customizationGroups[0].blocks[2].entries[0].detailGroups[0].items must include at least one item",
+      'customizationGroups[0].blocks[3]._type must be "paragraphBlock" or "listBlock"',
     ],
   );
 });

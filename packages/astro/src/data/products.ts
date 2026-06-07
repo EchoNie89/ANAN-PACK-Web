@@ -173,21 +173,9 @@ function toProductCustomizationBlock(
   if (block._type === 'listBlock') {
     return {
       ...block,
-      items: [...block.items],
+      items: block.items ? [...block.items] : undefined,
     };
   }
-
-  return {
-    ...block,
-    entries: block.entries.map((entry) => ({
-      ...entry,
-      paragraphs: entry.paragraphs ? [...entry.paragraphs] : undefined,
-      detailGroups: entry.detailGroups?.map((detailGroup) => ({
-        ...detailGroup,
-        items: [...detailGroup.items],
-      })),
-    })),
-  };
 }
 
 function toProductCustomizationGroup(

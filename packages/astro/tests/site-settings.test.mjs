@@ -44,6 +44,11 @@ test("site settings schema exists for shared contact information", () => {
     /title:\s*['"]YouTube['"]\s*,\s*value:\s*['"]youtube['"]/,
     "Expected site settings schema to allow YouTube links in footer social media settings",
   );
+  assert.match(
+    siteSettingsSource,
+    /name:\s*['"]footerQrCode['"][\s\S]*type:\s*['"]image['"]/,
+    "Expected site settings schema to expose a footer QR code image field",
+  );
 });
 
 test("site settings fetch uses the shared timed Sanity fallback path", () => {
@@ -59,6 +64,16 @@ test("site settings fetch uses the shared timed Sanity fallback path", () => {
     /sanityClient\.fetch/.test(siteSettingsSource),
     false,
     "Expected site settings to stop calling sanityClient.fetch directly so stalled live API requests do not block SSR",
+  );
+  assert.match(
+    siteSettingsSource,
+    /footerQrCode\?:\s*SanityImageSource \| null;/,
+    "Expected site settings types to expose an optional footer QR code image",
+  );
+  assert.match(
+    siteSettingsSource,
+    /"footerQrCode":\s*footerQrCode\{\s*_type,\s*asset,\s*"dimensions": asset->metadata\.dimensions\s*\}/,
+    "Expected site settings query to request the footer QR code image metadata",
   );
   assert.match(
     sanitySource,
@@ -77,6 +92,21 @@ test("site settings fetch uses the shared timed Sanity fallback path", () => {
   );
 });
 
+test("site settings bypass module cache during local development", () => {
+  const siteSettingsSource = readAstroSource("src/lib/site-settings.ts");
+
+  assert.match(
+    siteSettingsSource,
+    /if\s*\(import\.meta\.env\.DEV\)\s*\{\s*return fetchSiteSettings\(\);\s*\}/,
+    "Expected getSiteSettings to bypass the shared module cache in Astro dev so Sanity edits appear without restarting the server",
+  );
+  assert.match(
+    siteSettingsSource,
+    /if\s*\(siteSettingsPromise\)\s*\{\s*return siteSettingsPromise;\s*\}/,
+    "Expected getSiteSettings to keep the shared module cache path for non-dev renders",
+  );
+});
+
 test("footer and contact page use a shared site settings getter", () => {
   const footerSource = readAstroSource("src/components/sections/Footer.astro");
   const contactFormSource = readAstroSource("src/components/sections/contact/ContactProjectForm.astro");
@@ -86,6 +116,26 @@ test("footer and contact page use a shared site settings getter", () => {
     footerSource,
     /getSiteSettings/,
     "Expected Footer to use the shared site settings getter",
+  );
+  assert.match(
+    footerSource,
+    /const\s*\{\s*contactDetails,\s*socialMedia,\s*footerQrCode\s*\}\s*=\s*await getSiteSettings\(\);/,
+    "Expected Footer to read footerQrCode from the shared site settings getter",
+  );
+  assert.match(
+    footerSource,
+    /sanityImageUrl/,
+    "Expected Footer to be able to render a Sanity-managed QR code image",
+  );
+  assert.match(
+    footerSource,
+    /getLocalImage\('\/images\/home\/qr-code\.png'\)/,
+    "Expected Footer to keep the local QR code asset as a fallback",
+  );
+  assert.match(
+    footerSource,
+    /footerQrCode\s*\?\s*\(/,
+    "Expected Footer to render the Sanity QR code first when it exists",
   );
   assert.equal(
     /contactDetails\s*,?[\s\S]*from ['"]\.\.\/\.\.\/data\/company['"]/.test(footerSource),

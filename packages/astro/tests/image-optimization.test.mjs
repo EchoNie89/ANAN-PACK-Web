@@ -135,31 +135,39 @@ test("services pages optimize local imagery", () => {
   }
 });
 
-test("blog pages optimize local imagery", () => {
+test("blog pages optimize local hero imagery and render Sanity-hosted blog assets", () => {
   buildSiteOnce();
 
-  const pageExpectations = [
-    {
-      path: "blog/index.html",
-      rawPaths: [
-        "/images/blog/material-guides-hero.jpg",
-        "/images/blog/article-luxury-paper.jpg",
-        "/images/blog/article-kraft-paper.jpg",
-        "/images/blog/article-biodegradable-packaging.jpg",
-      ],
-    },
-    {
-      path: "blog/best-paper-materials-for-luxury-brand-packaging/index.html",
-      rawPaths: [
-        "/images/blog/material-guides-hero.jpg",
-        "/images/blog/article-luxury-paper.jpg",
-      ],
-    },
-  ];
+  const indexHtml = readBuiltHtml("blog/index.html");
+  assertUsesAstroAssets(indexHtml, ["/images/blog/material-guide-hero.jpg"]);
+  assert.equal(
+    indexHtml.includes("/images/blog/article-"),
+    false,
+    "Expected the blog index to stop shipping legacy local blog card image paths",
+  );
 
-  for (const { path, rawPaths } of pageExpectations) {
-    const html = readBuiltHtml(path);
-    assertUsesAstroAssets(html, rawPaths);
+  if (indexHtml.includes('data-blog-pagination-root="materialsPage"')) {
+    assert.match(
+      indexHtml,
+      /https:\/\/cdn\.sanity\.io\/images\//,
+      "Expected the blog index to render blog card imagery from Sanity when cards are present",
+    );
+  }
+
+  const articlePath = "blog/best-paper-materials-for-luxury-brand-packaging/index.html";
+
+  if (existsSync(join(distDir, articlePath))) {
+    const articleHtml = readBuiltHtml(articlePath);
+    assert.equal(
+      articleHtml.includes("/images/blog/"),
+      false,
+      "Expected blog article pages to stop shipping legacy local blog image paths",
+    );
+    assert.match(
+      articleHtml,
+      /https:\/\/cdn\.sanity\.io\/images\//,
+      "Expected blog article pages to render Sanity-hosted imagery",
+    );
   }
 });
 
@@ -251,6 +259,21 @@ test("product applications adds a dedicated three-card layout for three-item set
     productApplicationsSource,
     /aspect-\[378\/265\]/,
     "Expected three-item applications cards to use the Figma image ratio",
+  );
+});
+
+test("product applications intro description uses lighter body typography", () => {
+  const productApplicationsSource = readSource("src/components/sections/products/ProductApplications.astro");
+
+  assert.match(
+    productApplicationsSource,
+    /description && \(\s*<p class="mx-auto mt-5 max-w-\[760px\] text-sm leading-6 text-text-main md:text-\[15px\] md:leading-7">/,
+    "Expected applications intro description to use smaller regular body text",
+  );
+  assert.doesNotMatch(
+    productApplicationsSource,
+    /description && \(\s*<p class="mx-auto mt-5 text-base font-semibold leading-7 text-text-main md:text-2xl md:leading-9">/,
+    "Expected applications intro description to stop using the bold oversized treatment",
   );
 });
 

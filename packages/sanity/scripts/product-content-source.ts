@@ -25,20 +25,6 @@ type ProductBaselineShowcaseCard = Omit<ProductBaselineCard, "title"> & {
   title?: string;
 };
 
-type ProductBaselineCustomizationDetailGroup = {
-  label?: string;
-  markerStyle: CustomizationMarkerStyle;
-  items: string[];
-  note?: string;
-};
-
-type ProductBaselineCustomizationEntry = {
-  title?: string;
-  paragraphs?: string[];
-  detailGroups?: ProductBaselineCustomizationDetailGroup[];
-  note?: string;
-};
-
 export type ProductBaselineCustomizationBlock =
   | {
       _type: "paragraphBlock";
@@ -47,15 +33,10 @@ export type ProductBaselineCustomizationBlock =
   | {
       _type: "listBlock";
       title?: string;
+      intro?: string;
       markerStyle: CustomizationMarkerStyle;
-      items: string[];
+      items?: string[];
       note?: string;
-    }
-  | {
-      _type: "entryListBlock";
-      title?: string;
-      markerStyle: CustomizationMarkerStyle;
-      entries: ProductBaselineCustomizationEntry[];
     };
 
 export type ProductBaselineCustomizationGroup = {
@@ -190,21 +171,9 @@ function normalizeProductCustomizationBlock(
   if (normalized._type === "listBlock") {
     return {
       ...normalized,
-      items: [...normalized.items],
+      items: normalized.items ? [...normalized.items] : undefined,
     };
   }
-
-  return {
-    ...normalized,
-    entries: normalized.entries.map((entry) => ({
-      ...entry,
-      paragraphs: entry.paragraphs ? [...entry.paragraphs] : undefined,
-      detailGroups: entry.detailGroups?.map((detailGroup) => ({
-        ...detailGroup,
-        items: [...detailGroup.items],
-      })),
-    })),
-  };
 }
 
 function normalizeCustomizationGroup(

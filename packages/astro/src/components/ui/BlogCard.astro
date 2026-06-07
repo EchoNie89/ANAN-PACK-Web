@@ -5,9 +5,10 @@ import LocalImage from "./LocalImage.astro";
 interface Props {
   article: BlogArticle;
   variant?: "default" | "industry";
+  scale?: "regular" | "compact";
 }
 
-const { article, variant = "default" } = Astro.props;
+const { article, variant = "default", scale = "regular" } = Astro.props;
 
 const publishedDate = parsePublishedDate(article.publishedAt);
 const formattedDate = publishedDate.toLocaleDateString("en-US", {
@@ -19,6 +20,9 @@ const badgeDay = publishedDate.getDate().toString().padStart(2, "0");
 const badgeMonth = publishedDate.toLocaleString("en-US", { month: "short" });
 const badgeYear = publishedDate.getFullYear();
 const isIndustry = variant === "industry";
+const isCompactDefault = !isIndustry && scale === "compact";
+const titleClampClass = "overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]";
+const excerptClampClass = "overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:4]";
 ---
 
 {
@@ -44,10 +48,10 @@ const isIndustry = variant === "industry";
         </div>
 
         <div class="flex min-h-[252px] flex-col px-5 pb-5 pt-[22px]">
-          <h3 class="text-[20px] font-semibold leading-[1.4] text-[#333333] transition group-hover:text-brand">
+          <h3 class={`text-[20px] font-semibold leading-[1.4] text-[#333333] transition group-hover:text-brand ${titleClampClass}`}>
             {article.title}
           </h3>
-          <p class="mt-4 flex-1 text-[14px] font-medium leading-[1.5] text-[#afafaf]">
+          <p class={`mt-4 flex-1 text-[14px] font-medium leading-[1.5] text-[#afafaf] ${excerptClampClass}`}>
             {article.excerpt}
           </p>
           <div class="mt-5 flex items-center justify-end text-[14px] font-medium text-[#000000]">
@@ -62,9 +66,9 @@ const isIndustry = variant === "industry";
       </a>
     </article>
   ) : (
-    <article class="overflow-hidden rounded-[10px] bg-[#f9f9f9] shadow-[0_4px_7.5px_rgba(0,0,0,0.1)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(0,0,0,0.12)]">
+    <article class={`overflow-hidden rounded-[10px] bg-[#f9f9f9] shadow-[0_4px_7.5px_rgba(0,0,0,0.1)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(0,0,0,0.12)] ${isCompactDefault ? "mx-auto w-full lg:max-w-[360px]" : ""}`}>
       <a href={`/blog/${article.slug}`} class="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
-        <div class="relative aspect-[374/296] overflow-hidden bg-surface-muted">
+        <div class={`relative overflow-hidden bg-surface-muted ${isCompactDefault ? "aspect-[360/276]" : "aspect-[374/296]"}`}>
           <LocalImage
             src={article.heroImage.src}
             alt={article.heroImage.alt}
@@ -84,15 +88,15 @@ const isIndustry = variant === "industry";
           </div>
         </div>
 
-        <div class="flex min-h-[326px] flex-col px-5 pb-5 pt-5">
-          <h3 class="text-[20px] font-semibold leading-[1.5] text-[#333333] transition group-hover:text-brand">
+        <div class={`flex flex-col px-5 pb-5 pt-5 ${isCompactDefault ? "min-h-[286px]" : "min-h-[326px]"}`}>
+          <h3 class={`text-[20px] font-semibold leading-[1.5] text-[#333333] transition group-hover:text-brand ${titleClampClass}`}>
             {article.title}
           </h3>
-          <p class="mt-4 flex-1 text-[14px] leading-[1.5] text-[#666666]">
+          <p class={`flex-1 text-[14px] leading-[1.5] text-[#666666] ${isCompactDefault ? "mt-3.5" : "mt-4"} ${excerptClampClass}`}>
             {article.excerpt}
           </p>
-          <div class="mt-auto flex justify-end pt-5">
-            <span class="inline-flex h-10 min-w-[108px] items-center justify-center rounded-[2px] bg-[#e6dbcb] px-3 text-[16px] font-medium text-[#000000] transition group-hover:bg-[#d8cab7]">
+          <div class={`mt-auto flex justify-end ${isCompactDefault ? "pt-4" : "pt-5"}`}>
+            <span class={`inline-flex items-center justify-center rounded-[2px] bg-[#e6dbcb] px-3 font-medium text-[#000000] transition group-hover:bg-[#d8cab7] ${isCompactDefault ? "h-9 min-w-[96px] text-[15px]" : "h-10 min-w-[108px] text-[16px]"}`}>
               Read More
             </span>
           </div>

@@ -10,31 +10,30 @@ test("patches manifest demonstrates the new customization block model", async ()
   );
 
   assert.ok(borderOptionsGroup, "Expected a representative migrated border options group");
-  assert.equal(borderOptionsGroup.blocks.length, 1);
+  assert.equal(borderOptionsGroup.blocks.length, 16);
+  assert.ok(
+    borderOptionsGroup.blocks.every((block) => block._type === "listBlock"),
+  );
 
-  const [block] = borderOptionsGroup.blocks;
-
-  assert.equal(block._type, "entryListBlock");
-  assert.equal(block.markerStyle, "plain");
-  assert.ok(Array.isArray(block.entries));
-  assert.ok(block.entries.length >= 4);
-
-  const merrowBorderEntry = block.entries.find(
+  const merrowBorderBlock = borderOptionsGroup.blocks.find(
     ({ title }) => title === "Merrow Border",
   );
 
-  assert.ok(merrowBorderEntry, "Expected representative Merrow Border entry");
-  assert.deepEqual(merrowBorderEntry.paragraphs, [
+  assert.ok(merrowBorderBlock, "Expected representative Merrow Border block");
+  assert.equal(merrowBorderBlock._type, "listBlock");
+  assert.equal(merrowBorderBlock.markerStyle, "plain");
+  assert.equal(
+    merrowBorderBlock.intro,
     "A merrow border is created using a special overlock stitching machine that wraps thick thread around the edge of the patch. This stitching forms a rounded and raised edge that protects the patch from fraying.",
-  ]);
+  );
 
-  const bestApplicationsGroup = merrowBorderEntry.detailGroups?.find(
-    ({ label }) => label === "Best Applications",
+  const bestApplicationsGroup = borderOptionsGroup.blocks.find(
+    ({ title }) => title === "Best Applications",
   );
 
   assert.ok(
     bestApplicationsGroup,
-    "Expected Best Applications detail group on representative entry",
+    "Expected Best Applications detail block on representative entry",
   );
   assert.equal(bestApplicationsGroup.markerStyle, "bullet");
   assert.deepEqual(bestApplicationsGroup.items, [
@@ -53,29 +52,27 @@ test("patches manifest demonstrates the new customization block model", async ()
   );
 
   assert.ok(backingOptionsGroup, "Expected representative backing options group");
-  assert.equal(backingOptionsGroup.blocks.length, 1);
-  assert.equal(backingOptionsGroup.blocks[0]._type, "entryListBlock");
+  assert.equal(backingOptionsGroup.blocks.length, 20);
+  assert.ok(
+    backingOptionsGroup.blocks.every((block) => block._type === "listBlock"),
+  );
 
-  const backingBlock = backingOptionsGroup.blocks[0];
-
-  assert.equal(backingBlock.markerStyle, "plain");
-  assert.ok(Array.isArray(backingBlock.entries));
-
-  const sewOnEntry = backingBlock.entries.find(
+  const sewOnEntry = backingOptionsGroup.blocks.find(
     ({ title }) => title === "Sew-On Backing",
   );
 
-  assert.ok(sewOnEntry, "Expected Sew-On Backing structured entry");
-  assert.deepEqual(sewOnEntry.paragraphs, [
-    "Sew-on patches are stitched directly onto garments using a sewing machine or hand stitching.",
-    "Sew-on patches are considered the most reliable option for patches for clothing.",
-  ]);
-
-  const sewOnAdvantages = sewOnEntry.detailGroups?.find(
-    ({ label }) => label === "Advantages",
+  assert.ok(sewOnEntry, "Expected Sew-On Backing structured block");
+  assert.equal(sewOnEntry._type, "listBlock");
+  assert.equal(
+    sewOnEntry.intro,
+    "Sew-on patches are stitched directly onto garments using a sewing machine or hand stitching.\n\nSew-on patches are considered the most reliable option for patches for clothing.",
   );
 
-  assert.ok(sewOnAdvantages, "Expected Advantages detail group on Sew-On Backing entry");
+  const sewOnAdvantages = backingOptionsGroup.blocks.find(
+    ({ title }) => title === "Advantages",
+  );
+
+  assert.ok(sewOnAdvantages, "Expected Advantages detail block on Sew-On Backing entry");
   assert.equal(sewOnAdvantages.markerStyle, "bullet");
   assert.deepEqual(sewOnAdvantages.items, [
     "Strongest and most durable attachment",
@@ -88,21 +85,24 @@ test("patches manifest demonstrates the new customization block model", async ()
   );
 
   assert.ok(patchSizeGroup, "Expected representative patch size and shape group");
+  assert.ok(
+    patchSizeGroup.blocks.every((block) => block._type === "listBlock"),
+  );
 
   const customPatchSizesBlock = patchSizeGroup.blocks.find(
     ({ title }) => title === "Custom Patch Sizes",
   );
 
   assert.ok(customPatchSizesBlock, "Expected Custom Patch Sizes structured block");
-  assert.equal(customPatchSizesBlock._type, "entryListBlock");
+  assert.equal(customPatchSizesBlock._type, "listBlock");
   assert.equal(customPatchSizesBlock.markerStyle, "plain");
-  assert.deepEqual(customPatchSizesBlock.entries[0].paragraphs, [
-    "Patches can be produced in a wide range of sizes depending on the product and logo design.",
-    "Choosing the right size ensures that the patch remains visible while maintaining a balanced look on the garment.",
-  ]);
+  assert.equal(
+    customPatchSizesBlock.intro,
+    "Patches can be produced in a wide range of sizes depending on the product and logo design.\n\nChoosing the right size ensures that the patch remains visible while maintaining a balanced look on the garment.",
+  );
 
-  const commonPatchSizes = customPatchSizesBlock.entries[0].detailGroups?.find(
-    ({ label }) => label === "Common Patch Sizes",
+  const commonPatchSizes = patchSizeGroup.blocks.find(
+    ({ title }) => title === "Common Patch Sizes",
   );
 
   assert.ok(
@@ -115,8 +115,8 @@ test("patches manifest demonstrates the new customization block model", async ()
     "Large patches (8–12 cm or larger)",
   ]);
 
-  const customPatchSizeApplications = customPatchSizesBlock.entries[0].detailGroups?.find(
-    ({ label }) => label === "Best Applications",
+  const customPatchSizeApplications = patchSizeGroup.blocks.find(
+    ({ title }) => title === "Best Applications",
   );
 
   assert.ok(
@@ -134,24 +134,21 @@ test("patches manifest demonstrates the new customization block model", async ()
   );
 
   assert.ok(roundedCornersBlock, "Expected Rounded Corners & Edge Finishing structured block");
-  assert.equal(roundedCornersBlock._type, "entryListBlock");
-
-  const roundedCornersEntry = roundedCornersBlock.entries[0];
-
-  assert.deepEqual(roundedCornersEntry.paragraphs, [
-    "Rounded corners and smooth edges can improve the comfort and durability of patches.",
-    "This option is often recommended for patches that will be used on garments and hats.",
-  ]);
+  assert.equal(roundedCornersBlock._type, "listBlock");
+  assert.equal(
+    roundedCornersBlock.intro,
+    "Rounded corners and smooth edges can improve the comfort and durability of patches.\n\nThis option is often recommended for patches that will be used on garments and hats.",
+  );
 
   const customDieCutBlock = patchSizeGroup.blocks.find(
     ({ title }) => title === "Custom Die-Cut Shapes",
   );
 
   assert.ok(customDieCutBlock, "Expected Custom Die-Cut Shapes structured block");
-  assert.equal(customDieCutBlock._type, "entryListBlock");
+  assert.equal(customDieCutBlock._type, "listBlock");
 
-  const customDieCutFeatures = customDieCutBlock.entries[0].detailGroups?.find(
-    ({ label }) => label === "Features",
+  const customDieCutFeatures = patchSizeGroup.blocks.find(
+    ({ title }) => title === "Features",
   );
 
   assert.ok(
@@ -164,40 +161,49 @@ test("patches manifest demonstrates the new customization block model", async ()
     "more distinctive product appearance",
   ]);
 
-  const customDieCutApplications = customDieCutBlock.entries[0].detailGroups?.find(
-    ({ label }) => label === "Best Applications",
+  const customDieCutApplications = patchSizeGroup.blocks.find(
+    ({ title }) => title === "Best Applications" && Array.isArray(title),
+  );
+  const customDieCutApplicationsBlock = patchSizeGroup.blocks.find(
+    (block) =>
+      block.title === "Best Applications"
+      && block.items?.includes("creative apparel designs"),
   );
 
   assert.ok(
-    customDieCutApplications,
-    "Expected Best Applications detail group on Custom Die-Cut Shapes block",
+    customDieCutApplicationsBlock,
+    "Expected Best Applications detail block on Custom Die-Cut Shapes block",
   );
-  assert.deepEqual(customDieCutApplications.items, [
+  assert.deepEqual(customDieCutApplicationsBlock.items, [
     "fashion brands",
     "streetwear labels",
     "promotional patches",
     "creative apparel designs",
   ]);
 
-  const ironOnEntry = backingBlock.entries.find(
+  const ironOnEntry = backingOptionsGroup.blocks.find(
     ({ title }) => title === "Iron-On Backing",
   );
 
-  assert.ok(ironOnEntry, "Expected Iron-On Backing structured entry");
+  assert.ok(ironOnEntry, "Expected Iron-On Backing structured block");
 
-  const ironOnAdvantages = ironOnEntry.detailGroups?.find(
-    ({ label }) => label === "Advantages",
+  const ironOnAdvantages = backingOptionsGroup.blocks.find(
+    (block) =>
+      block.title === "Advantages"
+      && block.items?.includes("quick application"),
   );
 
-  assert.ok(ironOnAdvantages, "Expected Advantages detail group on Iron-On Backing entry");
+  assert.ok(ironOnAdvantages, "Expected Advantages detail block on Iron-On Backing entry");
   assert.deepEqual(ironOnAdvantages.items, [
     "quick application",
     "no sewing required",
     "suitable for DIY or small runs",
   ]);
 
-  const roundedCornerAdvantages = roundedCornersEntry.detailGroups?.find(
-    ({ label }) => label === "Advantages",
+  const roundedCornerAdvantages = patchSizeGroup.blocks.find(
+    (block) =>
+      block.title === "Advantages"
+      && block.items?.includes("provides a cleaner visual appearance"),
   );
 
   assert.ok(

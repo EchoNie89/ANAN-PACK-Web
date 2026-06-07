@@ -61,8 +61,8 @@ const heroContent = {
         style="--motion-delay: 160ms;"
       >
         {
-          heroContent.titleLines.map((line) => (
-            <span class="block">{line}</span>
+          heroContent.titleLines.map((line, index) => (
+            <span class={`block ${index === 0 ? "mb-2 sm:mb-2.5 md:mb-3" : ""}`}>{line}</span>
           ))
         }
       </h1>

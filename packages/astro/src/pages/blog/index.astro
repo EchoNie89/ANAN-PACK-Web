@@ -30,10 +30,7 @@ const blogListItems = allBlogArticles.flatMap((article) => {
   return url ? [{ name: article.title, url }] : [];
 });
 const seoJsonLd = [
-  buildBreadcrumbJsonLd([
-    { label: 'Home', href: '/' },
-    { label: 'Blog' },
-  ]),
+  buildBreadcrumbJsonLd([{ label: 'Home', href: '/' }, { label: 'Blog' }]),
   buildCollectionPageJsonLd({
     title: 'Blog | ANAN PACK',
     description:
@@ -61,12 +58,16 @@ const seoJsonLd = [
       breadcrumbsAlign="left"
       breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Blog' }]}
     >
-      <BlogCategoryHighlights slot="afterContent" categories={blogCategories} inHero />
+      <BlogCategoryHighlights
+        slot="afterContent"
+        categories={blogCategories}
+        inHero
+      />
     </BlogPageHero>
     <BlogListingSection
       id="material-guides"
       title="Master Your Materials"
-      description="Learn how paper stocks, recyclable formats, and production details shape premium packaging results."
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit"
       articles={featuredMaterialArticles}
       pageSize={6}
       paginationParam="materialsPage"

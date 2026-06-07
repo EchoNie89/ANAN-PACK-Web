@@ -6,11 +6,23 @@ import { footerHighlights, footerQuickLinks } from '../../data/company';
 import { getLocalImage } from '../../lib/local-images';
 import { getSiteName } from '../../lib/seo';
 import { getSiteSettings } from '../../lib/site-settings';
+import { sanityImageUrl } from '../../lib/sanity';
 
 const footerQrImage = getLocalImage('/images/home/qr-code.png');
 const footerLogoImage = getLocalImage('/images/home/anan-pack-logo.png');
-const { contactDetails, socialMedia } = await getSiteSettings();
+const { contactDetails, socialMedia, footerQrCode } = await getSiteSettings();
 const siteName = getSiteName();
+const footerQrWidths = [140, 280] as const;
+const footerQrSanitySrc = footerQrCode
+  ? sanityImageUrl(footerQrCode).width(footerQrWidths[1]).auto('format').fit('max').url()
+  : null;
+const footerQrSanitySrcSet = footerQrCode
+  ? footerQrWidths
+      .map((candidate) =>
+        `${sanityImageUrl(footerQrCode).width(candidate).auto('format').fit('max').url()} ${candidate}w`
+      )
+      .join(', ')
+  : null;
 
 const socialMediaLabels = {
   instagram: 'Instagram',
@@ -204,14 +216,30 @@ const footerContacts = [
       <div class="hidden bg-border lg:block" aria-hidden="true"></div>
 
       <div class="w-full max-w-none lg:max-w-[140px]">
-        <LocalImage
-          src={footerQrImage}
-          alt="WhatsApp QR code"
-          class="h-auto w-[140px] max-w-full bg-white object-contain"
-          loading="lazy"
-          sizes="140px"
-          widths={[140, 280]}
-        />
+        {
+          footerQrCode ? (
+            <img
+              src={footerQrSanitySrc ?? undefined}
+              srcset={footerQrSanitySrcSet ?? undefined}
+              sizes="140px"
+              alt="WhatsApp QR code"
+              class="h-auto w-[140px] max-w-full bg-white object-contain"
+              loading="lazy"
+              decoding="async"
+              width={footerQrCode.dimensions?.width}
+              height={footerQrCode.dimensions?.height}
+            />
+          ) : (
+            <LocalImage
+              src={footerQrImage}
+              alt="WhatsApp QR code"
+              class="h-auto w-[140px] max-w-full bg-white object-contain"
+              loading="lazy"
+              sizes="140px"
+              widths={[140, 280]}
+            />
+          )
+        }
         <p class="mt-6 text-sm leading-5 text-text-main">
           Scan to contact us on <strong class="font-bold">WhatsApp</strong>
         </p>

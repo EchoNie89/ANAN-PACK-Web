@@ -104,6 +104,12 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'footerQrCode',
+      title: 'Footer QR Code',
+      description: 'QR code image shown in the footer contact panel.',
+      type: 'image',
+    }),
   ],
   preview: {
     select: {

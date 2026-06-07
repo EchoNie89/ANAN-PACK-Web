@@ -119,22 +119,6 @@ export type CustomizationBlock =
       markerStyle: 'bullet' | 'number' | 'plain';
       items?: string[];
       note?: string;
-    }
-  | {
-      _type: 'entryListBlock';
-      title?: string;
-      markerStyle: 'bullet' | 'number' | 'plain';
-      entries: Array<{
-        title?: string;
-        paragraphs?: string[];
-        detailGroups?: Array<{
-          label?: string;
-          markerStyle: 'bullet' | 'number' | 'plain';
-          items: string[];
-          note?: string;
-        }>;
-        note?: string;
-      }>;
     };
 
 export interface CustomizationImage {
@@ -282,18 +266,7 @@ const PRODUCT_CUSTOMIZATION_QUERY = `
           intro,
           markerStyle,
           items,
-          note,
-          entries[]{
-            title,
-            paragraphs,
-            note,
-            detailGroups[]{
-              label,
-              markerStyle,
-              items,
-              note
-            }
-          }
+          note
         }
       }
     },
@@ -318,18 +291,7 @@ const PRODUCT_CUSTOMIZATION_QUERY = `
           intro,
           markerStyle,
           items,
-          note,
-          entries[]{
-            title,
-            paragraphs,
-            note,
-            detailGroups[]{
-              label,
-              markerStyle,
-              items,
-              note
-            }
-          }
+          note
         }
       }
     }

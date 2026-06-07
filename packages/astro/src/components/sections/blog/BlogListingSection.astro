@@ -9,6 +9,7 @@ interface Props {
   description?: string;
   articles: BlogArticle[];
   variant?: "default" | "industry";
+  cardScale?: "regular" | "compact";
   pageSize?: number;
   paginationParam?: string;
   paginationAlign?: "center" | "end";
@@ -21,6 +22,7 @@ const {
   description,
   articles,
   variant = "default",
+  cardScale = "regular",
   pageSize = 6,
   paginationParam = id ? `${id}Page` : undefined,
   paginationAlign = "end",
@@ -68,7 +70,7 @@ const totalPages = Math.ceil(articles.length / pageSize);
                   data-page={page}
                   class={page === 1 ? "" : "hidden"}
                 >
-                  <BlogCard article={article} variant={variant} />
+                  <BlogCard article={article} variant={variant} scale={cardScale} />
                 </div>
               );
             })

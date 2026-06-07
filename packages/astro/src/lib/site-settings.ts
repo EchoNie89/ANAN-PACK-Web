@@ -1,4 +1,4 @@
-import { fetchSanityQuery } from "./sanity";
+import { fetchSanityQuery, type SanityImageSource } from "./sanity";
 
 export interface SiteContactDetails {
   email: string;
@@ -22,11 +22,13 @@ export interface SiteSocialMediaLink {
 interface SiteSettingsDocument {
   contactDetails?: Partial<SiteContactDetails> | null;
   socialMedia?: Array<Partial<SiteSocialMediaLink> | null> | null;
+  footerQrCode?: SanityImageSource | null;
 }
 
 export interface SiteSettings {
   contactDetails: SiteContactDetails;
   socialMedia: SiteSocialMediaLink[];
+  footerQrCode?: SanityImageSource | null;
 }
 
 const DEFAULT_SITE_CONTACT_DETAILS: SiteContactDetails = {
@@ -41,6 +43,7 @@ const DEFAULT_SITE_CONTACT_DETAILS: SiteContactDetails = {
 const DEFAULT_SITE_SETTINGS: SiteSettings = {
   contactDetails: DEFAULT_SITE_CONTACT_DETAILS,
   socialMedia: [],
+  footerQrCode: null,
 };
 
 const SITE_SETTINGS_QUERY = `
@@ -56,6 +59,11 @@ const SITE_SETTINGS_QUERY = `
     socialMedia[]{
       platform,
       url
+    },
+    "footerQrCode": footerQrCode{
+      _type,
+      asset,
+      "dimensions": asset->metadata.dimensions
     }
   }
 `;
@@ -101,19 +109,16 @@ function normalizeSiteSettings(source?: SiteSettingsDocument | null): SiteSettin
   return {
     contactDetails: normalizeSiteContactDetails(source?.contactDetails),
     socialMedia: normalizeSiteSocialMedia(source?.socialMedia),
+    footerQrCode: source?.footerQrCode?.asset?._ref ? source.footerQrCode : null,
   };
 }
 
-export async function getSiteSettings(): Promise<SiteSettings> {
-  if (siteSettingsPromise) {
-    return siteSettingsPromise;
-  }
-
+function fetchSiteSettings(): Promise<SiteSettings> {
   if (!import.meta.env.SANITY_PROJECT_ID) {
-    return DEFAULT_SITE_SETTINGS;
+    return Promise.resolve(DEFAULT_SITE_SETTINGS);
   }
 
-  siteSettingsPromise = fetchSanityQuery<SiteSettingsDocument | null>(
+  return fetchSanityQuery<SiteSettingsDocument | null>(
     SITE_SETTINGS_QUERY,
     {
       documentId: "siteSettings",
@@ -121,7 +126,18 @@ export async function getSiteSettings(): Promise<SiteSettings> {
   )
     .then((document) => normalizeSiteSettings(document))
     .catch(() => DEFAULT_SITE_SETTINGS);
+}
 
+export async function getSiteSettings(): Promise<SiteSettings> {
+  if (import.meta.env.DEV) {
+    return fetchSiteSettings();
+  }
+
+  if (siteSettingsPromise) {
+    return siteSettingsPromise;
+  }
+
+  siteSettingsPromise = fetchSiteSettings();
   return siteSettingsPromise;
 }
 

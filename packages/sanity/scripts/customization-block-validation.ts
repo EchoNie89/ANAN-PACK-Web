@@ -20,12 +20,6 @@ function hasNonEmptyItems(value: unknown): value is string[] {
     && value.every((item) => typeof item === "string" && item.trim().length > 0);
 }
 
-function hasNonEmptyParagraphs(value: unknown): value is string[] {
-  return Array.isArray(value)
-    && value.length > 0
-    && value.every((paragraph) => typeof paragraph === "string" && paragraph.trim().length > 0);
-}
-
 function pushMarkerStyleError(
   errors: string[],
   value: unknown,
@@ -36,18 +30,12 @@ function pushMarkerStyleError(
   }
 }
 
-function validateListItems(
-  errors: string[],
-  value: unknown,
-  label: string,
-) {
-  if (!hasNonEmptyItems(value)) {
-    errors.push(`${label}.items must include at least one item`);
-  }
+function hasTextContent(value: unknown): boolean {
+  return typeof value === "string" && value.trim().length > 0;
 }
 
 function validateStructuredBlock(
-  block: ProductCustomizationBlock,
+  block: ProductCustomizationBlock | ProductImportCustomizationBlock,
   label: string,
 ): string[] {
   const errors: string[] = [];
@@ -62,34 +50,17 @@ function validateStructuredBlock(
   pushMarkerStyleError(errors, block.markerStyle, label);
 
   if (block._type === "listBlock") {
-    validateListItems(errors, block.items, label);
+    if (
+      !hasNonEmptyItems(block.items)
+      && !hasTextContent(block.intro)
+      && !hasTextContent(block.note)
+    ) {
+      errors.push(`${label} must include intro, note, or at least one list item`);
+    }
     return errors;
   }
 
-  if (!Array.isArray(block.entries) || block.entries.length === 0) {
-    errors.push(`${label}.entries must include at least one entry`);
-    return errors;
-  }
-
-  block.entries.forEach((entry, entryIndex) => {
-    const entryLabel = `${label}.entries[${entryIndex}]`;
-    const hasParagraphs = entry.paragraphs === undefined || hasNonEmptyParagraphs(entry.paragraphs);
-
-    if (!hasParagraphs) {
-      errors.push(`${entryLabel}.paragraphs must contain only non-empty strings`);
-    }
-
-    if (!entry.title?.trim() && !entry.note?.trim() && !entry.paragraphs?.length && !entry.detailGroups?.length) {
-      errors.push(`${entryLabel} must include at least one content field`);
-    }
-
-    entry.detailGroups?.forEach((detailGroup, detailGroupIndex) => {
-      const detailLabel = `${entryLabel}.detailGroups[${detailGroupIndex}]`;
-      pushMarkerStyleError(errors, detailGroup.markerStyle, detailLabel);
-      validateListItems(errors, detailGroup.items, detailLabel);
-    });
-  });
-
+  errors.push(`${label}._type must be "paragraphBlock" or "listBlock"`);
   return errors;
 }
 

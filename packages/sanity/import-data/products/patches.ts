@@ -1,4 +1,61 @@
-import type { ProductImportManifest } from "./types";
+import type {
+  ProductImportCustomizationBlock,
+  ProductImportManifest,
+} from "./types";
+
+type EntryDetailGroupDefinition = {
+  label?: string;
+  markerStyle: "bullet" | "number" | "plain";
+  items: string[];
+  note?: string;
+};
+
+type EntryDefinition = {
+  title?: string;
+  paragraphs?: string[];
+  detailGroups?: EntryDetailGroupDefinition[];
+  note?: string;
+};
+
+type EntryListBlockDefinition = {
+  title?: string;
+  markerStyle: "bullet" | "number" | "plain";
+  entries: EntryDefinition[];
+};
+
+function flattenEntryListBlock(
+  block: EntryListBlockDefinition,
+): ProductImportCustomizationBlock[] {
+  const useParentTitle = block.entries.length === 1;
+
+  return block.entries.flatMap((entry) => {
+    const intro = entry.paragraphs?.length
+      ? entry.paragraphs.join("\n\n")
+      : undefined;
+    const title = entry.title ?? (useParentTitle ? block.title : undefined);
+    const blocks: ProductImportCustomizationBlock[] = [
+      {
+        _type: "listBlock",
+        ...(title ? { title } : {}),
+        ...(intro ? { intro } : {}),
+        markerStyle: block.markerStyle,
+        ...(entry.note ? { note: entry.note } : {}),
+      },
+    ];
+
+    for (const detailGroup of entry.detailGroups ?? []) {
+      blocks.push({
+        _type: "listBlock",
+        ...(detailGroup.label ? { title: detailGroup.label } : {}),
+        markerStyle: detailGroup.markerStyle,
+        items: [...detailGroup.items],
+        ...(detailGroup.note ? { note: detailGroup.note } : {}),
+      });
+    }
+
+    return blocks;
+  });
+}
 
 const manifest: ProductImportManifest = {
   slug: "patches",
@@ -205,11 +262,9 @@ const manifest: ProductImportManifest = {
           figmaNodeId: "21440:2620",
         },
       ],
-      blocks: [
-        {
-          _type: "entryListBlock",
-          markerStyle: "plain",
-          entries: [
+      blocks: flattenEntryListBlock({
+        markerStyle: "plain",
+        entries: [
             {
               title: "Merrow Border",
               paragraphs: [
@@ -348,8 +403,7 @@ const manifest: ProductImportManifest = {
               ],
             },
           ],
-        },
-      ],
+      }),
     },
     {
       sourceKey: "patches-customization-backing-options",
@@ -383,11 +437,9 @@ const manifest: ProductImportManifest = {
           figmaNodeId: "19744:350",
         },
       ],
-      blocks: [
-        {
-          _type: "entryListBlock",
-          markerStyle: "plain",
-          entries: [
+      blocks: flattenEntryListBlock({
+        markerStyle: "plain",
+        entries: [
             {
               title: "Sew-On Backing",
               paragraphs: [
@@ -557,8 +609,7 @@ const manifest: ProductImportManifest = {
               ],
             },
           ],
-        },
-      ],
+      }),
     },
     {
       sourceKey: "patches-customization-size-shape",
@@ -617,8 +668,7 @@ const manifest: ProductImportManifest = {
         },
       ],
       blocks: [
-        {
-          _type: "entryListBlock",
+        ...flattenEntryListBlock({
           title: "Custom Patch Sizes",
           markerStyle: "plain",
           entries: [
@@ -649,7 +699,7 @@ const manifest: ProductImportManifest = {
               ],
             },
           ],
-        },
+        }),
         {
           _type: "listBlock",
           markerStyle: "bullet",
@@ -660,8 +710,7 @@ const manifest: ProductImportManifest = {
             "These shapes are widely used for uniform patches, brand logos, and clothing labels.",
           ],
         },
-        {
-          _type: "entryListBlock",
+        ...flattenEntryListBlock({
           title: "Custom Die-Cut Shapes",
           markerStyle: "plain",
           entries: [
@@ -693,9 +742,8 @@ const manifest: ProductImportManifest = {
               ],
             },
           ],
-        },
-        {
-          _type: "entryListBlock",
+        }),
+        ...flattenEntryListBlock({
           title: "Rounded Corners & Edge Finishing",
           markerStyle: "plain",
           entries: [
@@ -717,7 +765,7 @@ const manifest: ProductImportManifest = {
               ],
             },
           ],
-        },
+        }),
       ],
     },
   ],

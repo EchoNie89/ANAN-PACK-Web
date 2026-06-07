@@ -21,6 +21,9 @@ test("product manifests use explicit customization block types", async () => {
         if (!block._type) {
           legacyBlocks.push(`${file}:${group.sourceKey}:${block.title ?? "(untitled block)"}`);
         }
+        if (block._type === "entryListBlock") {
+          legacyBlocks.push(`${file}:${group.sourceKey}:${block.title ?? "(entry list block)"}`);
+        }
       }
     }
   }
@@ -37,6 +40,9 @@ test("local product source pages use explicit customization block types", async 
       for (const block of group.blocks ?? []) {
         if (!block._type) {
           legacyBlocks.push(`${page.slug}:${group.title}:${block.title ?? "(untitled block)"}`);
+        }
+        if (block._type === "entryListBlock") {
+          legacyBlocks.push(`${page.slug}:${group.title}:${block.title ?? "(entry list block)"}`);
         }
       }
     }

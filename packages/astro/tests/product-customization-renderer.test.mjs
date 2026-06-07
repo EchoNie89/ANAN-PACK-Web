@@ -38,14 +38,14 @@ test("product customization renderer handles structured blocks directly", () => 
 
   assert.match(customizationSource, /block\._type === "paragraphBlock"/);
   assert.match(customizationSource, /block\._type === "listBlock"/);
-  assert.match(customizationSource, /block\._type === "entryListBlock"/);
+  assert.doesNotMatch(customizationSource, /block\._type === "entryListBlock"/);
   assert.match(customizationSource, /markerStyle === "number"/);
   assert.match(customizationSource, /markerStyle === "bullet"/);
   assert.match(customizationSource, /markerStyle === "plain"/);
   assert.match(customizationSource, /block\.intro/);
   assert.match(customizationSource, /block\.note/);
-  assert.match(customizationSource, /entry\.note/);
-  assert.match(customizationSource, /detailGroup\.note/);
+  assert.doesNotMatch(customizationSource, /entry\.note/);
+  assert.doesNotMatch(customizationSource, /detailGroup\.note/);
   assert.match(
     customizationSource,
     /group\.intro && \(\s*<p class="whitespace-pre-line text-sm leading-\[24px\] text-text-main md:text-\[15px\] md:leading-\[25px\]">\s*\{group\.intro\}\s*<\/p>\s*\)/,
@@ -62,21 +62,13 @@ test("product customization renderer handles structured blocks directly", () => 
     customizationSource,
     /block\.note && <p class="whitespace-pre-line">\{block\.note\}<\/p>/,
   );
-  assert.match(
-    customizationSource,
-    /detailGroup\.note && <p class="whitespace-pre-line">\{detailGroup\.note\}<\/p>/,
-  );
-  assert.match(
-    customizationSource,
-    /entry\.note && <p class="whitespace-pre-line">\{entry\.note\}<\/p>/,
-  );
   assert.match(customizationSource, /leading-tight tracking-\[0\.01em\] text-text-main md:text-\[32px\]/);
   assert.match(customizationSource, /index === 0 \? "mt-3 md:mt-4" : "mt-12 md:mt-14"/);
   assert.match(customizationSource, /text-\[20px\] font-semibold leading-tight text-text-main md:text-\[24px\]/);
   assert.match(customizationSource, /text-sm leading-\[24px\] text-text-main md:text-\[15px\] md:leading-\[25px\]/);
   assert.match(customizationSource, /mt-4 grid gap-5 text-sm leading-\[24px\] text-text-main md:text-\[15px\] md:leading-\[25px\]/);
   assert.match(customizationSource, /<section class="grid gap-1\.5">/);
-  assert.match(customizationSource, /<section class="grid gap-3">/);
-  assert.match(customizationSource, /<li class="space-y-2\.5">/);
-  assert.match(customizationSource, /<div class="space-y-1\.5">/);
+  assert.doesNotMatch(customizationSource, /<section class="grid gap-3">/);
+  assert.doesNotMatch(customizationSource, /<li class="space-y-2\.5">/);
+  assert.doesNotMatch(customizationSource, /<div class="space-y-1\.5">/);
 });

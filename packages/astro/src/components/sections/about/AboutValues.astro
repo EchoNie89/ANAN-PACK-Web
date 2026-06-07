@@ -1,31 +1,63 @@
 ---
-import Container from "../../ui/Container.astro";
-import SectionTitle from "../../ui/SectionTitle.astro";
-import SymbolIcon from "../../ui/SymbolIcon.astro";
-import { aboutValues } from "../../../data/company";
+import Container from '../../ui/Container.astro';
+import { aboutValues } from '../../../data/company';
 ---
 
 <section class="bg-white py-16 md:py-24">
   <Container class="!max-w-[1280px]">
-    <div data-reveal>
-      <SectionTitle eyebrow="OUR VALUES" title="How We Work With Growing Brands." align="center" />
+    <div class="text-center" data-reveal>
+      <p class="text-base font-extrabold tracking-[0.03em] text-[#a67237]">
+        OUR VALUES
+      </p>
     </div>
-    <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+    <div class="mx-auto mt-12 grid max-w-[1200px] gap-5 md:grid-cols-2 xl:mt-[45px] xl:grid-cols-4 xl:gap-10">
       {
         aboutValues.map((item, index) => (
           <article
-            class="motion-hover-card relative rounded-soft border-b-2 border-black bg-surface-panel px-6 pb-8 pt-14 shadow-card"
+            class="about-values-card relative min-h-[226px] border-b-2 border-transparent bg-[#f7f7f7] px-[13px] pb-7 pt-[70px] text-center"
             data-reveal
             style={`--reveal-delay: ${index * 80}ms;`}
           >
             <div class="absolute left-1/2 top-0 flex size-[78px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_4px_5px_rgba(0,0,0,0.05)]">
-              <SymbolIcon name="check" class="size-9 text-brand" />
+              <svg
+                viewBox="0 0 46 46"
+                class="size-[46px]"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <rect x="3" y="4.5" width="40" height="11" stroke="black" stroke-width="2.5" />
+                <rect x="1.35" y="20.3" width="43.3" height="5.4" fill="black" />
+                <rect x="3" y="30.5" width="40" height="11" stroke="black" stroke-width="2.5" />
+              </svg>
             </div>
-            <h3 class="text-center text-base font-semibold text-black">{item.title}</h3>
-            <p class="mt-5 text-center text-sm leading-6 text-text-muted">{item.description}</p>
+            <h3 class="text-[16px] font-medium text-black">
+              {item.title}
+            </h3>
+            <p class="mx-auto mt-[18px] max-w-[244px] text-[14px] leading-[1.5] text-[#666666]">
+              {item.description}
+            </p>
           </article>
         ))
       }
     </div>
   </Container>
 </section>
+
+<style>
+  .about-values-card {
+    transition:
+      background-color 240ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 240ms ease,
+      transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .about-values-card:hover {
+      background-color: #fffff9;
+      border-bottom-color: #000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+</style>

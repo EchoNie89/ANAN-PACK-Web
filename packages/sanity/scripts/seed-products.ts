@@ -131,29 +131,14 @@ type ExistingImageField = {
   alt?: string;
 };
 
-type ExistingCustomizationDetailGroup = {
-  label?: string;
-  markerStyle?: CustomizationMarkerStyle;
-  items?: string[];
-  note?: string;
-};
-
-type ExistingCustomizationEntry = {
-  title?: string;
-  paragraphs?: string[];
-  detailGroups?: ExistingCustomizationDetailGroup[];
-  note?: string;
-};
-
 type ExistingCustomizationBlock = {
-  _type?: "paragraphBlock" | "listBlock" | "entryListBlock";
+  _type?: "paragraphBlock" | "listBlock";
   title?: string;
   text?: string;
   intro?: string;
   markerStyle?: CustomizationMarkerStyle;
   items?: string[];
   note?: string;
-  entries?: ExistingCustomizationEntry[];
 };
 
 type ExistingCustomizationGroup = {
@@ -1398,7 +1383,7 @@ function buildCustomizationBlock(
       existingBlock?.items,
       block.items,
       forceText,
-    ) || [...block.items];
+    );
     const note = keepExistingText(
       existingBlock?.note,
       block.note,
@@ -1411,81 +1396,10 @@ function buildCustomizationBlock(
       ...(title ? { title } : {}),
       ...(intro ? { intro } : {}),
       markerStyle: block.markerStyle,
-      items,
+      ...(items?.length ? { items } : {}),
       ...(note ? { note } : {}),
     };
   }
-
-  const title = keepExistingText(
-    existingBlock?.title,
-    block.title,
-    forceText,
-  );
-
-  return {
-    _key: stableKey(blockKey),
-    _type: "entryListBlock",
-    ...(title ? { title } : {}),
-    markerStyle: block.markerStyle,
-    entries: block.entries.map((entry, entryIndex) => {
-      const existingEntry = existingBlock?.entries?.[entryIndex];
-      const entryTitle = keepExistingText(
-        existingEntry?.title,
-        entry.title,
-        forceText,
-      );
-      const paragraphs = keepExistingStringArray(
-        existingEntry?.paragraphs,
-        entry.paragraphs,
-        forceText,
-      );
-      const note = keepExistingText(
-        existingEntry?.note,
-        entry.note,
-        forceText,
-      );
-
-      return {
-        _key: stableKey(`${blockKey}-entry-${entryIndex}`),
-        _type: "customizationEntry",
-        ...(entryTitle ? { title: entryTitle } : {}),
-        ...(paragraphs?.length ? { paragraphs } : {}),
-        ...(entry.detailGroups?.length
-          ? {
-              detailGroups: entry.detailGroups.map((detailGroup, detailGroupIndex) => {
-                const existingDetailGroup =
-                  existingEntry?.detailGroups?.[detailGroupIndex];
-                const label = keepExistingText(
-                  existingDetailGroup?.label,
-                  detailGroup.label,
-                  forceText,
-                );
-                const items = keepExistingStringArray(
-                  existingDetailGroup?.items,
-                  detailGroup.items,
-                  forceText,
-                ) || [...detailGroup.items];
-                const detailNote = keepExistingText(
-                  existingDetailGroup?.note,
-                  detailGroup.note,
-                  forceText,
-                );
-
-                return {
-                  _key: stableKey(`${blockKey}-entry-${entryIndex}-detail-${detailGroupIndex}`),
-                  _type: "customizationDetailGroup",
-                  ...(label ? { label } : {}),
-                  markerStyle: detailGroup.markerStyle,
-                  items,
-                  ...(detailNote ? { note: detailNote } : {}),
-                };
-              }),
-            }
-          : {}),
-        ...(note ? { note } : {}),
-      };
-    }),
-  };
 }
 
 function buildCustomizationGroups(
@@ -1605,18 +1519,7 @@ async function main() {
           intro,
           markerStyle,
           items,
-          note,
-          entries[]{
-            title,
-            paragraphs,
-            note,
-            detailGroups[]{
-              label,
-              markerStyle,
-              items,
-              note
-            }
-          }
+          note
         }
       }
     }`;
