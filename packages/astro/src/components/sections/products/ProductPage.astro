@@ -129,7 +129,6 @@ const cta = page.cta ?? (enableLocalProductFallback
     }
   : undefined);
 const hasOverview = Boolean(page.overview.trim());
-const hasFeatureBand = Boolean(page.featureBand?.length);
 const hasShowcase = Boolean(showcaseGroups?.some((group) => group.cards.length));
 const hasApplications = applications.length > 0;
 const hasCustomization = Boolean(customizationGroups?.length);
@@ -161,7 +160,7 @@ const hasFaqs = page.faqs.length > 0;
     heroTitleLines={page.heroTitleLines}
     heroImage={page.heroImage}
   />
-  {hasFeatureBand && <ProductFeatureBand features={page.featureBand} />}
+  <ProductFeatureBand />
   {hasOverview && <ProductIntro heading={introHeading} overview={page.overview} />}
   {hasShowcase && (
     <ProductGalleryMatrix

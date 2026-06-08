@@ -113,6 +113,11 @@ test("special pages include the intended indexation controls and schema", () => 
   assert.match(thankYouSource, /noindex/, "Expected thank-you page to be marked noindex");
   assert.match(solutionsSource, /canonicalPath=\{`\/solutions\/\$\{defaultSolution\.slug\}`\}/, "Expected /solutions to canonicalize to its primary detail page");
   assert.match(solutionsSource, /noindex/, "Expected /solutions to be marked noindex because it duplicates the primary solution page");
+  assert.match(
+    solutionsSource,
+    /<SolutionPage page=\{defaultSolution\} showCurrentBreadcrumb=\{false\} \/>/,
+    "Expected /solutions to suppress the child solution breadcrumb so the hero matches the current route",
+  );
   assert.match(blogPostSource, /openGraphType="article"/, "Expected blog posts to emit article Open Graph metadata");
   assert.match(faqSource, /buildFaqJsonLd/, "Expected FAQ page to emit FAQ schema");
   assert.match(productSource, /buildProductJsonLd/, "Expected product pages to emit product schema");
@@ -130,6 +135,35 @@ test("special pages include the intended indexation controls and schema", () => 
     blogIndexSource,
     /\/home\b/,
     "Expected blog breadcrumbs to point to / instead of the old /home alias",
+  );
+});
+
+test("solution route slugs stay aligned with their breadcrumb and page titles", () => {
+  const solutionsDataSource = readSource("src/data/solutions.ts");
+  const solutionRouteSource = readSource("src/pages/solutions/[slug].astro");
+
+  assert.match(
+    solutionsDataSource,
+    /slug: 'fashion-apparel',[\s\S]*?breadcrumb: 'For Fashion & Apparel',[\s\S]*?title: 'Fashion & Apparel Packaging Solutions'/,
+    "Expected the fashion-apparel solution entry to keep fashion-specific breadcrumb and title copy",
+  );
+
+  assert.match(
+    solutionsDataSource,
+    /slug: 'cosmetics-beauty',[\s\S]*?breadcrumb: 'For Cosmetics & Beauty',[\s\S]*?title: 'Cosmetics & Beauty Packaging Solutions'/,
+    "Expected the cosmetics-beauty solution entry to keep cosmetics-specific breadcrumb and title copy",
+  );
+
+  assert.match(
+    solutionRouteSource,
+    /const solution = getSolutionBySlug\(Astro\.params\.slug \?\? ""\);/,
+    "Expected the solution route to resolve page content from the current slug instead of relying on cached static-path props",
+  );
+
+  assert.doesNotMatch(
+    solutionRouteSource,
+    /const \{ page \} = Astro\.props;/,
+    "Expected the solution route to stop preferring static props over the current slug in development",
   );
 });
 

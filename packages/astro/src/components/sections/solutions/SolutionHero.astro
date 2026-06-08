@@ -6,9 +6,10 @@ import type { SolutionPageData } from "../../../data/solutions";
 
 interface Props {
   page: SolutionPageData;
+  showCurrentBreadcrumb?: boolean;
 }
 
-const { page } = Astro.props;
+const { page, showCurrentBreadcrumb = true } = Astro.props;
 ---
 
 <section class="relative overflow-hidden bg-brand-soft md:h-[474px]">
@@ -31,8 +32,12 @@ const { page } = Astro.props;
         <li><a href="/" class="font-normal text-white/75 transition hover:text-white">Home</a></li>
         <li aria-hidden="true" class="text-white/75">&gt;</li>
         <li><a href="/solutions/" class="font-normal text-white/75 transition hover:text-white">Solutions</a></li>
-        <li aria-hidden="true" class="text-white/75">&gt;</li>
-        <li class="font-normal text-white">{page.breadcrumb}</li>
+        {
+          showCurrentBreadcrumb && (
+            <li aria-hidden="true" class="text-white/75">&gt;</li>
+          )
+        }
+        {showCurrentBreadcrumb && <li class="font-normal text-white">{page.breadcrumb}</li>}
       </ol>
     </nav>
 

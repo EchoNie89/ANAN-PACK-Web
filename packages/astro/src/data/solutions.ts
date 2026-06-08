@@ -90,7 +90,7 @@ const solutionImage = (fileName: string) =>
 
 export const solutionPages: SolutionPageData[] = [
   {
-    slug: 'fashion-apparel',
+    slug: 'cosmetics-beauty',
     navLabel: 'For Cosmetics & Beauty',
     breadcrumb: 'For Cosmetics & Beauty',
     title: 'Cosmetics & Beauty Packaging Solutions',
@@ -270,7 +270,7 @@ export const solutionPages: SolutionPageData[] = [
     },
   },
   {
-    slug: 'cosmetics-beauty',
+    slug: 'fashion-apparel',
     navLabel: 'For Fashion & Apparel',
     breadcrumb: 'For Fashion & Apparel',
     title: 'Fashion & Apparel Packaging Solutions',

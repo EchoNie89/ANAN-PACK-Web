@@ -14,12 +14,10 @@ import {
 export function getStaticPaths() {
   return solutionPages.map((page) => ({
     params: { slug: page.slug },
-    props: { page },
   }));
 }
 
-const { page } = Astro.props;
-const solution = page ?? getSolutionBySlug(Astro.params.slug ?? "");
+const solution = getSolutionBySlug(Astro.params.slug ?? "");
 const solutionHeroImageSrc = solution
   ? resolveSeoImage(solution.hero.image)?.src
   : undefined;

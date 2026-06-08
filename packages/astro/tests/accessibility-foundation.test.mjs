@@ -94,6 +94,24 @@ test("site chrome uses the real brand name for logo alternative text", () => {
   );
 
   assert.match(
+    headerSource,
+    /class="h-\[33px\] w-auto"/,
+    "Expected the header logo to render about 10% larger at 33px tall",
+  );
+
+  assert.match(
+    headerSource,
+    /sizes="167px"/,
+    "Expected the header logo responsive size hint to scale with the larger header mark",
+  );
+
+  assert.match(
+    headerSource,
+    /widths=\{\[167, 334\]\}/,
+    "Expected the header logo source widths to match the larger rendered mark",
+  );
+
+  assert.match(
     footerSource,
     /alt=\{siteName\}/,
     "Expected the footer logo to use the shared site name for alt text",

@@ -12,13 +12,14 @@ import SolutionWhyBetter from "./SolutionWhyBetter.astro";
 
 interface Props {
   page: SolutionPageData;
+  showCurrentBreadcrumb?: boolean;
 }
 
-const { page } = Astro.props;
+const { page, showCurrentBreadcrumb = true } = Astro.props;
 ---
 
 <main id="main-content" tabindex="-1">
-  <SolutionHero page={page} />
+  <SolutionHero page={page} showCurrentBreadcrumb={showCurrentBreadcrumb} />
   <SolutionChallenges page={page} />
   <SolutionStrip text={page.strips[0]} />
   <SolutionBrandingKit page={page} />

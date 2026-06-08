@@ -1,10 +1,5 @@
 ---
 import Container from "../../ui/Container.astro";
-import type { ProductFeature } from "../../../data/products";
-
-interface Props {
-  features?: ProductFeature[];
-}
 
 const defaultFeatures = [
   {
@@ -22,16 +17,14 @@ const defaultFeatures = [
     title: "Audited Factories",
     description: "Stable Quality",
   },
-] satisfies ProductFeature[];
-
-const { features = defaultFeatures } = Astro.props;
+];
 ---
 
 <section class="bg-page-muted py-12 md:py-16">
   <Container class="!max-w-[1280px]">
     <div class="grid w-full gap-10 md:grid-cols-3">
       {
-        features.map((feature) => (
+        defaultFeatures.map((feature) => (
           <article class="text-center">
             <div class="mx-auto flex size-16 items-center justify-center rounded-full bg-white shadow-card md:size-20">
               <img src={feature.icon} alt="" class="size-9 md:size-11" loading="lazy" decoding="async" />

@@ -9,6 +9,9 @@ test("product customization renderer handles structured blocks directly", () => 
   const productPageSource = readSource(
     "src/components/sections/products/ProductPage.astro",
   );
+  const productFeatureBandSource = readSource(
+    "src/components/sections/products/ProductFeatureBand.astro",
+  );
   const customizationSource = readSource(
     "src/components/sections/products/ProductCustomization.astro",
   );
@@ -34,6 +37,27 @@ test("product customization renderer handles structured blocks directly", () => 
   assert.match(
     productPageSource,
     /const customizationGroups = sanityCustomizationGroups\?\.length\s*\?\s*sanityCustomizationGroups\s*:\s*enableLocalProductFallback\s*\?\s*page\.customizationGroups\s*:\s*\[];/,
+  );
+  assert.doesNotMatch(
+    productPageSource,
+    /const hasFeatureBand =/,
+    "Expected product pages to stop conditionally hiding the shared feature band",
+  );
+  assert.match(
+    productPageSource,
+    /<ProductFeatureBand \/>\s*/,
+    "Expected product pages to always render the shared trust-signal feature band below the hero",
+  );
+
+  assert.match(
+    productFeatureBandSource,
+    /const defaultFeatures = \[/,
+    "Expected ProductFeatureBand to keep the fixed three-card feature content locally",
+  );
+  assert.doesNotMatch(
+    productFeatureBandSource,
+    /interface Props|Astro\.props|features = defaultFeatures/,
+    "Expected ProductFeatureBand to stop accepting page-managed feature data",
   );
 
   assert.match(customizationSource, /block\._type === "paragraphBlock"/);
