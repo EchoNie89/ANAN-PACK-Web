@@ -12,6 +12,7 @@ interface Props {
   widths?: number[];
   width?: number;
   height?: number;
+  quality?: number | "low" | "mid" | "high" | "max";
   priority?: boolean;
 }
 
@@ -25,6 +26,7 @@ const {
   widths,
   width,
   height,
+  quality,
   priority = false,
 } = Astro.props;
 ---
@@ -53,6 +55,7 @@ const {
       sizes={sizes}
       width={width}
       height={height}
+      quality={quality}
       priority={priority}
     />
   )

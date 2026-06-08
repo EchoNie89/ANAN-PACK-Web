@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { existsSync, readFileSync, rmSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, rmSync, statSync } from "node:fs";
 import test from "node:test";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -32,6 +32,12 @@ function readBuiltHtml(relativePath) {
 
 function readSource(relativePath) {
   return readFileSync(join(astroDir, relativePath), "utf8");
+}
+
+function getBuiltAssetSizes(prefix) {
+  return readdirSync(join(distDir, "_astro"))
+    .filter((fileName) => fileName.startsWith(prefix))
+    .map((fileName) => statSync(join(distDir, "_astro", fileName)).size);
 }
 
 function assertUsesAstroAssets(html, rawPaths) {
@@ -379,5 +385,25 @@ test("solution case study section still mirrors the product figma layout", () =>
     solutionCaseStudySource,
     /h-\[50px\] w-\[180px\]/,
     "Expected solution case study buttons to use the fixed product dimensions",
+  );
+});
+
+test("home page product cards keep the woven labels image within a mobile-friendly budget", () => {
+  buildSiteOnce();
+
+  const wovenLabelAssetSizes = getBuiltAssetSizes("product-woven-labels.");
+
+  assert.equal(
+    wovenLabelAssetSizes.length > 0,
+    true,
+    "Expected woven labels card assets in the built _astro output",
+  );
+
+  const largestVariantSize = Math.max(...wovenLabelAssetSizes);
+
+  assert.equal(
+    largestVariantSize < 160 * 1024,
+    true,
+    `Expected the largest woven labels card asset to stay under 160 KiB, received ${largestVariantSize} bytes`,
   );
 });

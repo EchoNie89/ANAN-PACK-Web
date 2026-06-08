@@ -30,7 +30,7 @@ const { articles } = Astro.props;
               height={article.heroImage.height}
             />
             <div class="min-w-0">
-              <p class="text-xs font-semibold uppercase tracking-[0.12em] text-brand">
+              <p class="text-xs font-semibold uppercase tracking-[0.12em] text-brand-contrast">
                 {parsePublishedDate(article.publishedAt).toLocaleDateString("en-CA")}
               </p>
               <p class="mt-2 text-sm font-medium leading-6 text-text-main transition group-hover:text-brand">

@@ -123,3 +123,60 @@ test("site chrome uses the real brand name for logo alternative text", () => {
     "Expected the footer logo to render at 40px tall",
   );
 });
+
+test("testimonial star ratings expose an accessible image role instead of an invalid aria label on a plain div", () => {
+  const ratingStarsSource = readSource("src/components/ui/RatingStars.astro");
+
+  assert.match(
+    ratingStarsSource,
+    /role="img"/,
+    "Expected the testimonial star rating wrapper to expose an image role for assistive technology",
+  );
+
+  assert.match(
+    ratingStarsSource,
+    /aria-label=\{`\$\{rating\} out of 5 stars`\}/,
+    "Expected the testimonial star rating wrapper to keep the spoken star summary",
+  );
+});
+
+test("home value props section defines a parent h2 before its h3 feature titles", () => {
+  const valuePropsSource = readSource("src/components/sections/ValueProps.astro");
+
+  assert.match(
+    valuePropsSource,
+    /<h2 class="sr-only">/,
+    "Expected the home value props section to define a hidden h2 before the feature card h3 headings",
+  );
+});
+
+test("small uppercase brand labels use the deeper accessible brand color token", () => {
+  const globalStyles = readSource("src/styles/global.css");
+  const badgeSource = readSource("src/components/ui/Badge.astro");
+  const imageCardSource = readSource("src/components/ui/ImageCard.astro");
+  const thankYouSource = readSource("src/pages/thank-you.astro");
+  const contactFormSource = readSource("src/components/sections/contact/ContactProjectForm.astro");
+  const legalLayoutSource = readSource("src/layouts/LegalLayout.astro");
+  const blogSidebarSource = readSource("src/components/sections/blog/BlogSidebar.astro");
+
+  assert.match(
+    globalStyles,
+    /--color-brand-contrast:\s*#A67237;/,
+    "Expected the shared theme to expose the deeper contrast-safe small brand text token",
+  );
+
+  for (const [source, label] of [
+    [badgeSource, "Badge"],
+    [imageCardSource, "ImageCard"],
+    [thankYouSource, "thank-you page"],
+    [contactFormSource, "contact form success state"],
+    [legalLayoutSource, "legal layout eyebrow"],
+    [blogSidebarSource, "blog sidebar dates"],
+  ]) {
+    assert.match(
+      source,
+      /text-brand-contrast/,
+      `Expected ${label} to switch small brand labels to the deeper contrast token`,
+    );
+  }
+});
