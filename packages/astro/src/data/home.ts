@@ -6,7 +6,7 @@ const homeImage = (fileName: string) =>
 export const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Products', href: '/#products' },
-  { label: 'Solutions', href: '/solutions' },
+  { label: 'Solutions', href: '/solutions/cosmetics-beauty' },
   { label: 'Services', href: '/services' },
   { label: 'Blog', href: '/blog' },
   { label: 'About Us', href: '/about-us' },

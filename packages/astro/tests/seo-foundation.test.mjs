@@ -103,7 +103,6 @@ test("seo support files cover site url, robots, and sitemap", () => {
 
 test("special pages include the intended indexation controls and schema", () => {
   const thankYouSource = readSource("src/pages/thank-you.astro");
-  const solutionsSource = readSource("src/pages/solutions.astro");
   const blogPostSource = readSource("src/pages/blog/[slug].astro");
   const faqSource = readSource("src/pages/services/faq.astro");
   const productSource = readSource("src/pages/products/[slug].astro");
@@ -111,12 +110,10 @@ test("special pages include the intended indexation controls and schema", () => 
   const redirectsSource = readSource("public/_redirects");
 
   assert.match(thankYouSource, /noindex/, "Expected thank-you page to be marked noindex");
-  assert.match(solutionsSource, /canonicalPath=\{`\/solutions\/\$\{defaultSolution\.slug\}`\}/, "Expected /solutions to canonicalize to its primary detail page");
-  assert.match(solutionsSource, /noindex/, "Expected /solutions to be marked noindex because it duplicates the primary solution page");
-  assert.match(
-    solutionsSource,
-    /<SolutionPage page=\{defaultSolution\} showCurrentBreadcrumb=\{false\} \/>/,
-    "Expected /solutions to suppress the child solution breadcrumb so the hero matches the current route",
+  assert.equal(
+    existsSync(join(astroDir, "src/pages/solutions.astro")),
+    false,
+    "Expected the bare /solutions alias page to be removed in favor of a 404",
   );
   assert.match(blogPostSource, /openGraphType="article"/, "Expected blog posts to emit article Open Graph metadata");
   assert.match(faqSource, /buildFaqJsonLd/, "Expected FAQ page to emit FAQ schema");

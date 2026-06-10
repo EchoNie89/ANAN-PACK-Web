@@ -804,8 +804,6 @@ export const solutionPages: SolutionPageData[] = [
   },
 ];
 
-export const defaultSolution = solutionPages[0];
-
 export function getSolutionBySlug(slug: string) {
   return solutionPages.find((page) => page.slug === slug);
 }
