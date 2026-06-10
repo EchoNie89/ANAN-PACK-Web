@@ -1,0 +1,84 @@
+---
+import Footer from '../components/sections/Footer.astro';
+import Header from '../components/sections/Header.astro';
+import Container from '../components/ui/Container.astro';
+import Layout from '../layouts/Layout.astro';
+
+const quickLinks = [
+  { label: 'Products', href: '/#products' },
+  { label: 'Solutions', href: '/solutions/cosmetics-beauty' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact Us', href: '/contact-us' },
+];
+---
+
+<Layout
+  title="Page Not Found | ANAN PACK"
+  description="The page you were looking for doesn't exist or has been moved. Explore our packaging, trims, and labeling solutions instead."
+  noindex
+>
+  <Header />
+  <main id="main-content" tabindex="-1">
+    <section class="bg-page-muted py-20 md:py-28">
+      <Container class="!max-w-[720px]">
+        <div class="rounded-soft bg-white p-8 shadow-card md:p-12 text-center">
+          <div
+            class="inline-flex w-fit mx-auto items-center rounded-full bg-brand-soft/55 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-contrast"
+          >
+            Error 404
+          </div>
+
+          <p
+            class="mt-6 text-[72px] font-extrabold leading-none tracking-tight text-brand md:text-[96px]"
+          >
+            404
+          </p>
+          <div class="mx-auto mt-4 h-0.5 w-12 bg-brand"></div>
+
+          <h1
+            class="mt-6 text-3xl font-extrabold tracking-tight text-ink md:text-4xl"
+          >
+            This Page Couldn't Be Found
+          </h1>
+          <p class="mt-4 max-w-xl mx-auto text-sm leading-6 text-text-main">
+            The link may be broken, or the page may have been moved or removed.
+            Let's get you back to something useful.
+          </p>
+
+          <div class="mt-10">
+            <a
+              href="/"
+              class="inline-flex items-center justify-center rounded-button bg-brand-dark px-6 py-3 text-xs font-bold uppercase tracking-[0.02em] text-white transition hover:bg-brand-deep focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+            >
+              Back to Home
+            </a>
+          </div>
+
+          <div class="mt-10 border-t border-border pt-8">
+            <p
+              class="text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-contrast"
+            >
+              Popular Pages
+            </p>
+            <nav
+              class="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold text-text-main"
+              aria-label="Helpful links"
+            >
+              {
+                quickLinks.map((link) => (
+                  <a
+                    href={link.href}
+                    class="transition hover:text-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+                  >
+                    {link.label}
+                  </a>
+                ))
+              }
+            </nav>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
+  <Footer />
+</Layout>

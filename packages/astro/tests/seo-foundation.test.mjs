@@ -103,6 +103,7 @@ test("seo support files cover site url, robots, and sitemap", () => {
 
 test("special pages include the intended indexation controls and schema", () => {
   const thankYouSource = readSource("src/pages/thank-you.astro");
+  const notFoundSource = readSource("src/pages/404.astro");
   const blogPostSource = readSource("src/pages/blog/[slug].astro");
   const faqSource = readSource("src/pages/services/faq.astro");
   const productSource = readSource("src/pages/products/[slug].astro");
@@ -115,6 +116,7 @@ test("special pages include the intended indexation controls and schema", () => 
     false,
     "Expected the bare /solutions alias page to be removed in favor of a 404",
   );
+  assert.match(notFoundSource, /noindex/, "Expected the 404 page to be marked noindex");
   assert.match(blogPostSource, /openGraphType="article"/, "Expected blog posts to emit article Open Graph metadata");
   assert.match(faqSource, /buildFaqJsonLd/, "Expected FAQ page to emit FAQ schema");
   assert.match(productSource, /buildProductJsonLd/, "Expected product pages to emit product schema");
