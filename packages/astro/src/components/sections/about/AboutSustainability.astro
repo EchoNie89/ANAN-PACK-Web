@@ -29,7 +29,7 @@ const iconLayouts = [
 ---
 
 <section class="bg-[#f9f9f9] py-16 md:py-20 lg:py-[59px]">
-  <Container class="!max-w-none lg:px-[121px]">
+  <Container class="!max-w-none xl:px-[121px]">
     <div class="mx-auto lg:max-w-[1200px]">
       <div class="text-center" data-reveal>
         <p class="mx-auto max-w-[414px] text-[14px] font-extrabold uppercase tracking-[0.03em] text-[#a67237] md:text-[16px] md:leading-[normal]">
@@ -39,14 +39,14 @@ const iconLayouts = [
           Supporting Your Brand’s Sustainability Goals.
         </h2>
       </div>
-      <div class="mt-14 grid gap-y-12 lg:mt-[60px] lg:grid-cols-[344px_344px_344px] lg:justify-between">
+      <div class="mt-14 grid gap-y-12 lg:mt-[60px] lg:grid-cols-3 lg:gap-x-8">
         {
           aboutSustainability.map((item, index) => {
             const layout = iconLayouts[index];
 
             return (
               <article
-                class="flex w-full flex-col items-center lg:w-[344px]"
+                class="flex w-full flex-col items-center"
                 data-reveal
                 style={`--reveal-delay: ${index * 80}ms;`}
               >
@@ -63,7 +63,7 @@ const iconLayouts = [
                     />
                   </div>
                 </div>
-                <p class="max-w-[344px] text-left text-[14px] leading-6 text-[#666666] capitalize md:text-justify lg:w-[344px]">
+                <p class="max-w-[344px] text-left text-[14px] leading-6 text-[#666666] capitalize md:text-justify">
                   {item.description}
                 </p>
               </article>
