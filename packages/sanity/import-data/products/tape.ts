@@ -253,7 +253,7 @@ const manifest: ProductImportManifest = {
       sourceKey: "tape-customization-materials",
       title: "Materials",
       intro:
-        "At SENYE, we believe your custom packaging tape should perfectly reflect your brand's commitment to quality and sustainability. Our sourcing experts curate a specialized range of high-performance substrates to ensure your packages are not only secure but also visually striking.",
+        "At ANAN PACK, we believe your custom packaging tape should perfectly reflect your brand's commitment to quality and sustainability. Our sourcing experts curate a specialized range of high-performance substrates to ensure your packages are not only secure but also visually striking.",
       figmaNodeId: "19684:432",
       images: [
         {

@@ -773,7 +773,7 @@ export const productSourcePages: ProductPageData[] = [
       'Custom hang tag hero banner from Figma',
       'products.hangingTag.hero',
     ),
-    overview: `A hang tag (or apparel hang tag) is far more than a simple price tag; it is the silent ambassador that communicates your brand’s quality and story at a single glance. As a critical component of your clothing labels and branding suite, a premium custom hang tag significantly elevates your product's perceived value. At SENYE, we specialize in one-stop packaging solutions tailored for boutique designers and growing fashion labels. We go beyond simple manufacturing by integrating expert material sourcing, rigorous QC, and combined shipments, ensuring your garment tags are not only flawlessly produced but also delivered with maximum efficiency to streamline your supply chain.`,
+    overview: `A hang tag (or apparel hang tag) is far more than a simple price tag; it is the silent ambassador that communicates your brand’s quality and story at a single glance. As a critical component of your clothing labels and branding suite, a premium custom hang tag significantly elevates your product's perceived value. At ANAN PACK, we specialize in one-stop packaging solutions tailored for boutique designers and growing fashion labels. We go beyond simple manufacturing by integrating expert material sourcing, rigorous QC, and combined shipments, ensuring your garment tags are not only flawlessly produced but also delivered with maximum efficiency to streamline your supply chain.`,
     highlights: [...productShell.highlights],
     stats: [...productShell.stats],
     categories: [
@@ -952,10 +952,10 @@ export const productSourcePages: ProductPageData[] = [
         'Color checked across paper and fabric',
         'Consolidated shipping for launch inventory',
       ],
-      quote: `Working with SENYE is like having our own team on the ground. They managed everything from material sourcing to final QC with perfect consistency. For any brand needing multi-category, low-MOQ solutions without compromising quality, SENYE is the premier choice.`,
+      quote: `Working with ANAN PACK is like having our own team on the ground. They managed everything from material sourcing to final QC with perfect consistency. For any brand needing multi-category, low-MOQ solutions without compromising quality, ANAN PACK is the premier choice.`,
       quoteAuthor: 'Sarah J.,Sourcing Manager,Netherlands',
       challenge: `A fast-growing contemporary apparel brand in Europe struggled with fragmented sourcing. They had to coordinate with multiple vendors for custom hang tags, woven labels, and packaging bags, leading to inconsistent color matching and frequent delays. Their primary pain point was finding a reliable partner willing to handle multi-category, low-MOQ orders without compromising on premium quality.`,
-      solutionIntro: `SENYE stepped in as their dedicated supply chain partner in China. We implemented our "Customer Representative" model to streamline their entire branding suite:`,
+      solutionIntro: `ANAN PACK stepped in as their dedicated supply chain partner in China. We implemented our "Customer Representative" model to streamline their entire branding suite:`,
       solutionPoints: [
         'Professional Sourcing: Sourced high-end eco-friendly kraft paper and luxury textures that perfectly matched their sustainable brand DNA.',
         'Strict QC Management: Our on-site team conducted rigorous audits to ensure 100% color consistency between the apparel hang tags and other branding elements.',
@@ -1008,7 +1008,7 @@ export const productSourcePages: ProductPageData[] = [
     ),
     introTitle: 'What Are Custom Dust Bags?',
     overview: `Custom dust bags (often referred to as custom drawstring bags or custom fabric pouches) are the unsung heroes of premium packaging. While their primary job is to protect delicate handbags, footwear, and jewelry from moisture and scratches, their true value lies in customer retention. A high-quality branded dust bag is rarely thrown away; it becomes a reusable travel accessory, acting as a long-lasting, mobile billboard that keeps your brand in your customer's closet for years.
-      At SENYE, we redefine how growing brands source fabric packaging. As your dedicated dust bag manufacturer, we offer highly flexible low MOQ options without compromising on luxury. From sustainable cotton to rich velvet, our strict QC team ensures your logo is flawlessly printed or embroidered. By bundling your dust bags with your custom tags and tape into one seamless combined shipment, we help you deliver a perfectly cohesive, high-end unboxing moment while drastically cutting your logistics costs.`,
+      At ANAN PACK, we redefine how growing brands source fabric packaging. As your dedicated dust bag manufacturer, we offer highly flexible low MOQ options without compromising on luxury. From sustainable cotton to rich velvet, our strict QC team ensures your logo is flawlessly printed or embroidered. By bundling your dust bags with your custom tags and tape into one seamless combined shipment, we help you deliver a perfectly cohesive, high-end unboxing moment while drastically cutting your logistics costs.`,
     highlights: [...productShell.highlights],
     stats: [...productShell.stats],
     showcaseGroups: [
@@ -1271,7 +1271,7 @@ export const productSourcePages: ProductPageData[] = [
       {
         title: 'Materials',
         intro:
-          'As a leading dust bag manufacturer, SENYE understands that the right fabric is crucial for both product protection and brand perception. Our sourcing experts offer a diverse range of premium textiles to perfectly match your product’s weight, shape, and luxury level.',
+          'As a leading dust bag manufacturer, ANAN PACK understands that the right fabric is crucial for both product protection and brand perception. Our sourcing experts offer a diverse range of premium textiles to perfectly match your product’s weight, shape, and luxury level.',
         images: [
           image(
             '/images/products/bag/Frame1.png',
@@ -1508,12 +1508,12 @@ export const productSourcePages: ProductPageData[] = [
         "Operational Efficiency: The clever mesh window maintained fast picking and packing efficiency in Purcotton's warehouses.",
       ],
       quote:
-        "SENYE didn't just manufacture a bag; they engineered a sustainable packaging solution that perfectly aligns with our brand DNA. The innovative cotton mesh window solved our retail visibility issues while completely eliminating single-use plastics from our product line.",
+        "ANAN PACK didn't just manufacture a bag; they engineered a sustainable packaging solution that perfectly aligns with our brand DNA. The innovative cotton mesh window solved our retail visibility issues while completely eliminating single-use plastics from our product line.",
       quoteAuthor: 'Product Director, Purcotton',
       challenge:
         "Purcotton faced a critical packaging dilemma: how to eliminate plastic while maintaining retail visibility. Customers and warehouse staff needed to instantly identify the product's color and texture without opening the package-a feature usually requiring clear plastic. Furthermore, they wanted to upgrade their standard packaging into premium custom fabric pouches that consumers would actively keep and reuse.",
       solutionIntro:
-        "As their trusted dust bag manufacturer, SENYE collaborated with Purcotton's product team to develop a hybrid 'Eco-Smart' zippered pouch:",
+        "As their trusted dust bag manufacturer, ANAN PACK collaborated with Purcotton's product team to develop a hybrid 'Eco-Smart' zippered pouch:",
       solutionPoints: [
         'Material Engineering: We selected 100% unbleached raw greige cotton. By skipping the chemical bleaching process, we minimized the environmental impact while achieving an authentic, earthy aesthetic.',
         'Design Innovation: We integrated a high-density cotton mesh visualization window on the front panel. This brilliant detail allowed instant product identification without using a single drop of plastic.',
@@ -1972,12 +1972,12 @@ export const productSourcePages: ProductPageData[] = [
         "Operational Efficiency: The clever mesh window maintained fast picking and packing efficiency in Purcotton's warehouses.",
       ],
       quote:
-        "We didn't want a label that just shouted a name; we wanted a label that whispered quality. SENYE understood that in luxury streetwear, texture is the new color. They turned our minimalist vision into a tactile reality that our customers can truly feel.",
+        "We didn't want a label that just shouted a name; we wanted a label that whispered quality. ANAN PACK understood that in luxury streetwear, texture is the new color. They turned our minimalist vision into a tactile reality that our customers can truly feel.",
       quoteAuthor: 'Design Director, GUUKA',
       challenge:
         "The core pain point was a 'Perception Gap.' GUUKA's existing neck labels used standard 100D yarns, resulting in a grainy, flat texture that felt 'cheap' compared to their premium garments. The client demanded a 'White-on-White' aesthetic—the most difficult execution in label manufacturing. In traditional production, a white logo on a white base becomes invisible. GUUKA needed a solution where the branding was defined by woven label texture and light reflection rather than contrasting ink.",
       solutionIntro:
-        "As a specialized woven label manufacturer, SENYE engineered a 'Silent Luxury' solution by manipulating advanced fabric structures:",
+        "As a specialized woven label manufacturer, ANAN PACK engineered a 'Silent Luxury' solution by manipulating advanced fabric structures:",
       solutionPoints: [
         'High-Density 50-Denier Yarns: We utilized ultra-fine 50D yarns, doubling the standard thread count. This creates a damask woven label with a silk-like surface, ensuring an itch-free experience for the end-wearer.',
         'Dual-Weave Structural Innovation: To make the logo "pop" without color, we combined a 45° Diagonal Twill base (for architectural depth) with a High-Tension Plain weave for the logo.',
@@ -2027,7 +2027,7 @@ export const productSourcePages: ProductPageData[] = [
     overview: `
     Custom ribbon is more than just a decorative accessory. It is an important packaging element that helps brands present their products in a more professional and memorable way.
     Widely used in gift packaging, apparel packaging, and luxury product packaging, custom ribbons can be printed with logos, patterns, or brand colors to strengthen brand identity.
-    At SENYE, we provide custom printed ribbon solutions for fashion brands, retail packaging, and e-commerce businesses. From elegant satin ribbon to durable grosgrain ribbon, our ribbons help elevate the overall packaging experience and enhance the perceived value of your products.
+    At ANAN PACK, we provide custom printed ribbon solutions for fashion brands, retail packaging, and e-commerce businesses. From elegant satin ribbon to durable grosgrain ribbon, our ribbons help elevate the overall packaging experience and enhance the perceived value of your products.
     `,
     highlights: [...productShell.highlights],
     stats: [...productShell.stats],
@@ -2208,7 +2208,7 @@ export const productSourcePages: ProductPageData[] = [
         'Color checked with tissue and stickers',
       ],
       quote:
-        "In the luxury sector, the difference between 'good' and 'exceptional' lies in the details. We needed a ribbon that didn't just carry our logo, but whispered our brand's history through its texture and color. SENYE delivered a level of precision in tone-on-tone printing that we hadn't found elsewhere.",
+        "In the luxury sector, the difference between 'good' and 'exceptional' lies in the details. We needed a ribbon that didn't just carry our logo, but whispered our brand's history through its texture and color. ANAN PACK delivered a level of precision in tone-on-tone printing that we hadn't found elsewhere.",
       quoteAuthor: 'Product Director, Purcotton',
       challenge: `
       The design brief was deceptively simple: a 10mm (1cm) wide ribbon in a specific "Warm Amber" shade, featuring a "Deep Espresso" logo. However, executing this presented two critical technical hurdles:
@@ -2216,7 +2216,7 @@ The Tone-on-Tone Visibility Issue: Printing dark brown ink on a brownish-yellow 
 Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previous suppliers struggled with off-center printing and ink smearing, which ruined the delicate aesthetic of the Custom Luxury Ribbon.
       `,
       solutionIntro:
-        'As a leading Ribbon Manufacturer, SENYE implemented a high-precision production strategy to meet Coscia’s rigorous standards:',
+        'As a leading Ribbon Manufacturer, ANAN PACK implemented a high-precision production strategy to meet Coscia’s rigorous standards:',
       solutionPoints: [
         'High-Opacity Screen Printing: We utilized a specialized high-density ink that sits on top of the fabric fibers rather than soaking in. This ensured sharp logo edges and high legibility despite the subtle color contrast.',
         'Custom Dye-to-Match Service: To achieve the "Golden Amber" base that mimics vintage Italian leather, we performed multiple lab-dip trials to ensure a 100% color match with Coscia’s signature brand palette.',
@@ -2225,7 +2225,7 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
       resultPoints: [
         'Elevated Brand Perception: The heavy-weight grosgrain texture combined with the subtle tone-on-tone branding achieved the "Expensive Look" required for the Italian market.',
         '100% Color Accuracy: The custom-dyed 10mm Satin Ribbon perfectly integrated with Coscia’s minimalist white gift boxes, creating a cohesive brand identity.',
-        'Zero-Defect Manufacturing: By delivering high-precision narrow ribbons with consistent centering, SENYE proved its capability as a top-tier partner for the global luxury sector.',
+        'Zero-Defect Manufacturing: By delivering high-precision narrow ribbons with consistent centering, ANAN PACK proved its capability as a top-tier partner for the global luxury sector.',
       ],
       gallery: [
         image(
@@ -2320,7 +2320,7 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
     ),
     overview: `
       Custom packaging tape (often referred to as printed shipping tape or branded packaging tape) is much more than a functional adhesive used to seal boxes. It is the very first physical interaction your customer has with your product upon delivery. A high-quality custom tape with logo transforms a standard, boring corrugated box into a premium brand experience, acting as a mobile billboard that builds brand recognition while ensuring the security of your goods in transit.
-      At SENYE, we redefine the standard of custom shipping tape for small businesses and growing fashion labels. As your dedicated packaging tape supplier, we provide a complete, integrated branding solution. Whether your brand DNA calls for an eco-friendly packaging tape like our highly sought-after water activated kraft tape, or a highly durable custom clear poly tape for secure global transit, we’ve got you covered.
+      At ANAN PACK, we redefine the standard of custom shipping tape for small businesses and growing fashion labels. As your dedicated packaging tape supplier, we provide a complete, integrated branding solution. Whether your brand DNA calls for an eco-friendly packaging tape like our highly sought-after water activated kraft tape, or a highly durable custom clear poly tape for secure global transit, we’ve got you covered.
       By taking advantage of our custom tape low MOQ services, you can seamlessly match your apparel shipping tape with your custom hang tags and clothing labels, ensuring 100% color consistency and a flawless, high-end unboxing experience for every single customer.
       `,
     highlights: [...productShell.highlights],
@@ -2498,10 +2498,10 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
         'Adhesive choice matched to carton weight',
         'Tape and stickers shipped together',
       ],
-      quote: `SENYE completely transformed our shipping logistics into a true brand asset. They engineered a custom tape that not only perfectly matches our natural luxury aesthetic but also provides unbreakable security during transit. It's the ultimate sustainable solution.`,
+      quote: `ANAN PACK completely transformed our shipping logistics into a true brand asset. They engineered a custom tape that not only perfectly matches our natural luxury aesthetic but also provides unbreakable security during transit. It's the ultimate sustainable solution.`,
       quoteAuthor: 'Operations Director, Hyde & Hare England',
       challenge: `Hyde & Hare faced a significant "Brand Consistency Gap." Sealing high-end leather goods with glossy plastic tape felt cheap and compromised their eco-friendly ethos. Furthermore, standard eco-friendly tapes failed to adhere properly to their high-fiber recycled cartons, leading to peeling during international transit and risking the security of their luxury accessories.`,
-      solutionIntro: `SENYE collaborated with the brand to engineer a 100% recyclable, premium custom printed kraft paper tape that balanced industrial-grade strength with an "Old Money" aesthetic:`,
+      solutionIntro: `ANAN PACK collaborated with the brand to engineer a 100% recyclable, premium custom printed kraft paper tape that balanced industrial-grade strength with an "Old Money" aesthetic:`,
       solutionPoints: [
         'Material Engineering: Selected a 70gsm heavy-duty custom kraft tape base that perfectly harmonizes with their earthy brand tones while resisting tears and punctures.',
         'Chemical Innovation: Utilized a high-tack natural rubber adhesive that bonds aggressively with paper fibers, ensuring ultimate tamper-evident security in any climate.',
@@ -2604,7 +2604,7 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
     ),
     overview: `
     Custom sticker labels are the most cost-effective and versatile tools in your packaging arsenal. Far beyond a simple adhesive, they are the vital "finishing touch" that elevates an ordinary box into a premium unboxing experience. Whether you need decorative seals for tissue paper, highly durable custom vinyl stickers for shipping mailers, or practical clothing stickers for size and barcode identification, high-quality stickers reinforce your brand identity at every single touchpoint.
-    At SENYE, we redefine how growing brands source their packaging accessories. As a direct sticker manufacturer, we offer professional custom sticker printing tailored to your exact specifications. From glossy promotional decals to elegant matte sticker packaging solutions, our strict QC ensures vibrant colors and reliable adhesion. Plus, with our flexible low MOQ, we can seamlessly bundle your stickers with your hang tags and dust bags into one combined shipment—saving you time, hassle, and logistics costs.
+    At ANAN PACK, we redefine how growing brands source their packaging accessories. As a direct sticker manufacturer, we offer professional custom sticker printing tailored to your exact specifications. From glossy promotional decals to elegant matte sticker packaging solutions, our strict QC ensures vibrant colors and reliable adhesion. Plus, with our flexible low MOQ, we can seamlessly bundle your stickers with your hang tags and dust bags into one combined shipment—saving you time, hassle, and logistics costs.
     `,
     highlights: [...productShell.highlights],
     stats: [...productShell.stats],
@@ -2783,7 +2783,7 @@ Narrow-Width Precision: At only 1cm wide, there is zero margin for error. Previo
         'Finish and adhesive sampled',
         'Packed as sheets for easy fulfillment',
       ],
-      quote: `SENYE completely transformed our product presentation. Their precision with gold foil and moisture-resistant materials proved exactly why they are a top-tier sticker manufacturer. The labels adhere perfectly and look like pieces of art on our jars.`,
+      quote: `ANAN PACK completely transformed our product presentation. Their precision with gold foil and moisture-resistant materials proved exactly why they are a top-tier sticker manufacturer. The labels adhere perfectly and look like pieces of art on our jars.`,
       quoteAuthor: 'Creative Director, Suji & Co',
       challenge: `Artisanal jars and tubes present unique packaging hurdles. The brand required customized sticker labels that could adhere perfectly to small-diameter curved glass without the edges lifting (winging) over time. Furthermore, because the products are often refrigerated and handled frequently, the labels had to be oil and moisture-resistant while accurately reproducing delicate watercolor illustrations.`,
       solutionIntro: `As experts in custom sticker printing, our engineering team developed a hybrid labeling solution tailored for premium retail:`,
@@ -3019,14 +3019,14 @@ Common patch styles include embroidered patches, woven patches, chenille patches
         "Operational Efficiency: The clever mesh window maintained fast picking and packing efficiency in Purcotton's warehouses.",
       ],
       quote:
-        "Our 'Space & Mystery' collection required a level of technical precision that most suppliers couldn't reach. SENYE didn't just match our iconic 'Smiley Yellow'; they engineered a multi-layered 3D UFO scene that brought our vision to life. The sharp detailing on the 'CAUTION UFO' text is a testament to their master-grade injection technology.",
+        "Our 'Space & Mystery' collection required a level of technical precision that most suppliers couldn't reach. ANAN PACK didn't just match our iconic 'Smiley Yellow'; they engineered a multi-layered 3D UFO scene that brought our vision to life. The sharp detailing on the 'CAUTION UFO' text is a testament to their master-grade injection technology.",
       quoteAuthor: 'Creative Director, SmileyWorld Collaboration',
       challenge: `The project for the UFO abduction capsule collection presented three critical technical hurdles that standard PVC label printing could not solve:
 Color Integrity (The Iconic Yellow): Any slight deviation in the pigment mix would undermine one of the most recognizable brand colors in the world.
 Complex 3D Layering: The design involved four distinct levels of depth (Orange base, Green UFO, Yellow Smiley, and raised Black text). Standard molding often results in "color bleeding" at the borders between these levels.
 Micro-Detailing: The "CAUTION UFO" text required razor-sharp edges within a tiny surface area. Typical PVC rubber label injection often leads to blurred or "smudged" letters.`,
       solutionIntro:
-        'As a specialized PVC Label Manufacturer, SENYE utilized advanced multi-stage micro-injection technology to achieve industrial-grade precision:',
+        'As a specialized PVC Label Manufacturer, ANAN PACK utilized advanced multi-stage micro-injection technology to achieve industrial-grade precision:',
       solutionPoints: [
         'Custom Pigment Matching: Our lab performed a 100% Pantone match for "Smiley Yellow" using UV-resistant liquid PVC to ensure the colors remain vivid without fading or yellowing over time.',
         'Precision CNC Mold Making: We engineered high-precision aluminum molds with varying depths. This allowed the UFO to physically "float" above the orange background, creating a premium 3D Rubber Label effect.',
@@ -3036,7 +3036,7 @@ Micro-Detailing: The "CAUTION UFO" text required razor-sharp edges within a tiny
       resultPoints: [
         'Tactile Brand Engagement: The 3D sculptural quality turned a simple logo into a tactile experience that resonates deeply with the Gen-Z streetwear market.',
         '100% Precision: The "Caution UFO" text remained perfectly legible, and the iconic yellow Smiley remained identical across all production batches.',
-        'Extreme Durability: The patches passed over 50 wash cycles with zero signs of peeling, fading, or warping—proving SENYE’s capability in high-wear streetwear brand accessories.',
+        'Extreme Durability: The patches passed over 50 wash cycles with zero signs of peeling, fading, or warping—proving ANAN PACK’s capability in high-wear streetwear brand accessories.',
       ],
       gallery: [
         image(
@@ -3310,7 +3310,7 @@ Custom tissue paper helps brands create a consistent and elegant packaging style
         'Sticker finish matched to tissue color',
         'Tissue and ribbon packed for fulfillment',
       ],
-      quote: `We were looking for a wrapping solution that felt as intentional as our leather goods. SENYE moved us away from flimsy, standard materials and engineered a custom 28gsm paper that holds its shape perfectly. The 'White-on-White' print is a masterpiece of subtlety—it's branding that you feel before you see.`,
+      quote: `We were looking for a wrapping solution that felt as intentional as our leather goods. ANAN PACK moved us away from flimsy, standard materials and engineered a custom 28gsm paper that holds its shape perfectly. The 'White-on-White' print is a masterpiece of subtlety—it's branding that you feel before you see.`,
       quoteAuthor: 'Creative Operations Director, Polène Paris',
       challenge: `
       Polène identified three critical pain points with the industry-standard 17gsm tissue paper they were previously using:
@@ -3318,7 +3318,7 @@ Lack of Structure: The 17gsm paper was too soft and flimsy. It crumbled into mes
 Transparency Issues: Standard tissue was too sheer, revealing the product too quickly and removing the element of anticipation.
 Texture Quality: The brand wanted a Luxury Packaging Paper that felt substantial and smooth, providing a physical barrier against dust and scratches during international shipping without being abrasive.
       `,
-      solutionIntro: `As an expert Packaging Solution Provider, SENYE engineered a custom 28gsm MG (Machine Glazed) White Kraft Paper solution that bridges the gap between delicate tissue and durable wrapping:`,
+      solutionIntro: `As an expert Packaging Solution Provider, ANAN PACK engineered a custom 28gsm MG (Machine Glazed) White Kraft Paper solution that bridges the gap between delicate tissue and durable wrapping:`,
       solutionPoints: [
         'Material Science (28gsm Upgrade): We increased the paper density to 28gsm. This "sweet spot" weight provides enough stiffness to hold a crisp fold while remaining flexible enough for delicate wrapping.',
         'Surface Engineering (MG Finish): We utilized the highly polished, smooth side of the Machine Glazed paper as the printing surface. This creates a silky tactile feel that glides against premium leather without causing micro-abrasions.',

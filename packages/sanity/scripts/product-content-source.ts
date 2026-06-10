@@ -94,7 +94,7 @@ export type ProductBaselineEntry = {
   customizationGroups?: ProductBaselineCustomizationGroup[];
 };
 
-export const PRODUCT_SEO_TITLE_SUFFIX = " | Tagora Packaging & Trims";
+export const PRODUCT_SEO_TITLE_SUFFIX = " | ANAN PACK";
 export const PRODUCT_BASELINE_OUTPUT_PATH = "import-data/products/product-baseline.json";
 export const PRODUCT_BASELINE_DIFF_PATH = "import-data/products/product-baseline-diff.json";
 

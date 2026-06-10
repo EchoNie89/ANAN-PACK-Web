@@ -164,7 +164,7 @@ export const solutionPages: SolutionPageData[] = [
       ],
     },
     why: {
-      title: 'Why Sourcing Via SENYE Is Better?',
+      title: 'Why Sourcing Via ANAN PACK Is Better?',
       image: solutionImage('why-better.png'),
       alt: 'Cosmetics packaging samples arranged for sourcing review',
       points: [
@@ -217,7 +217,7 @@ export const solutionPages: SolutionPageData[] = [
       headline:
         'How We Engineered 100% Plastic-Free Reusable Pouches For Purcotton',
       intro: `For eco-conscious lifestyle brands like Purcotton, packaging must reflect their core philosophy of "Nature, Safety, and Sustainability." Traditional plastic polybags were contradicting their brand image. They needed a premium, 100% natural textile solution that not only protected their garments but also served as a highly functional, reusable travel organizer for their end consumers.`,
-      quote: `SENYE didn't just manufacture a bag; they engineered a sustainable packaging solution that perfectly aligns with our brand DNA. The innovative cotton mesh window solved our retail visibility issues while completely eliminating single-use plastics from our product line.`,
+      quote: `ANAN PACK didn't just manufacture a bag; they engineered a sustainable packaging solution that perfectly aligns with our brand DNA. The innovative cotton mesh window solved our retail visibility issues while completely eliminating single-use plastics from our product line.`,
       attribution: 'Product Director, Purcotton',
       sections: [
         {
@@ -227,7 +227,7 @@ export const solutionPages: SolutionPageData[] = [
         {
           title: 'Our Solution:',
           bullets: [
-            'As their trusted dust bag manufacturer, SENYE collaborated with Purcotton’s product team to develop a hybrid "Eco-Smart" zippered pouch:',
+            'As their trusted dust bag manufacturer, ANAN PACK collaborated with Purcotton’s product team to develop a hybrid "Eco-Smart" zippered pouch:',
             'Material Engineering: We selected 100% unbleached raw greige cotton. By skipping the chemical bleaching process, we minimized the environmental impact while achieving an authentic, earthy aesthetic.',
             'Design Innovation: We integrated a high-density cotton mesh visualization window on the front panel. This brilliant detail allowed instant product identification without using a single drop of plastic.',
             'Structural Versatility: We replaced standard drawstrings with a smooth, durable zipper, transforming the custom cotton dust bags into secure travel cubes available in a standardized 3-size system.',
@@ -344,7 +344,7 @@ export const solutionPages: SolutionPageData[] = [
       ],
     },
     why: {
-      title: 'Why Sourcing Via [Our Company Name] Is Better?',
+      title: 'Why Sourcing Via ANAN PACK Is Better?',
       image: solutionImage('fashion-why.png'),
       alt: 'Pink apparel packaging gift set',
       points: [
@@ -396,7 +396,7 @@ export const solutionPages: SolutionPageData[] = [
       title: 'Case Study',
       headline: 'How We Engineered Premium Foil Labels For Suji & Co',
       intro: `For premium artisanal brands like Suji & Co, the packaging must communicate "natural," "pure," and "hand-made" at a single glance. They needed a sophisticated sticker packaging solution that could bridge the gap between rustic watercolor charm and modern luxury, all while surviving the demanding environments of kitchens and refrigerators.`,
-      quote: `SENYE completely transformed our product presentation. Their precision with gold foil and moisture-resistant materials proved exactly why they are a top-tier sticker manufacturer. The labels adhere perfectly and look like pieces of art on our jars.`,
+      quote: `ANAN PACK completely transformed our product presentation. Their precision with gold foil and moisture-resistant materials proved exactly why they are a top-tier sticker manufacturer. The labels adhere perfectly and look like pieces of art on our jars.`,
       attribution: 'Creative Director, Suji & Co',
       sections: [
         {
@@ -521,7 +521,7 @@ export const solutionPages: SolutionPageData[] = [
       ],
     },
     why: {
-      title: 'Why Sourcing Via [Our Company Name] Is Better?',
+      title: 'Why Sourcing Via ANAN PACK Is Better?',
       image: solutionImage('home-lifestyle-why.png'),
       alt: 'Folded home textile packaging set with branded ribbons and zipper pouch',
       points: [
@@ -574,7 +574,7 @@ export const solutionPages: SolutionPageData[] = [
       headline:
         'How We Engineered High-Performance Custom Kraft Tape For Hyde & Hare & Achieved Zero-Failure Logistics',
       intro: `For premier lifestyle brands like Hyde & Hare England, the "unboxing experience" is the final and most crucial touchpoint with their global clientele. In the competitive luxury market, tape is not just a utility to seal a box; it must reflect the brand’s commitment to natural beauty, premium craftsmanship, and frictionless sustainability.`,
-      quote: `SENYE completely transformed our shipping logistics into a true brand asset. They engineered a custom tape that not only perfectly matches our natural luxury aesthetic but also provides unbreakable security during transit. It's the ultimate sustainable solution.`,
+      quote: `ANAN PACK completely transformed our shipping logistics into a true brand asset. They engineered a custom tape that not only perfectly matches our natural luxury aesthetic but also provides unbreakable security during transit. It's the ultimate sustainable solution.`,
       attribution: 'Operations Director, Hyde & Hare England',
       sections: [
         {
@@ -584,7 +584,7 @@ export const solutionPages: SolutionPageData[] = [
         {
           title: 'Our Solution:',
           bullets: [
-            'SENYE collaborated with the brand to engineer a 100% recyclable, premium custom printed kraft paper tape that balanced industrial-grade strength with an "Old Money" aesthetic:',
+            'ANAN PACK collaborated with the brand to engineer a 100% recyclable, premium custom printed kraft paper tape that balanced industrial-grade strength with an "Old Money" aesthetic:',
             'Material Engineering: Selected a 70gsm heavy-duty custom kraft tape base that perfectly harmonizes with their earthy brand tones while resisting tears and punctures.',
             'Chemical Innovation: Utilized a high-tack natural rubber adhesive that bonds aggressively with paper fibers, ensuring ultimate tamper-evident security in any climate.',
             'Aesthetic Precision: Applied high-definition matte black ink to eliminate traditional glare, integrating their signature branding seamlessly into the paper surface.',
@@ -696,7 +696,7 @@ export const solutionPages: SolutionPageData[] = [
       ],
     },
     why: {
-      title: 'Why Sourcing Via SENYE Is Better (The Luxury Edge)',
+      title: 'Why Sourcing Via ANAN PACK Is Better (The Luxury Edge)',
       image: solutionImage('jewelry-luxury-why.png'),
       alt: 'Luxury jewelry packaging box with pouch and accessories',
       points: [
@@ -749,7 +749,7 @@ export const solutionPages: SolutionPageData[] = [
       headline:
         'How We Engineered High-Performance Custom Kraft Tape For Hyde & Hare & Achieved Zero-Failure Logistics',
       intro: `For premier lifestyle brands like Hyde & Hare England, the "unboxing experience" is the final and most crucial touchpoint with their global clientele. In the competitive luxury market, tape is not just a utility to seal a box; it must reflect the brand’s commitment to natural beauty, premium craftsmanship, and frictionless sustainability.`,
-      quote: `SENYE completely transformed our shipping logistics into a true brand asset. They engineered a custom tape that not only perfectly matches our natural luxury aesthetic but also provides unbreakable security during transit. It's the ultimate sustainable solution.`,
+      quote: `ANAN PACK completely transformed our shipping logistics into a true brand asset. They engineered a custom tape that not only perfectly matches our natural luxury aesthetic but also provides unbreakable security during transit. It's the ultimate sustainable solution.`,
       attribution: 'Operations Director, Hyde & Hare England',
       sections: [
         {
@@ -759,7 +759,7 @@ export const solutionPages: SolutionPageData[] = [
         {
           title: 'Our Solution:',
           bullets: [
-            'SENYE collaborated with the brand to engineer a 100% recyclable, premium custom printed kraft paper tape that balanced industrial-grade strength with an "Old Money" aesthetic:',
+            'ANAN PACK collaborated with the brand to engineer a 100% recyclable, premium custom printed kraft paper tape that balanced industrial-grade strength with an "Old Money" aesthetic:',
             'Material Engineering: Selected a 70gsm heavy-duty custom kraft tape base that perfectly harmonizes with their earthy brand tones while resisting tears and punctures.',
             'Chemical Innovation: Utilized a high-tack natural rubber adhesive that bonds aggressively with paper fibers, ensuring ultimate tamper-evident security in any climate.',
             'Aesthetic Precision: Applied high-definition matte black ink to eliminate traditional glare, integrating their signature branding seamlessly into the paper surface.',

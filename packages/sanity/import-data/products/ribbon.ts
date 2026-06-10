@@ -288,7 +288,7 @@ const ribbon: ProductImportManifest = {
       sourceKey: "ribbon-customization-printing-methods",
       title: "Ribbon Printing Methods",
       intro:
-        "Printing methods play an important role in the appearance and durability of custom printed ribbon. Different printing techniques can create different visual effects, textures, and levels of detail. At SENYE, we offer several professional printing options to ensure your custom ribbon with logo matches your packaging design and branding needs.",
+        "Printing methods play an important role in the appearance and durability of custom printed ribbon. Different printing techniques can create different visual effects, textures, and levels of detail. At ANAN PACK, we offer several professional printing options to ensure your custom ribbon with logo matches your packaging design and branding needs.",
       figmaNodeId: "21430:2292",
       images: [
         {

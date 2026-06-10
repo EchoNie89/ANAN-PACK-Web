@@ -198,7 +198,7 @@ const bag: ProductImportManifest = {
       sourceKey: "bag-customization-materials",
       title: "Materials",
       intro:
-        "As a leading dust bag manufacturer, SENYE understands that the right fabric is crucial for both product protection and brand perception. Our sourcing experts offer a diverse range of premium textiles to perfectly match your product’s weight, shape, and luxury level.",
+        "As a leading dust bag manufacturer, ANAN PACK understands that the right fabric is crucial for both product protection and brand perception. Our sourcing experts offer a diverse range of premium textiles to perfectly match your product’s weight, shape, and luxury level.",
       images: [
         {
           sourceKey: "bag-customization-materials-image-1",

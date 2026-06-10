@@ -119,7 +119,7 @@ const manifest: ProductImportManifest = {
       sourceKey: "hanging-tag-customization-materials",
       title: "Materials",
       intro:
-        "At SENYE, we believe the right material is the foundation of brand storytelling. Our sourcing experts curate a diverse range of high-quality substrates to ensure your custom hang tags perfectly align with your brand positioning, budget, and sustainability goals.",
+        "At ANAN PACK, we believe the right material is the foundation of brand storytelling. Our sourcing experts curate a diverse range of high-quality substrates to ensure your custom hang tags perfectly align with your brand positioning, budget, and sustainability goals.",
       figmaNodeId: "19413:1872",
       images: [
         { sourceKey: "hanging-tag-cust-materials-img-1", title: "Coated art paper hang tag", imagePath: "import-assets/products/hanging-tag/cust-materials-01.png", alt: "Coated art paper custom hang tag with vibrant printing", figmaNodeId: "19415:2050" },
@@ -173,7 +173,7 @@ const manifest: ProductImportManifest = {
       sourceKey: "hanging-tag-customization-printing",
       title: "Printing",
       intro:
-        "At SENYE, we believe that the right finish transforms a simple tag into a premium brand experience. Our Professional Sourcing Team guides you through a diverse range of advanced printing techniques, while our Strict QC Team ensures every detail—from color saturation to foil precision—meets your exact standards.",
+        "At ANAN PACK, we believe that the right finish transforms a simple tag into a premium brand experience. Our Professional Sourcing Team guides you through a diverse range of advanced printing techniques, while our Strict QC Team ensures every detail—from color saturation to foil precision—meets your exact standards.",
       figmaNodeId: "19415:2115",
       images: [
         { sourceKey: "hanging-tag-cust-printing-img-1", title: "Gold foil stamping hang tag", imagePath: "import-assets/products/hanging-tag/cust-printing-01.png", alt: "Hot foil stamped hang tag with metallic gold finish", figmaNodeId: "19415:2094" },

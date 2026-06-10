@@ -28,9 +28,9 @@
 
 - 字体: Inter / 字号: 20px / 字重: 700 / 颜色: `#ffffff` / 对齐: CENTER
 
-### Why Sourcing via SENYE is Better? (`19208:6655`)
+### Why Sourcing via ANAN PACK is Better? (`19208:6655`)
 
-> Why Sourcing via SENYE is Better?
+> Why Sourcing via ANAN PACK is Better?
 
 - 字体: Inter / 字号: 32px / 字重: 800 / 颜色: `#333333` / 对齐: LEFT
 
@@ -104,7 +104,7 @@ Rectangle 79 [RECTANGLE] (1440×90)
 You design the clothes; we handle the rest. [TEXT] (582×63)
 Group 1272636773 [GROUP] (1200×662)
 Group 666 [GROUP] (586×39)
-Why Sourcing via SENYE is Better? [TEXT] (586×39)
+Why Sourcing via ANAN PACK is Better? [TEXT] (586×39)
 Line 10 [LINE]
 Group 159 [GROUP] (1200×564)
 Frame 1272636628 [FRAME] (640×564)
